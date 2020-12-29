@@ -1,0 +1,55 @@
+{
+  "name": "uni-helper",
+  "private": true,
+  "description": "Make uni-* work better in other editors, such as VSCode and WebStorm.",
+  "keywords": [
+    "uni",
+    "uni-app",
+    "uni-ui",
+    "uni-cloud",
+    "uni-pay"
+  ],
+  "homepage": "https://github.com/ModyQyW/uni-helper#readme",
+  "bugs": {
+    "url": "https://github.com/ModyQyw/uni-helper/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui7@mail3.sysu.edu.cn",
+    "url": "https://modyqyw.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ModyQyW/uni-helper.git"
+  },
+  "scripts": {
+    "lint": "yarn lint:json",
+    "lint:json": "prettier ./**/*.json -w",
+    "check": "ncu",
+    "commit": "git-cz && git push"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "~11.0.0",
+    "@modyqyw/fabric": "~1.8.0",
+    "commitizen": "~4.2.2",
+    "husky": "~4.3.6",
+    "lint-staged": "~10.5.3",
+    "prettier": "~2.2.1",
+    "rimraf": "~3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    ".": "yarn lint"
+  }
+}

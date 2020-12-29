@@ -1,0 +1,666 @@
+{
+  "description": "应用信息配置文件，用于指定大量信息。更多信息查看 https://uniapp.dcloud.io/collocation/manifest 和 https://ask.dcloud.net.cn/article/94。",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "应用名称，安装 APP 后显示的名称。",
+      "type": "string"
+    },
+    "appid": {
+      "description": "应用标识，由 DCloud 云端分配。更多信息查看 https://ask.dcloud.net.cn/article/35907。",
+      "type": "string"
+    },
+    "description": {
+      "description": "应用描述。",
+      "type": "string"
+    },
+    "versionName": {
+      "description": "版本名称，在云打包和生成 wgt 资源时使用。",
+      "type": "string"
+    },
+    "versionCode": {
+      "description": "版本号。",
+      "type": "string"
+    },
+    "transformPx": {
+      "description": "是否转换 px 为 rpx。",
+      "type": "boolean",
+      "default": true
+    },
+    "networkTimeout": {
+      "description": "网络超时时间。",
+      "type": "object",
+      "properties": {
+        "request": {
+          "description": "uni.request 超时时间，单位 ms。",
+          "type": "number",
+          "default": 60000
+        },
+        "connectSocket": {
+          "description": "uni.connectSocket 的超时时间，单位 ms。",
+          "type": "number",
+          "default": 60000
+        },
+        "uploadFile": {
+          "description": "uni.uploadFile 的超时时间，单位 ms。",
+          "type": "number",
+          "default": 60000
+        },
+        "downloadFile": {
+          "description": "uni.downloadFile 的超时时间，单位 ms。",
+          "type": "number",
+          "default": 60000
+        }
+      }
+    },
+    "debug": {
+      "description": "是否开启 debug 模式。",
+      "type": "boolean",
+      "default": false
+    },
+    "uniStatistics": {
+      "description": "uni 统计配置项。",
+      "type": "object",
+      "required": ["enable"],
+      "properties": {
+        "enable": {
+          "description": "是否开启 uni 统计。",
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "app-plus": {
+      "description": "APP 特有配置。",
+      "type": "object",
+      "properties": {
+        "compatible": {
+          "description": "编译器兼容性配置。",
+          "type": "object",
+          "properties": {
+            "ignoreVersion": {
+              "description": "是否忽略运行环境与编译环境不一致的问题。",
+              "type": "boolean",
+              "default": false
+            },
+            "runtimeVersion": {
+              "description": "运行环境版本号。可以使用英文逗号分割。",
+              "type": "string"
+            },
+            "compilerVersion": {
+              "description": "编译环境版本号。",
+              "type": "string"
+            }
+          }
+        },
+        "splashscreen": {
+          "description": "APP 启动界面信息。",
+          "type": "object",
+          "properties": {
+            "alwaysShowBeforeRender": {
+              "description": "首页白屏时是否不关闭启动界面。",
+              "type": "boolean",
+              "default": true
+            },
+            "autoclose": {
+              "description": "是否自动关闭程序启动界面。",
+              "type": "boolean",
+              "default": true
+            },
+            "waiting": {
+              "description": "是否在程序启动界面显示加载。",
+              "type": "boolean",
+              "default": true
+            },
+            "delay": {
+              "description": "启动界面在应用的首页面加载完毕后延迟关闭的时间。autoclose 为 true 时有效。",
+              "type": "number",
+              "default": 0
+            }
+          }
+        },
+        "modules": {
+          "description": "APP 权限模块。",
+          "type": "object"
+        },
+        "distribute": {
+          "description": "APP 发布信息。",
+          "type": "object",
+
+          "properties": {
+            "android": {
+              "description": "Android 专用配置。",
+              "type": "object"
+            },
+            "ios": {
+              "description": "iOS 专用配置。",
+              "type": "object"
+            },
+            "sdkConfigs": {
+              "description": "SDK 配置。仅打包生效。",
+              "type": "object"
+            },
+            "orientation": {
+              "description": "屏幕方向配置。",
+              "type": "array",
+              "items": {
+                "description": "可选 portrait-primary，portrait-secondary，landscape-primary 和 landscape-secondary。",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "usingComponents": {
+          "description": "是否启用自定义组件模式。",
+          "type": "boolean",
+          "default": true
+        },
+        "nvueCompiler": {
+          "description": "nvue 编译模式。",
+          "type": "string",
+          "enum": ["weex", "uni-app"],
+          "default": "weex"
+        },
+        "renderer": {
+          "description": "运行框架。",
+          "type": "string",
+          "enum": ["native"]
+        },
+        "compilerVersion": {
+          "description": "编译器版本。",
+          "type": "number",
+          "enum": [2, 3],
+          "default": 2
+        },
+        "nvueLaunchMode": {
+          "description": "nvue 首页启动模式。compilerVersion 为 3 时生效。",
+          "type": "string",
+          "enum": ["normal", "fast"],
+          "default": "normal"
+        },
+        "nvue": {
+          "description": "nvue 页面布局初始配置。",
+          "type": "object",
+          "properties": {
+            "flex-direction": {
+              "description": "flex 项目的排列方向。可选 row，row-reverse，column 和 column-reverse。",
+              "type": "string",
+              "enum": ["row", "row-reverse", "column", "column-reverse"],
+              "default": "column"
+            }
+          }
+        },
+        "optimization": {
+          "description": "优化配置。",
+          "type": "object",
+          "properties": {
+            "subPackages": {
+              "description": "是否开启分包配置。设置为 true 时必须设置 app-plus.runmode 为 liberate。",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "runmode": {
+          "description": "运行模式。分包时必选 liberate。",
+          "type": "string",
+          "enum": ["normal", "liberate"]
+        }
+      }
+    },
+    "h5": {
+      "description": "H5 特有配置。",
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "页面标题，默认使用本文件的 name 属性。",
+          "type": "string"
+        },
+        "template": {
+          "description": "相对于应用根目录的 index.html 模板路径，可定制。",
+          "type": "string"
+        },
+        "router": {
+          "description": "路由设置。",
+          "type": "object",
+          "properties": {
+            "mode": {
+              "description": "路由跳转模式。",
+              "type": "string",
+              "enum": ["hash", "history"],
+              "default": "hash"
+            },
+            "base": {
+              "description": "应用基础路径。",
+              "type": "string",
+              "default": "/"
+            }
+          }
+        },
+        "async": {
+          "description": "加载相关设置。",
+          "type": "object",
+          "properties": {
+            "loading": {
+              "description": "页面 JavaScript 加载时使用的组件，需注册为全局组件。",
+              "type": "string",
+              "default": "AsyncLoading"
+            },
+            "error": {
+              "description": "页面 JavaScript 加载失败时使用的组件，需注册为全局组件。",
+              "type": "string",
+              "default": "AsyncError"
+            },
+            "delay": {
+              "description": "展示加载中组件的延时时间，单位 ms。如果在延时内加载完成，则不会显示加载中组件。",
+              "type": "number",
+              "default": 200
+            },
+            "timeout": {
+              "description": "加载超时时间，单位 ms。如果超时，则显示加载失败组件。",
+              "type": "number",
+              "default": 60000
+            }
+          }
+        },
+        "devServer": {
+          "type": "object",
+          "description": "dev-server 设置。",
+          "properties": {
+            "https": {
+              "description": "是否启用 HTTPS 协议。",
+              "type": "boolean",
+              "default": false
+            },
+            "disableHostCheck": {
+              "description": "是否禁用 host 检查。",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "publicPath": {
+          "description": "引用资源的地址前缀，仅发布时生效。",
+          "type": "string"
+        },
+        "sdkConfigs": {
+          "description": "SDK 配置。",
+          "type": "object"
+        },
+        "optimization": {
+          "description": "优化配置。",
+          "type": "object",
+          "properties": {
+            "prefetch": {
+              "description": "资源预获取。",
+              "type": "boolean",
+              "default": false
+            },
+            "preload": {
+              "description": "资源预加载。",
+              "type": "boolean",
+              "default": false
+            },
+            "treeShaking": {
+              "description": "摇树优化。",
+              "type": "object",
+              "required": ["enable"],
+              "properties": {
+                "enable": {
+                  "description": "是否开启摇树优化。",
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "quickapp-webview": {
+      "description": "快应用特有配置。",
+      "type": "object",
+      "properties": {
+        "icon": {
+          "description": "应用图标，推荐 192x192。",
+          "type": "string"
+        },
+        "package": {
+          "description": "应用包名。",
+          "type": "string"
+        },
+        "minPlatformVersion": {
+          "description": "最小平台支持，快应用联盟 1063，快应用华为 1070。",
+          "type": "number"
+        },
+        "versionName": {
+          "description": "版本名称。",
+          "type": "string"
+        },
+        "versionCode": {
+          "description": "版本号。",
+          "type": "number"
+        }
+      }
+    },
+    "quickapp-webview-union": {
+      "description": "快应用联盟特有配置。",
+      "type": "object",
+      "properties": {
+        "minPlatformVersion": {
+          "description": "最小平台支持。",
+          "type": "number",
+          "default": 1063
+        }
+      }
+    },
+    "quickapp-webview-huawei": {
+      "description": "快应用华为特有配置。",
+      "type": "object",
+      "properties": {
+        "minPlatformVersion": {
+          "description": "最小平台支持。",
+          "type": "number",
+          "default": 1070
+        }
+      }
+    },
+    "mp-weixin": {
+      "description": "微信小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "appid": {
+          "description": "微信小程序的 appid。",
+          "type": "string"
+        },
+        "usingComponents": {
+          "description": "是否启用自定义组件模式。",
+          "type": "boolean",
+          "default": false
+        },
+        "setting": {
+          "description": "微信小程序项目设置。更多信息查看 https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html。",
+          "type": "object",
+
+          "properties": {
+            "es6": {
+              "description": "是否启用 ES6 转 ES5。",
+              "type": "boolean"
+            },
+            "postcss": {
+              "description": "是否启用样式自动补全。",
+              "type": "boolean"
+            },
+            "minified": {
+              "description": "是否启用脚本代码自动压缩。",
+              "type": "boolean"
+            },
+            "urlCheck": {
+              "description": "是否检查安全域名和 TLS 版本。",
+              "type": "boolean"
+            },
+            "uglifyFileName": {
+              "description": "是否启用代码保护。",
+              "type": "boolean"
+            },
+            "checkSiteMap": {
+              "description": "是否检查 SiteMap 索引。",
+              "type": "boolean"
+            },
+            "coverView": {
+              "description": "是否使用工具渲染 CoverView。",
+              "type": "boolean"
+            },
+            "enhance": {
+              "description": "是否启用增强编译。",
+              "type": "boolean"
+            },
+            "babelSetting": {
+              "description": "增强编译 Babel 的配置项。",
+              "type": "object"
+            },
+            "uploadWithSourceMap": {
+              "description": "上传时是否带上 SourceMap。",
+              "type": "boolean"
+            },
+            "nodeModules": {
+              "description": "是否不使用 npm 模块。",
+              "type": "boolean"
+            },
+            "minifyWXSS": {
+              "description": "是否启用样式代码自动压缩。",
+              "type": "boolean"
+            },
+            "showShadowRootInWxmlPanel": {
+              "description": "是否以 shadow-root 形式展示自定义组件。",
+              "type": "boolean"
+            },
+            "preloadBackgroundData": {
+              "description": "是否启用数据预拉取。",
+              "type": "boolean"
+            },
+            "compileHotReLoad": {
+              "description": "是否启用代码自动热重载。",
+              "type": "boolean"
+            },
+            "bundle": {
+              "description": "是否启用合并编译。",
+              "type": "boolean"
+            },
+            "checkInvalidKey": {
+              "description": "是否检查键名。",
+              "type": "boolean"
+            }
+          }
+        },
+        "functionalPages": {
+          "description": "是否启用插件功能页。",
+          "type": "boolean",
+          "default": false
+        },
+        "requiredBackgroundModes": {
+          "description": "需要在后台使用的能力。",
+          "type": "array",
+          "items": {
+            "description": "可选 audio 和 location。",
+            "type": "string"
+          },
+          "default": []
+        },
+        "plugins": {
+          "description": "使用到的插件。",
+          "type": "object"
+        },
+        "resizable": {
+          "description": "是否支持 iPad 上屏幕旋转。",
+          "type": "boolean",
+          "default": false
+        },
+        "navigateToMiniProgramAppIdList": {
+          "description": "需要跳转的微信小程序列表。",
+          "type": "array",
+          "items": {
+            "description": "要跳转的微信小程序 appid。",
+            "type": "string"
+          }
+        },
+        "permission": {
+          "description": "接口权限设置。",
+          "type": "object",
+          "items": {
+            "description": "要申请的权限。",
+            "type": "string"
+          }
+        },
+        "workers": {
+          "description": "Worker 代码目录。",
+          "type": "string"
+        },
+        "optimization": {
+          "description": "优化配置。",
+          "type": "object",
+          "properties": {
+            "subPackages": {
+              "description": "是否开启分包优化。",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "cloudfunctionRoot": {
+          "description": "云开发代码目录。",
+          "type": "string"
+        }
+      }
+    },
+    "mp-alipay": {
+      "description": "支付宝小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "usingComponents": {
+          "description": "是否启用自定义组件模式。",
+          "type": "boolean",
+          "default": false
+        },
+        "plugins": {
+          "description": "使用到的插件。",
+          "type": "object"
+        },
+        "component2": {
+          "description": "是否启用 component2 编译。",
+          "type": "boolean"
+        },
+        "axmlStrictCheck": {
+          "description": "是否开启 axml 严格语法检查。",
+          "type": "boolean"
+        },
+        "enableParallelLoader": {
+          "description": "是否启用多进程编译。",
+          "type": "boolean"
+        },
+        "enableDistFileMinify": {
+          "description": "是否压缩编译产物。",
+          "type": "boolean"
+        }
+      }
+    },
+    "mp-baidu": {
+      "description": "百度小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "appid": {
+          "description": "百度小程序的 appid。",
+          "type": "string"
+        },
+        "usingComponents": {
+          "description": "是否启用自定义组件模式。",
+          "type": "boolean",
+          "default": false
+        },
+        "optimization": {
+          "description": "优化配置。",
+          "type": "object",
+          "properties": {
+            "subPackages": {
+              "description": "是否开启分包优化。",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    },
+    "mp-toutiao": {
+      "description": "字节跳动小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "appid": {
+          "description": "字节跳动小程序的 appid。",
+          "type": "string"
+        },
+        "usingComponents": {
+          "description": "是否启用自定义组件模式。",
+          "type": "boolean",
+          "default": false
+        },
+        "setting": {
+          "description": "字节跳动小程序小程序项目设置。",
+          "type": "object",
+
+          "properties": {
+            "es6": {
+              "description": "是否启用 ES6 转 ES5。",
+              "type": "boolean"
+            },
+            "minified": {
+              "description": "是否启用脚本代码自动压缩。",
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "mp-qq": {
+      "description": "QQ 小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "appid": {
+          "description": "QQ 小程序的 appid。",
+          "type": "string"
+        },
+        "usingComponents": {
+          "description": "是否启用自定义组件模式。",
+          "type": "boolean",
+          "default": false
+        },
+        "requiredBackgroundModes": {
+          "description": "需要在后台使用的能力。",
+          "type": "array",
+          "items": {
+            "description": "可选 audio。",
+            "type": "string"
+          },
+          "default": []
+        },
+        "navigateToMiniProgramAppIdList": {
+          "description": "需要跳转的 QQ 小程序列表。",
+          "type": "array",
+          "items": {
+            "description": "要跳转的 QQ 小程序 appid。",
+            "type": "string"
+          }
+        },
+        "permission": {
+          "description": "接口权限设置。",
+          "type": "object",
+          "items": {
+            "description": "要申请的权限。",
+            "type": "string"
+          }
+        },
+        "workers": {
+          "description": "Worker 代码目录。",
+          "type": "string"
+        },
+        "groupIdList": {
+          "description": "需要打开群资料卡的群号列表。",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "optimization": {
+          "description": "优化配置。",
+          "type": "object",
+          "properties": {
+            "subPackages": {
+              "description": "是否开启分包优化。",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

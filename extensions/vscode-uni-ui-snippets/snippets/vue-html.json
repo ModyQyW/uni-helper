@@ -1,0 +1,547 @@
+{
+  "uni-ui badge": {
+    "prefix": ["uni-badge", "<uni-badge>", "uBadge", "<uBadge>"],
+    "body": ["<uni-badge", "\ttext=\"$1\"", "\ttype=\"${2:default}\"", "/>$0"],
+    "description": "徽标/标记/数字角标/徽章。更多信息查看 https://ext.dcloud.net.cn/plugin?id=21。"
+  },
+  "uni-ui calendar": {
+    "prefix": ["uni-calendar", "<uni-calendar>", "uCalendar", "<uCalendar>"],
+    "body": ["<uni-calendar @change=\"$1\" />$0"],
+    "description": "日历。更多信息查看 https://ext.dcloud.net.cn/plugin?id=56。"
+  },
+  "uni-ui card": {
+    "prefix": ["uni-card", "<uni-card>", "uCard", "<uCard>"],
+    "body": [
+      "<uni-card",
+      "\ttitle=\"$1\"",
+      "\textra=\"$2\"",
+      "\tnote=\"$3\"",
+      "\tthumbnail=\"$4\"",
+      "\tmode=\"${5:basic}\"",
+      "\t@click=\"$6\"",
+      ">",
+      "\t$7",
+      "</uni-card>$0"
+    ],
+    "description": "卡片。更多信息查看 https://ext.dcloud.net.cn/plugin?id=22。"
+  },
+  "uni-ui collapse": {
+    "prefix": ["uni-collapse", "<uni-collapse>", "uCollapse", "<uCollapse>"],
+    "body": [
+      "<uni-collapse>",
+      "\t<uni-collapse-item :title=\"$1\">",
+      "\t\t$2",
+      "\t</uni-collapse-item>",
+      "</uni-collapse>$0"
+    ],
+    "description": "折叠面板。更多信息查看 https://ext.dcloud.net.cn/plugin?id=23。"
+  },
+  "uni-ui collapse-item": {
+    "prefix": [
+      "uni-collapse-item",
+      "<uni-collapse-item>",
+      "uCollapseItem",
+      "<uCollapseItem>"
+    ],
+    "body": [
+      "<uni-collapse-item :title=\"$1\">",
+      "\t$2",
+      "</uni-collapse-item>$0"
+    ],
+    "description": "折叠面板项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=23。"
+  },
+  "uni-ui combox": {
+    "prefix": ["uni-combox", "<uni-combox>", "uCombox", "<uCombox>"],
+    "body": [
+      "<uni-combox",
+      "\tv-model=\"$1\"",
+      "\tplaceholder=\"$2\"",
+      "\tlabel=\"$3\"",
+      "\t:candidates=\"$4\"",
+      "/>$0"
+    ],
+    "description": "组合框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=1261。"
+  },
+  "uni-ui countdown": {
+    "prefix": [
+      "uni-countdown",
+      "<uni-countdown>",
+      "uCountdown",
+      "<uCountdown>"
+    ],
+    "body": [
+      "<uni-countdown",
+      "\t:day=\"$1\"",
+      "\t:hour=\"$2\"",
+      "\t:minute=\"$3\"",
+      "\t:second=\"$4\"",
+      "\t@timeup=\"$5\"",
+      "/>$0"
+    ],
+    "description": "倒计时。更多信息查看 https://ext.dcloud.net.cn/plugin?id=25。"
+  },
+  "uni-ui data-checkbox": {
+    "prefix": [
+      "uni-data-checkbox",
+      "<uni-data-checkbox>",
+      "uDataCheckbox",
+      "<uDataCheckbox>"
+    ],
+    "body": [
+      "<uni-data-checkbox",
+      "\tv-model=\"$1\"",
+      "\t:localdata=\"$2\"",
+      "\tmode=\"${3:default}\"",
+      "\t${4:multiple}",
+      "\t@change=\"$5\"",
+      "/>$0"
+    ],
+    "description": "数据选择器。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3456。"
+  },
+  "uni-ui dateformat": {
+    "prefix": [
+      "uni-dateformat",
+      "<uni-dateformat>",
+      "uDateformat",
+      "<uDateformat>"
+    ],
+    "body": [
+      "<uni-dateformat",
+      "\t:date=\"$1\"",
+      "\t:threshold=\"${2:[0,0]}\"",
+      "\tformat=\"$3\"",
+      "/>$0"
+    ],
+    "description": "日期格式化。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3279。"
+  },
+  "uni-ui datetime-picker": {
+    "prefix": [
+      "uni-datetime-picker",
+      "<uni-datetime-picker>",
+      "uDatetimePicker",
+      "<uDatetimePicker>"
+    ],
+    "body": [
+      "<uni-datetime-picker",
+      "\t:value=\"$1\"",
+      "\t@change=\"$2\"",
+      "/>$0"
+    ],
+    "description": "日期时间选择器。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/components/uni-datetime-picker/uni-datetime-picker.vue。"
+  },
+  "uni-ui drawer": {
+    "prefix": ["uni-drawer", "<uni-drawer>", "uDrawer", "<uDrawer>"],
+    "body": ["<uni-drawer ref=\"${1:drawer}\" />$0"],
+    "description": "抽屉。更多信息查看 https://ext.dcloud.net.cn/plugin?id=26。"
+  },
+  "uni-ui easyinput": {
+    "prefix": [
+      "uni-easyinput",
+      "<uni-easyinput>",
+      "uEasyinput",
+      "<uEasyinput>"
+    ],
+    "body": [
+      "<uni-easyinput",
+      "\tv-model=\"$1\"",
+      "\ttype=\"${2:text}\"",
+      "\tplaceholder=\"$3\"",
+      "\t@input=\"$4\"",
+      "\t@confirm=\"$5\"",
+      "/>$0"
+    ],
+    "description": "增强输入框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3455。"
+  },
+  "uni-ui fab": {
+    "prefix": ["uni-fab", "<uni-fab>", "uFab", "<uFab>"],
+    "body": [
+      "<uni-fab",
+      "\thorizontal=\"${1:left}\"",
+      "\tvertical=\"${2:bottom}\"",
+      "\t:content=\"$3\"",
+      "\t@trigger=\"$4\"",
+      "\t@fab-click=\"$5\"",
+      "/>$0"
+    ],
+    "description": "悬浮按钮。更多信息查看 https://ext.dcloud.net.cn/plugin?id=144。"
+  },
+  "uni-ui fav": {
+    "prefix": ["uni-fav", "<uni-fav>", "uFav", "<uFav>"],
+    "body": ["<uni-fav", "\t:checked=\"$1\"", "\t@click=\"$2\"", "/>$0"],
+    "description": "收藏按钮。更多信息查看 https://ext.dcloud.net.cn/plugin?id=864。"
+  },
+  "uni-ui field": {
+    "prefix": ["uni-field", "<uni-field>", "uField", "<uField>"],
+    "body": [
+      "<uni-field",
+      "\tv-model=\"$1\"",
+      "\tlabel=\"$2\"",
+      "\tname=\"$3\"",
+      "\tplaceholder=\"$4\"",
+      "\t@input=\"$5\"",
+      "/>"
+    ],
+    "description": "输入框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/components/uni-field/uni-field.vue。"
+  },
+  "uni-ui forms": {
+    "prefix": ["uni-forms", "<uni-forms>", "uForms", "<uForms>"],
+    "body": [
+      "<uni-forms",
+      "\tref=\"${1:form}\"",
+      "\t:form-rules=\"$2\"",
+      "\t@submit=\"$3\"",
+      "\t@reset=\"$4\"",
+      "\t@validate=\"$5\"",
+      ">",
+      "\t<uni-forms-item",
+      "\t\trequired",
+      "\t\tlabel=\"$6\"",
+      "\t\tname=\"$7\"",
+      "\t>",
+      "\t\t$6",
+      "\t</uni-forms-item>",
+      "\t<button form-type=\"submit\">${8:提交}</button>",
+      "\t<button form-type=\"reset\">${9:重置}</button>",
+      "</uni-forms>$0"
+    ],
+    "description": "表单。更多信息查看 https://ext.dcloud.net.cn/plugin?id=2773。"
+  },
+  "uni-ui forms-item": {
+    "prefix": [
+      "uni-forms-item",
+      "<uni-forms-item>",
+      "uFormsItem",
+      "<uFormsItem>"
+    ],
+    "body": [
+      "<uni-forms-item",
+      "\trequired",
+      "\tlabel=\"$1\"",
+      "\tname=\"$2\"",
+      ">",
+      "\t$3",
+      "</uni-forms-item>$0"
+    ],
+    "description": "表单项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=2773。"
+  },
+  "uni-ui goods-nav": {
+    "prefix": ["uni-goods-nav", "<uni-goods-nav>", "uGoodsNav", "<uGoodsNav>"],
+    "body": [
+      "<uni-goods-nav",
+      "\t:options=\"$1\"",
+      "\t:button-group=\"$2\"",
+      "\t@click=\"$3\"",
+      "\t@button-click=\"$4\"",
+      "/>$0"
+    ],
+    "description": "商品导航。更多信息查看 https://ext.dcloud.net.cn/plugin?id=865。"
+  },
+  "uni-ui grid": {
+    "prefix": ["uni-grid", "<uni-grid>", "uGrid", "<uGrid>"],
+    "body": [
+      "<uni-grid",
+      "\t:column=\"${1:3}\"",
+      "\t@change=\"$2\"",
+      ">",
+      "\t<uni-grid-item>$3</uni-grid-item>",
+      "</uni-grid>$0"
+    ],
+    "description": "宫格。更多信息查看 https://ext.dcloud.net.cn/plugin?id=27。"
+  },
+  "uni-ui grid-item": {
+    "prefix": ["uni-grid-item", "<uni-grid-item>", "uGridItem", "<uGridItem>"],
+    "body": ["<uni-grid-item>$1</uni-grid-item>$0"],
+    "description": "宫格项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=27。"
+  },
+  "uni-ui group": {
+    "prefix": ["uni-group", "<uni-group>", "uGroup", "<uGroup>"],
+    "body": [
+      "<uni-group",
+      "\ttitle=\"$1\"",
+      "\t:top=\"$2\"",
+      ">",
+      "\t$3",
+      "</uni-group>$0"
+    ],
+    "description": "分组。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3281。"
+  },
+  "uni-ui icons": {
+    "prefix": ["uni-icons", "<uni-icons>", "uIcons", "<uIcons>"],
+    "body": [
+      "<uni-icons",
+      "\ttype=\"$1\"",
+      "\t:size=\"${2:24}\"",
+      "\tcolor=\"$3\"",
+      "/>$0"
+    ],
+    "description": "图标。更多信息查看 https://ext.dcloud.net.cn/plugin?id=28。"
+  },
+  "uni-ui indexed-list": {
+    "prefix": [
+      "uni-indexed-list",
+      "<uni-indexed-list>",
+      "uIndexedList",
+      "<uIndexedList>"
+    ],
+    "body": [
+      "<uni-indexed-list",
+      "\t:options=\"$1\"",
+      "\t:show-select=\"$2\"",
+      "\t@click=\"$3\"",
+      "/>$0"
+    ],
+    "description": "索引列表。更多信息查看 https://ext.dcloud.net.cn/plugin?id=375。"
+  },
+  "uni-ui link": {
+    "prefix": ["uni-link", "<uni-link>", "uLink", "<uLink>"],
+    "body": ["<uni-link", "\thref=\"$1\"", "\ttext=\"$2\"", "/>$0"],
+    "description": "超链接。更多信息查看 https://ext.dcloud.net.cn/plugin?id=1182。"
+  },
+  "uni-ui list": {
+    "prefix": ["uni-list", "<uni-list>", "uList", "<uList>"],
+    "body": [
+      "<uni-list>",
+      "\t<uni-list-item",
+      "\t\ttitle=\"$1\"",
+      "\t\tnote=\"$2\"",
+      "/>",
+      "\t$3",
+      "</uni-list>$0"
+    ],
+    "description": "列表。更多信息查看 https://ext.dcloud.net.cn/plugin?id=24。"
+  },
+  "uni-ui list-chat": {
+    "prefix": ["uni-list-chat", "<uni-list-chat>", "uListChat", "<uListChat>"],
+    "body": ["<uni-list-chat", "\ttitle=\"$1\"", "\tnote=\"$2\"", "/>$0"],
+    "description": "聊天列表项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=24。"
+  },
+  "uni-ui list-item": {
+    "prefix": ["uni-list-item", "<uni-list-item>", "uListItem", "<uListItem>"],
+    "body": ["<uni-list-item", "\ttitle=\"$1\"", "\tnote=\"$2\"", "/>$0"],
+    "description": "列表项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=24。"
+  },
+  "uni-ui load-more": {
+    "prefix": ["uni-load-more", "<uni-load-more>", "uLoadMore", "<uLoadMore>"],
+    "body": ["<uni-load-more :status=\"$1\" />$0"],
+    "description": "加载更多。更多信息查看 https://ext.dcloud.net.cn/plugin?id=29。"
+  },
+  "uni-ui nav-bar": {
+    "prefix": ["uni-nav-bar", "<uni-nav-bar>", "uNavBar", "<uNavBar>"],
+    "body": [
+      "<uni-nav-bar",
+      "\ttitle=\"$1\"",
+      "\tleft-text=\"$2\"",
+      "\tleft-icon=\"$3\"",
+      "\t@click-left=\"$4\"",
+      "/>$0"
+    ],
+    "description": "导航栏。更多信息查看 https://ext.dcloud.net.cn/plugin?id=52。"
+  },
+  "uni-ui notice-bar": {
+    "prefix": [
+      "uni-notice-bar",
+      "<uni-notice-bar>",
+      "uNoticeBar",
+      "<uNoticeBar>"
+    ],
+    "body": ["<uni-notice-bar", "\t:text=\"$1\"", "\t${2:single}", "/>$0"],
+    "description": "通告栏。更多信息查看 https://ext.dcloud.net.cn/plugin?id=30。"
+  },
+  "uni-ui number-box": {
+    "prefix": [
+      "uni-number-box",
+      "<uni-number-box>",
+      "uNumberBox",
+      "<uNumberBox>"
+    ],
+    "body": ["<uni-number-box @change=\"$1\" />$0"],
+    "description": "数字输入框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=31。"
+  },
+  "uni-ui pagination": {
+    "prefix": [
+      "uni-pagination",
+      "<uni-pagination>",
+      "uPagination",
+      "<uPagination>"
+    ],
+    "body": [
+      "<uni-pagination",
+      "\t:current=\"$1\"",
+      "\t:total=\"$2\"",
+      "\t:page-size=\"$3\"",
+      "\t${4:show-icon}",
+      "/>$0"
+    ],
+    "description": "分页器。更多信息查看 https://ext.dcloud.net.cn/plugin?id=32。"
+  },
+  "uni-ui popup": {
+    "prefix": ["uni-popup", "<uni-popup>", "uPopup", "<uPopup>"],
+    "body": ["<uni-popup", "\tref=\"popup\"", "\ttype=\"${1:center}\"", "/>$0"],
+    "description": "弹出层。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+  },
+  "uni-ui popup-dialog": {
+    "prefix": [
+      "uni-popup-dialog",
+      "<uni-popup-dialog>",
+      "uPopupDialog",
+      "<uPopupDialog>"
+    ],
+    "body": [
+      "<uni-popup-dialog",
+      "\ttype=\"${1:success}\"",
+      "\tmode=\"${2:base}\"",
+      "\t@close=\"$3\"",
+      "\t@confirm=\"$4\"",
+      "/>$0"
+    ],
+    "description": "弹出层对话框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+  },
+  "uni-ui popup-message": {
+    "prefix": [
+      "uni-popup-message",
+      "<uni-popup-message>",
+      "uPopupMessage",
+      "<uPopupMessage>"
+    ],
+    "body": [
+      "<uni-popup-message",
+      "\ttype=\"${1:success}\"",
+      "\tmessage=\"$2\"",
+      "/>$0"
+    ],
+    "description": "弹出层提示信息。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+  },
+  "uni-ui popup-share": {
+    "prefix": [
+      "uni-popup-share",
+      "<uni-popup-share>",
+      "uPopupShare",
+      "<uPopupShare>"
+    ],
+    "body": ["<uni-popup-share", "\ttitle=\"$1\"", "\t@select=\"$2\"", "/>"],
+    "description": "弹出层分享。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+  },
+  "uni-ui rate": {
+    "prefix": ["uni-rate", "<uni-rate>", "uRate", "<uRate>"],
+    "body": ["<uni-rate", "\tv-model=\"$1\"", "\t@change=\"$2\"", "/>$0"],
+    "description": "评分。更多信息查看 https://ext.dcloud.net.cn/plugin?id=33。"
+  },
+  "uni-ui search-bar": {
+    "prefix": [
+      "uni-search-bar",
+      "<uni-search-bar>",
+      "uSearchBar",
+      "<uSearchBar>"
+    ],
+    "body": ["<uni-search-bar", "\t@input=\"$1\"", "\t@confirm=\"$2\"", "/>$0"],
+    "description": "搜索栏。更多信息查看 https://ext.dcloud.net.cn/plugin?id=866。"
+  },
+  "uni-ui segmented-control": {
+    "prefix": [
+      "uni-segmented-control",
+      "<uni-segmented-control>",
+      "uSegmentedControl",
+      "<uSegmentedControl>"
+    ],
+    "body": [
+      "<uni-segmented-control",
+      "\t:current=\"$1\"",
+      "\t:values=\"$2\"",
+      "\t@click-item=\"$3\"",
+      "/>$0"
+    ],
+    "description": "分段器。更多信息查看 https://ext.dcloud.net.cn/plugin?id=54。"
+  },
+  "uni-ui steps": {
+    "prefix": ["uni-steps", "<uni-steps>", "uSteps", "<uSteps>"],
+    "body": [
+      "<uni-steps",
+      "\t:options=\"$1\"",
+      "\tactive=\"$2\"",
+      "\tdirection=\"${3:row}\"",
+      "/>$0"
+    ],
+    "description": "步骤条。更多信息查看 https://ext.dcloud.net.cn/plugin?id=34。"
+  },
+  "uni-ui swipe-action": {
+    "prefix": [
+      "uni-swipe-action",
+      "<uni-swipe-action>",
+      "uSwipeAction",
+      "<uSwipeAction>"
+    ],
+    "body": [
+      "<uni-swipe-action>",
+      "\t<uni-swipe-action-item",
+      "\t\t:right-options=\"$1\"",
+      "\t\t@click=\"$2\"",
+      "\t>",
+      "\t\t$3",
+      "\t</uni-swipe-action-item>",
+      "</uni-swipe-action>$0"
+    ],
+    "description": "滑动操作。更多信息查看 https://ext.dcloud.net.cn/plugin?id=181。"
+  },
+  "uni-ui swipe-action-item": {
+    "prefix": [
+      "uni-swipe-action-item",
+      "<uni-swipe-action-item>",
+      "uSwipeActionItem",
+      "<uSwipeActionItem>"
+    ],
+    "body": [
+      "<uni-swipe-action-item",
+      "\t:right-options=\"$1\"",
+      "\t@click=\"$2\"",
+      ">",
+      "\t$3",
+      "</uni-swipe-action-item>$0"
+    ],
+    "description": "滑动操作项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=181。"
+  },
+  "uni-ui swiper-dot": {
+    "prefix": [
+      "uni-swiper-dot",
+      "<uni-swiper-dot>",
+      "uSwiperDot",
+      "<uSwiperDot>"
+    ],
+    "body": [
+      "<uni-swiper-dot",
+      "\tmode=\"${1:default}\"",
+      "\tfield=\"$2\"",
+      "\t:info=\"$3\"",
+      "\t:current=\"${4:0}\"",
+      ">",
+      "</uni-swiper-dot>$0"
+    ],
+    "description": "轮播图指示点。更多信息查看 https://ext.dcloud.net.cn/plugin?id=284。"
+  },
+  "uni-ui tag": {
+    "prefix": ["uni-tag", "<uni-tag>", "uTag", "<uTag>"],
+    "body": [
+      "<uni-tag",
+      "\ttext=\"$1\"",
+      "\ttype=\"${2:default}\"",
+      "\t@click=\"$3\"",
+      "\t${4:circle}",
+      "/>$0"
+    ],
+    "description": "标签。更多信息查看 https://ext.dcloud.net.cn/plugin?id=35。"
+  },
+  "uni-ui title": {
+    "prefix": ["uni-title", "<uni-title>", "uTitle", "<uTitle>"],
+    "body": ["<uni-title title=\"$1\" />$0"],
+    "description": "标题。更多信息查看 https://ext.dcloud.net.cn/plugin?id=1066。"
+  },
+  "uni-ui transition": {
+    "prefix": [
+      "uni-transition",
+      "<uni-transition>",
+      "uTransition",
+      "<uTransition>"
+    ],
+    "body": ["<uni-transition", "\t:mode-class=\"$1\"", "\t:show=\"$2\"", "/>"],
+    "description": "过渡动画。更多信息查看 https://ext.dcloud.net.cn/plugin?id=985。"
+  }
+}

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+
+- Update docs
+
 ## 0.3.1
 
 - Update docs
@@ -21,6 +25,7 @@
 ## 0.1.0
 
 - Code snippets of uni-app basic capabilities, including components and APIs
+- Support vue2
 - Reference [uni-app component docs](https://uniapp.dcloud.io/component/README)
 - Reference [Vue.js style guide](https://vuejs.org/v2/style-guide/index.html)
 

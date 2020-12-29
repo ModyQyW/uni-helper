@@ -1,8 +1,9 @@
-# vscode-uniapp-snippets
+# vscode-uni-app-snippets
 
 ## 插件特性
 
 - uni-app 基本能力的代码片段，包括组件和 API
+- 支持 vue2
 - 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/README)
 - 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)
 
@@ -107,8 +108,6 @@
 |`var(--window-bottom)`|`--window-bottom`, `var(--window-bottom)`|内容区域距离底部的距离变量。更多信息查看 https://uniapp.dcloud.io/frame?id=css%e5%8f%98%e9%87%8f。|
 
 ### JavaScript/TypeScript
-
-以下参数均省略。
 
 |API|Prefix|Description|
 |-|-|-|

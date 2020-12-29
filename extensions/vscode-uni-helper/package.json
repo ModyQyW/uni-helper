@@ -1,0 +1,49 @@
+{
+  "name": "vscode-uni-helper",
+  "version": "0.1.0",
+  "description": "uni helper by ModyQyW",
+  "keywords": [
+    "uniapp",
+    "uni-app",
+    "unicloud",
+    "uni-cloud",
+    "uni",
+    "helper",
+    "schema",
+    "schemas",
+    "snippet",
+    "snippets"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui7@mail3.sysu.edu.cn",
+    "url": "https://modyqyw.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-helper"
+  },
+  "scripts": {
+    "package": "npx vsce package"
+  },
+  "engines": {
+    "vscode": "^1.40.0"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "Syler.sass-indented",
+    "sysoev.language-stylus",
+    "dbaeumer.vscode-eslint",
+    "octref.vetur",
+    "mrmaoddxxaa.create-uniapp-view",
+    "ModyQyW.vscode-uni-app-snippets",
+    "ModyQyW.vscode-uni-app-schemas",
+    "ModyQyW.vscode-uni-ui-snippets"
+  ],
+  "displayName": "uni-helper",
+  "icon": "uni-app.jpg",
+  "publisher": "ModyQyW"
+}

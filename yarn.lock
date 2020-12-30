@@ -244,14 +244,14 @@
   resolved "https://registry.npm.taobao.org/@commitlint/types/download/@commitlint/types-11.0.0.tgz?cache=0&sync_timestamp=1599988750983&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40commitlint%2Ftypes%2Fdownload%2F%40commitlint%2Ftypes-11.0.0.tgz#719cf05fcc1abb6533610a2e0f5dd1e61eac14fe"
   integrity sha1-cZzwX8wau2UzYQouD13R5h6sFP4=
 
-"@modyqyw/fabric@~1.8.0":
-  version "1.8.0"
-  resolved "https://registry.npm.taobao.org/@modyqyw/fabric/download/@modyqyw/fabric-1.8.0.tgz#bf339c1b603f42d31c0d8a6703c0cf64442b801f"
-  integrity sha1-vzOcG2A/QtMcDYpnA8DPZEQrgB8=
+"@modyqyw/fabric@~1.9.0":
+  version "1.9.0"
+  resolved "https://registry.npm.taobao.org/@modyqyw/fabric/download/@modyqyw/fabric-1.9.0.tgz#60e1a7c1d0f9796b08d9d1847cae1b6c22467e9a"
+  integrity sha1-YOGnwdD5eWsI2dGEfK4bbCJGfpo=
   dependencies:
     "@commitlint/config-conventional" "~11.0.0"
-    "@typescript-eslint/eslint-plugin" "~4.11.0"
-    "@typescript-eslint/parser" "~4.11.0"
+    "@typescript-eslint/eslint-plugin" "~4.11.1"
+    "@typescript-eslint/parser" "~4.11.1"
     babel-eslint "~10.1.0"
     eslint-config-airbnb "~18.2.1"
     eslint-config-airbnb-base "~14.2.1"
@@ -264,8 +264,8 @@
     eslint-plugin-prettier "~3.3.0"
     eslint-plugin-react "~7.21.5"
     eslint-plugin-react-hooks "~4.2.0"
-    eslint-plugin-unicorn "~24.0.0"
-    eslint-plugin-vue "~7.3.0"
+    eslint-plugin-unicorn "~25.0.0"
+    eslint-plugin-vue "~7.4.0"
     stylelint-config-prettier "~8.0.2"
     stylelint-config-twbs-bootstrap "~2.1.0"
     stylelint-prettier "~1.1.2"
@@ -320,7 +320,7 @@
   resolved "https://registry.npm.taobao.org/@types/parse-json/download/@types/parse-json-4.0.0.tgz?cache=0&sync_timestamp=1605054896578&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fparse-json%2Fdownload%2F%40types%2Fparse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha1-L4u0QUNNFjs1+4/9zNcTiSf/uMA=
 
-"@typescript-eslint/eslint-plugin@~4.11.0":
+"@typescript-eslint/eslint-plugin@~4.11.1":
   version "4.11.1"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.11.1.tgz#7579c6d17ad862154c10bc14b40e5427b729e209"
   integrity sha1-dXnG0XrYYhVMELwUtA5UJ7cp4gk=
@@ -355,7 +355,7 @@
     "@typescript-eslint/typescript-estree" "4.4.1"
     debug "^4.1.1"
 
-"@typescript-eslint/parser@~4.11.0":
+"@typescript-eslint/parser@~4.11.1":
   version "4.11.1"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/parser/download/@typescript-eslint/parser-4.11.1.tgz#981e18de2e019d6ca312596615f92e8f6f6598ed"
   integrity sha1-mB4Y3i4BnWyjEllmFfkuj29lmO0=
@@ -1575,10 +1575,10 @@ eslint-plugin-react@~7.21.5:
     resolve "^1.18.1"
     string.prototype.matchall "^4.0.2"
 
-eslint-plugin-unicorn@~24.0.0:
-  version "24.0.0"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-unicorn/download/eslint-plugin-unicorn-24.0.0.tgz#08017ccd7ac704777d459cff6e13a35f54cbcab1"
-  integrity sha1-CAF8zXrHBHd9RZz/bhOjX1TLyrE=
+eslint-plugin-unicorn@~25.0.0:
+  version "25.0.0"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-unicorn/download/eslint-plugin-unicorn-25.0.0.tgz#b5718381ac615f2bcf7814e4acf0aac78b11a10f"
+  integrity sha1-tXGDgaxhXyvPeBTkrPCqx4sRoQ8=
   dependencies:
     ci-info "^2.0.0"
     clean-regexp "^1.0.0"
@@ -1594,10 +1594,10 @@ eslint-plugin-unicorn@~24.0.0:
     safe-regex "^2.1.1"
     semver "^7.3.4"
 
-eslint-plugin-vue@~7.3.0:
-  version "7.3.0"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-vue/download/eslint-plugin-vue-7.3.0.tgz?cache=0&sync_timestamp=1609110213484&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-7.3.0.tgz#0faf0fcf0e1b1052bf800d4dee42d64f50679cb0"
-  integrity sha1-D68Pzw4bEFK/gA1N7kLWT1BnnLA=
+eslint-plugin-vue@~7.4.0:
+  version "7.4.0"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-vue/download/eslint-plugin-vue-7.4.0.tgz?cache=0&sync_timestamp=1609110213484&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-vue%2Fdownload%2Feslint-plugin-vue-7.4.0.tgz#27324cbe8f00705708c9fa9e8c0401d8f0742c20"
+  integrity sha1-JzJMvo8AcFcIyfqejAQB2PB0LCA=
   dependencies:
     eslint-utils "^2.1.0"
     natural-compare "^1.4.0"

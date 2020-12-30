@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-helper",
-  "version": "0.1.0",
-  "description": "uni helper by ModyQyW",
+  "version": "0.2.0",
+  "description": "Help writing uni-*.",
   "keywords": [
     "uniapp",
     "uni-app",
@@ -34,7 +34,9 @@
     "Extension Packs"
   ],
   "extensionPack": [
+    "xabikos.JavaScriptSnippets",
     "Syler.sass-indented",
+    "iceworks-team.iceworks-style-helper",
     "sysoev.language-stylus",
     "dbaeumer.vscode-eslint",
     "octref.vetur",

@@ -7,9 +7,7 @@
 - 参考 [uni-ui 文档](https://github.com/dcloudio/uni-ui#readme)
 - 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)
 
-请结合 [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) 使用。
-
-本插件和文档的冲突之处，请以文档为准。
+本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
 
 欢迎提交 [ISSUE](https://github.com/ModyQyW/uni-helper/issues/new) 和 [PR](https://github.com/ModyQyW/uni-helper/compare) 改进本插件。
 
@@ -72,4 +70,4 @@
 - [前端环境配置](https://modyqyw.top/front-end/environment/)
 - [前端杂项](https://modyqyw.top/front-end/misc/)
 - [fabric](https://github.com/modyqyw/fabric#readme) - 不同项目的共享配置，包括 Prettier，ESLint，Stylelint，Commitlint，LSLint，EditorConfig，Husky，LintStaged 等
-- [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设
+- [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计

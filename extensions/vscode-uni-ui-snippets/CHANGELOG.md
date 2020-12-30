@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Update docs
+
 ## 0.1.0
 
 - Code snippets of uni-ui components

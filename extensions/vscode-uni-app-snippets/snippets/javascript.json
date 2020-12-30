@@ -146,46 +146,6 @@
     "body": ["process.env.NODE_ENV !== 'production'"],
     "description": "判断是否不为生产环境。更多信息查看 https://cli.vuejs.org/zh/guide/mode-and-env.html。"
   },
-  "uni-app 打印 log 日志": {
-    "prefix": ["clg", "clog", "console.log"],
-    "body": ["console.log(\"$1\", $1)$0"],
-    "description": "打印 log 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=log。"
-  },
-  "uni-app 打印 info 日志": {
-    "prefix": ["cin", "console.info"],
-    "body": ["console.info(\"$1\", $1)$0"],
-    "description": "打印 info 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=info。"
-  },
-  "uni-app 打印 warn 日志": {
-    "prefix": ["cwa", "console.warn"],
-    "body": ["console.warn(\"$1\", $1)$0"],
-    "description": "打印 warn 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=warn。"
-  },
-  "uni-app 打印 error 日志": {
-    "prefix": ["cer", "console.error"],
-    "body": ["console.error(\"$1\", $1)$0"],
-    "description": "打印 error 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=error。"
-  },
-  "uni-app 设置一次性定时器": {
-    "prefix": ["sto", "setTimeout"],
-    "body": ["setTimeout(() => {$1}, $2)$0"],
-    "description": "设置一次性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=settimeout。"
-  },
-  "uni-app 清理一次性定时器": {
-    "prefix": ["csto", "clearTimeout"],
-    "body": ["clearTimeout($1)$0"],
-    "description": "清理一次性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=cleartimeout。"
-  },
-  "uni-app 设置周期性定时器": {
-    "prefix": ["sti", "setInterval"],
-    "body": ["setInterval(() => {$1}, $2)$0"],
-    "description": "设置周期性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=setinterval。"
-  },
-  "uni-app 清理周期性定时器": {
-    "prefix": ["csti", "clearInterval"],
-    "body": ["clearInterval($1)$0"],
-    "description": "清理周期性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=clearinterval。"
-  },
   "uni-app base64 转 ArrayBuffer": {
     "prefix": ["uni.base64ToArrayBuffer"],
     "body": ["uni.base64ToArrayBuffer($1)$0"],

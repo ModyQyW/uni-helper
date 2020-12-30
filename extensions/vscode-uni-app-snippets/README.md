@@ -131,14 +131,6 @@
 |`process.env.NODE_ENV !== 'development'`|`process.env.NODE_ENV !== 'development'`|判断是否不为生产环境。更多信息查看 https://cli.vuejs.org/zh/guide/mode-and-env.html。|
 |`process.env.NODE_ENV === 'production'`|`process.env.NODE_ENV === 'production'`|判断是否为生产环境。更多信息查看 https://cli.vuejs.org/zh/guide/mode-and-env.html。|
 |`process.env.NODE_ENV !== 'production'`|`process.env.NODE_ENV !== 'production'`|判断是否不为生产环境。更多信息查看 https://cli.vuejs.org/zh/guide/mode-and-env.html。|
-|`console.log()`|`clg`, `clog`, `console.log`|打印 log 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=log。|
-|`console.info()`|`cin`, `console.info`|打印 info 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=info。|
-|`console.warn()`|`cwa`, `console.warn`|打印 warn 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=warn。|
-|`console.error()`|`cer`, `console.error`|打印 error 日志。更多信息查看 https://uniapp.dcloud.io/api/log?id=error。|
-|`setTimeout()`|`sto`, `setTimeout`|设置一次性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=settimeout。|
-|`clearTimeout()`|`csto`, `clearTimeout`|清理一次性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=cleartimeout。|
-|`setInterval()`|`sti`, `setInterval`|设置周期性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=setinterval。|
-|`clearInterval()`|`csti`, `clearInterval`|清理周期性定时器。更多信息查看 https://uniapp.dcloud.io/api/timer?id=clearinterval。|
 |`uni.base64ToArrayBuffer()`|`uni.base64ToArrayBuffer`|将 base64 字符串转成 ArrayBuffer。更多信息查看 https://uniapp.dcloud.io/api/base64ToArrayBuffer。|
 |`uni.arrayBufferToBase64()`|`uni.arrayBufferToBase64`|将 ArrayBuffer 字符串转成 base64。更多信息查看 https://uniapp.dcloud.io/api/arrayBufferToBase64。|
 |`onLaunch() {}`|`onLaunch`|应用生命周期，只能在 App.vue 中监听。uni-app 初始化完成时触发，全局只触发一次。更多信息查看 https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f。|

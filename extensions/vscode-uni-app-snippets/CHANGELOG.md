@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Remove `console.log`, `console.info`, `console.warn`, `console.error`, `setTimeout`, `clearTimeout`, `setInterval` and `clearInterval`
+
 ## 0.3.2
 
 - Update docs

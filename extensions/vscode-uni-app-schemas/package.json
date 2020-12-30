@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-app-schemas",
-  "version": "0.1.1",
-  "description": "uni-app schemas by ModyQyW",
+  "version": "0.1.2",
+  "description": "Help validate pages.json and manifest.json schemas in uni-app.",
   "keywords": [
     "uniapp",
     "uni-app",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2
+
+- Update docs
+
 ## 0.4.1
 
 - Update docs

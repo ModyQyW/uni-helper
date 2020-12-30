@@ -7,9 +7,7 @@
 - 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/README)
 - 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)
 
-请结合 [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) 使用。
-
-本插件和文档的冲突之处，请以文档为准。
+本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
 
 欢迎提交 [ISSUE](https://github.com/ModyQyW/uni-helper/issues/new) 和 [PR](https://github.com/ModyQyW/uni-helper/compare) 改进本插件。
 

@@ -322,8 +322,8 @@
       "\t\t'Content-Type': 'application/json',",
       "\t\t'X-Requested-With': 'XMLHttpRequest'",
       "\t},",
-      "\tmethod: ${3:'GET'},",
-      "\tsslVerify: ${4:true},",
+      "\tmethod: '${3|GET,POST|}',",
+      "\tsslVerify: ${4|true,false|},",
       "\tsuccess: ({ data, statusCode, header }) => {$5},",
       "\tfail: (error) => {$6}",
       "})$0"
@@ -335,7 +335,7 @@
     "body": [
       "uni.uploadFile({",
       "\turl: '$1',",
-      "\tfileType: '${2:image}',",
+      "\tfileType: '${2|image,video,audio|}',",
       "\tfilePath: ${3:tempFilePaths[0]},",
       "\tname: '${4:file}',",
       "\tsuccess: ({ data, statusCode }) => {$5},",
@@ -515,7 +515,7 @@
     "prefix": ["uni.getLocation"],
     "body": [
       "uni.getLocation({",
-      "\ttype: '${1:gcj02}',",
+      "\ttype: '${1|gcj02,wgs84|}',",
       "\tsuccess: ({ longitude, latitude }) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"
@@ -553,9 +553,10 @@
     "prefix": ["uni.chooseImage"],
     "body": [
       "uni.chooseImage({",
-      "\tsourceType: ${1:['album', 'camera']},",
-      "\tsuccess: ({ tempFilePaths, tempFiles }) => {$2},",
-      "\tfail: (error) => {$3}",
+      "\tsizeType: ${1:['original', 'compressed']},",
+      "\tsourceType: ${2:['album', 'camera']},",
+      "\tsuccess: ({ tempFilePaths, tempFiles }) => {$3},",
+      "\tfail: (error) => {$4}",
       "})$0"
     ],
     "description": "选择相册图片或使用相机拍照。更多信息查看 https://uniapp.dcloud.io/api/media/image?id=chooseimage。"
@@ -609,7 +610,7 @@
     "prefix": ["uni.chooseFile"],
     "body": [
       "uni.chooseFile({",
-      "\ttype: '${1:all}',",
+      "\ttype: '${1|all,video,image|}',",
       "\tsuccess: ({ tempFilePaths, tempFiles }) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"
@@ -636,7 +637,7 @@
     "body": [
       "uni.chooseVideo({",
       "\tsourceType: ${1:['album', 'camera']},",
-      "\tcamera: '${2:back}',",
+      "\tcamera: '${2|back,front|}',",
       "\tsuccess: ({ tempFilePath }) => {$3},",
       "\tfail: (error) => {$4}",
       "})$0"
@@ -730,7 +731,7 @@
     "prefix": ["uni.startAccelerometer"],
     "body": [
       "uni.startAccelerometer({",
-      "\tinterval: '${1:normal}',",
+      "\tinterval: '${1|normal,game,ui|}',",
       "\tsuccess: (result) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"
@@ -822,7 +823,7 @@
     "prefix": ["uni.scanCode"],
     "body": [
       "uni.scanCode({",
-      "\tonlyFromCamera: ${1:false},",
+      "\tonlyFromCamera: ${1|false,true|},",
       "\tscanType: ${2:['qrCode', 'barCode']},",
       "\tsuccess: ({ result, scanType, charSet, path }) => {$3},",
       "\tfail: (error) => {$4}",
@@ -876,7 +877,7 @@
     "prefix": ["uni.setScreenBrightness"],
     "body": [
       "uni.setScreenBrightness({",
-      "\tkeepScreenOn: ${1:false},",
+      "\tkeepScreenOn: ${1|false,true|},",
       "\tsuccess: ({ errMsg }) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"
@@ -1077,7 +1078,7 @@
       "\tdeviceId: '$1',",
       "\tserviceId: '$2',",
       "\tcharacteristicId: '$3',",
-      "\tstate: ${4:true},",
+      "\tstate: ${4|true,false|},",
       "\tsuccess: (result) => {$5},",
       "\tfail: (error) => {$6}",
       "})$0"
@@ -1317,9 +1318,9 @@
     "prefix": ["uni.setTabBarStyle"],
     "body": [
       "uni.setTabBarStyle({",
-      "\tcolor: '${1:#FF0000}',",
-      "\tselectedColor: '${2:#00FF00}',",
-      "\tbackgroundColor: '${3:#0000FF}',",
+      "\tcolor: '${1:#ff0000}',",
+      "\tselectedColor: '${2:#00ff00}',",
+      "\tbackgroundColor: '${3:#0000ff}',",
       "\tborderStyle: '${4|black,white|}'",
       "})$0"
     ],
@@ -1547,7 +1548,7 @@
     "body": [
       "uni.getUserInfo({",
       "\tprovider: $1,",
-      "\twithCredentials: ${2:true},",
+      "\twithCredentials: ${2|true,false|},",
       "\tsuccess: ({ userInfo, rawData, signature, encryptedData, iv, errMsg }) => {$3},",
       "\tfail: (error) => {$4}",
       "})$0"
@@ -1697,7 +1698,7 @@
   },
   "uni-app 统计": {
     "prefix": ["uni.report"],
-    "body": ["uni.report({", "\t${1:eventName}", "\t${2:''|{}}", "})$0"],
+    "body": ["uni.report({", "\t${1:eventName}", "\t${2|'',{}|}", "})$0"],
     "description": "统计。更多信息查看 https://uniapp.dcloud.io/api/other/report。"
   },
   "uni-app 获取全局唯一版本更新管理器": {
@@ -1709,7 +1710,7 @@
     "prefix": ["uni.setEnableDebug"],
     "body": [
       "uni.setEnabledDebug({",
-      "\tenableDebug: ${1:true}",
+      "\tenableDebug: ${1|true,false|}",
       "\tsuccess: (result) => {$2},",
       "\tfail: (error) => {$3}",
       "})"

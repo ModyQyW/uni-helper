@@ -141,7 +141,7 @@
   },
   "uni-app scroll-view": {
     "prefix": ["scroll-view", "<scroll-view>"],
-    "body": ["<scroll-view scroll-${1:y}>", "\t$2", "</scroll-view>$0"],
+    "body": ["<scroll-view scroll-${1|x,y|}>", "\t$2", "</scroll-view>$0"],
     "description": "可滚动视图区域。竖向滚动时，需要给一个固定高度。更多信息查看 https://uniapp.dcloud.io/component/scroll-view。"
   },
   "uni-app swiper": {
@@ -170,15 +170,15 @@
   "uni-app movable-area": {
     "prefix": ["movable-area", "<movable-area>"],
     "body": [
-      "<movable-area ${1:scale-area}>",
+      "<movable-area>",
       "\t<movable-view",
-      "\t\tdirection=\"${2:all}\"",
-      "\t\t:x=\"$3\"",
-      "\t\t:y=\"$4\"",
-      "\t\t@change=\"$5\"",
-      "\t\t@scale=\"$6\"",
+      "\t\tdirection=\"${1|all,vertical,horizontal,none|}\"",
+      "\t\t:x=\"$2\"",
+      "\t\t:y=\"$3\"",
+      "\t\t@change=\"$4\"",
+      "\t\t@scale=\"$5\"",
       "\t>",
-      "\t\t$7",
+      "\t\t$6",
       "\t</movable-view>",
       "</movable-area>$0"
     ],
@@ -188,7 +188,7 @@
     "prefix": ["movable-view", "<movable-view>"],
     "body": [
       "<movable-view",
-      "\tdirection=\"${1:all}\"",
+      "\tdirection=\"${1|all,vertical,horizontal,none|}\"",
       "\t:x=\"$2\"",
       "\t:y=\"$3\"",
       "\t@change=\"$4\"",
@@ -444,7 +444,7 @@
     "body": [
       "<navigator",
       "\turl=\"/pages/$1\"",
-      "\topen-type=\"${2:navigate}\"",
+      "\topen-type=\"${2|navigate,redirect,switchTab,reLaunch,navigateBack,exit|}\"",
       "\thover-class=\"navigator-hover\"",
       ">",
       "\t$3",
@@ -456,8 +456,8 @@
     "prefix": ["custom-tab-bar", "<custom-tab-bar>"],
     "body": [
       "<custom-tab-bar",
-      "\tdirection=\"${1:horizontal}\"",
-      "\t:show-icon=\"${2:false}\"",
+      "\tdirection=\"${1|horizontal,vertical|}\"",
+      "\t:show-icon=\"${2|false,true|}\"",
       "\t:selected=\"${3:0}\"",
       "\t@onTabItemTap=\"$4\"",
       ">",
@@ -487,16 +487,21 @@
     "body": [
       "<!-- 请考虑使用 uni.chooseImage 或 uni.chooseVideo 代替 -->",
       "<camera",
-      "\tmode=\"${1:normal}\"",
-      "\tdevice-position=\"${2:back}\"",
-      "\tflash=\"${3:auto}\"",
+      "\tmode=\"${1|normal,scanCode|}\"",
+      "\tdevice-position=\"${2|back,front|}\"",
+      "\tflash=\"${3|auto,on,off|}\"",
       "/>$0"
     ],
     "description": "页面内嵌的区域相机组件。更多信息查看 https://uniapp.dcloud.io/component/camera。"
   },
   "uni-app image": {
     "prefix": ["image", "<image>"],
-    "body": ["<image", "\tsrc=\"$1\"", "\tmode=\"${2:scaleToFill}\"", "/>$0"],
+    "body": [
+      "<image",
+      "\tsrc=\"$1\"",
+      "\tmode=\"${2|scaleToFill,aspectFit,aspectFill,widthFix,heightFix,top,bottom,center,left,right,top left,top right,bottom left,bottom right|}\"",
+      "/>$0"
+    ],
     "description": "图片组件。更多信息查看 https://uniapp.dcloud.io/component/image。"
   },
   "uni-app video": {

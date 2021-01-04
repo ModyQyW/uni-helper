@@ -19,6 +19,11 @@
     "body": ["H5"],
     "description": "H5 对应的 %PLATFORM 值。更多信息查看 https://uniapp.dcloud.io/platform。"
   },
+  "uni-app 小程序平台": {
+    "prefix": ["platform-mp", "mp"],
+    "body": ["MP"],
+    "description": "小程序对应的 %PLATFORM 值。更多信息查看 https://uniapp.dcloud.io/platform。"
+  },
   "uni-app 微信小程序平台": {
     "prefix": [
       "platform-mp-weixin",
@@ -76,11 +81,6 @@
     "body": ["MP-360"],
     "description": "360 小程序对应的 %PLATFORM 值。更多信息查看 https://uniapp.dcloud.io/platform。"
   },
-  "uni-app 小程序平台": {
-    "prefix": ["platform-mp", "mp"],
-    "body": ["MP"],
-    "description": "小程序对应的 %PLATFORM 值。更多信息查看 https://uniapp.dcloud.io/platform。"
-  },
   "uni-app 快应用通用平台": {
     "prefix": [
       "platform-quickapp",
@@ -113,12 +113,20 @@
   },
   "uni-app 条件编译，处理某平台": {
     "prefix": ["#ifdef", "ifdef"],
-    "body": ["/* #ifdef $1 */", "$2", "/* #endif */"],
+    "body": [
+      "/* #ifdef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-QQ,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|} */",
+      "$2",
+      "/* #endif */"
+    ],
     "description": "条件编译，处理某平台。更多信息查看 https://uniapp.dcloud.io/platform。"
   },
   "uni-app 条件编译，排除某平台": {
     "prefix": ["#ifndef", "ifndef"],
-    "body": ["/* #ifndef $1 */", "$2", "/* #endif */"],
+    "body": [
+      "/* #ifndef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-QQ,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|} */",
+      "$2",
+      "/* #endif */"
+    ],
     "description": "条件编译，排除某平台。更多信息查看 https://uniapp.dcloud.io/platform。"
   },
   "uni-app 结束条件编译": {

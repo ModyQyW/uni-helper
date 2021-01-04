@@ -1210,7 +1210,7 @@
     "prefix": ["uni.checkIsSoterEnrolledInDevice"],
     "body": [
       "uni.checkIsSoterEnrolledInDevice({",
-      "\tcheckAuthMode: '${1:fingerPrint|facial}',",
+      "\tcheckAuthMode: '${1|fingerPrint,facial|}',",
       "\tsuccess: ({ isEnrolled, errMsg }) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"
@@ -1222,7 +1222,7 @@
     "body": [
       "uni.showToast({",
       "\ttitle: '$1',",
-      "\ticon: '${2:success|none}',",
+      "\ticon: '${2|success,none|}',",
       "\tmask: true",
       "})"
     ],
@@ -1280,7 +1280,7 @@
     "prefix": ["uni.setNavigationBarColor"],
     "body": [
       "uni.setNavigationBarColor({",
-      "\tfrontColor: '${1:#000000|#ffffff}',",
+      "\tfrontColor: '${1|#000000,#ffffff|}',",
       "\tbackgroundColor: '${2:#ff0000}'",
       "})$0"
     ],
@@ -1320,7 +1320,7 @@
       "\tcolor: '${1:#FF0000}',",
       "\tselectedColor: '${2:#00FF00}',",
       "\tbackgroundColor: '${3:#0000FF}',",
-      "\tborderStyle: '${4:black|white}'",
+      "\tborderStyle: '${4|black,white|}'",
       "})$0"
     ],
     "description": "动态设置 TabBar 整体样式。更多信息查看 https://uniapp.dcloud.io/api/ui/tabbar?id=settabbarstyle。"
@@ -1368,7 +1368,7 @@
   },
   "uni-app 动态设置下拉背景字体、loading 图的样式": {
     "prefix": ["uni.setBackgroundTextStyle"],
-    "body": ["uni.setBackgroundTextStyle({ textStyle: '{$1:dark|light}' })$0"],
+    "body": ["uni.setBackgroundTextStyle({ textStyle: '{$1|dark,light|}' })$0"],
     "description": "动态设置下拉背景字体、加载图的样式。更多信息查看 https://uniapp.dcloud.io/api/ui/bgcolor?id=setbackgroundtextstyle。"
   },
   "uni-app 创建动画实例": {
@@ -1514,7 +1514,7 @@
     "prefix": ["uni.getProvider"],
     "body": [
       "uni.getProvider({",
-      "\tservice: ${1:oauth|share|payment|push},",
+      "\tservice: ${1|oauth,share,payment,push},",
       "\tsuccess: ({ service, provider }) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"

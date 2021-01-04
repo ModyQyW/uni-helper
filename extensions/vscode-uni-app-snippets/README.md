@@ -9,6 +9,8 @@
 
 本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
 
+[uni-app 官方说明](https://ask.dcloud.net.cn/article/36286)有少量不准确。请先明确：如果你已经安装了 @dcloudio/types 和 @dcloudio/uni-helper-json，**并给 tsconfig.json 配置了 @dcloudio/types**，那么你已经拥有了本插件的大部分功能。如果你信任它们，你完全可以卸载这个插件。但是，如果你不信任官方出的 npm 包，认为它可能会有没及时更新、错误等问题，请使用并一起完善这个插件。
+
 欢迎提交 [ISSUE](https://github.com/ModyQyW/uni-helper/issues/new) 和 [PR](https://github.com/ModyQyW/uni-helper/compare) 改进本插件。
 
 ## 使用

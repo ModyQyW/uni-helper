@@ -1,14 +1,17 @@
-# Changelog
+# 改动日志
+
+## 0.1.2
+
+- 移除不符合 Vue.js 风格指南的代码块
+- 更新文档说明
 
 ## 0.1.1
 
-- Update docs
+- 更新文档说明
 
 ## 0.1.0
 
-- Code snippets of uni-ui components
-- Support vue2
-- Reference [uni-ui docs](https://github.com/dcloudio/uni-ui#readme)
-- Reference [Vue.js style guide](https://vuejs.org/v2/style-guide/index.html)
-
-Please use it in combination with [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur).
+- uni-ui 组件代码片段
+- 支持 vue2
+- 参考 [uni-ui 文档](https://github.com/dcloudio/uni-ui#readme)
+- 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)

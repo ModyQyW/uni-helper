@@ -753,7 +753,7 @@
   },
   "uni-app 取消监听罗盘数据": {
     "prefix": ["uni.offCompassChange"],
-    "body": ["uni.offCompassChange(() =>  {$1})$0"],
+    "body": ["uni.offCompassChange(() => {$1})$0"],
     "description": "uni-app 取消监听罗盘数据。更多信息查看 https://uniapp.dcloud.io/api/system/compass?id=offcompasschange。"
   },
   "uni-app 开始监听罗盘数据": {

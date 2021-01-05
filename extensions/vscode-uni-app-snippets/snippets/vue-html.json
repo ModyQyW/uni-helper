@@ -468,7 +468,6 @@
   "uni-app audio": {
     "prefix": ["audio", "<audio>"],
     "body": [
-      "<!-- 请考虑使用 uni.createInnerAudioContext 代替 -->",
       "<audio",
       "\tid=\"$1\"",
       "\tsrc=\"$2\"",
@@ -480,19 +479,18 @@
       "\t@ended=\"$8\"",
       "/>$0"
     ],
-    "description": "uni-app 音频组件。更多信息查看 https://uniapp.dcloud.io/component/audio。"
+    "description": "uni-app 音频组件。请考虑使用 uni.createInnerAudioContext 代替。更多信息查看 https://uniapp.dcloud.io/component/audio。"
   },
   "uni-app camera": {
     "prefix": ["camera", "<camera>"],
     "body": [
-      "<!-- 请考虑使用 uni.chooseImage 或 uni.chooseVideo 代替 -->",
       "<camera",
       "\tmode=\"${1|normal,scanCode|}\"",
       "\tdevice-position=\"${2|back,front|}\"",
       "\tflash=\"${3|auto,on,off|}\"",
       "/>$0"
     ],
-    "description": "uni-app 页面内嵌的区域相机组件。更多信息查看 https://uniapp.dcloud.io/component/camera。"
+    "description": "uni-app 页面内嵌的区域相机组件。请考虑使用 uni.chooseImage 或 uni.chooseVideo 代替。更多信息查看 https://uniapp.dcloud.io/component/camera。"
   },
   "uni-app image": {
     "prefix": ["image", "<image>"],

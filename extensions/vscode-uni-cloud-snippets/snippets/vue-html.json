@@ -1,0 +1,14 @@
+{
+  "uniCloud db": {
+    "prefix": ["unicloud-db", "<unicloud-db>"],
+    "body": [
+      "<unicloud-db",
+      "\tv-slot=\"{data, loading, error, options}\"",
+      "\tcollection=\"$1\"",
+      ">",
+      "\t$2",
+      "</unicloud-db>"
+    ],
+    "description": "数据库查询组件。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/unicloud-db。"
+  }
+}

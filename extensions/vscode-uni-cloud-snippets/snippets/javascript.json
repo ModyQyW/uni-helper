@@ -1,0 +1,44 @@
+{
+  "uniCloud 客户端调用云函数": {
+    "prefix": ["uniCloud.callFunction"],
+    "body": [
+      "uniCloud.callFunction({",
+      "\tname: '$1',",
+      "\tdata: ${2:{}}",
+      "\tsuccess: (result) => {$3},",
+      "\tfail: (error) => {$4}",
+      "})$0"
+    ],
+    "description": "uniCloud 客户端调用云函数。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=clientcallfunction。"
+  },
+  "uniCloud 客户端获取云数据库实例": {
+    "prefix": ["uniCloud.database"],
+    "body": ["uniCloud.database()$0"],
+    "description": "uniCloud 客户端获取云数据库实例。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/clientdb。"
+  },
+  "uniCloud 客户端上传文件到云存储": {
+    "prefix": ["uniCloud.uploadFile"],
+    "body": [
+      "uniCloud.uploadFile({",
+      "\tfilePath: ${1:filePath},",
+      "\tcloudPath: '$2',",
+      "\tfileType: '${3|image,video,audio|',",
+      "\tonUploadProgress: ({ loaded, total }) => {$4},",
+      "\tsuccess: (result) => {$5},",
+      "\tfail: (error) => {$6}",
+      "})$0"
+    ],
+    "description": "uniCloud 客户端上传文件到云存储。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/storage?id=uploadfile。"
+  },
+  "uniCloud 获取云存储文件的临时路径": {
+    "prefix": ["uniCloud.getTempFileURL"],
+    "body": [
+      "uniCloud.getTempFileURL({",
+      "\tfileList: [$1],",
+      "\tsuccess: (result) => {$2},",
+      "\tfail: (error) => {$3}",
+      "})$0"
+    ],
+    "description": "【腾讯云专用】uniCloud 客户端上传文件到云存储。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/storage?id=gettempfileurl。"
+  }
+}

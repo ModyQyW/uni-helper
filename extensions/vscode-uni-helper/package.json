@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-helper",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Help writing uni-*.",
   "keywords": [
     "uniapp",
@@ -43,6 +43,7 @@
     "mrmaoddxxaa.create-uniapp-view",
     "ModyQyW.vscode-uni-app-snippets",
     "ModyQyW.vscode-uni-app-schemas",
+    "ModyQyW.vscode-uni-cloud-snippets",
     "ModyQyW.vscode-uni-ui-snippets"
   ],
   "displayName": "uni-helper",

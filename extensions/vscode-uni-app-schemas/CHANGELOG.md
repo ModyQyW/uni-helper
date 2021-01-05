@@ -1,13 +1,17 @@
-# Changelog
+# 改动日志
+
+## 0.1.3
+
+- 更新文档说明
 
 ## 0.1.2
 
-- Update docs
+- 更新文档说明
 
 ## 0.1.1
 
-- Update docs
+- 更新文档说明
 
 ## 0.1.0
 
-- Simple format validation support for `pages.json` and `manifest.json`
+- 校验 uni-app `pages.json` 和 `manifest.json` 格式

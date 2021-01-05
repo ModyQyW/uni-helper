@@ -27,6 +27,7 @@
     "lint": "yarn lint:json",
     "lint:json": "prettier ./**/*.json -w",
     "check": "ncu",
+    "clean": "rimraf ./**/*.vsix",
     "commit": "git-cz && git push"
   },
   "config": {

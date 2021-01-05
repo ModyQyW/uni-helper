@@ -1,44 +1,49 @@
 # Changelog
 
+## 0.5.0
+
+- 使用 choice 优化代码块，现在某些代码块可以直接选择可选值
+- 更新所有代码块的 description，修复部分错误
+- 更新文档说明
+
 ## 0.4.2
 
-- Update docs
+- 更新文档说明
 
 ## 0.4.1
 
-- Update docs
+- 更新文档说明
 
 ## 0.4.0
 
-- Remove `console.log`, `console.info`, `console.warn`, `console.error`, `setTimeout`, `clearTimeout`, `setInterval` and `clearInterval`
+- 移除 `console.log`, `console.info`, `console.warn`, `console.error`, `setTimeout`, `clearTimeout`, `setInterval` 和 ` clearInterval`，请使用其它插件如 [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 
 ## 0.3.2
 
-- Update docs
+- 更新文档说明
 
 ## 0.3.1
 
-- Update docs
+- 更新文档说明
 
 ## 0.3.0
 
-- Separate json validation support
+- 移除 JSON 校验支持，请使用其它插件如 [uni-app-schemas](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-schemas)
 
 ## 0.2.1
 
-- Specify the location of uni-app `pages.json` and `manifest.json`
+- 指定 uni-app `pages.json` 和 `manifest.json` 的位置
 
 ## 0.2.0
 
-- Simple json validation support for `pages.json` and `manifest.json`
-- Add `Usage` in README ([@Wscats](https://github.com/Wscats))
-- Fix body for js/ts
+- 支持校验 `pages.json` 和 `manifest.json` 的模式
+- 在 README 中添加“使用”部分（感谢 [@Wscats](https://github.com/Wscats)）
+- 更新文档说明
+- 修复 JavaScript/TypeScript 错误的代码块
 
 ## 0.1.0
 
-- Code snippets of uni-app basic capabilities, including components and APIs
-- Support vue2
-- Reference [uni-app component docs](https://uniapp.dcloud.io/component/README)
-- Reference [Vue.js style guide](https://vuejs.org/v2/style-guide/index.html)
-
-Please use it in combination with [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur).
+- uni-app 基本能力的代码片段，包括组件和 API
+- 支持 vue2
+- 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/README)
+- 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)

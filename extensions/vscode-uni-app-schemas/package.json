@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-app-schemas",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Help validate pages.json and manifest.json schemas in uni-app.",
   "keywords": [
     "uniapp",
@@ -30,11 +30,11 @@
   "contributes": {
     "jsonValidation": [
       {
-        "fileMatch": "./src/pages.json",
+        "fileMatch": "pages.json",
         "url": "./schemas/pages.json"
       },
       {
-        "fileMatch": "./src/manifest.json",
+        "fileMatch": "manifest.json",
         "url": "./schemas/manifest.json"
       }
     ]

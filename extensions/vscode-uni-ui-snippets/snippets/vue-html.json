@@ -1,13 +1,19 @@
 {
   "uni-ui badge": {
     "prefix": ["uni-badge", "<uni-badge>"],
-    "body": ["<uni-badge", "\ttext=\"$1\"", "\ttype=\"${2:default}\"", "/>$0"],
-    "description": "uni-ui 徽标/标记/数字角标/徽章。更多信息查看 https://ext.dcloud.net.cn/plugin?id=21。"
+    "body": [
+      "<uni-badge",
+      "\t:text=\"$1\"",
+      "\ttype=\"${2|default,primary,success,warning,error|}\"",
+      "\tsize=\"${3|normal,small|}\"",
+      "/>$0"
+    ],
+    "description": "uni-ui 徽标/标记/数字角标/徽章。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/badge.md#readme。"
   },
   "uni-ui calendar": {
     "prefix": ["uni-calendar", "<uni-calendar>"],
     "body": ["<uni-calendar @change=\"$1\" />$0"],
-    "description": "uni-ui 日历。更多信息查看 https://ext.dcloud.net.cn/plugin?id=56。"
+    "description": "uni-ui 日历。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/calendar.md#readme。"
   },
   "uni-ui card": {
     "prefix": ["uni-card", "<uni-card>"],
@@ -17,13 +23,13 @@
       "\textra=\"$2\"",
       "\tnote=\"$3\"",
       "\tthumbnail=\"$4\"",
-      "\tmode=\"${5:basic}\"",
+      "\tmode=\"${5|basic,style,title|}\"",
       "\t@click=\"$6\"",
       ">",
       "\t$7",
       "</uni-card>$0"
     ],
-    "description": "uni-ui 卡片。更多信息查看 https://ext.dcloud.net.cn/plugin?id=22。"
+    "description": "uni-ui 卡片。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/card.md#readme。"
   },
   "uni-ui collapse": {
     "prefix": ["uni-collapse", "<uni-collapse>"],
@@ -34,7 +40,7 @@
       "\t</uni-collapse-item>",
       "</uni-collapse>$0"
     ],
-    "description": "uni-ui 折叠面板。更多信息查看 https://ext.dcloud.net.cn/plugin?id=23。"
+    "description": "uni-ui 折叠面板。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/collapse.md#readme。"
   },
   "uni-ui collapse-item": {
     "prefix": ["uni-collapse-item", "<uni-collapse-item>"],
@@ -43,19 +49,19 @@
       "\t$2",
       "</uni-collapse-item>$0"
     ],
-    "description": "uni-ui 折叠面板项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=23。"
+    "description": "uni-ui 折叠面板项。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/collapse.md#readme。"
   },
   "uni-ui combox": {
     "prefix": ["uni-combox", "<uni-combox>"],
     "body": [
       "<uni-combox",
       "\tv-model=\"$1\"",
-      "\tplaceholder=\"$2\"",
-      "\tlabel=\"$3\"",
+      "\tlabel=\"$2\"",
+      "\tplaceholder=\"$3\"",
       "\t:candidates=\"$4\"",
       "/>$0"
     ],
-    "description": "uni-ui 组合框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=1261。"
+    "description": "uni-ui 组合框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/combox.md#readme。"
   },
   "uni-ui countdown": {
     "prefix": ["uni-countdown", "<uni-countdown>"],
@@ -68,7 +74,7 @@
       "\t@timeup=\"$5\"",
       "/>$0"
     ],
-    "description": "uni-ui 倒计时。更多信息查看 https://ext.dcloud.net.cn/plugin?id=25。"
+    "description": "uni-ui 倒计时。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/countdown.md#readme。"
   },
   "uni-ui data-checkbox": {
     "prefix": ["uni-data-checkbox", "<uni-data-checkbox>"],
@@ -76,12 +82,12 @@
       "<uni-data-checkbox",
       "\tv-model=\"$1\"",
       "\t:localdata=\"$2\"",
-      "\tmode=\"${3:default}\"",
+      "\tmode=\"${3|default,list,button,tag|}\"",
       "\t${4:multiple}",
       "\t@change=\"$5\"",
       "/>$0"
     ],
-    "description": "uni-ui 数据选择器。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3456。"
+    "description": "uni-ui 数据选择器。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-checkbox.md#readme。"
   },
   "uni-ui dateformat": {
     "prefix": ["uni-dateformat", "<uni-dateformat>"],
@@ -92,58 +98,54 @@
       "\tformat=\"$3\"",
       "/>$0"
     ],
-    "description": "uni-ui 日期格式化。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3279。"
+    "description": "uni-ui 日期格式化。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/dateformat.md#readme。"
   },
   "uni-ui datetime-picker": {
-    "prefix": [
-      "uni-datetime-picker",
-      "<uni-datetime-picker>",
-      "uDatetimePicker",
-      "<uDatetimePicker>"
-    ],
+    "prefix": ["uni-datetime-picker", "<uni-datetime-picker>"],
     "body": [
       "<uni-datetime-picker",
       "\t:value=\"$1\"",
       "\t@change=\"$2\"",
       "/>$0"
     ],
-    "description": "uni-ui 日期时间选择器。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/components/uni-datetime-picker/uni-datetime-picker.vue。"
+    "description": "uni-ui 日期时间选择器。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/datetime-picker.md#readme。"
   },
   "uni-ui drawer": {
     "prefix": ["uni-drawer", "<uni-drawer>"],
     "body": ["<uni-drawer ref=\"${1:drawer}\" />$0"],
-    "description": "uni-ui 抽屉。更多信息查看 https://ext.dcloud.net.cn/plugin?id=26。"
+    "description": "uni-ui 抽屉。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/drawer.md#readme。"
   },
   "uni-ui easyinput": {
     "prefix": ["uni-easyinput", "<uni-easyinput>"],
     "body": [
       "<uni-easyinput",
       "\tv-model=\"$1\"",
-      "\ttype=\"${2:text}\"",
+      "\ttype=\"${2|text,textarea,password,number,idcard,digit|}\"",
       "\tplaceholder=\"$3\"",
       "\t@input=\"$4\"",
       "\t@confirm=\"$5\"",
       "/>$0"
     ],
-    "description": "uni-ui 增强输入框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3455。"
+    "description": "uni-ui 增强输入框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/easyinput.md#readme。"
   },
   "uni-ui fab": {
     "prefix": ["uni-fab", "<uni-fab>"],
     "body": [
       "<uni-fab",
-      "\thorizontal=\"${1:left}\"",
-      "\tvertical=\"${2:bottom}\"",
-      "\t:content=\"$3\"",
-      "\t@trigger=\"$4\"",
-      "\t@fab-click=\"$5\"",
+      "\thorizontal=\"${1|left,right|}\"",
+      "\tvertical=\"${2|bottom,top|}\"",
+      "\tdirection=\"${3|horizontal,vertical|}\"",
+      "\t:content=\"$4\"",
+      "\t@trigger=\"$5\"",
+      "\t@fab-click=\"$6\"",
       "/>$0"
     ],
-    "description": "uni-ui 悬浮按钮。更多信息查看 https://ext.dcloud.net.cn/plugin?id=144。"
+    "description": "uni-ui 悬浮按钮。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/fab.md#readme。"
   },
   "uni-ui fav": {
     "prefix": ["uni-fav", "<uni-fav>"],
     "body": ["<uni-fav", "\t:checked=\"$1\"", "\t@click=\"$2\"", "/>$0"],
-    "description": "uni-ui 收藏按钮。更多信息查看 https://ext.dcloud.net.cn/plugin?id=864。"
+    "description": "uni-ui 收藏按钮。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/fav.md#readme。"
   },
   "uni-ui field": {
     "prefix": ["uni-field", "<uni-field>"],
@@ -156,7 +158,7 @@
       "\t@input=\"$5\"",
       "/>"
     ],
-    "description": "uni-ui 输入框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/components/uni-field/uni-field.vue。"
+    "description": "uni-ui 输入框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/field.md#readme。"
   },
   "uni-ui forms": {
     "prefix": ["uni-forms", "<uni-forms>"],
@@ -173,13 +175,13 @@
       "\t\tlabel=\"$6\"",
       "\t\tname=\"$7\"",
       "\t>",
-      "\t\t$6",
+      "\t\t$8",
       "\t</uni-forms-item>",
-      "\t<button form-type=\"submit\">${8:提交}</button>",
-      "\t<button form-type=\"reset\">${9:重置}</button>",
+      "\t<button form-type=\"submit\">${9:提交}</button>",
+      "\t<button form-type=\"reset\">${10:重置}</button>",
       "</uni-forms>$0"
     ],
-    "description": "uni-ui 表单。更多信息查看 https://ext.dcloud.net.cn/plugin?id=2773。"
+    "description": "uni-ui 表单。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/forms.md#readme。"
   },
   "uni-ui forms-item": {
     "prefix": ["uni-forms-item", "<uni-forms-item>"],
@@ -192,7 +194,7 @@
       "\t$3",
       "</uni-forms-item>$0"
     ],
-    "description": "uni-ui 表单项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=2773。"
+    "description": "uni-ui 表单项。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/forms.md#readme。"
   },
   "uni-ui goods-nav": {
     "prefix": ["uni-goods-nav", "<uni-goods-nav>"],
@@ -204,7 +206,7 @@
       "\t@button-click=\"$4\"",
       "/>$0"
     ],
-    "description": "uni-ui 商品导航。更多信息查看 https://ext.dcloud.net.cn/plugin?id=865。"
+    "description": "uni-ui 商品导航。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/goods-nav.md#readme。"
   },
   "uni-ui grid": {
     "prefix": ["uni-grid", "<uni-grid>"],
@@ -216,12 +218,12 @@
       "\t<uni-grid-item>$3</uni-grid-item>",
       "</uni-grid>$0"
     ],
-    "description": "uni-ui 宫格。更多信息查看 https://ext.dcloud.net.cn/plugin?id=27。"
+    "description": "uni-ui 宫格。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/grid.md#readme。"
   },
   "uni-ui grid-item": {
     "prefix": ["uni-grid-item", "<uni-grid-item>"],
     "body": ["<uni-grid-item>$1</uni-grid-item>$0"],
-    "description": "uni-ui 宫格项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=27。"
+    "description": "uni-ui 宫格项。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/grid.md#readme。"
   },
   "uni-ui group": {
     "prefix": ["uni-group", "<uni-group>"],
@@ -233,34 +235,33 @@
       "\t$3",
       "</uni-group>$0"
     ],
-    "description": "uni-ui 分组。更多信息查看 https://ext.dcloud.net.cn/plugin?id=3281。"
+    "description": "uni-ui 分组。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/group.md#readme。"
   },
   "uni-ui icons": {
     "prefix": ["uni-icons", "<uni-icons>"],
     "body": [
       "<uni-icons",
-      "\ttype=\"$1\"",
-      "\t:size=\"${2:24}\"",
-      "\tcolor=\"$3\"",
+      "\ttype=\"${1|pulldown,refreshempty,back,forward,more,more-filled,scan,qq,weibo,weixin,pengyouquan,loop,refresh,refresh-filled,arrowthindown,arrowthinleft,arrowthinright,arrowthinup,undo-filled,undo,redo,redo-filled,bars,chatboxes,camera,chatboxes-filled,camera-filled,cart-filled,cart,checkbox-filled,checkbox,arrowleft,arrowdown,arrowright,smallcircle-filled,arrowup,circle,eye-filled,eye-slash-filled,eye-slash,eye,flag-filled,flag,gear-filled,reload,gear,hand-thumbsdown-filled,hand-thumbsdown,hand-thumbsup-filled,heart-filled,hand-thumbsup,heart,home,info,home-filled,info-filled,circle-filled,chat-filled,chat,mail-open-filled,email-filled,mail-open,email,checkmarkempty,list,locked-filled,locked,map-filled,map-pin,map-pin-ellipse,map,minus-filled,mic-filled,minus,micoff,mic,clear,smallcircle,close,closeempty,paperclip,paperplane,paperplane-filled,person-filled,contact-filled,person,contact,images-filled,phone,images,image,image-filled,location-filled,location,plus-filled,plus,plusempty,help-filled,help,navigate-filled,navigate,mic-slash-filled,search,settings,sound,sound-filled,spinner-cycle,download-filled,personadd-filled,videocam-filled,personadd,upload,upload-filled,starhalf,star-filled,star,trash,phone-filled,compose,videocam,trash-filled,download,chatbubble-filled,chatbubble,cloud-download,cloud-upload-filled,cloud-upload,cloud-download-filled,headphones,shop|}\"",
+      "\tcolor=\"$2\"",
       "/>$0"
     ],
-    "description": "uni-ui 图标。更多信息查看 https://ext.dcloud.net.cn/plugin?id=28。"
+    "description": "uni-ui 图标。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/icons.md#readme。"
   },
   "uni-ui indexed-list": {
     "prefix": ["uni-indexed-list", "<uni-indexed-list>"],
     "body": [
       "<uni-indexed-list",
       "\t:options=\"$1\"",
-      "\t:show-select=\"$2\"",
+      "\t${2:show-select}",
       "\t@click=\"$3\"",
       "/>$0"
     ],
-    "description": "uni-ui 索引列表。更多信息查看 https://ext.dcloud.net.cn/plugin?id=375。"
+    "description": "uni-ui 索引列表。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/indexed-list.md#readme。"
   },
   "uni-ui link": {
     "prefix": ["uni-link", "<uni-link>"],
-    "body": ["<uni-link", "\thref=\"$1\"", "\ttext=\"$2\"", "/>$0"],
-    "description": "uni-ui 超链接。更多信息查看 https://ext.dcloud.net.cn/plugin?id=1182。"
+    "body": ["<uni-link", "\thref=\"$1\"", "\t:text=\"$2\"", "/>$0"],
+    "description": "uni-ui 超链接。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/link.md#readme。"
   },
   "uni-ui list": {
     "prefix": ["uni-list", "<uni-list>"],
@@ -269,26 +270,41 @@
       "\t<uni-list-item",
       "\t\ttitle=\"$1\"",
       "\t\tnote=\"$2\"",
-      "/>",
-      "\t$3",
+      "\t>",
+      "\t\t$3",
+      "\t</uni-list-item>",
       "</uni-list>$0"
     ],
-    "description": "uni-ui 列表。更多信息查看 https://ext.dcloud.net.cn/plugin?id=24。"
+    "description": "uni-ui 列表。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/list.md#readme。"
   },
   "uni-ui list-chat": {
     "prefix": ["uni-list-chat", "<uni-list-chat>"],
-    "body": ["<uni-list-chat", "\ttitle=\"$1\"", "\tnote=\"$2\"", "/>$0"],
-    "description": "uni-ui 聊天列表项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=24。"
+    "body": [
+      "<uni-list-chat",
+      "\ttitle=\"$1\"",
+      "\tnote=\"$2\"",
+      ">",
+      "\t$3",
+      "</uni-list-chat>$0"
+    ],
+    "description": "uni-ui 聊天列表项。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/list.md#readme。"
   },
   "uni-ui list-item": {
     "prefix": ["uni-list-item", "<uni-list-item>"],
-    "body": ["<uni-list-item", "\ttitle=\"$1\"", "\tnote=\"$2\"", "/>$0"],
-    "description": "uni-ui 列表项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=24。"
+    "body": [
+      "<uni-list-item",
+      "\ttitle=\"$1\"",
+      "\tnote=\"$2\"",
+      ">",
+      "\t$3",
+      "</uni-list-item>$0"
+    ],
+    "description": "uni-ui 列表项。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/list.md#readme。"
   },
   "uni-ui load-more": {
     "prefix": ["uni-load-more", "<uni-load-more>"],
-    "body": ["<uni-load-more :status=\"$1\" />$0"],
-    "description": "uni-ui 加载更多。更多信息查看 https://ext.dcloud.net.cn/plugin?id=29。"
+    "body": ["<uni-load-more status=\"${1|more,loading,more|}\" />$0"],
+    "description": "uni-ui 加载更多。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/load-more.md#readme。"
   },
   "uni-ui nav-bar": {
     "prefix": ["uni-nav-bar", "<uni-nav-bar>"],
@@ -298,19 +314,19 @@
       "\tleft-text=\"$2\"",
       "\tleft-icon=\"$3\"",
       "\t@click-left=\"$4\"",
-      "/>$0"
+      ">$5</uni-nav-bar>$0"
     ],
-    "description": "uni-ui 导航栏。更多信息查看 https://ext.dcloud.net.cn/plugin?id=52。"
+    "description": "uni-ui 导航栏。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/nav-bar.md#readme。"
   },
   "uni-ui notice-bar": {
     "prefix": ["uni-notice-bar", "<uni-notice-bar>"],
     "body": ["<uni-notice-bar", "\t:text=\"$1\"", "\t${2:single}", "/>$0"],
-    "description": "uni-ui 通告栏。更多信息查看 https://ext.dcloud.net.cn/plugin?id=30。"
+    "description": "uni-ui 通告栏。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/notice-bar.md#readme。"
   },
   "uni-ui number-box": {
     "prefix": ["uni-number-box", "<uni-number-box>"],
     "body": ["<uni-number-box @change=\"$1\" />$0"],
-    "description": "uni-ui 数字输入框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=31。"
+    "description": "uni-ui 数字输入框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/number-box.md#readme。"
   },
   "uni-ui pagination": {
     "prefix": ["uni-pagination", "<uni-pagination>"],
@@ -320,51 +336,72 @@
       "\t:total=\"$2\"",
       "\t:page-size=\"$3\"",
       "\t${4:show-icon}",
+      "\t@change=\"$5\"",
       "/>$0"
     ],
-    "description": "uni-ui 分页器。更多信息查看 https://ext.dcloud.net.cn/plugin?id=32。"
+    "description": "uni-ui 分页器。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/pagination.md#readme。"
   },
   "uni-ui popup": {
     "prefix": ["uni-popup", "<uni-popup>"],
-    "body": ["<uni-popup", "\tref=\"popup\"", "\ttype=\"${1:center}\"", "/>$0"],
-    "description": "uni-ui 弹出层。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+    "body": [
+      "<uni-popup",
+      "\tref=\"popup\"",
+      "\ttype=\"${1|top,center,bottom,message,dialog,share|}\"",
+      ">$2</uni-popup>$0"
+    ],
+    "description": "uni-ui 弹出层。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme。"
   },
   "uni-ui popup-dialog": {
     "prefix": ["uni-popup-dialog", "<uni-popup-dialog>"],
     "body": [
       "<uni-popup-dialog",
-      "\ttype=\"${1:success}\"",
-      "\tmode=\"${2:base}\"",
+      "\ttype=\"${1|success,warn,info,error|}\"",
+      "\tmode=\"${2|base,input|}\"",
       "\t@close=\"$3\"",
       "\t@confirm=\"$4\"",
       "/>$0"
     ],
-    "description": "uni-ui 弹出层对话框。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+    "description": "uni-ui 弹出层对话框。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme。"
   },
   "uni-ui popup-message": {
     "prefix": ["uni-popup-message", "<uni-popup-message>"],
     "body": [
       "<uni-popup-message",
-      "\ttype=\"${1:success}\"",
+      "\ttype=\"${1|success,warn,info,error|}\"",
       "\tmessage=\"$2\"",
       "/>$0"
     ],
-    "description": "uni-ui 弹出层提示信息。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+    "description": "uni-ui 弹出层提示信息。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme。"
   },
   "uni-ui popup-share": {
     "prefix": ["uni-popup-share", "<uni-popup-share>"],
-    "body": ["<uni-popup-share", "\ttitle=\"$1\"", "\t@select=\"$2\"", "/>"],
-    "description": "uni-ui 弹出层分享。更多信息查看 https://ext.dcloud.net.cn/plugin?id=329。"
+    "body": ["<uni-popup-share", "\ttitle=\"$1\"", "\t@select=\"$2\"", "/>$0"],
+    "description": "uni-ui 弹出层分享。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme。"
   },
   "uni-ui rate": {
     "prefix": ["uni-rate", "<uni-rate>"],
     "body": ["<uni-rate", "\tv-model=\"$1\"", "\t@change=\"$2\"", "/>$0"],
-    "description": "uni-ui 评分。更多信息查看 https://ext.dcloud.net.cn/plugin?id=33。"
+    "description": "uni-ui 评分。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/rate.md#readme。"
+  },
+  "uni-ui row": {
+    "prefix": ["uni-row", "<uni-row>"],
+    "body": ["<uni-row>$1</uni-row>$0"],
+    "description": "uni-ui 布局行。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/row.md#readme。"
+  },
+  "uni-ui col": {
+    "prefix": ["uni-col", "<uni-col>"],
+    "body": ["<uni-col>$1</uni-col>$0"],
+    "description": "uni-ui 布局列。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/row.md#readme。"
   },
   "uni-ui search-bar": {
     "prefix": ["uni-search-bar", "<uni-search-bar>"],
     "body": ["<uni-search-bar", "\t@input=\"$1\"", "\t@confirm=\"$2\"", "/>$0"],
-    "description": "uni-ui 搜索栏。更多信息查看 https://ext.dcloud.net.cn/plugin?id=866。"
+    "description": "uni-ui 搜索栏。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/search-bar.md#readme。"
+  },
+  "uni-ui section": {
+    "prefix": ["uni-section", "<uni-section>"],
+    "body": ["<uni-section \t:title=\"$1\" />$0"],
+    "description": "uni-ui 搜索栏。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/section.md#readme。"
   },
   "uni-ui segmented-control": {
     "prefix": ["uni-segmented-control", "<uni-segmented-control>"],
@@ -375,7 +412,7 @@
       "\t@click-item=\"$3\"",
       "/>$0"
     ],
-    "description": "uni-ui 分段器。更多信息查看 https://ext.dcloud.net.cn/plugin?id=54。"
+    "description": "uni-ui 分段器。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/segmented-control.md#readme。"
   },
   "uni-ui steps": {
     "prefix": ["uni-steps", "<uni-steps>"],
@@ -383,10 +420,10 @@
       "<uni-steps",
       "\t:options=\"$1\"",
       "\tactive=\"$2\"",
-      "\tdirection=\"${3:row}\"",
+      "\tdirection=\"${3|row,column|}\"",
       "/>$0"
     ],
-    "description": "uni-ui 步骤条。更多信息查看 https://ext.dcloud.net.cn/plugin?id=34。"
+    "description": "uni-ui 步骤条。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/steps.md#readme。"
   },
   "uni-ui swipe-action": {
     "prefix": ["uni-swipe-action", "<uni-swipe-action>"],
@@ -400,7 +437,7 @@
       "\t</uni-swipe-action-item>",
       "</uni-swipe-action>$0"
     ],
-    "description": "uni-ui 滑动操作。更多信息查看 https://ext.dcloud.net.cn/plugin?id=181。"
+    "description": "uni-ui 滑动操作。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/swipe-action.md#readme。"
   },
   "uni-ui swipe-action-item": {
     "prefix": ["uni-swipe-action-item", "<uni-swipe-action-item>"],
@@ -412,46 +449,43 @@
       "\t$3",
       "</uni-swipe-action-item>$0"
     ],
-    "description": "uni-ui 滑动操作项。更多信息查看 https://ext.dcloud.net.cn/plugin?id=181。"
+    "description": "uni-ui 滑动操作项。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/swipe-action.md#readme。"
   },
   "uni-ui swiper-dot": {
-    "prefix": [
-      "uni-swiper-dot",
-      "<uni-swiper-dot>",
-      "uSwiperDot",
-      "<uSwiperDot>"
-    ],
+    "prefix": ["uni-swiper-dot", "<uni-swiper-dot>"],
     "body": [
       "<uni-swiper-dot",
-      "\tmode=\"${1:default}\"",
+      "\tmode=\"${1|default,round,nav,indexes|}\"",
       "\tfield=\"$2\"",
       "\t:info=\"$3\"",
       "\t:current=\"${4:0}\"",
       ">",
+      "\t$5",
       "</uni-swiper-dot>$0"
     ],
-    "description": "uni-ui 轮播图指示点。更多信息查看 https://ext.dcloud.net.cn/plugin?id=284。"
+    "description": "uni-ui 轮播图指示点。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/swiper-dot.md。"
   },
   "uni-ui tag": {
     "prefix": ["uni-tag", "<uni-tag>"],
     "body": [
       "<uni-tag",
-      "\ttext=\"$1\"",
-      "\ttype=\"${2:default}\"",
-      "\t@click=\"$3\"",
+      "\t:text=\"$1\"",
+      "\tsize=\"${2|normal,small|}\"",
+      "\ttype=\"${3|default,primary,success,warning,error,royal|}\"",
       "\t${4:circle}",
+      "\t@click=\"$5\"",
       "/>$0"
     ],
-    "description": "uni-ui 标签。更多信息查看 https://ext.dcloud.net.cn/plugin?id=35。"
+    "description": "uni-ui 标签。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/tag.md#readme。"
   },
   "uni-ui title": {
     "prefix": ["uni-title", "<uni-title>"],
     "body": ["<uni-title title=\"$1\" />$0"],
-    "description": "uni-ui 标题。更多信息查看 https://ext.dcloud.net.cn/plugin?id=1066。"
+    "description": "uni-ui 标题。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/title.md#readme。"
   },
   "uni-ui transition": {
     "prefix": ["uni-transition", "<uni-transition>"],
     "body": ["<uni-transition", "\t:mode-class=\"$1\"", "\t:show=\"$2\"", "/>"],
-    "description": "uni-ui 过渡动画。更多信息查看 https://ext.dcloud.net.cn/plugin?id=985。"
+    "description": "uni-ui 过渡动画。更多信息查看 https://github.com/dcloudio/uni-ui/blob/master/docs/components/transition.md#readme。"
   }
 }

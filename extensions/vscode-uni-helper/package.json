@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-helper",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Help writing uni-*.",
   "keywords": [
     "uniapp",
@@ -25,8 +25,9 @@
     "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-helper"
   },
   "scripts": {
-    "package": "npx vsce package"
+    "package": "node generate.js && npx vsce package"
   },
+  "type": "module",
   "engines": {
     "vscode": "^1.40.0"
   },

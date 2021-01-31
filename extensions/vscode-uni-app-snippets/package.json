@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-app-snippets",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "uni-app snippets.",
   "keywords": [
     "uniapp",
@@ -19,8 +19,9 @@
     "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-app-snippets"
   },
   "scripts": {
-    "package": "npx vsce package"
+    "package": "node generate.js && npx vsce package"
   },
+  "type": "module",
   "engines": {
     "vscode": "^1.40.0"
   },

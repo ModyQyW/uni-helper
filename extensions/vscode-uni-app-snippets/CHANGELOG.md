@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.4.4
+
+- 使用 node 生成 README.md
+
 ## 0.4.3
 
 - 使用 choice 优化代码块，现在某些代码块可以直接选择可选值
@@ -16,7 +20,7 @@
 
 ## 0.4.0
 
-- 移除 `console.log`, `console.info`, `console.warn`, `console.error`, `setTimeout`, `clearTimeout`, `setInterval` 和 ` clearInterval`，请使用其它插件如 [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+- 移除 `console.log`, `console.info`, `console.warn`, `console.error`, `setTimeout`, `clearTimeout`, `setInterval` 和 `clearInterval`，请使用其它插件如 [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 
 ## 0.3.2
 

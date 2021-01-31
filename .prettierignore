@@ -80,6 +80,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# Electron
+dist_electron
+
 # Next.js build output
 .next
 out

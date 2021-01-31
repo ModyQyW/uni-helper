@@ -24,9 +24,10 @@
     "url": "git@github.com:ModyQyW/uni-helper.git"
   },
   "scripts": {
-    "lint": "yarn lint:json && yarn lint:markdown",
+    "lint": "yarn lint:json && yarn lint:markdown && yarn lint:script",
     "lint:json": "prettier ./**/*.json --write",
     "lint:markdown": "markdownlint . --fix",
+    "lint:script": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
     "check": "ncu",
     "clean": "rimraf ./**/*.vsix",
     "commit": "git-cz && git push"
@@ -38,8 +39,10 @@
   },
   "devDependencies": {
     "@commitlint/cli": "~11.0.0",
-    "@modyqyw/fabric": "~1.12.0",
+    "@modyqyw/fabric": "~1.11.1",
+    "@types/node": "~14.14.22",
     "commitizen": "~4.2.3",
+    "eslint": "~7.19.0",
     "husky": "~4.3.8",
     "lint-staged": "~10.5.3",
     "markdownlint-cli": "~0.26.0",
@@ -54,6 +57,7 @@
   },
   "lint-staged": {
     "*.json": "prettier --write",
-    "*.markdown": "markdownlint --fix"
+    "*.md": "markdownlint --fix",
+    "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
   }
 }

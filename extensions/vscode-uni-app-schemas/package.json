@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-app-schemas",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Help validate pages.json and manifest.json schemas in uni-app.",
   "keywords": [
     "uniapp",
@@ -19,8 +19,9 @@
     "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-app-schemas"
   },
   "scripts": {
-    "package": "npx vsce package"
+    "package": "node generate.js && npx vsce package"
   },
+  "type": "module",
   "engines": {
     "vscode": "^1.40.0"
   },

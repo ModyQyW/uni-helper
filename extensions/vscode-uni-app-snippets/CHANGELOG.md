@@ -1,5 +1,11 @@
 # 改动日志
 
+## 0.5.0
+
+- 增加 JavaScript/TypeScript api
+- 移除部分代码块
+- 更新文档说明
+
 ## 0.4.4
 
 - 使用 node 生成 README.md
@@ -41,8 +47,7 @@
 ## 0.2.0
 
 - 支持校验 `pages.json` 和 `manifest.json` 的模式
-- 在 README 中添加“使用”部分（感谢 [@Wscats](https://github.com/Wscats)）
-- 更新文档说明
+- 更新文档说明（感谢 [@Wscats](https://github.com/Wscats)）
 - 修复 JavaScript/TypeScript 错误的代码块
 
 ## 0.1.0

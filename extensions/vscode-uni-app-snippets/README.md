@@ -204,7 +204,7 @@
 |`uni.createInnerAudioContext()`|`uni.createInnerAudioContext`|uni-app 创建音频上下文对象。更多信息查看 <https://uniapp.dcloud.io/api/media/audio-context?id=createinneraudiocontext>。|
 |`uni.chooseVideo()`|`uni.chooseVideo`|uni-app 选择相册视频或使用相机录像。更多信息查看 <https://uniapp.dcloud.io/api/media/video?id=choosevideo>。|
 |`uni.saveVideoToPhotosAlbum()`|`uni.saveVideoToPhotosAlbum`|uni-app 保存视频到相册。更多信息查看 <https://uniapp.dcloud.io/api/media/video?id=savevideotophotosalbum>。|
-|`uni.createVideoContext()`|`uni.createVideoContext`|uni-app 创建视频上下文对象。更多信息查看 <https://uniapp.dcloud.io/api/media/video-context?id=createvideocontext>.|
+|`uni.createVideoContext()`|`uni.createVideoContext`|uni-app 创建视频上下文对象。更多信息查看 <https://uniapp.dcloud.io/api/media/video-context?id=createvideocontext>。|
 |`uni.createCameraContext()`|`uni.createCameraContext`|uni-app 创建相机上下文对象。更多信息查看 <https://uniapp.dcloud.io/api/media/camera-context?id=createcameracontext>。|
 |`uni.createLivePlayerContext()`|`uni.createLivePlayerContext`|uni-app 创建直播拉流上下文对象。更多信息查看 <https://uniapp.dcloud.io/api/media/live-player-context?id=createliveplayercontext>。|
 |`uni.createLivePusherContext()`|`uni.createLivePusherContext`|uni-app 创建直播推流上下文对象。更多信息查看 <https://uniapp.dcloud.io/api/media/live-player-context?id=createlivepushercontext>。|
@@ -232,27 +232,27 @@
 |`uni.getClipboardData()`|`uni.getClipboardData`|uni-app 获取剪贴板内容。更多信息查看 <https://uniapp.dcloud.io/api/system/clipboard>。|
 |`uni.setScreenBrightness()`|`uni.setScreenBrightness`|uni-app 设置屏幕亮度。更多信息查看 <https://uniapp.dcloud.io/api/system/brightness?id=setscreenbrightness>。|
 |`uni.getScreenBrightness()`|`uni.getScreenBrightness`|uni-app 获取屏幕亮度。更多信息查看 <https://uniapp.dcloud.io/api/system/brightness?id=getscreenbrightness>。|
-|`uni.setScreenBrightness()`|`uni.setScreenBrightness`|uni-app 设置屏幕亮度。更多信息查看 <https://uniapp.dcloud.io/api/system/brightness?id=setscreenbrightness>。|
+|`uni.setKeepScreenOn()`|`uni.setKeepScreenOn`|uni-app 设置屏幕亮度。更多信息查看 <https://uniapp.dcloud.io/api/system/brightness?id=setkeepscreenon>。|
 |`uni.onUserCaptureScreen()`|`uni.onUserCaptureScreen`|uni-app 监听截屏。更多信息查看 <https://uniapp.dcloud.io/api/system/capture-screen>。|
 |`uni.vibrate()`|`uni.vibrate`|uni-app 使手机振动。更多信息查看 <https://uniapp.dcloud.io/api/system/vibrate?id=vibrate>。|
 |`uni.vibrateLong()`|`uni.vibrateLong`|uni-app 使手机长振动。更多信息查看 <https://uniapp.dcloud.io/api/system/vibrate?id=vibratelong>。|
 |`uni.vibrateShort()`|`uni.vibrateShort`|uni-app 使手机短振动。更多信息查看 <https://uniapp.dcloud.io/api/system/vibrate?id=vibrateshort>。|
 |`uni.addPhoneContact()`|`uni.addPhoneContact`|uni-app 添加手机联系人。更多信息查看 <https://uniapp.dcloud.io/api/system/contact>。|
 |`uni.openBluetoothAdapter()`|`uni.openBluetoothAdapter`|uni-app 初始化蓝牙模块。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
-|`uni.startBluetoothDevicesDiscovery()`|`uni.startBluetoothDevicesDiscovery`, `uStartBluetoothDevicesDiscovery`|uni-app 开始搜寻蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
+|`uni.startBluetoothDevicesDiscovery()`|`uni.startBluetoothDevicesDiscovery`|uni-app 开始搜寻蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
 |`uni.onBluetoothDeviceFound()`|`uni.onBluetoothDeviceFound`|uni-app 监听搜寻到蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
-|`uni.stopBluetoothDevicesDiscovery()`|`uni.stopBluetoothDevicesDiscovery`, `uStopBluetoothDevicesDiscovery`|uni-app 停止搜寻蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
-|`uni.onBluetoothAdapterStateChange()`|`uni.onBluetoothAdapterStateChange`, `uOnBluetoothAdapterStateChange`|uni-app 监听蓝牙适配器状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
+|`uni.stopBluetoothDevicesDiscovery()`|`uni.stopBluetoothDevicesDiscovery`|uni-app 停止搜寻蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
+|`uni.onBluetoothAdapterStateChange()`|`uni.onBluetoothAdapterStateChange`|uni-app 监听蓝牙适配器状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
 |`uni.getConnectedBluetoothDevices()`|`uni.getConnectedBluetoothDevices`|uni-app 根据 uuid 获取已经连接的蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
 |`uni.getBluetoothDevices()`|`uni.getBluetoothDevices`|uni-app 获取蓝牙模块生效期间所有已发现的蓝牙设备。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
 |`uni.getBluetoothAdapterState()`|`uni.getBluetoothAdapterState`|uni-app 获取蓝牙适配器状态。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
 |`uni.getBluetoothAdapterState()`|`uni.closeBluetoothAdapter`|uni-app 关闭蓝牙模块。更多信息查看 <https://uniapp.dcloud.io/api/system/bluetooth>。|
 |`uni.setBLEMTU()`|`uni.setBLEMTU`|uni-app 设置蓝牙最大传输单元。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
-|`uni.writeBLECharacteristicValue()`|`uni.writeBLECharacteristicValue`, `uWriteBLECharacteristicValue`|uni-app 向低功耗蓝牙设备特征值写入二进制数据。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
+|`uni.writeBLECharacteristicValue()`|`uni.writeBLECharacteristicValue`|uni-app 向低功耗蓝牙设备特征值写入二进制数据。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
 |`uni.readBLECharacteristicValue()`|`uni.readBLECharacteristicValue`|uni-app 读取低功耗蓝牙设备特征值的二进制数据。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
 |`uni.onBLEConnectionStateChange()`|`uni.onBLEConnectionStateChange`|uni-app 监听低功耗蓝牙连接状态改变。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
-|`uni.onBLECharacteristicValueChange()`|`uni.onBLECharacteristicValueChange`, `uOnBLECharacteristicValueChange`|uni-app 监听低功耗蓝牙设备特征值变化。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
-|`uni.notifyBLECharacteristicValueChange()`|`uni.notifyBLECharacteristicValueChange`, `uNotifyBLECharacteristicValueChange`|uni-app 启用低功耗蓝牙设备特征值变化时的 notify 功能。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
+|`uni.onBLECharacteristicValueChange()`|`uni.onBLECharacteristicValueChange`|uni-app 监听低功耗蓝牙设备特征值变化。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
+|`uni.notifyBLECharacteristicValueChange()`|`uni.notifyBLECharacteristicValueChange`|uni-app 启用低功耗蓝牙设备特征值变化时的 notify 功能。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
 |`uni.getBLEDeviceServices()`|`uni.getBLEDeviceServices`|uni-app 获取蓝牙设备所有服务。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
 |`uni.getBLEDeviceRSSI()`|`uni.getBLEDeviceRSSI`|uni-app 获取蓝牙设备信号强度。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
 |`uni.getBLEDeviceCharacteristics()`|`uni.getBLEDeviceCharacteristics`|uni-app 获取蓝牙设备某个服务所有特征值。更多信息查看 <https://uniapp.dcloud.io/api/system/ble>。|
@@ -266,6 +266,9 @@
 |`uni.startSoterAuthentication()`|`uni.startSoterAuthentication`|uni-app 开始 SOTER 生物认证。更多信息查看 <https://uniapp.dcloud.io/api/system/authentication?id=startsoterauthentication>。|
 |`uni.checkIsSupportSoterAuthentication()`|`uni.checkIsSupportSoterAuthentication`|uni-app 获取支持的 SOTER 生物认证方式。更多信息查看 <https://uniapp.dcloud.io/api/system/authentication?id=checkissupportsoterauthentication>。|
 |`uni.checkIsSoterEnrolledInDevice()`|`uni.checkIsSoterEnrolledInDevice`|uni-app 获取设备内是否录入生物信息。更多信息查看 <https://uniapp.dcloud.io/api/system/authentication?id=checkissoterenrolledindevice>。|
+|`uni.hideKeyboard()`|`uni.hideKeyboard`|uni-app 隐藏软键盘。更多信息查看 <https://uniapp.dcloud.io/api/key?id=hidekeyboard>。|
+|`uni.onKeyboardHeightChange()`|`uni.onKeyboardHeightChange`|uni-app 监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=onkeyboardheightchange>。|
+|`uni.getSelectedTextRange()`|`uni.getSelectedTextRange`|uni-app 监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=getselectedtextrange>。|
 |`uni.showToast()`|`uni.showToast`|uni-app 显示消息提示框。这可能与加载提示框冲突，请在测试时以真机测试为准。更多信息查看 <https://uniapp.dcloud.io/api/ui/prompt?id=showtoast>。|
 |`uni.hideToast()`|`uni.hideToast`|uni-app 隐藏消息提示框。更多信息查看 <https://uniapp.dcloud.io/api/ui/prompt?id=hidetoast>。|
 |`uni.showLoading()`|`uni.showLoading`|uni-app 显示加载中提示框。这可能与消息提示框冲突，请在测试时以真机测试为准。更多信息查看 <https://uniapp.dcloud.io/api/ui/prompt?id=showloading>。|
@@ -291,6 +294,9 @@
 |`uni.pageScrollTo()`|`uni.pageScrollTo`|uni-app 将页面滚动到目标位置。更多信息查看 <https://uniapp.dcloud.io/api/ui/scroll>。|
 |`uni.onWindowResize()`|`uni.onWindowResize`|uni-app 监听窗口尺寸变化。更多信息查看 <https://uniapp.dcloud.io/api/ui/window?id=onwindowresize>。|
 |`uni.offWindowResize()`|`uni.offWindowResize`|uni-app 取消监听窗口尺寸变化。更多信息查看 <https://uniapp.dcloud.io/api/ui/window?id=offwindowresize>。|
+|`uni.setTopWindowStyle()`|`uni.setTopWindowStyle`|uni-app 设置 topWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=settopwindowstyle>。|
+|`uni.setLeftWindowStyle()`|`uni.setLeftWindowStyle`|uni-app 设置 leftWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=setleftwindowstyle>。|
+|`uni.setRightWindowStyle()`|`uni.setRightWindowStyle`|uni-app 设置 rightWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=setrightwindowstyle>。|
 |`uni.loadFontFace()`|`uni.loadFontFace`|uni-app 动态加载网络字体。更多信息查看 <https://uniapp.dcloud.io/api/ui/font>。|
 |`uni.startPullDownRefresh()`|`uni.startPullDownRefresh`|uni-app 开始下拉刷新。更多信息查看 <https://uniapp.dcloud.io/api/ui/pulldown?id=startpulldownrefresh>。|
 |`uni.stopPullDownRefresh()`|`uni.stopPullDownRefresh`|uni-app 停止下拉刷新。更多信息查看 <https://uniapp.dcloud.io/api/ui/pulldown?id=startpulldownrefresh>。|
@@ -304,6 +310,8 @@
 |`uni.openDocument()`|`uni.openDocument`|uni-app 新开页面打开文档。更多信息查看 <https://uniapp.dcloud.io/api/file/file?id=opendocument>。|
 |`uni.createCanvasContext()`|`uni.createCanvasContext`|uni-app 创建画布上下文。更多信息查看 <https://uniapp.dcloud.io/api/canvas/createCanvasContext>。|
 |`uni.canvasToTempFilePath()`|`uni.canvasToTempFilePath`|uni-app 导出画布内容。更多信息查看 <https://uniapp.dcloud.io/api/canvas/canvasToTempFilePath>。|
+|`uni.canvasPutImageData()`|`uni.canvasPutImageData`|uni-app 将像素数据绘制到画布。更多信息查看 <https://uniapp.dcloud.io/api/canvas/canvasPutImageData>。|
+|`uni.canvasGetImageData()`|`uni.canvasGetImageData`|uni-app 获取画布的像素数据。更多信息查看 <https://uniapp.dcloud.io/api/canvas/canvasGetImageData>。|
 |`uni.getProvider()`|`uni.getProvider`|uni-app 获取服务供应商。更多信息查看 <https://uniapp.dcloud.io/api/plugins/provider>。|
 |`uni.login()`|`uni.login`|uni-app 登录。更多信息查看 <https://uniapp.dcloud.io/api/plugins/login?id=login>。|
 |`uni.checkSession()`|`uni.checkSession`|uni-app 检查登录状态。更多信息查看 <https://uniapp.dcloud.io/api/plugins/login?id=unichecksession>。|

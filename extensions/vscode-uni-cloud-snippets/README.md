@@ -15,29 +15,32 @@
 
 安装插件后重启 VSCode，打开对应的文件，编码时就会有提示。
 
-### HTML
-
-使用 [html.js](./html.js) 生成。
+## HTML
 
 |API|Prefix|Description|
 |-|-|-|
-|`<unicloud-db>`|`unicloud-db`, `<unicloud-db>`|数据库查询组件。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/unicloud-db。|
+|`<unicloud-db>`|`unicloud-db`, `<unicloud-db>`|数据库查询组件。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/unicloud-db>。|
 
-### JavaScript/TypeScript
-
-使用 [javascript.js](./javascript.js) 生成。
+## JavaScript/TypeScript
 
 |API|Prefix|Description|
 |-|-|-|
-|`uniCloud.callFunction()`|`uniCloud.callFunction`|uniCloud 客户端调用云函数。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=clientcallfunction。|
-|`uniCloud.database()`|`uniCloud.database`|uniCloud 客户端获取云数据库实例。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/clientdb。|
-|`uniCloud.uploadFile()`|`uniCloud.uploadFile`|uniCloud 客户端上传文件到云存储。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/storage?id=uploadfile。|
-|`uniCloud.getTempFileURL()`|`uniCloud.getTempFileURL`|【腾讯云专用】uniCloud 客户端上传文件到云存储。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/storage?id=gettempfileurl。|
+|`uniCloud.callFunction()`|`uniCloud.callFunction`|uniCloud 客户端调用云函数。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.database()`|`uniCloud.database`|uniCloud 客户端访问云数据库，获取云数据库对象引用。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.uploadFile()`|`uniCloud.uploadFile`|uniCloud 客户端上传文件到云存储。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.getTempFileURL()`|`uniCloud.getTempFileURL`|uniCloud 客户端获取云存储文件的临时路径。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.chooseAndUploadFile()`|`uniCloud.chooseAndUploadFile`|uniCloud 客户端选择文件并上传。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.getCurrentUserInfo()`|`uniCloud.getCurrentUserInfo`|uniCloud 客户端获取当前用户信息。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.init()`|`uniCloud.init`|uniCloud 客户端同时使用多个服务空间时初始化额外服务空间。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。|
+|`uniCloud.uploadFile()`|`uniCloud.uploadFile`|uniCloud 云函数上传文件到云存储。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。|
+|`uniCloud.getTempFileURL()`|`uniCloud.getTempFileURL`|uniCloud 云函数获取文件下载链接。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。|
+|`uniCloud.deleteFile()`|`uniCloud.deleteFile`|uniCloud 云函数删除云存储文件。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。|
+|`uniCloud.downloadFile()`|`uniCloud.downloadFile`|uniCloud 云函数下载已上传至云开发的文件至本地。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。|
 
 ## 更多
 
 - [前端学习路径](https://modyqyw.top/front-end/roadmap/)
 - [前端环境配置](https://modyqyw.top/front-end/environment/)
 - [前端杂项](https://modyqyw.top/front-end/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同项目的共享配置，包括 Prettier，ESLint，Stylelint，Commitlint，LSLint，EditorConfig，Husky，LintStaged 等
+- [fabric](https://github.com/modyqyw/fabric#readme) - 不同项目的共享配置
 - [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计

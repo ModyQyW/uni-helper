@@ -9,12 +9,12 @@
       "\tfail: (error) => {$4}",
       "})$0"
     ],
-    "description": "uniCloud 客户端调用云函数。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/cf-functions?id=clientcallfunction。"
+    "description": "uniCloud 客户端调用云函数。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
   },
   "uniCloud 客户端获取云数据库实例": {
     "prefix": ["uniCloud.database"],
     "body": ["uniCloud.database()$0"],
-    "description": "uniCloud 客户端获取云数据库实例。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/clientdb。"
+    "description": "uniCloud 客户端访问云数据库，获取云数据库对象引用。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
   },
   "uniCloud 客户端上传文件到云存储": {
     "prefix": ["uniCloud.uploadFile"],
@@ -22,23 +22,86 @@
       "uniCloud.uploadFile({",
       "\tfilePath: ${1:filePath},",
       "\tcloudPath: '$2',",
-      "\tfileType: '${3|image,video,audio|',",
+      "\tfileType: '${3|image,video,audio|}',",
       "\tonUploadProgress: ({ loaded, total }) => {$4},",
       "\tsuccess: (result) => {$5},",
       "\tfail: (error) => {$6}",
       "})$0"
     ],
-    "description": "uniCloud 客户端上传文件到云存储。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/storage?id=uploadfile。"
+    "description": "uniCloud 客户端上传文件到云存储。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
   },
-  "uniCloud 获取云存储文件的临时路径": {
+  "uniCloud 客户端获取云存储文件的临时路径": {
     "prefix": ["uniCloud.getTempFileURL"],
     "body": [
       "uniCloud.getTempFileURL({",
-      "\tfileList: [$1],",
+      "\tfileList: ${1:[]},",
       "\tsuccess: (result) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"
     ],
-    "description": "【腾讯云专用】uniCloud 客户端上传文件到云存储。更多信息查看 https://uniapp.dcloud.net.cn/uniCloud/storage?id=gettempfileurl。"
+    "description": "uniCloud 客户端获取云存储文件的临时路径。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
+  },
+  "uniCloud 客户端选择文件并上传": {
+    "prefix": ["uniCloud.chooseAndUploadFile"],
+    "body": [
+      "uniCloud.chooseAndUploadFile({",
+      "\ttype: '${1|image,video,all|}',",
+      "\tsuccess: (result) => {$2},",
+      "\tfail: (error) => {$3}",
+      "})$0"
+    ],
+    "description": "uniCloud 客户端选择文件并上传。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
+  },
+  "uniCloud 客户端获取当前用户信息": {
+    "prefix": ["uniCloud.getCurrentUserInfo"],
+    "body": [
+      "uniCloud.getCurrentUserInfo({",
+      "\tsuccess: (result) => {$1},",
+      "\tfail: (error) => {$2}",
+      "})$0"
+    ],
+    "description": "uniCloud 客户端获取当前用户信息。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
+  },
+  "uniCloud 客户端同时使用多个服务空间时初始化额外服务空间": {
+    "prefix": ["uniCloud.init"],
+    "body": [
+      "uniCloud.init({",
+      "\tprovider: '$1',",
+      "\tspaceId: '$2',",
+      "\tclientSecret: '$3',",
+      "\tendpoint: '${4:https://api.bspapp.com}'",
+      "})$0"
+    ],
+    "description": "uniCloud 客户端同时使用多个服务空间时初始化额外服务空间。更多信息查看 <https://uniapp.dcloud.net.cn/uniCloud/client-sdk>。"
+  },
+  "uniCloud 云函数上传文件到云存储": {
+    "prefix": ["uniCloud.uploadFile"],
+    "body": [
+      "uniCloud.uploadFile({",
+      "\tcloudPath: '$1',",
+      "\tfileContent: $2",
+      "})$0"
+    ],
+    "description": "uniCloud 云函数上传文件到云存储。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。"
+  },
+  "uniCloud 云函数获取文件下载链接": {
+    "prefix": ["uniCloud.getTempFileURL"],
+    "body": ["uniCloud.getTempFileURL({", "\tfileList: ${1:[]}", "})$0"],
+    "description": "uniCloud 云函数获取文件下载链接。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。"
+  },
+  "uniCloud 云函数删除云存储文件": {
+    "prefix": ["uniCloud.deleteFile"],
+    "body": ["uniCloud.deleteFile({", "\tfileList: ${1:[]}", "})$0"],
+    "description": "uniCloud 云函数删除云存储文件。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。"
+  },
+  "uniCloud 云函数下载已上传至云开发的文件至本地": {
+    "prefix": ["uniCloud.downloadFile"],
+    "body": [
+      "uniCloud.downloadFile({",
+      "\tfileID: '$1',",
+      "\ttempFilePath: '$2'",
+      "})$0"
+    ],
+    "description": "uniCloud 云函数下载已上传至云开发的文件至本地。更多信息查看 <https://uniapp.dcloud.io/uniCloud/storage?id=%e4%ba%91%e5%87%bd%e6%95%b0api>。"
   }
 }

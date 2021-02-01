@@ -2,11 +2,11 @@
 
 ## 0.2.0
 
-- 增加支付宝小程序配置项 `enableAppxNg`。
+- 增加支付宝小程序配置项 `enableAppxNg`
 
 ## 0.1.5
 
-- 使用 node 生成 README.md。
+- 使用 node 生成 README.md
 
 ## 0.1.4
 

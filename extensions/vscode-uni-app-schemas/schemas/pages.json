@@ -1,5 +1,5 @@
 {
-  "description": "应用页面配置文件。更多信息查看 https://uniapp.dcloud.io/collocation/pages。",
+  "description": "应用页面配置文件。更多信息查看 <https://uniapp.dcloud.io/collocation/pages>。",
   "type": "object",
   "properties": {
     "globalStyle": {

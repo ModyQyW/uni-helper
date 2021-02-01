@@ -1,5 +1,5 @@
 {
-  "description": "应用信息配置文件，用于指定大量信息。更多信息查看 https://uniapp.dcloud.io/collocation/manifest 和 https://ask.dcloud.net.cn/article/94。",
+  "description": "应用信息配置文件，用于指定大量信息。更多信息查看 <https://uniapp.dcloud.io/collocation/manifest> 和 <https://ask.dcloud.net.cn/article/94>。",
   "type": "object",
   "properties": {
     "name": {
@@ -7,7 +7,7 @@
       "type": "string"
     },
     "appid": {
-      "description": "应用标识，由 DCloud 云端分配。更多信息查看 https://ask.dcloud.net.cn/article/35907。",
+      "description": "应用标识，由 DCloud 云端分配。更多信息查看 <https://ask.dcloud.net.cn/article/35907>。",
       "type": "string"
     },
     "description": {
@@ -379,7 +379,7 @@
           "default": false
         },
         "setting": {
-          "description": "微信小程序项目设置。更多信息查看 https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html。",
+          "description": "微信小程序项目设置。更多信息查看 <https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html>。",
           "type": "object",
 
           "properties": {
@@ -532,6 +532,10 @@
         },
         "axmlStrictCheck": {
           "description": "是否开启 axml 严格语法检查。",
+          "type": "boolean"
+        },
+        "enableAppxNg": {
+          "description": "是否启用小程序基础库 2.0 构建。",
           "type": "boolean"
         },
         "enableParallelLoader": {

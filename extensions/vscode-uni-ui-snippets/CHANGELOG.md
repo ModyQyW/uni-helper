@@ -1,11 +1,18 @@
 # 改动日志
 
+## 0.3.0
+
+- 使用 node 生成 README.md
+- 增加 uni-data-picker
+- 更新部分代码块
+- 更新文档说明
+
 ## 0.2.0
 
 - 移除不符合 Vue.js 风格指南的代码块
 - 更新部分代码块
 - 更新所有信息链接
-- 增加 uni-row，uni-col 和 section
+- 增加 uni-row，uni-col 和 uni-section
 - 更新文档说明
 
 ## 0.1.2

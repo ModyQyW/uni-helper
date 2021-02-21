@@ -161,7 +161,6 @@
         "midButton": {
           "description": "中间按钮，list 元素数量为偶数时有效。",
           "type": "object",
-
           "properties": {
             "width": {
               "description": "中间按钮宽度。",

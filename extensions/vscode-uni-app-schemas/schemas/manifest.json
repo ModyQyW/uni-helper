@@ -1,6 +1,7 @@
 {
   "description": "应用信息配置文件，用于指定大量信息。更多信息查看 <https://uniapp.dcloud.io/collocation/manifest> 和 <https://ask.dcloud.net.cn/article/94>。",
   "type": "object",
+  "required": ["name", "appid"],
   "properties": {
     "name": {
       "description": "应用名称，安装 APP 后显示的名称。",
@@ -9,6 +10,20 @@
     "appid": {
       "description": "应用标识，由 DCloud 云端分配。更多信息查看 <https://ask.dcloud.net.cn/article/35907>。",
       "type": "string"
+    },
+    "screenOrientation": {
+      "description": "重力感应、横竖屏配置。",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "portrait-primary",
+          "portrait-secondary",
+          "landscape-primary",
+          "landscape-secondary"
+        ]
+      }
     },
     "description": {
       "description": "应用描述。",
@@ -120,32 +135,38 @@
           }
         },
         "modules": {
-          "description": "APP 权限模块。",
+          "description": "APP 权限模块。请在 HBuilderX 内完成该部分配置。",
           "type": "object"
         },
         "distribute": {
           "description": "APP 发布信息。",
           "type": "object",
-
           "properties": {
             "android": {
-              "description": "Android 专用配置。",
+              "description": "Android 专用配置。请在 HBuilderX 内完成该部分配置。",
               "type": "object"
             },
             "ios": {
-              "description": "iOS 专用配置。",
+              "description": "iOS 专用配置。请在 HBuilderX 内完成该部分配置。",
               "type": "object"
             },
             "sdkConfigs": {
-              "description": "SDK 配置。仅打包生效。",
+              "description": "SDK 配置。仅打包生效。请在 HBuilderX 内完成该部分配置。",
               "type": "object"
             },
             "orientation": {
-              "description": "屏幕方向配置。",
+              "description": "屏幕方向配置。优先使用 screenOrientation。",
               "type": "array",
+              "uniqueItems": true,
               "items": {
                 "description": "可选 portrait-primary，portrait-secondary，landscape-primary 和 landscape-secondary。",
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "portrait-primary",
+                  "portrait-secondary",
+                  "landscape-primary",
+                  "landscape-secondary"
+                ]
               }
             }
           }
@@ -153,10 +174,16 @@
         "usingComponents": {
           "description": "是否启用自定义组件模式。",
           "type": "boolean",
-          "default": true
+          "default": false
         },
         "nvueCompiler": {
           "description": "nvue 编译模式。",
+          "type": "string",
+          "enum": ["weex", "uni-app"],
+          "default": "weex"
+        },
+        "nvueStyleCompiler": {
+          "description": "nvue 样式编译模式。",
           "type": "string",
           "enum": ["weex", "uni-app"],
           "default": "weex"
@@ -204,7 +231,8 @@
         "runmode": {
           "description": "运行模式。分包时必选 liberate。",
           "type": "string",
-          "enum": ["normal", "liberate"]
+          "enum": ["normal", "liberate"],
+          "default": "normal"
         }
       }
     },
@@ -284,7 +312,7 @@
           "type": "string"
         },
         "sdkConfigs": {
-          "description": "SDK 配置。",
+          "description": "SDK 配置。请在 HBuilderX 内完成该部分配置。",
           "type": "object"
         },
         "optimization": {
@@ -330,7 +358,7 @@
           "type": "string"
         },
         "minPlatformVersion": {
-          "description": "最小平台支持，快应用联盟 1063，快应用华为 1070。",
+          "description": "最小平台支持，快应用联盟最低 1063，快应用华为最低 1070。",
           "type": "number"
         },
         "versionName": {
@@ -348,9 +376,8 @@
       "type": "object",
       "properties": {
         "minPlatformVersion": {
-          "description": "最小平台支持。",
-          "type": "number",
-          "default": 1063
+          "description": "最小平台支持。最低 1063。",
+          "type": "number"
         }
       }
     },
@@ -359,9 +386,8 @@
       "type": "object",
       "properties": {
         "minPlatformVersion": {
-          "description": "最小平台支持。",
-          "type": "number",
-          "default": 1070
+          "description": "最小平台支持。最低 1070。",
+          "type": "number"
         }
       }
     },
@@ -381,7 +407,6 @@
         "setting": {
           "description": "微信小程序项目设置。更多信息查看 <https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html>。",
           "type": "object",
-
           "properties": {
             "es6": {
               "description": "是否启用 ES6 转 ES5。",
@@ -461,11 +486,12 @@
         "requiredBackgroundModes": {
           "description": "需要在后台使用的能力。",
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "description": "可选 audio 和 location。",
-            "type": "string"
-          },
-          "default": []
+            "type": "string",
+            "enum": ["audio", "location"]
+          }
         },
         "plugins": {
           "description": "使用到的插件。",
@@ -561,6 +587,15 @@
           "type": "boolean",
           "default": false
         },
+        "requiredBackgroundModes": {
+          "description": "需要在后台使用的能力。",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": ["audio"]
+          }
+        },
         "optimization": {
           "description": "优化配置。",
           "type": "object",
@@ -590,7 +625,6 @@
         "setting": {
           "description": "字节跳动小程序小程序项目设置。",
           "type": "object",
-
           "properties": {
             "es6": {
               "description": "是否启用 ES6 转 ES5。",
@@ -600,6 +634,16 @@
               "description": "是否启用脚本代码自动压缩。",
               "type": "boolean"
             }
+          }
+        },
+        "navigateToMiniProgramAppIdList": {
+          "description": "需要跳转的字节跳动小程序列表。",
+          "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true,
+          "items": {
+            "description": "要跳转的字节跳动小程序 appid。",
+            "type": "string"
           }
         }
       }
@@ -620,15 +664,18 @@
         "requiredBackgroundModes": {
           "description": "需要在后台使用的能力。",
           "type": "array",
+          "uniqueItems": true,
           "items": {
             "description": "可选 audio。",
-            "type": "string"
-          },
-          "default": []
+            "type": "string",
+            "enum": ["audio"]
+          }
         },
         "navigateToMiniProgramAppIdList": {
           "description": "需要跳转的 QQ 小程序列表。",
           "type": "array",
+          "maxItems": 10,
+          "uniqueItems": true,
           "items": {
             "description": "要跳转的 QQ 小程序 appid。",
             "type": "string"

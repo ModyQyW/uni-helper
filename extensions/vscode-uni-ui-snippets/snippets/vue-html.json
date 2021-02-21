@@ -100,6 +100,17 @@
     ],
     "description": "uni-ui 级联选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-picker.md#readme>。"
   },
+  "uni-ui data-menu": {
+    "prefix": ["uni-data-menu", "<uni-data-menu>"],
+    "body": [
+      "<uni-data-menu",
+      "\tv-model=\"$1\"",
+      "\t:localdata=\"$2\"",
+      "\t@select=\"$3\"",
+      "/>$0"
+    ],
+    "description": "uni-ui 菜单。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-menu.md#readme>。"
+  },
   "uni-ui dateformat": {
     "prefix": ["uni-dateformat", "<uni-dateformat>"],
     "body": [
@@ -170,6 +181,18 @@
       "/>"
     ],
     "description": "uni-ui 输入框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/field.md#readme>。"
+  },
+  "uni-ui file-picker": {
+    "prefix": ["uni-file-picker", "<uni-file-picker>"],
+    "body": [
+      "<uni-file-picker",
+      "\tv-model=\"$1\"",
+      "\t:title=\"$2\"",
+      "\t:limit=\"${3:9}\"",
+      "\tfile-mediatype=\"${4|image,video,all|}\"",
+      "/>"
+    ],
+    "description": "uni-ui 输入框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/file-picker.md#readme>。"
   },
   "uni-ui forms": {
     "prefix": ["uni-forms", "<uni-forms>"],
@@ -314,7 +337,7 @@
   },
   "uni-ui load-more": {
     "prefix": ["uni-load-more", "<uni-load-more>"],
-    "body": ["<uni-load-more status=\"${1|more,loading,more|}\" />$0"],
+    "body": ["<uni-load-more status=\"${1|more,loading,noMore|}\" />$0"],
     "description": "uni-ui 加载更多。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/load-more.md#readme>。"
   },
   "uni-ui nav-bar": {
@@ -474,7 +497,7 @@
       "\t$5",
       "</uni-swiper-dot>$0"
     ],
-    "description": "uni-ui 轮播图指示点。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swiper-dot.md>。"
+    "description": "uni-ui 轮播图指示点。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swiper-dot.md#readme>。"
   },
   "uni-ui tag": {
     "prefix": ["uni-tag", "<uni-tag>"],

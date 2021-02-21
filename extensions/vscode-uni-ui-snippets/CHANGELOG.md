@@ -1,5 +1,10 @@
 # 改动日志
 
+## 0.4.0
+
+- 增加 uni-data-menu 和 uni-file-picker
+- 更新文档说明
+
 ## 0.3.0
 
 - 使用 node 生成 README.md

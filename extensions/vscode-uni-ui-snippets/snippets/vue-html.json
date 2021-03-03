@@ -89,17 +89,6 @@
     ],
     "description": "uni-ui 数据选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-checkbox.md#readme>。"
   },
-  "uni-ui data-picker": {
-    "prefix": ["uni-data-picker", "<uni-data-picker>"],
-    "body": [
-      "<uni-data-picker",
-      "\tv-model=\"$1\"",
-      "\t:localdata=\"$2\"",
-      "\t@change=\"$3\"",
-      "/>$0"
-    ],
-    "description": "uni-ui 级联选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-picker.md#readme>。"
-  },
   "uni-ui data-menu": {
     "prefix": ["uni-data-menu", "<uni-data-menu>"],
     "body": [
@@ -110,6 +99,17 @@
       "/>$0"
     ],
     "description": "uni-ui 菜单。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-menu.md#readme>。"
+  },
+  "uni-ui data-picker": {
+    "prefix": ["uni-data-picker", "<uni-data-picker>"],
+    "body": [
+      "<uni-data-picker",
+      "\tv-model=\"$1\"",
+      "\t:localdata=\"$2\"",
+      "\t@change=\"$3\"",
+      "/>$0"
+    ],
+    "description": "uni-ui 级联选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-picker.md#readme>。"
   },
   "uni-ui dateformat": {
     "prefix": ["uni-dateformat", "<uni-dateformat>"],

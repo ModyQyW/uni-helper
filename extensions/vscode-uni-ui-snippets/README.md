@@ -27,8 +27,8 @@
 |`<uni-combox>`|`uni-combox`, `<uni-combox>`|uni-ui 组合框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/combox.md#readme>。|
 |`<uni-countdown>`|`uni-countdown`, `<uni-countdown>`|uni-ui 倒计时。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/countdown.md#readme>。|
 |`<uni-data-checkbox>`|`uni-data-checkbox`, `<uni-data-checkbox>`|uni-ui 数据选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-checkbox.md#readme>。|
-|`<uni-data-picker>`|`uni-data-picker`, `<uni-data-picker>`|uni-ui 级联选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-picker.md#readme>。|
 |`<uni-data-menu>`|`uni-data-menu`, `<uni-data-menu>`|uni-ui 菜单。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-menu.md#readme>。|
+|`<uni-data-picker>`|`uni-data-picker`, `<uni-data-picker>`|uni-ui 级联选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-picker.md#readme>。|
 |`<uni-dateformat>`|`uni-dateformat`, `<uni-dateformat>`|uni-ui 日期格式化。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/dateformat.md#readme>。|
 |`<uni-datetime-picker>`|`uni-datetime-picker`, `<uni-datetime-picker>`|uni-ui 日期时间选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/datetime-picker.md#readme>。|
 |`<uni-drawer>`|`uni-drawer`, `<uni-drawer>`|uni-ui 抽屉。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/drawer.md#readme>。|
@@ -77,5 +77,5 @@
 - [前端学习路径](https://modyqyw.top/front-end/roadmap/)
 - [前端环境配置](https://modyqyw.top/front-end/environment/)
 - [前端杂项](https://modyqyw.top/front-end/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同项目的共享配置
+- [fabric](https://github.com/modyqyw/fabric#readme) - 不同前端项目的可共享规范
 - [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计

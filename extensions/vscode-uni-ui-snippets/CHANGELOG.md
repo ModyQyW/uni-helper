@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.4.1
+
+- 更优雅地使用脚本生成 README
+
 ## 0.4.0
 
 - 增加 uni-data-menu 和 uni-file-picker

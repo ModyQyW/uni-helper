@@ -1661,7 +1661,7 @@
     "prefix": ["uni.authorize"],
     "body": [
       "uni.authorize({",
-      "\tscope: '$1'",
+      "\tscope: '$1',",
       "\tsuccess: (result) => {$2},",
       "\tfail: (error) => {$3}",
       "})$0"

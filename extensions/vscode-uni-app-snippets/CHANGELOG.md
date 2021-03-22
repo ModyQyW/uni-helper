@@ -1,5 +1,10 @@
 # 改动日志
 
+## 0.5.1
+
+- 修复部分代码块错误
+- 更优雅地使用脚本生成 README
+
 ## 0.5.0
 
 - 增加 JavaScript/TypeScript api

@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-ui-snippets",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "uni-ui snippets.",
   "keywords": [
     "uniapp",
@@ -21,7 +21,7 @@
     "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-ui-snippets"
   },
   "scripts": {
-    "package": "node generate.js && npx vsce package"
+    "release": "node generate.js && npx vsce package && npx vsce publish"
   },
   "type": "module",
   "engines": {

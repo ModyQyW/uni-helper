@@ -499,6 +499,26 @@
     ],
     "description": "uni-ui 轮播图指示点。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swiper-dot.md#readme>。"
   },
+  "uni-ui table": {
+    "prefix": ["uni-table", "<uni-table>"],
+    "body": ["<uni-table border stripe>", "\t$1", "</uni-table>$0"],
+    "description": "uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。"
+  },
+  "uni-ui tr": {
+    "prefix": ["uni-tr", "<uni-tr>"],
+    "body": ["<uni-tr>", "\t$1", "</uni-tr>$0"],
+    "description": "uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。"
+  },
+  "uni-ui th": {
+    "prefix": ["uni-th", "<uni-th>"],
+    "body": ["<uni-th>$1</uni-th>$0"],
+    "description": "uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。"
+  },
+  "uni-ui td": {
+    "prefix": ["uni-td", "<uni-td>"],
+    "body": ["<uni-td>$1</uni-td>$0"],
+    "description": "uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。"
+  },
   "uni-ui tag": {
     "prefix": ["uni-tag", "<uni-tag>"],
     "body": [

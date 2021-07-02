@@ -68,14 +68,19 @@
 |`<uni-swipe-action>`|`uni-swipe-action`, `<uni-swipe-action>`|uni-ui 滑动操作。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swipe-action.md#readme>。|
 |`<uni-swipe-action-item>`|`uni-swipe-action-item`, `<uni-swipe-action-item>`|uni-ui 滑动操作项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swipe-action.md#readme>。|
 |`<uni-swiper-dot>`|`uni-swiper-dot`, `<uni-swiper-dot>`|uni-ui 轮播图指示点。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swiper-dot.md#readme>。|
+|`<uni-table>`|`uni-table`, `<uni-table>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
+|`<uni-tr>`|`uni-tr`, `<uni-tr>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
+|`<uni-th>`|`uni-th`, `<uni-th>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
+|`<uni-td>`|`uni-td`, `<uni-td>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
 |`<uni-tag>`|`uni-tag`, `<uni-tag>`|uni-ui 标签。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/tag.md#readme>。|
 |`<uni-title>`|`uni-title`, `<uni-title>`|uni-ui 标题。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/title.md#readme>。|
 |`<uni-transition>`|`uni-transition`, `<uni-transition>`|uni-ui 过渡动画。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/transition.md#readme>。|
 
 ## 更多
 
-- [前端学习路径](https://modyqyw.top/front-end/roadmap/)
-- [前端环境配置](https://modyqyw.top/front-end/environment/)
-- [前端杂项](https://modyqyw.top/front-end/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同前端项目的可共享规范
-- [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计
+- [前端学习路径](https://modyqyw.github.io/frontend/roadmap/)
+- [前端环境配置](https://modyqyw.github.io/frontend/environment/)
+- [前端杂项](https://modyqyw.github.io/frontend/misc/)
+- [fabric](https://github.com/modyqyw/fabric#readme) - 不同 JavaScript/TypeScript 项目的可共享规范。
+- [utils](https://github.com/modyqyw/utils#readme) - 不同 JavaScript/TypeScript 项目的可共享工具方法。
+- [mp-scss](https://modyqyw.github.io/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计。

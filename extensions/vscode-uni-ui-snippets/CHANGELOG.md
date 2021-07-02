@@ -1,5 +1,10 @@
 # 改动日志
 
+## 0.5.0
+
+- 添加 `uni-table`，`uni-th`，`uni-tr` 和 `uni-td`。
+- 修复 README 链接。
+
 ## 0.4.1
 
 - 更优雅地使用脚本生成 README

@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-cloud-snippets",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "uni-cloud snippets.",
   "keywords": [
     "uniapp",
@@ -21,7 +21,7 @@
     "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-cloud-snippets"
   },
   "scripts": {
-    "package": "node generate.js && npx vsce package"
+    "release": "node generate.js && npx vsce package && npx vsce publish"
   },
   "type": "module",
   "engines": {

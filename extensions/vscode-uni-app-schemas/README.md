@@ -14,8 +14,9 @@
 
 ## 更多
 
-- [前端学习路径](https://modyqyw.top/front-end/roadmap/)
-- [前端环境配置](https://modyqyw.top/front-end/environment/)
-- [前端杂项](https://modyqyw.top/front-end/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同前端项目的可共享规范
-- [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计
+- [前端学习路径](https://modyqyw.github.io/frontend/roadmap/)
+- [前端环境配置](https://modyqyw.github.io/frontend/environment/)
+- [前端杂项](https://modyqyw.github.io/frontend/misc/)
+- [fabric](https://github.com/modyqyw/fabric#readme) - 不同 JavaScript/TypeScript 项目的可共享规范。
+- [utils](https://github.com/modyqyw/utils#readme) - 不同 JavaScript/TypeScript 项目的可共享工具方法。
+- [mp-scss](https://modyqyw.github.io/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计。

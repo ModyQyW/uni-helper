@@ -184,6 +184,21 @@
     "body": ["onError() {$1}$0"],
     "description": "uni-app 应用生命周期，只能在 App.vue 中监听。uni-app 报错时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。"
   },
+  "uni-app 应用生命周期 onUniNViewMessage": {
+    "prefix": ["onUniNViewMessage"],
+    "body": ["onUniNViewMessage() {$1}$0"],
+    "description": "uni-app 应用生命周期，只能在 App.vue 中监听。监听 nvue 页面发送的数据。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。"
+  },
+  "uni-app 应用生命周期 onUnhandledRejection": {
+    "prefix": ["onUnhandledRejection"],
+    "body": ["onUnhandledRejection() {$1}$0"],
+    "description": "uni-app 应用生命周期，只能在 App.vue 中监听。监听未处理的 Promise 拒绝事件。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。"
+  },
+  "uni-app 应用生命周期 onPageNotFound": {
+    "prefix": ["onPageNotFound"],
+    "body": ["onPageNotFound() {$1}$0"],
+    "description": "uni-app 应用生命周期，只能在 App.vue 中监听。uni-app 页面不存在时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。"
+  },
   "uni-app 应用生命周期 onThemeChange": {
     "prefix": ["onThemeChange"],
     "body": ["onThemeChange() {$1}$0"],
@@ -308,6 +323,16 @@
     "prefix": ["uni.$off"],
     "body": ["uni.$off(${1:eventName}$0)"],
     "description": "uni-app 移除全局自定义事件监听。过多的全局自定义事件容易导致代码混乱且难以调试，请控制全局自定义事件数量。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/communication?id=off>。"
+  },
+  "uni-app 添加全局拦截器": {
+    "prefix": ["uni.addInterceptor"],
+    "body": ["uni.addInterceptor($1, $2)$0"],
+    "description": "uni-app 添加全局拦截器。过多的全局拦截器容易导致代码混乱且难以调试，请控制全局拦截器数量。更多信息查看 <https://uniapp.dcloud.io/api/interceptor>。"
+  },
+  "uni-app 移除全局拦截器": {
+    "prefix": ["uni.removeInterceptor"],
+    "body": ["uni.removeInterceptor($1, $2)$0"],
+    "description": "uni-app 移除全局拦截器。过多的全局拦截器容易导致代码混乱且难以调试，请控制全局拦截器数量。更多信息查看 <https://uniapp.dcloud.io/api/interceptor>。"
   },
   "uni-app 发起网络请求": {
     "prefix": ["uni.request"],
@@ -708,21 +733,29 @@
     ],
     "description": "uni-app 获取网络类型。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=getnetworktype>。"
   },
-  "uni-app 网络状态变化": {
+  "uni-app 监听网络状态变化": {
     "prefix": ["uni.onNetworkStatusChange"],
-    "body": [
-      "uni.onNetworkStatusChange(({ isConnected, networkType }) => {$1})$0"
-    ],
-    "description": "uni-app 网络状态变化时触发。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=onnetworkstatuschange>。"
+    "body": ["uni.onNetworkStatusChange($1)$0"],
+    "description": "uni-app 监听网络状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=onnetworkstatuschange>。"
+  },
+  "uni-app 取消监听网络状态变化": {
+    "prefix": ["uni.offNetworkStatusChange"],
+    "body": ["uni.offNetworkStatusChange($1)$0"],
+    "description": "uni-app 取消监听网络状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=offnetworkstatuschange>。"
+  },
+  "uni-app 监听系统主题状态变化": {
+    "prefix": ["uni.onThemeChange"],
+    "body": ["uni.onThemeChange($1)$0"],
+    "description": "uni-app 监听系统主题状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/theme>。"
   },
   "uni-app 监听加速度数据": {
     "prefix": ["uni.onAccelerometerChange"],
-    "body": ["uni.onAccelerometerChange(({ x, y, z }) => {$1})$0"],
+    "body": ["uni.onAccelerometerChange($1)$0"],
     "description": "uni-app 监听加速度数据。更多信息查看 <https://uniapp.dcloud.io/api/system/accelerometer?id=onaccelerometerchange>。"
   },
   "uni-app 取消监听加速度数据": {
     "prefix": ["uni.offAccelerometerChange"],
-    "body": ["uni.offAccelerometerChange(() => {$1})$0"],
+    "body": ["uni.offAccelerometerChange($1)$0"],
     "description": "uni-app 取消监听加速度数据。更多信息查看 <https://uniapp.dcloud.io/api/system/accelerometer?id=offaccelerometerchange>。"
   },
   "uni-app 开始监听加速度数据": {
@@ -748,12 +781,12 @@
   },
   "uni-app 监听罗盘数据": {
     "prefix": ["uni.onCompassChange"],
-    "body": ["uni.onCompassChange(({ direction }) => {$1})$0"],
+    "body": ["uni.onCompassChange($1)$0"],
     "description": "uni-app 监听罗盘数据。更多信息查看 <https://uniapp.dcloud.io/api/system/compass?id=oncompasschange>。"
   },
   "uni-app 取消监听罗盘数据": {
     "prefix": ["uni.offCompassChange"],
-    "body": ["uni.offCompassChange(() => {$1})$0"],
+    "body": ["uni.offCompassChange($1)$0"],
     "description": "uni-app 取消监听罗盘数据。更多信息查看 <https://uniapp.dcloud.io/api/system/compass?id=offcompasschange>。"
   },
   "uni-app 开始监听罗盘数据": {
@@ -778,12 +811,12 @@
   },
   "uni-app 监听陀螺仪数据": {
     "prefix": ["uni.onGyroscopeChange"],
-    "body": ["uni.onGyroscopeChange(({ x, y, z }) => {$1})$0"],
+    "body": ["uni.onGyroscopeChange($1)$0"],
     "description": "uni-app 监听陀螺仪数据。更多信息查看 <https://uniapp.dcloud.io/api/system/gyroscope?id=ongyroscopechange>。"
   },
   "uni-app 取消监听陀螺仪数据": {
     "prefix": ["uni.offGyroscopeChange"],
-    "body": ["uni.offGyroscopeChange(() => {$1})$0"],
+    "body": ["uni.offGyroscopeChange($1)$0"],
     "description": "uni-app 取消监听陀螺仪数据。更多信息查看 <https://uniapp.dcloud.io/api/system/gyroscope?id=offgyroscopechange>。"
   },
   "uni-app 开始监听陀螺仪数据": {
@@ -1223,8 +1256,13 @@
   },
   "uni-app 监听键盘高度变化": {
     "prefix": ["uni.onKeyboardHeightChange"],
-    "body": ["uni.onKeyboardHeightChange(({ height }) => {$1})$0"],
+    "body": ["uni.onKeyboardHeightChange($1)$0"],
     "description": "uni-app 监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=onkeyboardheightchange>。"
+  },
+  "uni-app 取消监听键盘高度变化": {
+    "prefix": ["uni.offKeyboardHeightChange"],
+    "body": ["uni.offKeyboardHeightChange($1)$0"],
+    "description": "uni-app 取消监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=offkeyboardheightchange>。"
   },
   "uni-app 获取 focus 后的输入框光标位置": {
     "prefix": ["uni.getSelectedTextRange"],
@@ -1402,15 +1440,28 @@
   },
   "uni-app 监听窗口尺寸变化": {
     "prefix": ["uni.onWindowResize"],
-    "body": [
-      "uni.onWindowResize(({ size: { windowWidth, windowHeight } }) => {$1})$0"
-    ],
+    "body": ["uni.onWindowResize($1)$0"],
     "description": "uni-app 监听窗口尺寸变化。更多信息查看 <https://uniapp.dcloud.io/api/ui/window?id=onwindowresize>。"
   },
   "uni-app 取消监听窗口尺寸变化": {
     "prefix": ["uni.offWindowResize"],
-    "body": ["uni.offWindowResize(() => {$1})$0"],
+    "body": ["uni.offWindowResize($1)$0"],
     "description": "uni-app 取消监听窗口尺寸变化。更多信息查看 <https://uniapp.dcloud.io/api/ui/window?id=offwindowresize>。"
+  },
+  "uni-app 获取 topWindow 样式": {
+    "prefix": ["uni.getTopWindowStyle"],
+    "body": ["uni.getTopWindowStyle()$0"],
+    "description": "uni-app 获取 topWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=gettopwindowstyle>。"
+  },
+  "uni-app 获取 leftWindow 样式": {
+    "prefix": ["uni.getLeftWindowStyle"],
+    "body": ["uni.getLeftWindowStyle()$0"],
+    "description": "uni-app 获取 leftWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=getleftwindowstyle>。"
+  },
+  "uni-app 获取 RightWindow 样式": {
+    "prefix": ["uni.getRightWindowStyle"],
+    "body": ["uni.getRightWindowStyle()$0"],
+    "description": "uni-app 获取 rightWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=getrightwindowstyle>。"
   },
   "uni-app 设置 topWindow 样式": {
     "prefix": ["uni.setTopWindowStyle"],

@@ -452,19 +452,6 @@
     ],
     "description": "uni-app 页面跳转组件。只能跳转本地页面。目标页面必须已注册。更多信息查看 <https://uniapp.dcloud.io/component/navigator>。"
   },
-  "uni-app custom-tab-bar": {
-    "prefix": ["custom-tab-bar", "<custom-tab-bar>"],
-    "body": [
-      "<custom-tab-bar",
-      "\tdirection=\"${1|horizontal,vertical|}\"",
-      "\t:show-icon=\"${2|false,true|}\"",
-      "\t:selected=\"${3:0}\"",
-      "\t@onTabItemTap=\"$4\"",
-      ">",
-      "</custom-tab-bar>$0"
-    ],
-    "description": "uni-app 【H5 专用】自定义 TabBar 组件。更多信息查看 <https://uniapp.dcloud.io/component/custom-tab-bar>。"
-  },
   "uni-app audio": {
     "prefix": ["audio", "<audio>"],
     "body": [
@@ -549,19 +536,77 @@
     "body": ["<ad $1 />$0"],
     "description": "uni-app 应用内展示的广告组件。更多信息查看 <https://uniapp.dcloud.io/component/ad>。"
   },
-  "uni-app navigation-bar": {
-    "prefix": ["navigation-bar", "<navigation-bar>"],
-    "body": ["<navigation-bar $1 />$0"],
-    "description": "uni-app 页面导航条配置节点，用于指定导航栏的一些属性。只能是 page-meta 组件第一个子组件。更多信息查看 <https://uniapp.dcloud.io/component/navigation-bar>。"
+  "uni-app ad-draw": {
+    "prefix": ["ad-draw", "<ad-draw>"],
+    "body": ["<ad-draw $1 />$0"],
+    "description": "uni-app 【APP-NVUE 专用】应用内竖屏沉浸视频流广告。更多信息查看 <https://uniapp.dcloud.io/component/ad-draw>。"
+  },
+  "uni-app ad-content-page": {
+    "prefix": ["ad-content-page", "<ad-content-page>"],
+    "body": ["<ad-content-page $1 />$0"],
+    "description": "uni-app 【ANDROID-NVUE 专用】应用内短视频内容联盟组件。更多信息查看 <https://uniapp.dcloud.io/component/ad-content-page>。"
   },
   "uni-app page-meta": {
     "prefix": ["page-meta", "<page-meta>"],
     "body": ["<page-meta $1>", "\t<navigation-bar $2 />", "</page-meta>$0"],
     "description": "uni-app 页面属性配置节点，用于指定页面的一些属性、监听页面事件。只能是页面内第一个组件。更多信息查看 <https://uniapp.dcloud.io/component/page-meta>。"
   },
+  "uni-app navigation-bar": {
+    "prefix": ["navigation-bar", "<navigation-bar>"],
+    "body": ["<navigation-bar $1 />$0"],
+    "description": "uni-app 页面导航条配置节点，用于指定导航栏的一些属性。只能是 page-meta 组件第一个子组件。更多信息查看 <https://uniapp.dcloud.io/component/navigation-bar>。"
+  },
+  "uni-app custom-tab-bar": {
+    "prefix": ["custom-tab-bar", "<custom-tab-bar>"],
+    "body": [
+      "<custom-tab-bar",
+      "\tdirection=\"${1|horizontal,vertical|}\"",
+      "\t:show-icon=\"${2|false,true|}\"",
+      "\t:selected=\"${3:0}\"",
+      "\t@onTabItemTap=\"$4\"",
+      ">",
+      "</custom-tab-bar>$0"
+    ],
+    "description": "uni-app 【H5 专用】自定义 TabBar 组件。更多信息查看 <https://uniapp.dcloud.io/component/custom-tab-bar>。"
+  },
   "uni-app open-data": {
     "prefix": ["open-data", "<open-data>"],
     "body": ["<open-data type=\"$1\" />$0"],
     "description": "uni-app 用于展示平台开放的数据。更多信息查看 <https://uniapp.dcloud.io/component/open-data>。"
+  },
+  "uni-app barcode": {
+    "prefix": ["barcode", "<barcode>"],
+    "body": ["<barcode $1 />$0"],
+    "description": "uni-app 【APP-NVUE 专用】扫码组件。更多信息查看 <https://uniapp.dcloud.io/component/barcode>。"
+  },
+  "uni-app list": {
+    "prefix": ["list", "<list>"],
+    "body": ["<list $1>$2</list>$0"],
+    "description": "uni-app 【APP-NVUE 专用】列表组件。更多信息查看 <https://uniapp.dcloud.io/component/list>。"
+  },
+  "uni-app cell": {
+    "prefix": ["cell", "<cell>"],
+    "body": ["<cell $1>$2</cell>$0"],
+    "description": "uni-app 【APP-NVUE 专用】列表项组件。更多信息查看 <https://uniapp.dcloud.io/component/cell>。"
+  },
+  "uni-app recycle-list": {
+    "prefix": ["recycle-list", "<recycle-list>"],
+    "body": ["<recycle-list $1>$2</recycle-list>$0"],
+    "description": "uni-app 【APP-NVUE 专用】列表组件。更多信息查看 <https://uniapp.dcloud.io/component/recycle-list>。"
+  },
+  "uni-app cell-slot": {
+    "prefix": ["cell", "<cell>"],
+    "body": ["<cell-slot $1>$2</cell-slot>$0"],
+    "description": "uni-app 【APP-NVUE 专用】列表项组件。更多信息查看 <https://uniapp.dcloud.io/component/recycle-list>。"
+  },
+  "uni-app waterfall": {
+    "prefix": ["waterfall", "<waterfall>"],
+    "body": ["<waterfall $1>$2</waterfall>$0"],
+    "description": "uni-app 【APP-NVUE 专用】瀑布流组件。更多信息查看 <https://uniapp.dcloud.io/component/waterfall>。"
+  },
+  "uni-app refresh": {
+    "prefix": ["refresh", "<refresh>"],
+    "body": ["<refresh $1>$2</refresh>$0"],
+    "description": "uni-app 【APP-NVUE 专用】列表下拉刷新组件。更多信息查看 <https://uniapp.dcloud.io/component/refresh>。"
   }
 }

@@ -1,5 +1,13 @@
 # 改动日志
 
+## 0.6.0
+
+- 增加 `ad-draw`，`ad-content-page`，`barcode`，`list`，`cell`，`recycle-list`，`cell-slot`，`waterfall`，`refresh` 组件。
+- 增加 `onUniNViewMessage`，`onUnhandledRejection`，`onPageNotFound` 应用生命周期。
+- 增加 `uni.addInterceptor`，`uni.removeInterceptor`，`uni.offNetworkStatusChange`，`uni.onThemeChange`，`uni.offKeyboardHeightChange`，`uni.getTopWindowStyle`，`uni.getLeftWindowStyle`，`uni.getRightWindowStyle`。
+- 调整一些配套的 `uni.onXXX` 和 `uni.offXXX` 的参数。
+- 修复 README 链接。
+
 ## 0.5.1
 
 - 修复部分代码块错误

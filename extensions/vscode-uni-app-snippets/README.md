@@ -70,7 +70,6 @@
 |`<switch>`|`switch`, `<switch>`|uni-app 开关选择器。更多信息查看 <https://uniapp.dcloud.io/component/switch>。|
 |`<textarea>`|`textarea`, `<textarea>`|uni-app 多行输入框。更多信息查看 <https://uniapp.dcloud.io/component/textarea>。|
 |`<navigator>`|`navigator`, `<navigator>`|uni-app 页面跳转组件。只能跳转本地页面。目标页面必须已注册。更多信息查看 <https://uniapp.dcloud.io/component/navigator>。|
-|`<custom-tab-bar>`|`custom-tab-bar`, `<custom-tab-bar>`|uni-app 【H5 专用】自定义 TabBar 组件。更多信息查看 <https://uniapp.dcloud.io/component/custom-tab-bar>。|
 |`<audio>`|`audio`, `<audio>`|uni-app 音频组件。请考虑使用 uni.createInnerAudioContext 代替。更多信息查看 <https://uniapp.dcloud.io/component/audio>。|
 |`<camera>`|`camera`, `<camera>`|uni-app 页面内嵌的区域相机组件。请考虑使用 uni.chooseImage 或 uni.chooseVideo 代替。更多信息查看 <https://uniapp.dcloud.io/component/camera>。|
 |`<image>`|`image`, `<image>`|uni-app 图片组件。更多信息查看 <https://uniapp.dcloud.io/component/image>。|
@@ -81,9 +80,19 @@
 |`<canvas>`|`canvas`, `<canvas>`|uni-app 画布组件。更多信息查看 <https://uniapp.dcloud.io/component/canvas>。|
 |`<web-view>`|`web-view`, `<web-view>`|uni-app 浏览器组件，自动铺满整个页面。更多信息查看 <https://uniapp.dcloud.io/component/web-view>。|
 |`<ad>`|`ad`, `<ad>`|uni-app 应用内展示的广告组件。更多信息查看 <https://uniapp.dcloud.io/component/ad>。|
-|`<navigation-bar>`|`navigation-bar`, `<navigation-bar>`|uni-app 页面导航条配置节点，用于指定导航栏的一些属性。只能是 page-meta 组件第一个子组件。更多信息查看 <https://uniapp.dcloud.io/component/navigation-bar>。|
+|`<ad-draw>`|`ad-draw`, `<ad-draw>`|uni-app 【APP-NVUE 专用】应用内竖屏沉浸视频流广告。更多信息查看 <https://uniapp.dcloud.io/component/ad-draw>。|
+|`<ad-content-page>`|`ad-content-page`, `<ad-content-page>`|uni-app 【ANDROID-NVUE 专用】应用内短视频内容联盟组件。更多信息查看 <https://uniapp.dcloud.io/component/ad-content-page>。|
 |`<page-meta>`|`page-meta`, `<page-meta>`|uni-app 页面属性配置节点，用于指定页面的一些属性、监听页面事件。只能是页面内第一个组件。更多信息查看 <https://uniapp.dcloud.io/component/page-meta>。|
+|`<navigation-bar>`|`navigation-bar`, `<navigation-bar>`|uni-app 页面导航条配置节点，用于指定导航栏的一些属性。只能是 page-meta 组件第一个子组件。更多信息查看 <https://uniapp.dcloud.io/component/navigation-bar>。|
+|`<custom-tab-bar>`|`custom-tab-bar`, `<custom-tab-bar>`|uni-app 【H5 专用】自定义 TabBar 组件。更多信息查看 <https://uniapp.dcloud.io/component/custom-tab-bar>。|
 |`<open-data>`|`open-data`, `<open-data>`|uni-app 用于展示平台开放的数据。更多信息查看 <https://uniapp.dcloud.io/component/open-data>。|
+|`<barcode>`|`barcode`, `<barcode>`|uni-app 【APP-NVUE 专用】扫码组件。更多信息查看 <https://uniapp.dcloud.io/component/barcode>。|
+|`<list>`|`list`, `<list>`|uni-app 【APP-NVUE 专用】列表组件。更多信息查看 <https://uniapp.dcloud.io/component/list>。|
+|`<cell>`|`cell`, `<cell>`|uni-app 【APP-NVUE 专用】列表项组件。更多信息查看 <https://uniapp.dcloud.io/component/cell>。|
+|`<recycle-list>`|`recycle-list`, `<recycle-list>`|uni-app 【APP-NVUE 专用】列表组件。更多信息查看 <https://uniapp.dcloud.io/component/recycle-list>。|
+|`<cell-slot>`|`cell`, `<cell>`|uni-app 【APP-NVUE 专用】列表项组件。更多信息查看 <https://uniapp.dcloud.io/component/recycle-list>。|
+|`<waterfall>`|`waterfall`, `<waterfall>`|uni-app 【APP-NVUE 专用】瀑布流组件。更多信息查看 <https://uniapp.dcloud.io/component/waterfall>。|
+|`<refresh>`|`refresh`, `<refresh>`|uni-app 【APP-NVUE 专用】列表下拉刷新组件。更多信息查看 <https://uniapp.dcloud.io/component/refresh>。|
 
 ## CSS/LESS/SCSS/SASS/STYLUS
 
@@ -139,6 +148,9 @@
 |`onShow()`|`onShow`|uni-app 应用生命周期，只能在 App.vue 中监听。uni-app 启动时或从后台进入前台时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
 |`onHide()`|`onHide`|uni-app 应用生命周期，只能在 App.vue 中监听。uni-app 从前台进入后台时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
 |`onError()`|`onError`|uni-app 应用生命周期，只能在 App.vue 中监听。uni-app 报错时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
+|`onUniNViewMessage()`|`onUniNViewMessage`|uni-app 应用生命周期，只能在 App.vue 中监听。监听 nvue 页面发送的数据。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
+|`onUnhandledRejection()`|`onUnhandledRejection`|uni-app 应用生命周期，只能在 App.vue 中监听。监听未处理的 Promise 拒绝事件。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
+|`onPageNotFound()`|`onPageNotFound`|uni-app 应用生命周期，只能在 App.vue 中监听。uni-app 页面不存在时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
 |`onThemeChange()`|`onThemeChange`|uni-app 应用生命周期，只能在 App.vue 中监听。系统主题变化时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e5%ba%94%e7%94%a8%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
 |`onLoad()`|`onLoad`|uni-app 页面生命周期。页面加载时触发，参数是上个页面传递的数据，类型是 object。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
 |`onShow()`|`onShow`|uni-app 页面生命周期。页面在屏幕上显示时触发。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%e9%a1%b5%e9%9d%a2%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f>。|
@@ -164,6 +176,8 @@
 |`uni.$on()`|`uni.$on`|uni-app 监听全局自定义事件。过多的全局自定义事件容易导致代码混乱且难以调试，请控制全局自定义事件数量。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/communication?id=on>。|
 |`uni.$once()`|`uni.$once`|uni-app 一次性监听全局自定义事件。过多的全局自定义事件容易导致代码混乱且难以调试，请控制全局自定义事件数量。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/communication?id=once>。|
 |`uni.$off()`|`uni.$off`|uni-app 移除全局自定义事件监听。过多的全局自定义事件容易导致代码混乱且难以调试，请控制全局自定义事件数量。更多信息查看 <https://uniapp.dcloud.io/collocation/frame/communication?id=off>。|
+|`uni.addInterceptor()`|`uni.addInterceptor`|uni-app 添加全局拦截器。过多的全局拦截器容易导致代码混乱且难以调试，请控制全局拦截器数量。更多信息查看 <https://uniapp.dcloud.io/api/interceptor>。|
+|`uni.removeInterceptor()`|`uni.removeInterceptor`|uni-app 移除全局拦截器。过多的全局拦截器容易导致代码混乱且难以调试，请控制全局拦截器数量。更多信息查看 <https://uniapp.dcloud.io/api/interceptor>。|
 |`uni.request()`|`uni.request`|uni-app 发起网络请求。请考虑使用已经封装好的库，如 uni-ajax 和 luch-request。更多信息查看 <https://uniapp.dcloud.io/api/request/request>。|
 |`uni.uploadFile()`|`uni.uploadFile`|uni-app 上传文件。更多信息查看 <https://uniapp.dcloud.io/api/request/network-file?id=uploadfile>。|
 |`uni.downloadFile()`|`uni.downloadFile`|uni-app 下载文件。更多信息查看 <https://uniapp.dcloud.io/api/request/network-file?id=downloadfile>。|
@@ -213,7 +227,9 @@
 |`uni.canIUse()`|`uni.canIUse`|uni-app 判断 API、回调、参数、组件等是否在当前版本可用。更多信息查看 <https://uniapp.dcloud.io/api/system/info?id=caniuse>。|
 |`uni.onMemoryWarning()`|`uni.onMemoryWarning`|uni-app 内存不足告警时触发。更多信息查看 <https://uniapp.dcloud.io/api/system/memory>。|
 |`uni.getNetworkType()`|`uni.getNetworkType`|uni-app 获取网络类型。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=getnetworktype>。|
-|`uni.onNetworkStatusChange()`|`uni.onNetworkStatusChange`|uni-app 网络状态变化时触发。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=onnetworkstatuschange>。|
+|`uni.onNetworkStatusChange()`|`uni.onNetworkStatusChange`|uni-app 监听网络状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=onnetworkstatuschange>。|
+|`uni.offNetworkStatusChange()`|`uni.offNetworkStatusChange`|uni-app 取消监听网络状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/network?id=offnetworkstatuschange>。|
+|`uni.onThemeChange()`|`uni.onThemeChange`|uni-app 监听系统主题状态变化。更多信息查看 <https://uniapp.dcloud.io/api/system/theme>。|
 |`uni.onAccelerometerChange()`|`uni.onAccelerometerChange`|uni-app 监听加速度数据。更多信息查看 <https://uniapp.dcloud.io/api/system/accelerometer?id=onaccelerometerchange>。|
 |`uni.offAccelerometerChange()`|`uni.offAccelerometerChange`|uni-app 取消监听加速度数据。更多信息查看 <https://uniapp.dcloud.io/api/system/accelerometer?id=offaccelerometerchange>。|
 |`uni.startAccelerometer()`|`uni.startAccelerometer`|uni-app 开始监听加速度数据。更多信息查看 <https://uniapp.dcloud.io/api/system/accelerometer?id=startaccelerometer>。|
@@ -268,6 +284,7 @@
 |`uni.checkIsSoterEnrolledInDevice()`|`uni.checkIsSoterEnrolledInDevice`|uni-app 获取设备内是否录入生物信息。更多信息查看 <https://uniapp.dcloud.io/api/system/authentication?id=checkissoterenrolledindevice>。|
 |`uni.hideKeyboard()`|`uni.hideKeyboard`|uni-app 隐藏软键盘。更多信息查看 <https://uniapp.dcloud.io/api/key?id=hidekeyboard>。|
 |`uni.onKeyboardHeightChange()`|`uni.onKeyboardHeightChange`|uni-app 监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=onkeyboardheightchange>。|
+|`uni.offKeyboardHeightChange()`|`uni.offKeyboardHeightChange`|uni-app 取消监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=offkeyboardheightchange>。|
 |`uni.getSelectedTextRange()`|`uni.getSelectedTextRange`|uni-app 监听键盘高度变化。更多信息查看 <https://uniapp.dcloud.io/api/key?id=getselectedtextrange>。|
 |`uni.showToast()`|`uni.showToast`|uni-app 显示消息提示框。这可能与加载提示框冲突，请在测试时以真机测试为准。更多信息查看 <https://uniapp.dcloud.io/api/ui/prompt?id=showtoast>。|
 |`uni.hideToast()`|`uni.hideToast`|uni-app 隐藏消息提示框。更多信息查看 <https://uniapp.dcloud.io/api/ui/prompt?id=hidetoast>。|
@@ -294,6 +311,9 @@
 |`uni.pageScrollTo()`|`uni.pageScrollTo`|uni-app 将页面滚动到目标位置。更多信息查看 <https://uniapp.dcloud.io/api/ui/scroll>。|
 |`uni.onWindowResize()`|`uni.onWindowResize`|uni-app 监听窗口尺寸变化。更多信息查看 <https://uniapp.dcloud.io/api/ui/window?id=onwindowresize>。|
 |`uni.offWindowResize()`|`uni.offWindowResize`|uni-app 取消监听窗口尺寸变化。更多信息查看 <https://uniapp.dcloud.io/api/ui/window?id=offwindowresize>。|
+|`uni.getTopWindowStyle()`|`uni.getTopWindowStyle`|uni-app 获取 topWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=gettopwindowstyle>。|
+|`uni.getLeftWindowStyle()`|`uni.getLeftWindowStyle`|uni-app 获取 leftWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=getleftwindowstyle>。|
+|`uni.getRightWindowStyle()`|`uni.getRightWindowStyle`|uni-app 获取 rightWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=getrightwindowstyle>。|
 |`uni.setTopWindowStyle()`|`uni.setTopWindowStyle`|uni-app 设置 topWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=settopwindowstyle>。|
 |`uni.setLeftWindowStyle()`|`uni.setLeftWindowStyle`|uni-app 设置 leftWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=setleftwindowstyle>。|
 |`uni.setRightWindowStyle()`|`uni.setRightWindowStyle`|uni-app 设置 rightWindow 样式。更多信息查看 <https://uniapp.dcloud.io/api/ui/adapt?id=setrightwindowstyle>。|
@@ -334,8 +354,9 @@
 
 ## 更多
 
-- [前端学习路径](https://modyqyw.top/front-end/roadmap/)
-- [前端环境配置](https://modyqyw.top/front-end/environment/)
-- [前端杂项](https://modyqyw.top/front-end/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同前端项目的可共享规范
-- [mp-scss](https://modyqyw.top/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计
+- [前端学习路径](https://modyqyw.github.io/frontend/roadmap/)
+- [前端环境配置](https://modyqyw.github.io/frontend/environment/)
+- [前端杂项](https://modyqyw.github.io/frontend/misc/)
+- [fabric](https://github.com/modyqyw/fabric#readme) - 不同 JavaScript/TypeScript 项目的可共享规范。
+- [utils](https://github.com/modyqyw/utils#readme) - 不同 JavaScript/TypeScript 项目的可共享工具方法。
+- [mp-scss](https://modyqyw.github.io/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计。

@@ -712,6 +712,12 @@
           }
         }
       }
+    },
+    "vueVersion": {
+      "description": "设置使用的 Vue 版本。",
+      "type": "string",
+      "enum": ["2", "3"],
+      "default": 2
     }
   }
 }

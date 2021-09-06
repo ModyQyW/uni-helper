@@ -346,7 +346,7 @@
 |`uni.chooseAddress()`|`uni.chooseAddress`|uni-app 获取收货地址。更多信息查看 <https://uniapp.dcloud.io/api/other/choose-address>。|
 |`uni.chooseInvoiceTitle()`|`uni.chooseInvoiceTitle`|uni-app 选择发票抬头。更多信息查看 <https://uniapp.dcloud.io/api/other/invoice-title>。|
 |`uni.navigateToMiniProgram()`|`uni.navigateToMiniProgram`|uni-app 打开小程序。更多信息查看 <https://uniapp.dcloud.io/api/other/open-miniprogram?id=navigatetominiprogram>。|
-|`uni.navigateToMiniProgram()`|`uni.navigateToMiniProgram`|uni-app 从打开的小程序返回。更多信息查看 <https://uniapp.dcloud.io/api/other/open-miniprogram?id=navigatebackminiprogram>。|
+|`uni.navigateBackMiniProgram()`|`uni.navigateBackMiniProgram`|uni-app 从打开的小程序返回。更多信息查看 <https://uniapp.dcloud.io/api/other/open-miniprogram?id=navigatebackminiprogram>。|
 |`uni.getAccountInfoSync()`|`uni.getAccountInfoSync`|uni-app 同步获取账号信息。更多信息查看 <https://uniapp.dcloud.io/api/other/getAccountInfoSync>。|
 |`uni.report()`|`uni.report`|uni-app 统计。更多信息查看 <https://uniapp.dcloud.io/api/other/report>。|
 |`uni.getUpdateManager()`|`uni.getUpdateManager`|uni-app 获取全局唯一版本更新管理器。更多信息查看 <https://uniapp.dcloud.io/api/other/update>。|

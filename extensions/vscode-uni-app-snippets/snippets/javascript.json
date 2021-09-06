@@ -1790,13 +1790,11 @@
     "description": "uni-app 打开小程序。更多信息查看 <https://uniapp.dcloud.io/api/other/open-miniprogram?id=navigatetominiprogram>。"
   },
   "uni-app 从打开的小程序返回": {
-    "prefix": ["uni.navigateToMiniProgram"],
+    "prefix": ["uni.navigateBackMiniProgram"],
     "body": [
-      "uni.navigateToMiniProgram({",
-      "\tappId: '$1',",
-      "\tpath: '$2',",
-      "\tsuccess: (result) => {$3},",
-      "\tfail: (error) => {$4}",
+      "uni.navigateBackMiniProgram({",
+      "\tsuccess: (result) => {$1},",
+      "\tfail: (error) => {$2}",
       "})$0"
     ],
     "description": "uni-app 从打开的小程序返回。更多信息查看 <https://uniapp.dcloud.io/api/other/open-miniprogram?id=navigatebackminiprogram>。"

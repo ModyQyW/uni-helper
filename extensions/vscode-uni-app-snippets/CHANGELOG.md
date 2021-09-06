@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.6.1
+
+- 修复 `uni.navigateBackMiniProgram`。
+
 ## 0.6.0
 
 - 增加 `ad-draw`，`ad-content-page`，`barcode`，`list`，`cell`，`recycle-list`，`cell-slot`，`waterfall`，`refresh` 组件。

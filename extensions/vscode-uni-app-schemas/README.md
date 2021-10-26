@@ -17,4 +17,4 @@
 - [前端学习路径参考](https://modyqyw.top/roadmap)
 - [前端环境配置参考](https://modyqyw.top/environment/)
 - [前端开发参考](https://modyqyw.top/development/)
-- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的可共享规范。
+- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的预设立场的可共享规范。

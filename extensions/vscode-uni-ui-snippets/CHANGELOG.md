@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.5.1
+
+- 修复 README 链接。
+
 ## 0.5.0
 
 - 添加 `uni-table`，`uni-th`，`uni-tr` 和 `uni-td`。

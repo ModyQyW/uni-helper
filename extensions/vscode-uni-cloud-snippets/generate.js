@@ -1,11 +1,7 @@
 import fs from 'fs';
 
-const htmlObject = JSON.parse(
-  fs.readFileSync('./snippets/vue-html.json', 'utf-8'),
-);
-const javascriptObject = JSON.parse(
-  fs.readFileSync('./snippets/javascript.json', 'utf-8'),
-);
+const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json', 'utf-8'));
+const javascriptObject = JSON.parse(fs.readFileSync('./snippets/javascript.json', 'utf-8'));
 
 let readme = `# vscode-uni-cloud-snippets
 
@@ -38,7 +34,7 @@ Object.keys(htmlObject).forEach((key) => {
   newPrefix = newPrefix.slice(0, -2);
   let newBody = '';
   newBody = `\`${body[0]
-    .replace(/(?<=\w) .*[/>]/g, '')
+    .replace(/\b .*[/>]/g, '')
     .replace(/\(?\([\w "$'(),/:=>{|}]+/g, '()')
     .replace(/\$\d[\w/<>-]*/g, '')}`;
   if (newBody.includes('/* ') && !newBody.includes(' */')) {
@@ -66,7 +62,7 @@ Object.keys(javascriptObject).forEach((key) => {
   newPrefix = newPrefix.slice(0, -2);
   let newBody = '';
   newBody = `\`${body[0]
-    .replace(/(?<=\w) .*[/>]/g, '')
+    .replace(/\b .*[/>]/g, '')
     .replace(/\(?\([\w "$'(),/:=>{|}]+/g, '()')
     .replace(/\$\d[\w/<>-]*/g, '')}`;
   if (newBody.includes('/* ') && !newBody.includes(' */')) {
@@ -85,12 +81,10 @@ readme += '\n';
 // 添加更多
 readme += `## 更多
 
-- [前端学习路径](https://modyqyw.github.io/frontend/roadmap/)
-- [前端环境配置](https://modyqyw.github.io/frontend/environment/)
-- [前端杂项](https://modyqyw.github.io/frontend/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同 JavaScript/TypeScript 项目的可共享规范。
-- [utils](https://github.com/modyqyw/utils#readme) - 不同 JavaScript/TypeScript 项目的可共享工具方法。
-- [mp-scss](https://modyqyw.github.io/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计。
+- [前端学习路径参考](https://modyqyw.top/roadmap)
+- [前端环境配置参考](https://modyqyw.top/environment/)
+- [前端开发参考](https://modyqyw.top/development/)
+- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的预设立场的可共享规范。
 `;
 
 fs.writeFileSync('README.md', readme);

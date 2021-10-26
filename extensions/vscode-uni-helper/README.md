@@ -13,7 +13,7 @@
 - [React Style Helper](https://marketplace.visualstudio.com/items?itemName=iceworks-team.iceworks-style-helper) - 为样式文件提供辅助开发功能
 - [language-stylus](https://marketplace.visualstudio.com/items?itemName=sysoev.language-stylus) - 支持 stylus，vetur 需要
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - 集成 ESLint，vetur 需要
-- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - vue 开发插件
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) - vue 开发插件，你也可以尝试 [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 - [create-uniapp-view](https://marketplace.visualstudio.com/items?itemName=mrmaoddxxaa.create-uniapp-view) - 快捷创建 uni-app 页面并添加到 `pages.json`，也可以快速创建 uni-app 组件
 - [uni-app-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-snippets) - 支持 uni-app 基本能力的代码片段，包括组件和 API
 - [uni-app-schemas](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-schemas) - 支持 uni-app `pages.json` 和 `manifest.json` 简单的格式校验
@@ -30,9 +30,7 @@
 
 ## 更多
 
-- [前端学习路径](https://modyqyw.github.io/frontend/roadmap/)
-- [前端环境配置](https://modyqyw.github.io/frontend/environment/)
-- [前端杂项](https://modyqyw.github.io/frontend/misc/)
-- [fabric](https://github.com/modyqyw/fabric#readme) - 不同 JavaScript/TypeScript 项目的可共享规范。
-- [utils](https://github.com/modyqyw/utils#readme) - 不同 JavaScript/TypeScript 项目的可共享工具方法。
-- [mp-scss](https://modyqyw.github.io/mp-scss/) - 一个基于 Flexbox 的小程序 SCSS 样式库，用于快速实现自定义设计。
+- [前端学习路径参考](https://modyqyw.top/roadmap)
+- [前端环境配置参考](https://modyqyw.top/environment/)
+- [前端开发参考](https://modyqyw.top/development/)
+- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的预设立场的可共享规范。

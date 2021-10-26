@@ -1,6 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const config = require('@modyqyw/fabric/eslint/native');
+const { eslint } = require('@modyqyw/fabric');
 
 module.exports = {
-  ...config,
+  ...eslint.vanillaPrettier,
 };

@@ -6,12 +6,15 @@
     "uni",
     "uni-app",
     "uni-ui",
-    "uni-cloud",
-    "uni-pay"
+    "uni-cloud"
   ],
   "homepage": "https://github.com/ModyQyW/uni-helper#readme",
   "bugs": {
     "url": "https://github.com/ModyQyw/uni-helper/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ModyQyW/uni-helper.git"
   },
   "license": "MIT",
   "author": {
@@ -19,45 +22,40 @@
     "email": "wurui7@mail3.sysu.edu.cn",
     "url": "https://modyqyw.github.io"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ModyQyW/uni-helper.git"
-  },
   "scripts": {
-    "lint": "yarn lint:json && yarn lint:markdown && yarn lint:script",
-    "lint:json": "prettier ./**/*.json --write",
-    "lint:markdown": "markdownlint . --fix",
-    "lint:script": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
     "check": "ncu",
     "clean": "rimraf ./**/*.vsix",
-    "commit": "git-cz && git push"
+    "commit": "cz",
+    "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint",
+    "lint:eslint": "eslint . --fix --ext=.js,.jsx,.ts,.tsx,.vue --ignore-path=.gitignore",
+    "lint:json": "prettier ./**/*.json --write",
+    "lint:markdown": "markdownlint . --fix",
+    "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
+    "lint:script": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "prepare": "is-ci || husky install"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "dependencies": {},
   "devDependencies": {
-    "@modyqyw/fabric": "~1.16.1",
-    "@types/node": "~14.14.31",
-    "commitizen": "~4.2.3",
-    "commitlint": "~11.0.0",
-    "eslint": "~7.20.0",
-    "husky": "~4.3.8",
-    "lint-staged": "~10.5.4",
-    "markdownlint-cli": "~0.26.0",
-    "prettier": "~2.2.1",
-    "rimraf": "~3.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.json": "prettier --write",
-    "*.md": "markdownlint --fix",
-    "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
+    "@babel/core": "~7.15.8",
+    "@babel/eslint-parser": "~7.15.8",
+    "@commitlint/cli": "~13.2.1",
+    "@modyqyw/fabric": "~4.0.0-5",
+    "@types/node": "~16.11.6",
+    "@typescript-eslint/eslint-plugin": "~5.2.0",
+    "@typescript-eslint/parser": "~5.2.0",
+    "commitizen": "~4.2.4",
+    "eslint": "~7.32.0",
+    "husky": "~7.0.4",
+    "is-ci": "~3.0.1",
+    "lint-staged": "~11.2.4",
+    "markdownlint-cli": "~0.29.0",
+    "prettier": "~2.4.1",
+    "rimraf": "~3.0.2",
+    "typescript": "~4.4.4"
   }
 }

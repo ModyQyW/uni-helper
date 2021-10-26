@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.6.2
+
+- 修复 README 链接。
+
 ## 0.6.1
 
 - 修复 `uni.navigateBackMiniProgram`。

@@ -1,5 +1,11 @@
 # 改动日志
 
+## 0.5.0
+
+- 校验 uni-app `androidPrivacy.json` 格式
+- 移除了所有的 `default`，避免不必要的误导
+- 增加 `manifest.json` 配置项 `app-plus.splashscreen.useOriginalMsgbox`
+
 ## 0.4.0
 
 - 增加配置项 `vueVersion`

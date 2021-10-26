@@ -11,8 +11,7 @@
             "pageOrientation": {
               "description": "屏幕方向配置。",
               "type": "string",
-              "enum": ["auto", "portrait", "landscape"],
-              "default": "portrait"
+              "enum": ["auto", "portrait", "landscape"]
             },
             "animationType": {
               "description": "窗口显示的动画效果。",
@@ -27,13 +26,11 @@
                 "zoom-out",
                 "zoom-fade-out",
                 "none"
-              ],
-              "default": "pop-in"
+              ]
             },
             "animationDuration": {
               "description": "窗口显示动画的持续时间，单位 ms。",
-              "type": "number",
-              "default": 300
+              "type": "number"
             },
             "renderingMode": {
               "description": "渲染模式。",
@@ -42,18 +39,15 @@
             },
             "rpxCalcMaxDeviceWidth": {
               "description": "rpx 计算所支持的最大设备宽度，单位 px。",
-              "type": "number",
-              "default": 960
+              "type": "number"
             },
             "rpxCalcBaseDeviceWidthN": {
               "description": "rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px。",
-              "type": "number",
-              "default": 375
+              "type": "number"
             },
             "rpxCalcIncludeWidth": {
               "description": "rpx 计算特殊处理的值，始终按实际的设备宽度计算。单位 rpx。",
-              "type": "number",
-              "default": 750
+              "type": "number"
             }
           }
         }
@@ -66,8 +60,7 @@
       "properties": {
         "autoscan": {
           "description": "是否开启自动扫描。",
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "custom": {
           "description": "以正则方式自定义组件匹配规则。",
@@ -95,14 +88,12 @@
         "borderStyle": {
           "description": "上边框的颜色。",
           "type": "string",
-          "enum": ["black", "white"],
-          "default": "black"
+          "enum": ["black", "white"]
         },
         "blurEffect": {
           "description": "iOS 高斯模糊效果。",
           "type": "string",
-          "enum": ["none", "dark", "extralight", "light"],
-          "default": "none"
+          "enum": ["none", "dark", "extralight", "light"]
         },
         "list": {
           "description": "列表。",
@@ -135,28 +126,23 @@
         "position": {
           "description": "位置。",
           "type": "string",
-          "enum": ["bottom", "top"],
-          "default": "bottom"
+          "enum": ["bottom", "top"]
         },
         "fontSize": {
           "description": "默认字体大小。",
-          "type": "string",
-          "default": "10px"
+          "type": "string"
         },
         "iconWidth": {
           "description": "图标默认宽度，高度将等比例缩放。",
-          "type": "string",
-          "default": "24px"
+          "type": "string"
         },
         "spacing": {
           "description": "图标和文字的间距。",
-          "type": "string",
-          "default": "3px"
+          "type": "string"
         },
         "height": {
           "description": "默认高度。",
-          "type": "string",
-          "default": "50px"
+          "type": "string"
         },
         "midButton": {
           "description": "中间按钮，list 元素数量为偶数时有效。",
@@ -164,13 +150,11 @@
           "properties": {
             "width": {
               "description": "中间按钮宽度。",
-              "type": "string",
-              "default": "80px"
+              "type": "string"
             },
             "height": {
               "description": "中间按钮高度。",
-              "type": "string",
-              "default": "50px"
+              "type": "string"
             },
             "text": {
               "description": "中间按钮文字。",
@@ -182,8 +166,7 @@
             },
             "iconWidth": {
               "description": "图标宽度，高度等比例缩放。",
-              "type": "string",
-              "default": "24px"
+              "type": "string"
             },
             "backgroundImage": {
               "description": "中间按钮背景图标路径。",
@@ -254,8 +237,7 @@
         "network": {
           "description": "在指定网络下预下载。",
           "type": "string",
-          "enum": ["all", "wifi"],
-          "default": "wifi"
+          "enum": ["all", "wifi"]
         }
       }
     },
@@ -289,8 +271,7 @@
       "properties": {
         "backgroundColor": {
           "description": "背景颜色。",
-          "type": "string",
-          "default": "#f7f7f7"
+          "type": "string"
         },
         "buttons": {
           "description": "自定义按钮。",
@@ -310,8 +291,7 @@
                   "menu",
                   "close",
                   "none"
-                ],
-                "default": "none"
+                ]
               },
               "color": {
                 "description": "自定义按钮文字颜色，默认和标题文字颜色一样。",
@@ -328,14 +308,12 @@
               "float": {
                 "description": "自定义按钮在标题栏的显示位置。",
                 "type": "string",
-                "enum": ["right", "left"],
-                "default": "right"
+                "enum": ["right", "left"]
               },
               "fontWeight": {
                 "description": "自定义按钮文字粗细。",
                 "type": "string",
-                "enum": ["normal", "bold"],
-                "default": "normal"
+                "enum": ["normal", "bold"]
               },
               "fontSize": {
                 "description": "自定义按钮文字大小。",
@@ -347,8 +325,7 @@
               },
               "select": {
                 "description": "自定义按钮是否显示下箭头。",
-                "type": "boolean",
-                "default": false
+                "type": "boolean"
               },
               "text": {
                 "description": "自定义按钮文字内容。",
@@ -356,16 +333,14 @@
               },
               "width": {
                 "description": "自定义按钮文字内容。支持像素值和 auto。",
-                "type": "string",
-                "default": "44px"
+                "type": "string"
               }
             }
           }
         },
         "titleColor": {
           "description": "标题颜色。",
-          "type": "string",
-          "default": "#000000"
+          "type": "string"
         },
         "titleText": {
           "description": "标题内容。",
@@ -378,8 +353,7 @@
         "type": {
           "description": "导航栏样式。",
           "type": "string",
-          "enum": ["default", "transparent", "float"],
-          "default": "default"
+          "enum": ["default", "transparent", "float"]
         },
         "searchInput": {
           "description": "原生导航栏上的搜索框配置。",
@@ -387,24 +361,20 @@
           "properties": {
             "autoFocus": {
               "description": "是否自动获取焦点。",
-              "type": "boolean",
-              "default": false
+              "type": "boolean"
             },
             "align": {
               "description": "非输入状态下文本的对齐方式。",
               "type": "string",
-              "enum": ["center", "left", "right"],
-              "default": "center"
+              "enum": ["center", "left", "right"]
             },
             "backgroundColor": {
               "description": "背景色。",
-              "type": "string",
-              "default": "rgba(255,255,255,0.5)"
+              "type": "string"
             },
             "borderRadius": {
               "description": "输入框的圆角半径。支持像素值。",
-              "type": "string",
-              "default": "0px"
+              "type": "string"
             },
             "placeholder": {
               "description": "提示文本。",
@@ -412,13 +382,11 @@
             },
             "placeholderColor": {
               "description": "提示文本颜色。",
-              "type": "string",
-              "default": "#cccccc"
+              "type": "string"
             },
             "disabled": {
               "description": "是否禁止输入。",
-              "type": "boolean",
-              "default": false
+              "type": "boolean"
             }
           }
         }
@@ -430,13 +398,11 @@
       "properties": {
         "color": {
           "description": "颜色。",
-          "type": "string",
-          "default": "#2bd009"
+          "type": "string"
         },
         "offset": {
           "description": "下拉刷新控件的起始位置，style 为 circle 时有效。支持百分比和像素值。",
-          "type": "string",
-          "default": "0px"
+          "type": "string"
         }
       }
     },
@@ -450,8 +416,7 @@
         "navigationBarTextStyle": {
           "description": "导航栏标题颜色和状态栏前景颜色。",
           "type": "string",
-          "enum": ["black", "white"],
-          "default": "white"
+          "enum": ["black", "white"]
         },
         "navigationBarTitleText": {
           "description": "导航栏标题文字内容。",
@@ -460,39 +425,32 @@
         "navigationStyle": {
           "description": "导航栏样式。",
           "type": "string",
-          "enum": ["default", "custom"],
-          "default": "default"
+          "enum": ["default", "custom"]
         },
         "backgroundColor": {
           "description": "下拉显示出来的窗口的背景色。",
-          "type": "string",
-          "default": "#ffffff"
+          "type": "string"
         },
         "backgroundTextStyle": {
           "description": "下拉 loading 的样式。",
           "type": "string",
-          "enum": ["dark", "light"],
-          "default": "dark"
+          "enum": ["dark", "light"]
         },
         "enablePullDownRefresh": {
           "description": "是否开启下拉刷新。",
-          "type": "boolean",
-          "default": false
+          "type": "boolean"
         },
         "onReachBottomDistance": {
           "description": "页面触发上拉触底事件时和底部的距离，单位 px。",
-          "type": "number",
-          "default": 50
+          "type": "number"
         },
         "backgroundColorTop": {
           "description": "回弹区域顶部窗口的背景色。",
-          "type": "string",
-          "default": "#ffffff"
+          "type": "string"
         },
         "backgroundColorBottom": {
           "description": "回弹区域底部窗口的背景色。",
-          "type": "string",
-          "default": "#ffffff"
+          "type": "string"
         },
         "titleImage": {
           "description": "导航栏图片地址。",
@@ -501,14 +459,12 @@
         "transparentTitle": {
           "description": "导航栏整体透明设置。",
           "type": "string",
-          "enum": ["always", "auto", "none"],
-          "default": "none"
+          "enum": ["always", "auto", "none"]
         },
         "titlePenetrate": {
           "description": "导航栏点击穿透。",
           "type": "string",
-          "enum": ["YES", "NO"],
-          "default": "NO"
+          "enum": ["YES", "NO"]
         },
         "app-plus": {
           "description": "编译到 APP 的特定样式。",
@@ -516,8 +472,7 @@
           "properties": {
             "background": {
               "description": "窗体背景色。",
-              "type": "string",
-              "default": "#ffffff"
+              "type": "string"
             },
             "titleNView": {
               "allOf": [
@@ -527,8 +482,7 @@
                     "titleOverflow": {
                       "description": "标题文字超出显示区域时处理方式。",
                       "type": "string",
-                      "enum": ["clip", "ellipsis"],
-                      "default": "ellipsis"
+                      "enum": ["clip", "ellipsis"]
                     },
                     "tags": {
                       "description": "原生 View 增强。",
@@ -536,13 +490,11 @@
                     },
                     "homeButton": {
                       "description": "是否显示 Home 按钮。",
-                      "type": "boolean",
-                      "default": false
+                      "type": "boolean"
                     },
                     "autoBackButton": {
                       "description": "是否自动显示左侧返回按钮。",
-                      "type": "boolean",
-                      "default": true
+                      "type": "boolean"
                     },
                     "backButton": {
                       "description": "返回按钮的样式。",
@@ -555,30 +507,25 @@
                     "backgroundRepeat": {
                       "description": "backgroundImage 为背景图片路径时有效。",
                       "type": "string",
-                      "enum": ["repeat", "repeat-x", "repeat-y", "no-repeat"],
-                      "default": "no-repeat"
+                      "enum": ["repeat", "repeat-x", "repeat-y", "no-repeat"]
                     },
                     "titleAlign": {
                       "description": "对齐方式。",
                       "type": "string",
-                      "enum": ["center", "left", "auto"],
-                      "default": "auto"
+                      "enum": ["center", "left", "auto"]
                     },
                     "blurEffect": {
                       "description": "高斯模糊效果，type 为 transparent 或 float 时有效。",
                       "type": "string",
-                      "enum": ["dark", "extralight", "light", "none"],
-                      "default": "none"
+                      "enum": ["dark", "extralight", "light", "none"]
                     },
                     "coverage": {
                       "description": "标题栏控件变化作用范围，type 为 transparent 时有效。支持百分比和像素值。",
-                      "type": "string",
-                      "default": "132px"
+                      "type": "string"
                     },
                     "splitLine": {
                       "description": "是否显示标题栏控件的底部分割线。",
-                      "type": "boolean",
-                      "default": false
+                      "type": "boolean"
                     },
                     "subtitleColor": {
                       "description": "副标题颜色，默认和标题颜色一样。",
@@ -591,8 +538,7 @@
                     "subtitleOverflow": {
                       "description": "副标题文字超出显示区域时处理方式。",
                       "type": "string",
-                      "enum": ["clip", "ellipsis"],
-                      "default": "ellipsis"
+                      "enum": ["clip", "ellipsis"]
                     },
                     "subtitleText": {
                       "description": "副标题内容。",
@@ -604,8 +550,7 @@
                     },
                     "titleIconRadius": {
                       "description": "标题图标圆角。支持像素值。",
-                      "type": "string",
-                      "default": "0px"
+                      "type": "string"
                     }
                   }
                 }
@@ -635,34 +580,28 @@
                     "position": {
                       "description": "原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。",
                       "type": "string",
-                      "enum": ["static", "absolute", "dock"],
-                      "default": "absolute"
+                      "enum": ["static", "absolute", "dock"]
                     },
                     "dock": {
                       "description": "原生子窗体的停靠方式，position 为 dock 时生效。",
                       "type": "string",
-                      "enum": ["top", "bottom", "right", "left"],
-                      "default": "bottom"
+                      "enum": ["top", "bottom", "right", "left"]
                     },
                     "mask": {
                       "description": "原生子窗体的遮罩层，type 为 popup 时生效。",
-                      "type": "string",
-                      "default": "rgba(0,0,0,0.5)"
+                      "type": "string"
                     },
                     "width": {
                       "description": "原生子窗体的宽度。支持百分比和像素值。",
-                      "type": "string",
-                      "default": "100%"
+                      "type": "string"
                     },
                     "height": {
                       "description": "原生子窗体的高度。支持百分比和像素值。",
-                      "type": "string",
-                      "default": "100%"
+                      "type": "string"
                     },
                     "top": {
                       "description": "原生子窗体垂直向下的偏移量。支持百分比和像素值。",
-                      "type": "string",
-                      "default": "0px"
+                      "type": "string"
                     },
                     "bottom": {
                       "description": "原生子窗体垂直向上的偏移量。支持百分比和像素值。",
@@ -670,8 +609,7 @@
                     },
                     "left": {
                       "description": "原生子窗体水平向左的偏移量。支持百分比和像素值。",
-                      "type": "string",
-                      "default": "0px"
+                      "type": "string"
                     },
                     "right": {
                       "description": "原生子窗体水平向右的偏移量。支持百分比和像素值。",
@@ -697,20 +635,17 @@
             "popGesture": {
               "description": "配置侧滑返回功能。",
               "type": "string",
-              "enum": ["close", "none"],
-              "default": "close"
+              "enum": ["close", "none"]
             },
             "softinputNavBar": {
               "description": "iOS 软键盘上完成工具栏的显示模式。",
               "type": "string",
-              "enum": ["auto", "none"],
-              "default": "auto"
+              "enum": ["auto", "none"]
             },
             "softinputMode": {
               "description": "软键盘弹出模式。",
               "type": "string",
-              "enum": ["adjustResize", "adjustPan"],
-              "default": "adjustPan"
+              "enum": ["adjustResize", "adjustPan"]
             },
             "pullToRefresh": {
               "allOf": [
@@ -719,8 +654,7 @@
                   "properties": {
                     "support": {
                       "description": "是否开启下拉刷新功能。",
-                      "type": "boolean",
-                      "default": false
+                      "type": "boolean"
                     },
                     "style": {
                       "description": "下拉刷新样式。",
@@ -787,13 +721,11 @@
                 "zoom-out",
                 "zoom-fade-out",
                 "none"
-              ],
-              "default": "pop-in"
+              ]
             },
             "animationDuration": {
               "description": "窗口显示动画的持续时间，单位 ms。",
-              "type": "string",
-              "default": 300
+              "type": "string"
             }
           }
         },
@@ -816,8 +748,7 @@
             "allowsBounceVertical": {
               "description": "是否允许向下拉拽。",
               "type": "string",
-              "enum": ["YES", "NO"],
-              "default": "YES"
+              "enum": ["YES", "NO"]
             },
             "titleImage": {
               "description": "导航栏图片地址。",
@@ -826,20 +757,17 @@
             "transparentTitle": {
               "description": "导航栏透明设置。",
               "type": "string",
-              "enum": ["always", "auto", "none"],
-              "default": "none"
+              "enum": ["always", "auto", "none"]
             },
             "titlePenetrate": {
               "description": "导航栏是否点击穿透。",
               "type": "string",
-              "enum": ["YES", "NO"],
-              "default": "NO"
+              "enum": ["YES", "NO"]
             },
             "showTitleLoading": {
               "description": "进入时是否显示导航栏的 loading。",
               "type": "string",
-              "enum": ["YES", "NO"],
-              "default": "NO"
+              "enum": ["YES", "NO"]
             },
             "backgroundImageUrl": {
               "description": "下拉露出显示的背景图链接。",
@@ -852,14 +780,12 @@
             "gestureBack": {
               "description": "iOS 是否支持手势返回。",
               "type": "string",
-              "enum": ["YES", "NO"],
-              "default": "NO"
+              "enum": ["YES", "NO"]
             },
             "enableScrollBar": {
               "description": "Android 是否显示 WebView 滚动条。",
               "type": "string",
-              "enum": ["YES", "NO"],
-              "default": "NO"
+              "enum": ["YES", "NO"]
             }
           }
         },
@@ -881,23 +807,19 @@
         },
         "leftWindow": {
           "description": "存在 leftWindow 时，默认是否显示 leftWindow。",
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "topWindow": {
           "description": "存在 topWindow 时，默认是否显示 topWindow。",
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "rightWindow": {
           "description": "存在 rightWindow 时，默认是否显示 rightWindow。",
-          "type": "boolean",
-          "default": true
+          "type": "boolean"
         },
         "maxWidth": {
           "description": "当浏览器可见区域宽度大于 maxWidth 时两侧留白，当小于等于 maxWidth 时页面铺满。不同页面支持配置不同的maxWidth。单位 px。",
-          "type": "number",
-          "default": 1190
+          "type": "number"
         }
       }
     },
@@ -935,8 +857,7 @@
                   },
                   "disableScroll": {
                     "description": "是否禁止页面整体上下滚动。",
-                    "type": "boolean",
-                    "default": false
+                    "type": "boolean"
                   }
                 }
               }
@@ -962,8 +883,7 @@
           "properties": {
             "minWidth": {
               "description": "当设备可见区域宽度 >= minWidth 时显示该窗口。",
-              "type": "number",
-              "default": 768
+              "type": "number"
             }
           }
         }

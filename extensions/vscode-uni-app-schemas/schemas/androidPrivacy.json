@@ -1,0 +1,97 @@
+{
+  "description": "Android 移动应用服务协议和隐私政策配置文件，不能添加注释。更多信息查看 <https://uniapp.dcloud.io/app/android-store> 和 <https://ask.dcloud.net.cn/article/36937>。",
+  "type": "object",
+  "properties": {
+    "version": {
+      "description": "版本号，如果希望应用升级后重新弹出提示框，则需要设置新版本。",
+      "type": "string"
+    },
+    "prompt": {
+      "description": "是否使用原生提示框，template 表示使用，none 表示不使用。",
+      "type": "string",
+      "enum": ["template", "none"]
+    },
+    "title": {
+      "description": "提示框标题。",
+      "type": "string"
+    },
+    "message": {
+      "description": "提示框正文，支持富文本类型字符串，支持 <a> 等标签，点击 <a> 标签会调用内置页面打开其 href 属性中链接地址。href 属性链接地址应做转义。",
+      "type": "string"
+    },
+    "buttonAccept": {
+      "description": "提示框上接受按钮的文本，默认为“同意”。",
+      "type": "string"
+    },
+    "buttonRefuse": {
+      "description": "提示框上拒绝按钮的文本，默认不显示拒绝按钮。",
+      "type": "string"
+    },
+    "second": {
+      "description": "二次确认提示框配置，message 属性值不为空时弹出二次确认提示框。",
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "二次确认提示框标题。",
+          "type": "string"
+        },
+        "message": {
+          "description": "二次确认提示框正文，支持富文本类型字符串。",
+          "type": "string"
+        },
+        "buttonAccept": {
+          "description": "二次确认提示框上接受按钮的文本。",
+          "type": "string"
+        },
+        "buttonRefuse": {
+          "description": "二次确认提示框上拒绝按钮的文本。",
+          "type": "string"
+        }
+      }
+    },
+    "styles": {
+      "description": "提示框样式。",
+      "type": "object",
+      "properties": {
+        "backgroundColor": {
+          "description": "提示框背景颜色，#RRGGBB 格式。",
+          "type": "string"
+        },
+        "borderRadius": {
+          "description": "提示框圆角半径，单位 px",
+          "type": "string"
+        },
+        "title": {
+          "description": "提示框标题样式。",
+          "type": "object",
+          "properties": {
+            "color": {
+              "description": "提示框标题文字颜色，#RRGGBB 格式。",
+              "type": "string"
+            }
+          }
+        },
+        "buttonAccept": {
+          "description": "提示框接受按钮样式。",
+          "type": "object",
+          "properties": {
+            "color": {
+              "description": "提示框接受按钮文字颜色，#RRGGBB 格式。",
+              "type": "string"
+            }
+          }
+        },
+        "buttonRefuse": {
+          "description": "提示框拒绝按钮样式。",
+          "type": "object",
+          "properties": {
+            "color": {
+              "description": "提示框拒绝按钮文字颜色，#RRGGBB 格式。",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

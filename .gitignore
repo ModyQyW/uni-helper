@@ -40,11 +40,15 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
-jspm_packages/
+node_modules
+jspm_packages
 
 # Snowpack dependency directory (https://snowpack.dev/)
-web_modules/
+web_modules
+
+# Temp directory
+.temp
+.tmp
 
 # TypeScript cache
 *.tsbuildinfo
@@ -56,10 +60,10 @@ web_modules/
 .eslintcache
 
 # Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
+.rpt2_cache
+.rts2_cache_cjs
+.rts2_cache_es
+.rts2_cache_umd
 
 # Optional REPL history
 .node_repl_history
@@ -83,7 +87,20 @@ web_modules/
 .parcel-cache
 
 # Electron
+dist-electron
 dist_electron
+
+# Tauri
+dist-tauri
+dist_tauri
+
+# Cordova
+dist-cordova
+dist_cordova
+
+# Capacitor
+dist-capacitor
+dist_capacitor
 
 # Next.js build output
 .next
@@ -101,47 +118,43 @@ dist
 # Rax.js build
 .rax
 
-# Gatsby files
-.cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
-
 # vuepress build output
 .vuepress/dist
-.cache
-.temp
 
-# vite build output
+# ssr
 dist-ssr
+dist_ssr
+
+# ssg
+dist-ssg
+dist_ssg
 
 # Serverless
-.serverless/
-.dynamodb/
-.s3/
-.buckets/
-.seeds/
+.serverless
+.dynamodb
+.s3
+.buckets
+.seeds
 
 # FuseBox cache
-.fusebox/
-
-# DynamoDB Local files
-.dynamodb/
+.fusebox
 
 # TernJS port file
 .tern-port
 
-# VSCode
+# Editor
 .vscode-test
 .vscode
+!.vscode/extensions.json
 *.vsix
-
-# Jetbrains
 .idea
-
-# DCloud
 .hbuilder
 .hbuilderx
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # yarn v2
 .yarn/cache

@@ -25,9 +25,9 @@
   "scripts": {
     "check": "ncu",
     "clean": "rimraf ./**/*.vsix",
-    "commit": "cz",
+    "commit": "git-cz",
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint",
-    "lint:eslint": "eslint . --fix --ext=.js,.jsx,.ts,.tsx,.vue --ignore-path=.gitignore",
+    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
     "lint:json": "prettier ./**/*.json --write",
     "lint:markdown": "markdownlint . --fix",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
@@ -36,26 +36,26 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/@commitlint/cz-commitlint"
     }
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "~7.16.5",
-    "@babel/eslint-parser": "~7.16.5",
-    "@commitlint/cli": "~15.0.0",
-    "@modyqyw/fabric": "~4.3.0",
-    "@types/node": "~17.0.0",
-    "@typescript-eslint/eslint-plugin": "~5.7.0",
-    "@typescript-eslint/parser": "~5.7.0",
+    "@babel/core": "~7.17.2",
+    "@babel/eslint-parser": "~7.17.0",
+    "@commitlint/cli": "~16.1.0",
+    "@modyqyw/fabric": "~4.12.0",
+    "@types/node": "~17.0.16",
+    "@typescript-eslint/eslint-plugin": "~5.11.0",
+    "@typescript-eslint/parser": "~5.11.0",
     "commitizen": "~4.2.4",
-    "eslint": "~8.4.1",
+    "eslint": "~8.8.0",
     "husky": "~7.0.4",
     "is-ci": "~3.0.1",
-    "lint-staged": "~12.1.2",
-    "markdownlint-cli": "~0.30.0",
+    "lint-staged": "~12.3.3",
+    "markdownlint-cli": "~0.31.1",
     "prettier": "~2.5.1",
     "rimraf": "~3.0.2",
-    "typescript": "~4.5.4"
+    "typescript": "~4.5.5"
   }
 }

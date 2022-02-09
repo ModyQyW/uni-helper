@@ -1,3 +1,5 @@
 # uni-helper
 
-Looking for developers/maintainers.
+Looking for maintainers.
+
+正在寻找维护者。

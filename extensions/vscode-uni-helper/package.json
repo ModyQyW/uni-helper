@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-helper",
   "displayName": "uni-helper",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "Help writing uni-*.",
   "categories": [
     "Extension Packs"
@@ -31,20 +31,13 @@
   "publisher": "ModyQyW",
   "type": "module",
   "scripts": {
-    "release": "node generate.js && npx vsce package && npx vsce publish"
+    "release": "npx vsce package && npx vsce publish"
   },
   "extensionPack": [
     "ModyQyW.vscode-uni-app-schemas",
     "ModyQyW.vscode-uni-app-snippets",
     "ModyQyW.vscode-uni-cloud-snippets",
-    "ModyQyW.vscode-uni-ui-snippets",
-    "Syler.sass-indented",
-    "dbaeumer.vscode-eslint",
-    "iceworks-team.iceworks-style-helper",
-    "mrmaoddxxaa.create-uniapp-view",
-    "octref.vetur",
-    "sysoev.language-stylus",
-    "xabikos.JavaScriptSnippets"
+    "ModyQyW.vscode-uni-ui-snippets"
   ],
   "engines": {
     "vscode": "^1.40.0"

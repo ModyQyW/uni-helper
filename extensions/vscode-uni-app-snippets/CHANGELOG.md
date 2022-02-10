@@ -1,5 +1,18 @@
 # 改动日志
 
+## 0.7.1
+
+- 修复 `body` 错误。
+
+## 0.7.0
+
+- 增加支付宝小程序平台 `prefix`。
+- 增加飞书小程序平台和快手小程序平台。
+- 增加页面生命周期 `onInit`。
+- 增加应用级事件 `uni.onAppShow`、`uni.offAppShow`、`uni.onAppHide`、`uni.offAppHide`、`uni.onPageNotFound`、`uni.offPageNotFound`、`uni.onError`、`uni.offError`。
+- 增加拦截器相关 `uni.addInterceptor`、`uni.removeInterceptor`。
+- 修复 README 链接。
+
 ## 0.6.2
 
 - 修复 README 链接。

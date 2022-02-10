@@ -2,10 +2,9 @@
 
 ## 插件特性
 
-- uni-cloud 基本能力的代码片段，包括组件和 API
-- 支持 vue2
+- uni-cloud 基本能力代码片段，包括组件和 API
 - 参考 [uni-cloud 官方文档](https://uniapp.dcloud.net.cn/uniCloud/README)
-- 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)
+- 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
 
 本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
 
@@ -39,7 +38,5 @@
 
 ## 更多
 
-- [前端学习路径参考](https://modyqyw.top/roadmap)
-- [前端环境配置参考](https://modyqyw.top/environment/)
-- [前端开发参考](https://modyqyw.top/development/)
-- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的预设立场的可共享规范。
+- [个人站点](https://modyqyw.github.io/)
+- [个人 Github](https://github.com/ModyQyW)

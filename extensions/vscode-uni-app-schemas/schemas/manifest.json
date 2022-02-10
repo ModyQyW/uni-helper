@@ -11,20 +11,6 @@
       "description": "应用标识，由 DCloud 云端分配。更多信息查看 <https://ask.dcloud.net.cn/article/35907>。",
       "type": "string"
     },
-    "screenOrientation": {
-      "description": "重力感应、横竖屏配置。",
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "enum": [
-          "portrait-primary",
-          "portrait-secondary",
-          "landscape-primary",
-          "landscape-secondary"
-        ]
-      }
-    },
     "description": {
       "description": "应用描述。",
       "type": "string"
@@ -126,6 +112,20 @@
             }
           }
         },
+        "screenOrientation": {
+          "description": "重力感应、横竖屏配置。",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "portrait-primary",
+              "portrait-secondary",
+              "landscape-primary",
+              "landscape-secondary"
+            ]
+          }
+        },
         "modules": {
           "description": "APP 权限模块。请在 HBuilderX 内完成该部分配置。",
           "type": "object"
@@ -145,27 +145,8 @@
             "sdkConfigs": {
               "description": "SDK 配置。仅打包生效。请在 HBuilderX 内完成该部分配置。",
               "type": "object"
-            },
-            "orientation": {
-              "description": "屏幕方向配置。优先使用 screenOrientation。",
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "description": "可选 portrait-primary，portrait-secondary，landscape-primary 和 landscape-secondary。",
-                "type": "string",
-                "enum": [
-                  "portrait-primary",
-                  "portrait-secondary",
-                  "landscape-primary",
-                  "landscape-secondary"
-                ]
-              }
             }
           }
-        },
-        "usingComponents": {
-          "description": "是否启用自定义组件模式。",
-          "type": "boolean"
         },
         "nvueCompiler": {
           "description": "nvue 编译模式。",
@@ -200,6 +181,17 @@
               "description": "flex 项目的排列方向。可选 row，row-reverse，column 和 column-reverse。",
               "type": "string",
               "enum": ["row", "row-reverse", "column", "column-reverse"]
+            }
+          }
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
             }
           }
         },
@@ -315,6 +307,17 @@
               }
             }
           }
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
         }
       }
     },
@@ -371,10 +374,6 @@
         "appid": {
           "description": "微信小程序的 appid。",
           "type": "string"
-        },
-        "usingComponents": {
-          "description": "是否启用自定义组件模式。",
-          "type": "boolean"
         },
         "setting": {
           "description": "微信小程序项目设置。更多信息查看 <https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html>。",
@@ -505,6 +504,22 @@
         "cloudfunctionRoot": {
           "description": "云开发代码目录。",
           "type": "string"
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
         }
       }
     },
@@ -512,10 +527,6 @@
       "description": "支付宝小程序特有配置。",
       "type": "object",
       "properties": {
-        "usingComponents": {
-          "description": "是否启用自定义组件模式。",
-          "type": "boolean"
-        },
         "plugins": {
           "description": "使用到的插件。",
           "type": "object"
@@ -539,6 +550,22 @@
         "enableDistFileMinify": {
           "description": "是否压缩编译产物。",
           "type": "boolean"
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
         }
       }
     },
@@ -549,10 +576,6 @@
         "appid": {
           "description": "百度小程序的 appid。",
           "type": "string"
-        },
-        "usingComponents": {
-          "description": "是否启用自定义组件模式。",
-          "type": "boolean"
         },
         "requiredBackgroundModes": {
           "description": "需要在后台使用的能力。",
@@ -572,6 +595,22 @@
               "type": "boolean"
             }
           }
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
         }
       }
     },
@@ -582,10 +621,6 @@
         "appid": {
           "description": "字节跳动小程序的 appid。",
           "type": "string"
-        },
-        "usingComponents": {
-          "description": "是否启用自定义组件模式。",
-          "type": "boolean"
         },
         "setting": {
           "description": "字节跳动小程序小程序项目设置。",
@@ -610,6 +645,70 @@
             "description": "要跳转的字节跳动小程序 appid。",
             "type": "string"
           }
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
+        }
+      }
+    },
+    "mp-lark": {
+      "description": "飞书小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "appid": {
+          "description": "飞书小程序的 appid。",
+          "type": "string"
+        },
+        "setting": {
+          "description": "飞书小程序小程序项目设置。",
+          "type": "object",
+          "properties": {
+            "es6": {
+              "description": "是否启用 ES6 转 ES5。",
+              "type": "boolean"
+            },
+            "minified": {
+              "description": "是否启用脚本代码自动压缩。",
+              "type": "boolean"
+            },
+            "postcss": {
+              "description": "是否启用样式自动补全。",
+              "type": "boolean"
+            },
+            "urlCheck": {
+              "description": "是否检查安全域名和 TLS 版本。",
+              "type": "boolean"
+            }
+          }
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
         }
       }
     },
@@ -620,10 +719,6 @@
         "appid": {
           "description": "QQ 小程序的 appid。",
           "type": "string"
-        },
-        "usingComponents": {
-          "description": "是否启用自定义组件模式。",
-          "type": "boolean"
         },
         "requiredBackgroundModes": {
           "description": "需要在后台使用的能力。",
@@ -673,6 +768,48 @@
               "type": "boolean"
             }
           }
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
+        }
+      }
+    },
+    "mp-kuaishou": {
+      "description": "快手小程序特有配置。",
+      "type": "object",
+      "properties": {
+        "appid": {
+          "description": "飞书小程序的 appid。",
+          "type": "string"
+        },
+        "uniStatistics": {
+          "description": "uni 统计配置项。",
+          "type": "object",
+          "required": ["enable"],
+          "properties": {
+            "enable": {
+              "description": "是否开启 uni 统计。",
+              "type": "boolean"
+            }
+          }
+        },
+        "scopedSlotsCompiler": {
+          "description": "作用域插槽编译模式。",
+          "type": "string",
+          "enum": ["auto", "legacy", "augmented"]
         }
       }
     },

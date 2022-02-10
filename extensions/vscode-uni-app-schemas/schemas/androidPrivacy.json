@@ -92,6 +92,20 @@
           }
         }
       }
+    },
+    "disagreeMode": {
+      "description": "未同意隐私政策模式。详见 <https://uniapp.dcloud.io/app-disagreemode>。",
+      "type": "object",
+      "properties": {
+        "support": {
+          "description": "是否支持未同意隐私政策模式，默认为 false。",
+          "type": "boolean"
+        },
+        "loadNativePlugins": {
+          "description": "未同意隐私政策模式下是否加载原生插件，默认为 true。",
+          "type": "boolean"
+        }
+      }
     }
   }
 }

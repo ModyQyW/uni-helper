@@ -1,5 +1,14 @@
 # 改动日志
 
+## 0.6.0
+
+- 增加了 `prefix`，现在有更多的触发方式
+  - `["uni-badge", "<uni-badge>"]` -> `["uni-badge", "<uni-badge>", "UniBadge", "<UniBadge>"]`
+  - 为了与 `uview-ui` 区分，没有添加和 `uBadge` 类似的 `prefix`
+- 移除了没有在 [仓库 README](https://github.com/dcloudio/uni-ui) 和 [官网](https://uniapp.dcloud.io/component/uniui/uni-ui) 列出来的组件
+- 根据示例调整了部分 `body`
+- 修复 README 链接
+
 ## 0.5.1
 
 - 修复 README 链接。

@@ -1,15 +1,16 @@
 import fs from 'fs';
 
-const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json', 'utf-8'));
+const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json'));
 
 let readme = `# vscode-uni-ui-snippets
 
 ## 插件特性
 
 - uni-ui 组件代码片段
-- 支持 vue2
 - 参考 [uni-ui 文档](https://github.com/dcloudio/uni-ui#readme)
-- 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)
+- 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
+
+另外推荐优秀的社区 UI 库 [uview-ui](https://www.uviewui.com/) 和 [thor-ui](https://thorui.cn/doc/)。
 
 本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
 
@@ -52,10 +53,8 @@ readme += '\n';
 // 添加更多
 readme += `## 更多
 
-- [前端学习路径参考](https://modyqyw.top/roadmap)
-- [前端环境配置参考](https://modyqyw.top/environment/)
-- [前端开发参考](https://modyqyw.top/development/)
-- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的预设立场的可共享规范。
+- [个人站点](https://modyqyw.github.io/)
+- [个人 Github](https://github.com/ModyQyW)
 `;
 
 fs.writeFileSync('README.md', readme);

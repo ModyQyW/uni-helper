@@ -3,9 +3,10 @@
 ## 插件特性
 
 - uni-ui 组件代码片段
-- 支持 vue2
 - 参考 [uni-ui 文档](https://github.com/dcloudio/uni-ui#readme)
-- 参考 [Vue.js 风格指南](https://cn.vuejs.org/v2/style-guide/index.html)
+- 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
+
+另外推荐优秀的社区 UI 库 [uview-ui](https://www.uviewui.com/) 和 [thor-ui](https://thorui.cn/doc/)。
 
 本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
 
@@ -19,66 +20,61 @@
 
 |API|Prefix|Description|
 |-|-|-|
-|`<uni-badge>`|`uni-badge`, `<uni-badge>`|uni-ui 徽标/标记/数字角标/徽章。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/badge.md#readme>。|
-|`<uni-calendar>`|`uni-calendar`, `<uni-calendar>`|uni-ui 日历。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/calendar.md#readme>。|
-|`<uni-card>`|`uni-card`, `<uni-card>`|uni-ui 卡片。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/card.md#readme>。|
-|`<uni-collapse>`|`uni-collapse`, `<uni-collapse>`|uni-ui 折叠面板。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/collapse.md#readme>。|
-|`<uni-collapse-item>`|`uni-collapse-item`, `<uni-collapse-item>`|uni-ui 折叠面板项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/collapse.md#readme>。|
-|`<uni-combox>`|`uni-combox`, `<uni-combox>`|uni-ui 组合框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/combox.md#readme>。|
-|`<uni-countdown>`|`uni-countdown`, `<uni-countdown>`|uni-ui 倒计时。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/countdown.md#readme>。|
-|`<uni-data-checkbox>`|`uni-data-checkbox`, `<uni-data-checkbox>`|uni-ui 数据选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-checkbox.md#readme>。|
-|`<uni-data-menu>`|`uni-data-menu`, `<uni-data-menu>`|uni-ui 菜单。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-menu.md#readme>。|
-|`<uni-data-picker>`|`uni-data-picker`, `<uni-data-picker>`|uni-ui 级联选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/data-picker.md#readme>。|
-|`<uni-dateformat>`|`uni-dateformat`, `<uni-dateformat>`|uni-ui 日期格式化。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/dateformat.md#readme>。|
-|`<uni-datetime-picker>`|`uni-datetime-picker`, `<uni-datetime-picker>`|uni-ui 日期时间选择器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/datetime-picker.md#readme>。|
-|`<uni-drawer>`|`uni-drawer`, `<uni-drawer>`|uni-ui 抽屉。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/drawer.md#readme>。|
-|`<uni-easyinput>`|`uni-easyinput`, `<uni-easyinput>`|uni-ui 增强输入框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/easyinput.md#readme>。|
-|`<uni-fab>`|`uni-fab`, `<uni-fab>`|uni-ui 悬浮按钮。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/fab.md#readme>。|
-|`<uni-fav>`|`uni-fav`, `<uni-fav>`|uni-ui 收藏按钮。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/fav.md#readme>。|
-|`<uni-field>`|`uni-field`, `<uni-field>`|uni-ui 输入框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/field.md#readme>。|
-|`<uni-file-picker>`|`uni-file-picker`, `<uni-file-picker>`|uni-ui 输入框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/file-picker.md#readme>。|
-|`<uni-forms>`|`uni-forms`, `<uni-forms>`|uni-ui 表单。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/forms.md#readme>。|
-|`<uni-forms-item>`|`uni-forms-item`, `<uni-forms-item>`|uni-ui 表单项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/forms.md#readme>。|
-|`<uni-goods-nav>`|`uni-goods-nav`, `<uni-goods-nav>`|uni-ui 商品导航。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/goods-nav.md#readme>。|
-|`<uni-grid>`|`uni-grid`, `<uni-grid>`|uni-ui 宫格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/grid.md#readme>。|
-|`<uni-grid-item>`|`uni-grid-item`, `<uni-grid-item>`|uni-ui 宫格项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/grid.md#readme>。|
-|`<uni-group>`|`uni-group`, `<uni-group>`|uni-ui 分组。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/group.md#readme>。|
-|`<uni-icons>`|`uni-icons`, `<uni-icons>`|uni-ui 图标。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/icons.md#readme>。|
-|`<uni-indexed-list>`|`uni-indexed-list`, `<uni-indexed-list>`|uni-ui 索引列表。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/indexed-list.md#readme>。|
-|`<uni-link>`|`uni-link`, `<uni-link>`|uni-ui 超链接。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/link.md#readme>。|
-|`<uni-list>`|`uni-list`, `<uni-list>`|uni-ui 列表。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/list.md#readme>。|
-|`<uni-list-chat>`|`uni-list-chat`, `<uni-list-chat>`|uni-ui 聊天列表项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/list.md#readme>。|
-|`<uni-list-item>`|`uni-list-item`, `<uni-list-item>`|uni-ui 列表项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/list.md#readme>。|
-|`<uni-load-more>`|`uni-load-more`, `<uni-load-more>`|uni-ui 加载更多。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/load-more.md#readme>。|
-|`<uni-nav-bar>`|`uni-nav-bar`, `<uni-nav-bar>`|uni-ui 导航栏。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/nav-bar.md#readme>。|
-|`<uni-notice-bar>`|`uni-notice-bar`, `<uni-notice-bar>`|uni-ui 通告栏。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/notice-bar.md#readme>。|
-|`<uni-number-box>`|`uni-number-box`, `<uni-number-box>`|uni-ui 数字输入框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/number-box.md#readme>。|
-|`<uni-pagination>`|`uni-pagination`, `<uni-pagination>`|uni-ui 分页器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/pagination.md#readme>。|
-|`<uni-popup>`|`uni-popup`, `<uni-popup>`|uni-ui 弹出层。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme>。|
-|`<uni-popup-dialog>`|`uni-popup-dialog`, `<uni-popup-dialog>`|uni-ui 弹出层对话框。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme>。|
-|`<uni-popup-message>`|`uni-popup-message`, `<uni-popup-message>`|uni-ui 弹出层提示信息。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme>。|
-|`<uni-popup-share>`|`uni-popup-share`, `<uni-popup-share>`|uni-ui 弹出层分享。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/popup.md#readme>。|
-|`<uni-rate>`|`uni-rate`, `<uni-rate>`|uni-ui 评分。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/rate.md#readme>。|
-|`<uni-row>`|`uni-row`, `<uni-row>`|uni-ui 布局行。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/row.md#readme>。|
-|`<uni-col>`|`uni-col`, `<uni-col>`|uni-ui 布局列。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/row.md#readme>。|
-|`<uni-search-bar>`|`uni-search-bar`, `<uni-search-bar>`|uni-ui 搜索栏。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/search-bar.md#readme>。|
-|`<uni-section>`|`uni-section`, `<uni-section>`|uni-ui 搜索栏。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/section.md#readme>。|
-|`<uni-segmented-control>`|`uni-segmented-control`, `<uni-segmented-control>`|uni-ui 分段器。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/segmented-control.md#readme>。|
-|`<uni-steps>`|`uni-steps`, `<uni-steps>`|uni-ui 步骤条。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/steps.md#readme>。|
-|`<uni-swipe-action>`|`uni-swipe-action`, `<uni-swipe-action>`|uni-ui 滑动操作。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swipe-action.md#readme>。|
-|`<uni-swipe-action-item>`|`uni-swipe-action-item`, `<uni-swipe-action-item>`|uni-ui 滑动操作项。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swipe-action.md#readme>。|
-|`<uni-swiper-dot>`|`uni-swiper-dot`, `<uni-swiper-dot>`|uni-ui 轮播图指示点。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/swiper-dot.md#readme>。|
-|`<uni-table>`|`uni-table`, `<uni-table>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
-|`<uni-tr>`|`uni-tr`, `<uni-tr>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
-|`<uni-th>`|`uni-th`, `<uni-th>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
-|`<uni-td>`|`uni-td`, `<uni-td>`|uni-table 表格。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/table.md#readme>。|
-|`<uni-tag>`|`uni-tag`, `<uni-tag>`|uni-ui 标签。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/tag.md#readme>。|
-|`<uni-title>`|`uni-title`, `<uni-title>`|uni-ui 标题。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/title.md#readme>。|
-|`<uni-transition>`|`uni-transition`, `<uni-transition>`|uni-ui 过渡动画。更多信息查看 <https://github.com/dcloudio/uni-ui/blob/master/docs/components/transition.md#readme>。|
+|`<uni-badge>`|`uni-badge`, `<uni-badge>`, `UniBadge`, `<UniBadge>`|uni-ui 徽标/标记/数字角标/徽章。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-badge>。|
+|`<uni-calendar>`|`uni-calendar`, `<uni-calendar>`, `UniCalendar`, `<UniCalendar>`|uni-ui 日历。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-calendar>。|
+|`<uni-card>`|`uni-card`, `<uni-card>`, `UniCard`, `<UniCard>`|uni-ui 卡片。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-card>。|
+|`<uni-collapse>`|`uni-collapse`, `<uni-collapse>`, `UniCollapse`, `<UniCollapse>`|uni-ui 折叠面板。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。|
+|`<uni-collapse-item>`|`uni-collapse-item`, `<uni-collapse-item>`, `UniCollapseItem`, `<UniCollapseItem>`|uni-ui 折叠面板项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。|
+|`<uni-combox>`|`uni-combox`, `<uni-combox>`, `UniCombox`, `<UniCombox>`|uni-ui 组合框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-combox>。|
+|`<uni-countdown>`|`uni-countdown`, `<uni-countdown>`, `UniCountdown`, `<UniCountdown>`|uni-ui 倒计时。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-countdown>。|
+|`<uni-data-checkbox>`|`uni-data-checkbox`, `<uni-data-checkbox>`, `UniDataCheckbox`, `<UniDataCheckbox>`|uni-ui 数据选择器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-data-checkbox>。|
+|`<uni-data-picker>`|`uni-data-picker`, `<uni-data-picker>`, `UniDataPicker`, `<UniDataPicker>`|uni-ui 级联选择器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-data-picker>。|
+|`<uni-dateformat>`|`uni-dateformat`, `<uni-dateformat>`, `UniDateformat`, `<UniDateformat>`|uni-ui 日期格式化。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-dateformat>。|
+|`<uni-datetime-picker>`|`uni-datetime-picker`, `<uni-datetime-picker>`, `UniDatetimePicker`, `<UniDatetimePicker>`|uni-ui 日期时间选择器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-datetime-picker>。|
+|`<uni-drawer>`|`uni-drawer`, `<uni-drawer>`, `UniDrawer`, `<UniDrawer>`|uni-ui 抽屉。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-drawer>。|
+|`<uni-easyinput>`|`uni-easyinput`, `<uni-easyinput>`, `UniEasyinput`, `<UniEasyinput>`|uni-ui 增强输入框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-easyinput>。|
+|`<uni-fab>`|`uni-fab`, `<uni-fab>`, `UniFab`, `<UniFab>`|uni-ui 悬浮按钮。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-fab>。|
+|`<uni-fav>`|`uni-fav`, `<uni-fav>`, `UniFav`, `<UniFav>`|uni-ui 收藏按钮。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-fav>。|
+|`<uni-file-picker>`|`uni-file-picker`, `<uni-file-picker>`, `UniFilePicker`, `<UniFilePicker>`|uni-ui 文件选择上传。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-file-picker>。|
+|`<uni-forms>`|`uni-forms`, `<uni-forms>`, `UniForms`, `<UniForms>`|uni-ui 表单。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-forms>。|
+|`<uni-forms-item>`|`uni-forms-item`, `<uni-forms-item>`, `UniFormsItem`, `<UniFormsItem>`|uni-ui 表单项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-forms>。|
+|`<uni-goods-nav>`|`uni-goods-nav`, `<uni-goods-nav>`, `UniGoodsNav`, `<UniGoodsNav>`|uni-ui 商品导航。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-goods-nav>。|
+|`<uni-grid>`|`uni-grid`, `<uni-grid>`, `UniGrid`, `<UniGrid>`|uni-ui 宫格。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-grid>。|
+|`<uni-grid-item>`|`uni-grid-item`, `<uni-grid-item>`, `UniGridItem`, `<UniGridItem>`|uni-ui 宫格项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-grid>。|
+|`<uni-group>`|`uni-group`, `<uni-group>`, `UniGroup`, `<UniGroup>`|uni-ui 分组。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-group>。|
+|`<uni-icons>`|`uni-icons`, `<uni-icons>`, `UniIcons`, `<UniIcons>`|uni-ui 图标。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-icons>。|
+|`<uni-indexed-list>`|`uni-indexed-list`, `<uni-indexed-list>`, `UniIndexedList`, `<UniIndexedList>`|uni-ui 索引列表。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-indexed-list>。|
+|`<uni-link>`|`uni-link`, `<uni-link>`, `UniLink`, `<UniLink>`|uni-ui 超链接。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-link>。|
+|`<uni-list>`|`uni-list`, `<uni-list>`, `UniList`, `<UniList>`|uni-ui 列表。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-list>。|
+|`<uni-list-chat>`|`uni-list-chat`, `<uni-list-chat>`, `UniListChat`, `<UniListChat>`|uni-ui 聊天列表项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-list>。|
+|`<uni-list-item>`|`uni-list-item`, `<uni-list-item>`, `UniListItem`, `<UniListItem>`|uni-ui 列表项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-list>。|
+|`<uni-load-more>`|`uni-load-more`, `<uni-load-more>`, `UniLoadMore`, `<UniLoadMore>`|uni-ui 加载更多。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-load-more>。|
+|`<uni-nav-bar>`|`uni-nav-bar`, `<uni-nav-bar>`, `UniNavBar`, `<UniNavBar>`|uni-ui 导航栏。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-nav-bar>。|
+|`<uni-notice-bar>`|`uni-notice-bar`, `<uni-notice-bar>`, `UniNoticeBar`, `<UniNoticeBar>`|uni-ui 通告栏。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-notice-bar>。|
+|`<uni-number-box>`|`uni-number-box`, `<uni-number-box>`, `UniNumberBox`, `<UniNumberBox>`|uni-ui 数字输入框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-number-box>。|
+|`<uni-pagination>`|`uni-pagination`, `<uni-pagination>`, `UniPagination`, `<UniPagination>`|uni-ui 分页器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-pagination>。|
+|`<uni-popup>`|`uni-popup`, `<uni-popup>`, `UniPopup`, `<UniPopup>`|uni-ui 弹出层。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-popup>。|
+|`<uni-popup-dialog>`|`uni-popup-dialog`, `<uni-popup-dialog>`, `UniPopupDialog`, `<UniPopupDialog>`|uni-ui 弹出层对话框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-popup>。|
+|`<uni-popup-message>`|`uni-popup-message`, `<uni-popup-message>`, `UniPopupMessage`, `<UniPopupMessage>`|uni-ui 弹出层提示信息。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-popup>。|
+|`<uni-popup-share>`|`uni-popup-share`, `<uni-popup-share>`, `UniPopupShare`, `<UniPopupShare>`|uni-ui 弹出层分享。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-popup>。|
+|`<uni-rate>`|`uni-rate`, `<uni-rate>`, `UniRate`, `<UniRate>`|uni-ui 评分。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-rate>。|
+|`<uni-row>`|`uni-row`, `<uni-row>`, `UniRow`, `<UniRow>`|uni-ui 布局行。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-row>。|
+|`<uni-col>`|`uni-col`, `<uni-col>`, `UniCol`, `<UniCol>`|uni-ui 布局列。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-row>。|
+|`<uni-search-bar>`|`uni-search-bar`, `<uni-search-bar>`, `UniSearchBar`, `<UniSearchBar>`|uni-ui 搜索栏。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-search-bar>。|
+|`<uni-segmented-control>`|`uni-segmented-control`, `<uni-segmented-control>`, `UniSegmentedControl`, `<UniSegmentedControl>`|uni-ui 分段器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-segmented-control>。|
+|`<uni-steps>`|`uni-steps`, `<uni-steps>`, `UniSteps`, `<UniSteps>`|uni-ui 步骤条。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-steps>。|
+|`<uni-swipe-action>`|`uni-swipe-action`, `<uni-swipe-action>`, `UniSwipeAction`, `<UniSwipeAction>`|uni-ui 滑动操作。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-swipe-action>。|
+|`<uni-swipe-action-item>`|`uni-swipe-action-item`, `<uni-swipe-action-item>`, `UniSwipeActionItem`, `<UniSwipeActionItem>`|uni-ui 滑动操作项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-swipe-action>。|
+|`<uni-swiper-dot>`|`uni-swiper-dot`, `<uni-swiper-dot>`, `UniSwiperDot`, `<UniSwiperDot>`|uni-ui 轮播图指示点。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-swiper-dot>。|
+|`<uni-table>`|`uni-table`, `<uni-table>`, `UniTable`, `<UniTable>`|uni-table 表格。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-table>。|
+|`<uni-tr>`|`uni-tr`, `<uni-tr>`, `UniTr`, `<UniTr>`|uni-table 表格。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-table>。|
+|`<uni-th>`|`uni-th`, `<uni-th>`, `UniTh`, `<UniTh>`|uni-table 表格。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-table>。|
+|`<uni-td>`|`uni-td`, `<uni-td>`, `UniTd`, `<UniTd>`|uni-table 表格。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-table>。|
+|`<uni-tag>`|`uni-tag`, `<uni-tag>`, `UniTag`, `<UniTag>`|uni-ui 标签。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-tag>。|
+|`<uni-title>`|`uni-title`, `<uni-title>`, `UniTitle`, `<UniTitle>`|uni-ui 标题。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-title>。|
+|`<uni-transition>`|`uni-transition`, `<uni-transition>`, `UniTransition`, `<UniTransition>`|uni-ui 过渡动画。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-transition>。|
 
 ## 更多
 
-- [前端学习路径参考](https://modyqyw.top/roadmap)
-- [前端环境配置参考](https://modyqyw.top/environment/)
-- [前端开发参考](https://modyqyw.top/development/)
-- [fabric](https://github.com/modyqyw/fabric) - 不同 JavaScript/TypeScript 项目的预设立场的可共享规范。
+- [个人站点](https://modyqyw.github.io/)
+- [个人 Github](https://github.com/ModyQyW)

@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-ui-snippets",
   "displayName": "uni-ui-snippets",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "uni-ui snippets.",
   "categories": [
     "Snippets"
@@ -33,6 +33,14 @@
     "snippets": [
       {
         "language": "vue-html",
+        "path": "./snippets/vue-html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue-html.json"
+      },
+      {
+        "language": "html",
         "path": "./snippets/vue-html.json"
       }
     ]

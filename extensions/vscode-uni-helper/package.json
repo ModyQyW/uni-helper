@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-helper",
   "displayName": "uni-helper",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Help writing uni-*.",
   "categories": [
     "Extension Packs"

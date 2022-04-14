@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-app-snippets",
   "displayName": "uni-app-snippets",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "uni-app snippets.",
   "categories": [
     "Snippets"
@@ -34,6 +34,14 @@
         "path": "./snippets/vue-html.json"
       },
       {
+        "language": "vue",
+        "path": "./snippets/vue-html.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/vue-html.json"
+      },
+      {
         "language": "css",
         "path": "./snippets/css.json"
       },
@@ -54,11 +62,27 @@
         "path": "./snippets/css.json"
       },
       {
+        "language": "vue",
+        "path": "./snippets/css.json"
+      },
+      {
         "language": "javascript",
         "path": "./snippets/javascript.json"
       },
       {
+        "language": "javascriptreact",
+        "path": "./snippets/javascript.json"
+      },
+      {
         "language": "typescript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "vue",
         "path": "./snippets/javascript.json"
       }
     ]

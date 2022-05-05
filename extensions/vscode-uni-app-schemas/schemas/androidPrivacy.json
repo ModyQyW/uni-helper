@@ -1,5 +1,5 @@
 {
-  "description": "Android 移动应用服务协议和隐私政策配置文件，不能添加注释。更多信息查看 <https://uniapp.dcloud.io/app/android-store> 和 <https://ask.dcloud.net.cn/article/36937>。",
+  "description": "Android 移动应用服务协议和隐私政策配置文件，不能添加注释。更多信息查看 <https://ask.dcloud.net.cn/article/36937>，<https://uniapp.dcloud.net.cn/tutorial/store.html> 和 <https://uniapp.dcloud.io/app/android-store>。",
   "type": "object",
   "properties": {
     "version": {

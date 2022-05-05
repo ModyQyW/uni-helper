@@ -15,6 +15,10 @@
       "description": "应用描述。",
       "type": "string"
     },
+    "locale": {
+      "description": "设置当前默认语言。",
+      "type": "string"
+    },
     "versionName": {
       "description": "版本名称，在云打包和生成 wgt 资源时使用。",
       "type": "string"

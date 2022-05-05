@@ -1,36 +1,41 @@
 # 改动日志
 
+## 0.6.1
+
+- 更新 `androidPrivacy.json`，增加参考链接
+- 更新 `manifest.json`，增加 `locale`
+
 ## 0.6.0
 
-- 更新 `androidPrivacy.json`，增加 `disagreeMode`。
-- 更新 `manifest.json`。
-  - 增加 `${platform}.scopedSlotsCompiler`、`app-plus.screenOrientation`。
-  - 移除 `${platform}.usingComponents`，`screenOrientation`。
-  - 增加 `mp-lark` 和 `mp-kuaishou`。
+- 更新 `androidPrivacy.json`，增加 `disagreeMode`
+- 更新 `manifest.json`
+  - 增加 `${platform}.scopedSlotsCompiler`、`app-plus.screenOrientation`
+  - 移除 `${platform}.usingComponents`，`screenOrientation`
+  - 增加 `mp-lark` 和 `mp-kuaishou`
 
 ## 0.5.0
 
-- 校验 uni-app `androidPrivacy.json` 格式。
-- 移除了所有的 `default`，避免不必要的误导。
-- 增加 `manifest.json` 配置项 `app-plus.splashscreen.useOriginalMsgbox`。
+- 校验 uni-app `androidPrivacy.json` 格式
+- 移除了所有的 `default`，避免不必要的误导
+- 增加 `manifest.json` 配置项 `app-plus.splashscreen.useOriginalMsgbox`
 
 ## 0.4.0
 
-- 增加配置项 `vueVersion`。
+- 增加配置项 `vueVersion`
 
 ## 0.3.2
 
-- 修复 README 链接。
+- 修复 README 链接
 
 ## 0.3.1
 
-- 更优雅地使用脚本生成 README
+- 使用脚本生成 README
 
 ## 0.3.0
 
 - 增加配置项 `screenOrientation`
 - 增加部分平台专属字段
-- 更新部分字段的 enum
+- 更新部分字段的 `enum`
 
 ## 0.2.0
 
@@ -38,7 +43,7 @@
 
 ## 0.1.5
 
-- 使用 node 生成 README.md
+- 使用 `node` 生成 README.md
 
 ## 0.1.4
 

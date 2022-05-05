@@ -1,42 +1,46 @@
 # 改动日志
 
+## 0.8.0
+
+- 增加京东小程序平台
+
 ## 0.7.2
 
-- 增加适用的 language。
+- 增加适用的 `language`
 
 ## 0.7.1
 
-- 修复 `body` 错误。
+- 修复 `body` 错误
 
 ## 0.7.0
 
-- 增加支付宝小程序平台 `prefix`。
-- 增加飞书小程序平台和快手小程序平台。
-- 增加页面生命周期 `onInit`。
-- 增加应用级事件 `uni.onAppShow`、`uni.offAppShow`、`uni.onAppHide`、`uni.offAppHide`、`uni.onPageNotFound`、`uni.offPageNotFound`、`uni.onError`、`uni.offError`。
-- 增加拦截器相关 `uni.addInterceptor`、`uni.removeInterceptor`。
-- 修复 README 链接。
+- 增加支付宝小程序平台 `prefix`
+- 增加飞书小程序平台和快手小程序平台
+- 增加页面生命周期 `onInit`
+- 增加应用级事件 `uni.onAppShow`、`uni.offAppShow`、`uni.onAppHide`、`uni.offAppHide`、`uni.onPageNotFound`、`uni.offPageNotFound`、`uni.onError`、`uni.offError`
+- 增加拦截器相关 `uni.addInterceptor`、`uni.removeInterceptor`
+- 修复 README 链接
 
 ## 0.6.2
 
-- 修复 README 链接。
+- 修复 README 链接
 
 ## 0.6.1
 
-- 修复 `uni.navigateBackMiniProgram`。
+- 修复 `uni.navigateBackMiniProgram`
 
 ## 0.6.0
 
-- 增加 `ad-draw`，`ad-content-page`，`barcode`，`list`，`cell`，`recycle-list`，`cell-slot`，`waterfall`，`refresh` 组件。
-- 增加 `onUniNViewMessage`，`onUnhandledRejection`，`onPageNotFound` 应用生命周期。
-- 增加 `uni.addInterceptor`，`uni.removeInterceptor`，`uni.offNetworkStatusChange`，`uni.onThemeChange`，`uni.offKeyboardHeightChange`，`uni.getTopWindowStyle`，`uni.getLeftWindowStyle`，`uni.getRightWindowStyle`。
-- 调整一些配套的 `uni.onXXX` 和 `uni.offXXX` 的参数。
-- 修复 README 链接。
+- 增加 `ad-draw`，`ad-content-page`，`barcode`，`list`，`cell`，`recycle-list`，`cell-slot`，`waterfall`，`refresh` 组件
+- 增加 `onUniNViewMessage`，`onUnhandledRejection`，`onPageNotFound` 应用生命周期
+- 增加 `uni.addInterceptor`，`uni.removeInterceptor`，`uni.offNetworkStatusChange`，`uni.onThemeChange`，`uni.offKeyboardHeightChange`，`uni.getTopWindowStyle`，`uni.getLeftWindowStyle`，`uni.getRightWindowStyle`
+- 调整一些配套的 `uni.onXXX` 和 `uni.offXXX` 的参数
+- 修复 README 链接
 
 ## 0.5.1
 
 - 修复部分代码块错误
-- 更优雅地使用脚本生成 README
+- 使用脚本生成 README
 
 ## 0.5.0
 

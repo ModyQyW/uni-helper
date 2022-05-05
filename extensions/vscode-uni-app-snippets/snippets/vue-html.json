@@ -2,22 +2,22 @@
   "uni-app APP 平台": {
     "prefix": ["platform-app", "app", "platform-app-plus", "app-plus"],
     "body": ["APP-PLUS"],
-    "description": "uni-app APP 对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app APP 对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app APP-NVUE 平台": {
     "prefix": ["platform-app-nvue", "app-nvue", "platform-app-plus-nvue", "app-plus-nvue"],
     "body": ["APP-NVUE"],
-    "description": "uni-app APP-NVUE 对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app APP-NVUE 对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app H5 平台": {
     "prefix": ["platform-h5", "h5"],
     "body": ["H5"],
-    "description": "uni-app H5 对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app H5 对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 小程序平台": {
     "prefix": ["platform-mp", "mp", "platform-miniprogram", "miniprogram"],
     "body": ["MP"],
-    "description": "uni-app 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 微信小程序平台": {
     "prefix": [
@@ -31,7 +31,7 @@
       "wechat"
     ],
     "body": ["MP-WEIXIN"],
-    "description": "uni-app 微信小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 微信小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 支付宝小程序平台": {
     "prefix": [
@@ -49,7 +49,7 @@
       "my"
     ],
     "body": ["MP-ALIPAY"],
-    "description": "uni-app 支付宝小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 支付宝小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 百度小程序平台": {
     "prefix": [
@@ -63,7 +63,7 @@
       "swan"
     ],
     "body": ["MP-BAIDU"],
-    "description": "uni-app 百度小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 百度小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 字节跳动小程序平台": {
     "prefix": [
@@ -77,32 +77,37 @@
       "bytedance"
     ],
     "body": ["MP-TOUTIAO"],
-    "description": "uni-app 字节跳动小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 字节跳动小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 飞书小程序平台": {
     "prefix": ["platform-mp-lark", "mp-lark", "platform-lark", "lark"],
     "body": ["MP-LARK"],
-    "description": "uni-app 飞书小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 飞书小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app QQ 小程序平台": {
     "prefix": ["platform-mp-qq", "mp-qq", "platform-qq", "qq"],
     "body": ["MP-QQ"],
-    "description": "uni-app QQ 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app QQ 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 快手小程序平台": {
     "prefix": ["platform-mp-kuaishou", "mp-kuaishou", "platform-kuaishou", "kuaishou"],
     "body": ["MP-KUAISHOU"],
-    "description": "uni-app QQ 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 快手小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
+  },
+  "uni-app 京东小程序平台": {
+    "prefix": ["platform-mp-jd", "mp-jd", "platform-jd", "jd"],
+    "body": ["MP-JD"],
+    "description": "uni-app 京东小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 360 小程序平台": {
     "prefix": ["platform-mp-360", "mp-360", "platform-360", "360"],
     "body": ["MP-360"],
-    "description": "uni-app 360 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 360 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 快应用通用平台": {
     "prefix": ["platform-quickapp", "quickapp", "platform-quickapp-webview", "quickapp-webview"],
     "body": ["QUICKAPP-WEBVIEW"],
-    "description": "uni-app 快应用通用对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 快应用通用对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 快应用联盟平台": {
     "prefix": [
@@ -112,7 +117,7 @@
       "quickapp-webview-union"
     ],
     "body": ["QUICKAPP-WEBVIEW-UNION"],
-    "description": "uni-app 快应用联盟对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 快应用联盟对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 快应用华为平台": {
     "prefix": [
@@ -122,7 +127,7 @@
       "quickapp-webview-huawei"
     ],
     "body": ["QUICKAPP-WEBVIEW-HUAWEI"],
-    "description": "uni-app 快应用华为对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 快应用华为对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 条件编译，处理某平台": {
     "prefix": ["#ifdef", "ifdef"],
@@ -131,7 +136,7 @@
       "$2",
       "<!-- #endif -->"
     ],
-    "description": "uni-app 条件编译，处理某平台。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 条件编译，处理某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 条件编译，排除某平台": {
     "prefix": ["#ifndef", "ifndef"],
@@ -140,12 +145,12 @@
       "$2",
       "<!-- #endif -->"
     ],
-    "description": "uni-app 条件编译，排除某平台。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 条件编译，排除某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 结束条件编译": {
     "prefix": ["#endif", "endif"],
     "body": ["<!-- #endif -->"],
-    "description": "uni-app 结束条件编译。更多信息查看 <https://uniapp.dcloud.io/platform>。"
+    "description": "uni-app 结束条件编译。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app view": {
     "prefix": ["view", "<view>"],

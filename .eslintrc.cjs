@@ -1,5 +1,3 @@
-const { eslint } = require('@modyqyw/fabric');
-
 module.exports = {
-  ...eslint.vanillaPrettier,
+  extends: [require.resolve('@modyqyw/fabric/eslint/vanilla')],
 };

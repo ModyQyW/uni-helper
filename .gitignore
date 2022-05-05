@@ -148,8 +148,9 @@ dist_ssg
 
 # Editor
 .vscode-test
-.vscode
+.vscode/**
 !.vscode/extensions.json
+!.vscode/settings.json
 *.vsix
 .idea
 .hbuilder

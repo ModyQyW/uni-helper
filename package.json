@@ -28,10 +28,7 @@
     "commit": "git-cz",
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
-    "lint:json": "prettier ./**/*.json --write",
-    "lint:markdown": "markdownlint . --fix",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
-    "lint:script": "eslint . --ext .js,.jsx,.ts,.tsx,.vue --fix",
     "prepare": "is-ci || husky install"
   },
   "config": {

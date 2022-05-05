@@ -2,8 +2,6 @@
 
 **正在寻找维护者**
 
-**下一轮核对文档预计在 2022-05，届时会根据文档修正插件内容。**
-
 ## 插件目标
 
 让开发者在 VSCode 中开发 uni-\* 的体验尽可能好。
@@ -17,7 +15,7 @@
 - [uni-cloud-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-cloud-snippets) - 支持 uni-cloud 基本能力的代码片段，包括组件和 API
 - [uni-ui-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets) - 支持 uni-ui 组件代码片段
 
-以下是 Vue 专属插件推荐，请视情况二选一安装。
+以下是 Vue 专属插件推荐，请视情况二选一安装，并查看说明做相应配置。
 
 - [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)

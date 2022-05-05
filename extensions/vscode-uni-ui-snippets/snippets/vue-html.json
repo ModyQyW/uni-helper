@@ -8,17 +8,17 @@
       "\tsize=\"${3|normal,small|}\"",
       "/>$0"
     ],
-    "description": "uni-ui 徽标/标记/数字角标/徽章。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-badge>。"
+    "description": "uni-ui 徽标/标记/数字角标/徽章，一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-badge>。"
   },
   "uni-ui calendar": {
     "prefix": ["uni-calendar", "<uni-calendar>", "UniCalendar", "<UniCalendar>"],
     "body": ["<uni-calendar @change=\"$1\" />$0"],
-    "description": "uni-ui 日历。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-calendar>。"
+    "description": "uni-ui 日历，当数据是日期或按照日期划分时使用，如日程、课表、价格日历、农历等。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-calendar>。"
   },
   "uni-ui card": {
     "prefix": ["uni-card", "<uni-card>", "UniCard", "<UniCard>"],
     "body": ["<uni-card", "\ttitle=\"$1\"", "\t@click=\"$2\"", ">", "\t$3", "</uni-card>$0"],
-    "description": "uni-ui 卡片。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-card>。"
+    "description": "uni-ui 卡片，可承载文字、列表、图片、段落，常用于概览。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-card>。"
   },
   "uni-ui collapse": {
     "prefix": ["uni-collapse", "<uni-collapse>", "UniCollapse", "<UniCollapse>"],
@@ -29,7 +29,7 @@
       "\t</uni-collapse-item>",
       "</uni-collapse>$0"
     ],
-    "description": "uni-ui 折叠面板。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。"
+    "description": "uni-ui 折叠面板，对复杂区域进行分组和隐藏，保持页面的整洁。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。"
   },
   "uni-ui collapse-item": {
     "prefix": ["uni-collapse-item", "<uni-collapse-item>", "UniCollapseItem", "<UniCollapseItem>"],
@@ -46,7 +46,7 @@
       "\t:candidates=\"$4\"",
       "/>$0"
     ],
-    "description": "uni-ui 组合框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-combox>。"
+    "description": "uni-ui 组合框，一般用于可选择也可输入的表单项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-combox>。"
   },
   "uni-ui countdown": {
     "prefix": ["uni-countdown", "<uni-countdown>", "UniCountdown", "<UniCountdown>"],
@@ -91,10 +91,10 @@
       "<uni-dateformat",
       "\t:date=\"$1\"",
       "\t:threshold=\"${2:[0,0]}\"",
-      "\tformat=\"$3\"",
+      "\tformat=\"${3:yyyy/MM/dd hh:mm:ss}\"",
       "/>$0"
     ],
-    "description": "uni-ui 日期格式化。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-dateformat>。"
+    "description": "uni-ui 日期格式化。请考虑使用 [dayjs](https://dayjs.gitee.io/zh-CN/)。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-dateformat>。"
   },
   "uni-ui datetime-picker": {
     "prefix": [
@@ -109,7 +109,7 @@
   "uni-ui drawer": {
     "prefix": ["uni-drawer", "<uni-drawer>", "UniDrawer", "<UniDrawer>"],
     "body": ["<uni-drawer ref=\"${1:drawer}\" />$0"],
-    "description": "uni-ui 抽屉。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-drawer>。"
+    "description": "uni-ui 抽屉，屏幕边缘滑出的浮层面板，用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到原任务。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-drawer>。"
   },
   "uni-ui easyinput": {
     "prefix": ["uni-easyinput", "<uni-easyinput>", "UniEasyinput", "<UniEasyinput>"],
@@ -225,7 +225,7 @@
     "prefix": ["uni-icons", "<uni-icons>", "UniIcons", "<UniIcons>"],
     "body": [
       "<uni-icons",
-      "\ttype=\"${1|color,wallet,settings-filled,auth-fille,shop-filled,staff-filled,vip-filled,plus-filled,folder-add-filled,color-filled,tune-filled,calendar-filled,notification-filled,wallet-filled,medal-filled,gift-filled,fire-filled,refreshempty,location-filled,person-filled,personadd-filled,back,forward,arrow-right,arrowthinright,arrow-left,arrowthinleft,arrow-up,arrowthinup,arrow-down,arrowthindown,bottom,arrowdown,right,arrowright,top,arrowup,left,arrowleft,eye,eye-filled,eye-slash,eye-slash-filled,info-filled,reload,micoff-filled,map-pin-ellipse,map-pin,location,starhalf,star,star-filled,calendar,fire,medal,font,gift,link,notification,staff,vip,folder-add,tune,auth,person,email-filled,phone-filled,phone,email,personadd,chatboxes-filled,contact,chatbubble-filled,contact-filled,chatboxes,chatbubble,upload-filled,upload,weixin,compose,qq,download-filled,pyq,sound,trash-filled,sound-filled,trash,videocam-filled,spinner-cycle,weibo,videocam,download,help,navigate-filled,plusempty,smallcircle,minus-filled,micoff,closeempty,clear,navigate,minus,image,mic,paperplane,close,help-filled,paperplane-filled,plus,mic-filled,image-filled,locked-filled,info,locked,camera-filled,chat-filled,camera,circle,checkmarkempty,chat,circle-filled,flag,flag-filled,gear-filled,home,home-filled,gear,smallcircle-filled,map-filled,map,refresh-filled,refresh,cloud-upload,cloud-download-filled,cloud-download,cloud-upload-filled,redo,images-filled,undo-filled,more,more-filled,undo,images,paperclip,settings,search,redo-filled,listmail-open-filled,hand-down-filled,hand-down,hand-up-filled,hand-up,heart-filled,mail-open,heart,loop,pulldown,scan,bars,cart-filled,checkbox,checkbox-filled,shop,headphones,cart|}\"",
+      "\ttype=\"${1|color,wallet,settings-filled,auth-filled,shop-filled,staff-filled,vip-filled,plus-filled,folder-add-filled,color-filled,tune-filled,calendar-filled,notification-filled,wallet-filled,medal-filled,gift-filled,fire-filled,refreshempty,location-filled,person-filled,personadd-filled,back,forward,arrow-right,arrow-left,arrow-up,arrow-down,bottom,right,top,left,eye,eye-filled,eye-slash,eye-slash-filled,info-filled,reload,micoff-filled,map-pin-ellipse,map-pin,location,starhalf,star,star-filled,calendar,fire,medal,font,gift,link,notification,staff,vip,folder-add,tune,auth,person,email-filled,phone-filled,phone,email,personadd,chatboxes-filled,contact,chatbubble-filled,contact-filled,chatboxes,chatbubble,upload-filled,upload,weixin,compose,qq,download-filled,pyq,sound,trash-filled,sound-filled,trash,videocam-filled,spinner-cycle,weibo,videocam,download,help,navigate-filled,plusempty,smallcircle,minus-filled,micoff,closeempty,clear,navigate,minus,image,mic,paperplane,close,help-filled,paperplane-filled,plus,mic-filled,image-filled,locked-filled,info,locked,camera-filled,chat-filled,camera,circle,checkmarkempty,chat,circle-filled,flag,flag-filled,gear-filled,home,home-filled,gear,smallcircle-filled,map-filled,map,refresh-filled,refresh,cloud-upload,cloud-download-filled,cloud-download,cloud-upload-filled,redo,images-filled,undo-filled,more,more-filled,undo,images,paperclip,settings,search,redo-filled,list,mail-open-filled,hand-down-filled,hand-down,hand-up-filled,hand-up,heart-filled,mail-open,heart,loop,pulldown,scan,bars,cart-filled,checkbox,checkbox-filled,shop,headphones,cart|}\"",
       "\tcolor=\"$2\"",
       "\tsize=\"${3:24}\"",
       "/>$0"
@@ -282,7 +282,7 @@
   },
   "uni-ui load-more": {
     "prefix": ["uni-load-more", "<uni-load-more>", "UniLoadMore", "<UniLoadMore>"],
-    "body": ["<uni-load-more :status=\"$1\" />$0"],
+    "body": ["<uni-load-more :status=\"${1|more,loading,noMore|}\" />$0"],
     "description": "uni-ui 加载更多。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-load-more>。"
   },
   "uni-ui nav-bar": {
@@ -443,7 +443,7 @@
   },
   "uni-ui table": {
     "prefix": ["uni-table", "<uni-table>", "UniTable", "<UniTable>"],
-    "body": ["<uni-table border stripe>", "\t$1", "</uni-table>$0"],
+    "body": ["<uni-table>", "\t$1", "</uni-table>$0"],
     "description": "uni-table 表格。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-table>。"
   },
   "uni-ui tr": {

@@ -20,18 +20,18 @@
 
 |API|Prefix|Description|
 |-|-|-|
-|`<uni-badge>`|`uni-badge`, `<uni-badge>`, `UniBadge`, `<UniBadge>`|uni-ui 徽标/标记/数字角标/徽章。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-badge>。|
-|`<uni-calendar>`|`uni-calendar`, `<uni-calendar>`, `UniCalendar`, `<UniCalendar>`|uni-ui 日历。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-calendar>。|
-|`<uni-card>`|`uni-card`, `<uni-card>`, `UniCard`, `<UniCard>`|uni-ui 卡片。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-card>。|
-|`<uni-collapse>`|`uni-collapse`, `<uni-collapse>`, `UniCollapse`, `<UniCollapse>`|uni-ui 折叠面板。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。|
+|`<uni-badge>`|`uni-badge`, `<uni-badge>`, `UniBadge`, `<UniBadge>`|uni-ui 徽标/标记/数字角标/徽章，一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-badge>。|
+|`<uni-calendar>`|`uni-calendar`, `<uni-calendar>`, `UniCalendar`, `<UniCalendar>`|uni-ui 日历，当数据是日期或按照日期划分时使用，如日程、课表、价格日历、农历等。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-calendar>。|
+|`<uni-card>`|`uni-card`, `<uni-card>`, `UniCard`, `<UniCard>`|uni-ui 卡片，可承载文字、列表、图片、段落，常用于概览。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-card>。|
+|`<uni-collapse>`|`uni-collapse`, `<uni-collapse>`, `UniCollapse`, `<UniCollapse>`|uni-ui 折叠面板，对复杂区域进行分组和隐藏，保持页面的整洁。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。|
 |`<uni-collapse-item>`|`uni-collapse-item`, `<uni-collapse-item>`, `UniCollapseItem`, `<UniCollapseItem>`|uni-ui 折叠面板项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-collapse>。|
-|`<uni-combox>`|`uni-combox`, `<uni-combox>`, `UniCombox`, `<UniCombox>`|uni-ui 组合框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-combox>。|
+|`<uni-combox>`|`uni-combox`, `<uni-combox>`, `UniCombox`, `<UniCombox>`|uni-ui 组合框，一般用于可选择也可输入的表单项。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-combox>。|
 |`<uni-countdown>`|`uni-countdown`, `<uni-countdown>`, `UniCountdown`, `<UniCountdown>`|uni-ui 倒计时。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-countdown>。|
 |`<uni-data-checkbox>`|`uni-data-checkbox`, `<uni-data-checkbox>`, `UniDataCheckbox`, `<UniDataCheckbox>`|uni-ui 数据选择器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-data-checkbox>。|
 |`<uni-data-picker>`|`uni-data-picker`, `<uni-data-picker>`, `UniDataPicker`, `<UniDataPicker>`|uni-ui 级联选择器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-data-picker>。|
-|`<uni-dateformat>`|`uni-dateformat`, `<uni-dateformat>`, `UniDateformat`, `<UniDateformat>`|uni-ui 日期格式化。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-dateformat>。|
+|`<uni-dateformat>`|`uni-dateformat`, `<uni-dateformat>`, `UniDateformat`, `<UniDateformat>`|uni-ui 日期格式化。请考虑使用 [dayjs](https://dayjs.gitee.io/zh-CN/)。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-dateformat>。|
 |`<uni-datetime-picker>`|`uni-datetime-picker`, `<uni-datetime-picker>`, `UniDatetimePicker`, `<UniDatetimePicker>`|uni-ui 日期时间选择器。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-datetime-picker>。|
-|`<uni-drawer>`|`uni-drawer`, `<uni-drawer>`, `UniDrawer`, `<UniDrawer>`|uni-ui 抽屉。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-drawer>。|
+|`<uni-drawer>`|`uni-drawer`, `<uni-drawer>`, `UniDrawer`, `<UniDrawer>`|uni-ui 抽屉，屏幕边缘滑出的浮层面板，用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到原任务。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-drawer>。|
 |`<uni-easyinput>`|`uni-easyinput`, `<uni-easyinput>`, `UniEasyinput`, `<UniEasyinput>`|uni-ui 增强输入框。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-easyinput>。|
 |`<uni-fab>`|`uni-fab`, `<uni-fab>`, `UniFab`, `<UniFab>`|uni-ui 悬浮按钮。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-fab>。|
 |`<uni-fav>`|`uni-fav`, `<uni-fav>`, `UniFav`, `<UniFav>`|uni-ui 收藏按钮。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-fav>。|

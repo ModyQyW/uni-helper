@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.7.0
+
+- 更新 `manifest.json`，增加 `uniStatistics.version` 和 `uniStatistics.debug`
+
 ## 0.6.1
 
 - 更新 `androidPrivacy.json`，增加参考链接

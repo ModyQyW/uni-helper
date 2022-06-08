@@ -204,14 +204,6 @@
             "enable": {
               "description": "是否开启 uni 统计。",
               "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
-              "type": "boolean"
             }
           }
         },
@@ -335,14 +327,6 @@
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
-              "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
               "type": "boolean"
             }
           }
@@ -541,14 +525,6 @@
             "enable": {
               "description": "是否开启 uni 统计。",
               "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
-              "type": "boolean"
             }
           }
         },
@@ -595,14 +571,6 @@
             "enable": {
               "description": "是否开启 uni 统计。",
               "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
-              "type": "boolean"
             }
           }
         },
@@ -647,14 +615,6 @@
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
-              "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
               "type": "boolean"
             }
           }
@@ -706,14 +666,6 @@
             "enable": {
               "description": "是否开启 uni 统计。",
               "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
-              "type": "boolean"
             }
           }
         },
@@ -761,14 +713,6 @@
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
-              "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
               "type": "boolean"
             }
           }
@@ -845,14 +789,6 @@
             "enable": {
               "description": "是否开启 uni 统计。",
               "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
-              "type": "boolean"
             }
           }
         },
@@ -878,14 +814,6 @@
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
-              "type": "boolean"
-            },
-            "version": {
-              "description": "uni 统计版本。",
-              "type": "string"
-            },
-            "debug": {
-              "description": "是否开启调试模式。生产阶段务必关闭。",
               "type": "boolean"
             }
           }

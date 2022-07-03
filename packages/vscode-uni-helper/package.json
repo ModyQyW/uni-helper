@@ -48,6 +48,9 @@
       "commitMessage": "chore(release): vscode-uni-helper@${version}",
       "tagName": "vscode-uni-helper@${version}"
     },
+    "npm": {
+      "publish": false
+    },
     "hooks": {
       "after:bump": "npx vsce package && npx vsce publish"
     }

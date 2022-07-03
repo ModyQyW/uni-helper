@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-helper"
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vscode-uni-helper"
   },
   "license": "MIT",
   "author": {

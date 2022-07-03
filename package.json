@@ -1,7 +1,7 @@
 {
   "name": "uni-helper",
   "private": true,
-  "description": "Make uni-* work better in other editors, such as VSCode and WebStorm.",
+  "description": "Enhance the experience of the `uni-app` family of products. 增强 `uni-app` 系列产品的体验。",
   "keywords": [
     "uni",
     "uni-app",
@@ -27,7 +27,7 @@
     "clean": "rimraf ./**/*.vsix",
     "commit": "git-cz",
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint",
-    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
+    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install"
   },
@@ -37,22 +37,22 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.17.0",
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
-    "@modyqyw/fabric": "^5.0.9",
-    "@types/node": "latest",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
+    "@babel/core": "^7.18.6",
+    "@babel/eslint-parser": "^7.18.2",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@modyqyw/fabric": "^5.3.1",
+    "@tsconfig/node16": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/parser": "^5.30.3",
     "commitizen": "^4.2.4",
-    "eslint": "^8.15.0",
-    "husky": "^8.0.0",
+    "eslint": "^8.19.0",
+    "husky": "^8.0.1",
     "is-ci": "^3.0.1",
-    "lint-staged": "^12.4.1",
+    "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.31.1",
-    "prettier": "^2.6.2",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "typescript": "^4.6.4"
+    "typescript": "^4.7.4"
   }
 }

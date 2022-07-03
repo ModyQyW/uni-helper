@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 
 const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json'));
 const javascriptObject = JSON.parse(fs.readFileSync('./snippets/javascript.json'));
@@ -24,12 +24,12 @@ let readme = `# vscode-uni-cloud-snippets
 // 添加 HTML
 readme += '## HTML\n\n';
 readme += '|API|Prefix|Description|\n|-|-|-|\n';
-Object.keys(htmlObject).forEach((key) => {
+for (const key of Object.keys(htmlObject)) {
   const { prefix, body, description } = htmlObject[key];
   let newPrefix = '';
-  prefix.forEach((text) => {
+  for (const text of prefix) {
     newPrefix += `\`${text}\`, `;
-  });
+  }
   newPrefix = newPrefix.slice(0, -2);
   let newBody = '';
   newBody = `\`${body[0]
@@ -46,18 +46,18 @@ Object.keys(htmlObject).forEach((key) => {
     newBody += '`';
   }
   readme += `|${newBody}|${newPrefix}|${description}|\n`;
-});
+}
 readme += '\n';
 
 // 添加 JavaScript/TypeScript
 readme += '## JavaScript/TypeScript\n\n';
 readme += '|API|Prefix|Description|\n|-|-|-|\n';
-Object.keys(javascriptObject).forEach((key) => {
+for (const key of Object.keys(javascriptObject)) {
   const { prefix, body, description } = javascriptObject[key];
   let newPrefix = '';
-  prefix.forEach((text) => {
+  for (const text of prefix) {
     newPrefix += `\`${text}\`, `;
-  });
+  }
   newPrefix = newPrefix.slice(0, -2);
   let newBody = '';
   newBody = `\`${body[0]
@@ -74,7 +74,7 @@ Object.keys(javascriptObject).forEach((key) => {
     newBody += '`';
   }
   readme += `|${newBody}|${newPrefix}|${description}|\n`;
-});
+}
 readme += '\n';
 
 // 添加更多

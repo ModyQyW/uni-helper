@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-helper",
   "displayName": "uni-helper",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "增强 `uni-app` 系列产品在 `vscode` 内的体验。",
   "categories": [
     "Extension Packs"

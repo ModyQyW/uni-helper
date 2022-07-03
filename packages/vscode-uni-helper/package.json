@@ -31,7 +31,7 @@
   "publisher": "ModyQyW",
   "type": "module",
   "scripts": {
-    "release": "npx vsce package && npx vsce publish"
+    "release": "npx release-it"
   },
   "extensionPack": [
     "ModyQyW.vscode-uni-app-schemas",
@@ -42,5 +42,14 @@
   "engines": {
     "vscode": "^1.40.0"
   },
-  "icon": "uni-app.png"
+  "icon": "uni-app.png",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): vscode-uni-helper@${version}",
+      "tagName": "vscode-uni-helper@${version}"
+    },
+    "hooks": {
+      "after:bump": "npx vsce package && npx vsce publish"
+    }
+  }
 }

@@ -29,7 +29,8 @@
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "release:vscode-uni-helper": "pnpm --filter vscode-uni-helper run release"
   },
   "config": {
     "commitizen": {
@@ -52,7 +53,9 @@
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.31.1",
     "prettier": "^2.7.1",
+    "release-it": "^15.1.1",
     "rimraf": "^3.0.2",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vsce": "^2.9.2"
   }
 }

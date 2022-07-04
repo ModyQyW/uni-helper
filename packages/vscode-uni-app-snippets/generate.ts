@@ -20,7 +20,7 @@ let readme = `# vscode-uni-app-snippets
 
 ## 使用
 
-安装插件后重启 VSCode，打开对应的文件，编码时就会有提示。
+安装插件后重启 VSCode 即可。
 
 `;
 

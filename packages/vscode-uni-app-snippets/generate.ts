@@ -1,22 +1,22 @@
 import fs from 'node:fs';
 
-const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json'));
-const cssObject = JSON.parse(fs.readFileSync('./snippets/css.json'));
-const javascriptObject = JSON.parse(fs.readFileSync('./snippets/javascript.json'));
+const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json', { encoding: 'utf8' }));
+const cssObject = JSON.parse(fs.readFileSync('./snippets/css.json', { encoding: 'utf8' }));
+const javascriptObject = JSON.parse(
+  fs.readFileSync('./snippets/javascript.json', { encoding: 'utf8' }),
+);
 
 let readme = `# vscode-uni-app-snippets
 
 ## 插件特性
 
-- uni-app 基本能力代码片段，包括组件和 API
-- 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/README)
-- 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
+- uni-app 基本能力代码片段
+- 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/)
+- 参考 [Vue.js 2 风格指南](https://v2.vuejs.org/v2/style-guide/) 和 [Vue.js 3 风格指南](https://vuejs.org/style-guide/)
 
-本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
+**插件和文档的冲突之处，请以文档为准。**
 
-建议搭配 \`@dcloudio/types\` 和 \`@dcloudio/uni-helper-json\` 使用，请注意要在 \`tsconfig.json\` 内配置 \`@dcloudio/types\`。
-
-欢迎提交 [ISSUE](https://github.com/ModyQyW/uni-helper/issues/new) 和 [PR](https://github.com/ModyQyW/uni-helper/compare) 改进本插件。
+插件源代码在 [ModyQyW/uni-helper](https://github.com/ModyQyW/uni-helper)。欢迎提交 ISSUE 和 PR 改进本插件。
 
 ## 使用
 
@@ -108,10 +108,9 @@ for (const key of Object.keys(javascriptObject)) {
 }
 readme += '\n';
 
-readme += `## 更多
+readme += `## 额外推荐
 
-- [个人站点](https://modyqyw.github.io/)
-- [个人 Github](https://github.com/ModyQyW)
+请查看 [uni-helper 插件说明](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)。
 `;
 
 fs.writeFileSync('README.md', readme);

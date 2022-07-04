@@ -1,0 +1,81 @@
+{
+  "name": "@modyqyw/uni-request",
+  "version": "0.2.1",
+  "description": "`Promise` based HTTP client for `uni-app`. 为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。",
+  "keywords": [
+    "uni-app",
+    "uniapp",
+    "request"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-request"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npx tsup-node src/index.ts --format esm,cjs --dts --minify --shims --target es5",
+    "dev": "pnpm run build --watch src",
+    "lint": "npx eslint src --fix && npx tsc --noEmit",
+    "release": "npx release-it"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  },
+  "dependencies": {
+    "@dcloudio/types": "^2.6.12",
+    "@types/lodash-es": "^4.17.6",
+    "@types/ramda": "^0.28.14",
+    "@types/statuses": "^2.0.0",
+    "@types/ungap__url-search-params": "^0.1.0",
+    "@ungap/url-search-params": "^0.2.2",
+    "change-case": "^4.1.2",
+    "lodash-es": "^4.17.21",
+    "ramda": "^0.28.0",
+    "statuses": "^2.0.1"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): @modyqyw/uni-request@${version}",
+      "tagName": "@modyqyw/uni-request@${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install && pnpm run lint",
+      "after:bump": "pnpm run build"
+    }
+  }
+}

@@ -33,7 +33,8 @@
     "release:vscode-uni-app-schemas": "pnpm --filter vscode-uni-app-schemas run release",
     "release:vscode-uni-app-snippets": "pnpm --filter vscode-uni-app-snippets run release",
     "release:vscode-uni-cloud-snippets": "pnpm --filter vscode-uni-cloud-snippets run release",
-    "release:vscode-uni-helper": "pnpm --filter vscode-uni-helper run release"
+    "release:vscode-uni-helper": "pnpm --filter vscode-uni-helper run release",
+    "release:vscode-uni-ui-snippets": "pnpm --filter vscode-uni-ui-snippets release"
   },
   "config": {
     "commitizen": {

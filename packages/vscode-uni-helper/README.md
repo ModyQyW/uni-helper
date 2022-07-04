@@ -11,6 +11,10 @@
 - [uni-cloud-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-cloud-snippets) - 提供 `uni-cloud` 基本能力代码片段
 - [uni-ui-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets) - 提供 `uni-ui` 基本能力代码片段
 
+**插件和文档的冲突之处，请以文档为准。**
+
+插件源代码在 [ModyQyW/uni-helper](https://github.com/ModyQyW/uni-helper)。欢迎提交 ISSUE 和 PR 改进本插件。
+
 ## 使用
 
 安装插件后重启 VSCode 即可。
@@ -68,7 +72,3 @@
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 - [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
-
-**插件和文档的冲突之处，请以文档为准。**
-
-插件源代码在 [ModyQyW/uni-helper](https://github.com/ModyQyW/uni-helper)。欢迎提交 ISSUE 和 PR 改进本插件。

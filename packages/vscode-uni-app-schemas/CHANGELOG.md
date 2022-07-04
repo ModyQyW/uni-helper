@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.7.2
+
+- 发布流程改进
+
 ## 0.7.1
 
 - 更新 `manifest.json`，移除多余的 `uniStatistics.version` 和 `uniStatistics.debug`

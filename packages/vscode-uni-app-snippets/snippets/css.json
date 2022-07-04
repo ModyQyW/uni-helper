@@ -104,6 +104,11 @@
     "body": ["MP-360"],
     "description": "uni-app 360 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
+  "uni-app 小红书小程序平台": {
+    "prefix": ["platform-mp-xhs", "mp-xhs", "platform-xhs", "xhs"],
+    "body": ["MP-XHS"],
+    "description": "uni-app 小红书小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
+  },
   "uni-app 快应用通用平台": {
     "prefix": ["platform-quickapp", "quickapp", "platform-quickapp-webview", "quickapp-webview"],
     "body": ["QUICKAPP-WEBVIEW"],

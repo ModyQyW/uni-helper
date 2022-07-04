@@ -30,6 +30,7 @@
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
+    "release:vscode-uni-app-schemas": "pnpm --filter vscode-uni-app-schemas run release",
     "release:vscode-uni-helper": "pnpm --filter vscode-uni-helper run release"
   },
   "config": {

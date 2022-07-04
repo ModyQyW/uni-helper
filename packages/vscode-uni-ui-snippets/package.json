@@ -2,7 +2,7 @@
   "name": "vscode-uni-ui-snippets",
   "displayName": "uni-ui-snippets",
   "version": "0.6.2",
-  "description": "uni-ui snippets.",
+  "description": "`uni-ui` 组件代码片段。",
   "categories": [
     "Snippets"
   ],
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-ui-snippets"
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vscode-uni-ui-snippets"
   },
   "license": "MIT",
   "author": {
@@ -27,7 +27,7 @@
   "publisher": "ModyQyW",
   "type": "module",
   "scripts": {
-    "release": "node generate.js && npx vsce package && npx vsce publish"
+    "release": "npx release-it"
   },
   "contributes": {
     "snippets": [
@@ -48,5 +48,17 @@
   "engines": {
     "vscode": "^1.40.0"
   },
-  "icon": "uni-app.png"
+  "icon": "uni-app.png",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): vscode-uni-ui-snippets@${version}",
+      "tagName": "vscode-uni-ui-snippets@${version}"
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish"
+    }
+  }
 }

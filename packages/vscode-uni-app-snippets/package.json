@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-app-snippets"
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vscode-uni-app-snippets"
   },
   "license": "MIT",
   "author": {

@@ -2,7 +2,7 @@
   "name": "vscode-uni-app-schemas",
   "displayName": "uni-app-schemas",
   "version": "0.7.1",
-  "description": "Help validate pages.json and manifest.json schemas in uni-app.",
+  "description": "校验 `uni-app` 中的 `androidPrivacy.json`、`pages.json` 和 `manifest.json` 格式。",
   "categories": [
     "Other"
   ],
@@ -10,11 +10,17 @@
     "uniapp",
     "uni-app",
     "schema",
-    "schemas"
+    "schemas",
+    "pages",
+    "pages.json",
+    "manifest",
+    "manifest.json",
+    "androidPrivacy",
+    "androidPrivacy.json"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-app-schemas"
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vscode-uni-app-schemas"
   },
   "license": "MIT",
   "author": {
@@ -25,7 +31,7 @@
   "publisher": "ModyQyW",
   "type": "module",
   "scripts": {
-    "release": "node generate.js && npx vsce package && npx vsce publish"
+    "release": "npx release-it"
   },
   "contributes": {
     "jsonValidation": [
@@ -46,5 +52,17 @@
   "engines": {
     "vscode": "^1.40.0"
   },
-  "icon": "uni-app.png"
+  "icon": "uni-app.png",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): vscode-uni-app-schemas@${version}",
+      "tagName": "vscode-uni-app-schemas@${version}"
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish"
+    }
+  }
 }

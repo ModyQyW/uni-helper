@@ -6,15 +6,13 @@
 - 参考 [uni-ui 文档](https://github.com/dcloudio/uni-ui#readme)
 - 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
 
-另外推荐优秀的社区 UI 库 [uview-ui](https://www.uviewui.com/) 和 [thor-ui](https://thorui.cn/doc/)。
+**插件和文档的冲突之处，请以文档为准。**
 
-本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
-
-欢迎提交 [ISSUE](https://github.com/ModyQyW/uni-helper/issues/new) 和 [PR](https://github.com/ModyQyW/uni-helper/compare) 改进本插件。
+插件源代码在 [ModyQyW/uni-helper](https://github.com/ModyQyW/uni-helper)。欢迎提交 ISSUE 和 PR 改进本插件。
 
 ## 使用
 
-安装插件后重启 VSCode，打开对应的文件，编码时就会有提示。
+安装插件后重启 VSCode 即可。
 
 ## HTML
 
@@ -74,7 +72,6 @@
 |`<uni-title>`|`uni-title`, `<uni-title>`, `UniTitle`, `<UniTitle>`|uni-ui 标题。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-title>。|
 |`<uni-transition>`|`uni-transition`, `<uni-transition>`, `UniTransition`, `<UniTransition>`|uni-ui 过渡动画。更多信息查看 <https://uniapp.dcloud.io/component/uniui/uni-transition>。|
 
-## 更多
+## 额外推荐
 
-- [个人站点](https://modyqyw.github.io/)
-- [个人 Github](https://github.com/ModyQyW)
+请查看 [uni-helper 插件说明](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)。

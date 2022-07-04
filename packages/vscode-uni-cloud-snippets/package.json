@@ -2,7 +2,7 @@
   "name": "vscode-uni-cloud-snippets",
   "displayName": "uni-cloud-snippets",
   "version": "0.2.5",
-  "description": "uni-cloud snippets.",
+  "description": "`uni-cloud` 基本能力代码片段。",
   "categories": [
     "Snippets"
   ],
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModyQyW/uni-helper/tree/master/vscode-uni-cloud-snippets"
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vscode-uni-cloud-schemas"
   },
   "license": "MIT",
   "author": {
@@ -27,7 +27,7 @@
   "publisher": "ModyQyW",
   "type": "module",
   "scripts": {
-    "release": "node generate.js && npx vsce package && npx vsce publish"
+    "release": "npx release-it"
   },
   "contributes": {
     "snippets": [
@@ -68,5 +68,17 @@
   "engines": {
     "vscode": "^1.40.0"
   },
-  "icon": "uni-app.png"
+  "icon": "uni-app.png",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): vscode-uni-cloud-snippets@${version}",
+      "tagName": "vscode-uni-cloud-snippets@${version}"
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish"
+    }
+  }
 }

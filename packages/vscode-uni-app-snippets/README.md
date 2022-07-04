@@ -2,15 +2,13 @@
 
 ## 插件特性
 
-- uni-app 基本能力代码片段，包括组件和 API
-- 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/README)
-- 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
+- uni-app 基本能力代码片段
+- 参考 [uni-app 官方组件文档](https://uniapp.dcloud.io/component/)
+- 参考 [Vue.js 2 风格指南](https://v2.vuejs.org/v2/style-guide/) 和 [Vue.js 3 风格指南](https://vuejs.org/style-guide/)
 
-本插件是 [uni-helper](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper) 的一部分。本插件和文档的冲突之处，请以文档为准。
+**插件和文档的冲突之处，请以文档为准。**
 
-建议搭配 `@dcloudio/types` 和 `@dcloudio/uni-helper-json` 使用，请注意要在 `tsconfig.json` 内配置 `@dcloudio/types`。
-
-欢迎提交 [ISSUE](https://github.com/ModyQyW/uni-helper/issues/new) 和 [PR](https://github.com/ModyQyW/uni-helper/compare) 改进本插件。
+插件源代码在 [ModyQyW/uni-helper](https://github.com/ModyQyW/uni-helper)。欢迎提交 ISSUE 和 PR 改进本插件。
 
 ## 使用
 
@@ -33,6 +31,7 @@
 |`MP-KUAISHOU`|`platform-mp-kuaishou`, `mp-kuaishou`, `platform-kuaishou`, `kuaishou`|uni-app 快手小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`MP-JD`|`platform-mp-jd`, `mp-jd`, `platform-jd`, `jd`|uni-app 京东小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`MP-360`|`platform-mp-360`, `mp-360`, `platform-360`, `360`|uni-app 360 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
+|`MP-XHS`|`platform-mp-xhs`, `mp-xhs`, `platform-xhs`, `xhs`|uni-app 小红书小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW`|`platform-quickapp`, `quickapp`, `platform-quickapp-webview`, `quickapp-webview`|uni-app 快应用通用对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-UNION`|`platform-quickapp-union`, `quickapp-union`, `platform-quickapp-webview-union`, `quickapp-webview-union`|uni-app 快应用联盟对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-HUAWEI`|`platform-quickapp-huawei`, `quickapp-huawei`, `platform-quickapp-webview-huawei`, `quickapp-webview-huawei`|uni-app 快应用华为对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
@@ -113,6 +112,7 @@
 |`MP-KUAISHOU`|`platform-mp-kuaishou`, `mp-kuaishou`, `platform-kuaishou`, `kuaishou`|uni-app 快手小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`MP-JD`|`platform-mp-jd`, `mp-jd`, `platform-jd`, `jd`|uni-app 京东小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`MP-360`|`platform-mp-360`, `mp-360`, `platform-360`, `360`|uni-app 360 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
+|`MP-XHS`|`platform-mp-xhs`, `mp-xhs`, `platform-xhs`, `xhs`|uni-app 小红书小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW`|`platform-quickapp`, `quickapp`, `platform-quickapp-webview`, `quickapp-webview`|uni-app 快应用通用对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-UNION`|`platform-quickapp-union`, `quickapp-union`, `platform-quickapp-webview-union`, `quickapp-webview-union`|uni-app 快应用联盟对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-HUAWEI`|`platform-quickapp-huawei`, `quickapp-huawei`, `platform-quickapp-webview-huawei`, `quickapp-webview-huawei`|uni-app 快应用华为对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
@@ -140,6 +140,7 @@
 |`MP-KUAISHOU`|`platform-mp-kuaishou`, `mp-kuaishou`, `platform-kuaishou`, `kuaishou`|uni-app 快手小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`MP-JD`|`platform-mp-jd`, `mp-jd`, `platform-jd`, `jd`|uni-app 京东小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`MP-360`|`platform-mp-360`, `mp-360`, `platform-360`, `360`|uni-app 360 小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
+|`MP-XHS`|`platform-mp-xhs`, `mp-xhs`, `platform-xhs`, `xhs`|uni-app 小红书小程序对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW`|`platform-quickapp`, `quickapp`, `platform-quickapp-webview`, `quickapp-webview`|uni-app 快应用通用对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-UNION`|`platform-quickapp-union`, `quickapp-union`, `platform-quickapp-webview-union`, `quickapp-webview-union`|uni-app 快应用联盟对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-HUAWEI`|`platform-quickapp-huawei`, `quickapp-huawei`, `platform-quickapp-webview-huawei`, `quickapp-webview-huawei`|uni-app 快应用华为对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
@@ -371,7 +372,6 @@
 |`uni.getUpdateManager()`|`uni.getUpdateManager`|uni-app 获取全局唯一版本更新管理器。更多信息查看 <https://uniapp.dcloud.io/api/other/update>。|
 |`uni.setEnabledDebug()`|`uni.setEnableDebug`|uni-app 设置调试开关。更多信息查看 <https://uniapp.dcloud.io/api/other/set-enable-debug>。|
 
-## 更多
+## 额外推荐
 
-- [个人站点](https://modyqyw.github.io/)
-- [个人 Github](https://github.com/ModyQyW)
+请查看 [uni-helper 插件说明](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)。

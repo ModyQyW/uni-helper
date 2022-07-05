@@ -148,3 +148,19 @@ export type UrResponse<T = UrData, D = UrData> =
   | UrRequestResponse<T, D>
   | UrDownloadResponse<T, D>
   | UrUploadResponse<T, D>;
+
+export type UrPromise<T = UrData, D = UrData> = Promise<UrResponse<T, D>>;
+
+export interface UrInterceptorOptions<D = UrData> {
+  synchronous?: boolean;
+  runWhen?: (config: UrRequestConfig<D>) => boolean;
+}
+
+export interface UrInterceptorManager<V> {
+  use<T = V, D = UrData>(
+    onFulfilled?: (value: V) => T | Promise<T>,
+    onRejected?: (error: any) => any,
+    options?: UrInterceptorOptions<D>,
+  ): number;
+  eject(id: number): void;
+}

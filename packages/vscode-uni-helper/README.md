@@ -63,9 +63,9 @@
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 - [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [React Style Helper](https://marketplace.visualstudio.com/items?itemName=iceworks-team.iceworks-style-helper) - 为样式文件提供辅助开发功能
+- [React Style Helper](https://marketplace.visualstudio.com/items?itemName=iceworks-team.iceworks-style-helper)
 - [Regex Previewer](https://marketplace.visualstudio.com/items?itemName=chrmarti.regex)
-- [Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented) - 支持 SASS / SCSS
+- [Sass](https://marketplace.visualstudio.com/items?itemName=Syler.sass-indented)
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [SVG](https://marketplace.visualstudio.com/items?itemName=jock.svg)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)

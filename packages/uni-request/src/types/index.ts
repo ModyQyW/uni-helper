@@ -32,6 +32,10 @@ export type UrDataType = 'json' | string;
 
 export type UrResponseType = 'text' | 'arraybuffer';
 
+export interface UrAdapter<T = UrData, D = UrData> {
+  (config: UrConfig): UrPromise<T, D>;
+}
+
 export type UrFileType = 'image' | 'video' | 'audio';
 
 export interface UrProfile {
@@ -63,7 +67,7 @@ export interface UrProfile {
 }
 
 export interface UrBaseConfig<D = UrData> {
-  baseURL?: string;
+  baseUrl?: string;
   url?: string;
   params?: any;
   paramsSerializer?: (params?: any) => string;
@@ -71,6 +75,7 @@ export interface UrBaseConfig<D = UrData> {
   headers?: UrHeaders;
   timeout?: number;
   timeoutErrorMessage?: string;
+  adapter?: 'request' | 'REQUEST' | 'download' | 'DOWNLOAD' | 'upload' | 'UPLOAD' | UrAdapter;
   signal?: AbortSignal;
   onHeadersReceived?: (response?: { headers?: UrHeaders }) => void;
 }
@@ -79,6 +84,7 @@ export interface UrRequestConfig<D = UrData> extends UrBaseConfig<D> {
   method?: UrMethod;
   dataType?: UrDataType;
   responseType?: UrResponseType;
+  adapter?: 'request' | 'REQUEST' | UrAdapter;
   enableHttp2?: boolean;
   enableQuic?: boolean;
   enableCache?: boolean;
@@ -93,6 +99,7 @@ export interface UrRequestConfig<D = UrData> extends UrBaseConfig<D> {
 }
 
 export interface UrDownloadConfig<D = UrData> extends UrBaseConfig<D> {
+  adapter?: 'download' | 'DOWNLOAD' | UrAdapter;
   filePath?: string;
   onProgressUpdate?: (response?: {
     progress?: number;
@@ -102,6 +109,7 @@ export interface UrDownloadConfig<D = UrData> extends UrBaseConfig<D> {
 }
 
 export interface UrUploadConfig<D = UrData> extends UrBaseConfig<D> {
+  adapter?: 'upload' | 'UPLOAD' | UrAdapter;
   filePath?: string;
   name?: string;
   files?: File[];
@@ -123,7 +131,7 @@ export interface UrBaseResponse<D = UrData> {
   status: number;
   statusText: string;
   headers: UrHeaders;
-  config: UrRequestConfig<D>;
+  config: UrConfig<D>;
   request?: any;
 }
 
@@ -149,11 +157,20 @@ export type UrResponse<T = UrData, D = UrData> =
   | UrDownloadResponse<T, D>
   | UrUploadResponse<T, D>;
 
-export type UrPromise<T = UrData, D = UrData> = Promise<UrResponse<T, D>>;
+export type UrRequestPromise<T = UrData, D = UrData> = Promise<UrRequestResponse<T, D>>;
+
+export type UrDownloadPromise<T = UrData, D = UrData> = Promise<UrDownloadResponse<T, D>>;
+
+export type UrUploadPromise<T = UrData, D = UrData> = Promise<UrUploadResponse<T, D>>;
+
+export type UrPromise<T = UrData, D = UrData> =
+  | UrRequestPromise<T, D>
+  | UrDownloadPromise<T, D>
+  | UrUploadPromise<T, D>;
 
 export interface UrInterceptorOptions<D = UrData> {
   synchronous?: boolean;
-  runWhen?: (config: UrRequestConfig<D>) => boolean;
+  runWhen?: (config: UrConfig<D>) => boolean;
 }
 
 export interface UrInterceptorManager<V> {

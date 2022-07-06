@@ -35,9 +35,22 @@ export type UrDataType = 'json' | string;
 
 export type UrResponseType = 'text' | 'arraybuffer';
 
-export interface UrAdapter<T = UrData, D = UrData> {
-  (config: UrConfig<T, D>): UrPromise<T, D>;
+export interface UrRequestAdapter<T = UrData, D = UrData> {
+  (config: UrConfig<T, D>): UrRequestPromise<T, D>;
 }
+
+export interface UrDownloadAdapter<T = UrData, D = UrData> {
+  (config: UrConfig<T, D>): UrDownloadPromise<T, D>;
+}
+
+export interface UrUploadAdapter<T = UrData, D = UrData> {
+  (config: UrConfig<T, D>): UrUploadPromise<T, D>;
+}
+
+export type UrAdapter<T = UrData, D = UrData> =
+  | UrRequestAdapter<T, D>
+  | UrDownloadAdapter<T, D>
+  | UrUploadAdapter<T, D>;
 
 export interface UrRequestRequestTransformer<T = UrData, D = UrData> {
   (this: UrRequestConfig<T, D>, data: D, headers: UrHeaders): any;

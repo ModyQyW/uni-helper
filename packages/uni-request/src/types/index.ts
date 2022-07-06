@@ -1,3 +1,6 @@
+// T should be response data
+// D should be request data
+
 export type UrData = string | Record<string, any> | ArrayBuffer;
 
 export type UrMethod =
@@ -33,8 +36,42 @@ export type UrDataType = 'json' | string;
 export type UrResponseType = 'text' | 'arraybuffer';
 
 export interface UrAdapter<T = UrData, D = UrData> {
-  (config: UrConfig): UrPromise<T, D>;
+  (config: UrConfig<T, D>): UrPromise<T, D>;
 }
+
+export interface UrRequestRequestTransformer<T = UrData, D = UrData> {
+  (this: UrRequestConfig<T, D>, data: D, headers: UrHeaders): any;
+}
+
+export interface UrRequestResponseTransformer<T = UrData, D = UrData> {
+  (this: UrRequestConfig<T, D>, data: T, headers: UrHeaders, status?: number): any;
+}
+
+export interface UrDownloadRequestTransformer<T = UrData, D = UrData> {
+  (this: UrRequestConfig<T, D>, data: D, headers: UrHeaders): any;
+}
+
+export interface UrDownloadResponseTransformer<T = UrData, D = UrData> {
+  (this: UrRequestConfig<T, D>, data: T, headers: UrHeaders, status?: number): any;
+}
+
+export interface UrUploadRequestTransformer<T = UrData, D = UrData> {
+  (this: UrRequestConfig<T, D>, data: D, headers: UrHeaders): any;
+}
+
+export interface UrUploadResponseTransformer<T = UrData, D = UrData> {
+  (this: UrRequestConfig<T, D>, data: T, headers: UrHeaders, status?: number): any;
+}
+
+export type UrRequestTransformer<T = UrData, D = UrData> =
+  | UrRequestRequestTransformer<T, D>
+  | UrDownloadRequestTransformer<T, D>
+  | UrUploadRequestTransformer<T, D>;
+
+export type UrResponseTransformer<T = UrData, D = UrData> =
+  | UrRequestResponseTransformer<T, D>
+  | UrDownloadResponseTransformer<T, D>
+  | UrUploadResponseTransformer<T, D>;
 
 export type UrFileType = 'image' | 'video' | 'audio';
 
@@ -75,15 +112,16 @@ export interface UrBaseConfig<D = UrData> {
   headers?: UrHeaders;
   timeout?: number;
   timeoutErrorMessage?: string;
-  adapter?: 'request' | 'REQUEST' | 'download' | 'DOWNLOAD' | 'upload' | 'UPLOAD' | UrAdapter;
   signal?: AbortSignal;
   onHeadersReceived?: (response?: { headers?: UrHeaders }) => void;
 }
 
-export interface UrRequestConfig<D = UrData> extends UrBaseConfig<D> {
+export interface UrRequestConfig<T = UrData, D = UrData> extends UrBaseConfig<D> {
   method?: UrMethod;
   dataType?: UrDataType;
   responseType?: UrResponseType;
+  transformRequest?: UrRequestRequestTransformer<T, D> | UrRequestRequestTransformer<T, D>[];
+  transformResponse?: UrRequestResponseTransformer<T, D> | UrRequestResponseTransformer<T, D>[];
   adapter?: 'request' | 'REQUEST' | UrAdapter;
   enableHttp2?: boolean;
   enableQuic?: boolean;
@@ -98,7 +136,9 @@ export interface UrRequestConfig<D = UrData> extends UrBaseConfig<D> {
   onChunkReceived?: (response?: { data?: ArrayBuffer }) => void;
 }
 
-export interface UrDownloadConfig<D = UrData> extends UrBaseConfig<D> {
+export interface UrDownloadConfig<T = UrData, D = UrData> extends UrBaseConfig<D> {
+  transformRequest?: UrDownloadRequestTransformer<T, D> | UrDownloadRequestTransformer<T, D>[];
+  transformResponse?: UrDownloadResponseTransformer<T, D> | UrDownloadResponseTransformer<T, D>[];
   adapter?: 'download' | 'DOWNLOAD' | UrAdapter;
   filePath?: string;
   onProgressUpdate?: (response?: {
@@ -108,7 +148,9 @@ export interface UrDownloadConfig<D = UrData> extends UrBaseConfig<D> {
   }) => void;
 }
 
-export interface UrUploadConfig<D = UrData> extends UrBaseConfig<D> {
+export interface UrUploadConfig<T = UrData, D = UrData> extends UrBaseConfig<D> {
+  transformRequest?: UrUploadRequestTransformer<T, D> | UrUploadRequestTransformer<T, D>[];
+  transformResponse?: UrUploadResponseTransformer<T, D> | UrUploadResponseTransformer<T, D>[];
   adapter?: 'upload' | 'UPLOAD' | UrAdapter;
   filePath?: string;
   name?: string;
@@ -123,32 +165,35 @@ export interface UrUploadConfig<D = UrData> extends UrBaseConfig<D> {
   }) => void;
 }
 
-export type UrConfig<D = UrData> = UrRequestConfig<D> | UrDownloadConfig<D> | UrUploadConfig<D>;
+export type UrConfig<T = UrData, D = UrData> =
+  | UrRequestConfig<T, D>
+  | UrDownloadConfig<T, D>
+  | UrUploadConfig<T, D>;
 
-export interface UrBaseResponse<D = UrData> {
+export interface UrBaseResponse<T = UrData, D = UrData> {
   errMsg?: string;
   errno?: number;
   status: number;
   statusText: string;
   headers: UrHeaders;
-  config: UrConfig<D>;
+  config: UrConfig<T, D>;
   request?: any;
 }
 
-export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseResponse<D> {
+export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
   data?: T;
   cookies?: string[];
   profile?: UrProfile;
 }
 
-export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseResponse<D> {
+export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
   data?: T;
   tempFilePath?: string;
   filePath?: string;
   profile?: UrProfile;
 }
 
-export interface UrUploadResponse<T = UrData, D = UrData> extends UrBaseResponse<D> {
+export interface UrUploadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
   data?: T;
 }
 
@@ -168,21 +213,13 @@ export type UrPromise<T = UrData, D = UrData> =
   | UrDownloadPromise<T, D>
   | UrUploadPromise<T, D>;
 
-export interface UrInterceptorOptions<D = UrData> {
+export interface UrInterceptorOptions<T = UrData, D = UrData> {
   synchronous?: boolean;
-  runWhen?: (config: UrConfig<D>) => boolean;
+  runWhen?: (config: T extends infer P ? P : UrConfig<T, D>) => boolean;
 }
 
-export interface UrInterceptorManager<V> {
-  use<T = V, D = UrData>(
-    onFulfilled?: (value: V) => T | Promise<T>,
-    onRejected?: (error: any) => any,
-    options?: UrInterceptorOptions<D>,
-  ): number;
-  eject(id: number): void;
-}
-
-export interface UrInterceptorManagerHandler<V, T = V, D = UrData> extends UrInterceptorOptions<D> {
+export interface UrInterceptorManagerHandler<V, T = V, D = UrData>
+  extends UrInterceptorOptions<T, D> {
   fulfilled?: (value: V) => T | Promise<T>;
   rejected?: (error: any) => any;
 }

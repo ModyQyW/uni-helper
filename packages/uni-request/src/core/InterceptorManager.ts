@@ -10,7 +10,7 @@ class InterceptorManager<V, T = V, D = UrData> {
   use(
     fulfilled?: (value: V) => T | Promise<T>,
     rejected?: (error: any) => any,
-    options?: UrInterceptorOptions<D>,
+    options?: UrInterceptorOptions<T, D>,
   ) {
     this.handlers.push({
       fulfilled,
@@ -43,5 +43,3 @@ class InterceptorManager<V, T = V, D = UrData> {
 }
 
 export { InterceptorManager };
-
-export default InterceptorManager;

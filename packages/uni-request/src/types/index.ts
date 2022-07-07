@@ -36,15 +36,15 @@ export type UrDataType = 'json' | string;
 export type UrResponseType = 'text' | 'arraybuffer';
 
 export interface UrRequestAdapter<T = UrData, D = UrData> {
-  (config: UrConfig<T, D>): UrRequestPromise<T, D>;
+  (config: UrRequestConfig<T, D>): UrRequestPromise<T, D>;
 }
 
 export interface UrDownloadAdapter<T = UrData, D = UrData> {
-  (config: UrConfig<T, D>): UrDownloadPromise<T, D>;
+  (config: UrDownloadConfig<T, D>): UrDownloadPromise<T, D>;
 }
 
 export interface UrUploadAdapter<T = UrData, D = UrData> {
-  (config: UrConfig<T, D>): UrUploadPromise<T, D>;
+  (config: UrUploadConfig<T, D>): UrUploadPromise<T, D>;
 }
 
 export type UrAdapter<T = UrData, D = UrData> =

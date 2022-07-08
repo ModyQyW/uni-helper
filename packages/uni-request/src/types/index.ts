@@ -135,7 +135,7 @@ export interface UrRequestConfig<T = UrData, D = UrData> extends UrBaseConfig<D>
   responseType?: UrResponseType;
   transformRequest?: UrRequestRequestTransformer<T, D> | UrRequestRequestTransformer<T, D>[];
   transformResponse?: UrRequestResponseTransformer<T, D> | UrRequestResponseTransformer<T, D>[];
-  adapter?: 'request' | 'REQUEST' | UrAdapter;
+  adapter?: 'request' | 'REQUEST' | UrAdapter<T, D>;
   enableHttp2?: boolean;
   enableQuic?: boolean;
   enableCache?: boolean;
@@ -152,7 +152,7 @@ export interface UrRequestConfig<T = UrData, D = UrData> extends UrBaseConfig<D>
 export interface UrDownloadConfig<T = UrData, D = UrData> extends UrBaseConfig<D> {
   transformRequest?: UrDownloadRequestTransformer<T, D> | UrDownloadRequestTransformer<T, D>[];
   transformResponse?: UrDownloadResponseTransformer<T, D> | UrDownloadResponseTransformer<T, D>[];
-  adapter?: 'download' | 'DOWNLOAD' | UrAdapter;
+  adapter?: 'download' | 'DOWNLOAD' | UrAdapter<T, D>;
   filePath?: string;
   onProgressUpdate?: (response?: {
     progress?: number;
@@ -164,7 +164,7 @@ export interface UrDownloadConfig<T = UrData, D = UrData> extends UrBaseConfig<D
 export interface UrUploadConfig<T = UrData, D = UrData> extends UrBaseConfig<D> {
   transformRequest?: UrUploadRequestTransformer<T, D> | UrUploadRequestTransformer<T, D>[];
   transformResponse?: UrUploadResponseTransformer<T, D> | UrUploadResponseTransformer<T, D>[];
-  adapter?: 'upload' | 'UPLOAD' | UrAdapter;
+  adapter?: 'upload' | 'UPLOAD' | UrAdapter<T, D>;
   filePath?: string;
   name?: string;
   files?: File[];

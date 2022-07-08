@@ -35,23 +35,6 @@ export type UrDataType = 'json' | string;
 
 export type UrResponseType = 'text' | 'arraybuffer';
 
-export interface UrRequestAdapter<T = UrData, D = UrData> {
-  (config: UrRequestConfig<T, D>): UrRequestPromise<T, D>;
-}
-
-export interface UrDownloadAdapter<T = UrData, D = UrData> {
-  (config: UrDownloadConfig<T, D>): UrDownloadPromise<T, D>;
-}
-
-export interface UrUploadAdapter<T = UrData, D = UrData> {
-  (config: UrUploadConfig<T, D>): UrUploadPromise<T, D>;
-}
-
-export type UrAdapter<T = UrData, D = UrData> =
-  | UrRequestAdapter<T, D>
-  | UrDownloadAdapter<T, D>
-  | UrUploadAdapter<T, D>;
-
 export interface UrRequestRequestTransformer<T = UrData, D = UrData> {
   (this: UrRequestConfig<T, D>, data: D, headers: UrHeaders): any;
 }
@@ -115,6 +98,23 @@ export interface UrProfile {
   receivedBytedCount?: number;
   protocol?: 'http1.1' | 'h2' | 'quic' | 'unknown' | string;
 }
+
+export interface UrRequestAdapter<T = UrData, D = UrData> {
+  (config: UrRequestConfig<T, D>): UrRequestPromise<T, D>;
+}
+
+export interface UrDownloadAdapter<T = UrData, D = UrData> {
+  (config: UrDownloadConfig<T, D>): UrDownloadPromise<T, D>;
+}
+
+export interface UrUploadAdapter<T = UrData, D = UrData> {
+  (config: UrUploadConfig<T, D>): UrUploadPromise<T, D>;
+}
+
+export type UrAdapter<T = UrData, D = UrData> =
+  | UrRequestAdapter<T, D>
+  | UrDownloadAdapter<T, D>
+  | UrUploadAdapter<T, D>;
 
 export interface UrBaseConfig<D = UrData> {
   baseUrl?: string;
@@ -183,6 +183,14 @@ export type UrConfig<T = UrData, D = UrData> =
   | UrDownloadConfig<T, D>
   | UrUploadConfig<T, D>;
 
+export type UrRequestTask = UniApp.RequestTask;
+
+export type UrDownloadTask = UniApp.DownloadTask;
+
+export type UrUploadTask = UniApp.UploadTask;
+
+export type UrTask = UrRequestTask | UrDownloadTask | UrUploadTask;
+
 export interface UrBaseResponse<T = UrData, D = UrData> {
   errMsg?: string;
   errno?: number;
@@ -197,7 +205,7 @@ export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseRespons
   data?: T;
   cookies?: string[];
   profile?: UrProfile;
-  request?: UniApp.RequestTask;
+  request?: UrRequestTask;
 }
 
 export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
@@ -205,12 +213,12 @@ export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseRespon
   tempFilePath?: string;
   filePath?: string;
   profile?: UrProfile;
-  request?: UniApp.DownloadTask;
+  request?: UrDownloadTask;
 }
 
 export interface UrUploadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
   data?: T;
-  request?: UniApp.UploadTask;
+  request?: UrUploadTask;
 }
 
 export type UrResponse<T = UrData, D = UrData> =

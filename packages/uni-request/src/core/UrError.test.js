@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { UrError } from './UrError';
 
-describe('core::UrError', function () {
-  it('should create an Error with message, config, code, request, response, stack and isUrError', function () {
+describe('core::UrError', () => {
+  it('should create an Error with message, config, code, request, response, stack and isUrError', () => {
     const request = { path: '/foo' };
     const response = { status: 200, data: { foo: 'bar' } };
     const error = new UrError('Boom!', 'ESOMETHING', { foo: 'bar' }, request, response);
@@ -15,7 +15,7 @@ describe('core::UrError', function () {
     expect(error.isUrError).toBe(true);
     expect(error.stack).toBeDefined();
   });
-  it('should create an Error that can be serialized to JSON', function () {
+  it('should create an Error that can be serialized to JSON', () => {
     // Attempting to serialize request and response results in
     //    TypeError: Converting circular structure to JSON
     const request = { path: '/foo' };
@@ -30,8 +30,8 @@ describe('core::UrError', function () {
     expect(json.response).toBe(undefined);
   });
 
-  describe('core::createError.from', function () {
-    it('should add config, config, request and response to error', function () {
+  describe('core::createError.from', () => {
+    it('should add config, config, request and response to error', () => {
       const error = new Error('Boom!');
       const request = { path: '/foo' };
       const response = { status: 200, data: { foo: 'bar' } };
@@ -44,7 +44,7 @@ describe('core::UrError', function () {
       expect(urError.isUrError).toBe(true);
     });
 
-    it('should return error', function () {
+    it('should return error', () => {
       const error = new Error('Boom!');
       expect(UrError.from(error, 'ESOMETHING', { foo: 'bar' }) instanceof UrError).toBeTruthy();
     });

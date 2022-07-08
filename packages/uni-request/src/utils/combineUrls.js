@@ -1,4 +1,4 @@
-export const combineUrls = (baseUrl: string, relativeUrl: string) => {
+export const combineUrls = (baseUrl, relativeUrl) => {
   return relativeUrl
     ? baseUrl.replace(/\/+$/, '') + '/' + relativeUrl.replace(/^\/+/, '')
     : baseUrl;

@@ -1,11 +1,6 @@
 import qs from 'qs';
-import type { UrConfig } from '../types';
 
-export const buildUrl = (
-  url: string,
-  params?: any,
-  paramsSerializer?: UrConfig['paramsSerializer'],
-) => {
+export const buildUrl = (url, params, paramsSerializer) => {
   if (!params) {
     return url;
   }
@@ -18,11 +13,11 @@ export const buildUrl = (
   const serializerParams = paramsSerializer
     ? paramsSerializer(params)
     : Object.prototype.toString.call(params).includes('URLSearchParams')
-    ? (params as URLSearchParams).toString()
+    ? params.toString()
     : qs.stringify(params);
 
   if (serializerParams) {
-    url += (url.includes('?') ? '?' : '&') + serializerParams;
+    url += (url.includes('?') ? '&' : '?') + serializerParams;
   }
 
   return url;

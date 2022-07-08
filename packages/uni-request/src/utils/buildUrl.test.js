@@ -2,12 +2,12 @@ import URLSearchParams from '@ungap/url-search-params';
 import { describe, it, expect } from 'vitest';
 import { buildUrl } from './buildUrl';
 
-describe('utils::buildUrl', function () {
-  it('should support null params', function () {
+describe('utils::buildUrl', () => {
+  it('should support null params', () => {
     expect(buildUrl('/foo')).toEqual('/foo');
   });
 
-  it('should support params', function () {
+  it('should support params', () => {
     console.log(
       buildUrl('/foo', {
         foo: 'bar',
@@ -21,7 +21,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?foo=bar');
   });
 
-  it('should support object params', function () {
+  it('should support object params', () => {
     expect(
       buildUrl('/foo', {
         foo: {
@@ -31,7 +31,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?foo%5Bbar%5D=baz');
   });
 
-  it('should support date params', function () {
+  it('should support date params', () => {
     const date = new Date();
 
     expect(
@@ -41,7 +41,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?date=' + encodeURIComponent(date.toISOString()));
   });
 
-  it('should support array params', function () {
+  it('should support array params', () => {
     expect(
       buildUrl('/foo', {
         foo: ['bar', 'baz'],
@@ -49,7 +49,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?foo%5B0%5D=bar&foo%5B1%5D=baz');
   });
 
-  it('should support special char params', function () {
+  it('should support special char params', () => {
     expect(
       buildUrl('/foo', {
         foo: ':$, ',
@@ -57,7 +57,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?foo=%3A%24%2C%20');
   });
 
-  it('should support existing params', function () {
+  it('should support existing params', () => {
     expect(
       buildUrl('/foo?foo=bar', {
         bar: 'baz',
@@ -65,7 +65,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?foo=bar&bar=baz');
   });
 
-  it('should support "length" parameter', function () {
+  it('should support "length" parameter', () => {
     expect(
       buildUrl('/foo', {
         query: 'bar',
@@ -75,7 +75,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?query=bar&start=0&length=5');
   });
 
-  it('should correct discard url hash mark', function () {
+  it('should correct discard url hash mark', () => {
     expect(
       buildUrl('/foo?foo=bar#hash', {
         query: 'baz',
@@ -83,7 +83,7 @@ describe('utils::buildUrl', function () {
     ).toEqual('/foo?foo=bar&query=baz');
   });
 
-  it('should support URLSearchParams', function () {
+  it('should support URLSearchParams', () => {
     expect(buildUrl('/foo', new URLSearchParams('bar=baz'))).toEqual('/foo?bar=baz');
   });
 });

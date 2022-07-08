@@ -188,7 +188,7 @@ export interface UrBaseResponse<T = UrData, D = UrData> {
   errno?: number;
   status: number;
   statusText: string;
-  headers: UrHeaders;
+  headers?: UrHeaders;
   config: UrConfig<T, D>;
   request?: any;
 }
@@ -197,6 +197,7 @@ export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseRespons
   data?: T;
   cookies?: string[];
   profile?: UrProfile;
+  request?: UniApp.RequestTask;
 }
 
 export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
@@ -204,10 +205,12 @@ export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseRespon
   tempFilePath?: string;
   filePath?: string;
   profile?: UrProfile;
+  request?: UniApp.DownloadTask;
 }
 
 export interface UrUploadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
   data?: T;
+  request?: UniApp.UploadTask;
 }
 
 export type UrResponse<T = UrData, D = UrData> =

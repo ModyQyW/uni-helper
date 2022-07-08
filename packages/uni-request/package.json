@@ -64,7 +64,10 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@tsconfig/node16": "^1.0.3"
+    "@swc/core": "^1.2.210",
+    "@tsconfig/node16": "^1.0.3",
+    "cpy-cli": "^4.1.0",
+    "vitest": "^0.17.1"
   },
   "publishConfig": {
     "access": "public",

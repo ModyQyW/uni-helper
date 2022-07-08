@@ -35,8 +35,8 @@
     "dev": "pnpm run build --watch src",
     "lint": "npx eslint src --fix && npx tsc --noEmit",
     "release": "npx release-it",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage"
+    "test": "vitest --ui",
+    "test:coverage": "vitest --ui --coverage"
   },
   "commitlint": {
     "extends": [
@@ -68,6 +68,7 @@
   "devDependencies": {
     "@swc/core": "^1.2.210",
     "@tsconfig/node16": "^1.0.3",
+    "@vitest/ui": "^0.17.0",
     "cpy-cli": "^4.1.0",
     "vitest": "^0.17.1"
   },

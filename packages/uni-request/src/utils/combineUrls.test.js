@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { combineUrls } from './combineUrls';
 
-describe('helpers::combineUrls', function () {
+describe('utils::combineUrls', function () {
   it('should combine URLs', function () {
     expect(combineUrls('https://api.github.com', '/users')).toBe('https://api.github.com/users');
   });

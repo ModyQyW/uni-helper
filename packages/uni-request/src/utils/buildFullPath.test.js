@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { buildFullPath } from './buildFullPath';
 
-describe('helpers::buildFullPath', function () {
+describe('utils::buildFullPath', function () {
   it('should combine URLs when the requestedURL is relative', function () {
     expect(buildFullPath('https://api.github.com', '/users')).toBe('https://api.github.com/users');
   });

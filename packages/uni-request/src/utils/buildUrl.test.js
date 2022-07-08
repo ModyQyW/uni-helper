@@ -2,7 +2,7 @@ import URLSearchParams from '@ungap/url-search-params';
 import { describe, it, expect } from 'vitest';
 import { buildUrl } from './buildUrl';
 
-describe('helpers::buildUrl', function () {
+describe('utils::buildUrl', function () {
   it('should support null params', function () {
     expect(buildUrl('/foo')).toEqual('/foo');
   });

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { isAbsoluteUrl } from './isAbsoluteUrl';
 
-describe('helpers::isAbsoluteUrl', function () {
+describe('utils::isAbsoluteUrl', function () {
   it('should return true if URL begins with valid scheme name', function () {
     expect(isAbsoluteUrl('https://api.github.com/users')).toBe(true);
     expect(isAbsoluteUrl('custom-scheme-v1.0://example.com/')).toBe(true);

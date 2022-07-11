@@ -70,7 +70,7 @@
     "@tsconfig/node16": "^1.0.3",
     "@vitest/ui": "^0.17.0",
     "cpy-cli": "^4.1.0",
-    "vitest": "^0.17.1"
+    "vitest": "^0.18.0"
   },
   "publishConfig": {
     "access": "public",

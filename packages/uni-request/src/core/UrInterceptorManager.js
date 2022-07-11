@@ -1,17 +1,9 @@
-import type { UrData, UrInterceptorManagerHandler, UrInterceptorOptions } from '../types';
-
-class InterceptorManager<V, T = V, D = UrData> {
-  private handlers: (UrInterceptorManagerHandler<V, T, D> | null)[];
-
+export class UrInterceptorManager {
   constructor() {
     this.handlers = [];
   }
 
-  use(
-    fulfilled?: (value: V) => T | Promise<T>,
-    rejected?: (error: any) => any,
-    options?: UrInterceptorOptions<T, D>,
-  ) {
+  use(fulfilled, rejected, options) {
     this.handlers.push({
       fulfilled,
       rejected,
@@ -21,7 +13,7 @@ class InterceptorManager<V, T = V, D = UrData> {
     return this.handlers.length - 1;
   }
 
-  eject(id: number) {
+  eject(id) {
     if (this.handlers[id]) {
       this.handlers[id] = null;
     }
@@ -33,7 +25,7 @@ class InterceptorManager<V, T = V, D = UrData> {
     }
   }
 
-  forEach(fn?: (handler: UrInterceptorManagerHandler<V, T, D>) => void) {
+  forEach(fn) {
     for (const handler of this.handlers) {
       if (handler && fn) {
         fn(handler);
@@ -41,5 +33,3 @@ class InterceptorManager<V, T = V, D = UrData> {
     }
   }
 }
-
-export { InterceptorManager };

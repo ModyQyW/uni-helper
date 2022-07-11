@@ -89,7 +89,7 @@ export interface UrBaseConfig<T = UrData, D = UrData> {
   data?: D;
   headers?: UrHeaders;
   timeout?: number;
-  adapter?: 'request' | 'REQUEST' | 'download' | 'DOWNLOAD' | 'upload' | 'UPLOAD' | UrAdapter<T, D>;
+  adapter?: 'request' | 'download' | 'upload' | UrAdapter<T, D>;
   validateStatus?: (status: number) => boolean | null;
   cancelToken?: UrCancelToken;
   signal?: AbortSignal;

@@ -55,7 +55,7 @@
     "@dcloudio/types": "^2.6.12",
     "@types/lodash-es": "^4.17.6",
     "@types/qs": "^6.9.7",
-    "@types/ramda": "^0.28.14",
+    "@types/ramda": "^0.28.15",
     "@types/statuses": "^2.0.0",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
@@ -66,11 +66,11 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.210",
+    "@swc/core": "^1.2.211",
     "@tsconfig/node16": "^1.0.3",
-    "@vitest/ui": "^0.17.0",
+    "@vitest/ui": "^0.18.0",
     "cpy-cli": "^4.1.0",
-    "vitest": "^0.17.1"
+    "vitest": "^0.18.0"
   },
   "publishConfig": {
     "access": "public",

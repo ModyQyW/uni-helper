@@ -104,22 +104,15 @@ class Ur {
   }
 }
 
-[
-  'get',
-  'delete',
-  'head',
-  'options',
-  'post',
-  'put',
-  'patch',
-  'purge',
-  'link',
-  'unlink',
-  'trace',
-  'connect',
-].forEach((method) => {
+['get', 'delete', 'head', 'options', 'trace', 'connect'].forEach((method) => {
   Ur.prototype[method] = function (url, config) {
     return this.request(url, { ...config, method });
+  };
+});
+
+['post', 'put', 'patch'].forEach((method) => {
+  Ur.prototype[method] = function (url, data, config) {
+    return this.request(url, { ...config, data, method });
   };
 });
 

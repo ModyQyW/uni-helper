@@ -17,12 +17,6 @@ export type UrMethod =
   | 'PUT'
   | 'patch'
   | 'PATCH'
-  | 'purge'
-  | 'PURGE'
-  | 'link'
-  | 'LINK'
-  | 'unlink'
-  | 'UNLINK'
   | 'trace'
   | 'TRACE'
   | 'connect'
@@ -314,18 +308,6 @@ export class Ur<T = UrData, D = UrData> {
     config?: UrRequestConfig<TT, DD>,
   ): Promise<R>;
   options<TT = T, R = UrRequestResponse<TT, DD>, DD = D>(
-    url: string,
-    config?: UrRequestConfig<TT, DD>,
-  ): Promise<R>;
-  purge<TT = T, R = UrRequestResponse<TT, DD>, DD = D>(
-    url: string,
-    config?: UrRequestConfig<TT, DD>,
-  ): Promise<R>;
-  link<TT = T, R = UrRequestResponse<TT, DD>, DD = D>(
-    url: string,
-    config?: UrRequestConfig<TT, DD>,
-  ): Promise<R>;
-  unlink<TT = T, R = UrRequestResponse<TT, DD>, DD = D>(
     url: string,
     config?: UrRequestConfig<TT, DD>,
   ): Promise<R>;

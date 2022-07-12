@@ -33,7 +33,7 @@
   "scripts": {
     "build": "npx tsup-node src/index.js --format esm,cjs --minify --shims --target es5 && cpy src/index.d.ts dist --flat",
     "dev": "pnpm run build --watch src",
-    "lint": "npx eslint src --fix && npx tsc --noEmit",
+    "lint": "npx eslint src --fix && npx tsc --noEmit && pnpm run test:coverage",
     "release": "npx release-it",
     "test": "vitest --ui",
     "test:coverage": "vitest --ui --coverage"

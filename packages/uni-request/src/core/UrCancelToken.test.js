@@ -61,13 +61,8 @@ describe('core:UrCancelToken', () => {
       cancel('Operation has been canceled.');
       try {
         token.throwIfRequested();
-        fail('Expected throwIfRequested to throw.');
       } catch (thrown) {
-        if (!(thrown instanceof UrCanceledError)) {
-          fail(
-            'Expected throwIfRequested to throw a UrCanceledError, but it threw ' + thrown + '.',
-          );
-        }
+        expect(thrown).toBeInstanceOf(UrCanceledError);
         expect(thrown.message).toBe('Operation has been canceled.');
       }
     });

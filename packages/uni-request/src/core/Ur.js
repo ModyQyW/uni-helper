@@ -93,7 +93,7 @@ class Ur {
     this.request(configOrUrl, { ...config, adapter: 'download' });
   }
 
-  upload() {
+  upload(configOrUrl, config) {
     this.request(configOrUrl, { ...config, adapter: 'upload' });
   }
 

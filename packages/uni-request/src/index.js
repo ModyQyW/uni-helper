@@ -1,8 +1,8 @@
 import { mergeDeepRight } from 'ramda';
 import { assignIn, assignInWith } from 'lodash-es';
-import pkg from '../package.json';
+import { version } from '../package.json';
 import { isUrError, Ur, UrCanceledError, UrCancelToken, UrError, isCancel } from './core';
-import { defaultBaseConfig } from './defaults';
+import { defaults } from './defaults';
 
 const createInstance = (defaultConfig) => {
   const context = new Ur(defaultConfig);
@@ -27,14 +27,14 @@ const createInstance = (defaultConfig) => {
   return instance;
 };
 
-const ur = createInstance(defaultBaseConfig);
+const ur = createInstance(defaults);
 
 ur.Ur = Ur;
 
 ur.CanceledError = UrCanceledError;
 ur.CancelToken = UrCancelToken;
 ur.isCancel = isCancel;
-ur.VERSION = pkg.version;
+ur.VERSION = version;
 
 ur.UrError = UrError;
 

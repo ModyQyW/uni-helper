@@ -38,19 +38,6 @@
     "test": "vitest --ui",
     "test:coverage": "vitest --ui --coverage"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.ts": "eslint --fix"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/prompt"
-    }
-  },
   "dependencies": {
     "@dcloudio/types": "^2.6.12",
     "@types/lodash-es": "^4.17.6",

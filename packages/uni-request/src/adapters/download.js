@@ -16,7 +16,7 @@ export const downloadAdapter = (config) =>
 
     let response;
 
-    const task = uni.downloadFile({
+    let task = uni.downloadFile({
       ...downloadConfig,
       success: (res) => {
         response = {

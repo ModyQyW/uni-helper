@@ -16,7 +16,7 @@ export const uploadAdapter = (config) =>
 
     let response;
 
-    const task = uni.uploadFile({
+    let task = uni.uploadFile({
       ...uploadConfig,
       success: (res) => {
         response = {

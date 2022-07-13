@@ -58,7 +58,7 @@
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish"
+      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish && npx ovsx publish -p $OVSX_PAT"
     }
   }
 }

@@ -1,4 +1,4 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 import { CustomEvent } from '../events';
 
 // TODO: htouchmove
@@ -23,7 +23,7 @@ export type MovableViewSource = 'touch' | 'touch-out-of-bounds' | 'out-of-bounds
  * @desc 可移动的视图容器，在页面中可以拖拽滑动或双指缩放
  * @desc movable-area 直接子组件
  */
-export type MovableView = DefineComponent<{
+export type MovableView = Component<{
   /**
    * @desc movable-view 的移动方向
    * @desc 默认为 none

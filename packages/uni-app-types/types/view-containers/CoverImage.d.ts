@@ -1,4 +1,4 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 import { BaseEvent } from '../events';
 
 /**
@@ -6,7 +6,7 @@ import { BaseEvent } from '../events';
  * @desc 可覆盖的原生组件同 cover-view
  * @desc 支持嵌套在 cover-view 里
  */
-export type CoverImage = DefineComponent<{
+export type CoverImage = Component<{
   /**
    * @desc 图片路径
    * @desc 支持本地路径、网络路径

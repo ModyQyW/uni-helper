@@ -1,3 +1,3 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 
-export type Block = DefineComponent;
+export type Block = Component;

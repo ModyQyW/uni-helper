@@ -1,4 +1,4 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 import { BaseEvent, CustomEvent } from '../events';
 
 /**
@@ -8,7 +8,7 @@ import { BaseEvent, CustomEvent } from '../events';
  * @desc 横向滚动时，需要给 scroll-view 添加 white-space: nowrap; 样式
  * @desc scroll-view 是区域滚动，不会触发页面滚动，无法触发 pages.json 配置的下拉刷新、页面触底onReachBottomDistance、titleNView 的 transparent 透明渐变
  */
-export type ScrollView = DefineComponent<{
+export type ScrollView = Component<{
   /**
    * @desc 是否允许横向滚动
    * @desc 默认为 false

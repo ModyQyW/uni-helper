@@ -1,4 +1,4 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 import { CustomEvent } from '../events';
 
 /**
@@ -14,7 +14,7 @@ export type SwiperSource = 'autoplay' | 'touch' | '';
  * @desc 注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换
  * @desc swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间
  */
-export type Swiper = DefineComponent<{
+export type Swiper = Component<{
   /**
    * @desc 是否显示面板指示点
    * @desc 默认为 false

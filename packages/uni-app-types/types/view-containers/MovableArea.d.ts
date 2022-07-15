@@ -1,4 +1,4 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 
 /**
  * @desc 可拖动区域
@@ -7,7 +7,7 @@ import { DefineComponent } from 'vue3';
  * @desc 也可以不拖动，而使用代码来触发 movable-view 在 movable-area 里的移动缩放
  * @desc 默认宽高为 10px
  */
-export type MovableArea = DefineComponent<{
+export type MovableArea = Component<{
   /**
    * @desc 当里面的 movable-view 设置为支持双指缩放时，设置此值可将缩放手势生效区域修改为整个 movable-area
    * @desc 默认为 false

@@ -1,11 +1,11 @@
-import { DefineComponent } from 'vue3';
+import { Component } from '../Component';
 
 /**
  * @desc 视图容器，和 div 类似，用于包裹各种元素内容
  * @desc 包裹文字建议使用 text
  * @desc 如果使用 div，会编译成 view
  */
-export type View = DefineComponent<{
+export type View = Component<{
   /**
    * @desc 指定按下去的样式类
    * @desc 当 hover-class="none" 时，没有点击态效果

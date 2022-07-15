@@ -2,6 +2,14 @@ import { DefineComponent } from 'vue3';
 import { CustomEvent } from '../events';
 
 /**
+ * @desc 导致变更的原因
+ * @desc autoplay 自动播放
+ * @desc touch 用户滑动
+ * @desc 空字符串 其它原因
+ */
+export type SwiperSource = 'autoplay' | 'touch' | '';
+
+/**
  * @desc 滑块视图容器，一般用于左右滑动或上下滑动，比如 banner 轮播图
  * @desc 注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换
  * @desc swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间
@@ -124,11 +132,11 @@ export type Swiper = DefineComponent<{
       current: number;
       /**
        * @desc 导致变更的原因
-       * @desc autoplay 表示自动播放
-       * @desc touch 表示用户滑动
-       * @desc 空字符串表示其它原因
+       * @desc autoplay 自动播放
+       * @desc touch 用户滑动
+       * @desc 空字符串 其它原因
        */
-      source: 'autoplay' | 'touch' | '';
+      source: SwiperSource;
     }>,
   ) => void;
   /**
@@ -151,11 +159,11 @@ export type Swiper = DefineComponent<{
       current: number;
       /**
        * @desc 导致变更的原因
-       * @desc autoplay 表示自动播放
-       * @desc touch 表示用户滑动
-       * @desc 空字符串表示其它原因
+       * @desc autoplay 自动播放
+       * @desc touch 用户滑动
+       * @desc 空字符串其它原因
        */
-      source: 'autoplay' | 'touch' | '';
+      source: SwiperSource;
     }>,
   ) => void;
 }>;

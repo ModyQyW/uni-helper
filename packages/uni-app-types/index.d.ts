@@ -10,6 +10,10 @@ import {
   MovableView,
   CoverView,
   CoverImage,
+  Icon,
+  Text,
+  RichText,
+  Progress,
 } from './types';
 
 export {};
@@ -26,5 +30,9 @@ declare module '@vue/runtime-core' {
     MovableView: MovableView;
     CoverView: CoverView;
     CoverImage: CoverImage;
+    Icon: Icon;
+    Text: Text;
+    RichText: RichText;
+    Progress: Progress;
   }
 }

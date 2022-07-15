@@ -6,7 +6,7 @@ import { BaseEvent } from '../events';
  * @desc 可覆盖的原生组件同 cover-view
  * @desc 支持嵌套在 cover-view 里
  */
-type CoverImage = DefineComponent<{
+export type CoverImage = DefineComponent<{
   /**
    * @desc 图片路径
    * @desc 支持本地路径、网络路径

@@ -1,6 +1,9 @@
 import { DefineComponent } from 'vue3';
 import { CustomEvent } from '../events';
 
+// TODO: htouchmove
+// TODO: vtouchmove
+
 /**
  * @desc movable-view 的移动方向
  */

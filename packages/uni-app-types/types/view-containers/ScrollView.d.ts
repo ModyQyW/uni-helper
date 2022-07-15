@@ -75,7 +75,7 @@ export type ScrollView = DefineComponent<{
   refresherThreshold: number;
   /**
    * @desc 设置自定义下拉刷新默认样式
-   * @desc none 表示不使用默认样式
+   * @desc none 不使用默认样式
    * @desc 默认为 black
    */
   refresherDefaultStyle: 'black' | 'white' | 'none';
@@ -86,7 +86,8 @@ export type ScrollView = DefineComponent<{
   refresherBackground: string;
   /**
    * @desc 设置当前下拉刷新状态
-   * @desc true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发
+   * @desc true 下拉刷新已经被触发
+   * @desc false 下拉刷新未被触发
    * @desc 默认为 false
    */
   refresherTriggered: boolean;

@@ -49,7 +49,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@commitlint/prompt": "^17.0.3",
-    "@modyqyw/fabric": "^5.5.0",
+    "@modyqyw/fabric": "^5.5.4",
     "@tsconfig/node16": "^1.0.3",
     "@types/eslint": "^8.4.5",
     "@typescript-eslint/eslint-plugin": "^5.30.6",

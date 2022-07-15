@@ -52,6 +52,7 @@
   "devDependencies": {
     "@swc/core": "^1.2.212",
     "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.0.4",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
     "@vitest/ui": "^0.18.0",

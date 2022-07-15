@@ -1,6 +1,6 @@
 {
   "name": "uni-app-types",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "uni-app 组件类型",
   "keywords": [
     "uni-app",
@@ -42,8 +42,7 @@
       "tagName": "uni-app-types@${version}"
     },
     "hooks": {
-      "before:init": "pnpm install && pnpm run lint",
-      "after:bump": "pnpm run build"
+      "before:init": "pnpm install && pnpm run lint"
     }
   }
 }

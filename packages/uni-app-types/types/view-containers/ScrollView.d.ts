@@ -1,6 +1,13 @@
 import { DefineComponent } from 'vue3';
 import { BaseEvent, CustomEvent } from '../events';
 
+/**
+ * @desc 可滚动视图区域，用于区域滚动
+ * @desc 在 webview 渲染的页面中，区域滚动的性能不及页面滚动
+ * @desc 纵向滚动时，需要给 scroll-view 一个固定高度，通过 css 设置 height
+ * @desc 横向滚动时，需要给 scroll-view 添加 white-space: nowrap; 样式
+ * @desc scroll-view 是区域滚动，不会触发页面滚动，无法触发 pages.json 配置的下拉刷新、页面触底onReachBottomDistance、titleNView 的 transparent 透明渐变
+ */
 export type ScrollView = DefineComponent<{
   /**
    * @desc 是否允许横向滚动
@@ -26,15 +33,18 @@ export type ScrollView = DefineComponent<{
   lowerThreshold: number | string;
   /**
    * @desc 设置纵向滚动条位置
+   * @desc 优先级低于 scroll-into-view
    */
   scrollTop: number | string;
   /**
    * @decs 设置横向滚动条位置
+   * @desc 优先级低于 scroll-into-view
    */
   scrollLeft: number | string;
   /**
    * @desc 值应为某子元素 id，id 不能以数字开头
    * @desc 设置哪个方向可滚动，则在哪个方向滚动到该元素
+   * @desc 优先级高于 scroll-top / scroll-left
    */
   scrollIntoView: string;
   /**

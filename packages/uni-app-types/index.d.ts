@@ -29,6 +29,7 @@ import {
   Slider,
   Switch,
   Textarea,
+  Navigator,
 } from './types';
 
 export * from './types';
@@ -45,10 +46,12 @@ declare module '@vue/runtime-core' {
     MovableView: MovableView;
     CoverView: CoverView;
     CoverImage: CoverImage;
+
     Icon: Icon;
     Text: Text;
     RichText: RichText;
     Progress: Progress;
+
     Button: Button;
     Checkbox: Checkbox;
     CheckboxGroup: CheckboxGroup;
@@ -64,5 +67,7 @@ declare module '@vue/runtime-core' {
     Slider: Slider;
     Switch: Switch;
     Textarea: Textarea;
+
+    Navigator: Navigator;
   }
 }

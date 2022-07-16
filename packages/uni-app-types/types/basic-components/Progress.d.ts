@@ -9,9 +9,9 @@ import { BaseEvent } from '../events';
 export type ProgressActiveMode = 'backwards' | 'forwards';
 
 /**
- * @desc 进度条
+ * @desc 进度条属性
  */
-export type Progress = Component<{
+export interface ProgressProps {
   /**
    * @desc 百分比
    * @desc 取值范围为 0 - 100
@@ -71,4 +71,9 @@ export type Progress = Component<{
    * @desc 动画完成时触发
    */
   onActiveend: (event: BaseEvent) => void;
-}>;
+}
+
+/**
+ * @desc 进度条
+ */
+export type Progress = Component<ProgressProps>;

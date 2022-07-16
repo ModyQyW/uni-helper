@@ -9,10 +9,9 @@ import { Component } from '../Component';
 export type TextSpace = 'ensp' | 'emsp' | 'nbsp';
 
 /**
- * @desc 文本组件
- * @desc 用于包裹文本内容
+ * @desc 文本组件属性
  */
-export type Text = Component<{
+export interface TextProps {
   /**
    * @desc 文本是否可选
    * @desc 默认为 false
@@ -36,4 +35,10 @@ export type Text = Component<{
    * @desc 默认为 false
    */
   decode: boolean;
-}>;
+}
+
+/**
+ * @desc 文本组件
+ * @desc 用于包裹文本内容
+ */
+export type Text = Component<TextProps>;

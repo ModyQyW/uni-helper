@@ -30,9 +30,9 @@ export type RichTextNodeNode = {
 export type RichTextNode = RichTextTextNode | RichTextNodeNode;
 
 /**
- * @desc 富文本
- * */
-export type RichText = Component<{
+ * @desc 富文本属性
+ */
+export interface RichTextProps {
   /**
    * @desc 节点列表
    * @desc
@@ -64,4 +64,9 @@ export type RichText = Component<{
    * @desc 拦截点击事件，支持 a 和 img 标签
    */
   onItemclick: (event: CustomEvent<{ node: RichTextNode }>) => void;
-}>;
+}
+
+/**
+ * @desc 富文本
+ * */
+export type RichText = Component<RichTextProps>;

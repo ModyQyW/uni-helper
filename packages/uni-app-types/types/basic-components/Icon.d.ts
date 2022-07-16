@@ -1,9 +1,9 @@
 import { Component } from '../Component';
 
 /**
- * @desc 图标
+ * @desc 图标属性
  */
-export type Icon = Component<{
+export interface IconProps {
   /**
    * @desc 类型
    */
@@ -18,4 +18,9 @@ export type Icon = Component<{
    * @desc 颜色
    */
   color: string;
-}>;
+}
+
+/**
+ * @desc 图标
+ */
+export type Icon = Component<IconProps>;

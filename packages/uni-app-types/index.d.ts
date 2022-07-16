@@ -14,6 +14,21 @@ import {
   Text,
   RichText,
   Progress,
+  Button,
+  Checkbox,
+  CheckboxGroup,
+  Editor,
+  Form,
+  Input,
+  Label,
+  Picker,
+  PickerView,
+  PickerViewColumn,
+  RadioGroup,
+  Radio,
+  Slider,
+  Switch,
+  Textarea,
 } from './types';
 
 export * from './types';
@@ -34,5 +49,20 @@ declare module '@vue/runtime-core' {
     Text: Text;
     RichText: RichText;
     Progress: Progress;
+    Button: Button;
+    Checkbox: Checkbox;
+    CheckboxGroup: CheckboxGroup;
+    Editor: Editor;
+    Form: Form;
+    Input: Input;
+    Label: Label;
+    Picker: Picker;
+    PickerView: PickerView;
+    PickerViewColumn: PickerViewColumn;
+    Radio: Radio;
+    RadioGroup: RadioGroup;
+    Slider: Slider;
+    Switch: Switch;
+    Textarea: Textarea;
   }
 }

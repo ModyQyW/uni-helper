@@ -16,7 +16,7 @@ import {
   Progress,
 } from './types';
 
-export {};
+export * from './types';
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {

@@ -7,12 +7,7 @@ import { Component } from '../Component';
  */
 export type MatchMediaOrientation = 'landscape' | 'portrait';
 
-/**
- * @desc media query 匹配检测节点
- * @desc 类似于网页开发中使用媒体查询来适配大屏小屏，这是一个可适配不同屏幕的基本视图组件
- * @desc 可以指定一组 media query 媒体查询规则，满足查询条件时，这个组件才会被展示
- */
-export type MatchMedia = Component<{
+export interface MatchMediaProps {
   /**
    * @desc 页面最小宽度
    * @desc 单位为 px
@@ -49,4 +44,11 @@ export type MatchMedia = Component<{
    * @desc portrait 纵向
    */
   orientation: MatchMediaOrientation;
-}>;
+}
+
+/**
+ * @desc media query 匹配检测节点
+ * @desc 类似于网页开发中使用媒体查询来适配大屏小屏，这是一个可适配不同屏幕的基本视图组件
+ * @desc 可以指定一组 media query 媒体查询规则，满足查询条件时，这个组件才会被展示
+ */
+export type MatchMedia = Component<MatchMediaProps>;

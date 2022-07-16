@@ -10,11 +10,16 @@ import { CustomEvent } from '../events';
 export type SwiperSource = 'autoplay' | 'touch' | '';
 
 /**
- * @desc 滑块视图容器，一般用于左右滑动或上下滑动，比如 banner 轮播图
- * @desc 注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换
- * @desc swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间
+ * @desc swiper 切换缓动动画类型
  */
-export type Swiper = Component<{
+export type SwiperEasingFunction =
+  | 'default'
+  | 'linear'
+  | 'easeInCubic'
+  | 'easeOutCubic'
+  | 'easeInOutCubic';
+
+export interface SwiperProps {
   /**
    * @desc 是否显示面板指示点
    * @desc 默认为 false
@@ -120,7 +125,7 @@ export type Swiper = Component<{
    * @desc 指定 swiper 切换缓动动画类型
    * @desc 默认为 default
    */
-  easingFunction: 'default' | 'linear' | 'easeInCubic' | 'easeOutCubic' | 'easeInOutCubic';
+  easingFunction: SwiperEasingFunction;
   /**
    * @desc current 改变时触发
    */
@@ -166,4 +171,11 @@ export type Swiper = Component<{
       source: SwiperSource;
     }>,
   ) => void;
-}>;
+}
+
+/**
+ * @desc 滑块视图容器，一般用于左右滑动或上下滑动，比如 banner 轮播图
+ * @desc 注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换
+ * @desc swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间
+ */
+export type Swiper = Component<SwiperProps>;

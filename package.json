@@ -60,7 +60,7 @@
     "husky": "^8.0.1",
     "is-ci": "^3.0.1",
     "lint-staged": "^13.0.3",
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli": "^0.32.0",
     "prettier": "^2.7.1",
     "release-it": "^15.1.1",
     "rimraf": "^3.0.2",

@@ -5,11 +5,11 @@ import { CustomEvent } from '../events';
  * @desc input 类型
  * @desc text 文本输入键盘
  * @desc number 数字输入键盘
- * @desc idcard	身份证输入键盘
+ * @desc idcard 身份证输入键盘
  * @desc digit 带小数点的数字键盘
  * @desc tel 电话输入键盘
  * @desc safe-password 密码安全输入键盘
- * @desc nickname	昵称输入键盘
+ * @desc nickname 昵称输入键盘
  */
 export type InputType =
   | 'text'
@@ -50,11 +50,11 @@ export interface InputProps {
    * @desc input 类型
    * @desc text 文本输入键盘
    * @desc number 数字输入键盘
-   * @desc idcard	身份证输入键盘
+   * @desc idcard 身份证输入键盘
    * @desc digit 带小数点的数字键盘
    * @desc tel 电话输入键盘
    * @desc safe-password 密码安全输入键盘
-   * @desc nickname	昵称输入键盘
+   * @desc nickname 昵称输入键盘
    * @desc 默认为 text
    */
   type: InputType;

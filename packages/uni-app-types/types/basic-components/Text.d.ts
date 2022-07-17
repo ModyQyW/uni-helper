@@ -3,8 +3,8 @@ import { Component } from '../Component';
 /**
  * @desc 显示连续空格
  * @desc ensp 中文字符空格一半大小
- * @desc emsp	中文字符空格大小
- * @desc nbsp	根据字体设置的空格大小
+ * @desc emsp 中文字符空格大小
+ * @desc nbsp 根据字体设置的空格大小
  */
 export type TextSpace = 'ensp' | 'emsp' | 'nbsp';
 
@@ -25,8 +25,8 @@ export interface TextProps {
   /**
    * @desc 显示连续空格
    * @desc ensp 中文字符空格一半大小
-   * @desc emsp	中文字符空格大小
-   * @desc nbsp	根据字体设置的空格大小
+   * @desc emsp 中文字符空格大小
+   * @desc nbsp 根据字体设置的空格大小
    * @desc 没有默认值
    */
   space: TextSpace;

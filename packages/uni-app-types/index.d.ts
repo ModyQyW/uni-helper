@@ -30,6 +30,12 @@ import {
   Switch,
   Textarea,
   Navigator,
+  Audio,
+  Camera,
+  Image,
+  Video,
+  LivePlayer,
+  LivePusher,
 } from './types';
 
 export * from './types';
@@ -69,5 +75,12 @@ declare module '@vue/runtime-core' {
     Textarea: Textarea;
 
     Navigator: Navigator;
+
+    Audio: Audio;
+    Camera: Camera;
+    Image: Image;
+    Video: Video;
+    LivePlayer: LivePlayer;
+    LivePusher: LivePusher;
   }
 }

@@ -1,0 +1,50 @@
+{
+  "name": "uni-ui-types",
+  "version": "0.1.1",
+  "description": "uni-ui 组件类型",
+  "keywords": [
+    "uni-app",
+    "uniapp",
+    "uni-ui",
+    "uniui",
+    "type"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-ui-types"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "types"
+  ],
+  "scripts": {
+    "lint": "npx tsc --noEmit",
+    "release": "npx release-it"
+  },
+  "dependencies": {
+    "@dcloudio/types": "^3.0.7",
+    "vue3": "npm:vue@3"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.0.4",
+    "typescript": "^4.7.4"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): uni-ui-types@${version}",
+      "tagName": "uni-ui-types@${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install && pnpm run lint"
+    }
+  }
+}

@@ -6,3 +6,4 @@ export * from './navigation';
 export * from './media-components';
 export * from './map';
 export * from './canvas';
+export * from './web-view';

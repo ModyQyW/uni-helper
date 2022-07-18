@@ -38,6 +38,7 @@ import {
   LivePusher,
   Map,
   Canvas,
+  WebView,
 } from './types';
 
 export * from './types';
@@ -87,5 +88,7 @@ declare module '@vue/runtime-core' {
 
     Map: Map;
     Canvas: Canvas;
+
+    WebView: WebView;
   }
 }

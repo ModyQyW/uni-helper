@@ -9,7 +9,7 @@ export interface WebViewStyles {
    * @desc 进度条样式
    * @desc 仅加载网络 HTML 时生效
    * @desc 设置为 false 时禁用进度条
-   * @desc 默认为 { color: '#00ff00	' }
+   * @desc 默认为 { color: '#00ff00' }
    */
   progress: boolean | { color: string };
 }

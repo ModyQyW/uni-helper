@@ -69,4 +69,4 @@ export interface RichTextProps {
 /**
  * @desc 富文本
  * */
-export type RichText = Component<RichTextProps>;
+export type RichText = Component<Partial<RichTextProps>>;

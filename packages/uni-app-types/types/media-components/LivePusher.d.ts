@@ -471,4 +471,4 @@ export interface LivePusherProps {
 /**
  * @desc 实时音视频录制（直播推流）
  */
-export type LivePusher = Component<LivePusherProps>;
+export type LivePusher = Component<Partial<LivePusherProps>>;

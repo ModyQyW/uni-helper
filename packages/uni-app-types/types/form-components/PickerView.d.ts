@@ -50,4 +50,4 @@ export interface PickerViewProps {
 /**
  * @desc 嵌入页面的滚动选择器，比 picker 更灵活
  */
-export type PickerView = Component<PickerViewProps>;
+export type PickerView = Component<Partial<PickerViewProps>>;

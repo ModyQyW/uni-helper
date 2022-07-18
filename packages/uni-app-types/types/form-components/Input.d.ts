@@ -251,4 +251,4 @@ export interface InputProps {
   ) => void;
 }
 
-export type Input = Component<InputProps>;
+export type Input = Component<Partial<InputProps>>;

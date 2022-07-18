@@ -79,4 +79,4 @@ export interface PageMetaProps {
  * @desc 可部分替代 pages.json
  * @desc 只能是页面内的第一个节点
  */
-export type PageMeta = Component<PageMetaProps>;
+export type PageMeta = Component<Partial<PageMetaProps>>;

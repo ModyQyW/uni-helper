@@ -76,4 +76,4 @@ export interface ProgressProps {
 /**
  * @desc 进度条
  */
-export type Progress = Component<ProgressProps>;
+export type Progress = Component<Partial<ProgressProps>>;

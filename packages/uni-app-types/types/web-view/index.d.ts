@@ -52,4 +52,4 @@ export interface WebViewProps {
 /**
  * @desc web 浏览器组件，可承载网页
  */
-export type WebView = Component<WebViewProps>;
+export type WebView = Component<Partial<WebViewProps>>;

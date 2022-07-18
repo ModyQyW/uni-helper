@@ -317,4 +317,4 @@ export interface ButtonProps {
 /**
  * @desc 按钮
  */
-export type Button = Component<ButtonProps>;
+export type Button = Component<Partial<ButtonProps>>;

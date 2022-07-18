@@ -28,4 +28,4 @@ export interface CheckboxProps {
 /**
  * @desc 多选项目
  */
-export type Checkbox = Component<CheckboxProps>;
+export type Checkbox = Component<Partial<CheckboxProps>>;

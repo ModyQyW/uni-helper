@@ -14,4 +14,4 @@ export interface CoverViewProps {
  * @desc 为了优化体验，部分组件如 map、video、textarea、canvas 通过原生控件实现，原生组件层级高于前端组件
  * @desc 为了能正常覆盖原生组件，设计了 cover-view
  */
-export type CoverView = Component<CoverViewProps>;
+export type CoverView = Component<Partial<CoverViewProps>>;

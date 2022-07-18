@@ -15,4 +15,4 @@ export interface MovableAreaProps {
  * @desc 也可以不拖动，而使用代码来触发 movable-view 在 movable-area 里的移动缩放
  * @desc 默认宽高为 10px
  */
-export type MovableArea = Component<MovableAreaProps>;
+export type MovableArea = Component<Partial<MovableAreaProps>>;

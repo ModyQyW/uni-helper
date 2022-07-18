@@ -72,4 +72,4 @@ export interface EditorProps {
  * @desc 通过 setContents 接口设置内容时，解析插入的 html 可能会由于一些非法标签导致解析错误，建议开发者在应用内使用时通过 delta 进行插入
  * @desc 图片控件仅初始化时设置有效
  */
-export type Editor = Component<EditorProps>;
+export type Editor = Component<Partial<EditorProps>>;

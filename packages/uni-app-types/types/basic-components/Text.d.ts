@@ -41,4 +41,4 @@ export interface TextProps {
  * @desc 文本组件
  * @desc 用于包裹文本内容
  */
-export type Text = Component<TextProps>;
+export type Text = Component<Partial<TextProps>>;

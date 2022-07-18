@@ -51,4 +51,4 @@ export interface CustomTabBarProps {
 /**
  * @desc 自定义 tabBar 组件
  */
-export type CustomTabBar = Component<CustomTabBarProps>;
+export type CustomTabBar = Component<Partial<CustomTabBarProps>>;

@@ -162,4 +162,4 @@ export interface NavigatorProps {
  * @desc 该组件类似 HTML 中的 a 组件，但只能跳转本地页面
  * @desc 目标页面必须在 pages.json 中注册
  */
-export type Navigator = Component<NavigatorProps>;
+export type Navigator = Component<Partial<NavigatorProps>>;

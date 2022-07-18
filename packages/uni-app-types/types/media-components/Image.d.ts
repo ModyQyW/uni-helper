@@ -107,4 +107,4 @@ export interface ImageProps {
   ) => void;
 }
 
-export type Image = Component<ImageProps>;
+export type Image = Component<Partial<ImageProps>>;

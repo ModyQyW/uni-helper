@@ -304,4 +304,4 @@ export interface LivePlayerProps {
 /**
  * @desc 实时音视频播放（直播拉流）
  */
-export type LivePlayer = Component<LivePlayerProps>;
+export type LivePlayer = Component<Partial<LivePlayerProps>>;

@@ -255,4 +255,4 @@ export type PickerProps =
 /**
  * @desc 从底部弹起的滚动选择器，通过 mode 来区分
  */
-export type Picker = Component<PickerProps>;
+export type Picker = Component<Partial<PickerProps>>;

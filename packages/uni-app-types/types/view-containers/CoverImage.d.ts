@@ -23,4 +23,4 @@ export interface CoverImageProps {
  * @desc 可覆盖的原生组件同 cover-view
  * @desc 支持嵌套在 cover-view 里
  */
-export type CoverImage = Component<CoverImageProps>;
+export type CoverImage = Component<Partial<CoverImageProps>>;

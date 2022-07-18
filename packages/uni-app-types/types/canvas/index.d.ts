@@ -61,4 +61,4 @@ export interface CanvasProps {
 /**
  * @desc 画布
  */
-export type Canvas = Component<CanvasProps>;
+export type Canvas = Component<Partial<CanvasProps>>;

@@ -662,4 +662,4 @@ export interface MapProps {
 /**
  * @desc 地图组件，用于展示地图
  */
-export type Map = Component<MapProps>;
+export type Map = Component<Partial<MapProps>>;

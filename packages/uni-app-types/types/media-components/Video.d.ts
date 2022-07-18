@@ -350,4 +350,4 @@ export interface VideoProps {
  * @desc 视频播放组件
  * @desc 默认宽度 300px、高度 225px，可通过 css 设置宽高
  */
-export type Video = Component<VideoProps>;
+export type Video = Component<Partial<VideoProps>>;

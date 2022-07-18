@@ -31,4 +31,4 @@ export interface ViewProps {
  * @desc 包裹文字建议使用 text
  * @desc 如果使用 div，会编译成 view
  */
-export type View = Component<ViewProps>;
+export type View = Component<Partial<ViewProps>>;

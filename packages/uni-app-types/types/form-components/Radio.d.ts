@@ -29,4 +29,4 @@ export interface RadioProps {
 /**
  * @desc 单选项目
  */
-export type Radio = Component<RadioProps>;
+export type Radio = Component<Partial<RadioProps>>;

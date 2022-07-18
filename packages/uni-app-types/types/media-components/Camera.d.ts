@@ -104,4 +104,4 @@ export interface CameraProps {
 /**
  * @desc 页面内嵌的区域相机组件
  */
-export type Camera = Component<CameraProps>;
+export type Camera = Component<Partial<CameraProps>>;

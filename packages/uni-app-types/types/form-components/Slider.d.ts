@@ -78,4 +78,4 @@ export interface SliderProps {
 /**
  * @desc 滑动选择器
  */
-export type Slider = Component<SliderProps>;
+export type Slider = Component<Partial<SliderProps>>;

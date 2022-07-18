@@ -78,4 +78,4 @@ export interface AudioProps {
 /**
  * @desc 音频
  */
-export type Audio = Component<AudioProps>;
+export type Audio = Component<Partial<AudioProps>>;

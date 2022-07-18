@@ -178,4 +178,4 @@ export interface SwiperProps {
  * @desc 注意滑动切换和滚动的区别，滑动切换是一屏一屏的切换
  * @desc swiper 下的每个 swiper-item 是一个滑动切换区域，不能停留在 2 个滑动区域之间
  */
-export type Swiper = Component<SwiperProps>;
+export type Swiper = Component<Partial<SwiperProps>>;

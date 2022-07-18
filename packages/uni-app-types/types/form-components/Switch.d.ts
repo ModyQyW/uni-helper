@@ -42,4 +42,4 @@ export interface SwitchProps {
 /**
  * @desc 开关选择器
  */
-export type Switch = Component<SwitchProps>;
+export type Switch = Component<Partial<SwitchProps>>;

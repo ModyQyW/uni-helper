@@ -5,11 +5,11 @@ export interface BaseEventTarget {
   /**
    * @desc 事件源组件的id
    */
-  id: string;
+  id?: string;
   /**
    * @desc 事件源组件上由 data- 开头的自定义属性组成的集合
    */
-  dataset: Record<string, any>;
+  dataset?: Record<string, any>;
 }
 
 /**

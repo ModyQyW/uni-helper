@@ -80,4 +80,4 @@ export interface AdProps {
 /**
  * @desc 广告
  */
-export type Ad = Component<AdProps>;
+export type Ad = Component<Partial<AdProps>>;

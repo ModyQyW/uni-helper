@@ -55,4 +55,4 @@ export interface FormProps {
  * @desc 表单
  * @desc 将组件内的用户输入的 switch、input、checkbox、slider、radio、picker 提交
  */
-export type Form = Component<FormProps>;
+export type Form = Component<Partial<FormProps>>;

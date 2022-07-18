@@ -142,4 +142,4 @@ export interface ScrollViewProps {
  * @desc 横向滚动时，需要给 scroll-view 添加 white-space: nowrap; 样式
  * @desc scroll-view 是区域滚动，不会触发页面滚动，无法触发 pages.json 配置的下拉刷新、页面触底onReachBottomDistance、titleNView 的 transparent 透明渐变
  */
-export type ScrollView = Component<ScrollViewProps>;
+export type ScrollView = Component<Partial<ScrollViewProps>>;

@@ -186,4 +186,4 @@ export interface TextareaProps {
 /**
  * @desc 多行输入框
  */
-export type Textarea = Component<TextareaProps>;
+export type Textarea = Component<Partial<TextareaProps>>;

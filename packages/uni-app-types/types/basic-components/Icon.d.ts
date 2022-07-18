@@ -23,4 +23,4 @@ export interface IconProps {
 /**
  * @desc 图标
  */
-export type Icon = Component<IconProps>;
+export type Icon = Component<Partial<IconProps>>;

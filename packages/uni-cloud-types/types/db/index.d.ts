@@ -348,4 +348,4 @@ export interface UnicloudDbProps {
 /**
  * @desc 数据库查询组件，对 uni-clientdb 的 js 库的再封装
  */
-export type UnicloudDb = Component<UnicloudDbProps>;
+export type UnicloudDb = Component<Partial<UnicloudDbProps>>;

@@ -55,19 +55,20 @@
     "@types/eslint": "^8.4.5",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "commitizen": "^4.2.4",
-    "eslint": "^8.19.0",
+    "commitizen": "^4.2.5",
+    "eslint": "^8.20.0",
     "husky": "^8.0.1",
     "is-ci": "^3.0.1",
     "lint-staged": "^13.0.3",
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli": "^0.32.0",
+    "ovsx": "^0.5.1",
     "prettier": "^2.7.1",
-    "release-it": "^15.1.1",
+    "release-it": "^15.1.2",
     "rimraf": "^3.0.2",
     "stylelint": "^14.9.1",
     "tsup": "^6.1.3",
     "tsx": "^3.8.0",
     "typescript": "^4.7.4",
-    "vsce": "^2.9.2"
+    "vsce": "^2.9.3"
   }
 }

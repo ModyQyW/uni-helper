@@ -36,6 +36,7 @@ import {
   Video,
   LivePlayer,
   LivePusher,
+  Map,
 } from './types';
 
 export * from './types';
@@ -82,5 +83,7 @@ declare module '@vue/runtime-core' {
     Video: Video;
     LivePlayer: LivePlayer;
     LivePusher: LivePusher;
+
+    Map: Map;
   }
 }

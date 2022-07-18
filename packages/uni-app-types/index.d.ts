@@ -39,6 +39,10 @@ import {
   Map,
   Canvas,
   WebView,
+  Ad,
+  PageMeta,
+  NavigationBar,
+  CustomTabBar,
 } from './types';
 
 export * from './types';
@@ -90,5 +94,11 @@ declare module '@vue/runtime-core' {
     Canvas: Canvas;
 
     WebView: WebView;
+
+    Ad: Ad;
+
+    PageMeta: PageMeta;
+    NavigationBar: NavigationBar;
+    CustomTabBar: CustomTabBar;
   }
 }

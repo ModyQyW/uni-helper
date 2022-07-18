@@ -7,3 +7,5 @@ export * from './media-components';
 export * from './map';
 export * from './canvas';
 export * from './web-view';
+export * from './ad';
+export * from './page-property-configuration-node';

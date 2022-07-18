@@ -37,6 +37,7 @@ import {
   LivePlayer,
   LivePusher,
   Map,
+  Canvas,
 } from './types';
 
 export * from './types';
@@ -85,5 +86,6 @@ declare module '@vue/runtime-core' {
     LivePusher: LivePusher;
 
     Map: Map;
+    Canvas: Canvas;
   }
 }

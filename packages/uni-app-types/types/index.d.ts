@@ -5,3 +5,4 @@ export * from './form-components';
 export * from './navigation';
 export * from './media-components';
 export * from './map';
+export * from './canvas';

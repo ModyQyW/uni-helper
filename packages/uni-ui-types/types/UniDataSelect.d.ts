@@ -3,7 +3,7 @@ import { Component } from '../Component';
 /**
  * @desc 本地数据
  */
-export interface UniDataPickerLocaldata {
+export interface UniDataSelectLocaldata {
   /**
    * @desc 值
    */

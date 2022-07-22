@@ -1,5 +1,5 @@
 import { mergeDeepRight } from 'ramda';
-import { buildFullPath, buildUrl } from '../utils';
+import { buildFullPath, buildUrl, forEach } from '../utils';
 import { UrInterceptorManager } from './UrInterceptorManager';
 import { dispatchRequest } from './dispatchRequest';
 
@@ -18,6 +18,7 @@ class Ur {
 
     const mergedConfig = mergeDeepRight(this.defaults, _config);
 
+    // filter out skipped interceptors
     const requestInterceptorChain = [];
     let synchronousRequestInterceptors = true;
     this.interceptors.request.forEach((interceptor) => {
@@ -104,15 +105,24 @@ class Ur {
   }
 }
 
-['get', 'delete', 'head', 'options', 'trace', 'connect'].forEach((method) => {
+forEach(['delete', 'get', 'head', 'options', 'trace', 'connect'], function (method) {
   Ur.prototype[method] = function (url, config) {
-    return this.request(url, { ...config, method });
+    return this.request({
+      ...config,
+      method,
+      url,
+    });
   };
 });
 
-['post', 'put', 'patch'].forEach((method) => {
+forEach(['post', 'put', 'patch'], function (method) {
   Ur.prototype[method] = function (url, data, config) {
-    return this.request(url, { ...config, data, method });
+    return this.request({
+      ...config,
+      method,
+      url,
+      data,
+    });
   };
 });
 

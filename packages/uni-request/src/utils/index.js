@@ -4,4 +4,6 @@ export * from './buildRequestConfig';
 export * from './buildUploadConfig';
 export * from './buildUrl';
 export * from './combineUrls';
+export * from './extend';
+export * from './forEach';
 export * from './isAbsoluteUrl';

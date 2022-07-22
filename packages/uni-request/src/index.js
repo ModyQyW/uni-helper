@@ -1,26 +1,20 @@
 import { mergeDeepRight } from 'ramda';
-import { assignIn, assignInWith } from 'lodash-es';
 import { version } from '../package.json';
 import { isUrError, Ur, UrCanceledError, UrCancelToken, UrError, isCancel } from './core';
 import { defaults } from './defaults';
+import { extend } from './utils';
 
 const createInstance = (defaultConfig) => {
   const context = new Ur(defaultConfig);
   const instance = Ur.prototype.request.bind(context);
 
-  assignInWith(instance, Ur.prototype, (object, source) => {
-    const keys = Object.getOwnPropertyNames(source);
-    keys.forEach((key) => {
-      if (typeof source[key] === 'function') {
-        object[key] = source[key].bind(context);
-      } else {
-        object[key] = source[key];
-      }
-    });
-  });
+  // Copy axios.prototype to instance
+  extend(instance, Ur.prototype, context, { allOwnKeys: true });
 
-  assignIn(instance, context);
+  // Copy context to instance
+  extend(instance, context, { allOwnKeys: true });
 
+  // Factory for creating new instances
   instance.create = (instanceConfig) =>
     createInstance(mergeDeepRight(defaultConfig, instanceConfig));
 

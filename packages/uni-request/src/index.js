@@ -8,7 +8,7 @@ const createInstance = (defaultConfig) => {
   const context = new Ur(defaultConfig);
   const instance = Ur.prototype.request.bind(context);
 
-  // Copy axios.prototype to instance
+  // Copy ur.prototype to instance
   extend(instance, Ur.prototype, context, { allOwnKeys: true });
 
   // Copy context to instance
@@ -21,21 +21,28 @@ const createInstance = (defaultConfig) => {
   return instance;
 };
 
+// Create the default instance to be exported
 const ur = createInstance(defaults);
 
+// Expose Ur class to allow class inheritance
 ur.Ur = Ur;
 
+// Expose Cancel & CancelToken
 ur.CanceledError = UrCanceledError;
 ur.CancelToken = UrCancelToken;
 ur.isCancel = isCancel;
 ur.VERSION = version;
 
+// Expose UrError class
 ur.UrError = UrError;
 
+// alias for CanceledError for backward compatibility
 ur.Cancel = ur.CanceledError;
 
+// Expose all/spread
 ur.all = (promises) => Promise.all(promises);
 
+// Expose isUrError
 ur.isUrError = isUrError;
 
 export { ur };

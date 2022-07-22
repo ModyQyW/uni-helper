@@ -52,7 +52,6 @@ export const downloadAdapter = (config) =>
         if (onProgressUpdate) {
           task?.offProgressUpdate(onProgressUpdate);
         }
-        task = undefined;
         settle(
           (val) => {
             resolve(val);

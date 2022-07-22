@@ -48,7 +48,6 @@ export const requestAdapter = (config) =>
         if (onChunkReceived) {
           task?.offChunkReceived(onChunkReceived);
         }
-        task = undefined;
         settle(
           (val) => {
             resolve(val);

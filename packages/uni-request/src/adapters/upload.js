@@ -46,7 +46,6 @@ export const uploadAdapter = (config) =>
         if (onProgressUpdate) {
           task?.offProgressUpdate(onProgressUpdate);
         }
-        task = undefined;
         settle(
           (val) => {
             resolve(val);

@@ -15,8 +15,9 @@ export const requestAdapter = (config) =>
     };
 
     let response;
+    let task;
 
-    let task = uni.request({
+    task = uni.request({
       ...requestConfig,
       success: (res) => {
         response = {

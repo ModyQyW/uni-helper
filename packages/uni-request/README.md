@@ -161,18 +161,18 @@ ur('/user/12345');
 
 为了方便起见，已经为所有支持的请求方法提供了别名。在使用别名方法时，`url`、`method`、`data` 不需要在配置中指定。
 
-`ur.request(config)`
-`ur.download(config)`
-`ur.upload(config)`
-`ur.get(url[, config])`
-`ur.delete(url[, config])`
-`ur.head(url[, config])`
-`ur.options(url[, config])`
-`ur.trace(url[, config])`
-`ur.connect(url[, config])`
-`ur.post(url[, data[, config]])`
-`ur.put(url[, data[, config]])`
-`ur.patch(url[, data[, config]])`
+- `ur.request(config)`
+- `ur.download(config)`
+- `ur.upload(config)`
+- `ur.get(url[, config])`
+- `ur.delete(url[, config])`
+- `ur.head(url[, config])`
+- `ur.options(url[, config])`
+- `ur.trace(url[, config])`
+- `ur.connect(url[, config])`
+- `ur.post(url[, data[, config]])`
+- `ur.put(url[, data[, config]])`
+- `ur.patch(url[, data[, config]])`
 
 ### 实例
 
@@ -194,19 +194,19 @@ const instance = ur.create({
 
 以下是可用的实例方法。指定的配置将与实例的配置合并。
 
-`ur.request(config)`
-`ur.download(config)`
-`ur.upload(config)`
-`ur.get(url[, config])`
-`ur.delete(url[, config])`
-`ur.head(url[, config])`
-`ur.options(url[, config])`
-`ur.trace(url[, config]])`
-`ur.connect(url[, config]])`
-`ur.post(url[, data[, config]])`
-`ur.put(url[, data[, config]])`
-`ur.patch(url[, data[, config]])`
-`ur.getUri([config])`
+- `ur.request(config)`
+- `ur.download(config)`
+- `ur.upload(config)`
+- `ur.get(url[, config])`
+- `ur.delete(url[, config])`
+- `ur.head(url[, config])`
+- `ur.options(url[, config])`
+- `ur.trace(url[, config]])`
+- `ur.connect(url[, config]])`
+- `ur.post(url[, data[, config]])`
+- `ur.put(url[, data[, config]])`
+- `ur.patch(url[, data[, config]])`
+- `ur.getUri([config])`
 
 ### 请求配置
 

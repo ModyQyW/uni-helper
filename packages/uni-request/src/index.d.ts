@@ -105,6 +105,7 @@ export interface UrRequestConfig<T = UrData, D = UrData> extends UrBaseConfig<T,
   withCredentials?: boolean;
   firstIpv4?: boolean;
   onChunkReceived?: (response?: { data?: ArrayBuffer }) => void;
+  [key: string]: any;
 }
 
 export interface UrDownloadConfig<T = UrData, D = UrData> extends UrBaseConfig<T, D> {
@@ -114,6 +115,7 @@ export interface UrDownloadConfig<T = UrData, D = UrData> extends UrBaseConfig<T
     totalBytesWritten?: number;
     totalBytesExpectedToWrite?: number;
   }) => void;
+  [key: string]: any;
 }
 
 export interface UrUploadConfig<T = UrData, D = UrData> extends UrBaseConfig<T, D> {
@@ -128,6 +130,7 @@ export interface UrUploadConfig<T = UrData, D = UrData> extends UrBaseConfig<T, 
     totalBytesWritten?: number;
     totalBytesExpectedToWrite?: number;
   }) => void;
+  [key: string]: any;
 }
 
 export type UrConfig<T = UrData, D = UrData> =

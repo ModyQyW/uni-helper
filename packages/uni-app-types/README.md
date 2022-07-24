@@ -1,6 +1,10 @@
 # uni-app-types
 
-`uni-app` 组件类型。维护直到官方类型推出。
+`uni-app` 组件类型。
+
+基于 [这个 PR](https://github.com/vuejs/core/pull/3399)，[Volar](https://github.com/johnsoncodehk/volar) 已经支持，建议使用 Volar 的 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+
+维护直到官方类型推出。
 
 **类型和文档的冲突之处，请以文档为准。**
 

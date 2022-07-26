@@ -45,6 +45,10 @@ ur.all = (promises) => Promise.all(promises);
 // Expose isUrError
 ur.isUrError = isUrError;
 
+export * from './adapters';
+export * from './core';
+export * from './defaults';
+export * from './utils';
 export { ur };
 
 export default ur;

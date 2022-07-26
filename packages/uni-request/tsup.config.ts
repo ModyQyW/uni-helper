@@ -5,7 +5,7 @@ export default defineConfig([
   {
     entry: ['src/index.js'],
     format: ['esm', 'cjs'],
-    // minify: true,
+    minify: true,
     shims: true,
     target: 'es5',
   },

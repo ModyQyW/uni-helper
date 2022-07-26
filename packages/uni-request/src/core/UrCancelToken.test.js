@@ -7,13 +7,13 @@ describe('core:UrCancelToken', () => {
     it('throws when executor is not specified', () => {
       expect(() => {
         new UrCancelToken();
-      }).toThrowError(TypeError, 'executor must be a function.');
+      }).toThrowError(TypeError('executor must be a function.'));
     });
 
     it('throws when executor is not a function', () => {
       expect(() => {
         new UrCancelToken(123);
-      }).toThrowError(TypeError, 'executor must be a function.');
+      }).toThrowError(TypeError('executor must be a function.'));
     });
   });
 

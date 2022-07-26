@@ -77,7 +77,7 @@ export type UrAdapter<T = UrData, D = UrData> =
 
 export interface UrBaseConfig<T = UrData, D = UrData> {
   baseUrl?: string;
-  url?: string;
+  url: string;
   params?: any;
   paramsSerializer?: (params?: any) => string;
   data?: D;

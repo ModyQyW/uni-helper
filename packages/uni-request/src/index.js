@@ -36,9 +36,6 @@ ur.VERSION = version;
 // Expose UrError class
 ur.UrError = UrError;
 
-// alias for CanceledError for backward compatibility
-ur.Cancel = ur.CanceledError;
-
 // Expose all/spread
 ur.all = (promises) => Promise.all(promises);
 

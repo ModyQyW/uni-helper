@@ -13,7 +13,7 @@ describe('utils::buildFullPath', () => {
   });
 
   it('should not combine URLs when the baseURL is not configured', () => {
-    expect(buildFullPath(undefined, '/users')).toBe('/users');
+    expect(buildFullPath('', '/users')).toBe('/users');
   });
 
   it('should combine URLs when the baseURL and requestedURL are relative', () => {

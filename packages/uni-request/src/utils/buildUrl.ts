@@ -1,6 +1,10 @@
 import qs from 'qs';
 
-export const buildUrl = (url, params, paramsSerializer) => {
+export const buildUrl = (
+  url: string,
+  params?: any,
+  paramsSerializer?: (params?: any) => string,
+) => {
   if (!params) {
     return url;
   }

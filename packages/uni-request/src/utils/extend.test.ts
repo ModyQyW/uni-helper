@@ -3,8 +3,8 @@ import { extend } from './extend';
 
 describe('utils::extend', function () {
   it('should be mutable', function () {
-    const a = {};
-    const b = { foo: 123 };
+    const a: Record<string, any> = {};
+    const b: Record<string, any> = { foo: 123 };
 
     extend(a, b);
 
@@ -12,8 +12,8 @@ describe('utils::extend', function () {
   });
 
   it('should extend properties', function () {
-    let a = { foo: 123, bar: 456 };
-    const b = { bar: 789 };
+    let a: Record<string, any> = { foo: 123, bar: 456 };
+    const b: Record<string, any> = { bar: 789 };
 
     a = extend(a, b);
 
@@ -22,8 +22,8 @@ describe('utils::extend', function () {
   });
 
   it('should bind to thisArg', function () {
-    const a = {};
-    const b = {
+    const a: Record<string, any> = {};
+    const b: Record<string, any> = {
       getFoo: function getFoo() {
         return this.foo;
       },

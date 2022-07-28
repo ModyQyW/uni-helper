@@ -1,8 +1,13 @@
 import { buildFullPath } from './buildFullPath';
 import { buildUrl } from './buildUrl';
+import type { UrRequestConfig } from '../types';
 
-export const buildRequestConfig = (config) => ({
-  url: buildUrl(buildFullPath(config.baseUrl, config.url), config.params, config.paramsSerializer),
+export const buildRequestConfig = (config: UrRequestConfig) => ({
+  url: buildUrl(
+    buildFullPath(config.baseUrl ?? '', config.url),
+    config.params,
+    config.paramsSerializer,
+  ),
   data: config.data,
   header: config.headers,
   method: config.method?.toUpperCase() ?? 'GET',

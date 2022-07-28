@@ -1,9 +1,10 @@
 import { UrError } from './UrError';
+import type { UrConfig, UrData, UrTask } from '../types';
 
-class UrCanceledError extends UrError {
+class UrCanceledError<T = UrData, D = UrData> extends UrError<T, D> {
   isUrCanceledError = true;
 
-  constructor(message, config, request) {
+  constructor(message?: string, config?: UrConfig<T, D>, request?: UrTask) {
     super(message ?? 'canceled');
 
     this.name = 'CanceledError';

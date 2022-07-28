@@ -1,5 +1,5 @@
 {
-  "description": "Android 移动应用服务协议和隐私政策配置文件，不能添加注释。更多信息查看 <https://ask.dcloud.net.cn/article/36937>，<https://uniapp.dcloud.net.cn/tutorial/store.html> 和 <https://uniapp.dcloud.io/app/android-store>。",
+  "description": "Android 移动应用服务协议和隐私政策配置文件，不能添加注释。更多信息查看 <https://uniapp.dcloud.io/tutorial/app-privacy-android.html>，<https://uniapp.dcloud.net.cn/tutorial/store.html> 和 <https://uniapp.dcloud.io/app/android-store>。",
   "type": "object",
   "properties": {
     "version": {
@@ -24,8 +24,13 @@
       "type": "string"
     },
     "buttonRefuse": {
-      "description": "提示框上拒绝按钮的文本，默认不显示拒绝按钮。",
+      "description": "提示框上拒绝按钮的文本，默认为不显示拒绝按钮。",
       "type": "string"
+    },
+    "hrefLoader": {
+      "description": "点击 message 链接时使用什么打开，default 表示使用应用内置 webview 页面打开，system 表示使用系统浏览器打开。默认为 default。有些检测机构认为 webview 会读取隐私信息，指定为 system 可解决。",
+      "type": "string",
+      "enum": ["default", "system"]
     },
     "second": {
       "description": "二次确认提示框配置，message 属性值不为空时弹出二次确认提示框。",

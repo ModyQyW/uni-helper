@@ -1,7 +1,7 @@
 {
-  "description": "应用信息配置文件，用于指定大量信息。更多信息查看 <https://uniapp.dcloud.io/collocation/manifest> 和 <https://ask.dcloud.net.cn/article/94>。",
+  "description": "应用信息配置文件，用于指定大量信息。更多信息查看 <https://uniapp.dcloud.io/collocation/manifest> 和 <https://uniapp.dcloud.io/tutorial/app-manifest.html>。",
   "type": "object",
-  "required": ["name", "appid"],
+  "required": ["name", "appid", "versionName", "versionCode"],
   "properties": {
     "name": {
       "description": "应用名称，安装 APP 后显示的名称。",
@@ -16,7 +16,7 @@
       "type": "string"
     },
     "locale": {
-      "description": "设置当前默认语言。",
+      "description": "设置当前默认语言。默认为 auto。",
       "type": "string"
     },
     "versionName": {
@@ -28,7 +28,7 @@
       "type": "string"
     },
     "transformPx": {
-      "description": "是否转换 px 为 rpx。",
+      "description": "是否转换 px 为 rpx。默认为 true，建议使用 false。",
       "type": "boolean"
     },
     "networkTimeout": {
@@ -36,42 +36,42 @@
       "type": "object",
       "properties": {
         "request": {
-          "description": "uni.request 超时时间，单位 ms。",
+          "description": "uni.request 超时时间。单位为 ms。默认为 60000。",
           "type": "number"
         },
         "connectSocket": {
-          "description": "uni.connectSocket 的超时时间，单位 ms。",
+          "description": "uni.connectSocket 的超时时间。单位为 ms。默认为 60000。",
           "type": "number"
         },
         "uploadFile": {
-          "description": "uni.uploadFile 的超时时间，单位 ms。",
+          "description": "uni.uploadFile 的超时时间。单位为 ms。默认为 60000。",
           "type": "number"
         },
         "downloadFile": {
-          "description": "uni.downloadFile 的超时时间，单位 ms。",
+          "description": "uni.downloadFile 的超时时间。单位为 ms。默认为 60000。",
           "type": "number"
         }
       }
     },
     "debug": {
-      "description": "是否开启 debug 模式。",
+      "description": "是否开启 debug 模式。默认为 false。",
       "type": "boolean"
     },
     "uniStatistics": {
       "description": "uni 统计配置项。",
       "type": "object",
-      "required": ["enable"],
       "properties": {
         "enable": {
-          "description": "是否开启 uni 统计。",
+          "description": "是否开启 uni 统计。默认为 false。",
           "type": "boolean"
         },
         "version": {
-          "description": "uni 统计版本。",
-          "type": "string"
+          "description": "uni 统计版本。默认为 1。",
+          "type": "string",
+          "enum": ["1", "2"]
         },
         "debug": {
-          "description": "是否开启调试模式。生产阶段务必关闭。",
+          "description": "是否开启调试模式。生产阶段务必关闭。默认为 false。",
           "type": "boolean"
         }
       }
@@ -103,20 +103,16 @@
           "type": "object",
           "properties": {
             "alwaysShowBeforeRender": {
-              "description": "首页白屏时是否不关闭启动界面。",
+              "description": "是否等待首页渲染完毕后再关闭启动界面。默认为 true。",
               "type": "boolean"
             },
             "autoclose": {
-              "description": "是否自动关闭程序启动界面。",
+              "description": "是否自动关闭启动界面。默认为 true。",
               "type": "boolean"
             },
             "waiting": {
-              "description": "是否在程序启动界面显示加载。",
+              "description": "是否在程序启动界面显示加载。默认为 true。",
               "type": "boolean"
-            },
-            "delay": {
-              "description": "启动界面在应用的首页面加载完毕后延迟关闭的时间。autoclose 为 true 时有效。",
-              "type": "number"
             },
             "useOriginalMsgbox": {
               "description": "是否使用原生提示框。",
@@ -161,12 +157,12 @@
           }
         },
         "nvueCompiler": {
-          "description": "nvue 编译模式。",
+          "description": "nvue 编译模式。默认为 weex，建议使用 uni-app。",
           "type": "string",
           "enum": ["weex", "uni-app"]
         },
         "nvueStyleCompiler": {
-          "description": "nvue 样式编译模式。",
+          "description": "nvue 样式编译模式。默认为 weex，建议使用 uni-app。",
           "type": "string",
           "enum": ["weex", "uni-app"]
         },
@@ -175,13 +171,8 @@
           "type": "string",
           "enum": ["native"]
         },
-        "compilerVersion": {
-          "description": "编译器版本。",
-          "type": "number",
-          "enum": [2, 3]
-        },
         "nvueLaunchMode": {
-          "description": "nvue 首页启动模式。compilerVersion 为 3 时生效。",
+          "description": "nvue 首页启动模式。默认为 normal。",
           "type": "string",
           "enum": ["normal", "fast"]
         },
@@ -190,7 +181,7 @@
           "type": "object",
           "properties": {
             "flex-direction": {
-              "description": "flex 项目的排列方向。可选 row，row-reverse，column 和 column-reverse。",
+              "description": "flex 项目的排列方向。默认为 column。",
               "type": "string",
               "enum": ["row", "row-reverse", "column", "column-reverse"]
             }
@@ -199,7 +190,6 @@
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -218,9 +208,37 @@
           }
         },
         "runmode": {
-          "description": "运行模式。分包时必选 liberate。",
+          "description": "运行模式。分包时必须使用 liberate。",
           "type": "string",
           "enum": ["normal", "liberate"]
+        },
+        "webView": {
+          "description": "Android 支持。系统 webview 低于指定版本时，会弹出提示，或者下载 x5 内核后继续启动。",
+          "type": "object",
+          "properties": {
+            "minUserAgentVersion": {
+              "description": "最小 webview 版本。当低于最小版本要求时，显示弹框提示，点击确定退出应用。",
+              "type": "string"
+            },
+            "x5": {
+              "description": "X5 内核配置。勾选 Android X5 Webview 模块后生效。",
+              "type": "object",
+              "properties": {
+                "timeOut": {
+                  "description": "超时时间。默认为 3000。",
+                  "type": "number"
+                },
+                "showTipsWithoutWifi": {
+                  "description": "是否在非 WiFi 网络环境时弹框询问用户是否确认下载 X5 内核。默认为 false，即不弹框询问。",
+                  "type": "boolean"
+                },
+                "allowDownloadWithoutWiFi": {
+                  "description": "是否允许用户在非 WiFi 网络时直接下载 X5 内核。默认为 false， showTipsWithoutWifi 为 true 时弹框询问用户，showTipsWithoutWifi 为 false 时不下载。true 时不弹框询问用户。",
+                  "type": "boolean"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -241,12 +259,12 @@
           "type": "object",
           "properties": {
             "mode": {
-              "description": "路由跳转模式。",
+              "description": "路由跳转模式。默认为 hash。",
               "type": "string",
               "enum": ["hash", "history"]
             },
             "base": {
-              "description": "应用基础路径。",
+              "description": "应用基础路径。默认为 /。",
               "type": "string"
             }
           }
@@ -256,19 +274,19 @@
           "type": "object",
           "properties": {
             "loading": {
-              "description": "页面 JavaScript 加载时使用的组件，需注册为全局组件。",
+              "description": "页面 JavaScript 加载时使用的组件，需注册为全局组件。默认为 AsyncLoading。",
               "type": "string"
             },
             "error": {
-              "description": "页面 JavaScript 加载失败时使用的组件，需注册为全局组件。",
+              "description": "页面 JavaScript 加载失败时使用的组件，需注册为全局组件。默认为 AsyncError。",
               "type": "string"
             },
             "delay": {
-              "description": "展示加载中组件的延时时间，单位 ms。如果在延时内加载完成，则不会显示加载中组件。",
+              "description": "展示加载中组件的延时时间，单位 ms。如果在延时内加载完成，则不会显示加载中组件。默认为 200。",
               "type": "number"
             },
             "timeout": {
-              "description": "加载超时时间，单位 ms。如果超时，则显示加载失败组件。",
+              "description": "加载超时时间，单位 ms。如果超时，则显示加载失败组件。默认为 60000。",
               "type": "number"
             }
           }
@@ -278,11 +296,11 @@
           "description": "dev-server 设置。",
           "properties": {
             "https": {
-              "description": "是否启用 HTTPS 协议。",
+              "description": "是否启用 HTTPS 协议。默认为 false。",
               "type": "boolean"
             },
             "disableHostCheck": {
-              "description": "是否禁用 host 检查。",
+              "description": "是否禁用 host 检查。默认为 false。",
               "type": "boolean"
             }
           }
@@ -300,20 +318,19 @@
           "type": "object",
           "properties": {
             "prefetch": {
-              "description": "资源预获取。",
+              "description": "资源预获取。默认为 false。",
               "type": "boolean"
             },
             "preload": {
-              "description": "资源预加载。",
+              "description": "资源预加载。默认为 false。",
               "type": "boolean"
             },
             "treeShaking": {
               "description": "摇树优化。",
               "type": "object",
-              "required": ["enable"],
               "properties": {
                 "enable": {
-                  "description": "是否开启摇树优化。",
+                  "description": "是否开启摇树优化。默认为 false。",
                   "type": "boolean"
                 }
               }
@@ -323,7 +340,6 @@
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -395,74 +411,168 @@
               "description": "是否启用 ES6 转 ES5。",
               "type": "boolean"
             },
+            "enhance": {
+              "description": "是否使用增强编译。",
+              "type": "boolean"
+            },
             "postcss": {
-              "description": "是否启用样式自动补全。",
+              "description": "上传代码时样式是否自动补全。",
               "type": "boolean"
             },
             "minified": {
-              "description": "是否启用脚本代码自动压缩。",
+              "description": "上传代码时是否自动压缩脚本文件。",
+              "type": "boolean"
+            },
+            "minifyWXSS": {
+              "description": "上传代码时是否自动压缩样式文件。",
+              "type": "boolean"
+            },
+            "minifyWXML": {
+              "description": "上传代码时是否自动压缩 WXML 文件。",
+              "type": "boolean"
+            },
+            "uglifyFileName": {
+              "description": "上传时是否代码保护。",
+              "type": "boolean"
+            },
+            "ignoreUploadUnusedFiles": {
+              "description": "上传时是否过滤无依赖文件。",
+              "type": "boolean"
+            },
+            "autoAudits": {
+              "description": "是否自动运行体验评分。",
               "type": "boolean"
             },
             "urlCheck": {
               "description": "是否检查安全域名和 TLS 版本。",
               "type": "boolean"
             },
-            "uglifyFileName": {
-              "description": "是否启用代码保护。",
-              "type": "boolean"
-            },
-            "checkSiteMap": {
-              "description": "是否检查 SiteMap 索引。",
-              "type": "boolean"
-            },
-            "coverView": {
-              "description": "是否使用工具渲染 CoverView。",
-              "type": "boolean"
-            },
-            "enhance": {
-              "description": "是否启用增强编译。",
-              "type": "boolean"
-            },
-            "babelSetting": {
-              "description": "增强编译 Babel 的配置项。",
-              "type": "object"
-            },
-            "uploadWithSourceMap": {
-              "description": "上传时是否带上 SourceMap。",
-              "type": "boolean"
-            },
-            "nodeModules": {
-              "description": "是否不使用 npm 模块。",
-              "type": "boolean"
-            },
-            "minifyWXSS": {
-              "description": "是否启用样式代码自动压缩。",
-              "type": "boolean"
-            },
-            "showShadowRootInWxmlPanel": {
-              "description": "是否以 shadow-root 形式展示自定义组件。",
+            "compileHotReLoad": {
+              "description": "是否启用代码自动热重载。",
               "type": "boolean"
             },
             "preloadBackgroundData": {
               "description": "是否启用数据预拉取。",
               "type": "boolean"
             },
-            "compileHotReLoad": {
-              "description": "是否启用代码自动热重载。",
+            "lazyloadPlaceholderEnable": {
+              "description": "是否启用懒注入占位组件调试。",
               "type": "boolean"
             },
-            "bundle": {
-              "description": "是否启用合并编译。",
+            "useStaticServer": {
+              "description": "小游戏项目有效，是否开启静态资源服务器。",
+              "type": "boolean"
+            },
+            "bigPackageSizeSupport": {
+              "description": "预览及真机调试的时主包、分包体积上限调整为小程序 4M、小游戏 8M。",
+              "type": "boolean"
+            },
+            "babelSetting": {
+              "description": "增强编译 Babel 的配置项。",
+              "type": "object",
+              "properties": {
+                "outputPath": {
+                  "description": "Babel 辅助函数的输出目录，默认为 @babel/runtime。",
+                  "type": "string"
+                },
+                "ignore": {
+                  "description": "需要跳过 Babel 编译（包括代码压缩）处理的文件或目录。",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "useCompilerPlugins": {
+              "description": "编译插件配置。",
+              "type": [false, "array"]
+            },
+            "disableUseStrict": {
+              "description": "将 JS 编译成 ES5 时，是否禁用严格模式。",
+              "type": "boolean"
+            },
+            "uploadWithSourceMap": {
+              "description": "上传时是否带上 sourcemap，默认为 true。",
+              "type": "boolean"
+            },
+            "localPlugins": {
+              "description": "在小游戏插件项目中，是否启用 以本地目录为插件资源来源 特性。",
+              "type": "boolean"
+            },
+            "packNpmManually": {
+              "description": "是否手动配置构建 npm 的路径。",
+              "type": "boolean"
+            },
+            "packNpmRelationList": {
+              "description": "仅 packNpmManually 为 true 时生效。",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "packageJsonPath": {
+                    "description": "node_modules 源对应的 package.json。",
+                    "type": "string"
+                  },
+                  "miniprogramNpmDistDir": {
+                    "description": "node_modules 的构建结果目标位置。",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "coverView": {
+              "description": "是否使用工具渲染 CoverView。",
+              "type": "boolean"
+            },
+            "ignoreDevUnusedFiles": {
+              "description": "预览、真机调试和本地模拟器等开发阶段是否过滤无依赖文件，默认为 true。",
               "type": "boolean"
             },
             "checkInvalidKey": {
               "description": "是否检查键名。",
               "type": "boolean"
+            },
+            "showShadowRootInWxmlPanel": {
+              "description": "是否开启调试器 WXML 面板展示 shadow-root。",
+              "type": "boolean"
+            },
+            "useIsolateContext": {
+              "description": "是否开启小程序独立域调试特性。",
+              "type": "boolean"
+            },
+            "useMultiFrameRuntime": {
+              "description": "是否开启模拟器预先载入小程序的某些资源，设置为 false 时会导致 useIsolateContext 失效。",
+              "type": "boolean"
+            },
+            "useApiHook": {
+              "description": "是否启用 API Hook 功能。",
+              "type": "boolean"
+            },
+            "useApiHostProcess": {
+              "description": "是否在额外的进程处理一些小程序 API。",
+              "type": "boolean"
+            },
+            "useLanDebug": {
+              "description": "小游戏有效，是否开启局域网调试服务器。",
+              "type": "boolean"
+            },
+            "enableEngineNative": {
+              "description": "是否在游戏引擎项目中开启支持引用 node 原生模块的底层加速特性。",
+              "type": "boolean"
+            },
+            "showES6CompileOption": {
+              "description": "是否在本地设置中展示传统的 ES6 转 ES5 开关（对应 es6），增强编译开关 （对应 enhance）。",
+              "type": "boolean"
+            },
+            "checkSiteMap": {
+              "description": "是否检查 SiteMap 索引。",
+              "type": "boolean"
             }
           }
         },
         "functionalPages": {
-          "description": "是否启用插件功能页。",
+          "description": "是否启用插件功能页。默认为 false。",
           "type": "boolean"
         },
         "requiredBackgroundModes": {
@@ -480,7 +590,7 @@
           "type": "object"
         },
         "resizable": {
-          "description": "是否支持 iPad 上屏幕旋转。",
+          "description": "是否支持 iPad 上屏幕旋转。默认为 false。",
           "type": "boolean"
         },
         "navigateToMiniProgramAppIdList": {
@@ -493,11 +603,7 @@
         },
         "permission": {
           "description": "接口权限设置。",
-          "type": "object",
-          "items": {
-            "description": "要申请的权限。",
-            "type": "string"
-          }
+          "type": "object"
         },
         "workers": {
           "description": "Worker 代码目录。",
@@ -520,7 +626,6 @@
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -529,9 +634,31 @@
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 auto。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
+        },
+        "mergeVirtualHostAttributes": {
+          "description": "是否合并组件虚拟节点外层属性（目前仅支持 style、class 属性）。",
+          "type": "boolean"
+        },
+        "embeddedAppIdList": {
+          "description": "要半屏跳转的小程序 appid。",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "requiredPrivateInfos": {
+          "description": "地理位置相关接口。",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lazyCodeLoading": {
+          "description": "目前仅支持值 requiredComponents，代表开启小程序按需注入特性。",
+          "type": "string"
         }
       }
     },
@@ -544,29 +671,28 @@
           "type": "object"
         },
         "component2": {
-          "description": "是否启用 component2 编译。",
-          "type": "boolean"
-        },
-        "axmlStrictCheck": {
-          "description": "是否开启 axml 严格语法检查。",
+          "description": "是否启用 component2 编译。默认为 true。",
           "type": "boolean"
         },
         "enableAppxNg": {
-          "description": "是否启用小程序基础库 2.0 构建。",
+          "description": "是否启用小程序基础库 2.0 构建。默认为 true。",
+          "type": "boolean"
+        },
+        "axmlStrictCheck": {
+          "description": "是否开启 axml 严格语法检查。默认为 false。",
           "type": "boolean"
         },
         "enableParallelLoader": {
-          "description": "是否启用多进程编译。",
+          "description": "是否启用多进程编译。默认为 false。",
           "type": "boolean"
         },
         "enableDistFileMinify": {
-          "description": "是否压缩编译产物。",
+          "description": "是否压缩编译产物，仅在真机预览/真机调试时生效。默认为 false。",
           "type": "boolean"
         },
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -575,9 +701,17 @@
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 auto。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
+        },
+        "mergeVirtualHostAttributes": {
+          "description": "是否合并组件虚拟节点外层属性（目前仅支持 style、class 属性）。",
+          "type": "boolean"
+        },
+        "lazyCodeLoading": {
+          "description": "目前仅支持值 requiredComponents，代表开启小程序按需注入特性。",
+          "type": "string"
         }
       }
     },
@@ -598,6 +732,13 @@
             "enum": ["audio"]
           }
         },
+        "prefetches": {
+          "description": "预请求的所有 url 的列表。",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
         "optimization": {
           "description": "优化配置。",
           "type": "object",
@@ -611,7 +752,6 @@
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -620,7 +760,7 @@
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 auto。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
         }
@@ -642,8 +782,32 @@
               "description": "是否启用 ES6 转 ES5。",
               "type": "boolean"
             },
+            "postcss": {
+              "description": "上传代码时样式是否自动补全。",
+              "type": "boolean"
+            },
             "minified": {
-              "description": "是否启用脚本代码自动压缩。",
+              "description": "上传代码时是否自动压缩脚本文件。",
+              "type": "boolean"
+            },
+            "urlCheck": {
+              "description": "是否检查安全域名和 TLS 版本。",
+              "type": "boolean"
+            },
+            "autoCompile": {
+              "description": "修改文件的时候是否自动编译。",
+              "type": "boolean"
+            },
+            "mockUpdate": {
+              "description": "下次编译是否模拟更新。",
+              "type": "boolean"
+            },
+            "scripts": {
+              "description": "是否启动自定义处理命令。",
+              "type": "boolean"
+            },
+            "mockLogin": {
+              "description": "是否开启宿主登录模拟。",
               "type": "boolean"
             }
           }
@@ -658,10 +822,19 @@
             "type": "string"
           }
         },
+        "optimization": {
+          "description": "优化配置。",
+          "type": "object",
+          "properties": {
+            "subPackages": {
+              "description": "是否开启分包优化。",
+              "type": "boolean"
+            }
+          }
+        },
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -670,7 +843,7 @@
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 auto。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
         }
@@ -703,13 +876,25 @@
             "urlCheck": {
               "description": "是否检查安全域名和 TLS 版本。",
               "type": "boolean"
+            },
+            "babelSetting": {
+              "description": "Babel 的配置项。",
+              "type": "object",
+              "properties": {
+                "ignore": {
+                  "description": "需要跳过 Babel 编译（包括代码压缩）处理的文件或目录。",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
             }
           }
         },
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -718,7 +903,7 @@
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 auto。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
         }
@@ -754,11 +939,7 @@
         },
         "permission": {
           "description": "接口权限设置。",
-          "type": "object",
-          "items": {
-            "description": "要申请的权限。",
-            "type": "string"
-          }
+          "type": "object"
         },
         "workers": {
           "description": "Worker 代码目录。",
@@ -784,7 +965,6 @@
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
               "description": "是否开启 uni 统计。",
@@ -793,7 +973,7 @@
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 auto。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
         }
@@ -804,22 +984,21 @@
       "type": "object",
       "properties": {
         "appid": {
-          "description": "飞书小程序的 appid。",
+          "description": "快手小程序的 appid。",
           "type": "string"
         },
         "uniStatistics": {
           "description": "uni 统计配置项。",
           "type": "object",
-          "required": ["enable"],
           "properties": {
             "enable": {
-              "description": "是否开启 uni 统计。",
+              "description": "是否开启 uni 统计。默认为 false。",
               "type": "boolean"
             }
           }
         },
         "scopedSlotsCompiler": {
-          "description": "作用域插槽编译模式。",
+          "description": "Vue2 作用域插槽编译模式。默认为 augmented。",
           "type": "string",
           "enum": ["auto", "legacy", "augmented"]
         }

@@ -29,24 +29,24 @@
               ]
             },
             "animationDuration": {
-              "description": "窗口显示动画的持续时间，单位 ms。",
+              "description": "窗口显示动画的持续时间。单位为 ms。默认为 300。",
               "type": "number"
             },
             "renderingMode": {
               "description": "渲染模式。",
-              "type": "object",
+              "type": "string",
               "enum": ["seperated"]
             },
             "rpxCalcMaxDeviceWidth": {
-              "description": "rpx 计算所支持的最大设备宽度，单位 px。",
+              "description": "rpx 计算所支持的最大设备宽度。单位为 px。默认为 960。",
               "type": "number"
             },
             "rpxCalcBaseDeviceWidthN": {
-              "description": "rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px。",
+              "description": "rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算。单位为 px。默认为 375。",
               "type": "number"
             },
             "rpxCalcIncludeWidth": {
-              "description": "rpx 计算特殊处理的值，始终按实际的设备宽度计算。单位 rpx。",
+              "description": "rpx 计算特殊处理的值，始终按实际的设备宽度计算。单位为 rpx。默认为 750。",
               "type": "number"
             }
           }
@@ -246,22 +246,13 @@
       "type": "string"
     },
     "leftWindow": {
-      "allOf": [
-        { "$ref": "#/definitions/window" },
-        { "description": "大屏左侧窗口。" }
-      ]
+      "allOf": [{ "$ref": "#/definitions/window" }, { "description": "大屏左侧窗口。" }]
     },
     "topWindow": {
-      "allOf": [
-        { "$ref": "#/definitions/window" },
-        { "description": "大屏顶部窗口。" }
-      ]
+      "allOf": [{ "$ref": "#/definitions/window" }, { "description": "大屏顶部窗口。" }]
     },
     "rightWindow": {
-      "allOf": [
-        { "$ref": "#/definitions/window" },
-        { "description": "大屏右侧窗口。" }
-      ]
+      "allOf": [{ "$ref": "#/definitions/window" }, { "description": "大屏右侧窗口。" }]
     }
   },
   "definitions": {
@@ -270,7 +261,7 @@
       "type": "object",
       "properties": {
         "backgroundColor": {
-          "description": "背景颜色。",
+          "description": "背景颜色，#RRGGBB 格式。",
           "type": "string"
         },
         "buttons": {
@@ -280,29 +271,20 @@
             "type": "object",
             "properties": {
               "type": {
-                "description": "自定义按钮样式。",
+                "description": "自定义按钮样式。默认为 none。",
                 "type": "string",
-                "enum": [
-                  "forward",
-                  "back",
-                  "share",
-                  "favorite",
-                  "home",
-                  "menu",
-                  "close",
-                  "none"
-                ]
+                "enum": ["forward", "back", "share", "favorite", "home", "menu", "close", "none"]
               },
               "color": {
-                "description": "自定义按钮文字颜色，默认和标题文字颜色一样。",
+                "description": "自定义按钮文字颜色。默认和标题文字颜色一样。",
                 "type": "string"
               },
               "background": {
-                "description": "自定义按钮背景色，titleNView.type 为 transparent 时有效。",
+                "description": "自定义按钮背景色，titleNView.type 为 transparent 时有效。默认为灰色半透明。",
                 "type": "string"
               },
               "colorPressed": {
-                "description": "自定义按钮按下状态文字颜色。",
+                "description": "自定义按钮按下状态文字颜色。默认值为 color 属性值自动调整透明度为 0.3。",
                 "type": "string"
               },
               "float": {
@@ -320,27 +302,32 @@
                 "type": "string"
               },
               "fontSrc": {
-                "description": "自定义按钮字体文件路径。支持本地地址。",
+                "description": "自定义按钮字体文件路径。只支持本地地址。",
                 "type": "string"
               },
               "select": {
-                "description": "自定义按钮是否显示下箭头。",
+                "description": "自定义按钮是否显示下箭头。默认为 false。",
                 "type": "boolean"
               },
               "text": {
-                "description": "自定义按钮文字内容。",
+                "description": "自定义按钮文字内容。使用字体图标时 unicode 字符表示必须 '\\u' 开头，如 '\\ue123'。",
                 "type": "string"
               },
               "width": {
-                "description": "自定义按钮文字内容。支持像素值和 auto。",
+                "description": "自定义按钮文字内容。支持像素值和 auto，不支持 rpx。默认为 44px。",
                 "type": "string"
               }
             }
           }
         },
         "titleColor": {
-          "description": "标题颜色。",
+          "description": "标题颜色。默认为 #000000。",
           "type": "string"
+        },
+        "titleOverflow": {
+          "description": "标题文字超出显示区域时处理方式。默认为 ellipsis。",
+          "type": "string",
+          "enum": ["ellipsis", "clip"]
         },
         "titleText": {
           "description": "标题内容。",
@@ -351,9 +338,231 @@
           "type": "string"
         },
         "type": {
-          "description": "导航栏样式。",
+          "description": "导航栏样式。默认为 default。",
           "type": "string",
           "enum": ["default", "transparent", "float"]
+        },
+        "tags": {
+          "description": "原生 View 增强。",
+          "type": "array",
+          "items": {
+            "id": {
+              "description": "绘制操作标识。",
+              "type": "string"
+            },
+            "tag": {
+              "description": "绘制操作类型。",
+              "type": "string",
+              "enum": ["img", "rect", "font", "richtext", "input"]
+            },
+            "inputStyles": {
+              "description": "绘制输入框的样式。",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "description": "输入框类型。默认为 text。",
+                  "type": "string",
+                  "enum": ["email", "number", "search", "tel", "text", "url"]
+                },
+                "placeholder": {
+                  "description": "输入框的提示文本。",
+                  "type": "string"
+                },
+                "fontSize": {
+                  "description": "输入框的字体大小。默认为 16px。",
+                  "type": "string"
+                },
+                "borderWidth": {
+                  "description": "输入框的边框宽度。默认为 1px。",
+                  "type": "string"
+                },
+                "borderColor": {
+                  "description": "输入框的边框颜色，#RRGGBB 格式。默认为 #000000。",
+                  "type": "string"
+                },
+                "borderRadius": {
+                  "description": "输入框边框圆角半径。默认为 0px。",
+                  "type": "string"
+                }
+              }
+            },
+            "position": {
+              "description": "绘制内容区域。",
+              "type": "object",
+              "properties": {
+                "top": {
+                  "description": "区域顶部相对于作用对象（或容器）向下的偏移量。可填写百分比或 auto。默认为 0px。",
+                  "type": "string"
+                },
+                "left": {
+                  "description": "区域顶部相对于作用对象（或容器）向右的偏移量。可填写百分比或 auto。默认为 0px。",
+                  "type": "string"
+                },
+                "width": {
+                  "description": "区域宽度。可填写像素值或百分比。默认为 100%。",
+                  "type": "string"
+                },
+                "height": {
+                  "description": "区域高度。可填写像素值或百分比。默认为 100%。",
+                  "type": "string"
+                },
+                "bottom": {
+                  "description": "区域顶部相对于作用对象（或容器）向上的偏移量。可填写百分比或 auto。",
+                  "type": "string"
+                },
+                "right": {
+                  "description": "区域顶部相对于作用对象（或容器）向左的偏移量。可填写百分比或 auto。",
+                  "type": "string"
+                }
+              }
+            },
+            "rectStyles": {
+              "description": "绘制区域的样式。tag 为 rect 时有效。",
+              "type": "object",
+              "properties": {
+                "color": {
+                  "description": "绘制颜色，#RRGGBB 格式。默认为 #ffffff。",
+                  "type": "string"
+                },
+                "radius": {
+                  "description": "矩形区域的圆角半径。默认为 0px。",
+                  "type": "string"
+                },
+                "borderColor": {
+                  "description": "矩形边框颜色，#RRGGBB 格式。默认为 color 的值。",
+                  "type": "string"
+                },
+                "borderWidth": {
+                  "description": "矩形边框宽度。默认为 0px。",
+                  "type": "string"
+                }
+              }
+            },
+            "src": {
+              "description": "绘制的图片资源。",
+              "type": ["string", "object"]
+            },
+            "sprite": {
+              "description": "图片源的绘制区域。",
+              "type": "object",
+              "properties": {
+                "top": {
+                  "description": "区域顶部相对于作用对象（或容器）向下的偏移量。可填写百分比或 auto。默认为 0px。",
+                  "type": "string"
+                },
+                "left": {
+                  "description": "区域顶部相对于作用对象（或容器）向右的偏移量。可填写百分比或 auto。默认为 0px。",
+                  "type": "string"
+                },
+                "width": {
+                  "description": "区域宽度。可填写像素值或百分比。默认为 100%。",
+                  "type": "string"
+                },
+                "height": {
+                  "description": "区域高度。可填写像素值或百分比。默认为 100%。",
+                  "type": "string"
+                },
+                "bottom": {
+                  "description": "区域顶部相对于作用对象（或容器）向上的偏移量。可填写百分比或 auto。",
+                  "type": "string"
+                },
+                "right": {
+                  "description": "区域顶部相对于作用对象（或容器）向左的偏移量。可填写百分比或 auto。",
+                  "type": "string"
+                }
+              }
+            },
+            "text": {
+              "description": "绘制的文本内容。tag 为 font 时有效。",
+              "type": "string",
+              "properties": {}
+            },
+            "textStyles": {
+              "description": "绘制文本的样式。",
+              "type": "object",
+              "properties": {
+                "align": {
+                  "description": "水平对齐方式。默认为 center。",
+                  "type": "string",
+                  "enum": ["left", "right", "center"]
+                },
+                "color": {
+                  "description": "字体颜色，#RRGGBB 格式。默认为 #000000。",
+                  "type": "string",
+                  "enum": ["left", "right", "center"]
+                },
+                "decoration": {
+                  "description": "文本装饰。默认为 none。",
+                  "type": "string",
+                  "enum": ["none", "underline", "line-through"]
+                },
+                "family": {
+                  "description": "字体名称。",
+                  "type": "string"
+                },
+                "fontSrc": {
+                  "description": "字体文件路径。",
+                  "type": "string"
+                },
+                "lineSpacing": {
+                  "description": "文本行间距。可填写像素值或百分比。默认为 20%。",
+                  "type": "string"
+                },
+                "margin": {
+                  "description": "字体边距。可填写像素值或百分比。默认为 0px。",
+                  "type": "string"
+                },
+                "overflow": {
+                  "description": "文本内容超出显示区域时处理方式。默认为 clip。",
+                  "type": "string",
+                  "enum": ["clip", "ellipsis"]
+                },
+                "size": {
+                  "description": "字体大小。默认为 16px。",
+                  "type": "string"
+                },
+                "style": {
+                  "description": "字体样式。默认为 normal。",
+                  "type": "string",
+                  "enum": ["normal", "italic"]
+                },
+                "verticalAlign": {
+                  "description": "垂直对齐方式。默认为 middle。",
+                  "type": "string",
+                  "enum": ["top", "middle", "bottom"]
+                },
+                "weight": {
+                  "description": "字体粗细。默认为 normal。",
+                  "type": "string",
+                  "enum": ["normal", "bold"]
+                },
+                "whiteSpace": {
+                  "description": "文本换行模式。默认为 nowrap。",
+                  "type": "string",
+                  "enum": ["nowrap", "normal"]
+                }
+              }
+            },
+            "richTextStyles": {
+              "description": "绘制富文本的样式。",
+              "type": "object",
+              "properties": {
+                "align": {
+                  "description": "水平对齐方式。默认为 center。",
+                  "type": "string",
+                  "enum": ["left", "right", "center"]
+                },
+                "family": {
+                  "description": "字体名称。",
+                  "type": "string"
+                },
+                "fontSrc": {
+                  "description": "字体文件路径。",
+                  "type": "string"
+                }
+              }
+            }
+          }
         },
         "searchInput": {
           "description": "原生导航栏上的搜索框配置。",
@@ -364,16 +573,16 @@
               "type": "boolean"
             },
             "align": {
-              "description": "非输入状态下文本的对齐方式。",
+              "description": "非输入状态下文本的对齐方式。默认为 center。",
               "type": "string",
               "enum": ["center", "left", "right"]
             },
             "backgroundColor": {
-              "description": "背景色。",
+              "description": "背景色。默认为 rgba(255,255,255,0.5)。",
               "type": "string"
             },
             "borderRadius": {
-              "description": "输入框的圆角半径。支持像素值。",
+              "description": "输入框的圆角半径。支持像素值。默认为 0px。",
               "type": "string"
             },
             "placeholder": {
@@ -381,11 +590,11 @@
               "type": "string"
             },
             "placeholderColor": {
-              "description": "提示文本颜色。",
+              "description": "提示文本颜色。默认为 #cccccc。",
               "type": "string"
             },
             "disabled": {
-              "description": "是否禁止输入。",
+              "description": "是否禁止输入。默认为 false。",
               "type": "boolean"
             }
           }
@@ -397,7 +606,7 @@
       "type": "object",
       "properties": {
         "color": {
-          "description": "颜色。",
+          "description": "颜色，#RRGGBB 格式。",
           "type": "string"
         },
         "offset": {
@@ -845,14 +1054,7 @@
                     "properties": {
                       "description": "阴影色。",
                       "type": "string",
-                      "enum": [
-                        "grey",
-                        "blue",
-                        "green",
-                        "orange",
-                        "red",
-                        "yellow"
-                      ]
+                      "enum": ["grey", "blue", "green", "orange", "red", "yellow"]
                     }
                   },
                   "disableScroll": {

@@ -4,7 +4,7 @@ import type { UrUploadConfig } from '../types';
 
 export const buildUploadConfig = (config: UrUploadConfig) => ({
   url: buildUrl(
-    buildFullPath(config.baseUrl ?? '', config.url),
+    buildFullPath(config.baseUrl ?? '', config.url ?? ''),
     config.params,
     config.paramsSerializer,
   ),

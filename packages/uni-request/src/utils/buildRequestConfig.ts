@@ -4,7 +4,7 @@ import type { UrRequestConfig } from '../types';
 
 export const buildRequestConfig = (config: UrRequestConfig) => ({
   url: buildUrl(
-    buildFullPath(config.baseUrl ?? '', config.url),
+    buildFullPath(config.baseUrl ?? '', config.url ?? ''),
     config.params,
     config.paramsSerializer,
   ),

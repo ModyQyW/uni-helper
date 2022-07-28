@@ -4,7 +4,7 @@ import type { UrDownloadConfig } from '../types';
 
 export const buildDownloadConfig = (config: UrDownloadConfig) => ({
   url: buildUrl(
-    buildFullPath(config.baseUrl ?? '', config.url),
+    buildFullPath(config.baseUrl ?? '', config.url ?? ''),
     config.params,
     config.paramsSerializer,
   ),

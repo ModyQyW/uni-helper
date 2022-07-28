@@ -1,9 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { settle } from './settle';
+import type { UrResponse } from '../types';
 
 describe('core::settle', () => {
-  let resolve;
-  let reject;
+  let resolve: (value: UrResponse | PromiseLike<UrResponse>) => void;
+  let reject: (reason?: any) => void;
 
   beforeEach(() => {
     resolve = vi.fn();
@@ -11,7 +12,7 @@ describe('core::settle', () => {
   });
 
   it('should resolve promise if status is not set', async () => {
-    const response = {
+    const response: UrResponse = {
       config: {
         validateStatus: () => true,
       },
@@ -22,7 +23,7 @@ describe('core::settle', () => {
   });
 
   it('should resolve promise if validateStatus is not set', () => {
-    const response = {
+    const response: UrResponse = {
       status: 500,
       config: {},
     };
@@ -32,7 +33,7 @@ describe('core::settle', () => {
   });
 
   it('should resolve promise if validateStatus returns true', () => {
-    const response = {
+    const response: UrResponse = {
       status: 500,
       config: {
         validateStatus: () => true,
@@ -57,6 +58,7 @@ describe('core::settle', () => {
     settle(resolve, reject, response);
     expect(resolve).not.toHaveBeenCalled();
     expect(reject).toHaveBeenCalled();
+    // @ts-expect-error Property 'calls' does not exist on type '(reason?: any) => void'.ts(2339)
     const reason = reject.calls[0][0];
     expect(reason instanceof Error).toBe(true);
     expect(reason.message).toBe('Request failed with status code 500');

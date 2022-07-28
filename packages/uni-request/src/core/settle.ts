@@ -1,6 +1,11 @@
 import { UrError } from './UrError';
+import type { UrData, UrResponse } from '../types';
 
-export const settle = (resolve, reject, response) => {
+export const settle = <T = UrData, D = UrData>(
+  resolve: (value: UrResponse<T, D> | PromiseLike<UrResponse<T, D>>) => void,
+  reject: (reason?: any) => void,
+  response: UrResponse<T, D>,
+) => {
   const validateStatus = response?.config?.validateStatus;
   if (!response.status || !validateStatus || validateStatus(response.status)) {
     resolve(response);

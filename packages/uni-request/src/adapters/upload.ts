@@ -1,47 +1,51 @@
 import statuses from 'statuses';
-import { settle, UrCanceledError } from '../core';
-import { buildDownloadConfig } from '../utils';
+import { settle } from '../core/settle';
+import { UrCanceledError } from '../core/UrCanceledError';
+import { buildUploadConfig } from '../utils';
+import type { UrCancelTokenListener } from '../core/UrCancelToken';
+import type { UrData, UrUploadConfig, UrUploadResponse } from '../types';
 
-export const downloadAdapter = (config) =>
+export const uploadAdapter = <T = UrData, D = UrData>(config: UrUploadConfig<T, D>) =>
   new Promise((resolve, reject) => {
     const { onHeadersReceived, onProgressUpdate, cancelToken, signal } = config;
 
-    const downloadConfig = buildDownloadConfig(config);
+    const uploadConfig = buildUploadConfig(config);
 
-    let onCanceled;
+    let onCanceled: UrCancelTokenListener;
     const done = () => {
       cancelToken?.unsubscribe(onCanceled);
+      // @ts-expect-error No overload matches this call.
       signal?.removeEventListener('abort', onCanceled);
     };
 
-    let response;
-    let task;
+    let response: UrUploadResponse<T, D>;
+    let task: UniApp.UploadTask | undefined;
 
-    task = uni.downloadFile({
-      ...downloadConfig,
+    task = uni.uploadFile({
+      ...uploadConfig,
       success: (res) => {
         response = {
           ...response,
+          // @ts-expect-error
           errMsg: res?.errMsg ?? res?.errmsg ?? res?.msg ?? res?.message,
+          // @ts-expect-error
           errno: res?.errno,
-          tempFilePath: res?.tempFilePath,
-          filePath: res?.filePath,
-          profile: res?.profile,
           status: res?.statusCode,
           statusText: statuses(res?.statusCode)?.toString(),
+          // @ts-expect-error
           headers: res?.header ?? res?.headers,
           config,
-          data: {
-            tempFilePath: res?.tempFilePath,
-            filePath: res?.filePath,
-          },
+          // @ts-expect-error
+          data: res?.data,
           request: task,
         };
       },
       fail: (err) => {
         response = {
           ...response,
+          // @ts-expect-error
           errMsg: err?.errMsg ?? err?.errmsg ?? err?.msg ?? err?.message,
+          // @ts-expect-error
           errno: err?.errno,
         };
       },
@@ -78,12 +82,14 @@ export const downloadAdapter = (config) =>
         if (!task) {
           return;
         }
-        reject(!cancel || cancel.type ? new UrCanceledError(null, config, task) : cancel);
+        // @ts-expect-error
+        reject(!cancel || cancel.type ? new UrCanceledError(undefined, config, task) : cancel);
         task.abort();
         task = undefined;
       };
 
       cancelToken?.subscribe(onCanceled);
+      // @ts-expect-error
       signal?.aborted ? onCanceled() : signal?.addEventListener('abort', onCanceled);
     }
   });

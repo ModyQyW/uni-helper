@@ -1,8 +1,8 @@
 import { buildFullPath } from './buildFullPath';
 import { buildUrl } from './buildUrl';
-import type { UrUploadConfig } from '../types';
+import type { UrData, UrUploadConfig } from '../types';
 
-export const buildUploadConfig = (config: UrUploadConfig) => ({
+export const buildUploadConfig = <T = UrData, D = UrData>(config: UrUploadConfig<T, D>) => ({
   url: buildUrl(
     buildFullPath(config.baseUrl ?? '', config.url ?? ''),
     config.params,

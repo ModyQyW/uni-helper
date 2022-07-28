@@ -4,11 +4,11 @@ import { isUrError } from './isUrError';
 
 describe('core::isUrError', () => {
   it('should return true if the error is created by core::createError', () => {
-    expect(isUrError(new UrError('Boom!', null, { foo: 'bar' }))).toBe(true);
+    expect(isUrError(new UrError('Boom!', undefined, { foo: 'bar' }))).toBe(true);
   });
 
   it('should return true if the error is enhanced by core::enhanceError', () => {
-    expect(isUrError(UrError.from(new Error('Boom!'), null, { foo: 'bar' }))).toBe(true);
+    expect(isUrError(UrError.from(new Error('Boom!'), undefined, { foo: 'bar' }))).toBe(true);
   });
 
   it('should return false if the error is a normal Error instance', () => {

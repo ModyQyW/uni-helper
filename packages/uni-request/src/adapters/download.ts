@@ -2,11 +2,11 @@ import statuses from 'statuses';
 import { settle } from '../core/settle';
 import { UrCanceledError } from '../core/UrCanceledError';
 import { buildDownloadConfig } from '../utils';
-import type { UrCancelTokenListener } from '../core/UrCancelToken';
-import type { UrData, UrDownloadConfig, UrDownloadResponse } from '../types';
+import { UrCancelTokenListener } from '../core/UrCancelToken';
+import { UrData, UrDownloadConfig, UrDownloadResponse } from '../types';
 
 export const downloadAdapter = <T = UrData, D = UrData>(config: UrDownloadConfig<T, D>) =>
-  new Promise((resolve, reject) => {
+  new Promise<UrDownloadResponse<T, D>>((resolve, reject) => {
     const { onHeadersReceived, onProgressUpdate, cancelToken, signal } = config;
 
     const downloadConfig = buildDownloadConfig(config);
@@ -63,7 +63,7 @@ export const downloadAdapter = <T = UrData, D = UrData>(config: UrDownloadConfig
         if (onProgressUpdate) {
           task?.offProgressUpdate(onProgressUpdate);
         }
-        settle(
+        settle<T, D, UrDownloadResponse<T, D>>(
           (val) => {
             resolve(val);
             done();

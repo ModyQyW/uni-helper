@@ -2,11 +2,11 @@ import statuses from 'statuses';
 import { settle } from '../core/settle';
 import { UrCanceledError } from '../core/UrCanceledError';
 import { buildRequestConfig } from '../utils';
-import type { UrCancelTokenListener } from '../core/UrCancelToken';
-import type { UrData, UrRequestConfig, UrRequestResponse } from '../types';
+import { UrCancelTokenListener } from '../core/UrCancelToken';
+import { UrData, UrRequestConfig, UrRequestResponse } from '../types';
 
 export const requestAdapter = <T = UrData, D = UrData>(config: UrRequestConfig<T, D>) =>
-  new Promise((resolve, reject) => {
+  new Promise<UrRequestResponse<T, D>>((resolve, reject) => {
     const { onHeadersReceived, onChunkReceived, cancelToken, signal } = config;
 
     const requestConfig = buildRequestConfig(config);
@@ -60,7 +60,7 @@ export const requestAdapter = <T = UrData, D = UrData>(config: UrRequestConfig<T
           // @ts-expect-error uni-app types lost
           task?.offChunkReceived(onChunkReceived);
         }
-        settle(
+        settle<T, D, UrRequestResponse<T, D>>(
           (val) => {
             resolve(val);
             done();

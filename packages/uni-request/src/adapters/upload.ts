@@ -2,11 +2,11 @@ import statuses from 'statuses';
 import { settle } from '../core/settle';
 import { UrCanceledError } from '../core/UrCanceledError';
 import { buildUploadConfig } from '../utils';
-import type { UrCancelTokenListener } from '../core/UrCancelToken';
-import type { UrData, UrUploadConfig, UrUploadResponse } from '../types';
+import { UrCancelTokenListener } from '../core/UrCancelToken';
+import { UrData, UrUploadConfig, UrUploadResponse } from '../types';
 
 export const uploadAdapter = <T = UrData, D = UrData>(config: UrUploadConfig<T, D>) =>
-  new Promise((resolve, reject) => {
+  new Promise<UrUploadResponse<T, D>>((resolve, reject) => {
     const { onHeadersReceived, onProgressUpdate, cancelToken, signal } = config;
 
     const uploadConfig = buildUploadConfig(config);
@@ -56,7 +56,7 @@ export const uploadAdapter = <T = UrData, D = UrData>(config: UrUploadConfig<T, 
         if (onProgressUpdate) {
           task?.offProgressUpdate(onProgressUpdate);
         }
-        settle(
+        settle<T, D, UrUploadResponse<T, D>>(
           (val) => {
             resolve(val);
             done();

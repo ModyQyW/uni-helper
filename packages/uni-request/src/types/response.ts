@@ -8,7 +8,7 @@ export interface UrBaseResponse<T = UrData, D = UrData> {
   status?: number;
   statusText?: string;
   headers?: UrHeaders;
-  config: UrBaseConfig<T, D>;
+  config?: UrBaseConfig<T, D>;
   request?: any;
 }
 
@@ -16,7 +16,7 @@ export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseRespons
   data?: T;
   cookies?: string[];
   profile?: UrProfile;
-  config: UrRequestConfig<T, D>;
+  config?: UrRequestConfig<T, D>;
   request?: UrRequestTask;
 }
 
@@ -25,13 +25,13 @@ export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseRespon
   tempFilePath?: string;
   filePath?: string;
   profile?: UrProfile;
-  config: UrDownloadConfig<T, D>;
+  config?: UrDownloadConfig<T, D>;
   request?: UrDownloadTask;
 }
 
 export interface UrUploadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
   data?: T;
-  config: UrUploadConfig<T, D>;
+  config?: UrUploadConfig<T, D>;
   request?: UrUploadTask;
 }
 

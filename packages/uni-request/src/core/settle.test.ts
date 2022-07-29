@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { UrBaseResponse } from '../types';
 import { settle } from './settle';
-import type { UrResponse } from '../types';
 
 describe('core::settle', () => {
-  let resolve: (value: UrResponse | PromiseLike<UrResponse>) => void;
+  let resolve: (value: UrBaseResponse | PromiseLike<UrBaseResponse>) => void;
   let reject: (reason?: any) => void;
 
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('core::settle', () => {
   });
 
   it('should resolve promise if status is not set', async () => {
-    const response: UrResponse = {
+    const response = {
       config: {
         validateStatus: () => true,
       },
@@ -23,7 +23,7 @@ describe('core::settle', () => {
   });
 
   it('should resolve promise if validateStatus is not set', () => {
-    const response: UrResponse = {
+    const response = {
       status: 500,
       config: {},
     };
@@ -33,7 +33,7 @@ describe('core::settle', () => {
   });
 
   it('should resolve promise if validateStatus returns true', () => {
-    const response: UrResponse = {
+    const response = {
       status: 500,
       config: {
         validateStatus: () => true,

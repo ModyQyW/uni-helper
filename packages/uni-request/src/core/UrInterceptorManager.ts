@@ -1,8 +1,8 @@
-import { UrConfig, UrData } from '../types';
+import { UrBaseConfig, UrData } from '../types';
 
 export interface UrInterceptorOptions<T = UrData, D = UrData> {
   synchronous?: boolean;
-  runWhen?: (config: UrConfig<T, D>) => boolean;
+  runWhen?: (config: UrBaseConfig<T, D>) => boolean;
 }
 
 export interface UrInterceptorManagerHandlerFulfilled<V, T = V> {
@@ -57,7 +57,7 @@ export class UrInterceptorManager<V, T = V, D = UrData> {
     }
   }
 
-  forEach(fn: (...rest: any) => any) {
+  forEach(fn: (handler: UrInterceptorManagerHandler<V, T, D>) => any) {
     for (const handler of this.handlers) {
       if (handler && fn) {
         fn(handler);

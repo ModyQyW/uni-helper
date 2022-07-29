@@ -1,5 +1,5 @@
+import { UrBaseConfig, UrData, UrBaseTask } from '../types';
 import { UrCanceledError } from './UrCanceledError';
-import type { UrConfig, UrData, UrTask } from '../types';
 
 export interface UrCancel {
   message?: string;
@@ -10,7 +10,7 @@ export interface UrCancelStatic {
 }
 
 export interface UrCanceler<T = UrData, D = UrData> {
-  (message?: string, config?: UrConfig<T, D>, request?: UrTask): void;
+  (message?: string, config?: UrBaseConfig<T, D>, request?: UrBaseTask): void;
 }
 
 export interface UrCancelTokenListener {

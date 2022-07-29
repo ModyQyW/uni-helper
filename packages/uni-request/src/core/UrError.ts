@@ -1,4 +1,4 @@
-import type { UrConfig, UrData, UrResponse, UrTask } from '../types';
+import { UrBaseConfig, UrData, UrBaseResponse, UrBaseTask } from '../types';
 
 export class UrError<T = UrData, D = UrData> extends Error {
   static ERR_FR_TOO_MANY_REDIRECTS = 'ERR_FR_TOO_MANY_REDIRECTS';
@@ -15,9 +15,9 @@ export class UrError<T = UrData, D = UrData> extends Error {
   static ETIMEDOUT = 'ETIMEDOUT';
 
   code?: string;
-  config?: UrConfig<T, D>;
-  request?: UrTask;
-  response?: UrResponse<T, D>;
+  config?: UrBaseConfig<T, D>;
+  request?: UrBaseTask;
+  response?: UrBaseResponse<T, D>;
   isUrError: boolean;
   status?: number;
   cause?: Error;
@@ -25,9 +25,9 @@ export class UrError<T = UrData, D = UrData> extends Error {
   constructor(
     message?: string,
     code?: string,
-    config?: UrConfig<T, D>,
-    request?: UrTask,
-    response?: UrResponse<T, D>,
+    config?: UrBaseConfig<T, D>,
+    request?: UrBaseTask,
+    response?: UrBaseResponse<T, D>,
   ) {
     super(message);
 
@@ -69,7 +69,7 @@ export class UrError<T = UrData, D = UrData> extends Error {
       name: string;
       message?: string;
       stack?: string;
-      config?: UrConfig<T, D>;
+      config?: UrBaseConfig<T, D>;
       code?: string;
       status?: number;
       [key: string]: any;
@@ -79,9 +79,9 @@ export class UrError<T = UrData, D = UrData> extends Error {
   static from<TT = UrData, DD = UrData>(
     error?: Error,
     code?: string,
-    config?: UrConfig<TT, DD>,
-    request?: UrTask,
-    response?: UrResponse<TT, DD>,
+    config?: UrBaseConfig<TT, DD>,
+    request?: UrBaseTask,
+    response?: UrBaseResponse<TT, DD>,
     customProps?: Record<string, any>,
   ) {
     const urError = new UrError(error?.message, code, config, request, response);

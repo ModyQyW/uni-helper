@@ -68,7 +68,8 @@ export class Ur<T = UrData, D = UrData> {
       responseInterceptorChain.push(interceptor.fulfilled, interceptor.rejected);
     });
 
-    let promise;
+    // TODO: better types
+    let promise: any;
     let i = 0;
     let len = 0;
 

@@ -29,6 +29,7 @@ export default defineConfig([
     dts: true,
     minify: true,
     shims: true,
+    splitting: false,
     target: 'es5',
   },
 ]);

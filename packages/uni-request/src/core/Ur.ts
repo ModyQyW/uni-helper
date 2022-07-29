@@ -145,6 +145,11 @@ export class Ur<T = UrData, D = UrData> {
 }
 
 export interface Ur<T = UrData, D = UrData> {
+  request<TT = T, DD = D, R = UrBaseResponse<TT, DD>>(
+    configOrUrl: string | UrBaseConfig<TT, DD>,
+    config?: UrBaseConfig<TT, DD>,
+  ): Promise<R>;
+
   request<TT = T, DD = D, R = UrRequestResponse<TT, DD>>(
     config: UrRequestConfig<TT, DD>,
   ): Promise<R>;

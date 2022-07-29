@@ -1,6 +1,6 @@
+import { UrData, UrRequestConfig } from '../types';
 import { buildFullPath } from './buildFullPath';
 import { buildUrl } from './buildUrl';
-import type { UrData, UrRequestConfig } from '../types';
 
 export const buildRequestConfig = <T = UrData, D = UrData>(config: UrRequestConfig<T, D>) =>
   ({

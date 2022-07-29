@@ -1,6 +1,6 @@
+import { UrData, UrUploadConfig } from '../types';
 import { buildFullPath } from './buildFullPath';
 import { buildUrl } from './buildUrl';
-import type { UrData, UrUploadConfig } from '../types';
 
 export const buildUploadConfig = <T = UrData, D = UrData>(config: UrUploadConfig<T, D>) =>
   ({

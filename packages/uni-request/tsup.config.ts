@@ -7,7 +7,7 @@ const getTsFiles = (entry: string): string[] =>
     .readdirSync(entry)
     .flatMap((item) => {
       if (
-        item.includes('.') &&
+        item.includes('.ts') &&
         !item.includes('.test.') &&
         !item.includes('.spec.') &&
         !item.includes('.d.') &&

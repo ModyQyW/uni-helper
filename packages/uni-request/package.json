@@ -31,7 +31,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup-node && cpy src/index.d.ts dist --flat",
+    "build": "tsup-node",
     "dev": "pnpm run build --watch src",
     "lint": "npx eslint src --fix && npx tsc --noEmit && vitest run --coverage",
     "release": "npx release-it",
@@ -50,14 +50,13 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.218",
+    "@swc/core": "^1.2.220",
     "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.6.1",
+    "@types/node": "^18.6.2",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
     "@vitest/ui": "^0.19.1",
     "c8": "^7.12.0",
-    "cpy-cli": "^4.1.0",
     "tsup": "^6.2.0",
     "vitest": "^0.19.1"
   },

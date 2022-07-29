@@ -1,8 +1,9 @@
 import { adapters, requestAdapter } from '../adapters';
+import { UrBaseAdapter, UrBaseConfig, UrData } from '../types';
 import { isCancel } from './isCancel';
 import { UrCanceledError } from './UrCanceledError';
 
-const throwIfCancellationRequested = (config) => {
+const throwIfCancellationRequested = <T = UrData, D = UrData>(config: UrBaseConfig<T, D>) => {
   if (config.cancelToken) {
     config.cancelToken?.throwIfRequested();
   }
@@ -12,15 +13,16 @@ const throwIfCancellationRequested = (config) => {
   }
 };
 
-export const dispatchRequest = (config) => {
+export const dispatchRequest = <T = UrData, D = UrData>(config: UrBaseConfig<T, D>) => {
   throwIfCancellationRequested(config);
 
-  const adapter =
+  const adapter = (
     typeof config.adapter === 'string' && adapters[config.adapter]
       ? adapters[config.adapter]
       : typeof config.adapter === 'function'
       ? config.adapter
-      : requestAdapter;
+      : requestAdapter
+  ) as UrBaseAdapter<T, D>;
 
   return adapter(config).then(
     (response) => {

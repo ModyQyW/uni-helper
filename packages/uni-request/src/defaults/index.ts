@@ -1,4 +1,4 @@
-import type { UrBaseConfig } from '../types';
+import { UrBaseConfig } from '../types';
 
 export const defaults: Partial<UrBaseConfig> = {
   adapter: 'request',

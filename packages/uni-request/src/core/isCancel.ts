@@ -1,1 +1,3 @@
-export const isCancel = (payload: any) => payload?.isUrCanceledError === true;
+import { UrCancel } from './UrCancelToken';
+
+export const isCancel = (value: any): value is UrCancel => value?.isUrCanceledError === true;

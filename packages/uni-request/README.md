@@ -2,7 +2,7 @@
 
 **WIP**
 
-为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感绝大部分源于 `axios`。
+为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.0.0-alpha.1`。
 
 ## 起步
 
@@ -10,7 +10,7 @@
 
 #### `@modyqyw/uni-request` 是什么？
 
-`@modyqyw/uni-request` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感绝大部分源于 `axios`。
+`@modyqyw/uni-request` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.0.0-alpha.1`。
 
 #### 特性
 

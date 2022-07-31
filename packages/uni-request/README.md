@@ -652,7 +652,7 @@ module.exports = {
 - [luch-request](https://github.com/lei-mu/luch-request)
 - [uni-ajax](https://uniajax.ponjs.com/)
 - [vue-use](https://vueuse.org/)
-- [react-query](https://react-query.tanstack.com/)
+- [react-query](https://tanstack.com/query/)
 - [swr](https://swr.vercel.app/)
 - [vue-query](https://vue-query.vercel.app/)
 - [swrv](https://docs-swrv.netlify.app/)

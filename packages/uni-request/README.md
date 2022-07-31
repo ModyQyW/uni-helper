@@ -618,9 +618,9 @@ cancel();
 
 ### 构建
 
-目前 `@modyqyw/uni-request` 会转译到 `ES5`。如果你发现仍然存在问题，可以尝试把 `@modyqyw/uni-request` 纳入构建范围。
+目前 `@modyqyw/uni-request` 会将直接调用 `uni` API 之外的部分转译到 `es5`，底层使用了 `tsup` 和 `swc`。`uni` API 需要在项目构建时由 `uni-app` 官方提供的插件处理。
 
-对于 `vue-cli`，请修改项目根目录 `vue.config.js` 如下所示。`vue-cli` 会根据 `browserslist` 进行构建。
+对于 `vue-cli`，请修改项目根目录 `vue.config.js` 如下所示。
 
 ```js
 module.exports = {

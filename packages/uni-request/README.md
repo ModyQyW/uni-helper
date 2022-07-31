@@ -1,7 +1,5 @@
 # @modyqyw/uni-request
 
-**WIP**
-
 为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.0.0-alpha.1`。
 
 ## 起步

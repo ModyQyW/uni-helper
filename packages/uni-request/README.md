@@ -10,11 +10,11 @@
 
 #### `@modyqyw/uni-request` 是什么？
 
-`@modyqyw/uni-request` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端，在不同的情况下自动使用 `uni.request`、`uni.uploadFile` 或 `uni.downloadFile` 发起请求。灵感绝大部分源于 `axios`。
+`@modyqyw/uni-request` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感绝大部分源于 `axios`。
 
 #### 特性
 
-- 一般请求使用 [uni.request](https://uniapp.dcloud.io/api/request/request.html)
+- 默认请求使用 [uni.request](https://uniapp.dcloud.io/api/request/request.html)
 - 上传文件使用 [uni.uploadFile](https://uniapp.dcloud.io/api/request/network-file.html#uploadfile)
 - 下载文件使用 [uni.downloadFile](https://uniapp.dcloud.io/api/request/network-file.html#downloadfile)
 - 支持 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
@@ -184,7 +184,7 @@ ur('/user/12345');
 
 ```typescript
 const instance = ur.create({
-  baseURL: 'https://some-domain.com/api/',
+  baseUrl: 'https://some-domain.com/api/',
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' },
 });
@@ -210,7 +210,7 @@ const instance = ur.create({
 
 ### 请求配置
 
-这些是创建请求时可以用的配置选项。只有 `url` 是必需的。如果没有指定 `method` 且没有指定 `api`，请求将默认使用 `GET` 方法。
+这些是创建请求时可以用的配置选项。只有 `url` 是必需的。如果没有指定 `method` 且没有指定 `adapter`，请求将默认使用 `GET` 方法。
 
 ```typescript
 {
@@ -220,9 +220,9 @@ const instance = ur.create({
   // `method` 是创建请求时使用的方法
   method: 'GET', // 默认值
 
-  // `baseURL` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL
-  // 它可以通过设置一个 `baseURL` 便于为 ur 实例的方法传递相对 URL
-  baseURL: 'https://some-domain.com/api/',
+  // `baseUrl` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL
+  // 它可以通过设置一个 `baseUrl` 便于为 ur 实例的方法传递相对 URL
+  baseUrl: 'https://some-domain.com/api/',
 
   // 自定义请求头
   headers: {
@@ -371,7 +371,7 @@ ur.get('/user/12345').then((response) => {
 #### 全局配置默认值
 
 ```typescript
-ur.defaults.baseURL = 'https://api.example.com';
+ur.defaults.baseUrl = 'https://api.example.com';
 ```
 
 #### 自定义实例默认值
@@ -379,16 +379,16 @@ ur.defaults.baseURL = 'https://api.example.com';
 ```typescript
 // 创建实例时配置默认值
 const instance = ur.create({
-  baseURL: 'https://api.example.com',
+  baseUrl: 'https://api.example.com',
 });
 
 // 创建实例后修改默认值
-instance.defaults.baseURL = 'https://api.another-example.com';
+instance.defaults.baseUrl = 'https://api.another-example.com';
 ```
 
 #### 配置的优先级
 
-配置将会按优先级进行合并。优先级从低到高是内置的默认值、实例的 `defaults` 配置、请求的 `config`、`adapter` 的 `config`。后面的优先级要高于前面的。下面有一个例子。
+配置将会按优先级进行合并。优先级从低到高是内置的默认值、实例的 `defaults` 配置、请求的 `config`。后面的优先级要高于前面的。下面有一个例子。
 
 ```typescript
 // 使用库提供的默认配置创建实例
@@ -643,8 +643,6 @@ module.exports = {
 ### 为什么不是 `axios`？
 
 `axios` 非常棒，但它面对的是浏览器和 `Node.js`，即使使用了 `adapter`，某些底层功能也可能会在小程序内报错，而且需要修改大部分类型定义。
-
-因此，在理解 `axios` 源码基础上，我从头书写了这个库。
 
 ## 资源
 

@@ -19,7 +19,7 @@ export interface UrBaseConfig<T = UrData, D = UrData> {
     | UrDownloadAdapter<T, D>
     | UrUploadAdapter<T, D>;
   validateStatus?: (status: number) => boolean | null;
-  cancelToken?: UrCancelToken;
+  cancelToken?: UrCancelToken<T, D>;
   signal?: AbortSignal;
   onHeadersReceived?: (response?: { headers?: UrHeaders }) => void;
   [key: string]: any;

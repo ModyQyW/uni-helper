@@ -34,7 +34,7 @@ export interface UrCancelTokenStatic<T = UrData, D = UrData> {
 }
 
 export class UrCancelToken<T = UrData, D = UrData> {
-  private listeners: UrCancelTokenListener[] = [];
+  listeners: UrCancelTokenListener[] = [];
 
   constructor(executor: (cancel: UrCanceler<T, D>) => void) {
     if (typeof executor !== 'function') {

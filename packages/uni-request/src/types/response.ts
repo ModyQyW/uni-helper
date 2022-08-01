@@ -10,10 +10,10 @@ export interface UrBaseResponse<T = UrData, D = UrData> {
   headers?: UrHeaders;
   config?: UrBaseConfig<T, D>;
   request?: any;
+  data?: T;
 }
 
 export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
-  data?: T;
   cookies?: string[];
   profile?: UrProfile;
   config?: UrRequestConfig<T, D>;
@@ -21,7 +21,6 @@ export interface UrRequestResponse<T = UrData, D = UrData> extends UrBaseRespons
 }
 
 export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
-  data?: T;
   tempFilePath?: string;
   filePath?: string;
   profile?: UrProfile;
@@ -30,7 +29,6 @@ export interface UrDownloadResponse<T = UrData, D = UrData> extends UrBaseRespon
 }
 
 export interface UrUploadResponse<T = UrData, D = UrData> extends UrBaseResponse<T, D> {
-  data?: T;
   config?: UrUploadConfig<T, D>;
   request?: UrUploadTask;
 }

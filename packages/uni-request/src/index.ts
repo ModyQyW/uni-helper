@@ -83,6 +83,7 @@ export * from './adapters';
 export * from './core';
 export * from './defaults';
 export * from './utils';
+export * from './types';
 export { ur };
 
 export default ur;

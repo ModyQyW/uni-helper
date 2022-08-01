@@ -1,6 +1,6 @@
 {
   "name": "@modyqyw/uni-request",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "`Promise` based HTTP client for `uni-app`. 为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。",
   "keywords": [
     "uni-app",

@@ -1,6 +1,6 @@
 # 改动日志
 
-## 0.0.1
+## 0.1.0
 
 - feat: 新增 `useDownloadFile`
 - feat: 新增 `useInterceptor`

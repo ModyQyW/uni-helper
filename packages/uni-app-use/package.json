@@ -1,0 +1,65 @@
+{
+  "name": "uni-app-use",
+  "version": "0.0.0",
+  "description": "uni-app 组合式工具集。",
+  "keywords": [
+    "uni-app",
+    "uniapp",
+    "uni",
+    "use",
+    "composition"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-use"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "pnpm run build --watch src",
+    "lint": "npx eslint src --fix && npx tsc --noEmit",
+    "release": "npx release-it"
+  },
+  "dependencies": {
+    "@dcloudio/types": "^2.6.12",
+    "@vueuse/core": "^9.0.2"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.6.3",
+    "tsup": "^6.2.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): uni-app-use@${version}",
+      "tagName": "uni-app-use@${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install && pnpm run lint",
+      "after:bump": "pnpm run build"
+    }
+  }
+}

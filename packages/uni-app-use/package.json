@@ -1,7 +1,7 @@
 {
   "name": "uni-app-use",
   "version": "0.0.0",
-  "description": "uni-app 组合式工具集。",
+  "description": "uni-app 的 vueuse，组合式工具集。",
   "keywords": [
     "uni-app",
     "uniapp",

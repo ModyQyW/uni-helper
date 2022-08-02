@@ -143,7 +143,7 @@ export function useRequest<T = any>(
       ..._config,
       success: (r) => {
         response.value = r;
-        data.value = r.data as T;
+        data.value = r.data as unknown as T;
         _config?.success?.(r);
       },
       fail: (e) => {

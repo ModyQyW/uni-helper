@@ -7,4 +7,5 @@
 - feat: 新增 `useNetwork` 和 `UseNetwork`
 - feat: 新增 `useOnline` 和 `UseOnline`
 - feat: 新增 `useRequest`
+- feat: 新增 `useStorageAsync`
 - feat: 新增 `useUploadFile`

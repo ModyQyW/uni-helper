@@ -1,13 +1,13 @@
 # vscode-uni-helper
 
-增强 `uni-app` 系列产品在 `vscode` 内的体验。
+增强 `uni-app` 系列产品在 `VSCode` 内的体验。
 
 ## 插件特性
 
 本插件实际上是以下几个插件的扩展包。
 
-- [uni-app-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-snippets) - 提供 `uni-app` 基本能力代码片段
 - [uni-app-schemas](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-schemas) - 校验 `uni-app` 中的 `androidPrivacy.json`、`pages.json` 和 `manifest.json` 格式
+- [uni-app-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-snippets) - 提供 `uni-app` 基本能力代码片段
 - [uni-cloud-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-cloud-snippets) - 提供 `uni-cloud` 基本能力代码片段
 - [uni-ui-snippets](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets) - 提供 `uni-ui` 基本能力代码片段
 
@@ -31,15 +31,9 @@
 
 以下是 `vue` 插件推荐，请视情况安装。
 
-- [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) - 请仔细阅读文档，并按照文档做相应的设置
+- [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) - 请仔细阅读文档，并按照文档做相应的设置，同时建议开启 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
-<details>
-  <summary>为什么不推荐 <code>Vetur</code>？</summary>
-  <ul>
-    <li><code>Vetur</code> 已经很长时间没有更新了。</li>
-    <li><code>Volar</code> 是 <code>Vue</code> 官方最新推荐，对 <code>vue@2</code> 和 <code>vue@3</code> 支持都良好，开发非常活跃。</li>
-  </ul>
-</details>
+关于 `Vetur` 的说明请看这个 [ISSUE](https://github.com/vuejs/vetur/issues/3476)，简单来说现在更建议使用 `Volar`。
 
 ### 开发
 

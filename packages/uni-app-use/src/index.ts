@@ -3,3 +3,4 @@ export * from './useNetwork';
 export * from './useOnline';
 export * from './useRequest';
 export * from './useUploadFile';
+export * from './useDownloadFile';

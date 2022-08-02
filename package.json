@@ -32,6 +32,7 @@
     "lint:stylelint": "stylelint \"./**/*.{css,less,scss,vue,svelte}\" --fix --allow-empty-input --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
     "release:uni-app-types": "pnpm --filter uni-app-types release",
+    "release:uni-app-use": "pnpm --filter uni-app-use release",
     "release:uni-cloud-types": "pnpm --filter uni-cloud-types release",
     "release:uni-request": "pnpm --filter @modyqyw/uni-request release",
     "release:uni-ui-types": "pnpm --filter uni-ui-types release",

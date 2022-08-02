@@ -2,7 +2,7 @@
   "name": "vscode-uni-helper",
   "displayName": "uni-helper",
   "version": "0.5.2",
-  "description": "增强 `uni-app` 系列产品在 `vscode` 内的体验。",
+  "description": "增强 uni-app 系列产品在 VSCode 内的体验。",
   "categories": [
     "Extension Packs"
   ],
@@ -54,7 +54,10 @@
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx vsce package && npx vsce publish && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
+  },
+  "sponsor": {
+    "url": "https://www.paypal.me/wurui7"
   }
 }

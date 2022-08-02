@@ -78,7 +78,10 @@
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
+  },
+  "sponsor": {
+    "url": "https://www.paypal.me/wurui7"
   }
 }

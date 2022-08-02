@@ -1,5 +1,7 @@
 # uni-app-use
 
+**WIP**
+
 `uni-app` 的 `vueuse`，组合式工具集。
 
 确保你的项目支持 Composition API。
@@ -27,6 +29,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [useOnline](./src/useOnline/index.ts)
 - [UseOnline](./src/useOnline/component.ts)
 - [useRequest](./src/useRequest/index.ts)
+- [useStorageAsync](./src/useStorageAsync/index.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)
 
 ## 改动日志

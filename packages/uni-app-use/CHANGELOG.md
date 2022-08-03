@@ -1,5 +1,14 @@
 # 改动日志
 
+## 0.2.0
+
+- feat: 新增 `useColorMode` 和 `UseColorMode`
+- feat: 新增 `useDark` 和 `UseDark`
+- fix: 修复 `UseNetwork` 导入
+- fix: 修复 `UseOnline` 导入
+- feat: 新增 `usePreferredDark` 和 `UsePreferredDark`
+- feat: 新增 `usePreferredLanguage` 和 `UsePreferredLanguage`
+
 ## 0.1.0
 
 - feat: 新增 `useDownloadFile`

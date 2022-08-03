@@ -22,12 +22,20 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 ## 使用
 
+- [useColorMode](./src/useColorMode/index.ts)
+- [UseColorMode](./src/UseColorMode/component.ts)
+- [useDark](./src/useDark/index.ts)
+- [UseDark](./src/UseDark/component.ts)
 - [useDownloadFile](./src/useDownloadFile/index.ts)
 - [useInterceptor](./src/useInterceptor/index.ts)
 - [useNetwork](./src/useNetwork/index.ts)
 - [UseNetwork](./src/useNetwork/component.ts)
 - [useOnline](./src/useOnline/index.ts)
 - [UseOnline](./src/useOnline/component.ts)
+- [usePreferredDark](./src/usePreferredDark/index.ts)
+- [UsePreferredDark](./src/usePreferredDark/component.ts)
+- [usePreferredLanguage](./src/usePreferredLanguage/index.ts)
+- [UsePreferredLanguage](./src/usePreferredLanguage/component.ts)
 - [useRequest](./src/useRequest/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)

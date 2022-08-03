@@ -25,7 +25,7 @@
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./*": "./*"
+    "./*": "./dist/*"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

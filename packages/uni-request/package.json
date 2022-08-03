@@ -51,15 +51,15 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.220",
+    "@swc/core": "^1.2.222",
     "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.6.3",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
-    "@vitest/ui": "^0.20.2",
+    "@vitest/ui": "^0.20.3",
     "c8": "^7.12.0",
     "tsup": "^6.2.1",
-    "vitest": "^0.20.2"
+    "vitest": "^0.20.3"
   },
   "publishConfig": {
     "access": "public",

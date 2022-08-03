@@ -1,5 +1,5 @@
 import { defineComponent, reactive } from 'vue-demi';
-import { useNetwork } from '@vueuse/core';
+import { useNetwork } from './index';
 
 export const UseNetwork = defineComponent({
   name: 'UseNetwork',

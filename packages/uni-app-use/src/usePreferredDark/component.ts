@@ -1,5 +1,5 @@
 import { defineComponent, reactive } from 'vue-demi';
-import { usePreferredDark } from '@vueuse/core';
+import { usePreferredDark } from './index';
 
 export const UsePreferredDark = defineComponent({
   name: 'UsePreferredDark',

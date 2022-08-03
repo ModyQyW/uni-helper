@@ -1,4 +1,5 @@
 export * from './useColorMode';
+export * from './useDark';
 export * from './useDownloadFile';
 export * from './useInterceptor';
 export * from './useNetwork';

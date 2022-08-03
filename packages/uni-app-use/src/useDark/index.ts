@@ -1,0 +1,64 @@
+import { computed } from 'vue-demi';
+import { usePreferredDark } from '../usePreferredDark';
+import { BasicColorSchema, UseColorModeOptions, useColorMode } from '../useColorMode';
+
+export interface UseDarkOptions
+  extends Omit<UseColorModeOptions<BasicColorSchema>, 'modes' | 'onChanged'> {
+  /**
+   * Value applying to the target element when isDark=true
+   *
+   * @default 'dark'
+   */
+  valueDark?: string;
+
+  /**
+   * Value applying to the target element when isDark=false
+   *
+   * @default ''
+   */
+  valueLight?: string;
+
+  /**
+   * A custom handler for handle the updates.
+   * When specified, the default behavior will be overridded.
+   *
+   * @default undefined
+   */
+  onChanged?: (isDark: boolean) => void;
+}
+
+/**
+ * Reactive dark mode with auto data persistence.
+ */
+export function useDark(options: UseDarkOptions = {}) {
+  const { valueDark = 'dark', valueLight = '' } = options;
+
+  const mode = useColorMode({
+    ...options,
+    onChanged: (mode, defaultHandler) => {
+      if (options.onChanged) {
+        options.onChanged?.(mode === 'dark');
+      } else {
+        defaultHandler(mode);
+      }
+    },
+    modes: {
+      dark: valueDark,
+      light: valueLight,
+    },
+  });
+
+  const preferredDark = usePreferredDark();
+
+  const isDark = computed<boolean>({
+    get() {
+      return mode.value === 'dark';
+    },
+    set(v) {
+      if (v === preferredDark.value) mode.value = 'auto';
+      else mode.value = v ? 'dark' : 'light';
+    },
+  });
+
+  return isDark;
+}

@@ -1,5 +1,7 @@
 # uni-cloud-types
 
+[![npm](https://img.shields.io/npm/v/uni-ui-types)](https://www.npmjs.com/package/uni-ui-types) [![GitHub license](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+
 `uni-cloud` 组件类型。
 
 基于 [这个 PR](https://github.com/vuejs/core/pull/3399)，[Volar](https://github.com/johnsoncodehk/volar) 已经支持，建议使用 Volar 的 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。

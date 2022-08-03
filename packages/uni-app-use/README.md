@@ -1,5 +1,7 @@
 # uni-app-use
 
+[![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use) [![GitHub license](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+
 **WIP**
 
 `uni-app` 的 `vueuse`，组合式工具集。

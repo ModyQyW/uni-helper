@@ -24,7 +24,10 @@ export interface UseColorModeOptions<T extends string = BasicColorSchema>
    *
    * @default undefined
    */
-  onChanged?: (mode: T | BasicColorSchema) => void;
+  onChanged?: (
+    mode: T | BasicColorSchema,
+    defaultHandler: (mode: T | BasicColorSchema) => void,
+  ) => void;
 
   /**
    * Custom storage ref
@@ -98,8 +101,17 @@ export function useColorMode<T extends string = BasicColorSchema>(
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  function defaultOnChanged(mode: T | BasicColorSchema) {
+    // do nothing
+  }
+
   function onChanged(mode: T | BasicColorSchema) {
-    options.onChanged?.(mode);
+    if (options.onChanged) {
+      options.onChanged(mode, defaultOnChanged);
+    } else {
+      defaultOnChanged(mode);
+    }
   }
 
   watch(state, onChanged, { flush: 'post', immediate: true });

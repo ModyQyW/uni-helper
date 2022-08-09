@@ -1,6 +1,7 @@
 export * from './useApp';
 export * from './useArrayBufferToBase64';
 export * from './useBase64ToArrayBuffer';
+export * from './useClipboardData';
 export * from './useColorMode';
 export * from './useDark';
 export * from './useDownloadFile';

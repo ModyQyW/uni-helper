@@ -51,4 +51,5 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 ## 致谢
 
 - [vueuse](https://vueuse.org/)
+- [taro-hooks](https://taro-hooks-innocces.vercel.app/)
 - [tob-use](https://tob-use.netlify.app/)

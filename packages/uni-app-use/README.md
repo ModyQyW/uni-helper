@@ -26,6 +26,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 - [useApp](./src/useApp/index.ts)
 - [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
+- [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)
 - [useColorMode](./src/useColorMode/index.ts)
 - [UseColorMode](./src/UseColorMode/component.ts)
 - [useDark](./src/useDark/index.ts)

@@ -4,6 +4,7 @@
 
 - feat: 新增 `useApp`
 - feat: 新增 `useArrayBufferToBase64`
+- feat: 新增 `useBase64ToArrayBuffer`
 - feat: 新增 `useSupported`
 
 ## 0.2.0

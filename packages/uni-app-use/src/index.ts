@@ -13,4 +13,5 @@ export * from './usePreferredLanguage';
 export * from './useRequest';
 export * from './useStorageAsync';
 export * from './useSupported';
+export * from './useUniPlatform';
 export * from './useUploadFile';

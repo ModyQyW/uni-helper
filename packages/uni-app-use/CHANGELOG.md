@@ -6,6 +6,7 @@
 - feat: 新增 `useArrayBufferToBase64`
 - feat: 新增 `useBase64ToArrayBuffer`
 - feat: 新增 `useClipboardData` 和 `UseClipboardData`
+- feat: 新增 `useUniPlatform` 和 `UseUniPlatform`
 - feat: 新增 `useSupported`
 
 ## 0.2.0

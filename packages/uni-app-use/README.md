@@ -46,6 +46,8 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [useRequest](./src/useRequest/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)
 - [useSupported](./src/useSupported/index.ts)
+- [useUniPlatform](./src/useUniPlatform/index.ts)
+- [UseUniPlatform](./src/useUniPlatform/component.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)
 
 ## 改动日志
@@ -54,6 +56,6 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 ## 致谢
 
-- [vueuse](https://vueuse.org/)
+- [vueuse](https://vueuse.org/) [#1073](https://github.com/vueuse/vueuse/pull/1073)
 - [taro-hooks](https://taro-hooks-innocces.vercel.app/)
 - [tob-use](https://tob-use.netlify.app/)

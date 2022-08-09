@@ -24,6 +24,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 ## 使用
 
+- [useApp](./src/useApp/index.ts)
 - [useColorMode](./src/useColorMode/index.ts)
 - [UseColorMode](./src/UseColorMode/component.ts)
 - [useDark](./src/useDark/index.ts)

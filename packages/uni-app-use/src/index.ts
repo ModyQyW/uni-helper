@@ -1,3 +1,5 @@
+export * from './useApp';
+export * from './useArrayBufferToBase64';
 export * from './useColorMode';
 export * from './useDark';
 export * from './useDownloadFile';
@@ -8,4 +10,5 @@ export * from './usePreferredDark';
 export * from './usePreferredLanguage';
 export * from './useRequest';
 export * from './useStorageAsync';
+export * from './useSupported';
 export * from './useUploadFile';

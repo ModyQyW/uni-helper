@@ -1,5 +1,9 @@
 # 改动日志
 
+## Unreleased
+
+- feat: 新增 `useSupported`
+
 ## 0.2.0
 
 - feat: 新增 `useColorMode` 和 `UseColorMode`

@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use) [![GitHub license](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
-**WIP**
+**WIP: 扩充 API，后续再增加文档。**
 
 `uni-app` 的 `vueuse`，组合式工具集。
 
@@ -45,6 +45,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [UseNetwork](./src/useNetwork/component.ts)
 - [useOnline](./src/useOnline/index.ts)
 - [UseOnline](./src/useOnline/component.ts)
+- [usePage](./src/usePage/index.ts)
 - [usePreferredDark](./src/usePreferredDark/index.ts)
 - [UsePreferredDark](./src/usePreferredDark/component.ts)
 - [usePreferredLanguage](./src/usePreferredLanguage/index.ts)

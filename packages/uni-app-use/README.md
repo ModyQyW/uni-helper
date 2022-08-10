@@ -24,6 +24,12 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 ## 使用
 
+- [tryOnHide](./src/tryOnHide/index.ts)
+- [tryOnInit](./src/tryOnInit/index.ts)
+- [tryOnLoad](./src/tryOnLoad/index.ts)
+- [tryOnReady](./src/tryOnReady/index.ts)
+- [tryOnShow](./src/tryOnShow/index.ts)
+- [tryOnUnload](./src/tryOnUnload/index.ts)
 - [useApp](./src/useApp/index.ts)
 - [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
 - [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)

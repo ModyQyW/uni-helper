@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- feat: 新增 `tryOnHide`
+- feat: 新增 `tryOnInit`
+- feat: 新增 `tryOnLoad`
+- feat: 新增 `tryOnReady`
+- feat: 新增 `tryOnShow`
+- feat: 新增 `tryOnUnload`
 - feat: 新增 `useApp`
 - feat: 新增 `useArrayBufferToBase64`
 - feat: 新增 `useBase64ToArrayBuffer`

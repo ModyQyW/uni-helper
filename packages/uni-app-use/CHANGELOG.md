@@ -8,6 +8,7 @@
 - feat: 新增 `tryOnReady`
 - feat: 新增 `tryOnShow`
 - feat: 新增 `tryOnUnload`
+- feat: 新增 `useApp`
 - feat: 新增 `useArrayBufferToBase64`
 - feat: 新增 `useBase64ToArrayBuffer`
 - feat: 新增 `useClipboardData` 和 `UseClipboardData`

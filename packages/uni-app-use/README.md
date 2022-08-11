@@ -53,6 +53,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [UsePreferredDark](./src/usePreferredDark/component.ts)
 - [usePreferredLanguage](./src/usePreferredLanguage/index.ts)
 - [UsePreferredLanguage](./src/usePreferredLanguage/component.ts)
+- [useRecorderManager](./src/useRecorderManager/index.ts)
 - [useRequest](./src/useRequest/index.ts)
 - [useSocket](./src/useSocket/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)

@@ -18,6 +18,7 @@ export * from './usePage';
 export * from './usePages';
 export * from './usePreferredDark';
 export * from './usePreferredLanguage';
+export * from './useRecorderManager';
 export * from './useRequest';
 export * from './useSocket';
 export * from './useStorageAsync';

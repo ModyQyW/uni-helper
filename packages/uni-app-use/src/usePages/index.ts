@@ -1,12 +1,7 @@
-import { tryOnScopeDispose } from '@vueuse/shared';
-import { ref } from 'vue-demi';
+import { useRouter } from '../useRouter';
 
 export function usePages() {
-  const pages = ref(getCurrentPages());
-
-  tryOnScopeDispose(() => {
-    pages.value = getCurrentPages();
-  });
+  const { pages } = useRouter();
 
   return pages;
 }

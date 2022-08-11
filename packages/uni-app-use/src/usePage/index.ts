@@ -1,10 +1,6 @@
-import { computed } from 'vue-demi';
-import { usePages } from '../usePages';
+import { useRouter } from '../useRouter';
 
 export function usePage() {
-  const pages = usePages();
-
-  const page = computed(() => pages.value.at(-1));
-
+  const { page } = useRouter();
   return page;
 }

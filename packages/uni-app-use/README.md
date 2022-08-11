@@ -54,6 +54,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [usePreferredLanguage](./src/usePreferredLanguage/index.ts)
 - [UsePreferredLanguage](./src/usePreferredLanguage/component.ts)
 - [useRequest](./src/useRequest/index.ts)
+- [useRouter](./src/useRouter/index.ts)
 - [useSocket](./src/useSocket/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)
 - [useSupported](./src/useSupported/index.ts)

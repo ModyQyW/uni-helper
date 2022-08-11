@@ -19,6 +19,7 @@ export * from './usePages';
 export * from './usePreferredDark';
 export * from './usePreferredLanguage';
 export * from './useRequest';
+export * from './useRouter';
 export * from './useSocket';
 export * from './useStorageAsync';
 export * from './useSupported';

@@ -32,6 +32,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [tryOnUnload](./src/tryOnUnload/index.ts)
 - [useApp](./src/useApp/index.ts)
 - [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
+- [useBackgroundAudioManager](./src/useBackgroundAudioManager/index.ts)
 - [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)
 - [useClipboardData](./src/useClipboardData/index.ts)
 - [UseClipboardData](./src/useClipboardData/component.ts)

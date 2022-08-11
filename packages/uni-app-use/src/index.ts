@@ -6,6 +6,7 @@ export * from './tryOnShow';
 export * from './tryOnUnload';
 export * from './useApp';
 export * from './useArrayBufferToBase64';
+export * from './useBackgroundAudioManager';
 export * from './useBase64ToArrayBuffer';
 export * from './useClipboardData';
 export * from './useColorMode';

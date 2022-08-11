@@ -10,6 +10,7 @@
 - feat: 新增 `tryOnUnload`
 - feat: 新增 `useApp`
 - feat: 新增 `useArrayBufferToBase64`
+- feat: 新增 `useBackgroundAudioManager`
 - feat: 新增 `useBase64ToArrayBuffer`
 - feat: 新增 `useClipboardData` 和 `UseClipboardData`
 - feat: 新增 `useGlobalData` 和 `useGlobalData`

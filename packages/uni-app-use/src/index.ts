@@ -25,3 +25,4 @@ export * from './useStorageAsync';
 export * from './useSupported';
 export * from './useUniPlatform';
 export * from './useUploadFile';
+export * from './useVisible';

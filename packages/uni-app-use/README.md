@@ -61,6 +61,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [useUniPlatform](./src/useUniPlatform/index.ts)
 - [UseUniPlatform](./src/useUniPlatform/component.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)
+- [useVisible](./src/useVisible/index.ts)
 
 ## 改动日志
 

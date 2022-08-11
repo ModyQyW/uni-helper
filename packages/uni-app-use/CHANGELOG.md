@@ -1,6 +1,6 @@
 # 改动日志
 
-## Unreleased
+## 0.3.0
 
 - feat: 新增 `tryOnHide`
 - feat: 新增 `tryOnInit`
@@ -19,6 +19,7 @@
 - feat: 新增 `useUniPlatform` 和 `UseUniPlatform`
 - feat: 新增 `useSocket`
 - feat: 新增 `useSupported`
+- feat: 新增 `useVisible`
 - fix: 修复 `useStorageAsync` 判断
 
 ## 0.2.0

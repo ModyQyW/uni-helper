@@ -259,7 +259,7 @@ export function useStorageAsync<T extends string | number | boolean | object | n
 
   read();
 
-  if (window && listenToStorageChanges) {
+  if (listenToStorageChanges) {
     useInterceptor('setStorage', {
       complete: () => {
         setTimeout(() => read(), 0);

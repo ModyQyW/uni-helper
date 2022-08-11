@@ -30,7 +30,6 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [tryOnReady](./src/tryOnReady/index.ts)
 - [tryOnShow](./src/tryOnShow/index.ts)
 - [tryOnUnload](./src/tryOnUnload/index.ts)
-- [useApp](./src/useApp/index.ts)
 - [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
 - [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)
 - [useClipboardData](./src/useClipboardData/index.ts)

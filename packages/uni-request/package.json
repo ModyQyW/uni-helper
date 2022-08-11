@@ -33,11 +33,13 @@
   ],
   "scripts": {
     "build": "tsup-node",
+    "check:types": "npx tsc --noEmit",
     "dev": "pnpm run build --watch src",
-    "lint": "npx eslint src --fix && npx tsc --noEmit && vitest run --coverage",
+    "lint": "run-p lint:eslint check:types test:coverage",
+    "lint:eslint": "npx eslint src --fix",
     "release": "npx release-it",
-    "test": "vitest --ui",
-    "test:coverage": "vitest --ui --coverage"
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@dcloudio/types": "^2.6.12",
@@ -51,15 +53,18 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.222",
+    "@swc/core": "^1.2.224",
     "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.6.3",
+    "@types/node": "^18.7.1",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
-    "@vitest/ui": "^0.20.3",
+    "@vitest/ui": "^0.21.1",
     "c8": "^7.12.0",
+    "eslint": "^8.21.0",
+    "npm-run-all": "^4.1.5",
     "tsup": "^6.2.1",
-    "vitest": "^0.20.3"
+    "typescript": "^4.7.4",
+    "vitest": "^0.21.1"
   },
   "publishConfig": {
     "access": "public",

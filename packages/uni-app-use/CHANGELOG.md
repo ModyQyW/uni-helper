@@ -19,6 +19,7 @@
 - feat: 新增 `useUniPlatform` 和 `UseUniPlatform`
 - feat: 新增 `useSocket`
 - feat: 新增 `useSupported`
+- fix: 修复 `useStorageAsync` 判断
 
 ## 0.2.0
 

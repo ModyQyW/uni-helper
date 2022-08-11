@@ -1,23 +1,23 @@
 import { ref } from 'vue-demi';
 
 export function useClipboardData() {
-  const data = ref<string | undefined>(undefined);
+  const clipboardData = ref<string | undefined>(undefined);
 
   uni.getClipboardData({
     success: (result) => {
-      data.value = result.data;
+      clipboardData.value = result.data;
     },
     fail: () => {
-      data.value = data.value ?? undefined;
+      clipboardData.value = clipboardData.value ?? undefined;
     },
   });
 
-  const setData = (options: UniApp.SetClipboardDataOptions) => {
+  const setClipboardData = (options: UniApp.SetClipboardDataOptions) => {
     uni.setClipboardData(options);
   };
 
   return {
-    data,
-    setData,
+    clipboardData,
+    setClipboardData,
   };
 }

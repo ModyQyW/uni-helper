@@ -8,7 +8,5 @@ export function usePages() {
     pages.value = getCurrentPages();
   });
 
-  return {
-    pages,
-  };
+  return pages;
 }

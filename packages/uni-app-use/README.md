@@ -40,6 +40,8 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [useDark](./src/useDark/index.ts)
 - [UseDark](./src/UseDark/component.ts)
 - [useDownloadFile](./src/useDownloadFile/index.ts)
+- [useGlobalData](./src/useGlobalData/index.ts)
+- [UseGlobalData](./src/useGlobalData/component.ts)
 - [useInterceptor](./src/useInterceptor/index.ts)
 - [useNetwork](./src/useNetwork/index.ts)
 - [UseNetwork](./src/useNetwork/component.ts)

@@ -2,7 +2,7 @@ import { defineComponent } from 'vue-demi';
 import { useUniPlatform } from './index';
 
 export const UseUniPlatform = defineComponent({
-  name: 'UseNetwork',
+  name: 'UseUniPlatform',
   setup(props, { slots }) {
     const data = useUniPlatform();
 

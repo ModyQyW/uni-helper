@@ -1,20 +1,12 @@
-import { tryOnScopeDispose } from '@vueuse/shared';
-import { getCurrentInstance, ref, computed } from 'vue-demi';
+import { computed } from 'vue-demi';
+import { usePages } from '../usePages';
 
 export function usePage() {
-  const pages = ref(getCurrentPages());
-  const instance = ref(getCurrentInstance());
+  const { pages } = usePages();
 
-  tryOnScopeDispose(() => {
-    pages.value = getCurrentPages();
-    instance.value = getCurrentInstance();
-  });
-
-  const current = computed(() => pages.value.at(-1));
+  const page = computed(() => pages.value.at(-1));
 
   return {
-    pages,
-    instance,
-    current,
+    page,
   };
 }

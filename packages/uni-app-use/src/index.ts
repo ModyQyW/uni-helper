@@ -15,6 +15,7 @@ export * from './useInterceptor';
 export * from './useNetwork';
 export * from './useOnline';
 export * from './usePage';
+export * from './usePages';
 export * from './usePreferredDark';
 export * from './usePreferredLanguage';
 export * from './useRequest';

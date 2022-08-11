@@ -48,6 +48,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - [useOnline](./src/useOnline/index.ts)
 - [UseOnline](./src/useOnline/component.ts)
 - [usePage](./src/usePage/index.ts)
+- [usePages](./src/usePages/index.ts)
 - [usePreferredDark](./src/usePreferredDark/index.ts)
 - [UsePreferredDark](./src/usePreferredDark/component.ts)
 - [usePreferredLanguage](./src/usePreferredLanguage/index.ts)

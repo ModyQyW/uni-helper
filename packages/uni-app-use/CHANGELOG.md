@@ -14,6 +14,7 @@
 - feat: 新增 `useClipboardData` 和 `UseClipboardData`
 - feat: 新增 `useGlobalData` 和 `useGlobalData`
 - feat: 新增 `usePage`
+- feat: 新增 `usePages`
 - feat: 新增 `useUniPlatform` 和 `UseUniPlatform`
 - feat: 新增 `useSupported`
 

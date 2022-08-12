@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- feat: 新增 `usePrevPage`
+- feat: 新增 `usePrevRoute`
+- feat: 新增 `useRoute`
 - feat: 新增 `useVibrate`
 - fix: 调整 `useArrayBufferToBase64` 类型
 - fix: 调整 `useBase64ToArrayBuffer` 类型

@@ -1,6 +1,6 @@
 # 改动日志
 
-## Unreleased
+## 0.4.0
 
 - feat: 新增 `usePrevPage`
 - feat: 新增 `usePrevRoute`

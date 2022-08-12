@@ -1,8 +1,8 @@
-import { MaybeRef } from '@vueuse/shared';
-import { unref, computed } from 'vue-demi';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/shared';
+import { computed } from 'vue-demi';
 
-export function useArrayBufferToBase64(arrayBuffer: MaybeRef<ArrayBuffer>) {
-  const base64 = computed(() => uni.arrayBufferToBase64(unref(arrayBuffer)));
+export function useArrayBufferToBase64(arrayBuffer: MaybeComputedRef<ArrayBuffer>) {
+  const base64 = computed(() => uni.arrayBufferToBase64(resolveUnref(arrayBuffer)));
 
   return base64;
 }

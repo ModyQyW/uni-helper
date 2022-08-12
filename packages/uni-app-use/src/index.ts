@@ -25,4 +25,5 @@ export * from './useStorageAsync';
 export * from './useSupported';
 export * from './useUniPlatform';
 export * from './useUploadFile';
+export * from './useVibrate';
 export * from './useVisible';

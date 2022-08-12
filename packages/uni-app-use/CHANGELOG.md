@@ -1,5 +1,12 @@
 # 改动日志
 
+## Unreleased
+
+- feat: 新增 `useVibrate`
+- fix: 调整 `useArrayBufferToBase64` 类型
+- fix: 调整 `useBase64ToArrayBuffer` 类型
+- fix: 调整 `useClipboardData` 参数和内部实现
+
 ## 0.3.0
 
 - feat: 新增 `tryOnHide`

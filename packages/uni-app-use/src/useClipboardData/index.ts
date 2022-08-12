@@ -1,17 +1,15 @@
-import { ref, shallowRef } from 'vue-demi';
+import { ref } from 'vue-demi';
 
-export function useClipboardData() {
+export function useClipboardData(onError = (e: unknown) => console.error(e)) {
   const clipboardData = ref<string>();
-  const error = shallowRef<UniApp.GeneralCallbackResult>();
 
   uni.getClipboardData({
     success: (result) => {
       clipboardData.value = result.data;
-      error.value = undefined;
     },
     fail: (e) => {
       clipboardData.value = undefined;
-      error.value = e;
+      onError?.(e);
     },
   });
 

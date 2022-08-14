@@ -1,4 +1,3 @@
-# https://vuepress.github.io/zh/guide/deployment.html#github-pages
 name: sync
 
 on:

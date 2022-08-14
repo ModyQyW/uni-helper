@@ -13,7 +13,7 @@ let readme = `# vscode-uni-cloud-snippets
 
 - uni-cloud 基本能力代码片段
 - 参考 [uni-cloud 官方文档](https://uniapp.dcloud.net.cn/uniCloud/)
-- 参考 [Vue.js 2 风格指南](https://v2.vuejs.org/v2/style-guide/) 和 [Vue.js 3 风格指南](https://vuejs.org/style-guide/)
+- 参考 [Vue.js 2 风格指南](https://v2.cn.vuejs.org/v2/style-guide/) 和 [Vue.js 3 风格指南](https://cn.vuejs.org/style-guide/)
 
 **插件和文档的冲突之处，请以文档为准。**
 

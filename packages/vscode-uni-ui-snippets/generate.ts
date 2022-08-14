@@ -4,13 +4,19 @@ const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json', { enco
 
 let readme = `# vscode-uni-ui-snippets
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-ui-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets) [![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-ui-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-ui-snippets) [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-ui-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets)
+
+[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-ui-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-ui-snippets)
+
+[![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+
+[改动日志](https://github.com/ModyQyW/uni-helper/blob/main/packages/vscode-uni-ui-snippets/CHANGELOG.md)
 
 ## 插件特性
 
 - uni-ui 组件代码片段
 - 参考 [uni-ui 文档](https://github.com/dcloudio/uni-ui#readme)
-- 参考 [Vue.js 2 风格指南](https://cn.vuejs.org/v2/style-guide/index.html) 和 [Vue.js 3 风格指南](https://v3.cn.vuejs.org/style-guide/)
+- 参考 [Vue.js 2 风格指南](https://v2.cn.vuejs.org/v2/style-guide/) 和 [Vue.js 3 风格指南](https://cn.vuejs.org/style-guide/)
 
 **插件和文档的冲突之处，请以文档为准。**
 

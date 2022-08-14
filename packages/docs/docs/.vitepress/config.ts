@@ -19,8 +19,8 @@ export default defineConfig({
       { text: '概览', link: '/overview' },
       { text: '编辑器支持', link: '/editor/uni-helper' },
       { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
-      { text: 'Request 支持', link: '/request' },
-      { text: '组合式支持', link: '/composition' },
+      { text: 'Request 支持', link: '/request/uni-request' },
+      { text: '组合式支持', link: '/composition/uni-app-use' },
     ],
     sidebar: [
       {

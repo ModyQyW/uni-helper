@@ -47,14 +47,14 @@
   "icon": "uni-app.png",
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): vscode-uni-helper@${version}",
-      "tagName": "vscode-uni-helper@${version}"
+      "commitMessage": "chore(release): vscode-uni-helper@v${version}",
+      "tagName": "vscode-uni-helper@v${version}"
     },
     "npm": {
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "cp -af README.md ../docs/docs/editor/vscode-uni-helper.md && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
   },
   "sponsor": {

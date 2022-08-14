@@ -12,23 +12,25 @@
 
 ## 编辑器支持
 
-### [uni-helper](./editor/uni-helper)
+### [vscode-uni-helper](./editor/vscode-uni-helper)
 
 [![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-helper.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)
 
 [![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-helper)](https://open-vsx.org/extension/ModyQyW/vscode-uni-helper)
 
-`uni-helper` 编辑器插件汇总了其它几个插件，并附带一些额外推荐。
+`vscode-uni-helper` 编辑器插件汇总了其它几个插件，并附带一些额外推荐。
 
-### [uni-app-schemas](./editor/uni-app-schemas)
+### [vscode-uni-app-schemas](./editor/vscode-uni-app-schemas)
 
 [![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-app-schemas.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-schemas)
 
 [![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-app-schemas)](https://open-vsx.org/extension/ModyQyW/vscode-uni-app-schemas)
 
-`uni-app-schemas` 可以校验 `uni-app` 中的 `androidPrivacy.json`、`pages.json` 和 `manifest.json` 格式。你也可以直接在对应的文件中添加 `$schema` 来使用对应的 `schema` 文件。
+`vscode-uni-app-schemas` 可以校验 `uni-app` 中的 `androidPrivacy.json`、`pages.json` 和 `manifest.json` 格式。
 
-### [uni-app-snippets](./editor/uni-app-snippets.md)
+你也可以直接在对应的文件中添加 `$schema` 来使用对应的 `schema` 文件。
+
+### [vscode-uni-app-snippets](./editor/vscode-uni-app-snippets.md)
 
 [![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-app-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-snippets)
 
@@ -36,7 +38,7 @@
 
 提供 `uni-app` 基本能力代码片段。
 
-### [uni-cloud-snippets](./editor/uni-cloud-snippets.md)
+### [vscode-uni-cloud-snippets](./editor/vscode-uni-cloud-snippets.md)
 
 [![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-cloud-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-cloud-snippets)
 
@@ -44,7 +46,7 @@
 
 提供 `uni-cloud` 基本能力代码片段。
 
-### [uni-ui-snippets](./editor/uni-ui-snippets.md)
+### [vscode-uni-ui-snippets](./editor/vscode-uni-ui-snippets.md)
 
 [![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-ui-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets)
 

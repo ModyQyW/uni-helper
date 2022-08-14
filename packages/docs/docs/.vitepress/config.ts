@@ -17,7 +17,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '概览', link: '/overview' },
-      { text: '编辑器支持', link: '/editor/uni-helper' },
+      { text: '编辑器支持', link: '/editor/vscode-uni-helper' },
       { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
       { text: 'Request 支持', link: '/request/uni-request' },
       { text: '组合式支持', link: '/composition/uni-app-use' },
@@ -32,11 +32,11 @@ export default defineConfig({
         text: '编辑器支持',
         collapsible: true,
         items: [
-          { text: 'uni-helper', link: '/editor/uni-helper' },
-          { text: 'uni-app-schemas', link: '/editor/uni-app-schemas' },
-          { text: 'uni-app-snippets', link: '/editor/uni-app-snippets' },
-          { text: 'uni-cloud-snippets', link: '/editor/uni-cloud-snippets' },
-          { text: 'uni-ui-snippets', link: '/editor/uni-ui-snippets' },
+          { text: 'vscode-uni-helper', link: '/editor/vscode-uni-helper' },
+          { text: 'vscode-uni-app-schemas', link: '/editor/vscode-uni-app-schemas' },
+          { text: 'vscode-uni-app-snippets', link: '/editor/vscode-uni-app-snippets' },
+          { text: 'vscode-uni-cloud-snippets', link: '/editor/vscode-uni-cloud-snippets' },
+          { text: 'vscode-uni-ui-snippets', link: '/editor/vscode-uni-ui-snippets' },
         ],
       },
       {

@@ -70,7 +70,5 @@
 - [SVG](https://marketplace.visualstudio.com/items?itemName=jock.svg)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
-- [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
 - [vscode-faker](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker)
-- [WindiCSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense)
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)

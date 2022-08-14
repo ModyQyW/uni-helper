@@ -1,6 +1,6 @@
 # uni-app-types
 
-[![npm](https://img.shields.io/npm/v/uni-app-types)](https://www.npmjs.com/package/uni-app-types) [![GitHub license](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/uni-app-types)](https://www.npmjs.com/package/uni-app-types) [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
 `uni-app` 组件类型。
 

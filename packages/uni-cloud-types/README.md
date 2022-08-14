@@ -1,6 +1,6 @@
 # uni-cloud-types
 
-[![npm](https://img.shields.io/npm/v/uni-ui-types)](https://www.npmjs.com/package/uni-ui-types) [![GitHub license](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/uni-ui-types)](https://www.npmjs.com/package/uni-ui-types) [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
 `uni-cloud` 组件类型。
 

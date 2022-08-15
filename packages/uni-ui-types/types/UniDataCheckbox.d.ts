@@ -1,5 +1,5 @@
+import { CustomEvent } from 'uni-app-types';
 import { Component } from '../Component';
-import { CustomEvent } from './events';
 
 /**
  * @desc 默认值

@@ -1,5 +1,5 @@
+import { BaseEvent } from 'uni-app-types';
 import { Component } from '../Component';
-import { BaseEvent } from './events';
 
 export interface UniCalendarProps {
   /**

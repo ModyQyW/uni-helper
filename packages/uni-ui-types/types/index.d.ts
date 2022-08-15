@@ -1,4 +1,3 @@
-export * from './events';
 export * from './UniBadge';
 export * from './UniBreadcrumb';
 export * from './UniBreadcrumbItem';

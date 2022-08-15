@@ -96,7 +96,16 @@ tryOnUnload(() => {
 });
 ```
 
-- [useApp](./src/useApp/index.ts)
+### useApp
+
+获取当前应用实例。如果想要获取 `globalData`，可以直接使用 [useGlobalData](./#useGlobalData)。
+
+```typescript
+import { useApp } from 'uni-app-use';
+
+const app = useApp();
+```
+
 - [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
 - [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)
 - [useClipboardData](./src/useClipboardData/index.ts)

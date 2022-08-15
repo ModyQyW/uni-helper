@@ -1,7 +1,9 @@
-import { usePages } from '../usePages';
+import { useRouter } from '../useRouter';
 
+/**
+ * Get previous shown page info
+ */
 export function usePrevPage() {
-  const pages = usePages();
-  const page = pages.value.at(-2);
-  return page;
+  const { prevPage } = useRouter();
+  return prevPage;
 }

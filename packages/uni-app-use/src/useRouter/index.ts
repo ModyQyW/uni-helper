@@ -1,6 +1,9 @@
 import { tryOnScopeDispose } from '@vueuse/shared';
 import { ref, computed } from 'vue-demi';
 
+/**
+ * Get router info
+ */
 export function useRouter() {
   const pages = ref(getCurrentPages());
   tryOnScopeDispose(() => {
@@ -8,6 +11,10 @@ export function useRouter() {
   });
 
   const page = computed(() => pages.value.at(-1));
+  const prevPage = computed(() => pages.value.at(-2));
+
+  const route = computed(() => page.value?.route);
+  const prevRoute = computed(() => prevPage.value?.route);
 
   const reLaunch = (options: UniApp.ReLaunchOptions) => uni.reLaunch(options);
   const switchTab = (options: UniApp.SwitchTabOptions) => uni.switchTab(options);
@@ -22,6 +29,9 @@ export function useRouter() {
   return {
     pages,
     page,
+    prevPage,
+    route,
+    prevRoute,
     reLaunch,
     switchTab,
     redirectTo,

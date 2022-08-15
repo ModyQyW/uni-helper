@@ -1,8 +1,9 @@
-import { computed } from 'vue-demi';
-import { usePrevPage } from '../usePrevPage';
+import { useRouter } from '../useRouter';
 
+/**
+ * Get previous shown page route
+ */
 export function usePrevRoute() {
-  const prevPage = usePrevPage();
-  const route = computed(() => prevPage?.route);
-  return route;
+  const { prevRoute } = useRouter();
+  return prevRoute;
 }

@@ -1,10 +1,9 @@
-import { computed } from 'vue-demi';
-import { usePage } from '../usePage';
+import { useRouter } from '../useRouter';
 
+/**
+ * Get current shown page route
+ */
 export function useRoute() {
-  const page = usePage();
-
-  const route = computed(() => page.value?.route);
-
+  const { route } = useRouter();
   return route;
 }

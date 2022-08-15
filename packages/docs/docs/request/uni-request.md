@@ -648,7 +648,7 @@ module.exports = {
 
 ## 资源
 
-- [改动日志](./CHANGELOG.md)
+- [改动日志](https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-request/CHANGELOG.md)
 
 ## 致谢
 

@@ -108,7 +108,7 @@ const app = useApp();
 
 ### useArrayBufferToBase64
 
-获取 ArrayBuffer 对应的 base64。
+获取 ArrayBuffer 对应的 base64。可以直接传入 `ref`。
 
 ```typescript
 import { useArrayBufferToBase64 } from 'uni-app-use';
@@ -118,7 +118,7 @@ const base64 = useArrayBufferToBase64(arrayBuffer);
 
 ### useBase64ToArrayBuffer
 
-获取 base64 对应的 ArrayBuffer。
+获取 base64 对应的 ArrayBuffer。可以直接传入 `ref`。
 
 ```typescript
 import { useBase64ToArrayBuffer } from 'uni-app-use';

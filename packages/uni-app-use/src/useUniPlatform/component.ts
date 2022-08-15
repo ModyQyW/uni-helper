@@ -1,10 +1,12 @@
-import { defineComponent } from 'vue-demi';
+import { defineComponent, reactive } from 'vue-demi';
 import { useUniPlatform } from './index';
 
 export const UseUniPlatform = defineComponent({
   name: 'UseUniPlatform',
   setup(props, { slots }) {
-    const data = useUniPlatform();
+    const data = reactive({
+      uniPlatform: useUniPlatform(),
+    });
 
     return () => {
       if (slots.default) {

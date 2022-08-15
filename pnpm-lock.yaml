@@ -178,17 +178,19 @@ importers:
 
   packages/uni-ui-types:
     specifiers:
-      '@dcloudio/types': ^3.0.7
+      '@dcloudio/types': ^3.0.13
       '@tsconfig/node16': ^1.0.3
-      '@types/node': ^18.7.1
+      '@types/node': ^18.7.3
       typescript: ^4.7.4
+      uni-app-types: workspace:^*
       vue3: npm:vue@3
     dependencies:
-      '@dcloudio/types': 3.0.8
+      '@dcloudio/types': 3.0.13
+      uni-app-types: link:../uni-app-types
       vue3: /vue/3.2.37
     devDependencies:
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.7.1
+      '@types/node': 18.7.3
       typescript: 4.7.4
 
   packages/vscode-uni-app-schemas:
@@ -824,10 +826,6 @@ packages:
 
   /@dcloudio/types/3.0.13:
     resolution: {integrity: sha512-K8z8DfylWnLjEHUnsc6DsxA6ugCzYZoAmyVIpT57K3cAfMTGx8E6GAW5x8Qy2lbFpw02N3D+sGHX63zO1zDVig==}
-    dev: false
-
-  /@dcloudio/types/3.0.8:
-    resolution: {integrity: sha512-WAlSP2puhL0Ad2BQDdV6lC7pEcDO8nw8sHcT37jIX0+MnoW6OzRuLFwiTdB3P+DBwMyX6vll8H3i9/VCacdIMw==}
     dev: false
 
   /@dcloudio/uni-app/3.0.0-alpha-3050420220804003_vue@3.2.37:

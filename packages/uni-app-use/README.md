@@ -22,6 +22,14 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 不考虑支持 `uni_modules`。目前只考虑小程序和移动应用环境。
 
+**注意：在小程序和移动应用环境下有如下限制。**
+
+- 缺失某些全局变量（如 `window`、`navigator` 等）
+- 需要使用 `uni-app` 提供的拦截器做监听（无法处理同步 API）
+- 需要使用 `uni-app` 提供的存储 API
+
+这些限制无法避开。如果要开发 H5，不妨直接使用 `vueuse`。
+
 ## 使用
 
 ### tryOnHide
@@ -159,10 +167,26 @@ import { UseClipboardData } from 'uni-app-use';
 </template>
 ```
 
-- [useColorMode](./src/useColorMode/index.ts)
-- [UseColorMode](./src/UseColorMode/component.ts)
-- [useDark](./src/useDark/index.ts)
-- [UseDark](./src/UseDark/component.ts)
+### useColorMode
+
+带有自动数据持久性的响应式颜色模式。使用方法参见 <https://vueuse.org/core/useColorMode/>。
+
+**由于存在限制，该方法不会为你设置 `class`。如果要自定义 `storage`，必须使用 `uni-app` 提供的异步存储 API，否则无法监听导致响应式失效。**
+
+### UseColorMode
+
+`useColorMode` 的组件版本。使用方法参见 <https://vueuse.org/core/useColorMode/>。
+
+### useDark
+
+带有自动数据持久性的响应式暗黑模式。使用方法参见 <https://vueuse.org/core/useDark/>。
+
+**由于存在限制，该方法不会为你设置 `class`。如果要自定义 `storage`，必须使用 `uni-app` 提供的异步存储 API，否则无法监听导致响应式失效。**
+
+### UseDark
+
+`useDark` 的组件版本。使用方法参见 <https://vueuse.org/core/useDark/>。
+
 - [useDownloadFile](./src/useDownloadFile/index.ts)
 
 ### useGlobalData
@@ -207,7 +231,28 @@ import { UseGlobalData } from 'uni-app-use';
 </template>
 ```
 
-- [useInterceptor](./src/useInterceptor/index.ts)
+### useInterceptor
+
+设置拦截器。
+
+```typescript
+import { useInterceptor } from 'uni-app-use';
+
+const stop = useInterceptor('request', {
+  invoke: (args) => {
+    args.url = 'https://www.example.com/' + args.url;
+  },
+  success: (response) => {
+    response.data.code = 1;
+  },
+  fail: (error) => {
+    console.log('interceptor-fail', error);
+  },
+  complete: (result) => {
+    console.log('interceptor-complete', result);
+  },
+});
+```
 
 ### useNetwork
 
@@ -257,7 +302,7 @@ import { UseOnline } from 'uni-app-use';
 </script>
 
 <template>
-  <UseOnline v-slot="isOnline">
+  <UseOnline v-slot="{ isOnline }">
     <p>isOnline: {{ isOnline }}</p>
   </UseOnline>
 </template>
@@ -283,10 +328,57 @@ import { usePages } from 'uni-app-use';
 const pages = usePages();
 ```
 
-- [usePreferredDark](./src/usePreferredDark/index.ts)
-- [UsePreferredDark](./src/usePreferredDark/component.ts)
-- [usePreferredLanguage](./src/usePreferredLanguage/index.ts)
-- [UsePreferredLanguage](./src/usePreferredLanguage/component.ts)
+### usePreferredDark
+
+响应式的暗黑主题偏好。
+
+```typescript
+import { usePreferredDark } from 'uni-app-use';
+
+const prefersDark = usePreferredDark();
+```
+
+### UsePreferredDark
+
+`usePreferredDark` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UsePreferredDark } from 'uni-app-use';
+</script>
+
+<template>
+  <UsePreferredDark v-slot="{ prefersDark }">
+    <p>{{ prefersDark }}</p>
+  </UsePreferredDark>
+</template>
+```
+
+### usePreferredLanguage
+
+响应式的语言偏好。
+
+```typescript
+import { usePreferredLanguage } from 'uni-app-use';
+
+const language = usePreferredLanguage();
+```
+
+### UsePreferredLanguage
+
+`usePreferredLanguage` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UsePreferredLanguage } from 'uni-app-use';
+</script>
+
+<template>
+  <UsePreferredLanguage v-slot="{ language }">
+    <p>{{ language }}</p>
+  </UsePreferredLanguage>
+</template>
+```
 
 ### usePrevPage
 
@@ -344,7 +436,12 @@ const {
 ```
 
 - [useSocket](./src/useSocket/index.ts)
-- [useStorageAsync](./src/useStorageAsync/index.ts)
+
+### useStorageAsync
+
+响应式的存储。使用方法参见 <https://vueuse.org/core/useStorage/> 和 <https://vueuse.org/core/useStorageAsync/>。
+
+**由于存在限制，如果要自定义 `storage`，必须使用 `uni-app` 提供的异步存储 API，否则无法监听导致响应式失效。**
 
 ### useSupported
 
@@ -376,7 +473,7 @@ import { UseUniPlatform } from 'uni-app-use';
 </script>
 
 <template>
-  <UseUniPlatform v-slot="uniPlatform">
+  <UseUniPlatform v-slot="{ uniPlatform }">
     <p>uniPlatform</p>
   </UseUniPlatform>
 </template>
@@ -404,7 +501,7 @@ import { useVisible } from 'uni-app-use';
 const isVisible = useVisible();
 ```
 
-## 改动日志
+## 资源
 
 - [改动日志](https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-use/CHANGELOG.md)
 

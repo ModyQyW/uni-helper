@@ -4,7 +4,7 @@
 
 **WIP: 扩充 API，后续再增加文档。**
 
-`uni-app` 的 `vueuse`，组合式工具集。
+`uni-app` 组合式工具集。
 
 确保你的项目支持 Composition API。
 

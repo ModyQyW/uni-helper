@@ -88,4 +88,4 @@
 
 [![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use)
 
-`uni-app` 的 `vueuse`。
+`uni-app` 组合式工具集。

@@ -2,6 +2,9 @@ import { ref } from 'vue-demi';
 import { tryOnShow } from '../tryOnShow';
 import { tryOnHide } from '../tryOnHide';
 
+/**
+ * Get if the page is shown or hidden
+ */
 export function useVisible() {
   const isVisible = ref(true);
 

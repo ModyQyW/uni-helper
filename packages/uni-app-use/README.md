@@ -189,7 +189,16 @@ import { UseClipboardData } from 'uni-app-use';
 - [UseUniPlatform](./src/useUniPlatform/component.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)
 - [useVibrate](./src/useVibrate/index.ts)
-- [useVisible](./src/useVisible/index.ts)
+
+### useVisible
+
+获取当前页面显隐状态。
+
+```typescript
+import { useVisible } from 'uni-app-use';
+
+const isVisible = useVisible();
+```
 
 ## 改动日志
 

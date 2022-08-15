@@ -106,8 +106,26 @@ import { useApp } from 'uni-app-use';
 const app = useApp();
 ```
 
-- [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
-- [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)
+### useArrayBufferToBase64
+
+获取 ArrayBuffer 对应的 base64。
+
+```typescript
+import { useArrayBufferToBase64 } from 'uni-app-use';
+
+const base64 = useArrayBufferToBase64(arrayBuffer);
+```
+
+### useBase64ToArrayBuffer
+
+获取 base64 对应的 ArrayBuffer。
+
+```typescript
+import { useBase64ToArrayBuffer } from 'uni-app-use';
+
+const arrayBuffer = useBase64ToArrayBuffer(base64);
+```
+
 - [useClipboardData](./src/useClipboardData/index.ts)
 - [UseClipboardData](./src/useClipboardData/component.ts)
 - [useColorMode](./src/useColorMode/index.ts)

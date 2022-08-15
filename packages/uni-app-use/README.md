@@ -206,14 +206,12 @@ import { UseUniPlatform } from 'uni-app-use';
 </script>
 
 <template>
-  <UseUniPlatform v-slot="{ uniPlatform }">
+  <UseUniPlatform v-slot="uniPlatform">
     <p>uniPlatform</p>
   </UseUniPlatform>
 </template>
 ```
 
-- [useUniPlatform](./src/useUniPlatform/index.ts)
-- [UseUniPlatform](./src/useUniPlatform/component.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)
 
 ### useVibrate

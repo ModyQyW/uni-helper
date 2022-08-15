@@ -30,21 +30,23 @@
     "release": "npx release-it"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.0.7",
+    "@dcloudio/types": "^3.0.13",
+    "uni-app-types": "workspace:^*",
     "vue3": "npm:vue@3"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.7.1",
+    "@types/node": "^18.7.3",
     "typescript": "^4.7.4"
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): uni-cloud-types@${version}",
-      "tagName": "uni-cloud-types@${version}"
+      "commitMessage": "chore(release): uni-cloud-types@v${version}",
+      "tagName": "uni-cloud-types@v${version}"
     },
     "hooks": {
-      "before:init": "pnpm install && pnpm run lint"
+      "before:init": "pnpm install && pnpm run lint",
+      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-cloud-types.md"
     }
   }
 }

@@ -1,8 +1,8 @@
 # uni-app-use
 
-[![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use) [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
-**WIP: 扩充 API，后续再增加文档。**
+[![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use)
 
 `uni-app` 组合式工具集。
 
@@ -24,12 +24,78 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 
 ## 使用
 
-- [tryOnHide](./src/tryOnHide/index.ts)
-- [tryOnInit](./src/tryOnInit/index.ts)
-- [tryOnLoad](./src/tryOnLoad/index.ts)
-- [tryOnReady](./src/tryOnReady/index.ts)
-- [tryOnShow](./src/tryOnShow/index.ts)
-- [tryOnUnload](./src/tryOnUnload/index.ts)
+### tryOnHide
+
+安全的 `onHide`。如果是在组件生命周期内，就调用 `onHide()`；如果不是，就直接调用函数。
+
+```typescript
+import { tryOnHide } from 'uni-app-use'
+
+tryOnHide(() => {
+  ...
+});
+```
+
+### tryOnInit
+
+安全的 `onInit`。如果是在组件生命周期内，就调用 `onInit()`；如果不是，就直接调用函数。
+
+```typescript
+import { tryOnInit } from 'uni-app-use'
+
+tryOnInit(() => {
+  ...
+});
+```
+
+### tryOnLoad
+
+安全的 `onLoad`。如果是在组件生命周期内，就调用 `onLoad()`；如果不是，就直接调用函数。
+
+```typescript
+import { tryOnLoad } from 'uni-app-use'
+
+tryOnLoad(() => {
+  ...
+});
+```
+
+### tryOnReady
+
+安全的 `onReady`。如果是在组件生命周期内，就调用 `onReady()`；如果不是，就直接调用函数。
+
+```typescript
+import { tryOnReady } from 'uni-app-use'
+
+tryOnReady(() => {
+  ...
+});
+```
+
+### tryOnShow
+
+安全的 `onShow`。如果是在组件生命周期内，就调用 `onShow()`；如果不是，就直接调用函数。
+
+```typescript
+import { tryOnShow } from 'uni-app-use'
+
+tryOnShow(() => {
+  ...
+});
+```
+
+### tryOnUnload
+
+安全的 `onUnload`。如果是在组件生命周期内，就调用 `onUnload()`；如果不是，就直接调用函数。
+
+```typescript
+import { tryOnUnload } from 'uni-app-use'
+
+tryOnUnload(() => {
+  ...
+});
+```
+
 - [useApp](./src/useApp/index.ts)
 - [useArrayBufferToBase64](./src/useArrayBufferToBase64/index.ts)
 - [useBase64ToArrayBuffer](./src/useBase64ToArrayBuffer/index.ts)

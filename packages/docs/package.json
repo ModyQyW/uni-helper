@@ -24,7 +24,6 @@
     "serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "markdown-it-code-copy": "^0.1.1",
     "vitepress": "^1.0.0-alpha.4",
     "vue": "^3.2.37"
   }

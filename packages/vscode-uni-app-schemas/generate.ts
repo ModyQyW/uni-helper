@@ -26,7 +26,7 @@ const readme = `# vscode-uni-app-schemas
 
 在对应文件的顶部加入 \`"$schema"\` 字段即可。
 
-\`\`\`JSON
+\`\`\`json
 {
   // github
   "$schema": "https://raw.githubusercontent.com/ModyQyW/uni-helper/main/packages/vscode-uni-app-schemas/schemas/androidPrivacy.json"

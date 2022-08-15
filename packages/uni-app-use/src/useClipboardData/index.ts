@@ -14,7 +14,13 @@ export function useClipboardData(onError = (e: unknown) => console.error(e)) {
   });
 
   const setClipboardData = (options: UniApp.SetClipboardDataOptions) => {
-    uni.setClipboardData(options);
+    uni.setClipboardData({
+      ...options,
+      success: (result) => {
+        options?.success?.(result);
+        clipboardData.value = options?.data;
+      },
+    });
   };
 
   return {

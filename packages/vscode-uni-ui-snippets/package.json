@@ -2,7 +2,7 @@
   "name": "vscode-uni-ui-snippets",
   "displayName": "uni-ui-snippets",
   "version": "0.6.3",
-  "description": "`uni-ui` 组件代码片段。",
+  "description": "uni-ui 组件代码片段。",
   "categories": [
     "Snippets"
   ],
@@ -51,14 +51,14 @@
   "icon": "uni-app.png",
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): vscode-uni-ui-snippets@${version}",
-      "tagName": "vscode-uni-ui-snippets@${version}"
+      "commitMessage": "chore(release): vscode-uni-ui-snippets@v${version}",
+      "tagName": "vscode-uni-ui-snippets@v${version}"
     },
     "npm": {
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "npx tsx generate.ts && cp -af README.md ../docs/docs/editor/vscode-uni-ui-snippets.md && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
   },
   "sponsor": {

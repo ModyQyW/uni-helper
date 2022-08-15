@@ -2,9 +2,9 @@
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-helper.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)
+[![VSCode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-helper.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)
 
-[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-helper)](https://open-vsx.org/extension/ModyQyW/vscode-uni-helper)
+[![OpenVSX](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-helper)](https://open-vsx.org/extension/ModyQyW/vscode-uni-helper)
 
 增强 `uni-app` 系列产品在 `VSCode` 内的体验。
 

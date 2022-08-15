@@ -14,17 +14,17 @@
 
 ### [vscode-uni-helper](./editor/vscode-uni-helper)
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-helper.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)
+[![VSCode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-helper.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-helper)
 
-[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-helper)](https://open-vsx.org/extension/ModyQyW/vscode-uni-helper)
+[![OpenVSX](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-helper)](https://open-vsx.org/extension/ModyQyW/vscode-uni-helper)
 
 `vscode-uni-helper` 编辑器插件汇总了其它几个插件，并附带一些额外推荐。
 
 ### [vscode-uni-app-schemas](./editor/vscode-uni-app-schemas)
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-app-schemas.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-schemas)
+[![VSCode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-app-schemas.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-schemas)
 
-[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-app-schemas)](https://open-vsx.org/extension/ModyQyW/vscode-uni-app-schemas)
+[![OpenVSX](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-app-schemas)](https://open-vsx.org/extension/ModyQyW/vscode-uni-app-schemas)
 
 `vscode-uni-app-schemas` 可以校验 `uni-app` 中的 `androidPrivacy.json`、`pages.json` 和 `manifest.json` 格式。
 
@@ -32,25 +32,25 @@
 
 ### [vscode-uni-app-snippets](./editor/vscode-uni-app-snippets.md)
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-app-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-snippets)
+[![VSCode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-app-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-app-snippets)
 
-[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-app-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-app-snippets)
+[![OpenVSX](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-app-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-app-snippets)
 
 提供 `uni-app` 基本能力代码片段。
 
 ### [vscode-uni-cloud-snippets](./editor/vscode-uni-cloud-snippets.md)
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-cloud-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-cloud-snippets)
+[![VSCode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-cloud-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-cloud-snippets)
 
-[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-cloud-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-cloud-snippets)
+[![OpenVSX](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-cloud-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-cloud-snippets)
 
 提供 `uni-cloud` 基本能力代码片段。
 
 ### [vscode-uni-ui-snippets](./editor/vscode-uni-ui-snippets.md)
 
-[![vscode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-ui-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets)
+[![VSCode](https://vsmarketplacebadge.apphb.com/version-short/ModyQyW.vscode-uni-ui-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=ModyQyW.vscode-uni-ui-snippets)
 
-[![openvsx](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-ui-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-ui-snippets)
+[![OpenVSX](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=OpenVSX&query=%24.version&url=https%3A%2F%2Fopen-vsx.org%2Fapi%2FModyQyW%2Fvscode-uni-ui-snippets)](https://open-vsx.org/extension/ModyQyW/vscode-uni-ui-snippets)
 
 提供 `uni-ui` 组件代码片段。
 

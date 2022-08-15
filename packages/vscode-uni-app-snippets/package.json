@@ -2,7 +2,7 @@
   "name": "vscode-uni-app-snippets",
   "displayName": "uni-app-snippets",
   "version": "0.9.1",
-  "description": "`uni-app` 基本能力代码片段。",
+  "description": "uni-app 基本能力代码片段。",
   "categories": [
     "Snippets"
   ],
@@ -93,14 +93,14 @@
   "icon": "uni-app.png",
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): vscode-uni-app-snippets@${version}",
-      "tagName": "vscode-uni-app-snippets@${version}"
+      "commitMessage": "chore(release): vscode-uni-app-snippets@v${version}",
+      "tagName": "vscode-uni-app-snippets@v${version}"
     },
     "npm": {
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "npx tsx generate.ts && cp -af README.md ../docs/docs/editor/vscode-uni-app-snippets.md && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
   },
   "sponsor": {

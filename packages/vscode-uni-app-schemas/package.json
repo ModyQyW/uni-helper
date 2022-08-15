@@ -2,7 +2,7 @@
   "name": "vscode-uni-app-schemas",
   "displayName": "uni-app-schemas",
   "version": "0.8.1",
-  "description": "校验 `uni-app` 中的 `androidPrivacy.json`、`pages.json` 和 `manifest.json` 格式。",
+  "description": "校验 uni-app 中的 androidPrivacy.json、pages.json 和 manifest.json 格式。",
   "categories": [
     "Other"
   ],
@@ -55,14 +55,14 @@
   "icon": "uni-app.png",
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): vscode-uni-app-schemas@${version}",
-      "tagName": "vscode-uni-app-schemas@${version}"
+      "commitMessage": "chore(release): vscode-uni-app-schemas@v${version}",
+      "tagName": "vscode-uni-app-schemas@v${version}"
     },
     "npm": {
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx tsx generate.ts && npx vsce package&& npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "npx tsx generate.ts && cp -af README.md ../docs/docs/editor/vscode-uni-app-schemas.md && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
   },
   "sponsor": {

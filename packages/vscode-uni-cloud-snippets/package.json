@@ -2,7 +2,7 @@
   "name": "vscode-uni-cloud-snippets",
   "displayName": "uni-cloud-snippets",
   "version": "0.2.6",
-  "description": "`uni-cloud` 基本能力代码片段。",
+  "description": "uni-cloud 基本能力代码片段。",
   "categories": [
     "Snippets"
   ],
@@ -71,14 +71,14 @@
   "icon": "uni-app.png",
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): vscode-uni-cloud-snippets@${version}",
-      "tagName": "vscode-uni-cloud-snippets@${version}"
+      "commitMessage": "chore(release): vscode-uni-cloud-snippets@v${version}",
+      "tagName": "vscode-uni-cloud-snippets@v${version}"
     },
     "npm": {
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx tsx generate.ts && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
+      "after:bump": "npx tsx generate.ts && cp -af README.md ../docs/docs/editor/vscode-uni-cloud-snippets.md && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"
     }
   },
   "sponsor": {

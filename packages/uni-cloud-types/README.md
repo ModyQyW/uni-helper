@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
-[![npm](https://img.shields.io/npm/v/uni-ui-types)](https://www.npmjs.com/package/uni-ui-types)
+[![npm](https://img.shields.io/npm/v/uni-cloud-types)](https://www.npmjs.com/package/uni-cloud-types)
 
 `uni-cloud` 组件类型。
 
@@ -22,12 +22,12 @@
 npm i -D uni-cloud-types
 ```
 
-- 配置 `tsconfig.json`，确保 `compilerOptions.types` 中含有 `uni-app-types` 且 `include` 包含了对应的 `vue` 文件
+- 配置 `tsconfig.json`，确保 `compilerOptions.types` 中含有 `@dcloudio/types` 和 `uni-cloud-types` 且 `include` 包含了对应的 `vue` 文件
 
 ```json
 {
   "compilerOptions": {
-    "types": ["uni-cloud-types"]
+    "types": ["@dcloudio/types", "uni-cloud-types"]
   },
   "include": ["src/**/*.vue"]
 }

@@ -22,12 +22,12 @@
 npm i -D uni-app-types
 ```
 
-- 配置 `tsconfig.json`，确保 `compilerOptions.types` 中含有 `uni-app-types` 且 `include` 包含了对应的 `vue` 文件
+- 配置 `tsconfig.json`，确保 `compilerOptions.types` 中含有 `@dcloudio/types` 和 `uni-app-types` 且 `include` 包含了对应的 `vue` 文件
 
 ```json
 {
   "compilerOptions": {
-    "types": ["uni-app-types"]
+    "types": ["@dcloudio/types", "uni-app-types"]
   },
   "include": ["src/**/*.vue"]
 }

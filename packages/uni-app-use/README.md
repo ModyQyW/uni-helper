@@ -345,7 +345,16 @@ const {
 
 - [useSocket](./src/useSocket/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)
-- [useSupported](./src/useSupported/index.ts)
+
+### useSupported
+
+获取 API 是否被支持。
+
+```typescript
+import { useSupported } from 'uni-app-use';
+
+const isSupported = useSupported();
+```
 
 ### useUniPlatform
 

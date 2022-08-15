@@ -145,7 +145,7 @@ setClipboardData({
 
 ### UseClipboardData
 
-像组件一样使用剪切板数据。
+`useClipboardData` 的组件版本。
 
 ```vue
 <script setup lang="ts">
@@ -185,6 +185,33 @@ import { UseClipboardData } from 'uni-app-use';
 - [useSocket](./src/useSocket/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)
 - [useSupported](./src/useSupported/index.ts)
+
+### useUniPlatform
+
+获取运行应用时设置的 `UNI_PLATFORM` 值，默认为 `h5`。
+
+```typescript
+import { useUniPlatform } from 'uni-app-use';
+
+const uniPlatform = useUniPlatform();
+```
+
+### UseUniPlatform
+
+`useUniPlatform` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseUniPlatform } from 'uni-app-use';
+</script>
+
+<template>
+  <UseUniPlatform v-slot="{ uniPlatform }">
+    <p>uniPlatform</p>
+  </UseUniPlatform>
+</template>
+```
+
 - [useUniPlatform](./src/useUniPlatform/index.ts)
 - [UseUniPlatform](./src/useUniPlatform/component.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)

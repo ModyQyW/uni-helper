@@ -187,7 +187,11 @@ import { UseClipboardData } from 'uni-app-use';
 
 `useDark` 的组件版本。使用方法参见 <https://vueuse.org/core/useDark/>。
 
-- [useDownloadFile](./src/useDownloadFile/index.ts)
+### useDownloadFile
+
+`uni.downloadFile` 的封装。使用方法参见 <https://vueuse.org/integrations/useAxios/>。
+
+**返回值中含有 task，可自行操作。**
 
 ### useGlobalData
 
@@ -400,7 +404,11 @@ import { usePrevRoute } from 'uni-app-use';
 const prevRoute = usePrevRoute();
 ```
 
-- [useRequest](./src/useRequest/index.ts)
+### useRequest
+
+`uni.request` 的封装。使用方法参见 <https://vueuse.org/integrations/useAxios/>。
+
+**返回值中含有 task，可自行操作。**
 
 ### useRoute
 
@@ -435,7 +443,32 @@ const {
 } = useRouter();
 ```
 
-- [useSocket](./src/useSocket/index.ts)
+### useSocket
+
+`uni-app` 提供的 `socket` 操作的封装。
+
+```typescript
+import { useSocket } from 'uni-app-use';
+
+const { task, sendMessage, close, isConnecting, isConnected, isClosed, error } = useSocket({
+  onSocketOpen,
+  onSocketError,
+  onSocketMessage,
+  onSocketClose,
+});
+```
+
+- `task`: <https://uniapp.dcloud.net.cn/api/request/socket-task.html>
+- `sendMessage`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#sendsocketmessage>
+- `close`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#closesocket>
+- `isConnecting`: `socket` 是否连接中
+- `isConnected`: `socket` 是否已经连接
+- `isClosed`: `socket` 是否已关闭
+- `error`: 使用 `socket` 期间的错误
+- `onSocketOpen`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#onsocketopen>
+- `onSocketError`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#onsocketerror>
+- `onSocketMessage`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#onsocketmessage>
+- `onSocketClose`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#onsocketclose>
 
 ### useStorageAsync
 
@@ -479,7 +512,11 @@ import { UseUniPlatform } from 'uni-app-use';
 </template>
 ```
 
-- [useUploadFile](./src/useUploadFile/index.ts)
+### useUploadFile
+
+`uni.uploadFile` 的封装。使用方法参见 <https://vueuse.org/integrations/useAxios/>。
+
+**返回值中含有 task，可自行操作。**
 
 ### useVibrate
 

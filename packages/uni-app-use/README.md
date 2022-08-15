@@ -106,7 +106,7 @@ tryOnUnload(() => {
 
 ### useApp
 
-获取当前应用实例。如果想要获取 `globalData`，可以直接使用 [useGlobalData](./#useGlobalData)。
+获取当前应用实例。如果想要获取 `globalData`，可以直接使用 `useGlobalData`。
 
 ```typescript
 import { useApp } from 'uni-app-use';

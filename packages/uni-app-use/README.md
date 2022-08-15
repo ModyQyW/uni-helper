@@ -126,8 +126,39 @@ import { useBase64ToArrayBuffer } from 'uni-app-use';
 const arrayBuffer = useBase64ToArrayBuffer(base64);
 ```
 
-- [useClipboardData](./src/useClipboardData/index.ts)
-- [UseClipboardData](./src/useClipboardData/component.ts)
+### useClipboardData
+
+获取和设置剪切板数据。
+
+```typescript
+import { useClipboardData } from 'uni-app-use';
+
+const { clipboardData, setClipboardData } = useClipboardData();
+
+// 查看剪切板数据
+console.log('clipboardData', clipboardData);
+// 设置剪切板数据，设置成功后 clipboardData 自动更新
+setClipboardData({
+  ...
+});
+```
+
+### UseClipboardData
+
+像组件一样使用剪切板数据。
+
+```vue
+<script setup lang="ts">
+import { UseClipboardData } from 'uni-app-use';
+</script>
+
+<template>
+  <UseClipboardData v-slot="{ clipboardData, setClipboardData }">
+    <p>clipboardData</p>
+  </UseClipboardData>
+</template>
+```
+
 - [useColorMode](./src/useColorMode/index.ts)
 - [UseColorMode](./src/UseColorMode/component.ts)
 - [useDark](./src/useDark/index.ts)

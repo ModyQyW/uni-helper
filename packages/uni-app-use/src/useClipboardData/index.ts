@@ -1,5 +1,8 @@
 import { ref } from 'vue-demi';
 
+/**
+ * Get and set clipboard data
+ */
 export function useClipboardData(onError = (e: unknown) => console.error(e)) {
   const clipboardData = ref<string>();
 

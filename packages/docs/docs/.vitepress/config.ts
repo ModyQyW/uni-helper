@@ -10,10 +10,7 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     lineNumbers: true,
-    toc: { level: [1, 2, 3] },
-    config: (md) => {
-      md.use(require('markdown-it-code-copy'));
-    },
+    theme: 'github-dark',
   },
   title: 'uni-helper',
   titleTemplate: 'uni-helper 旨在增强 uni-app 系列产品的体验',

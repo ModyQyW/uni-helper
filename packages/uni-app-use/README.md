@@ -154,7 +154,7 @@ import { UseClipboardData } from 'uni-app-use';
 
 <template>
   <UseClipboardData v-slot="{ clipboardData, setClipboardData }">
-    <p>clipboardData</p>
+    <p>{{ clipboardData }}</p>
   </UseClipboardData>
 </template>
 ```
@@ -164,6 +164,49 @@ import { UseClipboardData } from 'uni-app-use';
 - [useDark](./src/useDark/index.ts)
 - [UseDark](./src/UseDark/component.ts)
 - [useDownloadFile](./src/useDownloadFile/index.ts)
+
+### useGlobalData
+
+获取和设置当前应用实例的 `globalData`。
+
+```typescript
+const { globalData, setGlobalData } = useGlobalData();
+```
+
+可以传入一个对象来替换已有全局数据。
+
+```typescript
+setGlobalData({ a: 'a', b: 'b' });
+```
+
+如果不想替换全局数据，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
+
+```typescript
+setGlobalData({ a: 'a', b: 'b' }, false);
+```
+
+你也可以直接设置某一个键值对。
+
+```typescript
+setGlobalData('a', 'a');
+```
+
+### UseGlobalData
+
+`useGlobalData` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseGlobalData } from 'uni-app-use';
+</script>
+
+<template>
+  <UseGlobalData v-slot="{ globalData, setGlobalData }">
+    <p>{{ globalData }}</p>
+  </UseGlobalData>
+</template>
+```
+
 - [useGlobalData](./src/useGlobalData/index.ts)
 - [UseGlobalData](./src/useGlobalData/component.ts)
 - [useInterceptor](./src/useInterceptor/index.ts)

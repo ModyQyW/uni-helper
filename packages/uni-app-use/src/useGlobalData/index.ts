@@ -1,6 +1,9 @@
 import { computed } from 'vue-demi';
 import { useApp } from '../useApp';
 
+/**
+ * Get and set the globalData of the current application instance
+ */
 export function useGlobalData() {
   const { app } = useApp();
 

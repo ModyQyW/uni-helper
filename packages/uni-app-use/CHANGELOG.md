@@ -1,5 +1,12 @@
 # 改动日志
 
+## 0.4.1
+
+- fix: 修复 `setClipboardData` 未正确更新的问题
+- fix: 修复 `UseGlobalData` 导出错误
+- fix: 修复 `UseUniPlatform` 导出错误
+- perf: 调整 `useRouter` 导出
+
 ## 0.4.0
 
 - feat: 新增 `usePrevPage`

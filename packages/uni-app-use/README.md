@@ -263,17 +263,86 @@ import { UseOnline } from 'uni-app-use';
 </template>
 ```
 
-- [usePage](./src/usePage/index.ts)
-- [usePages](./src/usePages/index.ts)
+### usePage
+
+获取当前展示页面信息。
+
+```typescript
+import { usePage } from 'uni-app-use';
+
+const page = usePage();
+```
+
+### usePages
+
+获取当前页面栈信息。
+
+```typescript
+import { usePages } from 'uni-app-use';
+
+const pages = usePages();
+```
+
 - [usePreferredDark](./src/usePreferredDark/index.ts)
 - [UsePreferredDark](./src/usePreferredDark/component.ts)
 - [usePreferredLanguage](./src/usePreferredLanguage/index.ts)
 - [UsePreferredLanguage](./src/usePreferredLanguage/component.ts)
-- [usePrevPage](./src/usePrevPage/index.ts)
-- [usePrevRoute](./src/usePrevRoute/index.ts)
+
+### usePrevPage
+
+获取当前展示页面的前一页面信息。
+
+```typescript
+import { usePrevPage } from 'uni-app-use';
+
+const prevPage = usePrevPage();
+```
+
+### usePrevRoute
+
+获取当前展示页面的前一页面路由路径信息。
+
+```typescript
+import { usePrevRoute } from 'uni-app-use';
+
+const prevRoute = usePrevRoute();
+```
+
 - [useRequest](./src/useRequest/index.ts)
-- [useRoute](./src/useRoute/index.ts)
-- [useRouter](./src/useRouter/index.ts)
+
+### useRoute
+
+获取当前展示页面的路由路径信息。
+
+```typescript
+import { useRoute } from 'uni-app-use';
+
+const route = useRoute();
+```
+
+### useRouter
+
+获取路由相关信息。除了导出 `pages`、`page`、`prevPage`、`route`、`prevRoute` 之外，也导出了所有的路由方法。
+
+```typescript
+import { useRouter } from 'uni-app-use';
+
+const {
+  pages,
+  page,
+  prevPage,
+  route,
+  prevRoute,
+  reLaunch,
+  switchTab,
+  redirectTo,
+  navigateTo,
+  navigateBack,
+  navigateToMiniprogram,
+  navigateBackMiniprogram,
+} = useRouter();
+```
+
 - [useSocket](./src/useSocket/index.ts)
 - [useStorageAsync](./src/useStorageAsync/index.ts)
 - [useSupported](./src/useSupported/index.ts)

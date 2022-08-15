@@ -207,13 +207,62 @@ import { UseGlobalData } from 'uni-app-use';
 </template>
 ```
 
-- [useGlobalData](./src/useGlobalData/index.ts)
-- [UseGlobalData](./src/useGlobalData/component.ts)
 - [useInterceptor](./src/useInterceptor/index.ts)
-- [useNetwork](./src/useNetwork/index.ts)
-- [UseNetwork](./src/useNetwork/component.ts)
-- [useOnline](./src/useOnline/index.ts)
-- [UseOnline](./src/useOnline/component.ts)
+
+### useNetwork
+
+获取网络信息。
+
+```typescript
+import { useNetwork } from 'uni-app-use';
+
+const { isOnline, isOffline, type } = useNetwork();
+```
+
+### UseNetwork
+
+`useNetwork` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseNetwork } from 'uni-app-use';
+</script>
+
+<template>
+  <UseNetwork v-slot="{ isOnline, isOffline, type }">
+    <p>isOnline: {{ isOnline }}</p>
+    <p>isOffline: {{ isOffline }}</p>
+    <p>type: {{ type }}</p>
+  </UseNetwork>
+</template>
+```
+
+### useOnline
+
+获取设备在线信息。
+
+```typescript
+import { useOnline } from 'uni-app-use';
+
+const isOnline = useOnline();
+```
+
+### UseOnline
+
+`useOnline` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseOnline } from 'uni-app-use';
+</script>
+
+<template>
+  <UseOnline v-slot="isOnline">
+    <p>isOnline: {{ isOnline }}</p>
+  </UseOnline>
+</template>
+```
+
 - [usePage](./src/usePage/index.ts)
 - [usePages](./src/usePages/index.ts)
 - [usePreferredDark](./src/usePreferredDark/index.ts)

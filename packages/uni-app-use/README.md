@@ -144,7 +144,7 @@ const app = useApp();
 
 ## 改动日志
 
-- [改动日志](./CHANGELOG.md)
+- [改动日志](https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-use/CHANGELOG.md)
 
 ## 致谢
 

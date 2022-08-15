@@ -1,6 +1,8 @@
 # @modyqyw/uni-request
 
-[![npm](https://img.shields.io/npm/v/@modyqyw/uni-request)](https://www.npmjs.com/package/@modyqyw/uni-request) [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+
+[![npm](https://img.shields.io/npm/v/@modyqyw/uni-request)](https://www.npmjs.com/package/@modyqyw/uni-request)
 
 为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.0.0-alpha.1`。
 

@@ -4,6 +4,9 @@ export interface UseVibrateOptions {
   complete?: (result: any) => void;
 }
 
+/**
+ * Get vibrate methods
+ */
 export function useVibrate() {
   // @ts-expect-error
   const vibrate = (options: UseVibrateOptions) => uni.vibrate(options);

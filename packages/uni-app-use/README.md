@@ -20,7 +20,7 @@
 npm install uni-app-use @vueuse/core @vueuse/shared
 ```
 
-不考虑支持 `uni_modules`。
+不考虑支持 `uni_modules`。目前只考虑小程序和移动应用环境。
 
 ## 使用
 
@@ -188,7 +188,16 @@ import { UseClipboardData } from 'uni-app-use';
 - [useUniPlatform](./src/useUniPlatform/index.ts)
 - [UseUniPlatform](./src/useUniPlatform/component.ts)
 - [useUploadFile](./src/useUploadFile/index.ts)
-- [useVibrate](./src/useVibrate/index.ts)
+
+### useVibrate
+
+获取震动方法。
+
+```typescript
+import { useVibrate } from 'uni-app-use';
+
+const { vibrate, vibrateLong, vibrateShort } = useVibrate();
+```
 
 ### useVisible
 

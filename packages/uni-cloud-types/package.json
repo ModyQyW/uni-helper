@@ -46,7 +46,7 @@
     },
     "hooks": {
       "before:init": "pnpm install && pnpm run lint",
-      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-cloud-types.md && pnpm publish"
+      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-cloud-types.md && pnpm publish --no-git-checks"
     },
     "npm": {
       "publish": false

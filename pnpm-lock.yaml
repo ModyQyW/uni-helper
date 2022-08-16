@@ -118,7 +118,7 @@ importers:
       '@tsconfig/node16': ^1.0.3
       '@types/node': ^18.7.3
       typescript: ^4.7.4
-      uni-app-types: workspace:^*
+      uni-app-types: workspace:^
       vue3: npm:vue@3
     dependencies:
       '@dcloudio/types': 3.0.13
@@ -182,7 +182,7 @@ importers:
       '@tsconfig/node16': ^1.0.3
       '@types/node': ^18.7.3
       typescript: ^4.7.4
-      uni-app-types: workspace:^*
+      uni-app-types: workspace:^
       vue3: npm:vue@3
     dependencies:
       '@dcloudio/types': 3.0.13
@@ -1242,7 +1242,7 @@ packages:
       '@intlify/eslint-plugin-vue-i18n': 2.0.0_eslint@8.22.0
       '@rushstack/eslint-patch': 1.1.4
       '@types/eslint': 8.4.5
-      '@types/node': 18.7.3
+      '@types/node': 18.7.5
       '@types/prettier': 2.7.0
       '@typescript-eslint/eslint-plugin': 5.33.0_yy5c4q6zhpajzhorvwhnwvctfe
       '@typescript-eslint/parser': 5.33.0_4rv7y5c6xz3vfxwhbrcxxi73bq
@@ -1725,7 +1725,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 18.7.3
+      '@types/node': 18.7.5
     dev: true
 
   /@types/http-cache-semantics/4.0.1:
@@ -1788,6 +1788,10 @@ packages:
 
   /@types/node/18.7.3:
     resolution: {integrity: sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w==}
+    dev: true
+
+  /@types/node/18.7.5:
+    resolution: {integrity: sha512-NcKK6Ts+9LqdHJaW6HQmgr7dT/i3GOHG+pt6BiWv++5SnjtRd4NXeiuN2kA153SjhXPR/AhHIPHPbrsbpUVOww==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:

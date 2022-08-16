@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@dcloudio/types": "^3.0.13",
-    "uni-app-types": "workspace:^*",
+    "uni-app-types": "workspace:^",
     "vue3": "npm:vue@3"
   },
   "devDependencies": {
@@ -46,7 +46,8 @@
     },
     "hooks": {
       "before:init": "pnpm install && pnpm run lint",
-      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-ui-types.md"
-    }
+      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-ui-types.md && pnpm publish"
+    },
+    "npm": false
   }
 }

@@ -48,6 +48,8 @@
       "before:init": "pnpm install && pnpm run lint",
       "after:bump": "cp -af README.md ../docs/docs/typescript/uni-ui-types.md && pnpm publish"
     },
-    "npm": false
+    "npm": {
+      "publish": false
+    }
   }
 }

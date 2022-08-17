@@ -242,7 +242,10 @@ import { UseGlobalData } from 'uni-app-use';
 ```typescript
 import { useInterceptor } from 'uni-app-use';
 
-const stop = useInterceptor('request', {
+const event = 'request';
+
+// 设置拦截器
+const stop = useInterceptor(event, {
   invoke: (args) => {
     args.url = 'https://www.example.com/' + args.url;
   },
@@ -256,6 +259,9 @@ const stop = useInterceptor('request', {
     console.log('interceptor-complete', result);
   },
 });
+
+// 删除拦截器
+stop(event);
 ```
 
 ### useNetwork

@@ -716,14 +716,24 @@ import { useStorage } from 'uni-app-use';
 const {
   getStorage,
   getStorageSync,
+  get,
+  getSync,
   setStorage,
   setStorageSync,
+  set,
+  setSync,
   removeStorage,
   removeStorageSync,
+  remove,
+  removeSync,
   clearStorage,
   clearStorageSync,
+  clear,
+  clearSync,
   getStorageInfo,
   getStorageInfoSync,
+  getInfo,
+  getInfoSync,
 } = useStorage();
 ```
 

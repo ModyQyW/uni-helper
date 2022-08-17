@@ -344,6 +344,17 @@ showModal(
 );
 ```
 
+### useNavigationBar
+
+获取导航条相关信息。
+
+```typescript
+import { useNavigationBar } from 'uni-app-use';
+
+const { isLoading, setTitle, setColor, showLoading, hideLoading, toggleLoading, hideHomeButton } =
+  useNavigationBar();
+```
+
 ### useNetwork
 
 获取网络信息。
@@ -481,7 +492,7 @@ const route = useRoute();
 
 ### useRouter
 
-获取路由相关信息。除了导出 `pages`、`page`、`prevPage`、`route`、`prevRoute` 之外，也导出了所有的路由方法。
+获取路由相关信息。
 
 ```typescript
 import { useRouter } from 'uni-app-use';

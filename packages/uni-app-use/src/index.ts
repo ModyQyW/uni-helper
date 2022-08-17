@@ -13,6 +13,7 @@ export * from './useDownloadFile';
 export * from './useInterceptor';
 export * from './useLoading';
 export * from './useModal';
+export * from './useNavigationBar';
 export * from './useNetwork';
 export * from './usePage';
 export * from './usePages';

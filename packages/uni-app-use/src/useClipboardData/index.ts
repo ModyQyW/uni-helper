@@ -12,7 +12,6 @@ export function useClipboardData(onError = (e: unknown) => console.error(e)) {
       clipboardData.value = result.data;
     },
     fail: (e) => {
-      clipboardData.value = undefined;
       onError?.(e);
     },
   });

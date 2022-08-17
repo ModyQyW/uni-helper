@@ -107,7 +107,7 @@ tryOnUnload(() => {
 
 ### useActionSheet
 
-设置菜单列表参数，调用返回方法调起菜单列表。
+设置菜单列表参数，调用返回方法显示菜单列表。
 
 ```typescript
 import { useActionSheet } from 'uni-app-use';
@@ -115,7 +115,7 @@ import { useActionSheet } from 'uni-app-use';
 const showActionSheet = useActionSheet({
   /* 传入配置 */
 });
-showActionSheet(); // 实际调起扫码
+showActionSheet(); // 实际显示菜单列表
 ```
 
 可以传入一个对象来替换已有配置。
@@ -277,6 +277,39 @@ const stop = useInterceptor(event, {
 
 // 删除拦截器
 stop(event);
+```
+
+### useLoading
+
+设置加载提示框参数，调用返回方法显示或隐藏加载提示框。
+
+```typescript
+import { useLoading } from 'uni-app-use';
+
+const { showLoading, hideLoading } = useLoading({
+  /* 传入配置 */
+});
+showLoading(); // 实际显示加载提示框
+hideLoading(); // 隐藏加载提示框
+```
+
+可以传入一个对象来替换已有配置。
+
+```typescript
+showLoading({
+  /* 新传入配置 */
+});
+```
+
+如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
+
+```typescript
+showLoading(
+  {
+    /* 新传入配置 */
+  },
+  false,
+);
 ```
 
 ### useNetwork

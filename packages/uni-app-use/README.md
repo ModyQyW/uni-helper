@@ -481,6 +481,20 @@ import { useSystemInfo } from 'uni-app-use';
 const systemInfo = useSystemInfo();
 ```
 
+### UseSystemInfo
+
+`useSystemInfo` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseSystemInfo } from 'uni-app-use';
+</script>
+
+<template>
+  <UseSystemInfo v-slot="{ ... }"> ... </UseSystemInfo>
+</template>
+```
+
 ### useUniPlatform
 
 获取运行应用时设置的 `UNI_PLATFORM` 值，默认为 `h5`。

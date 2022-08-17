@@ -1,10 +1,9 @@
-import { tryOnMounted } from '@vueuse/shared';
 import { Ref, ref } from 'vue-demi';
 
 /**
  * Get api is supported
  */
-export function useSupported(api: string, sync = false) {
+export function useSupported(api: string) {
   const isSupported = ref() as Ref<boolean>;
 
   const update = () => {
@@ -13,6 +12,5 @@ export function useSupported(api: string, sync = false) {
 
   update();
 
-  tryOnMounted(update, sync);
   return isSupported;
 }

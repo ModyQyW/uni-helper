@@ -1,6 +1,5 @@
 import { Ref, ShallowRef, ref, shallowRef, computed } from 'vue-demi';
-
-type Parameter<T extends (args: any) => any> = T extends (args: infer P) => any ? P : never;
+import { Parameter } from '../types';
 
 export interface UseSocketReturn {
   task: ShallowRef<UniApp.SocketTask | undefined>;

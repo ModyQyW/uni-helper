@@ -403,6 +403,16 @@ const {
 } = useRouter();
 ```
 
+### useSelectorQuery
+
+获取 `SelectorQuery` 实例。
+
+```typescript
+import { useSelectorQuery } from 'uni-app-use';
+
+const query = useSelectorQuery();
+```
+
 ### useSocket
 
 `uni-app` 提供的 `socket` 操作的封装。

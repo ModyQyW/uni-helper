@@ -29,6 +29,7 @@ export * from './useSocket';
 export * from './useStorage';
 export * from './useSupported';
 export * from './useSystemInfo';
+export * from './useToast';
 export * from './useUniPlatform';
 export * from './useUploadFile';
 export * from './useVibrate';

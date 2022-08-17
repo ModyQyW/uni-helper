@@ -627,6 +627,39 @@ import { UseSystemInfo } from 'uni-app-use';
 </template>
 ```
 
+### useToast
+
+设置提示框参数，调用返回方法显示或隐藏提示框。
+
+```typescript
+import { useToast } from 'uni-app-use';
+
+const { showToast, hideToast } = useToast({
+  /* 传入配置 */
+});
+showToast(); // 实际显示提示框
+hideToast(); // 隐藏提示框
+```
+
+可以传入一个对象来替换已有配置。
+
+```typescript
+showToast({
+  /* 新传入配置 */
+});
+```
+
+如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
+
+```typescript
+showToast(
+  {
+    /* 新传入配置 */
+  },
+  false,
+);
+```
+
 ### useUniPlatform
 
 获取运行应用时设置的 `UNI_PLATFORM` 值，默认为 `h5`。

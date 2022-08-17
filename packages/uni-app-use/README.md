@@ -272,7 +272,8 @@ stop(event);
 ```typescript
 import { useNetwork } from 'uni-app-use';
 
-const { isOnline, isOffline, type } = useNetwork();
+const { type, isWifi, is2g, is3g, is4g, is5g, isEthernet, isUnknown, isOnline, isOffline } =
+  useNetwork();
 ```
 
 ### UseNetwork
@@ -285,9 +286,7 @@ import { UseNetwork } from 'uni-app-use';
 </script>
 
 <template>
-  <UseNetwork v-slot="{ isOnline, isOffline, type }">
-    <p>isOnline: {{ isOnline }}</p>
-    <p>isOffline: {{ isOffline }}</p>
+  <UseNetwork v-slot="{ type }">
     <p>type: {{ type }}</p>
   </UseNetwork>
 </template>

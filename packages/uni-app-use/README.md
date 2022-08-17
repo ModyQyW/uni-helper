@@ -700,6 +700,25 @@ import { UseSystemInfo } from 'uni-app-use';
 </template>
 ```
 
+### useTabBar
+
+获取标签栏操作。
+
+```typescript
+import { useTabBar } from 'uni-app-use';
+
+const {
+  setTabBarItem,
+  setTabBarStyle,
+  showTabBar,
+  hideTabBar,
+  setTabBarBadge,
+  removeTabBarBadge,
+  showTabBarRedDot,
+  hideTabBarRedDot,
+} = useTabBar();
+```
+
 ### useToast
 
 设置提示框参数，调用返回方法显示或隐藏提示框。

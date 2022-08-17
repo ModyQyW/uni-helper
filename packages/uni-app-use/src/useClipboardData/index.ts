@@ -6,19 +6,20 @@ import { useInterceptor } from '../useInterceptor';
  */
 export function useClipboardData(onError = (e: unknown) => console.error(e)) {
   const clipboardData = ref<string>();
+  let data = '';
 
   uni.getClipboardData({
     success: (result) => {
       clipboardData.value = result.data;
+      data = result.data;
     },
     fail: (e) => {
       onError?.(e);
     },
   });
 
-  let data = '';
   useInterceptor('setClipboardData', {
-    invoke: (args) => {
+    invoke: (args: UniApp.SetClipboardDataOptions) => {
       data = args.data;
     },
     success: () => {

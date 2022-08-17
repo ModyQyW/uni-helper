@@ -558,7 +558,7 @@ const prevRoute = usePrevRoute();
 ```typescript
 import { usePullDownRefresh } from 'uni-app-use';
 
-const { start, stop } = usePullDownRefresh();
+const { startPullDownRefresh, start, stopPullDownRefresh, stop } = usePullDownRefresh();
 ```
 
 ### useRequest

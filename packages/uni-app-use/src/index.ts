@@ -24,6 +24,7 @@ export * from './useSelectorQuery';
 export * from './useSocket';
 export * from './useStorage';
 export * from './useSupported';
+export * from './useSystemInfo';
 export * from './useUniPlatform';
 export * from './useUploadFile';
 export * from './useVibrate';

@@ -471,6 +471,16 @@ import { useSupported } from 'uni-app-use';
 const isSupported = useSupported();
 ```
 
+### useSystemInfo
+
+获取系统和设备信息。
+
+```typescript
+import { useSystemInfo } from 'uni-app-use';
+
+const systemInfo = useSystemInfo();
+```
+
 ### useUniPlatform
 
 获取运行应用时设置的 `UNI_PLATFORM` 值，默认为 `h5`。

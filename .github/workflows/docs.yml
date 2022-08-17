@@ -24,3 +24,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: packages/docs/docs/.vitepress/dist
+      - uses: wearerequired/git-mirror-action@v1
+        with:
+          source-repo: git@github.com:ModyQyW/uni-helper.git
+          destination-repo: git@gitee.com:ModyQyW/uni-helper.git
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - uses: yanglbme/gitee-pages-action@main
+        with:
+          gitee-username: ModyQyW
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: ModyQyW/uni-helper
+          branch: gh-pages

@@ -2,6 +2,7 @@
 
 ## 0.5.0
 
+- feat: 新增 `useActionSheet`
 - fix: 修复 `useClipboardData` 监听
 - perf: 调整 `useClipboardData` 实现
 - feat!: 移除 `useColorMode`

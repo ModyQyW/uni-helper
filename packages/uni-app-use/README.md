@@ -105,6 +105,38 @@ tryOnUnload(() => {
 });
 ```
 
+### useActionSheet
+
+设置菜单列表参数，调用返回方法调起菜单列表。
+
+```typescript
+import { useActionSheet } from 'uni-app-use';
+
+const showActionSheet = useActionSheet({
+  /* 传入配置 */
+});
+showActionSheet(); // 实际调起扫码
+```
+
+可以传入一个对象来替换已有配置。
+
+```typescript
+showActionSheet({
+  /* 新传入配置 */
+});
+```
+
+如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
+
+```typescript
+showActionSheet(
+  {
+    /* 新传入配置 */
+  },
+  false,
+);
+```
+
 ### useApp
 
 获取当前应用实例。如果想要获取 `globalData`，可以直接使用 `useGlobalData`。

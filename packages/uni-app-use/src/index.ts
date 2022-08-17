@@ -4,6 +4,7 @@ export * from './tryOnLoad';
 export * from './tryOnReady';
 export * from './tryOnShow';
 export * from './tryOnUnload';
+export * from './useActionSheet';
 export * from './useApp';
 export * from './useArrayBufferToBase64';
 export * from './useBase64ToArrayBuffer';

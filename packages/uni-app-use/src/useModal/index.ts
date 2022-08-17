@@ -1,7 +1,7 @@
 export function useModal(options: UniApp.ShowModalOptions) {
-  const showModal = (newOptions: UniApp.ShowModalOptions, override = true) => {
+  const showModal = (newOptions: UniApp.ShowModalOptions) => {
     uni.showModal({
-      ...(override ? undefined : options),
+      ...options,
       ...newOptions,
     });
   };

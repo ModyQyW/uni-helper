@@ -1,7 +1,7 @@
 export function useScanCode(options: UniApp.ScanCodeOptions) {
-  const scan = (newOptions: UniApp.ScanCodeOptions, override = true) => {
+  const scan = (newOptions: UniApp.ScanCodeOptions) => {
     uni.scanCode({
-      ...(override ? undefined : options),
+      ...options,
       ...newOptions,
     });
   };

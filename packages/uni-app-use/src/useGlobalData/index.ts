@@ -9,7 +9,7 @@ export function useGlobalData() {
 
   const globalData = computed(() => app.value.globalData);
 
-  function setGlobalData(nextGlobalData: AnyObject | undefined, override?: boolean): void;
+  function setGlobalData(nextGlobalData: AnyObject | undefined): void;
   function setGlobalData(key: string, value: any): void;
   function setGlobalData(...args: any[]) {
     if (typeof args[0] === 'string') {
@@ -19,9 +19,8 @@ export function useGlobalData() {
       return;
     }
     const nextGlobalData = args[0];
-    const override = args[1] ?? true;
     app.value.globalData = {
-      ...(override ? undefined : app.value.globalData),
+      ...app.value.globalData,
       ...nextGlobalData,
     };
   }

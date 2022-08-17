@@ -1,7 +1,7 @@
 export function useActionSheet(options: UniApp.ShowActionSheetOptions) {
-  const showActionSheet = (newOptions: UniApp.ShowActionSheetOptions, override = true) => {
+  const showActionSheet = (newOptions: UniApp.ShowActionSheetOptions) => {
     uni.showActionSheet({
-      ...(override ? undefined : options),
+      ...options,
       ...newOptions,
     });
   };

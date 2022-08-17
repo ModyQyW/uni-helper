@@ -118,23 +118,12 @@ const showActionSheet = useActionSheet({
 showActionSheet(); // 实际显示菜单列表
 ```
 
-可以传入一个对象来替换已有配置。
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
 
 ```typescript
 showActionSheet({
   /* 新传入配置 */
 });
-```
-
-如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
-
-```typescript
-showActionSheet(
-  {
-    /* 新传入配置 */
-  },
-  false,
-);
 ```
 
 ### useApp
@@ -226,16 +215,10 @@ import { useGlobalData } from 'uni-app-use';
 const { globalData, setGlobalData } = useGlobalData();
 ```
 
-可以传入一个对象来替换已有全局数据。
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
 
 ```typescript
 setGlobalData({ a: 'a', b: 'b' });
-```
-
-如果不想替换全局数据，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
-
-```typescript
-setGlobalData({ a: 'a', b: 'b' }, false);
 ```
 
 你也可以直接设置某一个键值对。
@@ -326,23 +309,12 @@ showLoading(); // 实际显示加载提示框
 hideLoading(); // 隐藏加载提示框
 ```
 
-可以传入一个对象来替换已有配置。
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
 
 ```typescript
 showLoading({
   /* 新传入配置 */
 });
-```
-
-如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
-
-```typescript
-showLoading(
-  {
-    /* 新传入配置 */
-  },
-  false,
-);
 ```
 
 ### useLocation
@@ -368,23 +340,12 @@ const showModal = useModal({
 showModal(); // 实际显示模态框
 ```
 
-可以传入一个对象来替换已有配置。
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
 
 ```typescript
 showModal({
   /* 新传入配置 */
 });
-```
-
-如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
-
-```typescript
-showModal(
-  {
-    /* 新传入配置 */
-  },
-  false,
-);
 ```
 
 ### useNavigationBar
@@ -613,23 +574,12 @@ const scan = useScanCode({
 scan(); // 实际调起扫码
 ```
 
-可以传入一个对象来替换已有配置。
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
 
 ```typescript
 scan({
   /* 新传入配置 */
 });
-```
-
-如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
-
-```typescript
-scan(
-  {
-    /* 新传入配置 */
-  },
-  false,
-);
 ```
 
 ### useScreenBrightness
@@ -804,23 +754,12 @@ showToast(); // 实际显示提示框
 hideToast(); // 隐藏提示框
 ```
 
-可以传入一个对象来替换已有配置。
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
 
 ```typescript
 showToast({
   /* 新传入配置 */
 });
-```
-
-如果不想替换已有配置，可以在第二个参数传入 `false`，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来赋值。
-
-```typescript
-showToast(
-  {
-    /* 新传入配置 */
-  },
-  false,
-);
 ```
 
 ### useUniPlatform

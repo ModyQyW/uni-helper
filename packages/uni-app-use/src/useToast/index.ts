@@ -1,7 +1,7 @@
 export function useToast(options: UniApp.ShowToastOptions) {
-  const showToast = (newOptions: UniApp.ShowToastOptions, override = true) => {
+  const showToast = (newOptions: UniApp.ShowToastOptions) => {
     uni.showToast({
-      ...(override ? undefined : options),
+      ...options,
       ...newOptions,
     });
   };

@@ -1,7 +1,7 @@
 export function useLoading(options: UniApp.ShowLoadingOptions) {
-  const showLoading = (newOptions: UniApp.ShowLoadingOptions, override = true) => {
+  const showLoading = (newOptions: UniApp.ShowLoadingOptions) => {
     uni.showLoading({
-      ...(override ? undefined : options),
+      ...options,
       ...newOptions,
     });
   };

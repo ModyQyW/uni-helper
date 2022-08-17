@@ -27,6 +27,7 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 - 缺失某些全局变量（如 `window`、`navigator` 等）
 - 需要使用 `uni-app` 提供的拦截器做监听（无法处理同步 API）
 - 需要使用 `uni-app` 提供的存储 API
+- 无法使用顶层 `await`
 
 这些限制无法避开。如果要开发 H5，不妨直接使用 `vueuse`。
 
@@ -161,7 +162,7 @@ import { UseClipboardData } from 'uni-app-use';
 </script>
 
 <template>
-  <UseClipboardData v-slot="{ clipboardData, setClipboardData }">
+  <UseClipboardData v-slot="{ clipboardData }">
     <p>{{ clipboardData }}</p>
   </UseClipboardData>
 </template>

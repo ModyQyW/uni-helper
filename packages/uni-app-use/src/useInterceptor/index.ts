@@ -1,34 +1,13 @@
-import { noop, tryOnScopeDispose, Fn } from '@vueuse/shared';
-import { watch } from 'vue-demi';
+import { tryOnScopeDispose, Fn } from '@vueuse/shared';
 
 /**
  * Register using addInterceptor on mounted, and removeInterceptor automatically on unmounted.
  */
 export function useInterceptor(event: string, options: UniApp.InterceptorOptions): Fn {
-  let cleanup = noop;
-
-  const stopWatch = watch(
-    uni,
-    (el) => {
-      cleanup();
-      if (!el) {
-        return;
-      }
-      uni.addInterceptor(event, options);
-      cleanup = () => {
-        uni.removeInterceptor(event);
-        cleanup = noop;
-      };
-    },
-    {
-      immediate: true,
-      flush: 'post',
-    },
-  );
+  uni.addInterceptor(event, options);
 
   const stop = () => {
-    stopWatch();
-    cleanup();
+    uni.removeInterceptor(event);
   };
 
   tryOnScopeDispose(stop);

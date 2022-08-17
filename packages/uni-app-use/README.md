@@ -484,6 +484,16 @@ import { usePrevRoute } from 'uni-app-use';
 const prevRoute = usePrevRoute();
 ```
 
+### usePullDownRefresh
+
+获取下拉刷新方法。
+
+```typescript
+import { usePullDownRefresh } from 'uni-app-use';
+
+const { start, stop } = usePullDownRefresh();
+```
+
 ### useRequest
 
 `uni.request` 的封装。使用方法参见 <https://vueuse.org/integrations/useAxios/>。

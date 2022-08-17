@@ -32,6 +32,8 @@ export function useScreenBrightness(onError = (e: unknown) => console.error(e)) 
 
   return {
     screenBrightness,
+    brightness: screenBrightness,
     setScreenBrightness,
+    setBrightness: setScreenBrightness,
   };
 }

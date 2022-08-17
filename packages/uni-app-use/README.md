@@ -639,12 +639,16 @@ scan(
 ```typescript
 import { useScreenBrightness } from 'uni-app-use';
 
-const { screenBrightness, setScreenBrightness } = useScreenBrightness();
+const { screenBrightness, brightness, setScreenBrightness, setBrightness } = useScreenBrightness();
 
 // 查看屏幕亮度
 console.log('screenBrightness', screenBrightness);
-// 设置屏幕亮度，设置成功后 screenBrightness 自动更新
+console.log('brightness', brightness);
+// 设置屏幕亮度，设置成功后自动更新
 setScreenBrightness({
+  ...
+});
+setBrightness({
   ...
 });
 ```

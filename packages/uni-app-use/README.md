@@ -260,6 +260,29 @@ import { UseGlobalData } from 'uni-app-use';
 </template>
 ```
 
+### useImage
+
+获取图片相关操作。
+
+```typescript
+import { useImage } from 'uni-app-use';
+
+const {
+  chooseImage,
+  choose,
+  previewImage,
+  preview,
+  closePreviewImage,
+  closePreview,
+  getImageInfo,
+  getInfo,
+  saveImageToPhotosAlbum,
+  saveToPhotosAlbum,
+  compressImage,
+  compress,
+} = useImage();
+```
+
 ### useInterceptor
 
 设置拦截器。

@@ -8,6 +8,7 @@
 - perf: 调整 `useClipboardData` 实现
 - feat!: 移除 `useColorMode`
 - feat!: 移除 `useDark`
+- feat: 新增 `useImage`
 - fix: 修复 `useInterceptor` 监听
 - feat: 新增 `useLoading`
 - feat: 新增 `useLocation`

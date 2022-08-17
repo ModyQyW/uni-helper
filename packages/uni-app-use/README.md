@@ -168,26 +168,6 @@ import { UseClipboardData } from 'uni-app-use';
 </template>
 ```
 
-### useColorMode
-
-带有自动数据持久性的响应式颜色模式。使用方法参见 <https://vueuse.org/core/useColorMode/>。
-
-**由于存在限制，该方法不会为你设置 `class`。如果要自定义 `storage`，必须使用 `uni-app` 提供的异步存储 API，否则无法监听导致响应式失效。**
-
-### UseColorMode
-
-`useColorMode` 的组件版本。使用方法参见 <https://vueuse.org/core/useColorMode/>。
-
-### useDark
-
-带有自动数据持久性的响应式暗黑模式。使用方法参见 <https://vueuse.org/core/useDark/>。
-
-**由于存在限制，该方法不会为你设置 `class`。如果要自定义 `storage`，必须使用 `uni-app` 提供的异步存储 API，否则无法监听导致响应式失效。**
-
-### UseDark
-
-`useDark` 的组件版本。使用方法参见 <https://vueuse.org/core/useDark/>。
-
 ### useDownloadFile
 
 `uni.downloadFile` 的封装。使用方法参见 <https://vueuse.org/integrations/useAxios/>。
@@ -450,11 +430,26 @@ const { task, sendMessage, close, isConnecting, isConnected, isClosed, error } =
 - `onSocketMessage`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#onsocketmessage>
 - `onSocketClose`: <https://uniapp.dcloud.net.cn/api/request/websocket.html#onsocketclose>
 
-### useStorageAsync
+### useStorage
 
-响应式的存储。使用方法参见 <https://vueuse.org/core/useStorage/> 和 <https://vueuse.org/core/useStorageAsync/>。
+获取存储方法。
 
-**由于存在限制，如果要自定义 `storage`，必须使用 `uni-app` 提供的异步存储 API，否则无法监听导致响应式失效。**
+```typescript
+import { useStorage } from 'uni-app-use';
+
+const {
+  getStorage,
+  getStorageSync,
+  setStorage,
+  setStorageSync,
+  removeStorage,
+  removeStorageSync,
+  clearStorage,
+  clearStorageSync,
+  getStorageInfo,
+  getStorageInfoSync,
+} = useStorage();
+```
 
 ### useSupported
 

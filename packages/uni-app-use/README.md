@@ -157,6 +157,16 @@ import { useArrayBufferToBase64 } from 'uni-app-use';
 const base64 = useArrayBufferToBase64(arrayBuffer);
 ```
 
+### useBackground
+
+获取背景设置方法。
+
+```typescript
+import { useBackground } from 'uni-app-use';
+
+const { setBackgroundColor, setBackgroundTextStyle } = useBackground();
+```
+
 ### useBase64ToArrayBuffer
 
 获取 base64 对应的 ArrayBuffer。可以直接传入 `ref`。

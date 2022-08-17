@@ -15,7 +15,6 @@
 - feat: 新增 `useModal`
 - feat: 新增 `useNavigationBar`
 - perf: 调整 `useNetwork` 实现
-- feat!: 移除 `useOnline`
 - perf: 调整 `UsePreferredDark` 实现
 - perf: 调整 `UsePreferredLanguage` 实现
 - feat: 新增 `usePullDownRefresh` 实现

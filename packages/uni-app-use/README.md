@@ -394,8 +394,16 @@ showModal(
 ```typescript
 import { useNavigationBar } from 'uni-app-use';
 
-const { isLoading, setTitle, setColor, showLoading, hideLoading, toggleLoading, hideHomeButton } =
-  useNavigationBar();
+const {
+  setNavigationBarTitle,
+  setTitle,
+  setNavigationBarColor,
+  setColor,
+  showNavigationBarLoading,
+  showLoading,
+  hideNavigationBarLoading,
+  hideLoading,
+} = useNavigationBar();
 ```
 
 ### useNetwork

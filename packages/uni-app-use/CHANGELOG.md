@@ -11,6 +11,7 @@
 - feat!: 移除 `useOnline`
 - perf: 调整 `UsePreferredDark` 实现
 - perf: 调整 `UsePreferredLanguage` 实现
+- feat: 新增 `useScreenBrightness` 和 `UseScreenBrightness`
 - feat: 新增 `useSelectorQuery`
 - feat: 新增 `useStorage`
 - feat!: 移除 `useStorageAsync`

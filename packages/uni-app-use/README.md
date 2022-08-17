@@ -403,6 +403,39 @@ const {
 } = useRouter();
 ```
 
+### useScreenBrightness
+
+获取和设置屏幕亮度。
+
+```typescript
+import { useScreenBrightness } from 'uni-app-use';
+
+const { screenBrightness, setScreenBrightness } = useScreenBrightness();
+
+// 查看屏幕亮度
+console.log('screenBrightness', screenBrightness);
+// 设置屏幕亮度，设置成功后 screenBrightness 自动更新
+setScreenBrightness({
+  ...
+});
+```
+
+### UseScreenBrightness
+
+`useScreenBrightness` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseScreenBrightness } from 'uni-app-use';
+</script>
+
+<template>
+  <UseScreenBrightness v-slot="{ screenBrightness }">
+    <p>{{ screenBrightness }}</p>
+  </UseScreenBrightness>
+</template>
+```
+
 ### useSelectorQuery
 
 获取 `SelectorQuery` 实例。

@@ -12,6 +12,7 @@ export * from './useClipboardData';
 export * from './useDownloadFile';
 export * from './useInterceptor';
 export * from './useLoading';
+export * from './useModal';
 export * from './useNetwork';
 export * from './usePage';
 export * from './usePages';

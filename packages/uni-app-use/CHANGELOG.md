@@ -25,6 +25,7 @@
 - feat!: 移除 `useStorageAsync`
 - perf: 调整 `useSupported` 实现
 - feat: 新增 `useSystemInfo` 和 `UseSystemInfo`
+- feat: 新增 `useTabBar`
 - feat: 新增 `useToast`
 - perf: 调整 `useVibrate` 实现
 

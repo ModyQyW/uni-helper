@@ -24,7 +24,6 @@
 - feat: 新增 `useSelectorQuery`
 - feat: 新增 `useStorage`
 - feat!: 移除 `useStorageAsync`
-- perf: 调整 `useSupported` 实现
 - feat: 新增 `useSystemInfo` 和 `UseSystemInfo`
 - feat: 新增 `useTabBar`
 - feat: 新增 `useToast`

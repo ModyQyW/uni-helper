@@ -20,6 +20,7 @@ export * from './usePrevRoute';
 export * from './useRequest';
 export * from './useRoute';
 export * from './useRouter';
+export * from './useScanCode';
 export * from './useScreenBrightness';
 export * from './useSelectorQuery';
 export * from './useSocket';

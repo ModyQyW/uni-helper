@@ -292,32 +292,6 @@ import { UseNetwork } from 'uni-app-use';
 </template>
 ```
 
-### useOnline
-
-获取设备在线信息。
-
-```typescript
-import { useOnline } from 'uni-app-use';
-
-const isOnline = useOnline();
-```
-
-### UseOnline
-
-`useOnline` 的组件版本。
-
-```vue
-<script setup lang="ts">
-import { UseOnline } from 'uni-app-use';
-</script>
-
-<template>
-  <UseOnline v-slot="{ isOnline }">
-    <p>isOnline: {{ isOnline }}</p>
-  </UseOnline>
-</template>
-```
-
 ### usePage
 
 获取当前展示页面信息。

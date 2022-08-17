@@ -13,7 +13,6 @@ export * from './useDark';
 export * from './useDownloadFile';
 export * from './useInterceptor';
 export * from './useNetwork';
-export * from './useOnline';
 export * from './usePage';
 export * from './usePages';
 export * from './usePreferredDark';

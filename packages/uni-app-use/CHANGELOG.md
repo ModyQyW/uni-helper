@@ -1,5 +1,16 @@
 # 改动日志
 
+## 0.5.0
+
+- fix: 修复 `useInterceptor` 监听
+- fix: 修复 `useClipboardData` 监听
+- perf: 调整 `useClipboardData` 实现
+- perf: 调整 `useNetwork` 实现
+- feat!: 移除 `useOnline`
+- perf: 调整 `UsePreferredLanguage` 实现
+- perf: 调整 `useSupported` 实现
+- perf: 调整 `useVibrate` 实现
+
 ## 0.4.2
 
 - fix: 修复链接

@@ -1,5 +1,5 @@
 import { ref, readonly } from 'vue-demi';
-import { noop, tryOnScopeDispose } from '@vueuse/shared';
+import { tryOnScopeDispose } from '@vueuse/shared';
 
 /**
  * Reactive dark theme preference.
@@ -7,12 +7,22 @@ import { noop, tryOnScopeDispose } from '@vueuse/shared';
 export function usePreferredDark() {
   const prefersDark = ref(uni.getSystemInfoSync().osTheme === 'dark');
 
-  uni.onThemeChange((result) => {
+  const updatePrefersDark = (result: UniApp.OnThemeChangeCallbackResult) => {
     prefersDark.value = result.theme === 'dark';
-  });
-  tryOnScopeDispose(() => {
-    uni.offThemeChange(noop);
-  });
+  };
+
+  const callback = (result: UniApp.OnThemeChangeCallbackResult) => {
+    updatePrefersDark(result);
+  };
+
+  uni.onThemeChange(callback);
+
+  const stop = () => {
+    // @ts-expect-error
+    uni.offThemeChange(callback);
+  };
+
+  tryOnScopeDispose(stop);
 
   return readonly(prefersDark);
 }

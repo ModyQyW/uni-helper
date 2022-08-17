@@ -3,7 +3,9 @@
 ## 0.5.0
 
 - feat: 新增 `useActionSheet`
+- perf!: 调整 `useArrayBufferToBase64` 实现
 - feat: 新增 `useBackground`
+- perf!: 调整 `useBase64ToArrayBuffer` 实现
 - fix: 修复 `useClipboardData` 监听
 - perf: 调整 `useClipboardData` 实现
 - feat!: 移除 `useColorMode`

@@ -322,6 +322,16 @@ showLoading(
 );
 ```
 
+### useLocation
+
+获取位置相关方法。
+
+```typescript
+import { useLocation } from 'uni-app-use';
+
+const { getLocation, chooseLocation, openLocation } = useLocation();
+```
+
 ### useModal
 
 设置模态框参数，调用返回方法显示模态框。

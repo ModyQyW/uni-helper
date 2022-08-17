@@ -10,6 +10,7 @@
 - feat!: 移除 `useDark`
 - fix: 修复 `useInterceptor` 监听
 - feat: 新增 `useLoading`
+- feat: 新增 `useLocation`
 - feat: 新增 `useModal`
 - feat: 新增 `useNavigationBar`
 - perf: 调整 `useNetwork` 实现

@@ -50,7 +50,7 @@
     "uni-composition-api": "^0.6.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.237",
+    "@swc/core": "^1.2.239",
     "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.7.6",
     "eslint": "^8.22.0",

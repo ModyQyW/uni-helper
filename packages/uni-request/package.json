@@ -53,18 +53,18 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.237",
+    "@swc/core": "^1.2.239",
     "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.7.6",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
-    "@vitest/ui": "^0.22.0",
+    "@vitest/ui": "^0.22.1",
     "c8": "^7.12.0",
     "eslint": "^8.22.0",
     "npm-run-all": "^4.1.5",
     "tsup": "^6.2.2",
     "typescript": "^4.7.4",
-    "vitest": "^0.22.0"
+    "vitest": "^0.22.1"
   },
   "publishConfig": {
     "access": "public",

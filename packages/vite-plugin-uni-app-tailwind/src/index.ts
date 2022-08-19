@@ -31,7 +31,7 @@ export default function UniAppTailwindPlugin(options?: UniAppTailwindPluginOptio
             if (isStyleFile(fileName)) {
               newSource = transformStyle(source, finalOptions);
             }
-            asset.source = newSource;
+            asset.source = newSource || asset.source;
           }
         }
       });

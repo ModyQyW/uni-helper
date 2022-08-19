@@ -8,12 +8,6 @@ describe('utils::buildUrl', () => {
   });
 
   it('should support params', () => {
-    console.log(
-      buildUrl('/foo', {
-        foo: 'bar',
-      }),
-    );
-
     expect(
       buildUrl('/foo', {
         foo: 'bar',

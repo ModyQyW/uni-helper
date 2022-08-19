@@ -54,6 +54,14 @@
 
 提供 `uni-ui` 组件代码片段。
 
+## 构建工具支持
+
+### [vite-plugin-uni-app-tailwind](./bundler/vite-plugin-uni-app-tailwind.md)
+
+[![npm](https://img.shields.io/npm/v/vite-plugin-uni-app-tailwind)](https://www.npmjs.com/package/vite-plugin-uni-app-tailwind)
+
+支持在 `uni-app` 中使用 `tailwindcss` 原有语法开发小程序。
+
 ## TypeScript 支持
 
 ### [uni-app-types](./typescript/uni-app-types.md)

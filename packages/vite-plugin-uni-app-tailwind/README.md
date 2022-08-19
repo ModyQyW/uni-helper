@@ -1,5 +1,9 @@
 # vite-plugin-uni-app-tailwind
 
+[![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
+
+[![npm](https://img.shields.io/npm/v/vite-plugin-uni-app-tailwind)](https://www.npmjs.com/package/vite-plugin-uni-app-tailwind)
+
 支持在 `uni-app` 中使用 `tailwindcss` 原有语法开发小程序。
 
 ## 使用

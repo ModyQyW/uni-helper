@@ -18,7 +18,7 @@ import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-import uniAppTailwind, { postcssTransformSelector } from 'vite-plugin-uni-app-tailwind';
+import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -29,8 +29,6 @@ export default defineConfig({
         postcssPresetEnv({
           stage: 3,
         }),
-        // 改写样式文件里面的 `selector`
-        postcssTransformSelector(),
       ],
     },
   },
@@ -43,7 +41,6 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    // 改写模板文件里面的 `class`
     uniAppTailwind(),
   ],
 });

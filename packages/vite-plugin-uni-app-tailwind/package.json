@@ -1,0 +1,84 @@
+{
+  "name": "vite-plugin-uni-app-tailwind",
+  "version": "0.0.0",
+  "description": "支持在 `uni-app` 中使用 `tailwindcss` 原有语法开发小程序",
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "vite-plugin",
+    "uni-app",
+    "uniapp",
+    "miniprogram"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "check:types": "npx tsc --noEmit",
+    "dev": "pnpm run build --watch src",
+    "lint": "run-p lint:eslint check:types test:coverage",
+    "lint:eslint": "npx eslint src --fix",
+    "release": "npx release-it",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "@vivaxy/wxml": "^2.1.0",
+    "postcss": "^8.4.16"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/babel__core": "^7.1.19",
+    "@types/node": "^18.7.6",
+    "@vitest/ui": "^0.22.1",
+    "c8": "^7.12.0",
+    "eslint": "^8.22.0",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.1.8",
+    "tsup": "^6.2.2",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.8",
+    "vitest": "^0.22.1"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0",
+    "vite": "^2.0.0 || ^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): vite-plugin-uni-app-tailwind@v${version}",
+      "tagName": "vite-plugin-uni-app-tailwind@v${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install && pnpm run lint",
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/bundler/vite-plugin-uni-app-tailwind.md"
+    }
+  }
+}

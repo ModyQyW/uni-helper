@@ -197,11 +197,12 @@ importers:
 
   packages/vite-plugin-uni-app-tailwind:
     specifiers:
-      '@swc/core': ^1.2.239
-      '@swc/helpers': ^0.4.7
+      '@babel/core': ^7.18.10
       '@tsconfig/node16': ^1.0.3
+      '@types/babel__core': ^7.1.19
       '@types/node': ^18.7.6
       '@vitest/ui': ^0.22.1
+      '@vivaxy/wxml': ^2.1.0
       c8: ^7.12.0
       eslint: ^8.22.0
       npm-run-all: ^4.1.5
@@ -212,18 +213,19 @@ importers:
       vite: ^3.0.8
       vitest: ^0.22.1
     dependencies:
+      '@babel/core': 7.18.10
+      '@vivaxy/wxml': 2.1.0
       postcss: 8.4.16
     devDependencies:
-      '@swc/core': 1.2.239
-      '@swc/helpers': 0.4.7
       '@tsconfig/node16': 1.0.3
+      '@types/babel__core': 7.1.19
       '@types/node': 18.7.6
       '@vitest/ui': 0.22.1
       c8: 7.12.0
       eslint: 8.22.0
       npm-run-all: 4.1.5
       tailwindcss: 3.1.8_postcss@8.4.16
-      tsup: 6.2.2_fniuc6vevai5acblgoclfhjtki
+      tsup: 6.2.2_72trlu77vwoamnsgxpuivbk5ba
       typescript: 4.7.4
       vite: 3.0.8
       vitest: 0.22.1_@vitest+ui@0.22.1
@@ -393,7 +395,6 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@babel/core/7.18.9:
     resolution: {integrity: sha512-1LIb1eL8APMy91/IMW+31ckrfBM4yCoLaVzoDhZUKSM4cu1L1nIidyxkCgzPAgrC5WEz36IPEr/eSeSF9pIn+g==}
@@ -460,7 +461,6 @@ packages:
       '@babel/helper-validator-option': 7.18.6
       browserslist: 4.21.3
       semver: 6.3.0
-    dev: true
 
   /@babel/helper-compilation-targets/7.18.9_@babel+core@7.18.9:
     resolution: {integrity: sha512-tzLCyVmqUiFlcFoAPLA/gL9TeYrF61VLNtb+hvkuVaB5SUjW7jcfrglBIX1vUIoT7CLP3bBlIMeyEsIl2eFQNg==}
@@ -1687,12 +1687,6 @@ packages:
       '@swc/core-win32-x64-msvc': 1.2.239
     dev: true
 
-  /@swc/helpers/0.4.7:
-    resolution: {integrity: sha512-jJKr/2JOivCQxb5Xpli3asedRLH34QgJ3G+7gm6CoCOwt/LDDX9g67OuxvjFOiYZfngWYB66ZbjU6cUNtQdavg==}
-    dependencies:
-      tslib: 2.4.0
-    dev: true
-
   /@swc/wasm/1.2.122:
     resolution: {integrity: sha512-sM1VCWQxmNhFtdxME+8UXNyPNhxNu7zdb6ikWpz0YKAQQFRGT5ThZgJrubEpah335SUToNg8pkdDF7ibVCjxbQ==}
     requiresBuild: true
@@ -1731,6 +1725,35 @@ packages:
 
   /@tsconfig/node16/1.0.3:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
+    dev: true
+
+  /@types/babel__core/7.1.19:
+    resolution: {integrity: sha512-WEOTgRsbYkvA/KCsDwVEGkd7WAr1e3g31VHQ8zy5gul/V1qKullU/BU5I68X5v7V3GnB9eotmom4v5a5gjxorw==}
+    dependencies:
+      '@babel/parser': 7.18.11
+      '@babel/types': 7.18.10
+      '@types/babel__generator': 7.6.4
+      '@types/babel__template': 7.4.1
+      '@types/babel__traverse': 7.18.0
+    dev: true
+
+  /@types/babel__generator/7.6.4:
+    resolution: {integrity: sha512-tFkciB9j2K755yrTALxD44McOrk+gfpIpvC3sxHjRawj6PfnQxrse4Clq5y/Rq+G3mrBurMax/lG8Qn2t9mSsg==}
+    dependencies:
+      '@babel/types': 7.18.10
+    dev: true
+
+  /@types/babel__template/7.4.1:
+    resolution: {integrity: sha512-azBFKemX6kMg5Io+/rdGT0dkGreboUVR0Cdm3fz9QJWpaQGJRQXl7C+6hOTCZcMll7KFyEQpgbYI2lHdsS4U7g==}
+    dependencies:
+      '@babel/parser': 7.18.11
+      '@babel/types': 7.18.10
+    dev: true
+
+  /@types/babel__traverse/7.18.0:
+    resolution: {integrity: sha512-v4Vwdko+pgymgS+A2UIaJru93zQd85vIGWObM5ekZNdXCKtDYqATlEYnWgfo86Q6I1Lh0oXnksDnMU1cwmlPDw==}
+    dependencies:
+      '@babel/types': 7.18.10
     dev: true
 
   /@types/cacheable-request/6.0.2:
@@ -2091,6 +2114,10 @@ packages:
     dependencies:
       sirv: 2.0.2
     dev: true
+
+  /@vivaxy/wxml/2.1.0:
+    resolution: {integrity: sha512-xqnfAB58tl5SPyfkQjrn7D7nuvq7XV9um7QUsjCrvA4X6aZBxcau9sAM47LsQTOpJIVPzjaKIMvq3ul07yZlOA==}
+    dev: false
 
   /@vue/compiler-core/3.2.37:
     resolution: {integrity: sha512-81KhEjo7YAOh0vQJoSmAD68wLfYqJvoiD4ulyedzF+OEk/bk6/hx3fTNVfuzugIIaTrOx4PGx6pAiBRe5e9Zmg==}
@@ -9256,7 +9283,7 @@ packages:
       - ts-node
     dev: true
 
-  /tsup/6.2.2_fniuc6vevai5acblgoclfhjtki:
+  /tsup/6.2.2_72trlu77vwoamnsgxpuivbk5ba:
     resolution: {integrity: sha512-vJ9IAdif4GKAz2XMZzjX1hNqhBezJWXjm0qeQEoI7y//a64cxgCF8178eTMV4jBu7YNKnfAPpPSuyXW4mN+9rA==}
     engines: {node: '>=14'}
     hasBin: true
@@ -9272,7 +9299,6 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@swc/core': 1.2.239
       bundle-require: 3.0.4_esbuild@0.15.2
       cac: 6.7.12
       chokidar: 3.5.3

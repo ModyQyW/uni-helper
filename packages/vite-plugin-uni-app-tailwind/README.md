@@ -4,7 +4,9 @@
 
 ## 使用
 
-在 `uni-app` 项目中安装配置 [tailwindcss](https://tailwindcss.com/) 之后，再安装额外依赖。
+参考 [tailwindcss 文档](https://tailwindcss.com/) 在 `uni-app` 项目中安装配置 `tailwindcss`。你无需禁用 `preflight`，也无需调整原有语法（如 `.w-[200.5rpx]` 等），你只需要正常书写类名，该插件会替你处理剩下的事情。
+
+安装依赖。
 
 ```shell
 npm install vite-plugin-uni-app-tailwind

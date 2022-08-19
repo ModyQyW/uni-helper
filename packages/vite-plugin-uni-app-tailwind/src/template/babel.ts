@@ -1,4 +1,5 @@
-import babel, { PluginItem } from '@babel/core';
+import * as babel from '@babel/core';
+import { PluginItem } from '@babel/core';
 import { replaceCharacters } from '../utils';
 import { Options } from '../options';
 

@@ -1,4 +1,4 @@
-import wxml from '@vivaxy/wxml';
+import * as wxml from '@vivaxy/wxml';
 import { defaultOptions, Options } from '../options';
 import { babelTransformClass } from './babel';
 

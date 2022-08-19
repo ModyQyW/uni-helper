@@ -185,11 +185,11 @@ export const defaultOptions = {
 - [unocss-preset-uni](https://github.com/zguolee/unocss-preset-uni)
 - [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp)
 
-### windicss / unocss
+### windicss / unocss 支持
 
-`windicss` / `unocss` 是富具创造性的项目，但问世时间较短，我相信 `tailwindcss` 是目前更为稳妥的选择。
+`windicss` / `unocss` 是富具创造性的项目，尽管它们都声称支持 `tailwindcss` 所有功能，但它们问世时间都较短，我相信 `tailwindcss` 是目前更为稳妥的选择。
 
-如果 `unocss` 未来成为 `windicss@4` 的底层引擎或者直接替代了 `windicss`（请阅读 [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)），我非常乐意额外写一个 `vite-plugin-uni-app-unocss` 插件。
+如果 `unocss` 未来成为 `windicss@4` 的底层引擎或者直接替代了 `windicss`（请阅读 [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)），我非常乐意再写一个 `vite-plugin-uni-app-unocss` 插件（如果有必要的话）。
 
 ## 资源
 

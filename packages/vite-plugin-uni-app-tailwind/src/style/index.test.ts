@@ -56,23 +56,10 @@ describe('style', () => {
         '.bg-\\[rgba\\(255\\,255\\,255\\,1\\)\\] {background-color: rgba(255,255,255,1);}',
       ),
     ).toBe('.bg--rgba-255-c-255-c-255-c-1-- {background-color: rgba(255,255,255,1);}');
-    expect(
-      transformStyle(
-        '.bg-\\[rgba\\(255\\, 255\\, 255\\, 1\\)\\] {background-color: rgba(255,255,255,1);}',
-      ),
-    ).toBe('.bg--rgba-255-c-255-c-255-c-1-- {background-color: rgba(255,255,255,1);}');
   });
 
   it('replace [] and %', () => {
     expect(transformStyle('.w-\\[10\\%\\] {width: 10%;}')).toBe('.w--10-p-- {width: 10%;}');
-  });
-
-  it('replace [], (), and \\2c', () => {
-    expect(
-      transformStyle(
-        '.bg-\\[rgba\\(255\\2c 255\\2c 255\\2c 1\\)\\] {background-color: rgba(255,255,255,1);}',
-      ),
-    ).toBe('.bg--rgba-255-c-255-c-255-c-1-- {background-color: rgba(255,255,255,1);}');
   });
 
   // TODO

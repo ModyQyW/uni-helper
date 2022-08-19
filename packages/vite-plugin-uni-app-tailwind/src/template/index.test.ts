@@ -54,9 +54,6 @@ describe('template', () => {
     expect(transformTemplate('<view class="bg-[rgba(255,255,255,1)]"></view>')).toBe(
       '<view class="bg--rgba-255-c-255-c-255-c-1--"></view>',
     );
-    expect(transformTemplate('<view class="bg-[rgba(255, 255, 255, 1)]"></view>')).toBe(
-      '<view class="bg--rgba-255-c-255-c-255-c-1--"></view>',
-    );
   });
 
   it('replace [] and %', () => {

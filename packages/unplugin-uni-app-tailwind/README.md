@@ -61,6 +61,18 @@ export default defineConfig({
 ### Vue CLI
 
 ```javascript
+// .postcssrc.cjs
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    'postcss-preset-env': {
+      stage: 3,
+    },
+  },
+};
+```
+
+```javascript
 // vue.config.js
 module.exports = {
   configureWebpack: {

@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.2.1
+
+- docs: 修复文档说明
+
 ## 0.2.0
 
 - feat!: 重命名为 `unplugin-uni-app-tailwind`

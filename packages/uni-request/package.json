@@ -53,9 +53,9 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.239",
+    "@swc/core": "^1.2.242",
     "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.7.6",
+    "@types/node": "^18.7.11",
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2",
     "@vitest/coverage-c8": "^0.22.1",

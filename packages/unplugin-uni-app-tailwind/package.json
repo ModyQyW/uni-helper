@@ -57,7 +57,7 @@
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@types/babel__core": "^7.1.19",
-    "@types/node": "^18.7.10",
+    "@types/node": "^18.7.11",
     "@vitest/coverage-c8": "^0.22.1",
     "@vitest/ui": "^0.22.1",
     "c8": "^7.12.0",

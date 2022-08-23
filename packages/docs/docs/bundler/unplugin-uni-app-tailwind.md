@@ -16,8 +16,7 @@
 npm install unplugin-uni-app-tailwind
 ```
 
-<details>
-<summary>Vite</summary><br />
+### Vite
 
 ```typescript
 // vite.config.ts
@@ -59,10 +58,19 @@ export default defineConfig({
 });
 ```
 
-<br /></details>
+### Vue CLI
 
-<details>
-<summary>Vue CLI</summary><br />
+```javascript
+// .postcssrc.cjs
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    'postcss-preset-env': {
+      stage: 3,
+    },
+  },
+};
+```
 
 ```javascript
 // vue.config.js
@@ -77,8 +85,6 @@ module.exports = {
 };
 ```
 
-<br /></details>
-
 ## 原理
 
 `uni-app` + `tailwindcss` 不能编译出小程序正常代码的错误原因有两个：
@@ -91,10 +97,7 @@ module.exports = {
 - 使用 `postcss` 改写样式文件里面的 `selector`，包括字符和元素；
 - 使用 `babel` 改写模板文件里面的 `class`，只包括字符，这是为了和样式文件里面的 `selector` 相匹配。
 
-你可以展开查看这个项目导出的默认配置。
-
-<details>
-<summary>导出的默认配置</summary><br />
+这个项目导出的默认配置如下所示。
 
 ```typescript
 // 默认 space between 元素映射
@@ -194,8 +197,6 @@ export const defaultOptions = {
   characterMap: CharacterMap,
 };
 ```
-
-<br /></details>
 
 `SpaceBetweenElements` 用于在没有提供自定义配置时，替换 `space between` 相关类的元素。`DivideWidthElements` 用于在没有提供自定义配置时，替换 `divide width` 相关类的元素。它们默认都只包含了 `view`、`button`、`text`、`image` 四个常用元素，这应该能满足绝大部分的需求了。你也可以手动调整。
 

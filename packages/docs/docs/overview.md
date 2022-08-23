@@ -56,9 +56,9 @@
 
 ## 构建工具支持
 
-### [vite-plugin-uni-app-tailwind](./bundler/vite-plugin-uni-app-tailwind.md)
+### [unplugin-uni-app-tailwind](./bundler/unplugin-uni-app-tailwind.md)
 
-[![npm](https://img.shields.io/npm/v/vite-plugin-uni-app-tailwind)](https://www.npmjs.com/package/vite-plugin-uni-app-tailwind)
+[![npm](https://img.shields.io/npm/v/unplugin-uni-app-tailwind)](https://www.npmjs.com/package/unplugin-uni-app-tailwind)
 
 支持在 `uni-app` 中使用 `tailwindcss` 原有语法开发小程序。
 

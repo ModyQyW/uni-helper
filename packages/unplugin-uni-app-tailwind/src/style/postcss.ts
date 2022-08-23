@@ -48,7 +48,7 @@ const postcssReplaceElements = (selector: string, options: Options) => {
 
 export function postcssTransformSelector(options?: Options): Plugin {
   return {
-    postcssPlugin: 'vite-plugin-uni-app-tailwind-postcss-transform-selector',
+    postcssPlugin: 'unplugin-uni-app-tailwind-postcss-transform-selector',
     Rule(node: Rule & { processedByPostcssTransformSelector?: boolean }) {
       if (node?.processedByPostcssTransformSelector) {
         return;

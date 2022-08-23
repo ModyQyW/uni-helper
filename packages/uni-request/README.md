@@ -61,7 +61,7 @@ cnpm install @modyqyw/uni-request
 #### CommonJS
 
 ```typescript
-const ur = require('@modyqyw/uni-request').default;
+const ur = require('@modyqyw/uni-request');
 ```
 
 #### 发起一个 `GET` 请求

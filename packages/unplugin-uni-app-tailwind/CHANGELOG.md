@@ -1,5 +1,10 @@
 # 改动日志
 
+## 0.2.0
+
+- feat!: 重命名为 `unplugin-uni-app-tailwind`
+- feat: 使用 `unplugin` 支持 `webpack`
+
 ## 0.1.0
 
 同 0.0.3。

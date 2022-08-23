@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "支持在 uni-app 中使用 tailwindcss 原有语法开发小程序",
   "keywords": [
+    "unplugin",
+    "vite",
+    "webpack",
+    "transform",
     "tailwind",
     "tailwindcss",
     "vite-plugin",
@@ -26,6 +30,16 @@
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
+    "./vite": {
+      "import": "./dist/vite.mjs",
+      "require": "./dist/vite.js",
+      "types": "./dist/vite.d.ts"
+    },
+    "./webpack": {
+      "import": "./dist/webpack.mjs",
+      "require": "./dist/webpack.js",
+      "types": "./dist/webpack.d.ts"
+    },
     "./*": "./dist/*"
   },
   "main": "./dist/index.js",
@@ -45,14 +59,15 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "@vivaxy/wxml": "^2.1.0",
-    "postcss": "^8.4.16"
+    "postcss": "^8.4.16",
+    "unplugin": "^0.9.4"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@types/babel__core": "^7.1.19",
-    "@types/node": "^18.7.6",
+    "@types/node": "^18.7.10",
     "@vitest/coverage-c8": "^0.22.1",
     "@vitest/ui": "^0.22.1",
     "c8": "^7.12.0",
@@ -61,8 +76,9 @@
     "tailwindcss": "^3.1.8",
     "tsup": "^6.2.2",
     "typescript": "^4.7.4",
-    "vite": "^3.0.8",
-    "vitest": "^0.22.1"
+    "vite": "^3.0.9",
+    "vitest": "^0.22.1",
+    "webpack": "^5.74.0"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.0",

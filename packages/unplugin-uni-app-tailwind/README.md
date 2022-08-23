@@ -1,8 +1,8 @@
-# vite-plugin-uni-app-tailwind
+# unplugin-uni-app-tailwind
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
-[![npm](https://img.shields.io/npm/v/vite-plugin-uni-app-tailwind)](https://www.npmjs.com/package/vite-plugin-uni-app-tailwind)
+[![npm](https://img.shields.io/npm/v/unplugin-uni-app-tailwind)](https://www.npmjs.com/package/unplugin-uni-app-tailwind)
 
 支持在 `uni-app` 中使用 `tailwindcss` 原有语法开发小程序。
 
@@ -13,21 +13,26 @@
 安装依赖。
 
 ```shell
-npm install vite-plugin-uni-app-tailwind
+npm install unplugin-uni-app-tailwind
 ```
 
-在 `vite.config.ts` 文件中配置插件。
+<details>
+<summary>Vite</summary><br />
 
 ```typescript
+// vite.config.ts
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
+import uniAppTailwind from 'unplugin-uni-app-tailwind';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    lib: 'es6',
+  },
   css: {
     postcss: {
       plugins: [
@@ -47,10 +52,32 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    uniAppTailwind(),
+    uniAppTailwind.vite({
+      /* options */
+    }),
   ],
 });
 ```
+
+<br /></details>
+
+<details>
+<summary>Vue CLI</summary><br />
+
+```javascript
+// vue.config.js
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      require('unplugin-uni-app-tailwind').webpack({
+        /* options */
+      }),
+    ],
+  },
+};
+```
+
+<br /></details>
 
 ## 原理
 
@@ -193,11 +220,11 @@ export const defaultOptions = {
 
 `windicss` / `unocss` 是富具创造性的项目，尽管它们都声称支持 `tailwindcss` 所有功能，但它们问世时间都较短，我相信 `tailwindcss` 是目前更为稳妥的选择。
 
-如果 `unocss` 未来成为 `windicss@4` 的底层引擎或者直接替代了 `windicss`（请阅读 [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)），我非常乐意再写一个 `vite-plugin-uni-app-unocss` 插件（如果有必要的话）。
+如果 `unocss` 未来成为 `windicss@4` 的底层引擎或者直接替代了 `windicss`（请阅读 [重新构想原子化 CSS](https://antfu.me/posts/reimagine-atomic-css-zh)），我非常乐意再写一个 `unplugin-uni-app-unocss` 插件（如果有必要的话）。
 
 ## 资源
 
-- [改动日志](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind/CHANGELOG.md)
+- [改动日志](https://github.com/ModyQyW/uni-helper/tree/main/packages/unplugin-uni-app-tailwind/CHANGELOG.md)
 
 ## 关联项目
 

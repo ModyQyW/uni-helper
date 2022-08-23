@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import fs from 'node:fs';
 import path from 'node:path';
 import { defineConfig } from 'tsup';
@@ -25,11 +26,26 @@ const getTsFiles = (entry: string): string[] =>
 export default defineConfig([
   {
     entry: getTsFiles('src'),
-    format: ['esm', 'cjs'],
+    format: 'esm',
     dts: true,
     minify: true,
     shims: true,
     splitting: false,
     target: 'es5',
+    banner: {
+      js: `import {createRequire as __createRequire} from 'module';var require=createRequire(import\.meta.url);`,
+    },
+  },
+  {
+    entry: getTsFiles('src'),
+    format: 'cjs',
+    minify: true,
+    shims: true,
+    splitting: false,
+    target: 'es5',
+    footer: {
+      js: `if (module.exports.default) module.exports = module.exports.default;`,
+    },
   },
 ]);
+/* eslint-enable no-useless-escape */

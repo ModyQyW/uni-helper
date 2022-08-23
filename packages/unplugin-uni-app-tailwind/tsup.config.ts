@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig([
   {
-    entry: ['src/*.ts'],
+    entry: ['src/index.ts'],
     format: 'esm',
     dts: true,
     minify: true,
@@ -15,7 +15,7 @@ export default defineConfig([
     },
   },
   {
-    entry: ['src/*.ts'],
+    entry: ['src/index.ts'],
     format: 'cjs',
     minify: true,
     shims: true,

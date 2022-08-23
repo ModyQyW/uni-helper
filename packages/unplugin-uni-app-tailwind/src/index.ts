@@ -8,7 +8,7 @@ export * from './options';
 export * from './style';
 export * from './template';
 
-export default createUnplugin<UniAppTailwindPluginOptions>((options) => {
+export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
   const finalOptions: Options = {
     spaceBetweenElements: options?.spaceBetweenElements ?? defaultOptions?.spaceBetweenElements,
     divideWidthElements: options?.divideWidthElements ?? defaultOptions?.divideWidthElements,

@@ -4,20 +4,12 @@
 
 [![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use)
 
-`uni-app` 组合式工具集。
-
-确保你的项目支持 Composition API。
-
-对于 `vue >= 2 && vue < 2.7`，请查看 [@vue/composition-api](https://github.com/vuejs/composition-api) 和 [uni-composition-api](https://github.com/TuiMao233/uni-composition-api)。
-
-对于 `vue >= 2.7`，请查看 [uni-composition-api](https://github.com/TuiMao233/uni-composition-api)。
-
-对于 `vue >= 3`，无需额外安装依赖。
+`uni-app (vue3)` 组合式工具集。
 
 ## 安装
 
 ```shell
-npm install uni-app-use @vueuse/core @vueuse/shared
+npm install uni-app-use @vueuse/core
 ```
 
 不考虑支持 `uni_modules`。目前只考虑小程序和移动应用环境。

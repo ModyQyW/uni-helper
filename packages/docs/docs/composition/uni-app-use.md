@@ -721,13 +721,21 @@ import { useTabBar } from 'uni-app-use';
 
 const {
   setTabBarItem,
+  setItem,
   setTabBarStyle,
+  setStyle,
   showTabBar,
+  show,
   hideTabBar,
+  hide,
   setTabBarBadge,
+  setBadge,
   removeTabBarBadge,
+  removeBadge,
   showTabBarRedDot,
+  showRedDot,
   hideTabBarRedDot,
+  hideRedDot,
 } = useTabBar();
 ```
 

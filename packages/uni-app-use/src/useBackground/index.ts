@@ -1,12 +1,20 @@
 import { reactive } from 'vue';
-import { MakeMaybeRef } from '../types';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
+
+export interface UniSetBackgroundColorOptions extends UniApp.SetBackgroundColorOptions {}
+
+export type SetBackgroundColorOptions = MaybeComputedRef<UniSetBackgroundColorOptions>;
+
+export interface UniSetBackgroundTextStyleOptions extends UniApp.SetBackgroundTextStyleOptions {}
+
+export type SetBackgroundTextStyleOptions = MaybeComputedRef<UniSetBackgroundTextStyleOptions>;
 
 export function useBackground() {
-  const setBackgroundColor = (options: MakeMaybeRef<UniApp.SetBackgroundColorOptions>) =>
-    uni.setBackgroundColor(reactive(options));
+  const setBackgroundColor = (options: SetBackgroundColorOptions) =>
+    uni.setBackgroundColor(reactive(resolveUnref(options)));
 
-  const setBackgroundTextStyle = (options: MakeMaybeRef<UniApp.SetBackgroundTextStyleOptions>) =>
-    uni.setBackgroundTextStyle(reactive(options));
+  const setBackgroundTextStyle = (options: SetBackgroundTextStyleOptions) =>
+    uni.setBackgroundTextStyle(reactive(resolveUnref(options)));
 
   return {
     setBackgroundColor,

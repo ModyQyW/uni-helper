@@ -315,7 +315,7 @@ showLoading({
 ```typescript
 import { useLocation } from 'uni-app-use';
 
-const { getLocation, chooseLocation, openLocation } = useLocation();
+const { getLocation, get, chooseLocation, choose, openLocation, open } = useLocation();
 ```
 
 ### useModal

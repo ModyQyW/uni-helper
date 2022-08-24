@@ -1,4 +1,4 @@
-import { tryOnScopeDispose, MaybeComputedRef, resolveUnref } from '@vueuse/core';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
 import { reactive, ref, computed } from 'vue';
 
 export interface UniReLaunchOptions extends UniApp.ReLaunchOptions {}
@@ -27,12 +27,13 @@ export type NavigateBackMiniProgramOptions = MaybeComputedRef<UniNavigateBackMin
  */
 export function useRouter() {
   const pages = ref(getCurrentPages());
-  tryOnScopeDispose(() => {
-    pages.value = getCurrentPages();
-  });
+  const pagesLength = computed(() => pages.value.length);
 
-  const page = computed(() => pages.value.at(-1));
-  const prevPage = computed(() => pages.value.at(-2));
+  // at is not supported
+  const page = computed(() => pages.value[pagesLength.value - 1]);
+  const prevPage = computed(() =>
+    pagesLength.value > 1 ? pages.value[pagesLength.value - 2] : undefined,
+  );
 
   const route = computed(() => page.value?.route);
   const prevRoute = computed(() => prevPage.value?.route);

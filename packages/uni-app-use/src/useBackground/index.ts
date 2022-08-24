@@ -2,11 +2,9 @@ import { reactive } from 'vue';
 import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
 
 export interface UniSetBackgroundColorOptions extends UniApp.SetBackgroundColorOptions {}
-
 export type SetBackgroundColorOptions = MaybeComputedRef<UniSetBackgroundColorOptions>;
 
 export interface UniSetBackgroundTextStyleOptions extends UniApp.SetBackgroundTextStyleOptions {}
-
 export type SetBackgroundTextStyleOptions = MaybeComputedRef<UniSetBackgroundTextStyleOptions>;
 
 export function useBackground() {

@@ -3,7 +3,6 @@ import { ref, reactive } from 'vue';
 import { useInterceptor } from '../useInterceptor';
 
 export interface UniSetClipboardDataOptions extends UniApp.SetClipboardDataOptions {}
-
 export type SetUniClipboardDataOptions = MaybeComputedRef<UniSetClipboardDataOptions>;
 
 /**

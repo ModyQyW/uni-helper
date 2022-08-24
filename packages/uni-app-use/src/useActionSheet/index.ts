@@ -5,7 +5,6 @@ export interface UniAppShowActionSheetOptions
   extends Omit<UniApp.ShowActionSheetOptions, 'title' | 'itemList'> {
   itemList: string[];
 }
-
 export type ShowActionSheetOptions = MaybeComputedRef<UniAppShowActionSheetOptions>;
 
 export function useActionSheet(options?: ShowActionSheetOptions) {

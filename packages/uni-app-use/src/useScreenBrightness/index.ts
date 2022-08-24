@@ -1,5 +1,9 @@
-import { ref } from 'vue';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
+import { ref, reactive } from 'vue';
 import { useInterceptor } from '../useInterceptor';
+
+export interface UniSetScreenBrightnessOptions extends UniApp.SetScreenBrightnessOptions {}
+export type SetScreenBrightnessOptions = MaybeComputedRef<UniSetScreenBrightnessOptions>;
 
 /**
  * Get and set screen brightness
@@ -27,8 +31,8 @@ export function useScreenBrightness(onError = (e: unknown) => console.error(e)) 
     },
   });
 
-  const setScreenBrightness = (options: UniApp.SetScreenBrightnessOptions) =>
-    uni.setScreenBrightness(options);
+  const setScreenBrightness = (options?: SetScreenBrightnessOptions) =>
+    uni.setScreenBrightness(reactive({ value: value ?? 50, ...resolveUnref(options) }));
 
   return {
     screenBrightness,

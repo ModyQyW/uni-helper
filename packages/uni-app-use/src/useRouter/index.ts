@@ -1,5 +1,5 @@
 import { tryOnScopeDispose } from '@vueuse/shared';
-import { ref, computed } from 'vue-demi';
+import { ref, computed } from 'vue';
 
 /**
  * Get router info

@@ -1,4 +1,4 @@
-import { ref } from 'vue-demi';
+import { ref } from 'vue';
 import { tryOnShow } from '../tryOnShow';
 import { tryOnHide } from '../tryOnHide';
 

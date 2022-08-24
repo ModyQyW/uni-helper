@@ -1,4 +1,4 @@
-import { Ref, ShallowRef, ref, shallowRef } from 'vue-demi';
+import { Ref, ShallowRef, ref, shallowRef } from 'vue';
 import { isString, until } from '@vueuse/shared';
 
 export interface UseRequestReturn<T> {

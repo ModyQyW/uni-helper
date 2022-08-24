@@ -1,4 +1,4 @@
-import { ref, readonly } from 'vue-demi';
+import { ref, readonly } from 'vue';
 import { tryOnScopeDispose } from '@vueuse/shared';
 
 /**

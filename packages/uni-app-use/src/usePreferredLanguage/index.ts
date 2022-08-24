@@ -1,5 +1,5 @@
 import { tryOnScopeDispose } from '@vueuse/shared';
-import { ref, readonly } from 'vue-demi';
+import { ref, readonly } from 'vue';
 
 /**
  * Reactive current Language

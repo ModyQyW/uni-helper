@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue-demi';
+import { ref, computed } from 'vue';
 import { tryOnScopeDispose } from '@vueuse/shared';
 
 export type NetworkType = 'ethernet' | 'none' | 'wifi' | 'unknown' | '2g' | '3g' | '4g' | '5g';

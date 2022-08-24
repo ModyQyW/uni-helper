@@ -1,4 +1,4 @@
-import { Ref, ShallowRef, ref, shallowRef, computed } from 'vue-demi';
+import { Ref, ShallowRef, ref, shallowRef, computed } from 'vue';
 import { Parameter } from '../types';
 
 export interface UseSocketReturn {

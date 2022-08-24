@@ -1,21 +1,47 @@
+import { reactive } from 'vue';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
+
+export interface UniChooseImageOptions extends UniApp.ChooseImageOptions {}
+export type ChooseImageOptions = MaybeComputedRef<UniChooseImageOptions>;
+
+export interface UniPreviewImageOptions extends UniApp.PreviewImageOptions {}
+export type PreviewImageOptions = MaybeComputedRef<UniPreviewImageOptions>;
+
+export interface UniClosePreviewImageOptions extends UniApp.CallBackOptions {}
+export type ClosePreviewImageOptions = MaybeComputedRef<UniClosePreviewImageOptions>;
+
+export interface UniGetImageInfoOptions extends UniApp.GetImageInfoOptions {}
+export type GetImageInfoOptions = MaybeComputedRef<UniGetImageInfoOptions>;
+
+export interface UniSaveImageToPhotosAlbumOptions extends UniApp.SaveImageToPhotosAlbumOptions {}
+export type SaveImageToPhotosAlbumOptions = MaybeComputedRef<UniSaveImageToPhotosAlbumOptions>;
+
+export interface UniCompressImageOptions extends UniApp.CompressImageOptions {}
+export type CompressImageOptions = MaybeComputedRef<UniCompressImageOptions>;
+
 export function useImage() {
-  const chooseImage = (options: UniApp.ChooseImageOptions) => uni.chooseImage(options);
+  const chooseImage = (options?: ChooseImageOptions) =>
+    uni.chooseImage(reactive({ ...resolveUnref(options) }));
   const choose = chooseImage;
 
-  const previewImage = (options: UniApp.PreviewImageOptions) => uni.previewImage(options);
+  const previewImage = (options?: PreviewImageOptions) =>
+    uni.previewImage(reactive({ urls: [], ...resolveUnref(options) }));
   const preview = previewImage;
 
-  const closePreviewImage = (options: UniApp.CallBackOptions) => uni.closePreviewImage(options);
+  const closePreviewImage = (options?: ClosePreviewImageOptions) =>
+    uni.closePreviewImage(reactive({ ...resolveUnref(options) }));
   const closePreview = closePreviewImage;
 
-  const getImageInfo = (options: UniApp.GetImageInfoOptions) => uni.getImageInfo(options);
+  const getImageInfo = (options?: GetImageInfoOptions) =>
+    uni.getImageInfo(reactive({ src: '', ...resolveUnref(options) }));
   const getInfo = getImageInfo;
 
-  const saveImageToPhotosAlbum = (options: UniApp.SaveImageToPhotosAlbumOptions) =>
-    uni.saveImageToPhotosAlbum(options);
+  const saveImageToPhotosAlbum = (options?: SaveImageToPhotosAlbumOptions) =>
+    uni.saveImageToPhotosAlbum(reactive({ filePath: '', ...resolveUnref(options) }));
   const saveToPhotosAlbum = saveImageToPhotosAlbum;
 
-  const compressImage = (options: UniApp.CompressImageOptions) => uni.compressImage(options);
+  const compressImage = (options?: CompressImageOptions) =>
+    uni.compressImage(reactive({ src: '', ...resolveUnref(options) }));
   const compress = compressImage;
 
   return {

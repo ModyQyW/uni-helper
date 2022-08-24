@@ -8,11 +8,11 @@ export interface UniSetBackgroundTextStyleOptions extends UniApp.SetBackgroundTe
 export type SetBackgroundTextStyleOptions = MaybeComputedRef<UniSetBackgroundTextStyleOptions>;
 
 export function useBackground() {
-  const setBackgroundColor = (options: SetBackgroundColorOptions) =>
-    uni.setBackgroundColor(reactive(resolveUnref(options)));
+  const setBackgroundColor = (options?: SetBackgroundColorOptions) =>
+    uni.setBackgroundColor(reactive({ ...resolveUnref(options) }));
 
-  const setBackgroundTextStyle = (options: SetBackgroundTextStyleOptions) =>
-    uni.setBackgroundTextStyle(reactive(resolveUnref(options)));
+  const setBackgroundTextStyle = (options?: SetBackgroundTextStyleOptions) =>
+    uni.setBackgroundTextStyle(reactive({ textStyle: 'dark', ...resolveUnref(options) }));
 
   return {
     setBackgroundColor,

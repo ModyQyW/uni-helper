@@ -1,7 +1,7 @@
 {
   "name": "uni-app-use",
   "version": "0.5.0",
-  "description": "uni-app 组合式工具集。",
+  "description": "uni-app (vue3) 组合式工具集。",
   "keywords": [
     "uni-app",
     "uniapp",
@@ -42,12 +42,10 @@
     "release": "npx release-it"
   },
   "dependencies": {
-    "@dcloudio/types": "^2.6.12",
-    "@dcloudio/uni-app": "^3.0.0-alpha-3050420220804003",
-    "@vue/composition-api": "^1.7.0",
-    "@vueuse/core": "^9.1.0",
-    "@vueuse/shared": "^9.1.0",
-    "uni-composition-api": "^0.6.1"
+    "@dcloudio/types": "^3.0.13",
+    "@dcloudio/uni-app": "^3.0.0-alpha-3050420220804008",
+    "@vueuse/core": "^9.1.1",
+    "@vueuse/shared": "^9.1.1"
   },
   "devDependencies": {
     "@swc/core": "^1.2.242",
@@ -60,7 +58,7 @@
     "vue": "^3.2.37"
   },
   "peerDependencies": {
-    "vue": "^2.6.0 || ^2.7.0 || ^3.0.0"
+    "vue": "^3.0.0"
   },
   "publishConfig": {
     "access": "public",

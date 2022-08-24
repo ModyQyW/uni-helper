@@ -1,18 +1,20 @@
 import { reactive } from 'vue';
-import { MakeMaybeRef } from '../types';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
 
-export interface ShowActionSheetOptions
+export interface UniAppShowActionSheetOptions
   extends Omit<UniApp.ShowActionSheetOptions, 'title' | 'itemList'> {
   itemList: string[];
 }
 
-export function useActionSheet(options?: MakeMaybeRef<ShowActionSheetOptions>) {
-  const showActionSheet = (newOptions?: MakeMaybeRef<ShowActionSheetOptions>) => {
+export type ShowActionSheetOptions = MaybeComputedRef<UniAppShowActionSheetOptions>;
+
+export function useActionSheet(options?: ShowActionSheetOptions) {
+  const showActionSheet = (newOptions?: ShowActionSheetOptions) => {
     uni.showActionSheet(
       reactive({
         itemList: [],
-        ...options,
-        ...newOptions,
+        ...resolveUnref(options),
+        ...resolveUnref(newOptions),
       }),
     );
   };

@@ -14,7 +14,7 @@ export function useGlobalData() {
   function setGlobalData(...args: any[]) {
     if (typeof args[0] === 'string') {
       const key = args[0];
-      const value = args[0];
+      const value = args[1];
       app.value.globalData = { ...globalData, [key]: value };
       return;
     }

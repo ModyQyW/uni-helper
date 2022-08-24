@@ -1,9 +1,17 @@
-export function useScanCode(options: UniApp.ScanCodeOptions) {
-  const scan = (newOptions: UniApp.ScanCodeOptions) => {
-    uni.scanCode({
-      ...options,
-      ...newOptions,
-    });
+import { reactive } from 'vue';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
+
+export interface UniScanCodeOptions extends UniApp.ScanCodeOptions {}
+export type ScanCodeOptions = MaybeComputedRef<UniScanCodeOptions>;
+
+export function useScanCode(options?: ScanCodeOptions) {
+  const scan = (newOptions?: ScanCodeOptions) => {
+    uni.scanCode(
+      reactive({
+        ...resolveUnref(options),
+        ...resolveUnref(newOptions),
+      }),
+    );
   };
 
   return scan;

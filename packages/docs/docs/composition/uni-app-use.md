@@ -4,20 +4,12 @@
 
 [![npm](https://img.shields.io/npm/v/uni-app-use)](https://www.npmjs.com/package/uni-app-use)
 
-`uni-app` 组合式工具集。
-
-确保你的项目支持 Composition API。
-
-对于 `vue >= 2 && vue < 2.7`，请查看 [@vue/composition-api](https://github.com/vuejs/composition-api) 和 [uni-composition-api](https://github.com/TuiMao233/uni-composition-api)。
-
-对于 `vue >= 2.7`，请查看 [uni-composition-api](https://github.com/TuiMao233/uni-composition-api)。
-
-对于 `vue >= 3`，无需额外安装依赖。
+`uni-app (vue3)` 组合式工具集。
 
 ## 安装
 
 ```shell
-npm install uni-app-use @vueuse/core @vueuse/shared
+npm install uni-app-use @vueuse/core
 ```
 
 不考虑支持 `uni_modules`。目前只考虑小程序和移动应用环境。
@@ -25,11 +17,10 @@ npm install uni-app-use @vueuse/core @vueuse/shared
 **注意：在小程序和移动应用环境下有如下限制。**
 
 - 缺失某些全局变量（如 `window`、`navigator` 等）
-- 需要使用 `uni-app` 提供的拦截器做监听（无法处理同步 API）
-- 需要使用 `uni-app` 提供的存储 API
+- 必须使用 `uni-app` 提供的 API 实现功能（如拦截器、存储等），API 不支持的也就无法支持（比如拦截同步 API）
 - 无法使用顶层 `await`
 
-这些限制无法避开。如果要开发 H5，不妨直接使用 `vueuse`。
+这些限制无法避开。如果要开发 H5，不妨直接使用 `vue` 和 `vueuse`。
 
 ## 使用
 

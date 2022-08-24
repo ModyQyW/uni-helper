@@ -1,5 +1,32 @@
 # 改动日志
 
+## 0.6.0
+
+- feat!: 放弃 `vue@2` 支持
+- perf!: 调整 `useApp` 导出
+- perf: 优化 `useActionSheet` 类型
+- feat: `useArrayBufferToBase64` 支持传入 `ref`
+- feat: `useBase64ToArrayBuffer` 支持传入 `ref`
+- perf: 优化 `useBackground` 类型
+- perf: 优化 `useClipboardData` 类型
+- fix: 修复 `useGlobalData` 错误赋值
+- perf: 优化 `useGlobalData` 类型
+- fix: 修复 `useGlobalData` 导出
+- perf: 优化 `useImage` 类型
+- perf: 优化 `useLoading` 类型
+- perf: 优化 `useLocation` 类型
+- perf: 优化 `useModal` 类型
+- perf: 优化 `useNavigationBar` 类型
+- fix: 替换 `useRouter` 中的 `at`
+- perf: 优化 `useRouter` 类型
+- perf: 优化 `useScanCode` 类型
+- perf: 优化 `useScreenBrightness` 类型
+- perf: 优化 `useStorage` 类型
+- perf: 优化 `useSupported` 类型
+- perf: 优化 `useTabBar` 类型
+- perf: 优化 `useToast` 类型
+- perf: 优化 `useVibrate` 类型
+
 ## 0.5.0
 
 - feat: 新增 `useActionSheet`

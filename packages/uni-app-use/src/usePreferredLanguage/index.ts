@@ -1,4 +1,4 @@
-import { tryOnScopeDispose } from '@vueuse/shared';
+import { tryOnScopeDispose } from '@vueuse/core';
 import { ref, readonly } from 'vue';
 
 /**

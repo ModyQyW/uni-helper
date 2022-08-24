@@ -1,5 +1,5 @@
 import { ref, readonly } from 'vue';
-import { tryOnScopeDispose } from '@vueuse/shared';
+import { tryOnScopeDispose } from '@vueuse/core';
 
 /**
  * Reactive dark theme preference.

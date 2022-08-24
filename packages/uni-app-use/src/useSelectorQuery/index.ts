@@ -1,4 +1,4 @@
-import { tryOnMounted } from '@vueuse/shared';
+import { tryOnMounted } from '@vueuse/core';
 
 export function useSelectorQuery() {
   let query;

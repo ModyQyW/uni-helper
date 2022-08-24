@@ -1,5 +1,5 @@
 import { nextTick, getCurrentInstance } from 'vue';
-import { Fn } from '@vueuse/shared';
+import { Fn } from '@vueuse/core';
 import { onUnload } from '@dcloudio/uni-app';
 
 /**

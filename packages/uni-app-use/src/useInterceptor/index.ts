@@ -1,4 +1,4 @@
-import { tryOnScopeDispose, Fn } from '@vueuse/shared';
+import { tryOnScopeDispose, Fn } from '@vueuse/core';
 
 /**
  * Register using addInterceptor on mounted, and removeInterceptor automatically on unmounted.

@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue';
-import { tryOnScopeDispose } from '@vueuse/shared';
+import { tryOnScopeDispose } from '@vueuse/core';
 
 export type NetworkType = 'ethernet' | 'none' | 'wifi' | 'unknown' | '2g' | '3g' | '4g' | '5g';
 

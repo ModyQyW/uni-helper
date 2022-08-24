@@ -1,5 +1,10 @@
-import { ref } from 'vue';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
+import { ref, reactive } from 'vue';
 import { useInterceptor } from '../useInterceptor';
+
+export interface UniSetClipboardDataOptions extends UniApp.SetClipboardDataOptions {}
+
+export type SetUniClipboardDataOptions = MaybeComputedRef<UniSetClipboardDataOptions>;
 
 /**
  * Get and set clipboard data
@@ -27,8 +32,8 @@ export function useClipboardData(onError = (e: unknown) => console.error(e)) {
     },
   });
 
-  const setClipboardData = (options: UniApp.SetClipboardDataOptions) =>
-    uni.setClipboardData(options);
+  const setClipboardData = (options: SetUniClipboardDataOptions) =>
+    uni.setClipboardData(reactive(resolveUnref(options)));
 
   return {
     clipboardData,

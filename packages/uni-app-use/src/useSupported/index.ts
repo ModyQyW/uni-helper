@@ -1,16 +1,11 @@
-import { Ref, ref } from 'vue';
+import { computed } from 'vue';
+import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
 
 /**
  * Get api is supported
  */
-export function useSupported(api: string) {
-  const isSupported = ref() as Ref<boolean>;
-
-  const update = () => {
-    isSupported.value = uni.canIUse(api);
-  };
-
-  update();
+export function useSupported(api: MaybeComputedRef<string>) {
+  const isSupported = computed(() => uni.canIUse(resolveUnref(api)));
 
   return isSupported;
 }

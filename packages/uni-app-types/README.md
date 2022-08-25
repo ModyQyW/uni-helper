@@ -52,6 +52,7 @@ export interface BaseEventTarget {
    * @desc 事件源组件上由 data- 开头的自定义属性组成的集合
    */
   dataset?: Record<string, any>;
+  [key: string]: any;
 }
 ```
 

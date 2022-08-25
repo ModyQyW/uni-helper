@@ -10,6 +10,7 @@ export interface BaseEventTarget {
    * @desc 事件源组件上由 data- 开头的自定义属性组成的集合
    */
   dataset?: Record<string, any>;
+  [key: string]: any;
 }
 
 /**
@@ -32,7 +33,7 @@ export interface BaseEvent {
   /**
    * @desc 触发事件的组件的一些属性值集合
    */
-  target?: BaseEventTarget;
+  target?: BaseEventTarget<T>;
   /**
    * @desc 当前组件的一些属性值集合
    */

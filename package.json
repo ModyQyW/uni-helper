@@ -37,7 +37,7 @@
     "release:uni-app-types": "pnpm --filter uni-app-types release",
     "release:uni-app-use": "pnpm --filter uni-app-use release",
     "release:uni-cloud-types": "pnpm --filter uni-cloud-types release",
-    "release:uni-request": "pnpm --filter @modyqyw/uni-request release",
+    "release:uni-app-network": "pnpm --filter uni-app-network release",
     "release:uni-ui-types": "pnpm --filter uni-ui-types release",
     "release:vscode-uni-app-schemas": "pnpm --filter vscode-uni-app-schemas run release",
     "release:vscode-uni-app-snippets": "pnpm --filter vscode-uni-app-snippets run release",

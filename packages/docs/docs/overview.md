@@ -82,11 +82,11 @@
 
 `uni-ui` 组件类型。
 
-## Request 支持
+## 网络请求支持
 
-### [@modyqyw/uni-request](./request/uni-request.md)
+### [uni-app-network](./network/uni-app-network.md)
 
-[![npm](https://img.shields.io/npm/v/@modyqyw/uni-request)](https://www.npmjs.com/package/@modyqyw/uni-request)
+[![npm](https://img.shields.io/npm/v/uni-app-network)](https://www.npmjs.com/package/uni-app-network)
 
 为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。
 

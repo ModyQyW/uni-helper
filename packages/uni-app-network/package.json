@@ -1,0 +1,84 @@
+{
+  "name": "uni-app-network",
+  "version": "0.4.8",
+  "description": "为 uni-app 打造的基于 Promise 的 HTTP 客户端。",
+  "keywords": [
+    "uni-app",
+    "uniapp",
+    "request"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-network"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "check:types": "npx tsc --noEmit",
+    "dev": "pnpm run build --watch src",
+    "lint": "run-p lint:eslint check:types test:coverage",
+    "lint:eslint": "npx eslint src --fix",
+    "release": "npx release-it",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@dcloudio/types": "^2.6.12",
+    "@types/lodash-es": "^4.17.6",
+    "@types/qs": "^6.9.7",
+    "@types/ramda": "^0.28.15",
+    "@types/statuses": "^2.0.0",
+    "lodash-es": "^4.17.21",
+    "qs": "^6.11.0",
+    "ramda": "^0.28.0",
+    "statuses": "^2.0.1"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.244",
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.7.13",
+    "@types/ungap__url-search-params": "^0.1.0",
+    "@ungap/url-search-params": "^0.2.2",
+    "@vitest/coverage-c8": "^0.22.1",
+    "@vitest/ui": "^0.22.1",
+    "c8": "^7.12.0",
+    "eslint": "^8.22.0",
+    "npm-run-all": "^4.1.5",
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.2",
+    "vitest": "^0.22.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): uni-app-network@v${version}",
+      "tagName": "uni-app-network@v${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install && pnpm run lint",
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/request/uni-app-network.md"
+    }
+  }
+}

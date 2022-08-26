@@ -21,7 +21,7 @@ export default defineConfig({
       { text: '编辑器支持', link: '/editor/vscode-uni-helper' },
       { text: '构建工具支持', link: '/bundler/unplugin-uni-app-tailwind' },
       { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
-      { text: 'Request 支持', link: '/request/uni-request' },
+      { text: '网络请求支持', link: '/network/uni-app-network' },
       { text: '组合式支持', link: '/composition/uni-app-use' },
     ],
     sidebar: [
@@ -56,9 +56,9 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Request 支持',
+        text: '网络请求支持',
         collapsible: true,
-        items: [{ text: 'uni-request', link: '/request/uni-request' }],
+        items: [{ text: 'uni-app-network', link: '/network/uni-app-network' }],
       },
       {
         text: '组合式支持',

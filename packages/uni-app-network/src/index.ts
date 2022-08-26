@@ -1,59 +1,59 @@
 import { mergeDeepRight } from 'ramda';
 import { version } from '../package.json';
 import {
-  isUrError,
-  Ur,
-  UrCancel,
-  UrCanceledError,
-  UrCancelToken,
-  UrCancelTokenStatic,
-  UrError,
+  isUanError,
+  Uan,
+  UanCancel,
+  UanCanceledError,
+  UanCancelToken,
+  UanCancelTokenStatic,
+  UanError,
   isCancel,
 } from './core';
 import { defaults } from './defaults';
 import { extend } from './utils';
-import { UrBaseConfig, UrData, UrRequestConfig, UrRequestResponse } from './types';
+import { UanBaseConfig, UanData, UanRequestConfig, UanRequestResponse } from './types';
 
-export interface UrInstance<T = UrData, D = UrData> extends Ur<T, D> {
-  <TT = T, DD = D, R = UrRequestResponse<TT, DD>>(config: UrRequestConfig<TT, DD>): Promise<R>;
-  <TT = T, DD = D, R = UrRequestResponse<TT, DD>>(
+export interface UanInstance<T = UanData, D = UanData> extends Uan<T, D> {
+  <TT = T, DD = D, R = UanRequestResponse<TT, DD>>(config: UanRequestConfig<TT, DD>): Promise<R>;
+  <TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
     url: string,
-    config?: UrRequestConfig<TT, DD>,
+    config?: UanRequestConfig<TT, DD>,
   ): Promise<R>;
 
-  defaults: UrBaseConfig<T, D>;
+  defaults: UanBaseConfig<T, D>;
 }
 
-export interface UrStatic<T = UrData, D = UrData> extends UrInstance<T, D> {
-  create(config?: UrBaseConfig<T, D>): UrInstance<T, D>;
+export interface UanStatic<T = UanData, D = UanData> extends UanInstance<T, D> {
+  create(config?: UanBaseConfig<T, D>): UanInstance<T, D>;
 
-  Ur: typeof Ur;
+  Uan: typeof Uan;
 
-  CanceledError: typeof UrCanceledError<T, D>;
-  CancelToken: UrCancelTokenStatic<T, D>;
-  isCancel(value: any): value is UrCancel;
+  CanceledError: typeof UanCanceledError<T, D>;
+  CancelToken: UanCancelTokenStatic<T, D>;
+  isCancel(value: any): value is UanCancel;
 
   VERSION: string;
 
-  UrError: typeof UrError;
-  isUrError<T = any, D = any>(value: any): value is UrError<T, D>;
+  UanError: typeof UanError;
+  isUanError<T = any, D = any>(value: any): value is UanError<T, D>;
 
   all(values: Array<T | Promise<T>>): Promise<T[]>;
 }
 
-const createInstance = <T = UrData, D = UrData>(defaultConfig: UrBaseConfig<T, D>) => {
-  const context = new Ur(defaultConfig);
-  const instance = Ur.prototype.request.bind(context) as UrStatic<T, D>;
+const createInstance = <T = UanData, D = UanData>(defaultConfig: UanBaseConfig<T, D>) => {
+  const context = new Uan(defaultConfig);
+  const instance = Uan.prototype.request.bind(context) as UanStatic<T, D>;
 
   // Copy ur.prototype to instance
-  extend(instance, Ur.prototype, context, { allOwnKeys: true });
+  extend(instance, Uan.prototype, context, { allOwnKeys: true });
 
   // Copy context to instance
   extend(instance, context, { allOwnKeys: true });
 
   // Factory for creating new instances
   instance.create = (instanceConfig) =>
-    createInstance(mergeDeepRight(defaultConfig, instanceConfig ?? {}) as UrBaseConfig<T, D>);
+    createInstance(mergeDeepRight(defaultConfig, instanceConfig ?? {}) as UanBaseConfig<T, D>);
 
   return instance;
 };
@@ -61,20 +61,20 @@ const createInstance = <T = UrData, D = UrData>(defaultConfig: UrBaseConfig<T, D
 // Create the default instance to be exported
 const ur = createInstance(defaults);
 
-// Expose Ur class to allow class inheritance
-ur.Ur = Ur;
+// Expose Uan class to allow class inheritance
+ur.Uan = Uan;
 
 // Expose CanceledError & CancelToken & isCancel
-ur.CanceledError = UrCanceledError;
-ur.CancelToken = UrCancelToken;
+ur.CanceledError = UanCanceledError;
+ur.CancelToken = UanCancelToken;
 ur.isCancel = isCancel;
 
 // version
 ur.VERSION = version;
 
-// Expose UrError & isUrError
-ur.UrError = UrError;
-ur.isUrError = isUrError;
+// Expose UanError & isUanError
+ur.UanError = UanError;
+ur.isUanError = isUanError;
 
 // Expose all/spread
 ur.all = (promises) => Promise.all(promises);

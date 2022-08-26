@@ -91,7 +91,7 @@ export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadCon
           return;
         }
         // @ts-expect-error
-        reject(!cancel || cancel.type ? new UrCanceledError(undefined, config, task) : cancel);
+        reject(!cancel || cancel.type ? new UanCanceledError(undefined, config, task) : cancel);
         task.abort();
         task = undefined;
       };

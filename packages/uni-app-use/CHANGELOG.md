@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.6.1
+
+- fix: 修复 `useSelectorQuery` 类型
+
 ## 0.6.0
 
 - feat!: 放弃 `vue@2` 支持

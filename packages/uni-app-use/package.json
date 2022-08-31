@@ -43,18 +43,18 @@
   },
   "dependencies": {
     "@dcloudio/types": "^3.0.13",
-    "@dcloudio/uni-app": "^3.0.0-alpha-3050420220804008",
+    "@dcloudio/uni-app": "^3.0.0-alpha-3050420220830002",
     "@vueuse/core": "^9.1.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.242",
+    "@swc/core": "^1.2.245",
     "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.7.11",
-    "eslint": "^8.22.0",
+    "@types/node": "^18.7.14",
+    "eslint": "^8.23.0",
     "npm-run-all": "^4.1.5",
-    "tsup": "^6.2.2",
-    "typescript": "^4.7.4",
-    "vue": "^3.2.37"
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.2",
+    "vue": "^3.2.38"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

@@ -1,6 +1,6 @@
 {
   "name": "unplugin-uni-app-tailwind",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "支持在 uni-app 中使用 tailwindcss 原有语法开发小程序",
   "keywords": [
     "unplugin",

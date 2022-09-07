@@ -186,6 +186,7 @@ export const CharacterMap: [string, string][] = [
   [',', '-c-'], // comma
   ['%', '-p-'], // percentage
   ["'", '-q-'], // quote
+  ['+', '-a-'], // add
   ['\\\\2c\\s', '-c-'], // comma
   ['\\\\2c', '-c-'], // comma
 ];

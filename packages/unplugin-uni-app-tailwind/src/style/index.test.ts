@@ -90,7 +90,7 @@ describe('style', () => {
         'img, svg, video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
       ),
     ).toBe(
-      'img,image,uni-image, svg, video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
+      'img,image,uni-image, svg, video,uni-video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
     );
   });
 

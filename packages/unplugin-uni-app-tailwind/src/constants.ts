@@ -30,6 +30,7 @@ export const ElementMap: [string, string[]][] = [
   ['body', ['body', 'page']],
   ['img', ['img', 'image', 'uni-image']],
   ['span', ['span', 'text', 'uni-text']],
+  ['video', ['video', 'uni-video']],
   [
     'a',
     [

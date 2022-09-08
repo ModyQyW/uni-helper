@@ -10,10 +10,14 @@ export * from './template';
 
 export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
   const finalOptions: Options = {
-    spaceBetweenElements: options?.spaceBetweenElements ?? defaultOptions?.spaceBetweenElements,
-    divideWidthElements: options?.divideWidthElements ?? defaultOptions?.divideWidthElements,
-    elementMap: options?.elementMap ?? defaultOptions?.elementMap,
-    characterMap: options?.characterMap ?? defaultOptions?.characterMap,
+    spaceBetweenElements: options?.spaceBetweenElements ?? defaultOptions.spaceBetweenElements,
+    divideWidthElements: options?.divideWidthElements ?? defaultOptions.divideWidthElements,
+    elementMap: options?.elementMap ?? defaultOptions.elementMap,
+    characterMap: options?.characterMap ?? defaultOptions.characterMap,
+    replaceStarSelectorPlatforms:
+      options?.replaceStarSelectorPlatforms ?? defaultOptions.replaceStarSelectorPlatforms,
+    getShouldReplaceStarSelector:
+      options?.getShouldReplaceStarSelector ?? defaultOptions.getShouldReplaceStarSelector,
   };
 
   return {

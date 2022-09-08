@@ -1,4 +1,11 @@
-import { SpaceBetweenElements, DivideWidthElements, ElementMap, CharacterMap } from './constants';
+import {
+  SpaceBetweenElements,
+  DivideWidthElements,
+  ElementMap,
+  CharacterMap,
+  ReplaceStarSelectorPlatforms,
+  GetShouldReplaceStarSelector,
+} from './constants';
 
 export interface UniAppTailwindPluginOptions {
   /**
@@ -17,6 +24,14 @@ export interface UniAppTailwindPluginOptions {
    * @desc 特殊符号映射
    */
   characterMap?: [string, string][];
+  /**
+   * @desc 需要替换 * 选择器的环境
+   */
+  replaceStarSelectorPlatforms?: string[];
+  /**
+   * @desc 替换 * 选择器的环境判断方法
+   */
+  getShouldReplaceStarSelector?: (targetPlatforms: string[], platform: string) => boolean;
 }
 
 export type Options = Required<UniAppTailwindPluginOptions>;
@@ -26,4 +41,6 @@ export const defaultOptions = {
   divideWidthElements: DivideWidthElements,
   elementMap: ElementMap,
   characterMap: CharacterMap,
+  replaceStarSelectorPlatforms: ReplaceStarSelectorPlatforms,
+  getShouldReplaceStarSelector: GetShouldReplaceStarSelector,
 };

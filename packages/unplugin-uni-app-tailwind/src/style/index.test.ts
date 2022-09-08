@@ -102,6 +102,7 @@ describe('style', () => {
     expect(transformStyle('a {color: inherit;text-decoration: inherit;}')).toBe(
       'a,functional-page-navigator,navigator,uni-functional-page-navigator,uni-navigator {color: inherit;text-decoration: inherit;}',
     );
+    expect(transformStyle('textarea {resize: vertical;}')).toBe('textarea {resize: vertical;}');
   });
 
   it('replace *', () => {

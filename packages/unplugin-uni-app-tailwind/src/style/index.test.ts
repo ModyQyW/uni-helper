@@ -90,17 +90,17 @@ describe('style', () => {
         'img, svg, video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
       ),
     ).toBe(
-      'img,image, svg, video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
+      'img,image,uni-image, svg, video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
     );
   });
 
   it('replace span', () => {
-    expect(transformStyle('span {color: #333;}')).toBe('span,text {color: #333;}');
+    expect(transformStyle('span {color: #333;}')).toBe('span,text,uni-text {color: #333;}');
   });
 
   it('replace a', () => {
     expect(transformStyle('a {color: inherit;text-decoration: inherit;}')).toBe(
-      'a,functional-page-navigator,navigator {color: inherit;text-decoration: inherit;}',
+      'a,functional-page-navigator,navigator,uni-functional-page-navigator,uni-navigator {color: inherit;text-decoration: inherit;}',
     );
   });
 
@@ -110,7 +110,7 @@ describe('style', () => {
         '*, ::before, ::after {box-sizing: border-box;border-width: 0;border-style: solid;border-color: #e5e7eb;}',
       ),
     ).toBe(
-      'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta, ::before, ::after {box-sizing: border-box;border-width: 0;border-style: solid;border-color: #e5e7eb;}',
+      'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta,uni-cover-image,uni-cover-view,uni-match-media,uni-movable-area,uni-movable-view,uni-scroll-view,uni-swiper,uni-swiper-item,uni-view,uni-icon,uni-progress,uni-rich-text,uni-text,uni-button,uni-checkbox,uni-checkbox-group,uni-editor,uni-form,uni-input,uni-label,uni-picker,uni-picker-view,uni-picker-view-column,uni-radio,uni-radio-group,uni-slider,uni-switch,uni-textarea,uni-functional-page-navigator,uni-navigator,uni-audio,uni-camera,uni-image,uni-live-player,uni-live-pusher,uni-video,uni-voip-room,uni-map,uni-canvas,uni-ad,uni-ad-custom,uni-official-account,uni-open-data,uni-web-view,uni-navigation-bar,uni-page-meta, ::before, ::after {box-sizing: border-box;border-width: 0;border-style: solid;border-color: #e5e7eb;}',
     );
   });
 });

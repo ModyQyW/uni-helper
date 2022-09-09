@@ -88,12 +88,21 @@ describe('style', () => {
   it('replace img', () => {
     expect(
       transformStyle(
-        'img, svg, video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
+        'img,svg,video,canvas,audio,iframe,embed,object {display: block;vertical-align: middle;}',
       ),
     ).toBe(
-      'img,image,uni-image, svg, video,uni-video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
+      'img,image,uni-image,svg,video,uni-video,canvas,audio,iframe,embed,object {display: block;vertical-align: middle;}',
     );
-    expect(transformStyle('uni-image>img{}')).toBe('uni-image>img{}');
+    expect(
+      transformStyle(
+        'uni-image>img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;display:block;position:absolute;top:0;left:0;width:100%;height:100%;opacity:0}',
+      ),
+    ).toBe(
+      'uni-image>img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;display:block;position:absolute;top:0;left:0;width:100%;height:100%;opacity:0}',
+    );
+    expect(transformStyle('.ql-container img{display:inline-block;max-width:100%}')).toBe(
+      '.ql-container img{display:inline-block;max-width:100%}',
+    );
   });
 
   it('replace span', () => {

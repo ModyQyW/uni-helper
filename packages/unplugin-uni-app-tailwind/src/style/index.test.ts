@@ -93,10 +93,16 @@ describe('style', () => {
     ).toBe(
       'img,image,uni-image, svg, video,uni-video, canvas, audio, iframe, embed, object {display: block;vertical-align: middle;}',
     );
+    expect(transformStyle('uni-image>img{}')).toBe('uni-image>img{}');
   });
 
   it('replace span', () => {
     expect(transformStyle('span {color: #333;}')).toBe('span,text,uni-text {color: #333;}');
+  });
+
+  it('replace video', () => {
+    expect(transformStyle('video {}')).toBe('video,uni-video {}');
+    expect(transformStyle('uni-video {}')).toBe('uni-video {}');
   });
 
   it('replace a', () => {

@@ -83,6 +83,9 @@
       "commitMessage": "chore(release): unplugin-uni-app-tailwind@v${version}",
       "tagName": "unplugin-uni-app-tailwind@v${version}"
     },
+    "npm": {
+      "timeout": 30
+    },
     "hooks": {
       "before:init": "pnpm install && pnpm run lint",
       "after:bump": "pnpm run build && cp -af README.md ../docs/docs/bundler/unplugin-uni-app-tailwind.md"

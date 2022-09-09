@@ -68,6 +68,9 @@
       "commitMessage": "chore(release): uni-app-use@v${version}",
       "tagName": "uni-app-use@v${version}"
     },
+    "npm": {
+      "timeout": 30
+    },
     "hooks": {
       "before:init": "pnpm install && pnpm run lint",
       "after:bump": "pnpm run build && cp -af README.md ../docs/docs/composition/uni-app-use.md"

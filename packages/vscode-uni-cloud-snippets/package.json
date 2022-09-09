@@ -75,7 +75,8 @@
       "tagName": "vscode-uni-cloud-snippets@v${version}"
     },
     "npm": {
-      "publish": false
+      "publish": false,
+      "timeout": 30
     },
     "hooks": {
       "after:bump": "npx tsx generate.ts && cp -af README.md ../docs/docs/editor/vscode-uni-cloud-snippets.md && npx vsce package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OVSX_PAT"

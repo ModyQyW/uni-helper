@@ -41,6 +41,9 @@
       "commitMessage": "chore(release): uni-app-types@v${version}",
       "tagName": "uni-app-types@v${version}"
     },
+    "npm": {
+      "timeout": 30
+    },
     "hooks": {
       "before:init": "pnpm install && pnpm run lint",
       "after:bump": "cp -af README.md ../docs/docs/typescript/uni-app-types.md"

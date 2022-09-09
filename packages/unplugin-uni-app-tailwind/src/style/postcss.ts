@@ -49,9 +49,9 @@ const postcssReplaceElements = (selector: string, options: Options) => {
       new RegExp(
         key === '*'
           ? // eslint-disable-next-line no-useless-escape
-            `(?<![a-zA-Z->])\\${key}(?=[\,\s\0{])|(?<![a-zA-Z->])\\${key}$`
+            `(?<![a-zA-Z-> ])\\${key}(?=[\,\s\0{])|(?<![a-zA-Z-> ])\\${key}$`
           : // eslint-disable-next-line no-useless-escape
-            `(?<![a-zA-Z->])${key}(?=[\,\s\0{])|(?<![a-zA-Z->])${key}$`,
+            `(?<![a-zA-Z-> ])${key}(?=[\,\s\0{])|(?<![a-zA-Z-> ])${key}$`,
       ),
       value.join(','),
     );

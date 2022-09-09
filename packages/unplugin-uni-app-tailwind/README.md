@@ -132,6 +132,7 @@ export const ElementMap: [string, string[]][] = [
   ['body', ['body', 'page']],
   ['img', ['img', 'image', 'uni-image']],
   ['span', ['span', 'text', 'uni-text']],
+  ['video', ['video', 'uni-video']],
   [
     'a',
     [
@@ -264,11 +265,34 @@ export const CharacterMap: [string, string][] = [
   ['\\\\2c', '-c-'], // comma
 ];
 
+// 默认需要替换 * 选择器的环境
+export const ReplaceStarSelectorPlatforms = ['MP', 'QUICKAPP'];
+
+// 默认替换 * 选择器的环境判断方法
+export const GetShouldReplaceStarSelector = (targetPlatforms: string[], platform: string) =>
+  targetPlatforms.some((item) => {
+    if (
+      (item === 'QUICKAPP' || item.startsWith('QUICKAPP-')) &&
+      (platform === 'APP' || platform.startsWith('APP-'))
+    ) {
+      return false;
+    }
+    if (
+      (platform === 'QUICKAPP' || platform.startsWith('QUICKAPP-')) &&
+      (item === 'APP' || item.startsWith('APP-'))
+    ) {
+      return false;
+    }
+    return item === platform || item.includes(platform) || platform.includes(item);
+  });
+
 export const defaultOptions = {
   spaceBetweenElements: SpaceBetweenElements,
   divideWidthElements: DivideWidthElements,
   elementMap: ElementMap,
   characterMap: CharacterMap,
+  replaceStarSelectorPlatforms: ReplaceStarSelectorPlatforms,
+  getShouldReplaceStarSelector: GetShouldReplaceStarSelector,
 };
 ```
 
@@ -277,6 +301,10 @@ export const defaultOptions = {
 而 `ElementMap` 提供了元素映射，用于替换 `preflight` 内的元素。这样，你就不需要禁用 `preflight` 了。
 
 `CharacterMap` 提供了特殊符号的映射，用于替换特殊符号。这样，你就可以使用 `tailwindcss` 原有的语法开发，而无需手动调整 `tailwindcss` 配置了。
+
+`ReplaceStarSelectorPlatforms` 指定运行到特定平台时替换 `*` 选择器，默认为 `['MP', 'QUICKAPP']`。
+
+`GetShouldReplaceStarSelector` 判断当前运行平台是否属于特定平台，用户可手动调整。
 
 ## FAQ
 

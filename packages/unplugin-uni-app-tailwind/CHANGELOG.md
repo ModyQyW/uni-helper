@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.4.1
+
+- fix: 修复编译成 `APP` 时 `uni-app` 插入的样式选择器替换不正确的问题
+
 ## 0.4.0
 
 - feat: 增加 `replaceStarSelectorPlatform` 和 `getShouldReplaceStarSelector` 选项

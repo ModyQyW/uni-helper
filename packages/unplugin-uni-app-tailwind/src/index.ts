@@ -14,8 +14,9 @@ export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
     divideWidthElements: options?.divideWidthElements ?? defaultOptions.divideWidthElements,
     elementMap: options?.elementMap ?? defaultOptions.elementMap,
     characterMap: options?.characterMap ?? defaultOptions.characterMap,
-    replaceStarSelectorPlatforms:
-      options?.replaceStarSelectorPlatforms ?? defaultOptions.replaceStarSelectorPlatforms,
+    replaceStarSelectorPlatforms: (
+      options?.replaceStarSelectorPlatforms ?? defaultOptions.replaceStarSelectorPlatforms
+    ).map((p) => p.toUpperCase()),
     getShouldReplaceStarSelector:
       options?.getShouldReplaceStarSelector ?? defaultOptions.getShouldReplaceStarSelector,
   };

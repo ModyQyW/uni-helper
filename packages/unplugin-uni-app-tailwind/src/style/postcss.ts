@@ -38,7 +38,7 @@ const postcssReplaceElements = (selector: string, options: Options) => {
 
   const shouldReplaceStarSelector = options.getShouldReplaceStarSelector(
     options.replaceStarSelectorPlatforms,
-    process.env.UNI_PLATFORM || 'H5',
+    (process.env.UNI_PLATFORM || 'H5').toUpperCase(),
   );
 
   options.elementMap.forEach(([key, value]) => {

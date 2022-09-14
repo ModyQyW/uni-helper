@@ -42,7 +42,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@dcloudio/types": "^2.6.12",
+    "@dcloudio/types": "^3.0.0",
     "@types/lodash-es": "^4.17.6",
     "@types/qs": "^6.9.7",
     "@types/ramda": "^0.28.15",

@@ -49,35 +49,5 @@ export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
         });
       },
     },
-
-    webpack(compiler) {
-      const pluginName = 'webpack:unplugin-uni-app-tailwind';
-      const { sources, Compilation } = compiler.webpack;
-      const { ConcatSource } = sources;
-      if (!shouldApply) return;
-      compiler.hooks.compilation.tap(pluginName, (compilation) => {
-        compilation.hooks.processAssets.tap(
-          {
-            name: pluginName,
-            stage: Compilation.PROCESS_ASSETS_STAGE_SUMMARIZE,
-          },
-          (assets) => {
-            Object.entries(assets).forEach(([fileName, asset]) => {
-              const source = asset.source().toString();
-              let newSource = '';
-              if (isTemplateFile(fileName)) {
-                newSource = transformTemplate(source, finalOptions);
-              }
-              if (isStyleFile(fileName)) {
-                newSource = transformStyle(source, finalOptions);
-              }
-              if (newSource) {
-                compilation.updateAsset(fileName, new ConcatSource(newSource));
-              }
-            });
-          },
-        );
-      });
-    },
   };
 });

@@ -24,29 +24,24 @@
     "types"
   ],
   "scripts": {
-    "lint": "npx tsc --noEmit",
     "release": "npx release-it"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.0.15",
+    "@dcloudio/types": "^3.0.16",
     "vue3": "npm:vue@^3.2.39"
-  },
-  "devDependencies": {
-    "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.7.18",
-    "typescript": "^4.8.3"
   },
   "release-it": {
     "git": {
       "commitMessage": "chore(release): uni-app-types@v${version}",
       "tagName": "uni-app-types@v${version}"
     },
-    "npm": {
-      "timeout": 30
-    },
     "hooks": {
-      "before:init": "pnpm install && pnpm run lint",
-      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-app-types.md"
+      "before:init": "pnpm install",
+      "after:bump": "cp -af README.md ../docs/docs/typescript/uni-app-types.md && pnpm publish --no-git-checks"
+    },
+    "npm": {
+      "publish": false,
+      "timeout": 30
     }
   }
 }

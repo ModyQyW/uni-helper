@@ -33,16 +33,11 @@
   ],
   "scripts": {
     "build": "tsup-node",
-    "check:types": "npx tsc --noEmit",
     "dev": "pnpm run build --watch src",
-    "lint": "run-p lint:eslint check:types test:coverage",
-    "lint:eslint": "npx eslint src --fix",
-    "release": "npx release-it",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "release": "npx release-it"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.0.15",
+    "@dcloudio/types": "^3.0.16",
     "@types/lodash-es": "^4.17.6",
     "@types/qs": "^6.9.7",
     "@types/ramda": "^0.28.15",
@@ -53,19 +48,8 @@
     "statuses": "^2.0.1"
   },
   "devDependencies": {
-    "@swc/core": "^1.3.1",
-    "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.7.18",
     "@types/ungap__url-search-params": "^0.1.0",
-    "@ungap/url-search-params": "^0.2.2",
-    "@vitest/coverage-c8": "^0.23.4",
-    "@vitest/ui": "^0.23.4",
-    "c8": "^7.12.0",
-    "eslint": "^8.23.1",
-    "npm-run-all": "^4.1.5",
-    "tsup": "^6.2.3",
-    "typescript": "^4.8.3",
-    "vitest": "^0.23.4"
+    "@ungap/url-search-params": "^0.2.2"
   },
   "publishConfig": {
     "access": "public",
@@ -76,12 +60,13 @@
       "commitMessage": "chore(release): uni-app-network@v${version}",
       "tagName": "uni-app-network@v${version}"
     },
-    "npm": {
-      "timeout": 30
-    },
     "hooks": {
-      "before:init": "pnpm install && pnpm run lint",
-      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/network/uni-app-network.md"
+      "before:init": "pnpm install",
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/network/uni-app-network.md && pnpm publish --no-git-checks"
+    },
+    "npm": {
+      "publish": false,
+      "timeout": 30
     }
   }
 }

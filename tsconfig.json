@@ -1,5 +1,10 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM"],
+    "resolveJsonModule": true,
+    "types": ["@dcloudio/types", "node"]
+  },
   "include": [
     "**/.*.js",
     "**/.*.cjs",
@@ -17,5 +22,5 @@
     "**/*.tsx",
     "**/*.vue"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["./**/node_modules", "./**/dist"]
 }

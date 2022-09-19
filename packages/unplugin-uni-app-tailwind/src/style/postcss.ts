@@ -36,15 +36,7 @@ const postcssReplaceElements = (selector: string, options: Options) => {
       divideWidthElements.map((element) => `$1>${element}:not([hidden])`).join(','),
     );
 
-  const shouldReplaceStarSelector = options.getShouldReplaceStarSelector(
-    options.replaceStarSelectorPlatforms,
-    (process.env.UNI_PLATFORM || 'H5').toUpperCase(),
-  );
-
   options.elementMap.forEach(([key, value]) => {
-    if (key === '*' && !shouldReplaceStarSelector) {
-      return;
-    }
     newSelector = newSelector.replace(
       new RegExp(
         key === '*'

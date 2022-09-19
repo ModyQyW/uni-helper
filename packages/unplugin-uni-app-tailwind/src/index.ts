@@ -10,16 +10,18 @@ export * from './template';
 
 export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
   const finalOptions: Options = {
+    apply: options?.apply ?? defaultOptions.apply,
+    getShouldApply: options?.getShouldApply ?? defaultOptions.getShouldApply,
     spaceBetweenElements: options?.spaceBetweenElements ?? defaultOptions.spaceBetweenElements,
     divideWidthElements: options?.divideWidthElements ?? defaultOptions.divideWidthElements,
     elementMap: options?.elementMap ?? defaultOptions.elementMap,
     characterMap: options?.characterMap ?? defaultOptions.characterMap,
-    replaceStarSelectorPlatforms: (
-      options?.replaceStarSelectorPlatforms ?? defaultOptions.replaceStarSelectorPlatforms
-    ).map((p) => p.toUpperCase()),
-    getShouldReplaceStarSelector:
-      options?.getShouldReplaceStarSelector ?? defaultOptions.getShouldReplaceStarSelector,
   };
+
+  const shouldApply = finalOptions.getShouldApply(
+    finalOptions.apply,
+    (process.env.UNI_PLATFORM || 'H5').toUpperCase(),
+  );
 
   return {
     name: 'unplugin-uni-app-tailwind',
@@ -29,6 +31,7 @@ export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
       name: 'vite:unplugin-uni-app-tailwind',
       enforce: 'post',
       generateBundle: (_, bundle) => {
+        if (!shouldApply) return;
         Object.entries(bundle).forEach(([fileName, asset]) => {
           if (asset.type === 'asset') {
             const { source } = asset;
@@ -49,9 +52,9 @@ export default createUnplugin((options?: UniAppTailwindPluginOptions) => {
 
     webpack(compiler) {
       const pluginName = 'webpack:unplugin-uni-app-tailwind';
-
       const { sources, Compilation } = compiler.webpack;
       const { ConcatSource } = sources;
+      if (!shouldApply) return;
       compiler.hooks.compilation.tap(pluginName, (compilation) => {
         compilation.hooks.processAssets.tap(
           {

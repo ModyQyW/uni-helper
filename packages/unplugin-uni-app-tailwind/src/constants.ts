@@ -1,4 +1,10 @@
-import { getShouldReplaceStarSelector } from './utils';
+import { getShouldApply } from './utils';
+
+// 默认需要应用该插件的环境
+export const Apply = ['MP', 'QUICKAPP'];
+
+// 默认替换 * 选择器的环境判断方法
+export const GetShouldApply = getShouldApply;
 
 // 默认 space between 元素映射
 // https://tailwindcss.com/docs/space
@@ -164,9 +170,3 @@ export const CharacterMap: [string, string][] = [
   ['\\\\2c\\s', '-c-'], // comma
   ['\\\\2c', '-c-'], // comma
 ];
-
-// 默认需要替换 * 选择器的环境
-export const ReplaceStarSelectorPlatforms = ['MP', 'QUICKAPP'];
-
-// 默认替换 * 选择器的环境判断方法
-export const GetShouldReplaceStarSelector = getShouldReplaceStarSelector;

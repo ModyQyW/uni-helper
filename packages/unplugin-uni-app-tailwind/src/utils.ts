@@ -1,20 +1,20 @@
 import { Options } from './options';
 
-export const getShouldReplaceStarSelector = (targetPlatforms: string[], platform: string) =>
-  targetPlatforms.some((item) => {
+export const getShouldApply = (targets: string[], current: string) =>
+  targets.some((item) => {
     if (
       (item === 'QUICKAPP' || item.startsWith('QUICKAPP-')) &&
-      (platform === 'APP' || platform.startsWith('APP-'))
+      (current === 'APP' || current.startsWith('APP-'))
     ) {
       return false;
     }
     if (
-      (platform === 'QUICKAPP' || platform.startsWith('QUICKAPP-')) &&
+      (current === 'QUICKAPP' || current.startsWith('QUICKAPP-')) &&
       (item === 'APP' || item.startsWith('APP-'))
     ) {
       return false;
     }
-    return item === platform || item.includes(platform) || platform.includes(item);
+    return item === current || item.includes(current) || current.includes(item);
   });
 
 export const replaceCharacters = (source: string, options: Options, type: 'babel' | 'postcss') => {

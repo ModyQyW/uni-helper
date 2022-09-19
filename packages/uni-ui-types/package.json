@@ -30,14 +30,14 @@
     "release": "npx release-it"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.0.13",
+    "@dcloudio/types": "^3.0.15",
     "uni-app-types": "workspace:^",
-    "vue3": "npm:vue@^3.2.38"
+    "vue3": "npm:vue@^3.2.39"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
-    "@types/node": "^18.7.14",
-    "typescript": "^4.8.2"
+    "@types/node": "^18.7.18",
+    "typescript": "^4.8.3"
   },
   "release-it": {
     "git": {

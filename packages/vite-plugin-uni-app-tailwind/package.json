@@ -1,9 +1,8 @@
 {
-  "name": "unplugin-uni-app-tailwind",
+  "name": "vite-plugin-uni-app-tailwind",
   "version": "0.4.1",
   "description": "支持在 uni-app 中使用 tailwindcss 原有语法开发小程序",
   "keywords": [
-    "unplugin",
     "vite",
     "transform",
     "tailwind",
@@ -15,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/unplugin-uni-app-tailwind"
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind"
   },
   "license": "MIT",
   "author": {
@@ -50,8 +49,7 @@
   "dependencies": {
     "@babel/core": "^7.19.1",
     "@vivaxy/wxml": "^2.1.0",
-    "postcss": "^8.4.16",
-    "unplugin": "^0.9.5"
+    "postcss": "^8.4.16"
   },
   "devDependencies": {
     "tailwindcss": "^3.1.8",
@@ -67,12 +65,12 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore(release): unplugin-uni-app-tailwind@v${version}",
-      "tagName": "unplugin-uni-app-tailwind@v${version}"
+      "commitMessage": "chore(release): vite-plugin-uni-app-tailwind@v${version}",
+      "tagName": "vite-plugin-uni-app-tailwind@v${version}"
     },
     "hooks": {
       "before:init": "pnpm install",
-      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/bundler/unplugin-uni-app-tailwind.md && pnpm publish --no-git-checks"
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/bundler/vite-plugin-uni-app-tailwind.md && pnpm publish --no-git-checks"
     },
     "npm": {
       "publish": false,

@@ -1,5 +1,10 @@
 # 改动日志
 
+## 0.5.0
+
+- feat!: 移除 `*` 特殊处理，现在可以指定插件应用于哪些平台，默认为 `MP` 和 `QUICKAPP`
+- feat!: 更名为 `vite-plugin-uni-app-tailwind`，现在只支持 `vite`
+
 ## 0.4.1
 
 - fix: 修复编译成 `APP` 时 `uni-app` 插入的样式选择器替换不正确的问题

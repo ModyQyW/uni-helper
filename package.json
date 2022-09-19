@@ -45,7 +45,7 @@
     "release:vscode-uni-cloud-snippets": "pnpm --filter vscode-uni-cloud-snippets run release",
     "release:vscode-uni-helper": "pnpm --filter vscode-uni-helper run release",
     "release:vscode-uni-ui-snippets": "pnpm --filter vscode-uni-ui-snippets run release",
-    "release:unplugin-uni-app-tailwind": "pnpm --filter unplugin-uni-app-tailwind run release",
+    "release:vite-plugin-uni-app-tailwind": "pnpm --filter vite-plugin-uni-app-tailwind run release",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage"
   },

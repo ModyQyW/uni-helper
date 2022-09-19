@@ -21,6 +21,7 @@
   "scripts": {
     "build": "vitepress build docs",
     "dev": "vitepress dev docs",
+    "release": "git add . -A && git commit . -m 'docs: update' && git push",
     "serve": "vitepress serve docs"
   },
   "devDependencies": {

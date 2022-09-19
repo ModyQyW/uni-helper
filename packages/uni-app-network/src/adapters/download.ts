@@ -78,7 +78,6 @@ export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadCon
     });
 
     if (onHeadersReceived) {
-      // @ts-expect-error uni-app types lost
       task.onHeadersReceived(onHeadersReceived);
     }
     if (onProgressUpdate) {

@@ -56,7 +56,7 @@
 
 ## 构建工具支持
 
-### [vite-plugin-uni-app-tailwind](./bundler/viteplugin-uni-app-tailwind.md)
+### [vite-plugin-uni-app-tailwind](./bundler/vite-plugin-uni-app-tailwind.md)
 
 [![npm](https://img.shields.io/npm/v/vite-plugin-uni-app-tailwind)](https://www.npmjs.com/package/vite-plugin-uni-app-tailwind)
 

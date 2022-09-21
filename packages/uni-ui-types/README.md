@@ -4,9 +4,11 @@
 
 [![npm](https://img.shields.io/npm/v/uni-ui-types)](https://www.npmjs.com/package/uni-ui-types)
 
-`uni-ui` 组件类型。
+`uni-ui` 组件类型。[uni-app-types](https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-types) 提供 `uni-app` 组件类型，[uni-cloud-types](https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-cloud-types) 提供 `uni-cloud` 组件类型。
 
-基于 [这个 PR](https://github.com/vuejs/core/pull/3399)，[Volar](https://github.com/johnsoncodehk/volar) 已经支持，建议使用 Volar 的 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+基于 [这个 PR](https://github.com/vuejs/core/pull/3399)，[Volar](https://github.com/johnsoncodehk/volar) 已经支持。
+
+安装 Volar 之后，建议启用 Volar 的 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。如果不想启用 Take Over Mode，可以安装 [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)。启用或安装后需要重启 VSCode。
 
 维护直到官方类型推出。
 
@@ -29,11 +31,14 @@ npm i -D uni-ui-types
   "compilerOptions": {
     "types": ["@dcloudio/types", "uni-ui-types"]
   },
+  "vueCompilerOptions": {
+    "experimentalRuntimeMode": "runtime-uni-app"
+  },
   "include": ["src/**/*.vue"]
 }
 ```
 
-- 重启编辑器 / IDE。
+- 重启编辑器 / IDE
 
 ## 类型
 

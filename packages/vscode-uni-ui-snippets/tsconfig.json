@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "lib": ["DOM"],
     "resolveJsonModule": true,
-    "types": ["@dcloudio/types", "node"]
+    "types": ["node"]
   },
   "include": [
     "**/.*.js",

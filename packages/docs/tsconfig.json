@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "lib": ["DOM"],
     "resolveJsonModule": true,
-    "types": ["@dcloudio/types", "node"]
+    "types": ["node"]
   },
   "include": [
     "**/.*.js",
@@ -21,7 +21,8 @@
     "**/*.mts",
     "**/*.jsx",
     "**/*.tsx",
-    "**/*.vue"
+    "**/*.vue",
+    "docs/.vitepress/config.ts"
   ],
   "exclude": ["**/node_modules", "**/dist"]
 }

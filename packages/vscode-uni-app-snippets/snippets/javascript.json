@@ -137,24 +137,24 @@
   "uni-app 条件编译，处理某平台": {
     "prefix": ["#ifdef", "ifdef"],
     "body": [
-      "/* #ifdef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-LARK,MP-QQ,MP-KUAISHOU,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|} */",
+      "// #ifdef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-LARK,MP-QQ,MP-KUAISHOU,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|}",
       "$2",
-      "/* #endif */"
+      "// #endif"
     ],
     "description": "uni-app 条件编译，处理某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 条件编译，排除某平台": {
     "prefix": ["#ifndef", "ifndef"],
     "body": [
-      "/* #ifndef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-LARK,MP-QQ,MP-KUAISHOU,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|} */",
+      "// #ifndef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-LARK,MP-QQ,MP-KUAISHOU,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|}",
       "$2",
-      "/* #endif */"
+      "// #endif"
     ],
     "description": "uni-app 条件编译，排除某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 结束条件编译": {
     "prefix": ["#endif", "endif"],
-    "body": ["/* #endif */"],
+    "body": ["// #endif"],
     "description": "uni-app 结束条件编译。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。"
   },
   "uni-app 判断是否为开发环境": {

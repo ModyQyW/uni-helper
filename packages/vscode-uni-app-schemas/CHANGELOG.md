@@ -1,5 +1,10 @@
 # 改动日志
 
+## 0.8.3
+
+- 为颜色属性增加 `"format": "color"`
+- 修复 `pages.json` 中 `titleNView.tags.textStyles.color` 错误设置 `enum` 的问题
+
 ## 0.8.2
 
 - 发布流程改进

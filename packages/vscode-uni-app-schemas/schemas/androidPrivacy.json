@@ -60,7 +60,8 @@
       "properties": {
         "backgroundColor": {
           "description": "提示框背景颜色，#RRGGBB 格式。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "borderRadius": {
           "description": "提示框圆角半径，单位 px",
@@ -72,7 +73,8 @@
           "properties": {
             "color": {
               "description": "提示框标题文字颜色，#RRGGBB 格式。",
-              "type": "string"
+              "type": "string",
+              "format": "color"
             }
           }
         },
@@ -82,7 +84,8 @@
           "properties": {
             "color": {
               "description": "提示框接受按钮文字颜色，#RRGGBB 格式。",
-              "type": "string"
+              "type": "string",
+              "format": "color"
             }
           }
         },
@@ -92,7 +95,8 @@
           "properties": {
             "color": {
               "description": "提示框拒绝按钮文字颜色，#RRGGBB 格式。",
-              "type": "string"
+              "type": "string",
+              "format": "color"
             }
           }
         }

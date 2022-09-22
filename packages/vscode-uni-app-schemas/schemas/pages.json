@@ -75,15 +75,18 @@
       "properties": {
         "color": {
           "description": "文字默认颜色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "selectedColor": {
           "description": "文字选中时颜色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "backgroundColor": {
           "description": "背景色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "borderStyle": {
           "description": "上边框的颜色。",
@@ -262,7 +265,8 @@
       "properties": {
         "backgroundColor": {
           "description": "背景颜色，#RRGGBB 格式。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "buttons": {
           "description": "自定义按钮。",
@@ -277,15 +281,18 @@
               },
               "color": {
                 "description": "自定义按钮文字颜色。默认和标题文字颜色一样。",
-                "type": "string"
+                "type": "string",
+                "format": "color"
               },
               "background": {
                 "description": "自定义按钮背景色，titleNView.type 为 transparent 时有效。默认为灰色半透明。",
-                "type": "string"
+                "type": "string",
+                "format": "color"
               },
               "colorPressed": {
                 "description": "自定义按钮按下状态文字颜色。默认值为 color 属性值自动调整透明度为 0.3。",
-                "type": "string"
+                "type": "string",
+                "format": "color"
               },
               "float": {
                 "description": "自定义按钮在标题栏的显示位置。",
@@ -322,7 +329,8 @@
         },
         "titleColor": {
           "description": "标题颜色。默认为 #000000。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "titleOverflow": {
           "description": "标题文字超出显示区域时处理方式。默认为 ellipsis。",
@@ -378,7 +386,8 @@
                 },
                 "borderColor": {
                   "description": "输入框的边框颜色，#RRGGBB 格式。默认为 #000000。",
-                  "type": "string"
+                  "type": "string",
+                  "format": "color"
                 },
                 "borderRadius": {
                   "description": "输入框边框圆角半径。默认为 0px。",
@@ -422,7 +431,8 @@
               "properties": {
                 "color": {
                   "description": "绘制颜色，#RRGGBB 格式。默认为 #ffffff。",
-                  "type": "string"
+                  "type": "string",
+                  "format": "color"
                 },
                 "radius": {
                   "description": "矩形区域的圆角半径。默认为 0px。",
@@ -430,7 +440,8 @@
                 },
                 "borderColor": {
                   "description": "矩形边框颜色，#RRGGBB 格式。默认为 color 的值。",
-                  "type": "string"
+                  "type": "string",
+                  "format": "color"
                 },
                 "borderWidth": {
                   "description": "矩形边框宽度。默认为 0px。",
@@ -489,7 +500,7 @@
                 "color": {
                   "description": "字体颜色，#RRGGBB 格式。默认为 #000000。",
                   "type": "string",
-                  "enum": ["left", "right", "center"]
+                  "format": "color"
                 },
                 "decoration": {
                   "description": "文本装饰。默认为 none。",
@@ -579,7 +590,8 @@
             },
             "backgroundColor": {
               "description": "背景色。默认为 rgba(255,255,255,0.5)。",
-              "type": "string"
+              "type": "string",
+              "format": "color"
             },
             "borderRadius": {
               "description": "输入框的圆角半径。支持像素值。默认为 0px。",
@@ -591,7 +603,8 @@
             },
             "placeholderColor": {
               "description": "提示文本颜色。默认为 #cccccc。",
-              "type": "string"
+              "type": "string",
+              "format": "color"
             },
             "disabled": {
               "description": "是否禁止输入。默认为 false。",
@@ -607,7 +620,8 @@
       "properties": {
         "color": {
           "description": "颜色，#RRGGBB 格式。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "offset": {
           "description": "下拉刷新控件的起始位置，style 为 circle 时有效。支持百分比和像素值。",
@@ -620,7 +634,8 @@
       "properties": {
         "navigationBarBackgroundColor": {
           "description": "导航栏背景色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "navigationBarTextStyle": {
           "description": "导航栏标题颜色和状态栏前景颜色。",
@@ -638,7 +653,8 @@
         },
         "backgroundColor": {
           "description": "下拉显示出来的窗口的背景色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "backgroundTextStyle": {
           "description": "下拉 loading 的样式。",
@@ -655,11 +671,13 @@
         },
         "backgroundColorTop": {
           "description": "回弹区域顶部窗口的背景色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "backgroundColorBottom": {
           "description": "回弹区域底部窗口的背景色。",
-          "type": "string"
+          "type": "string",
+          "format": "color"
         },
         "titleImage": {
           "description": "导航栏图片地址。",
@@ -738,7 +756,8 @@
                     },
                     "subtitleColor": {
                       "description": "副标题颜色，默认和标题颜色一样。",
-                      "type": "string"
+                      "type": "string",
+                      "format": "color"
                     },
                     "subtitleSize": {
                       "description": "副标题字体大小。",
@@ -984,7 +1003,8 @@
             },
             "backgroundImageColor": {
               "description": "下拉露出显示的背景图底色。",
-              "type": "string"
+              "type": "string",
+              "format": "color"
             },
             "gestureBack": {
               "description": "iOS 是否支持手势返回。",

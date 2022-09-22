@@ -152,9 +152,9 @@
 |`QUICKAPP-WEBVIEW`|`platform-quickapp`, `quickapp`, `platform-quickapp-webview`, `quickapp-webview`|uni-app 快应用通用对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-UNION`|`platform-quickapp-union`, `quickapp-union`, `platform-quickapp-webview-union`, `quickapp-webview-union`|uni-app 快应用联盟对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`QUICKAPP-WEBVIEW-HUAWEI`|`platform-quickapp-huawei`, `quickapp-huawei`, `platform-quickapp-webview-huawei`, `quickapp-webview-huawei`|uni-app 快应用华为对应的 %PLATFORM 值。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
-|`/* #ifdef */`|`#ifdef`, `ifdef`|uni-app 条件编译，处理某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
-|`/* #ifndef */`|`#ifndef`, `ifndef`|uni-app 条件编译，排除某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
-|`/* #endif */`|`#endif`, `endif`|uni-app 结束条件编译。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
+|`// #ifdef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-LARK,MP-QQ,MP-KUAISHOU,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|}`|`#ifdef`, `ifdef`|uni-app 条件编译，处理某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
+|`// #ifndef ${1|APP-PLUS,APP-NVUE,H5,MP,MP-WEIXIN,MP-ALIPAY,MP-BAIDU,MP-TOUTIAO,MP-LARK,MP-QQ,MP-KUAISHOU,MP-360,QUICKAPP-WEBVIEW,QUICKAPP-WEBVIEW-UNION,QUICKAPP-WEBVIEW-HUAWEI|}`|`#ifndef`, `ifndef`|uni-app 条件编译，排除某平台。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
+|`// #endif`|`#endif`, `endif`|uni-app 结束条件编译。更多信息查看 <https://uniapp.dcloud.io/tutorial/platform.html>。|
 |`process.env.NODE_ENV === 'development'`|`process.env.NODE_ENV === 'development'`|uni-app 判断是否为开发环境。更多信息查看 <https://cli.vuejs.org/zh/guide/mode-and-env.html>。|
 |`process.env.NODE_ENV !== 'development'`|`process.env.NODE_ENV !== 'development'`|uni-app 判断是否不为开发环境。更多信息查看 <https://cli.vuejs.org/zh/guide/mode-and-env.html>。|
 |`process.env.NODE_ENV === 'production'`|`process.env.NODE_ENV === 'production'`|uni-app 判断是否为生产环境。更多信息查看 <https://cli.vuejs.org/zh/guide/mode-and-env.html>。|

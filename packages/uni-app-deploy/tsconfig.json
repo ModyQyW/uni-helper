@@ -1,0 +1,27 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["DOM"],
+    "resolveJsonModule": true,
+    "types": ["node"]
+  },
+  "include": [
+    "**/.*.js",
+    "**/.*.cjs",
+    "**/.*.mjs",
+    "**/.*.ts",
+    "**/.*.cts",
+    "**/.*.mts",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.ts",
+    "**/*.cts",
+    "**/*.mts",
+    "**/*.jsx",
+    "**/*.tsx",
+    "**/*.vue"
+  ],
+  "exclude": ["**/node_modules", "**/dist"]
+}

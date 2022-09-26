@@ -1,0 +1,69 @@
+{
+  "name": "uni-app-deploy",
+  "version": "0.0.0",
+  "description": "Deploy uni-app applications automatically. 自动部署 uni-app 应用。",
+  "keywords": [
+    "uniapp",
+    "uni-app",
+    "deploy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-deploy"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "pnpm run build --watch src",
+    "release": "npx release-it"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "globby": "^13.1.2",
+    "got": "^11.8.5",
+    "minidev": "^1.5.1",
+    "miniprogram-ci": "^1.8.35",
+    "strip-json-comments": "^5.0.0",
+    "unconfig": "^0.3.6"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): uni-app-deploy@v${version}",
+      "tagName": "uni-app-deploy@v${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install",
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/cicd/uni-app-deploy.md && pnpm publish --no-git-checks"
+    },
+    "npm": {
+      "publish": false,
+      "timeout": 30
+    }
+  }
+}

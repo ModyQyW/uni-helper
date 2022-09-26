@@ -1,7 +1,7 @@
 {
   "name": "uni-app-deploy",
   "version": "0.0.0",
-  "description": "Deploy uni-app applications automatically. 自动部署 uni-app 应用。",
+  "description": "Deploy uni-app applications automatically.",
   "keywords": [
     "uniapp",
     "uni-app",

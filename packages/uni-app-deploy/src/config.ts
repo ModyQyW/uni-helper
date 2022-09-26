@@ -27,6 +27,14 @@ export async function loadConfig() {
       {
         files: 'uni-app-deploy.config',
       },
+      {
+        files: 'package.json',
+        extensions: [],
+        rewrite(config) {
+          // @ts-ignore
+          return config?.['uni-app-deploy'];
+        },
+      },
     ],
   });
 }

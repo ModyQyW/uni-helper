@@ -1,3 +1,4 @@
+import path from 'path';
 import got from 'got';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
 import { IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
@@ -45,7 +46,9 @@ export async function WecomNotifyMpWeixinPreviewResult(
   const imagePath = getFilePath(config, [
     { entry: config?.['mp-weixin']?.preview?.qrcodeOutputDest ?? '' },
   ]);
-  const base64 = fs.readFileSync(imagePath, { encoding: 'base64' });
+  const imageExtension = path.extname(imagePath);
+  const image = fs.readFileSync(imagePath, { encoding: 'base64' });
+  const base64 = `data:image/${imageExtension.split('.').pop()};base64,${image}`;
   return got(webhook, {
     method: 'POST',
     json: {

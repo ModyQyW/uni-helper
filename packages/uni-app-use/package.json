@@ -41,7 +41,7 @@
   "dependencies": {
     "@dcloudio/types": "^3.0.16",
     "@dcloudio/uni-app": "^3.0.0-alpha-3060220220914003",
-    "@vueuse/core": "^9.2.0"
+    "@vueuse/core": "^9.3.0"
   },
   "devDependencies": {
     "vue": "^3.2.39"

@@ -18,17 +18,27 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '概览', link: '/overview' },
+      { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
       { text: '编辑器支持', link: '/editor/vscode-uni-helper' },
       { text: '构建工具支持', link: '/bundler/vite-plugin-uni-app-tailwind' },
-      { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
       { text: '网络请求支持', link: '/network/uni-app-network' },
       { text: '组合式支持', link: '/composition/uni-app-use' },
+      { text: '自动化支持', link: '/automation/uni-app-deploy' },
     ],
     sidebar: [
       {
         text: '概览',
         collapsible: true,
         items: [{ text: '概览', link: '/overview' }],
+      },
+      {
+        text: 'TypeScript 支持',
+        collapsible: true,
+        items: [
+          { text: 'uni-app-types', link: '/typescript/uni-app-types' },
+          { text: 'uni-cloud-types', link: '/typescript/uni-cloud-types' },
+          { text: 'uni-ui-types', link: '/typescript/uni-ui-types' },
+        ],
       },
       {
         text: '编辑器支持',
@@ -48,15 +58,7 @@ export default defineConfig({
           { text: 'vite-plugin-uni-app-tailwind', link: '/bundler/vite-plugin-uni-app-tailwind' },
         ],
       },
-      {
-        text: 'TypeScript 支持',
-        collapsible: true,
-        items: [
-          { text: 'uni-app-types', link: '/typescript/uni-app-types' },
-          { text: 'uni-cloud-types', link: '/typescript/uni-cloud-types' },
-          { text: 'uni-ui-types', link: '/typescript/uni-ui-types' },
-        ],
-      },
+
       {
         text: '网络请求支持',
         collapsible: true,
@@ -66,6 +68,11 @@ export default defineConfig({
         text: '组合式支持',
         collapsible: true,
         items: [{ text: 'uni-app-use', link: '/composition/uni-app-use' }],
+      },
+      {
+        text: '自动化支持',
+        collapsible: true,
+        items: [{ text: 'uni-app-deploy', link: '/automation/uni-app-deploy' }],
       },
     ],
     socialLinks: [

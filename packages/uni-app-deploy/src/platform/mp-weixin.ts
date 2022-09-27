@@ -13,7 +13,7 @@ export interface MpWeixinConfig {
   //    * 小程序 / 小游戏 appid
   //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
   //    * ./src/manifest.json mp-weixin appid
-  //    * ./manifest.json mp-weixin appid
+  //    * ./**/manifest.json mp-weixin appid
   //    * ./dist/**\/mp-weixin/project.config.json appid
   //    */
   //   appid?: string;
@@ -45,14 +45,14 @@ export interface MpWeixinConfig {
   //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
   //    * ./package.json version
   //    * ./src/manifest.json versionName
-  //    * ./manifest.json versionName
+  //    * ./**/manifest.json versionName
   //    */
   //   version?: string;
   //   /**
   //    * 编译设置
   //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
   //    * ./src/manifest.json mp-weixin setting
-  //    * ./manifest.json mp-weixin setting
+  //    * ./**/manifest.json mp-weixin setting
   //    * ./dist/**\/mp-weixin/project.config.json setting
   //    */
   //   setting?: MiniProgramCI.ICompileSettings;
@@ -70,14 +70,14 @@ export interface MpWeixinConfig {
   //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
   //    * ./package.json version
   //    * ./src/manifest.json versionName
-  //    * ./manifest.json versionName
+  //    * ./**/manifest.json versionName
   //    */
   //   version?: string;
   //   /**
   //    * 编译设置
   //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
   //    * ./src/manifest.json mp-weixin setting
-  //    * ./manifest.json mp-weixin setting
+  //    * ./**/manifest.json mp-weixin setting
   //    * ./dist/**\/mp-weixin/project.config.json setting
   //    */
   //   setting?: MiniProgramCI.ICompileSettings;
@@ -102,7 +102,7 @@ export function mpWeixinGetProjectAppid(config: UniAppDeployConfig): string {
     config?.platform?.['mp-weixin']?.project?.appid ??
     getFileField(config, [
       { entry: ['src', 'manifest.json'], prop: ['mp-weixin', 'appid'] },
-      { entry: ['manifest.json'], prop: ['mp-weixin', 'appid'] },
+      { entry: ['**', 'manifest.json'], prop: ['mp-weixin', 'appid'] },
       { entry: ['dist', '**', 'mp-weixin', 'project.config.json'], prop: 'appid' },
     ])
   );
@@ -148,7 +148,7 @@ export function mpWeixinGetUploadVersion(config: UniAppDeployConfig): string {
     getFileField(config, [
       { entry: 'package.json', prop: 'version' },
       { entry: ['src', 'manifest.json'], prop: ['versionName'] },
-      { entry: ['manifest.json'], prop: ['versionName'] },
+      { entry: ['**', 'manifest.json'], prop: ['versionName'] },
     ])
   );
 }
@@ -160,7 +160,7 @@ export function mpWeixinGetUploadSetting(
     config?.platform?.['mp-weixin']?.upload?.setting ??
     getFileField(config, [
       { entry: ['src', 'manifest.json'], prop: ['mp-weixin', 'setting'] },
-      { entry: ['manifest.json'], prop: ['mp-weixin', 'setting'] },
+      { entry: ['**', 'manifest.json'], prop: ['mp-weixin', 'setting'] },
       { entry: ['dist', '**', 'mp-weixin', 'project.config.json'], prop: ['setting'] },
     ])
   );
@@ -186,7 +186,7 @@ export function mpWeixinGetPreviewVersion(config: UniAppDeployConfig): string {
     getFileField(config, [
       { entry: 'package.json', prop: 'version' },
       { entry: ['src', 'manifest.json'], prop: ['versionName'] },
-      { entry: ['manifest.json'], prop: ['versionName'] },
+      { entry: ['**', 'manifest.json'], prop: ['versionName'] },
     ])
   );
 }
@@ -198,7 +198,7 @@ export function mpWeixinGetPreviewSetting(
     config?.platform?.['mp-weixin']?.preview?.setting ??
     getFileField(config, [
       { entry: ['src', 'manifest.json'], prop: ['mp-weixin', 'setting'] },
-      { entry: ['manifest.json'], prop: ['mp-weixin', 'setting'] },
+      { entry: ['**', 'manifest.json'], prop: ['mp-weixin', 'setting'] },
       { entry: ['dist', '**', 'mp-weixin', 'project.config.json'], prop: ['setting'] },
     ])
   );

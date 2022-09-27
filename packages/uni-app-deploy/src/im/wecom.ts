@@ -15,7 +15,7 @@ export interface WecomConfig {
 }
 
 export function wecomGetWebhook(config: UniAppDeployConfig) {
-  return config?.wecom?.webhook;
+  return config?.im?.wecom?.webhook;
 }
 
 export async function WecomNotifyMpWeixinUploadResult(
@@ -44,7 +44,7 @@ export async function WecomNotifyMpWeixinPreviewResult(
   if (!webhook) return;
   const res = await result;
   const imagePath = getFilePath(config, [
-    { entry: config?.['mp-weixin']?.preview?.qrcodeOutputDest ?? '' },
+    { entry: config?.platform?.['mp-weixin']?.preview?.qrcodeOutputDest ?? '' },
   ]);
   const imageExtension = path.extname(imagePath);
   const image = fs.readFileSync(imagePath, { encoding: 'base64' });

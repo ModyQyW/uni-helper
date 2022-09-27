@@ -5,6 +5,8 @@ import { WecomConfig } from './im';
 
 export interface UniAppDeployConfig {
   cwd?: string;
+  ignore?: string[];
+  ignoreFiles?: string[];
   platform?: {
     'mp-weixin'?: MpWeixinConfig;
   };
@@ -13,8 +15,16 @@ export interface UniAppDeployConfig {
   };
 }
 
+export const defaultCwd = process.cwd();
+
+export const defaultIgnore = ['**/node_modules', '**/dist', '**/.hubuilder', '**/.hbuilderx'];
+
+export const defaultIgnoreFiles = ['**/.gitignore'];
+
 export const defaultConfig: UniAppDeployConfig = {
-  cwd: process.cwd(),
+  cwd: defaultCwd,
+  ignore: defaultIgnore,
+  ignoreFiles: defaultIgnoreFiles,
 };
 
 export function defineConfig(config: UniAppDeployConfig): UniAppDeployConfig {

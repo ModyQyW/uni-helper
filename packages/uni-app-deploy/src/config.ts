@@ -1,20 +1,20 @@
 import { merge } from 'lodash-es';
 import { loadConfig as unLoadConfig } from 'unconfig';
-import { MpWeixinConfig } from './platforms';
+import { MpWeixinConfig } from './platform';
 import { WecomConfig } from './im';
 
 export interface UniAppDeployConfig {
   cwd?: string;
-  'mp-weixin'?: MpWeixinConfig;
-  wecom?: WecomConfig;
+  platform?: {
+    'mp-weixin'?: MpWeixinConfig;
+  };
+  im?: {
+    wecom?: WecomConfig;
+  };
 }
 
 export const defaultConfig: UniAppDeployConfig = {
   cwd: process.cwd(),
-
-  'mp-weixin': {},
-
-  wecom: {},
 };
 
 export function defineConfig(config: UniAppDeployConfig): UniAppDeployConfig {

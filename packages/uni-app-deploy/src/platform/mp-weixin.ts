@@ -4,7 +4,7 @@ import { ICreateProjectOptions } from 'miniprogram-ci/dist/@types/ci/project';
 import { IInnerUploadOptions, IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
 import { UniAppDeployConfig } from '../config';
-import { getFileField, getFileDir, getFilePath } from '..//utils';
+import { getFileField, getFileDir, getFilePath } from '../utils';
 
 export interface MpWeixinConfig {
   /** miniprogram-ci ci.project */
@@ -86,16 +86,20 @@ export interface MpWeixinConfig {
   //    */
   //   desc?: string;
   //   /**
-  //    * 二维码格式，默认为 base64
+  //    * 二维码格式，默认为 image
   //    */
   //   qrcodeFormat?: 'base64' | 'image' | 'terminal';
+  //   /**
+  //    * 二维码输出路径，默认为 qrcode.png
+  //    */
+  //   qrcodeOutputDest?: string;
   // };
   preview?: Partial<Omit<IInnerUploadOptions, 'project' | 'test'> & { test?: true }>;
 }
 
 export function mpWeixinGetProjectAppid(config: UniAppDeployConfig): string {
   return (
-    config?.['mp-weixin']?.project?.appid ??
+    config?.platform?.['mp-weixin']?.project?.appid ??
     getFileField(config, [
       { entry: ['src', 'manifest.json'], prop: ['mp-weixin', 'appid'] },
       { entry: ['manifest.json'], prop: ['mp-weixin', 'appid'] },
@@ -106,7 +110,7 @@ export function mpWeixinGetProjectAppid(config: UniAppDeployConfig): string {
 
 export function mpWeixinGetProjectPath(config: UniAppDeployConfig) {
   return (
-    config?.['mp-weixin']?.project?.projectPath ??
+    config?.platform?.['mp-weixin']?.project?.projectPath ??
     getFileDir(config, [{ entry: ['dist', '**', 'mp-weixin', 'project.config.json'] }])
   );
 }
@@ -114,7 +118,7 @@ export function mpWeixinGetProjectPath(config: UniAppDeployConfig) {
 export function mpWeixinGetProjectPrivateKeyPath(config: UniAppDeployConfig): string {
   const appid = mpWeixinGetProjectAppid(config);
   return (
-    config?.['mp-weixin']?.project?.privateKeyPath ??
+    config?.platform?.['mp-weixin']?.project?.privateKeyPath ??
     getFilePath(config, [
       { entry: ['**', `private.${appid}.key`] },
       { entry: ['**', `weixin.${appid}.key`] },
@@ -124,12 +128,12 @@ export function mpWeixinGetProjectPrivateKeyPath(config: UniAppDeployConfig): st
 }
 
 export function mpWeixinGetProjectType(config: UniAppDeployConfig) {
-  return config?.['mp-weixin']?.project?.type ?? 'miniProgram';
+  return config?.platform?.['mp-weixin']?.project?.type ?? 'miniProgram';
 }
 
 export function mpWeixinCreateProject(config: UniAppDeployConfig) {
   const project = new ci.Project({
-    ...config?.['mp-weixin']?.project,
+    ...config?.platform?.['mp-weixin']?.project,
     appid: mpWeixinGetProjectAppid(config),
     projectPath: mpWeixinGetProjectPath(config),
     privateKeyPath: mpWeixinGetProjectPrivateKeyPath(config),
@@ -140,7 +144,7 @@ export function mpWeixinCreateProject(config: UniAppDeployConfig) {
 
 export function mpWeixinGetUploadVersion(config: UniAppDeployConfig): string {
   return (
-    config?.['mp-weixin']?.upload?.version ??
+    config?.platform?.['mp-weixin']?.upload?.version ??
     getFileField(config, [
       { entry: 'package.json', prop: 'version' },
       { entry: ['src', 'manifest.json'], prop: ['versionName'] },
@@ -153,7 +157,7 @@ export function mpWeixinGetUploadSetting(
   config: UniAppDeployConfig,
 ): MiniProgramCI.ICompileSettings {
   return (
-    config?.['mp-weixin']?.upload?.setting ??
+    config?.platform?.['mp-weixin']?.upload?.setting ??
     getFileField(config, [
       { entry: ['src', 'manifest.json'], prop: ['mp-weixin', 'setting'] },
       { entry: ['manifest.json'], prop: ['mp-weixin', 'setting'] },
@@ -163,12 +167,12 @@ export function mpWeixinGetUploadSetting(
 }
 
 export function mpWeixinGetUploadDesc(config: UniAppDeployConfig) {
-  return config?.['mp-weixin']?.upload?.desc ?? 'Uploaded by uni-app-deploy';
+  return config?.platform?.['mp-weixin']?.upload?.desc ?? 'Uploaded by uni-app-deploy';
 }
 
 export async function mpWeixinUpload(config: UniAppDeployConfig): Promise<IInnerUploadResult> {
   return ci.upload({
-    ...config?.['mp-weixin']?.upload,
+    ...config?.platform?.['mp-weixin']?.upload,
     project: mpWeixinCreateProject(config),
     version: mpWeixinGetUploadVersion(config),
     setting: mpWeixinGetUploadSetting(config),
@@ -178,7 +182,7 @@ export async function mpWeixinUpload(config: UniAppDeployConfig): Promise<IInner
 
 export function mpWeixinGetPreviewVersion(config: UniAppDeployConfig): string {
   return (
-    config?.['mp-weixin']?.preview?.version ??
+    config?.platform?.['mp-weixin']?.preview?.version ??
     getFileField(config, [
       { entry: 'package.json', prop: 'version' },
       { entry: ['src', 'manifest.json'], prop: ['versionName'] },
@@ -191,7 +195,7 @@ export function mpWeixinGetPreviewSetting(
   config: UniAppDeployConfig,
 ): MiniProgramCI.ICompileSettings {
   return (
-    config?.['mp-weixin']?.preview?.setting ??
+    config?.platform?.['mp-weixin']?.preview?.setting ??
     getFileField(config, [
       { entry: ['src', 'manifest.json'], prop: ['mp-weixin', 'setting'] },
       { entry: ['manifest.json'], prop: ['mp-weixin', 'setting'] },
@@ -201,20 +205,25 @@ export function mpWeixinGetPreviewSetting(
 }
 
 export function mpWeixinGetPreviewDesc(config: UniAppDeployConfig) {
-  return config?.['mp-weixin']?.preview?.desc ?? 'Uploaded by uni-app-deploy';
+  return config?.platform?.['mp-weixin']?.preview?.desc ?? 'Uploaded by uni-app-deploy';
 }
 
 export function mpWeixinGetPreviewQrcodeFormat(config: UniAppDeployConfig) {
-  return config?.['mp-weixin']?.preview?.qrcodeFormat ?? 'image';
+  return config?.platform?.['mp-weixin']?.preview?.qrcodeFormat ?? 'image';
+}
+
+export function mpWeixinGetPreviewQrcodeOutputDest(config: UniAppDeployConfig) {
+  return config?.platform?.['mp-weixin']?.preview?.qrcodeOutputDest ?? 'qrcode.png';
 }
 
 export async function mpWeixinPreview(config: UniAppDeployConfig): Promise<IPreviewResult> {
   return ci.preview({
-    ...config?.['mp-weixin']?.preview,
+    ...config?.platform?.['mp-weixin']?.preview,
     project: mpWeixinCreateProject(config),
     version: mpWeixinGetPreviewVersion(config),
     setting: mpWeixinGetPreviewSetting(config),
     desc: mpWeixinGetPreviewDesc(config),
     qrcodeFormat: mpWeixinGetPreviewQrcodeFormat(config),
+    qrcodeOutputDest: mpWeixinGetPreviewQrcodeOutputDest(config),
   });
 }

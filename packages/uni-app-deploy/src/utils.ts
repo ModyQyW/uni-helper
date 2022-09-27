@@ -3,10 +3,18 @@ import { globbySync } from 'globby';
 import stripJsonComments from 'strip-json-comments';
 import * as fs from 'fs-extra';
 import { get } from 'lodash-es';
-import { UniAppDeployConfig } from './config';
+import { UniAppDeployConfig, defaultCwd, defaultIgnore, defaultIgnoreFiles } from './config';
 
 export function getCwd(config: UniAppDeployConfig) {
-  return config.cwd ?? process.cwd();
+  return config.cwd ?? defaultCwd;
+}
+
+export function getIgnore(config: UniAppDeployConfig) {
+  return config.ignore ?? defaultIgnore;
+}
+
+export function getIgnoreFiles(config: UniAppDeployConfig) {
+  return config.ignoreFiles ?? defaultIgnoreFiles;
 }
 
 export function getFileField(
@@ -16,9 +24,9 @@ export function getFileField(
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
-      typeof f.entry === 'string' ? path.join(cwd, f.entry) : path.join(cwd, ...f.entry),
+      typeof f.entry === 'string' ? path.resolve(cwd, f.entry) : path.resolve(cwd, ...f.entry),
     ),
-    { gitignore: true },
+    { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
   );
   if (entries.length === 0) {
     throw new Error(`Can not get files.`);
@@ -41,9 +49,9 @@ export function getFilePath(config: UniAppDeployConfig, filters: { entry: string
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
-      typeof f.entry === 'string' ? path.join(cwd, f.entry) : path.join(cwd, ...f.entry),
+      typeof f.entry === 'string' ? path.resolve(cwd, f.entry) : path.resolve(cwd, ...f.entry),
     ),
-    { gitignore: true },
+    { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
   );
   if (entries.length === 0) {
     throw new Error(`Can not get files.`);
@@ -55,12 +63,12 @@ export function getFileDir(config: UniAppDeployConfig, filters: { entry: string 
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
-      typeof f.entry === 'string' ? path.join(cwd, f.entry) : path.join(cwd, ...f.entry),
+      typeof f.entry === 'string' ? path.resolve(cwd, f.entry) : path.resolve(cwd, ...f.entry),
     ),
-    { gitignore: true },
+    { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
   );
   if (entries.length === 0) {
     throw new Error(`Can not get files.`);
   }
-  return path.join(entries[0], '..');
+  return path.resolve(entries[0], '..');
 }

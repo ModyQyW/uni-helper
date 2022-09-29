@@ -1,6 +1,6 @@
 {
   "name": "uni-app-network",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "为 uni-app 打造的基于 Promise 的 HTTP 客户端。",
   "keywords": [
     "uni-app",
@@ -51,6 +51,9 @@
     "@types/ungap__url-search-params": "^0.1.0",
     "@ungap/url-search-params": "^0.2.2"
   },
+  "engines": {
+    "node": ">=14.16"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -68,8 +71,5 @@
       "publish": false,
       "timeout": 30
     }
-  },
-  "engines": {
-    "node": ">=14.16"
   }
 }

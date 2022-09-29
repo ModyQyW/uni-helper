@@ -2,7 +2,7 @@ import path from 'path';
 import { describe, it, expect } from 'vitest';
 import { getCwd, getFileDir, getFileField, getFilePath } from './utils';
 
-describe('utils::mp-weixin', () => {
+describe('utils', () => {
   it('getCwd', () => {
     expect(getCwd({})).toBe(process.cwd());
     expect(getCwd({ cwd: '..' })).toBe('..');

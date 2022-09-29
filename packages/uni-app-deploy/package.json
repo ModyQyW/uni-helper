@@ -45,6 +45,7 @@
     "minidev": "^1.5.1",
     "miniprogram-ci": "^1.8.35",
     "p-retry": "^5.1.1",
+    "picocolors": "^1.0.0",
     "strip-json-comments": "^5.0.0",
     "unconfig": "^0.3.6"
   },

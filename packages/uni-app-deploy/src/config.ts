@@ -8,7 +8,18 @@ export { Options as GotOptions } from 'got';
 
 export interface UniAppDeployConfig {
   cwd?: string;
+  /**
+   * used in globby
+   * An array of glob patterns to exclude matches. This is an alternative way to use negative patterns.
+   * default []
+   */
   ignore?: string[];
+  /**
+   * used in globby
+   * Glob patterns to look for ignore files, which are then used to ignore globbed files.
+   * This is a more generic form of the gitignore option, allowing you to find ignore files with a compatible syntax. For instance, this works with Babel's .babelignore, Prettier's .prettierignore, or ESLint's .eslintignore files.
+   * default undefined
+   */
   ignoreFiles?: string[];
   platform?: {
     'mp-weixin'?: MpWeixinConfig;
@@ -20,7 +31,7 @@ export interface UniAppDeployConfig {
 
 export const defaultCwd = process.cwd();
 
-export const defaultIgnore = ['**/node_modules', '**/dist', '**/.hubuilder', '**/.hbuilderx'];
+export const defaultIgnore = ['**/node_modules', '**/dist', '**/.hbuilder', '**/.hbuilderx'];
 
 export const defaultIgnoreFiles = ['**/.gitignore'];
 

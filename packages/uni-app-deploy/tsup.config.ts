@@ -9,7 +9,10 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'es5',
+    target: 'node14.16',
+    banner: {
+      js: `import {createRequire as __createRequire} from 'module';var require=createRequire(import\.meta.url);`,
+    },
   },
   {
     entry: ['./src/index.ts'],
@@ -17,7 +20,7 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'es5',
+    target: 'node14.16',
     footer: {
       js: `if (module.exports.default) module.exports = module.exports.default;`,
     },

@@ -15,6 +15,7 @@ export * from './useDownloadFile';
 export * from './useGlobalData';
 export * from './useImage';
 export * from './useInterceptor';
+export * from './useLaunchOptions';
 export * from './useLoading';
 export * from './useLocation';
 export * from './useModal';

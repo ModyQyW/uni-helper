@@ -101,7 +101,7 @@ tryOnUnload(() => {
 获取当前账号信息。
 
 ```typescript
-import {useAccountInfo} from 'uni-app-use';
+import { useAccountInfo } from 'uni-app-use';
 
 const accountInfo = useAccountInfo();
 ```
@@ -294,6 +294,16 @@ const stop = useInterceptor(event, {
 
 // 删除拦截器
 stop(event);
+```
+
+### useLaunchOptions
+
+获取启动时的参数。返回值与 `onLaunch` 的回调参数一致。
+
+```typescript
+import { useLaunchOptions } from 'uni-app-use';
+
+const options = useLaunchOptions();
 ```
 
 ### useLoading

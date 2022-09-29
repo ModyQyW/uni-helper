@@ -23,7 +23,7 @@ import { Platform, platformPreview, platformUpload } from './platform';
     );
 
     const ims = Object.keys(config.im ?? {}) as Im[];
-    const notifyResults = await Promise.all(
+    await Promise.all(
       ims.map((im) => uploadResults.map((result) => imNotifyUploadResult(config, { im, result }))),
     );
 
@@ -38,7 +38,7 @@ import { Platform, platformPreview, platformUpload } from './platform';
     );
 
     const ims = Object.keys(config.im ?? {}) as Im[];
-    const notifyResults = await Promise.all(
+    await Promise.all(
       ims.map((im) => uploadResults.map((result) => imNotifyPreviewResult(config, { im, result }))),
     );
 

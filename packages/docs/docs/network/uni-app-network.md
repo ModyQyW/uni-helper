@@ -622,7 +622,7 @@ cancel();
 
 ### 构建
 
-目前 `uni-app-network` 会将直接调用 `uni` API 之外的部分转译到 `es5`，底层使用了 `tsup` 和 `swc`。`uni` API 需要在项目构建时由 `uni-app` 官方提供的插件处理。
+目前 `uni-app-network` 会使用 `tsup` 将 `uni` API 之外的部分转译到 `esnext`。`uni` API 需要在项目构建时由 `uni-app` 官方提供的插件处理。
 
 对于 `vue-cli`，请修改项目根目录 `vue.config.js` 如下所示。
 

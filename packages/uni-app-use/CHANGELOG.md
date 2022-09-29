@@ -1,5 +1,14 @@
 # 改动日志
 
+## Unreleased
+
+- feat!: 现在要求使用 `node >= 14.16`
+- feat!: 现在构建目标是 `esnext`
+- fix: 修复了构建不正常的问题
+- feat: 新增 `useAccountInfo`
+- feat: 新增 `useLaunchOptions`
+- feat: 新增 `useEnterOptions`
+
 ## 0.6.1
 
 - fix: 修复 `useSelectorQuery` 类型

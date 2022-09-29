@@ -9,7 +9,7 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'node12',
+    target: 'node12.2',
     define: {
       'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
     },
@@ -23,7 +23,7 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'node12',
+    target: 'node12.2',
     define: {
       'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
     },

@@ -68,5 +68,8 @@
       "publish": false,
       "timeout": 30
     }
+  },
+  "engines": {
+    "node": ">=14.16"
   }
 }

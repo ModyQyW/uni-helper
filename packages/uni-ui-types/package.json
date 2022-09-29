@@ -33,6 +33,9 @@
     "uni-app-types": "workspace:^",
     "vue3": "npm:vue@^3.2.39"
   },
+  "engines": {
+    "node": ">=14.16"
+  },
   "release-it": {
     "git": {
       "commitMessage": "chore(release): uni-ui-types@v${version}",

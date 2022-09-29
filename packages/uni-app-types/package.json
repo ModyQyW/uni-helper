@@ -30,6 +30,9 @@
     "@dcloudio/types": "^3.0.16",
     "vue3": "npm:vue@^3.2.39"
   },
+  "engines": {
+    "node": ">=14.16"
+  },
   "release-it": {
     "git": {
       "commitMessage": "chore(release): uni-app-types@v${version}",

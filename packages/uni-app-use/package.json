@@ -49,6 +49,9 @@
   "peerDependencies": {
     "vue": "^3.0.0"
   },
+  "engines": {
+    "node": ">=14.16"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

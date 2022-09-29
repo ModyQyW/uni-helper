@@ -12,10 +12,10 @@ export const imNotifyPreviewResultMap = {
   wecom: WecomNotifyMpWeixinPreviewResult,
 };
 
-export function imNotifyUploadResult(im: Im, config: UniAppDeployConfig, result: any) {
+export function imNotifyUploadResult(config: UniAppDeployConfig, im: Im, result: any) {
   return imNotifyUploadResultMap[im](config, result);
 }
 
-export function imNotifyPreviewResult(im: Im, config: UniAppDeployConfig, result: any) {
+export function imNotifyPreviewResult(config: UniAppDeployConfig, im: Im, result: any) {
   return imNotifyPreviewResultMap[im](config, result);
 }

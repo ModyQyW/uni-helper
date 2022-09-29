@@ -12,10 +12,10 @@ export const platformPreviewMap = {
   'mp-weixin': mpWeixinPreview,
 };
 
-export function platformUpload(platform: Platform, config: UniAppDeployConfig) {
+export function platformUpload(config: UniAppDeployConfig, platform: Platform) {
   return platformUploadMap[platform](config);
 }
 
-export function platformPreview(platform: Platform, config: UniAppDeployConfig) {
+export function platformPreview(config: UniAppDeployConfig, platform: Platform) {
   return platformPreviewMap[platform](config);
 }

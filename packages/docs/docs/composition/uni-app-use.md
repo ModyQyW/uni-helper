@@ -96,6 +96,16 @@ tryOnUnload(() => {
 });
 ```
 
+### useAccountInfo
+
+获取当前账号信息。
+
+```typescript
+import { useAccountInfo } from 'uni-app-use';
+
+const accountInfo = useAccountInfo();
+```
+
 ### useActionSheet
 
 设置菜单列表参数，调用返回方法显示菜单列表。
@@ -196,6 +206,16 @@ import { UseClipboardData } from 'uni-app-use';
 
 **返回值中含有 task，可自行操作。**
 
+### useEnterOptions
+
+获取启动时的参数。
+
+```typescript
+const { useEnterOptions } from 'uni-app-use';
+
+const options = useEnterOptions();
+```
+
 ### useGlobalData
 
 获取和设置当前应用实例的 `globalData`。
@@ -284,6 +304,16 @@ const stop = useInterceptor(event, {
 
 // 删除拦截器
 stop(event);
+```
+
+### useLaunchOptions
+
+获取启动时的参数。返回值与 `onLaunch` 的回调参数一致。
+
+```typescript
+import { useLaunchOptions } from 'uni-app-use';
+
+const options = useLaunchOptions();
 ```
 
 ### useLoading

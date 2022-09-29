@@ -3,6 +3,9 @@ import { loadConfig as unLoadConfig } from 'unconfig';
 import { MpWeixinConfig } from './platform';
 import { WecomConfig } from './im';
 
+export { Options as PRetryOptions } from 'p-retry';
+export { Options as GotOptions } from 'got';
+
 export interface UniAppDeployConfig {
   cwd?: string;
   ignore?: string[];

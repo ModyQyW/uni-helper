@@ -12,6 +12,7 @@ export * from './useBackground';
 export * from './useBase64ToArrayBuffer';
 export * from './useClipboardData';
 export * from './useDownloadFile';
+export * from './useEnterOptions';
 export * from './useGlobalData';
 export * from './useImage';
 export * from './useInterceptor';

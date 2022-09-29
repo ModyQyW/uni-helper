@@ -206,6 +206,16 @@ import { UseClipboardData } from 'uni-app-use';
 
 **返回值中含有 task，可自行操作。**
 
+### useEnterOptions
+
+获取启动时的参数。
+
+```typescript
+const { useEnterOptions } from 'uni-app-use';
+
+const options = useEnterOptions();
+```
+
 ### useGlobalData
 
 获取和设置当前应用实例的 `globalData`。

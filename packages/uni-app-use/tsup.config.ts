@@ -31,7 +31,14 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'es5',
+    target: 'esnext',
+    define: {
+      'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
+      'import.meta.env.UNI_PLATFORM': 'import.meta.env.UNI_PLATFORM',
+    },
+    banner: {
+      js: `import {createRequire as __createRequire} from 'module';var require=createRequire(import\.meta.url);`,
+    },
   },
   {
     entry: getTsFiles('src'),
@@ -39,7 +46,11 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'es5',
+    target: 'esnext',
+    define: {
+      'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
+      'import.meta.env.UNI_PLATFORM': 'import.meta.env.UNI_PLATFORM',
+    },
     footer: {
       js: `if (module.exports.default) module.exports = module.exports.default;`,
     },

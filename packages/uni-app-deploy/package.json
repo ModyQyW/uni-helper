@@ -37,16 +37,19 @@
     "release": "npx release-it"
   },
   "dependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "commander": "^9.4.0",
     "fs-extra": "^10.1.0",
     "globby": "^13.1.2",
     "got": "^11.8.5",
     "minidev": "^1.5.1",
     "miniprogram-ci": "^1.8.35",
+    "p-retry": "^5.1.1",
     "strip-json-comments": "^5.0.0",
     "unconfig": "^0.3.6"
   },
-  "devDependencies": {
-    "@types/fs-extra": "^9.0.13"
+  "engines": {
+    "node": ">=14.16"
   },
   "publishConfig": {
     "access": "public",

@@ -22,24 +22,24 @@ export async function WecomNotifyMpWeixinUploadResult(
   config: UniAppDeployConfig,
   {
     result,
-    gotOptions,
+    buildGotOptions,
   }: {
     result: Promise<IInnerUploadResult> | IInnerUploadResult;
-    gotOptions?: GotOptions;
+    buildGotOptions?: (result: Promise<IInnerUploadResult> | IInnerUploadResult) => GotOptions;
   },
 ) {
   const webhook = wecomGetWebhook(config);
   if (!webhook) return;
   const res = await result;
   return got(webhook, {
+    method: 'POST',
     json: {
       msgtype: 'markdown',
       markdown: {
         content: `操作完毕。请打开微信小程序“小程序助手”查看体验版。<br/><br/>ci.upload 原始响应：${res}`,
       },
     },
-    ...gotOptions,
-    method: 'POST',
+    ...buildGotOptions?.(result),
   });
 }
 
@@ -47,10 +47,10 @@ export async function WecomNotifyMpWeixinPreviewResult(
   config: UniAppDeployConfig,
   {
     result,
-    gotOptions,
+    buildGotOptions,
   }: {
     result: Promise<IPreviewResult> | IPreviewResult;
-    gotOptions?: GotOptions;
+    buildGotOptions?: (result: Promise<IPreviewResult> | IPreviewResult) => GotOptions;
   },
 ) {
   const webhook = wecomGetWebhook(config);
@@ -63,13 +63,13 @@ export async function WecomNotifyMpWeixinPreviewResult(
   const image = fs.readFileSync(imagePath, { encoding: 'base64' });
   const base64 = `data:image/${imageExtension.split('.').pop()};base64,${image}`;
   return got(webhook, {
+    method: 'POST',
     json: {
       msgtype: 'markdown',
       markdown: {
         content: `操作完毕。请用微信扫二维码查看开发版。<br/><br/><image src="${base64}" width="128px" height="128px" style="width:128px;height:128px" /><br/><br/>ci.preview 原始响应：${res}`,
       },
     },
-    ...gotOptions,
-    method: 'POST',
+    ...buildGotOptions?.(result),
   });
 }

@@ -17,14 +17,14 @@ export function imNotifyUploadResult(
   {
     im,
     result,
-    gotOptions,
+    buildGotOptions,
   }: {
     im: Im;
     result: any;
-    gotOptions?: GotOptions;
+    buildGotOptions?: <T>(result: Promise<T> | T) => GotOptions;
   },
 ) {
-  return imNotifyUploadResultMap[im](config, { result, gotOptions });
+  return imNotifyUploadResultMap[im](config, { result, buildGotOptions });
 }
 
 export function imNotifyPreviewResult(
@@ -32,12 +32,12 @@ export function imNotifyPreviewResult(
   {
     im,
     result,
-    gotOptions,
+    buildGotOptions,
   }: {
     im: Im;
     result: any;
-    gotOptions?: GotOptions;
+    buildGotOptions?: <T>(result: Promise<T> | T) => GotOptions;
   },
 ) {
-  return imNotifyPreviewResultMap[im](config, { result, gotOptions });
+  return imNotifyPreviewResultMap[im](config, { result, buildGotOptions });
 }

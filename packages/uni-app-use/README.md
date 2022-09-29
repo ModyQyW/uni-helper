@@ -96,6 +96,16 @@ tryOnUnload(() => {
 });
 ```
 
+### useAccountInfo
+
+获取当前账号信息。
+
+```typescript
+import {useAccountInfo} from 'uni-app-use';
+
+const accountInfo = useAccountInfo();
+```
+
 ### useActionSheet
 
 设置菜单列表参数，调用返回方法显示菜单列表。

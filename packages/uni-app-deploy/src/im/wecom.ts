@@ -1,5 +1,5 @@
 import path from 'path';
-import got from 'got';
+import got, { Options as GotOptions } from 'got';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
 import { IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
 import fs from 'fs-extra';
@@ -20,25 +20,38 @@ export function wecomGetWebhook(config: UniAppDeployConfig) {
 
 export async function WecomNotifyMpWeixinUploadResult(
   config: UniAppDeployConfig,
-  result: Promise<IInnerUploadResult> | IInnerUploadResult,
+  {
+    result,
+    gotOptions,
+  }: {
+    result: Promise<IInnerUploadResult> | IInnerUploadResult;
+    gotOptions?: GotOptions;
+  },
 ) {
   const webhook = wecomGetWebhook(config);
   if (!webhook) return;
   const res = await result;
   return got(webhook, {
-    method: 'POST',
     json: {
       msgtype: 'markdown',
       markdown: {
         content: `操作完毕。请打开微信小程序“小程序助手”查看体验版。<br/><br/>ci.upload 原始响应：${res}`,
       },
     },
+    ...gotOptions,
+    method: 'POST',
   });
 }
 
 export async function WecomNotifyMpWeixinPreviewResult(
   config: UniAppDeployConfig,
-  result: Promise<IPreviewResult> | IPreviewResult,
+  {
+    result,
+    gotOptions,
+  }: {
+    result: Promise<IPreviewResult> | IPreviewResult;
+    gotOptions?: GotOptions;
+  },
 ) {
   const webhook = wecomGetWebhook(config);
   if (!webhook) return;
@@ -50,12 +63,13 @@ export async function WecomNotifyMpWeixinPreviewResult(
   const image = fs.readFileSync(imagePath, { encoding: 'base64' });
   const base64 = `data:image/${imageExtension.split('.').pop()};base64,${image}`;
   return got(webhook, {
-    method: 'POST',
     json: {
       msgtype: 'markdown',
       markdown: {
         content: `操作完毕。请用微信扫二维码查看开发版。<br/><br/><image src="${base64}" width="128px" height="128px" style="width:128px;height:128px" /><br/><br/>ci.preview 原始响应：${res}`,
       },
     },
+    ...gotOptions,
+    method: 'POST',
   });
 }

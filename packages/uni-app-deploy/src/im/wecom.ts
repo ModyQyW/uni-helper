@@ -36,7 +36,7 @@ export async function WecomNotifyMpWeixinUploadResult(
     json: {
       msgtype: 'markdown',
       markdown: {
-        content: `操作完毕。请打开微信小程序“小程序助手”查看体验版。<br/><br/>ci.upload 原始响应：${res}`,
+        content: `微信小程序上传完毕。请打开微信小程序“小程序助手”查看体验版。<br/><br/>ci.upload 原始响应：${res}`,
       },
     },
     ...buildGotOptions?.(result),
@@ -67,7 +67,7 @@ export async function WecomNotifyMpWeixinPreviewResult(
     json: {
       msgtype: 'markdown',
       markdown: {
-        content: `操作完毕。请用微信扫二维码查看开发版。<br/><br/><image src="${base64}" width="128px" height="128px" style="width:128px;height:128px" /><br/><br/>ci.preview 原始响应：${res}`,
+        content: `微信小程序预览完毕。请用微信扫二维码查看开发版。<br/><br/><image src="${base64}" width="128px" height="128px" style="width:128px;height:128px" /><br/><br/>ci.preview 原始响应：${res}`,
       },
     },
     ...buildGotOptions?.(result),

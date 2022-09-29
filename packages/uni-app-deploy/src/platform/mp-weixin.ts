@@ -1,9 +1,10 @@
 import ci from 'miniprogram-ci';
+import pRetry from 'p-retry';
 import { MiniProgramCI } from 'miniprogram-ci/dist/@types/types';
 import { ICreateProjectOptions } from 'miniprogram-ci/dist/@types/ci/project';
 import { IInnerUploadOptions, IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
-import { UniAppDeployConfig } from '../config';
+import { UniAppDeployConfig, PRetryOptions } from '../config';
 import { getFileField, getFileDir, getFilePath } from '../utils';
 
 export interface MpWeixinConfig {
@@ -170,14 +171,21 @@ export function mpWeixinGetUploadDesc(config: UniAppDeployConfig) {
   return config?.platform?.['mp-weixin']?.upload?.desc ?? 'Uploaded by uni-app-deploy';
 }
 
-export async function mpWeixinUpload(config: UniAppDeployConfig): Promise<IInnerUploadResult> {
-  return ci.upload({
-    ...config?.platform?.['mp-weixin']?.upload,
-    project: mpWeixinCreateProject(config),
-    version: mpWeixinGetUploadVersion(config),
-    setting: mpWeixinGetUploadSetting(config),
-    desc: mpWeixinGetUploadDesc(config),
-  });
+export async function mpWeixinUpload(
+  config: UniAppDeployConfig,
+  { pRetryOptions }: { pRetryOptions?: PRetryOptions },
+): Promise<IInnerUploadResult> {
+  return pRetry(
+    () =>
+      ci.upload({
+        ...config?.platform?.['mp-weixin']?.upload,
+        project: mpWeixinCreateProject(config),
+        version: mpWeixinGetUploadVersion(config),
+        setting: mpWeixinGetUploadSetting(config),
+        desc: mpWeixinGetUploadDesc(config),
+      }),
+    pRetryOptions,
+  );
 }
 
 export function mpWeixinGetPreviewVersion(config: UniAppDeployConfig): string {
@@ -216,14 +224,21 @@ export function mpWeixinGetPreviewQrcodeOutputDest(config: UniAppDeployConfig) {
   return config?.platform?.['mp-weixin']?.preview?.qrcodeOutputDest ?? 'qrcode.png';
 }
 
-export async function mpWeixinPreview(config: UniAppDeployConfig): Promise<IPreviewResult> {
-  return ci.preview({
-    ...config?.platform?.['mp-weixin']?.preview,
-    project: mpWeixinCreateProject(config),
-    version: mpWeixinGetPreviewVersion(config),
-    setting: mpWeixinGetPreviewSetting(config),
-    desc: mpWeixinGetPreviewDesc(config),
-    qrcodeFormat: mpWeixinGetPreviewQrcodeFormat(config),
-    qrcodeOutputDest: mpWeixinGetPreviewQrcodeOutputDest(config),
-  });
+export async function mpWeixinPreview(
+  config: UniAppDeployConfig,
+  { pRetryOptions }: { pRetryOptions?: PRetryOptions },
+): Promise<IPreviewResult> {
+  return pRetry(
+    () =>
+      ci.preview({
+        ...config?.platform?.['mp-weixin']?.preview,
+        project: mpWeixinCreateProject(config),
+        version: mpWeixinGetPreviewVersion(config),
+        setting: mpWeixinGetPreviewSetting(config),
+        desc: mpWeixinGetPreviewDesc(config),
+        qrcodeFormat: mpWeixinGetPreviewQrcodeFormat(config),
+        qrcodeOutputDest: mpWeixinGetPreviewQrcodeOutputDest(config),
+      }),
+    pRetryOptions,
+  );
 }

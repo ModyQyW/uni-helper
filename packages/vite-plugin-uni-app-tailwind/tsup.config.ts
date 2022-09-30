@@ -13,9 +13,6 @@ export default defineConfig([
     define: {
       'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
     },
-    banner: {
-      js: `import {createRequire as __createRequire} from 'module';var require=createRequire(import\.meta.url);`,
-    },
   },
   {
     entry: ['src/index.ts'],

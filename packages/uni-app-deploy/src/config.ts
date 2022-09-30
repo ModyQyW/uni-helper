@@ -11,14 +11,12 @@ export interface UniAppDeployConfig {
   /**
    * used in globby
    * An array of glob patterns to exclude matches. This is an alternative way to use negative patterns.
-   * default []
    */
   ignore?: string[];
   /**
    * used in globby
    * Glob patterns to look for ignore files, which are then used to ignore globbed files.
    * This is a more generic form of the gitignore option, allowing you to find ignore files with a compatible syntax. For instance, this works with Babel's .babelignore, Prettier's .prettierignore, or ESLint's .eslintignore files.
-   * default undefined
    */
   ignoreFiles?: string[];
   platform?: {

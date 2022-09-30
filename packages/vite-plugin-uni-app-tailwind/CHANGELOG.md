@@ -3,6 +3,9 @@
 ## 0.6.0 (2022-09-30)
 
 - feat: 支持替换模板 `class`、`classname`、`class-name`、`*-class`、`*-classname`、`*-class-name` 中的类名
+- feat!: 现在要求使用 `node >= 12.2`
+- feat!: 现在构建目标是 `node12.2`
+- fix: 修复了构建不正常的问题
 
 ## 0.5.0
 

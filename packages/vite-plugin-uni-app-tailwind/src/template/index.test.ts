@@ -61,4 +61,22 @@ describe('template', () => {
       '<view class="w--10-p--"></view>',
     );
   });
+
+  it('support *-classname', () => {
+    expect(transformTemplate('<view class="top-1/2" classname="top-1/2"></view>')).toBe(
+      '<view class="top-1-s-2" classname="top-1-s-2"></view>',
+    );
+    expect(transformTemplate('<view class="top-1/2" label-classname="top-1/2"></view>')).toBe(
+      '<view class="top-1-s-2" label-classname="top-1-s-2"></view>',
+    );
+  });
+
+  it('support *-class-name', () => {
+    expect(transformTemplate('<view class="top-1/2" class-name="top-1/2"></view>')).toBe(
+      '<view class="top-1-s-2" class-name="top-1-s-2"></view>',
+    );
+    expect(transformTemplate('<view class="top-1/2" label-class-name="top-1/2"></view>')).toBe(
+      '<view class="top-1-s-2" label-class-name="top-1-s-2"></view>',
+    );
+  });
 });

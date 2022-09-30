@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.6.0 (2022-09-30)
+
+- feat: 支持替换模板 `class`、`classname`、`class-name`、`*-class`、`*-classname`、`*-class-name` 中的类名
+
 ## 0.5.0
 
 - feat!: 移除 `*` 特殊处理，现在可以指定插件应用于哪些平台，默认为 `MP` 和 `QUICKAPP`

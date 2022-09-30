@@ -36,9 +36,6 @@ export default defineConfig([
       'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
       'import.meta.env.UNI_PLATFORM': 'import.meta.env.UNI_PLATFORM',
     },
-    banner: {
-      js: `import {createRequire as __createRequire} from 'module';var require=createRequire(import\.meta.url);`,
-    },
   },
   {
     entry: getTsFiles('src'),

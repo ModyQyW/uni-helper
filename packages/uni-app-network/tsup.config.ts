@@ -32,9 +32,6 @@ export default defineConfig([
     shims: true,
     splitting: false,
     target: 'esnext',
-    banner: {
-      js: `import {createRequire as __createRequire} from 'module';var require=createRequire(import\.meta.url);`,
-    },
   },
   {
     entry: getTsFiles('src'),

@@ -8,19 +8,31 @@
 
 ## 安装
 
+使用 `npm`：
+
 ```shell
 npm install uni-app-use @vueuse/core
 ```
 
-不考虑支持 `uni_modules`。目前只考虑小程序和移动应用环境。
+使用 `yarn`：
 
-**注意：在小程序和移动应用环境下有如下限制。**
+```shell
+yarn install uni-app-use @vueuse/core
+```
 
-- 缺失某些全局变量（如 `window`、`navigator` 等）
-- 必须使用 `uni-app` 提供的 API 实现功能（如拦截器、存储等），API 不支持的也就无法支持（比如拦截同步 API）
-- 无法使用顶层 `await`
+使用 `pnpm`：
 
-这些限制无法避开。如果要开发 H5，不妨直接使用 `vue` 和 `vueuse`。
+```shell
+pnpm install uni-app-use @vueuse/core
+```
+
+使用 `cnpm`：
+
+```shell
+cnpm install uni-app-use @vueuse/core
+```
+
+目前只考虑小程序和移动应用环境。不考虑支持 `uni_modules`。
 
 ## 使用
 
@@ -842,6 +854,34 @@ import { useVisible } from 'uni-app-use';
 
 const isVisible = useVisible();
 ```
+
+## 其它
+
+### 限制
+
+在小程序和移动应用环境下有如下无法避开的限制：
+
+- 缺失某些全局变量（如 `window`、`navigator` 等）
+- 必须使用 `uni-app` 提供的 API 实现功能（如拦截器、存储等），API 不支持的也就无法支持（比如拦截同步 API）
+- 无法使用顶层 `await`
+
+如果要开发 H5，不妨直接使用 `vue` 和 `vueuse`。
+
+### 构建
+
+对于 `vue-cli`，请修改项目根目录 `vue.config.js` 如下所示。
+
+```typescript
+module.exports = {
+  transpileDependencies: ['uni-app-use'],
+};
+```
+
+对于 `vite`，你无需手动额外调整。
+
+### TypeScript
+
+`uni-app-use` 本身使用 [TypeScript](https://www.typescriptlang.org/) 开发，拥有类型提示。
 
 ## 资源
 

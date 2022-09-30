@@ -40,11 +40,11 @@
   },
   "dependencies": {
     "@dcloudio/types": "^3.0.16",
-    "@dcloudio/uni-app": "^3.0.0-alpha-3060220220914003",
+    "@dcloudio/uni-app": "^3.0.0-alpha-3060420220922006",
     "@vueuse/core": "^9.3.0"
   },
   "devDependencies": {
-    "vue": "^3.2.39"
+    "vue": "^3.2.40"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

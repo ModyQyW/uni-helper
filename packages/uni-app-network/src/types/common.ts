@@ -90,6 +90,13 @@ export type UanMethod =
 
 export type UanHeaders = Record<string, any>;
 
+export interface UanGenericAbortSignal {
+  readonly aborted: boolean;
+  onabort?: ((...args: any) => any) | null;
+  addEventListener?: (...args: any) => any;
+  removeEventListener?: (...args: any) => any;
+}
+
 export type UanDataType = 'json' | string;
 
 export type UanResponseType = 'text' | 'arraybuffer';

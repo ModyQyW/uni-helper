@@ -1,5 +1,12 @@
 import { UanCancelToken } from '../core/UanCancelToken';
-import { UanData, UanHeaders, UanMethod, UanDataType, UanResponseType } from './common';
+import {
+  UanData,
+  UanHeaders,
+  UanMethod,
+  UanDataType,
+  UanResponseType,
+  UanGenericAbortSignal,
+} from './common';
 import { UanBaseAdapter, UanRequestAdapter, UanDownloadAdapter, UanUploadAdapter } from './adapter';
 
 export interface UanBaseConfig<T = UanData, D = UanData> {
@@ -20,7 +27,7 @@ export interface UanBaseConfig<T = UanData, D = UanData> {
     | UanUploadAdapter<T, D>;
   validateStatus?: (status: number) => boolean | null;
   cancelToken?: UanCancelToken<T, D>;
-  signal?: AbortSignal;
+  signal?: UanGenericAbortSignal;
   onHeadersReceived?: (response?: { headers?: UanHeaders }) => void;
   [key: string]: any;
 }

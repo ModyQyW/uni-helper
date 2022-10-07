@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@dcloudio/types": "^3.0.16",
-    "vue3": "npm:vue@^3.2.39"
+    "vue3": "npm:vue@^3.2.40"
   },
   "engines": {
     "node": ">=14.16"

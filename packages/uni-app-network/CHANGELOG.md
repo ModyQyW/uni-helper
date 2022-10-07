@@ -5,6 +5,7 @@
 - feat: 增加枚举数据
 - fix: 修复类型定义
 - perf: 优化类型定义
+- feat!: 导出的 `isCancel` 调整为 `isUanCancel`
 
 ## 0.7.1 (2022-09-30)
 

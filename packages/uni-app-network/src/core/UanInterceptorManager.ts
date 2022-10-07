@@ -26,6 +26,7 @@ export interface UanInterceptorManager<V, T = V, D = UanData> {
     options?: UanInterceptorOptions<T, D>,
   ): number;
   eject(id: number): void;
+  clear(): void;
 }
 
 export class UanInterceptorManager<V, T = V, D = UanData> {

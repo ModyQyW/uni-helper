@@ -5,8 +5,8 @@ export interface UanInterceptorOptions<T = UanData, D = UanData> {
   runWhen?: (config: UanBaseConfig<T, D>) => boolean;
 }
 
-export interface UanInterceptorManagerHandlerFulfilled<V, T = V> {
-  (value: V): T | Promise<T>;
+export interface UanInterceptorManagerHandlerFulfilled<V> {
+  (value: V): V | Promise<V>;
 }
 
 export interface UanInterceptorManagerHandlerRejected {
@@ -15,13 +15,13 @@ export interface UanInterceptorManagerHandlerRejected {
 
 export interface UanInterceptorManagerHandler<V, T = V, D = UanData>
   extends UanInterceptorOptions<T, D> {
-  fulfilled?: UanInterceptorManagerHandlerFulfilled<V, T>;
+  fulfilled?: UanInterceptorManagerHandlerFulfilled<V>;
   rejected?: UanInterceptorManagerHandlerRejected;
 }
 
 export interface UanInterceptorManager<V, T = V, D = UanData> {
   use(
-    onFulfilled?: UanInterceptorManagerHandlerFulfilled<V, T>,
+    onFulfilled?: UanInterceptorManagerHandlerFulfilled<V>,
     onRejected?: UanInterceptorManagerHandlerRejected,
     options?: UanInterceptorOptions<T, D>,
   ): number;
@@ -32,7 +32,7 @@ export class UanInterceptorManager<V, T = V, D = UanData> {
   private handlers: (UanInterceptorManagerHandler<V, T, D> | null)[] = [];
 
   use(
-    fulfilled: UanInterceptorManagerHandlerFulfilled<V, T>,
+    fulfilled: UanInterceptorManagerHandlerFulfilled<V>,
     rejected: UanInterceptorManagerHandlerRejected,
     options: UanInterceptorOptions<T, D>,
   ) {

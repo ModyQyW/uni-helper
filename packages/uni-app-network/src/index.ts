@@ -8,7 +8,7 @@ import {
   UanCancelToken,
   UanCancelTokenStatic,
   UanError,
-  isCancel,
+  isUanCancel,
 } from './core';
 import { defaults } from './defaults';
 import { extend } from './utils';
@@ -67,7 +67,7 @@ ur.Uan = Uan;
 // Expose CanceledError & CancelToken & isCancel
 ur.CanceledError = UanCanceledError;
 ur.CancelToken = UanCancelToken;
-ur.isCancel = isCancel;
+ur.isCancel = isUanCancel;
 
 // version
 ur.VERSION = version;

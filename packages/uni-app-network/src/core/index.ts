@@ -1,5 +1,5 @@
 export * from './dispatchRequest';
-export * from './isCancel';
+export * from './isUanCancel';
 export * from './isUanError';
 export * from './settle';
 export * from './Uan';

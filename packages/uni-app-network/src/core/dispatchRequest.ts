@@ -1,6 +1,6 @@
 import { adapters, requestAdapter } from '../adapters';
 import { UanBaseAdapter, UanBaseConfig, UanData } from '../types';
-import { isCancel } from './isCancel';
+import { isUanCancel } from './isUanCancel';
 import { UanCanceledError } from './UanCanceledError';
 
 const throwIfCancellationRequested = <T = UanData, D = UanData>(config: UanBaseConfig<T, D>) => {
@@ -30,7 +30,7 @@ export const dispatchRequest = <T = UanData, D = UanData>(config: UanBaseConfig<
       return response;
     },
     (reason) => {
-      if (!isCancel(reason)) {
+      if (!isUanCancel(reason)) {
         throwIfCancellationRequested(config);
       }
       return Promise.reject(reason);

@@ -49,7 +49,7 @@ const createInstance = <T = UanData, D = UanData>(defaultConfig: UanBaseConfig<T
   extend(instance, Uan.prototype, context, { allOwnKeys: true });
 
   // Copy context to instance
-  extend(instance, context, { allOwnKeys: true });
+  extend(instance, context, null, { allOwnKeys: true });
 
   // Factory for creating new instances
   instance.create = (instanceConfig) =>

@@ -7,7 +7,7 @@ import { forEach } from './forEach';
 export const extend = (
   a: Record<string, any>,
   b: Record<string, any>,
-  thisArg?: Record<string, any>,
+  thisArg?: Record<string, any> | null | undefined,
   { allOwnKeys = false } = {},
 ) => {
   forEach(

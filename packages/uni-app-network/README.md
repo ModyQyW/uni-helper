@@ -4,7 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/uni-app-network)](https://www.npmjs.com/package/uni-app-network)
 
-为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.0.0-alpha.1`。
+为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.1.2`。
 
 ## 起步
 
@@ -12,7 +12,7 @@
 
 #### `uni-app-network` 是什么？
 
-`uni-app-network` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.0.0-alpha.1`。
+`uni-app-network` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.1.2`。
 
 #### 特性
 
@@ -61,15 +61,16 @@ cnpm install uni-app-network
 #### CommonJS
 
 ```typescript
-const ur = require('uni-app-network');
+const uan = require('uni-app-network');
 ```
 
 #### 发起一个 `GET` 请求
 
 ```typescript
-import ur from 'uni-app-network';
+import uan from 'uni-app-network';
 
-ur.get('user?ID=12345')
+uan
+  .get('user?ID=12345')
   .then((response) => {
     console.log('response', response);
   })
@@ -79,11 +80,12 @@ ur.get('user?ID=12345')
   .finally(() => {});
 
 // 上述请求和以下等同
-ur.get('/user', {
-  params: {
-    ID: 12345,
-  },
-})
+uan
+  .get('/user', {
+    params: {
+      ID: 12345,
+    },
+  })
   .then((response) => {
     console.log('response', response);
   })
@@ -95,7 +97,7 @@ ur.get('/user', {
 // 支持 async/await
 async function getUser() {
   try {
-    const response = await ur.get('/user?ID=12345');
+    const response = await uan.get('/user?ID=12345');
     console.log(response);
   } catch (error) {
     console.error(error);
@@ -106,10 +108,11 @@ async function getUser() {
 #### 发起一个 `POST` 请求
 
 ```typescript
-ur.post('/user', {
-  firstName: 'Fred',
-  lastName: 'Flintstone',
-})
+uan
+  .post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone',
+  })
   .then(function (response) {
     console.log(response);
   })
@@ -123,11 +126,11 @@ ur.post('/user', {
 
 ```typescript
 function getUserAccount() {
-  return ur.get('/user/12345');
+  return uan.get('/user/12345');
 }
 
 function getUserPermissions() {
-  return ur.get('/user/12345/permissions');
+  return uan.get('/user/12345/permissions');
 }
 
 Promise.all([getUserAccount(), getUserPermissions()]).then((responses) => {
@@ -140,12 +143,12 @@ Promise.all([getUserAccount(), getUserPermissions()]).then((responses) => {
 
 ### 创建请求
 
-可以向 `ur` 传递相关配置来创建请求。
+可以向 `uan` 传递相关配置来创建请求。
 
-`ur(config)`
+`uan(config)`
 
 ```typescript
-ur({
+uan({
   method: 'post',
   url: '/user/12345',
   data: {
@@ -155,26 +158,26 @@ ur({
 });
 ```
 
-`ur(url[, config])`
+`uan(url[, config])`
 
 ```typescript
-ur('/user/12345');
+uan('/user/12345');
 ```
 
 为了方便起见，已经为所有支持的请求方法提供了别名。在使用别名方法时，`url`、`method`、`data` 不需要在配置中指定。
 
-- `ur.request(config)`
-- `ur.download(config)`
-- `ur.upload(config)`
-- `ur.get(url[, config])`
-- `ur.delete(url[, config])`
-- `ur.head(url[, config])`
-- `ur.options(url[, config])`
-- `ur.trace(url[, config])`
-- `ur.connect(url[, config])`
-- `ur.post(url[, data[, config]])`
-- `ur.put(url[, data[, config]])`
-- `ur.patch(url[, data[, config]])`
+- `uan.request(config)`
+- `uan.download(config)`
+- `uan.upload(config)`
+- `uan.get(url[, config])`
+- `uan.delete(url[, config])`
+- `uan.head(url[, config])`
+- `uan.options(url[, config])`
+- `uan.trace(url[, config])`
+- `uan.connect(url[, config])`
+- `uan.post(url[, data[, config]])`
+- `uan.put(url[, data[, config]])`
+- `uan.patch(url[, data[, config]])`
 
 ### 实例
 
@@ -182,10 +185,10 @@ ur('/user/12345');
 
 可以使用自定义配置创建一个实例。
 
-`ur.create([config])`
+`uan.create([config])`
 
 ```typescript
-const instance = ur.create({
+const instance = uan.create({
   baseUrl: 'https://some-domain.com/api/',
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' },
@@ -196,19 +199,19 @@ const instance = ur.create({
 
 以下是可用的实例方法。指定的配置将与实例的配置合并。
 
-- `ur.request(config)`
-- `ur.download(config)`
-- `ur.upload(config)`
-- `ur.get(url[, config])`
-- `ur.delete(url[, config])`
-- `ur.head(url[, config])`
-- `ur.options(url[, config])`
-- `ur.trace(url[, config]])`
-- `ur.connect(url[, config]])`
-- `ur.post(url[, data[, config]])`
-- `ur.put(url[, data[, config]])`
-- `ur.patch(url[, data[, config]])`
-- `ur.getUri([config])`
+- `uan.request(config)`
+- `uan.download(config)`
+- `uan.upload(config)`
+- `uan.get(url[, config])`
+- `uan.delete(url[, config])`
+- `uan.head(url[, config])`
+- `uan.options(url[, config])`
+- `uan.trace(url[, config]])`
+- `uan.connect(url[, config]])`
+- `uan.post(url[, data[, config]])`
+- `uan.put(url[, data[, config]])`
+- `uan.patch(url[, data[, config]])`
+- `uan.getUri([config])`
 
 ### 请求配置
 
@@ -223,7 +226,7 @@ const instance = ur.create({
   method: 'GET', // 默认值
 
   // `baseUrl` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL
-  // 它可以通过设置一个 `baseUrl` 便于为 ur 实例的方法传递相对 URL
+  // 它可以通过设置一个 `baseUrl` 便于为 uan 实例的方法传递相对 URL
   baseUrl: 'https://some-domain.com/api/',
 
   // 自定义请求头
@@ -325,7 +328,7 @@ const instance = ur.create({
   // 例如: `response.headers['content-type']`
   headers: {},
 
-  // `config` 是 `ur` 请求的配置信息
+  // `config` 是 `uan` 请求的配置信息
   config: {},
 
   // `request` 是对应的 task 数据
@@ -355,7 +358,7 @@ const instance = ur.create({
 当使用 then 时，你将接收如下响应：
 
 ```typescript
-ur.get('/user/12345').then((response) => {
+uan.get('/user/12345').then((response) => {
   console.log(response.data);
   console.log(response.status);
   console.log(response.statusText);
@@ -373,14 +376,14 @@ ur.get('/user/12345').then((response) => {
 #### 全局配置默认值
 
 ```typescript
-ur.defaults.baseUrl = 'https://api.example.com';
+uan.defaults.baseUrl = 'https://api.example.com';
 ```
 
 #### 自定义实例默认值
 
 ```typescript
 // 创建实例时配置默认值
-const instance = ur.create({
+const instance = uan.create({
   baseUrl: 'https://api.example.com',
 });
 
@@ -395,7 +398,7 @@ instance.defaults.baseUrl = 'https://api.another-example.com';
 ```typescript
 // 使用库提供的默认配置创建实例
 // 此时超时配置的默认值是 `0`
-const instance = ur.create();
+const instance = uan.create();
 
 // 重写库的超时默认值
 // 现在，所有使用此实例的请求都将等待 2.5 秒，然后才会超时
@@ -415,7 +418,7 @@ instance.get('/longRequest', {
 
 ```typescript
 // 添加请求拦截器
-ur.interceptors.request.use(
+uan.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
     return config;
@@ -427,7 +430,7 @@ ur.interceptors.request.use(
 );
 
 // 添加响应拦截器
-ur.interceptors.response.use(
+uan.interceptors.response.use(
   function (response) {
     // 2xx 范围内的状态码都会触发该函数
     // 对响应数据做点什么
@@ -444,7 +447,7 @@ ur.interceptors.response.use(
 可以给自定义实例添加拦截器。
 
 ```typescript
-const instance = ur.create();
+const instance = uan.create();
 instance.interceptors.request.use(() => {
   /*...*/
 });
@@ -453,16 +456,16 @@ instance.interceptors.request.use(() => {
 #### 移除拦截器
 
 ```typescript
-const myInterceptor = ur.interceptors.request.use(() => {
+const myInterceptor = uan.interceptors.request.use(() => {
   /*...*/
 });
-ur.interceptors.request.eject(myInterceptor);
+uan.interceptors.request.eject(myInterceptor);
 ```
 
 也可以移除所有请求或响应的拦截器。
 
 ```typescript
-const instance = ur.create();
+const instance = uan.create();
 instance.interceptors.request.use(() => {
   /*...*/
 });
@@ -478,7 +481,7 @@ instance.interceptors.response.clear(); // 移除所有响应拦截器
 当你添加请求拦截器时，`uni-app-network` 默认认为它们是异步的。当主线程被阻塞时，这可能会导致 `uni-app-network` 请求的执行延迟（底层为拦截器创建了一个 `Promise`，你的请求被放在了调用栈的底部）。如果你的请求拦截器是同步的，你可以在选项对象中添加一个标志，告诉 `uni-app-network` 同步运行代码，避免请求执行中的任何延迟。
 
 ```typescript
-ur.interceptors.request.use(
+uan.interceptors.request.use(
   (config) => {
     config.headers.test = 'I am only a header!';
     return config;
@@ -492,7 +495,7 @@ ur.interceptors.request.use(
 
 ```typescript
 const onGetCall = (config) => config.method.toUpperCase() === 'GET';
-ur.interceptors.request.use(
+uan.interceptors.request.use(
   (config) => {
     config.headers.test = 'special get headers';
     return config;
@@ -518,7 +521,7 @@ ur.interceptors.request.use(
 ### 错误处理
 
 ```typescript
-ur.get('/user/12345').catch((error) => {
+uan.get('/user/12345').catch((error) => {
   if (error.response) {
     // 请求成功发出且服务器也响应了状态码，但状态代码超出了 2xx 的范围
     console.log(error.response.data);
@@ -539,7 +542,7 @@ ur.get('/user/12345').catch((error) => {
 使用 `validateStatus`` 配置选项，可以自定义抛出错误的 HTTP code。
 
 ```typescript
-ur.get('/user/12345', {
+uan.get('/user/12345', {
   validateStatus: (status) => {
     return status < 500; // 处理状态码小于500的情况
   },
@@ -549,7 +552,7 @@ ur.get('/user/12345', {
 使用 `toJSON` 可以获取更多关于 HTTP 错误的信息。
 
 ```typescript
-ur.get('/user/12345').catch((error) => {
+uan.get('/user/12345').catch((error) => {
   console.log(error.toJSON());
 });
 ```
@@ -561,11 +564,13 @@ ur.get('/user/12345').catch((error) => {
 ```typescript
 const controller = new AbortController();
 
-ur.get('/foo/bar', {
-  signal: controller.signal,
-}).then(function (response) {
-  //...
-});
+uan
+  .get('/foo/bar', {
+    signal: controller.signal,
+  })
+  .then(function (response) {
+    //...
+  });
 // 取消请求
 controller.abort();
 ```
@@ -573,20 +578,22 @@ controller.abort();
 你也可以使用 `CancelToken`。
 
 ```typescript
-const CancelToken = ur.CancelToken;
+const CancelToken = uan.CancelToken;
 const source = CancelToken.source();
 
-ur.get('/user/12345', {
-  cancelToken: source.token,
-}).catch(function (thrown) {
-  if (ur.isCancel(thrown)) {
-    console.log('Request canceled', thrown.message);
-  } else {
-    // 处理错误
-  }
-});
+uan
+  .get('/user/12345', {
+    cancelToken: source.token,
+  })
+  .catch(function (thrown) {
+    if (uan.isUanCancel(thrown)) {
+      console.log('Request canceled', thrown.message);
+    } else {
+      // 处理错误
+    }
+  });
 
-ur.post(
+uan.post(
   '/user/12345',
   {
     name: 'new name',
@@ -602,10 +609,10 @@ source.cancel('Operation canceled by the user.');
 你也可以通过向 `CancelToken` 构造函数传递一个执行函数来创建一个 `CancelToken` 实例。
 
 ```js
-const CancelToken = ur.CancelToken;
+const CancelToken = uan.CancelToken;
 let cancel;
 
-ur.get('/user/12345', {
+uan.get('/user/12345', {
   cancelToken: new CancelToken(function executor(c) {
     cancel = c;
   }),

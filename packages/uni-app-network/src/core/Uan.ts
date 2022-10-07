@@ -75,9 +75,9 @@ export class Uan<T = UanData, D = UanData> {
 
     if (!synchronousRequestInterceptors) {
       const chain: (
-        | UanInterceptorManagerHandlerFulfilled<UanBaseConfig<T, D>, T>
+        | UanInterceptorManagerHandlerFulfilled<UanBaseConfig<T, D>>
         | UanInterceptorManagerHandlerRejected
-        | UanInterceptorManagerHandlerFulfilled<UanBaseResponse<T, D>, T>
+        | UanInterceptorManagerHandlerFulfilled<UanBaseResponse<T, D>>
         | UanInterceptorManagerHandlerRejected
         | undefined
       )[] = [dispatchRequest.bind(this), undefined];

@@ -54,7 +54,7 @@ export interface StrictUseUploadFileReturn<T> extends UseUploadFileReturn<T> {
    * Manually call the uni.uploadFile
    */
   execute: (
-    url?: string,
+    url?: string | UniApp.UploadFileOption,
     config?: UniApp.UploadFileOption,
   ) => PromiseLike<StrictUseUploadFileReturn<T>>;
 }
@@ -73,6 +73,12 @@ export interface UseUploadFileOptions {
    *
    */
   immediate?: boolean;
+  /**
+   * Use shallowRef.
+   *
+   * @default true
+   */
+  shallow?: boolean;
 }
 type OverallUseUploadFileReturn<T> = StrictUseUploadFileReturn<T> | EasyUseUploadFileReturn<T>;
 
@@ -94,7 +100,7 @@ export function useUploadFile<T = any>(
   const url: string | undefined = typeof args[0] === 'string' ? args[0] : undefined;
   const argsPlaceholder = isString(url) ? 1 : 0;
   let defaultConfig: Partial<UniApp.UploadFileOption> = {};
-  let options: UseUploadFileOptions = { immediate: !!argsPlaceholder };
+  let options: UseUploadFileOptions = { immediate: !!argsPlaceholder, shallow: true };
 
   if (args.length > 0 + argsPlaceholder) {
     defaultConfig = args[0 + argsPlaceholder];
@@ -106,7 +112,7 @@ export function useUploadFile<T = any>(
 
   const task = shallowRef<UniApp.UploadTask>();
   const response = shallowRef<UniApp.UploadFileSuccessCallbackResult>();
-  const data = shallowRef<T>();
+  const data = options.shallow ? shallowRef<T>() : ref<T>();
   const isFinished = ref(false);
   const isLoading = ref(false);
   const isAborted = ref(false);

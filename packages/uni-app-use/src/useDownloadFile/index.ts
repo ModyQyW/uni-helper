@@ -54,7 +54,7 @@ export interface StrictUseDownloadFileReturn<T> extends UseDownloadFileReturn<T>
    * Manually call the uni.downloadFile
    */
   execute: (
-    url?: string,
+    url?: string | UniApp.DownloadFileOption,
     config?: UniApp.DownloadFileOption,
   ) => PromiseLike<StrictUseDownloadFileReturn<T>>;
 }
@@ -73,6 +73,12 @@ export interface UseDownloadFileOptions {
    *
    */
   immediate?: boolean;
+  /**
+   * Use shallowRef.
+   *
+   * @default true
+   */
+  shallow?: boolean;
 }
 type OverallUseDownloadFileReturn<T> =
   | StrictUseDownloadFileReturn<T>
@@ -96,7 +102,7 @@ export function useDownloadFile<T = any>(
   const url: string | undefined = typeof args[0] === 'string' ? args[0] : undefined;
   const argsPlaceholder = isString(url) ? 1 : 0;
   let defaultConfig: Partial<UniApp.DownloadFileOption> = {};
-  let options: UseDownloadFileOptions = { immediate: !!argsPlaceholder };
+  let options: UseDownloadFileOptions = { immediate: !!argsPlaceholder, shallow: true };
 
   if (args.length > 0 + argsPlaceholder) {
     defaultConfig = args[0 + argsPlaceholder];
@@ -108,7 +114,7 @@ export function useDownloadFile<T = any>(
 
   const task = shallowRef<UniApp.DownloadTask>();
   const response = shallowRef<UniApp.DownloadSuccessData>();
-  const data = shallowRef<T>();
+  const data = options.shallow ? shallowRef<T>() : ref<T>();
   const isFinished = ref(false);
   const isLoading = ref(false);
   const isAborted = ref(false);

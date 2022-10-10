@@ -53,7 +53,10 @@ export interface StrictUseRequestReturn<T> extends UseRequestReturn<T> {
   /**
    * Manually call the uni.request
    */
-  execute: (url?: string, config?: UniApp.RequestOptions) => PromiseLike<StrictUseRequestReturn<T>>;
+  execute: (
+    url?: string | UniApp.RequestOptions,
+    config?: UniApp.RequestOptions,
+  ) => PromiseLike<StrictUseRequestReturn<T>>;
 }
 export interface EasyUseRequestReturn<T> extends UseRequestReturn<T> {
   /**
@@ -64,9 +67,14 @@ export interface EasyUseRequestReturn<T> extends UseRequestReturn<T> {
 export interface UseRequestOptions {
   /**
    * Will automatically run uni.request when `useRequest` is used
-   *
    */
   immediate?: boolean;
+  /**
+   * Use shallowRef.
+   *
+   * @default true
+   */
+  shallow?: boolean;
 }
 type OverallUseRequestReturn<T> = StrictUseRequestReturn<T> | EasyUseRequestReturn<T>;
 
@@ -88,7 +96,7 @@ export function useRequest<T = any>(
   const url: string | undefined = typeof args[0] === 'string' ? args[0] : undefined;
   const argsPlaceholder = isString(url) ? 1 : 0;
   let defaultConfig: Partial<UniApp.RequestOptions> = {};
-  let options: UseRequestOptions = { immediate: !!argsPlaceholder };
+  let options: UseRequestOptions = { immediate: !!argsPlaceholder, shallow: true };
 
   if (args.length > 0 + argsPlaceholder) {
     defaultConfig = args[0 + argsPlaceholder];
@@ -100,7 +108,7 @@ export function useRequest<T = any>(
 
   const task = shallowRef<UniApp.RequestTask>();
   const response = shallowRef<UniApp.RequestSuccessCallbackResult>();
-  const data = shallowRef<T>();
+  const data = options.shallow ? shallowRef<T>() : ref<T>();
   const isFinished = ref(false);
   const isLoading = ref(false);
   const isAborted = ref(false);

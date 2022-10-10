@@ -786,70 +786,77 @@
             },
             "subNVues": {
               "description": "原生子窗体。",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "description": "原生子窗体的标识。",
-                  "type": "string"
-                },
-                "path": {
-                  "description": "配置 nvue 文件路径，nvue 文件需放置到使用 subNVue 的页面文件目录下。",
-                  "type": "string"
-                },
-                "type": {
-                  "description": "原生子窗口内置样式。",
-                  "type": "string",
-                  "enum": ["popup", "navigationBar"]
-                },
-                "style": {
-                  "description": "subNVue 原生子窗体的样式。",
-                  "type": "object",
-                  "properties": {
-                    "position": {
-                      "description": "原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。",
-                      "type": "string",
-                      "enum": ["static", "absolute", "dock"]
-                    },
-                    "dock": {
-                      "description": "原生子窗体的停靠方式，position 为 dock 时生效。",
-                      "type": "string",
-                      "enum": ["top", "bottom", "right", "left"]
-                    },
-                    "mask": {
-                      "description": "原生子窗体的遮罩层，type 为 popup 时生效。",
-                      "type": "string"
-                    },
-                    "width": {
-                      "description": "原生子窗体的宽度。支持百分比和像素值。",
-                      "type": "string"
-                    },
-                    "height": {
-                      "description": "原生子窗体的高度。支持百分比和像素值。",
-                      "type": "string"
-                    },
-                    "top": {
-                      "description": "原生子窗体垂直向下的偏移量。支持百分比和像素值。",
-                      "type": "string"
-                    },
-                    "bottom": {
-                      "description": "原生子窗体垂直向上的偏移量。支持百分比和像素值。",
-                      "type": "string"
-                    },
-                    "left": {
-                      "description": "原生子窗体水平向左的偏移量。支持百分比和像素值。",
-                      "type": "string"
-                    },
-                    "right": {
-                      "description": "原生子窗体水平向右的偏移量。支持百分比和像素值。",
-                      "type": "string"
-                    },
-                    "margin": {
-                      "description": "原生子窗体的边距，用于定位原生子窗体的位置。",
-                      "type": "string"
-                    },
-                    "zindex": {
-                      "description": "原生子窗体的窗口的堆叠顺序值。",
-                      "type": "number"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "原生子窗体的标识。",
+                    "type": "string"
+                  },
+                  "path": {
+                    "description": "配置 nvue 文件路径，nvue 文件需放置到使用 subNVue 的页面文件目录下。",
+                    "type": "string"
+                  },
+                  "type": {
+                    "description": "原生子窗口内置样式。",
+                    "type": "string",
+                    "enum": ["popup", "navigationBar"]
+                  },
+                  "style": {
+                    "description": "subNVue 原生子窗体的样式。",
+                    "type": "object",
+                    "properties": {
+                      "position": {
+                        "description": "原生子窗体的排版位置，排版位置决定原生子窗体在父窗口中的定位方式。",
+                        "type": "string",
+                        "enum": ["static", "absolute", "dock"]
+                      },
+                      "dock": {
+                        "description": "原生子窗体的停靠方式，position 为 dock 时生效。",
+                        "type": "string",
+                        "enum": ["top", "bottom", "right", "left"]
+                      },
+                      "mask": {
+                        "description": "原生子窗体的遮罩层，type 为 popup 时生效。",
+                        "type": "string"
+                      },
+                      "width": {
+                        "description": "原生子窗体的宽度。支持百分比和像素值。",
+                        "type": "string"
+                      },
+                      "height": {
+                        "description": "原生子窗体的高度。支持百分比和像素值。",
+                        "type": "string"
+                      },
+                      "top": {
+                        "description": "原生子窗体垂直向下的偏移量。支持百分比和像素值。",
+                        "type": "string"
+                      },
+                      "bottom": {
+                        "description": "原生子窗体垂直向上的偏移量。支持百分比和像素值。",
+                        "type": "string"
+                      },
+                      "left": {
+                        "description": "原生子窗体水平向左的偏移量。支持百分比和像素值。",
+                        "type": "string"
+                      },
+                      "right": {
+                        "description": "原生子窗体水平向右的偏移量。支持百分比和像素值。",
+                        "type": "string"
+                      },
+                      "margin": {
+                        "description": "原生子窗体的边距，用于定位原生子窗体的位置。",
+                        "type": "string"
+                      },
+                      "zindex": {
+                        "description": "原生子窗体的窗口的堆叠顺序值。",
+                        "type": "number"
+                      },
+                      "background": {
+                        "description": "窗口的背景颜色。",
+                        "type": "string"
+                      }
                     }
                   }
                 }

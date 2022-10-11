@@ -216,11 +216,8 @@ const instance = uan.create({
   // `url` 是用于请求的服务器 URL
   url: '/user',
 
-  // `method` 是创建请求时使用的方法
-  method: 'GET', // 默认值
-
   // `baseUrl` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL
-  // 它可以通过设置一个 `baseUrl` 便于为 uan 实例的方法传递相对 URL
+  // 设置一个 `baseUrl` 便于为 uan 实例的方法传递相对 URL
   baseUrl: 'https://some-domain.com/api/',
 
   // 自定义请求头
@@ -229,7 +226,6 @@ const instance = uan.create({
   },
 
   // `params` 是与请求一起发送的 URL 参数
-  // 必须是一个简单对象
   params: {
     ID: 12345
   },
@@ -238,32 +234,15 @@ const instance = uan.create({
   // 默认使用 [qs](https://github.com/ljharb/qs) 序列化
   paramsSerializer: (params) => { /* 返回一个字符串 */ }
 
-  // `data` 是作为请求体被发送的数据
-  // 必须是以下类型之一：string、ArrayBuffer、Record<string, any>
-  data: {
-    firstName: 'Fred'
-  },
-
-  // `data` 的可选语法
-  data: 'Country=Brasil&City=Belo Horizonte',
-
   // `timeout` 指定请求超时的毫秒数
   // 如果请求时间超过 `timeout` 的值，则请求会被中断
   timeout: 1000, // 默认值是 `0` (永不超时)
 
-  // `withCredentials` 表示跨域请求时是否需要使用凭证
-  withCredentials: false, // 默认值
-
   // `adapter` 允许自定义处理请求
-  // 你可以指定为 'request'、`upload` 和 `download` 三者之一
+  // 可以指定为 'request'、`upload` 和 `download` 三者之一
   // 也可以指定为一个方法，返回一个 Promise 并提供一个有效的响应
   adapter: 'request' // 默认值
-
-  // `adapter` 的可选语法
   adapter: (config) => { /* ... */ },
-
-  // `responseType` 表示服务器将要响应的数据类型，选项包括 'text' 和 'arraybuffer'
-  responseType: 'json', // 默认值
 
   // `validateStatus` 定义了对于给定的 HTTP 状态码是 resolve 还是 reject
   // 如果 `validateStatus` 返回 `true`、`null` 或 `undefined`
@@ -283,33 +262,130 @@ const instance = uan.create({
   // 会比请求完成事件更早
   onHeadersReceived: (result) => { /* ... */ },
 
-  // adapter === 'request' 独有
+  // request 使用
+  // 创建请求时使用的方法
+  method: 'GET', // 默认值
+
+  // request 使用
+  // `data` 是作为请求体被发送的数据
+  // 必须是以下类型之一：string、ArrayBuffer、Record<string, any>
+  data: {
+    firstName: 'Fred'
+  },
+  data: 'Country=Brasil&City=Belo Horizonte',
+
+  // request 使用
+  // 返回的数据类型
+  // 如果设置为 json，会尝试对返回的数据做一次 JSON.parse
+  dataType: 'json', // 默认值
+
+  // request 使用
+  // 响应的数据类型，选项包括 'text' 和 'arraybuffer'
+  responseType: 'text', // 默认值
+
+  // request 使用
+  // 是否开启 http2
+  enableHttp2: false, // 默认值
+
+  // request 使用
+  // 是否开启 quic
+  enableQuic: false, // 默认值
+
+  // request 使用
+  // 是否开启缓存
+  enableCache: false, // 默认值
+
+  // request 使用
+  // 是否开启 HttpDNS 服务
+  enableHttpDNS: false, // 默认值
+
+  // request 使用
+  // HttpDNS 服务商 Id
+  httpDNSServiceId: '',
+
+  // request 使用
+  // 是否开启 transfer-encoding chunked
+  enableChunked: false, // 默认值
+
+  // request 使用
+  // 是否在 wifi 下使用移动网络发送请求
+  forceCellularNetwork: false, // 默认值
+
+  // request 使用
+  // 是否验证 ssl 证书
+  sslVerify: true, // 默认值
+
+  // request 使用
+  // 跨域请求时是否需要使用凭证
+  withCredentials: false, // 默认值
+
+  // request 使用
+  // 是否在 DNS 解析时优先使用 ipv4
+  firstIpv4: false, // 默认值
+
+  // request 使用
   // 监听 Transfer-Encoding Chunk Received 事件
   // 当接收到新的 chunk 时触发
-  onChunkReceived: (result) => { /* ... */ },
+  onChunkReceived?: (response) => {/* ... */};
 
-  // adapter === 'upload' 独有
-  // 文件对象或文件路径
+  // upload 使用
+  // 需要上传的文件列表，files 和 filePath 必填一个
+  // 使用该参数时，filePath 和 name 无效
+  // 不支持小程序
+  files: [],
+
+  // upload 使用
+  // 文件类型
+  fileType: 'image', // image, video, audio
+
+  // upload 使用
+  // 文件对象
   file: new File(),
 
-  // adapter === 'upload' 独有
-  // 文件类型，选项包括 'image'、'video' 和 'audio'
-  fileType: 'image',
+  // upload 使用
+  // 文件路径，files 和 filePath 必填一个
+  //
+  // download 使用
+  // 文件下载后存储的本地路径
+  filePath: '/fake/path',
 
-  // adapter === 'upload' 独有
-  // 文件名
-  fileName: 'file.txt',
+  // upload 使用
+  // 文件名称
+  name: 'fake-file.png',
 
-  // adapter === 'upload' 和 adapter === 'download' 独有
-  // 监听上传/下载进度变化事件，优先级从上到下递减
-  onUploadProgress: (result) => { /* ... */ },
-  onUploadProgressUpdate: (result) => { /* ... */ },
+  // upload 使用
+  // 一个对象，会作为 HTTP 请求中其它额外的 form data
+  formData?: Record<string, any>,
 
-  onDownloadProgress: (result) => { /* ... */ },
-  onDownloadProgressUpdate: (result) => { /* ... */ },
+  // download 使用
+  // 下载进度变化时触发
+  // 优先级 onDownloadProgress > onDownloadProgressUpdate > onProgress > onProgressUpdate
+  onDownloadProgress?: UanOnProgress;
 
-  onProgress: (result) => { /* ... */ },
-  onProgressUpdate: (result) => { /* ... */ },
+  // download 使用
+  // 下载进度变化时触发
+  // 优先级 onDownloadProgress > onDownloadProgressUpdate > onProgress > onProgressUpdate
+  onDownloadProgressUpdate?: UanOnProgress;
+
+  // upload 使用
+  // 上传进度变化时触发
+  // 优先级 onUploadProgress > onUploadProgressUpdate > onProgress > onProgressUpdate
+  onUploadProgress?: UanOnProgress;
+
+  // upload 使用
+  // 上传进度变化时触发
+  // 优先级 onUploadProgress > onUploadProgressUpdate > onProgress > onProgressUpdate
+  onUploadProgressUpdate?: UanOnProgress;
+
+  // upload / download 使用
+  // 上传/下载进度变化时触发
+  // 优先级 onUploadProgress / onDownloadProgress > onUploadProgressUpdate / onDownloadProgressUpdate > onProgress > onProgressUpdate
+  onProgress?: UanOnProgress;
+
+  // upload / download 使用
+  // 上传/下载进度变化时触发
+  // 优先级 onUploadProgress / onDownloadProgress > onUploadProgressUpdate / onDownloadProgressUpdate > onProgress > onProgressUpdate
+  onProgressUpdate?: UanOnProgress;
 }
 ```
 
@@ -319,8 +395,20 @@ const instance = uan.create({
 
 ```typescript
 {
-  // `data` 是由服务器提供的响应数据
-  data: {},
+  // `errMsg` 是可选的错误信息
+  errMsg: '',
+
+  // `errno` 是可选的错误代码
+  errno: 0,
+
+  // `profile` 是可选的调试信息
+  profile: {},
+
+  // `config` 是 `uan` 请求的配置信息
+  config: {},
+
+  // `task` 是对应的 task 信息
+  task: {}
 
   // `status` 来自服务器响应的 HTTP 状态码
   status: 200,
@@ -333,28 +421,21 @@ const instance = uan.create({
   // 例如: `response.headers['content-type']`
   headers: {},
 
-  // `config` 是 `uan` 请求的配置信息
-  config: {},
+  // `data` 是由服务器提供的响应数据
+  data: {},
 
-  // `task` 是对应的 task 数据
-  task: {}
-
-  // `errMsg` 是可选的错误信息
-  errMsg: '',
-
-  // `errno` 是可选的错误代码
-  errno: 0,
-
-  // `cookies` 是可选的由服务器提供的 cookies 数据
+  // request 特有
+  // 服务器提供的 cookies 数据
   cookies: [],
 
-  // `profile` 是可选的调试信息
-  profile: {},
-
-  // `tempFilePath` 是可选的临时本地文件路径
+  // download 特有
+  // 临时本地文件路径
+  // 没传入 filePath 指定文件存储路径时会返回，下载后的文件会存储到一个临时文件
   tempFilePath: '',
 
-  // `filePath` 是可选的用户本地文件路径
+  // download 特有
+  // 用户本地文件路径
+  // 传入 filePath 时会返回，跟传入的 filePath 一致
   filePath: '',
 }
 ```
@@ -531,10 +612,10 @@ uan.get('/user/12345').catch((error) => {
     console.log(error.response.data);
     console.log(error.response.status);
     console.log(error.response.headers);
-  } else if (error.request) {
+  } else if (error.task) {
     // 请求已经成功发起，但没有收到响应
-    // `error.request` 是请求实例
-    console.log(error.request);
+    // `error.task` 是 task 实例
+    console.log(error.task);
   } else {
     // 发送请求时出了点问题
     console.log('Error', error.message);
@@ -543,7 +624,7 @@ uan.get('/user/12345').catch((error) => {
 });
 ```
 
-使用 `validateStatus`` 配置选项，可以自定义抛出错误的 HTTP code。
+使用 `validateStatus` 配置选项，可以自定义抛出错误的 HTTP code。
 
 ```typescript
 uan.get('/user/12345', {
@@ -570,6 +651,20 @@ uan.get('/user/12345', {
 ```typescript
 uan.get('/user/12345').catch((error) => {
   console.log(error.toJSON());
+});
+```
+
+如果需要针对 `UanError` 和非 `UanError` 做处理，可以使用导出的 `isUanError` 方法判断。
+
+```typescript
+import { isUanError } from 'uni-app-network';
+
+uan.get('/user/12345').catch((error) => {
+  if (isUanError(error)) {
+    /* ... */
+  } else {
+    /* ... */
+  }
 });
 ```
 
@@ -657,13 +752,9 @@ module.exports = {
 
 对于 `vite`，你无需手动额外调整。
 
-### TypeScript
-
-`uni-app-network` 本身使用 [TypeScript](https://www.typescriptlang.org/) 开发，拥有完整的类型提示。
-
 ### 高级功能
 
-对于缓存、去重的高级功能，建议结合 `vue-query`、`swrv`、`vue-request` 等库使用。
+对于缓存、去重的高级功能，建议结合 `@tanstack/vue-query`、`swrv`、`vue-request` 等库使用。
 
 ### 为什么不是 `axios`？
 
@@ -671,51 +762,31 @@ module.exports = {
 
 ### 比较
 
-|                                  | `uni-app-network`                                                                                        | `axios`                                                                         |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| 开发语言                         | TypeScript                                                                                               | JavaScript                                                                      |
-| 类型                             | 包含                                                                                                     | 额外的 `index.d.ts` 文件                                                        |
-| 标识                             | `uan`                                                                                                    | `axios`                                                                         |
-| 环境                             | `uni-app`                                                                                                | 浏览器和 `Node.js`                                                              |
-| 请求  `transformRequest`         | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
-| 请求 `transformResponse`         | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
-| 请求 `paramsSerializer`          | 接受一个方法，`(params: any) => string`                                                                  | 接受一个对象，见<https://github.com/axios/axios/blob/v1.x/index.d.ts#L250-L252> |
-| 请求  `adapter`                  | 默认为 `request`，可选 `request`、`upload`、`download`  和方法 `(config: UanBaseConfig): UanBasePromise` | 根据环境自动选择 `xhr`（浏览器）和  `http`（`Node.js`）                         |
-| 请求  `responseEncoding`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `xsrfCookieName`           | 不支持                                                                                                   | 支持                                                                            |
-| 请求  `xsrfHeaderName`           | 不支持                                                                                                   | 支持                                                                            |
-| 请求  `onUploadProgress`         | 支持                                                                                                     | 支持                                                                            |
-| 请求  `onUploadProgressUpdate`   | 支持                                                                                                     | 支持                                                                            |
-| 请求  `onDownloadProgress`       | 支持                                                                                                     | 支持                                                                            |
-| 请求  `onDownloadProgressUpdate` | 支持                                                                                                     | 支持                                                                            |
-| 请求  `maxContentLength`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `maxBodyLength`            | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `maxRedirects`             | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `beforeRedirect`           | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `socketPath`               | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `httpAgent`                | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `httpsAgent`               | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `proxy`                    | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求   `decompress`              | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求 `insecureHTTPParser`        | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求 `transitional`              | 不支持                                                                                                   | 支持                                                                            |
-| 请求 `env`                       | 不支持                                                                                                   | 支持                                                                            |
-| 请求 `formSerializer`            | 不支持                                                                                                   | 支持                                                                            |
-| 请求 `onHeadersReceived`         | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `onChunkReceived`           | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `file`                      | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `fileType`                  | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `fileName`                  | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `onProgress`                | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `onProgressUpdate`          | 支持                                                                                                     | 不支持                                                                          |
-| 响应 `request`                   | 不支持，请使用 `task`                                                                                    | 支持                                                                            |
-| 响应 `task`                      | 对应的 `task`                                                                                            | 不支持                                                                          |
-| 响应 `errMsg`                    | 可选的错误信息                                                                                           | 不支持                                                                          |
-| 响应 `errno`                     | 可选的错误代码                                                                                           | 不支持                                                                          |
-| 响应 `cookies`                   | 可选的服务器提供的 cookies 数据                                                                          | 不支持                                                                          |
-| 响应 `profile`                   | 可选的调试信息                                                                                           | 不支持                                                                          |
-| 响应 `tempFilePath`              | 可选的临时本地文件路径                                                                                   | 不支持                                                                          |
-| 响应 `filePath`                  | 可选的用户本地文件路径                                                                                   | 不支持                                                                          |
+如果你发现这里信息已经过时，请提交 ISSUE 或 PR。
+
+|                    | `axios`                                                                                                                                                              | `luch-request`                                                                                                                                                                                   | `uni-ajax`                                                                                                                                                                       | `uni-app-network`                                                                                                                                                                                            |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 基本信息           | [![npm](https://img.shields.io/npm/v/axios)](https://www.npmjs.com/package/axios) [![npm](https://img.shields.io/npm/dw/axios)](https://www.npmjs.com/package/axios) | [![npm](https://img.shields.io/npm/v/luch-request)](https://www.npmjs.com/package/luch-request) [![npm](https://img.shields.io/npm/dw/luch-request)](https://www.npmjs.com/package/luch-request) | [![npm](https://img.shields.io/npm/v/uni-ajax)](https://www.npmjs.com/package/uni-ajax) [![npm](https://img.shields.io/npm/dw/uni-ajax)](https://www.npmjs.com/package/uni-ajax) | [![npm](https://img.shields.io/npm/v/uni-app-network)](https://www.npmjs.com/package/uni-app-network) [![npm](https://img.shields.io/npm/dw/uni-app-network)](https://www.npmjs.com/package/uni-app-network) |
+| 开发语言           | JavaScript                                                                                                                                                           | JavaScript                                                                                                                                                                                       | JavaScript                                                                                                                                                                       | TypeScript                                                                                                                                                                                                   |
+| 类型支持           | `index.d.ts`（没有考虑 `uni-app`）                                                                                                                                   | `index.d.ts`（泛型支持较差）                                                                                                                                                                     | `index.d.ts`                                                                                                                                                                     | 包含                                                                                                                                                                                                         |
+| 运行环境           | 浏览器和 `Node.js`                                                                                                                                                   | `uni-app`                                                                                                                                                                                        | `uni-app`                                                                                                                                                                        | `uni-app`                                                                                                                                                                                                    |
+| `Promise`          | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| `uni_modules`      | ×                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | ×                                                                                                                                                                                                            |
+| `npm`              | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 实例化             | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 请求说明           | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 响应说明           | √                                                                                                                                                                    | ×                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 任务说明           | ×（没有考虑 `uni-app`  任务）                                                                                                                                        | ×                                                                                                                                                                                                | √（只有 `requestTask`  说明）                                                                                                                                                    | √（只有简单说明）                                                                                                                                                                                            |
+| 适配器             | √（内置 `xhr` 和 `http`）                                                                                                                                            | ×                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| `uni.request`      | ×（自行开发，还需要覆写类型）                                                                                                                                        | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| `uni.downloadFile` | ×（自行开发，还需要覆写类型）                                                                                                                                        | √                                                                                                                                                                                                | ×（自行开发，还需要覆写类型）                                                                                                                                                    | √                                                                                                                                                                                                            |
+| `uni.uploadFile`   | ×（自行开发，还需要覆写类型）                                                                                                                                        | √                                                                                                                                                                                                | ×（自行开发，还需要覆写类型）                                                                                                                                                    | √                                                                                                                                                                                                            |
+| 请求拦截器         | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 响应拦截器         | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 配置说明           | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 取消请求说明       | √                                                                                                                                                                    | ×                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 错误处理说明       | √                                                                                                                                                                    | ×                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 使用示例           | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
 
 ## 资源
 
@@ -729,6 +800,7 @@ module.exports = {
 - [vue-use](https://vueuse.org/)
 - [react-query](https://tanstack.com/query/)
 - [swr](https://swr.vercel.app/)
-- [vue-query](https://vue-query.vercel.app/)
+- [vue-query](https://github.com/DamianOsipiuk/vue-query)
+- [@tanstack/query](https://tanstack.com/query/v4)
 - [swrv](https://docs-swrv.netlify.app/)
 - [vue-request](https://www.attojs.com/)

@@ -9,7 +9,7 @@ export interface UanBaseResponse<T = UanData, D = UanData> {
   statusText?: string;
   headers?: UanHeaders;
   config?: UanBaseConfig<T, D>;
-  request?: any;
+  task?: any;
   data?: T;
 }
 
@@ -17,7 +17,7 @@ export interface UanRequestResponse<T = UanData, D = UanData> extends UanBaseRes
   cookies?: string[];
   profile?: UanProfile;
   config?: UanRequestConfig<T, D>;
-  request?: UanRequestTask;
+  task?: UanRequestTask;
 }
 
 export interface UanDownloadResponse<T = UanData, D = UanData> extends UanBaseResponse<T, D> {
@@ -25,12 +25,12 @@ export interface UanDownloadResponse<T = UanData, D = UanData> extends UanBaseRe
   filePath?: string;
   profile?: UanProfile;
   config?: UanDownloadConfig<T, D>;
-  request?: UanDownloadTask;
+  task?: UanDownloadTask;
 }
 
 export interface UanUploadResponse<T = UanData, D = UanData> extends UanBaseResponse<T, D> {
   config?: UanUploadConfig<T, D>;
-  request?: UanUploadTask;
+  task?: UanUploadTask;
 }
 
 export type UanResponse<T = UanData, D = UanData> =

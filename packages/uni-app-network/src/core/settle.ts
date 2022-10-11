@@ -21,7 +21,7 @@ export const settle = <
           Math.floor(response.status / 100) - 4
         ],
         response.config,
-        response.request,
+        response.task,
         response,
       ),
     );

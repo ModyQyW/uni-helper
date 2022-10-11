@@ -16,7 +16,7 @@ export class UanError<T = UanData, D = UanData> extends Error {
 
   code?: string;
   config?: UanBaseConfig<T, D>;
-  request?: UanBaseTask;
+  task?: UanBaseTask;
   response?: UanBaseResponse<T, D>;
   isUanError: boolean;
   status?: number;
@@ -26,7 +26,7 @@ export class UanError<T = UanData, D = UanData> extends Error {
     message?: string,
     code?: string,
     config?: UanBaseConfig<T, D>,
-    request?: UanBaseTask,
+    task?: UanBaseTask,
     response?: UanBaseResponse<T, D>,
   ) {
     super(message);
@@ -41,7 +41,7 @@ export class UanError<T = UanData, D = UanData> extends Error {
 
     this.code = code;
     this.config = config;
-    this.request = request;
+    this.task = task;
     this.response = response;
 
     this.isUanError = true;
@@ -80,11 +80,11 @@ export class UanError<T = UanData, D = UanData> extends Error {
     error?: Error,
     code?: string,
     config?: UanBaseConfig<TT, DD>,
-    request?: UanBaseTask,
+    task?: UanBaseTask,
     response?: UanBaseResponse<TT, DD>,
     customProps?: Record<string, any>,
   ) {
-    const urError = new UanError(error?.message, code, config, request, response);
+    const urError = new UanError(error?.message, code, config, task, response);
     if (customProps) {
       Object.assign(urError, customProps);
     }

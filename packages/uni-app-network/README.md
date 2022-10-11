@@ -301,7 +301,14 @@ const instance = uan.create({
   fileName: 'file.txt',
 
   // adapter === 'upload' 和 adapter === 'download' 独有
-  // 监听上传/下载进度变化事件
+  // 监听上传/下载进度变化事件，优先级从上到下递减
+  onUploadProgress: (result) => { /* ... */ },
+  onUploadProgressUpdate: (result) => { /* ... */ },
+
+  onDownloadProgress: (result) => { /* ... */ },
+  onDownloadProgressUpdate: (result) => { /* ... */ },
+
+  onProgress: (result) => { /* ... */ },
   onProgressUpdate: (result) => { /* ... */ },
 }
 ```
@@ -664,48 +671,51 @@ module.exports = {
 
 ### 比较
 
-|                            | `uni-app-network`                                                                                        | `axios`                                                                         |
-| -------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| 开发语言                   | TypeScript                                                                                               | JavaScript                                                                      |
-| 类型                       | 包含                                                                                                     | 额外的 `index.d.ts` 文件                                                        |
-| 标识                       | `uan`                                                                                                    | `axios`                                                                         |
-| 环境                       | `uni-app`                                                                                                | 浏览器和 `Node.js`                                                              |
-| 请求  `transformRequest`   | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
-| 请求 `transformResponse`   | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
-| 请求 `paramsSerializer`    | 接受一个方法，`(params: any) => string`                                                                  | 接受一个对象，见<https://github.com/axios/axios/blob/v1.x/index.d.ts#L250-L252> |
-| 请求  `adapter`            | 默认为 `request`，可选 `request`、`upload`、`download`  和方法 `(config: UanBaseConfig): UanBasePromise` | 根据环境自动选择 `xhr`（浏览器）和  `http`（`Node.js`）                         |
-| 请求  `responseEncoding`   | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `xsrfCookieName`     | 不支持                                                                                                   | 支持                                                                            |
-| 请求  `xsrfHeaderName`     | 不支持                                                                                                   | 支持                                                                            |
-| 请求  `onUploadProgress`   | 不支持，但可以使用 `onProgressUpdate`，后续会支持                                                        | 支持                                                                            |
-| 请求  `onDownloadProgress` | 不支持，但可以使用 `onProgressUpdate`，后续会支持                                                        | 支持                                                                            |
-| 请求  `maxContentLength`   | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `maxBodyLength`      | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `maxRedirects`       | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `beforeRedirect`     | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `socketPath`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `httpAgent`          | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `httpsAgent`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求  `proxy`              | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求   `decompress`        | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求 `insecureHTTPParser`  | 不支持                                                                                                   | `Node.js`  专用                                                                 |
-| 请求 `transitional`        | 不支持                                                                                                   | 支持                                                                            |
-| 请求 `env`                 | 不支持                                                                                                   | 支持                                                                            |
-| 请求 `formSerializer`      | 不支持                                                                                                   | 支持                                                                            |
-| 请求 `onHeadersReceived`   | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `onChunkReceived`     | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `file`                | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `fileType`            | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `fileName`            | 支持                                                                                                     | 不支持                                                                          |
-| 请求 `onProgressUpdate`    | 支持                                                                                                     | 不支持                                                                          |
-| 响应 `request`             | 不支持，请使用 `task`                                                                                    | 支持                                                                            |
-| 响应 `task`                | 对应的 `task`                                                                                            | 不支持                                                                          |
-| 响应 `errMsg`              | 可选的错误信息                                                                                           | 不支持                                                                          |
-| 响应 `errno`               | 可选的错误代码                                                                                           | 不支持                                                                          |
-| 响应 `cookies`             | 可选的服务器提供的 cookies 数据                                                                          | 不支持                                                                          |
-| 响应 `profile`             | 可选的调试信息                                                                                           | 不支持                                                                          |
-| 响应 `tempFilePath`        | 可选的临时本地文件路径                                                                                   | 不支持                                                                          |
-| 响应 `filePath`            | 可选的用户本地文件路径                                                                                   | 不支持                                                                          |
+|                                  | `uni-app-network`                                                                                        | `axios`                                                                         |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 开发语言                         | TypeScript                                                                                               | JavaScript                                                                      |
+| 类型                             | 包含                                                                                                     | 额外的 `index.d.ts` 文件                                                        |
+| 标识                             | `uan`                                                                                                    | `axios`                                                                         |
+| 环境                             | `uni-app`                                                                                                | 浏览器和 `Node.js`                                                              |
+| 请求  `transformRequest`         | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
+| 请求 `transformResponse`         | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
+| 请求 `paramsSerializer`          | 接受一个方法，`(params: any) => string`                                                                  | 接受一个对象，见<https://github.com/axios/axios/blob/v1.x/index.d.ts#L250-L252> |
+| 请求  `adapter`                  | 默认为 `request`，可选 `request`、`upload`、`download`  和方法 `(config: UanBaseConfig): UanBasePromise` | 根据环境自动选择 `xhr`（浏览器）和  `http`（`Node.js`）                         |
+| 请求  `responseEncoding`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `xsrfCookieName`           | 不支持                                                                                                   | 支持                                                                            |
+| 请求  `xsrfHeaderName`           | 不支持                                                                                                   | 支持                                                                            |
+| 请求  `onUploadProgress`         | 支持                                                                                                     | 支持                                                                            |
+| 请求  `onUploadProgressUpdate`   | 支持                                                                                                     | 支持                                                                            |
+| 请求  `onDownloadProgress`       | 支持                                                                                                     | 支持                                                                            |
+| 请求  `onDownloadProgressUpdate` | 支持                                                                                                     | 支持                                                                            |
+| 请求  `maxContentLength`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `maxBodyLength`            | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `maxRedirects`             | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `beforeRedirect`           | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `socketPath`               | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `httpAgent`                | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `httpsAgent`               | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `proxy`                    | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求   `decompress`              | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求 `insecureHTTPParser`        | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求 `transitional`              | 不支持                                                                                                   | 支持                                                                            |
+| 请求 `env`                       | 不支持                                                                                                   | 支持                                                                            |
+| 请求 `formSerializer`            | 不支持                                                                                                   | 支持                                                                            |
+| 请求 `onHeadersReceived`         | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `onChunkReceived`           | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `file`                      | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `fileType`                  | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `fileName`                  | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `onProgress`                | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `onProgressUpdate`          | 支持                                                                                                     | 不支持                                                                          |
+| 响应 `request`                   | 不支持，请使用 `task`                                                                                    | 支持                                                                            |
+| 响应 `task`                      | 对应的 `task`                                                                                            | 不支持                                                                          |
+| 响应 `errMsg`                    | 可选的错误信息                                                                                           | 不支持                                                                          |
+| 响应 `errno`                     | 可选的错误代码                                                                                           | 不支持                                                                          |
+| 响应 `cookies`                   | 可选的服务器提供的 cookies 数据                                                                          | 不支持                                                                          |
+| 响应 `profile`                   | 可选的调试信息                                                                                           | 不支持                                                                          |
+| 响应 `tempFilePath`              | 可选的临时本地文件路径                                                                                   | 不支持                                                                          |
+| 响应 `filePath`                  | 可选的用户本地文件路径                                                                                   | 不支持                                                                          |
 
 ## 资源
 

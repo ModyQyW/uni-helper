@@ -58,12 +58,6 @@ cnpm install uni-app-network
 
 ### 例子
 
-#### CommonJS
-
-```typescript
-const uan = require('uni-app-network');
-```
-
 #### 发起一个 `GET` 请求
 
 ```typescript
@@ -281,6 +275,10 @@ const instance = uan.create({
   // 用于取消请求
   signal: new AbortController().signal,
 
+  // 用于取消请求
+  cancelToken: new CancelToken(function (cancel) {
+  }),
+
   // 监听 HTTP Response Header 事件
   // 会比请求完成事件更早
   onHeadersReceived: (result) => { /* ... */ },
@@ -352,7 +350,6 @@ const instance = uan.create({
   // `filePath` 是可选的用户本地文件路径
   filePath: '',
 }
-
 ```
 
 当使用 then 时，你将接收如下响应：
@@ -544,7 +541,19 @@ uan.get('/user/12345').catch((error) => {
 ```typescript
 uan.get('/user/12345', {
   validateStatus: (status) => {
-    return status < 500; // 处理状态码小于500的情况
+    return status < 500; // 处理状态码小于 500 的情况
+  },
+});
+```
+
+如果你追求语义化，可以使用导出的状态码、[statuses](https://github.com/jshttp/statuses)、[http-status-codes](https://github.com/prettymuchbryce/http-status-codes) 或 [node-http-status](https://github.com/adaltas/node-http-status)。
+
+```typescript
+import { HttpStatusCode } from 'uni-app-network';
+
+uan.get('/user/12345', {
+  validateStatus: (status) => {
+    return status < HttpStatusCode.InternalServerError; // 处理状态码小于 500 的情况
   },
 });
 ```
@@ -559,7 +568,7 @@ uan.get('/user/12345').catch((error) => {
 
 ### 取消请求
 
-支持使用 [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) 取消请求。
+支持使用 [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) 取消请求。在 `uni-app` 环境，你可能需要使用 [polyfill](https://github.com/mysticatea/abort-controller)。
 
 ```typescript
 const controller = new AbortController();
@@ -643,7 +652,7 @@ module.exports = {
 
 ### TypeScript
 
-`uni-app-network` 本身使用 [TypeScript](https://www.typescriptlang.org/) 开发，拥有类型提示。
+`uni-app-network` 本身使用 [TypeScript](https://www.typescriptlang.org/) 开发，拥有完整的类型提示。
 
 ### 高级功能
 
@@ -651,7 +660,51 @@ module.exports = {
 
 ### 为什么不是 `axios`？
 
-`axios` 非常棒，但它面对的是浏览器和 `Node.js`，即使使用了 `adapter`，某些底层功能也可能会在小程序内报错，而且需要修改大部分类型定义。
+`axios` 非常棒，但它面对的是浏览器和 `Node.js`，即使使用了 `adapter`，某些底层功能也可能会在小程序内报错，而且需要修改 `axios` 大部分类型定义。
+
+### 比较
+
+|                            | `uni-app-network`                                                                                        | `axios`                                                                         |
+| -------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| 开发语言                   | TypeScript                                                                                               | JavaScript                                                                      |
+| 类型                       | 包含                                                                                                     | 额外的 `index.d.ts` 文件                                                        |
+| 标识                       | `uan`                                                                                                    | `axios`                                                                         |
+| 环境                       | `uni-app`                                                                                                | 浏览器和 `Node.js`                                                              |
+| 请求  `transformRequest`   | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
+| 请求 `transformResponse`   | 不支持，请使用拦截器                                                                                     | 支持                                                                            |
+| 请求 `paramsSerializer`    | 接受一个方法，`(params: any) => string`                                                                  | 接受一个对象，见<https://github.com/axios/axios/blob/v1.x/index.d.ts#L250-L252> |
+| 请求  `adapter`            | 默认为 `request`，可选 `request`、`upload`、`download`  和方法 `(config: UanBaseConfig): UanBasePromise` | 根据环境自动选择 `xhr`（浏览器）和  `http`（`Node.js`）                         |
+| 请求  `responseEncoding`   | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `xsrfCookieName`     | 不支持                                                                                                   | 支持                                                                            |
+| 请求  `xsrfHeaderName`     | 不支持                                                                                                   | 支持                                                                            |
+| 请求  `onUploadProgress`   | 不支持，但可以使用 `onProgressUpdate`，后续会支持                                                        | 支持                                                                            |
+| 请求  `onDownloadProgress` | 不支持，但可以使用 `onProgressUpdate`，后续会支持                                                        | 支持                                                                            |
+| 请求  `maxContentLength`   | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `maxBodyLength`      | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `maxRedirects`       | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `beforeRedirect`     | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `socketPath`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `httpAgent`          | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `httpsAgent`         | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求  `proxy`              | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求   `decompress`        | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求 `insecureHTTPParser`  | 不支持                                                                                                   | `Node.js`  专用                                                                 |
+| 请求 `transitional`        | 不支持                                                                                                   | 支持                                                                            |
+| 请求 `env`                 | 不支持                                                                                                   | 支持                                                                            |
+| 请求 `formSerializer`      | 不支持                                                                                                   | 支持                                                                            |
+| 请求 `onHeadersReceived`   | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `onChunkReceived`     | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `file`                | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `fileType`            | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `fileName`            | 支持                                                                                                     | 不支持                                                                          |
+| 请求 `onProgressUpdate`    | 支持                                                                                                     | 不支持                                                                          |
+| 响应 `request`             | 对应的 `task`                                                                                            | 请求实例                                                                        |
+| 响应 `errMsg`              | 可选的错误信息                                                                                           | 不支持                                                                          |
+| 响应 `errno`               | 可选的错误代码                                                                                           | 不支持                                                                          |
+| 响应 `cookies`             | 可选的服务器提供的 cookies 数据                                                                          | 不支持                                                                          |
+| 响应 `profile`             | 可选的调试信息                                                                                           | 不支持                                                                          |
+| 响应 `tempFilePath`        | 可选的临时本地文件路径                                                                                   | 不支持                                                                          |
+| 响应 `filePath`            | 可选的用户本地文件路径                                                                                   | 不支持                                                                          |
 
 ## 资源
 

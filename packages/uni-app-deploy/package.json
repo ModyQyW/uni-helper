@@ -47,7 +47,7 @@
     "p-retry": "^5.1.1",
     "picocolors": "^1.0.0",
     "strip-json-comments": "^5.0.0",
-    "unconfig": "^0.3.6"
+    "unconfig": "^0.3.7"
   },
   "engines": {
     "node": ">=14.16"

@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-import { defaultOptions } from '../options';
 import { transformStyle } from './index';
 
 describe('style', () => {

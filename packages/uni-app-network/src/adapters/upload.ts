@@ -7,7 +7,13 @@ import { UanData, UanUploadConfig, UanUploadResponse } from '../types';
 
 export const uploadAdapter = <T = UanData, D = UanData>(config: UanUploadConfig<T, D>) =>
   new Promise<UanUploadResponse<T, D>>((resolve, reject) => {
-    const { onHeadersReceived, onProgressUpdate, cancelToken, signal } = config;
+    const { onHeadersReceived, cancelToken, signal } = config;
+
+    const onProgressUpdate =
+      config?.onUploadProgress ??
+      config?.onUploadProgressUpdate ??
+      config?.onProgress ??
+      config?.onProgressUpdate;
 
     const uploadConfig = buildUploadConfig(config);
 

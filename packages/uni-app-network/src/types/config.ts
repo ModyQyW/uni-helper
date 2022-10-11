@@ -6,6 +6,7 @@ import {
   UanDataType,
   UanResponseType,
   UanGenericAbortSignal,
+  UanOnProgress,
 } from './common';
 import { UanBaseAdapter, UanRequestAdapter, UanDownloadAdapter, UanUploadAdapter } from './adapter';
 
@@ -54,11 +55,10 @@ export interface UanRequestConfig<T = UanData, D = UanData> extends UanBaseConfi
 export interface UanDownloadConfig<T = UanData, D = UanData> extends UanBaseConfig<T, D> {
   adapter?: 'download' | UanDownloadAdapter<T, D>;
   filePath?: string;
-  onProgressUpdate?: (response?: {
-    progress?: number;
-    totalBytesWritten?: number;
-    totalBytesExpectedToWrite?: number;
-  }) => void;
+  onDownloadProgress?: UanOnProgress;
+  onDownloadProgressUpdate?: UanOnProgress;
+  onProgress?: UanOnProgress;
+  onProgressUpdate?: UanOnProgress;
   [key: string]: any;
 }
 
@@ -70,11 +70,10 @@ export interface UanUploadConfig<T = UanData, D = UanData> extends UanBaseConfig
   file?: File;
   formData?: Record<string, any>;
   fileType?: 'image' | 'video' | 'audio';
-  onProgressUpdate?: (response?: {
-    progress?: number;
-    totalBytesWritten?: number;
-    totalBytesExpectedToWrite?: number;
-  }) => void;
+  onUploadProgress?: UanOnProgress;
+  onUploadProgressUpdate?: UanOnProgress;
+  onProgress?: UanOnProgress;
+  onProgressUpdate?: UanOnProgress;
   [key: string]: any;
 }
 

@@ -130,3 +130,11 @@ export interface UanProfile {
   receivedBytedCount?: number;
   protocol?: 'http1.1' | 'h2' | 'quic' | 'unknown' | string;
 }
+
+export interface UanOnProgress {
+  (response?: {
+    progress?: number;
+    totalBytesWritten?: number;
+    totalBytesExpectedToWrite?: number;
+  }): void;
+}

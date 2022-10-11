@@ -7,7 +7,13 @@ import { UanData, UanDownloadConfig, UanDownloadResponse } from '../types';
 
 export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadConfig<T, D>) =>
   new Promise<UanDownloadResponse<T, D>>((resolve, reject) => {
-    const { onHeadersReceived, onProgressUpdate, cancelToken, signal } = config;
+    const { onHeadersReceived, cancelToken, signal } = config;
+
+    const onProgressUpdate =
+      config?.onDownloadProgress ??
+      config?.onDownloadProgressUpdate ??
+      config?.onProgress ??
+      config?.onProgressUpdate;
 
     const downloadConfig = buildDownloadConfig(config);
 

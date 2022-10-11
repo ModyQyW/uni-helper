@@ -1,6 +1,6 @@
-import { HttpStatusCode, UanBaseConfig } from '../types';
+import { HttpStatusCode, UanConfig } from '../types';
 
-export const defaults: Partial<UanBaseConfig> = {
+export const defaults: Partial<UanConfig> = {
   adapter: 'request',
   timeout: 0,
   validateStatus: (status) =>

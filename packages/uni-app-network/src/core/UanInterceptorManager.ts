@@ -1,8 +1,8 @@
-import { UanBaseConfig, UanData } from '../types';
+import { UanConfig, UanData } from '../types';
 
 export interface UanInterceptorOptions<T = UanData, D = UanData> {
   synchronous?: boolean;
-  runWhen?: (config: UanBaseConfig<T, D>) => boolean;
+  runWhen?: (config: UanConfig<T, D>) => boolean;
 }
 
 export interface UanInterceptorManagerHandlerFulfilled<V> {

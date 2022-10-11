@@ -3,10 +3,10 @@ import { settle } from '../core/settle';
 import { UanCanceledError } from '../core/UanCanceledError';
 import { buildDownloadConfig } from '../utils';
 import { UanCancelTokenListener } from '../core/UanCancelToken';
-import { UanData, UanDownloadConfig, UanDownloadResponse } from '../types';
+import { UanData, UanConfig, UanResponse } from '../types';
 
-export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadConfig<T, D>) =>
-  new Promise<UanDownloadResponse<T, D>>((resolve, reject) => {
+export const downloadAdapter = <T = UanData, D = UanData>(config: UanConfig<T, D>) =>
+  new Promise<UanResponse<T, D>>((resolve, reject) => {
     const { onHeadersReceived, cancelToken, signal } = config;
 
     const onProgressUpdate =
@@ -24,7 +24,7 @@ export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadCon
       signal?.removeEventListener('abort', onCanceled);
     };
 
-    let response: UanDownloadResponse<T, D>;
+    let response: UanResponse<T, D>;
     let task: UniApp.DownloadTask | undefined;
 
     task = uni.downloadFile({
@@ -52,7 +52,7 @@ export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadCon
             // @ts-expect-error
             filePath: res?.filePath,
           },
-          request: task,
+          task,
         };
       },
       fail: (err) => {
@@ -69,7 +69,7 @@ export const downloadAdapter = <T = UanData, D = UanData>(config: UanDownloadCon
         if (onProgressUpdate) {
           task?.offProgressUpdate(onProgressUpdate);
         }
-        settle<T, D, UanDownloadResponse<T, D>>(
+        settle<T, D, UanResponse<T, D>>(
           (val) => {
             resolve(val);
             done();

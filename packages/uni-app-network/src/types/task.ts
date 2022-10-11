@@ -1,9 +1,9 @@
-export type UanBaseTask = Record<string, any>;
+import { UanOnProgress } from './common';
 
-export type UanRequestTask = UniApp.RequestTask;
-
-export type UanDownloadTask = UniApp.DownloadTask;
-
-export type UanUploadTask = UniApp.UploadTask;
-
-export type UanTask = UanBaseTask | UanRequestTask | UanDownloadTask | UanUploadTask;
+export interface UanTask
+  extends Partial<UniApp.RequestTask>,
+    Partial<Omit<UniApp.DownloadTask, 'onProgressUpdate'>>,
+    Partial<Omit<UniApp.UploadTask, 'onProgressUpdate'>> {
+  onProgressUpdate?: (callback: UanOnProgress) => void;
+  [key: string]: any;
+}

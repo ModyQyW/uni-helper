@@ -1,11 +1,7 @@
-import { UanData, UanBaseResponse } from '../types';
+import { UanData, UanResponse } from '../types';
 import { UanError } from './UanError';
 
-export const settle = <
-  T = UanData,
-  D = UanData,
-  R extends UanBaseResponse<T, D> = UanBaseResponse<T, D>,
->(
+export const settle = <T = UanData, D = UanData, R extends UanResponse<T, D> = UanResponse<T, D>>(
   resolve: (value: R | PromiseLike<R>) => void,
   reject: (reason?: any) => void,
   response: R,

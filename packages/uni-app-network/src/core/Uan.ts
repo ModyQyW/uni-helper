@@ -1,17 +1,6 @@
 import { mergeDeepRight } from 'ramda';
 import { buildFullPath, buildUrl } from '../utils';
-import {
-  UanConfig,
-  UanData,
-  UanBaseResponse,
-  UanRequestConfig,
-  UanDownloadConfig,
-  UanUploadConfig,
-  UanBaseConfig,
-  UanRequestResponse,
-  UanDownloadResponse,
-  UanUploadResponse,
-} from '../types';
+import { UanConfig, UanData, UanResponse } from '../types';
 import {
   UanInterceptorManager,
   UanInterceptorManagerHandlerFulfilled,
@@ -20,13 +9,13 @@ import {
 import { dispatchRequest } from './dispatchRequest';
 
 export class Uan<T = UanData, D = UanData> {
-  defaults: UanBaseConfig<T, D>;
+  defaults: UanConfig<T, D>;
   interceptors: {
-    request: UanInterceptorManager<UanBaseConfig<T, D>, T, D>;
-    response: UanInterceptorManager<UanBaseResponse<T, D>, T, D>;
+    request: UanInterceptorManager<UanConfig<T, D>, T, D>;
+    response: UanInterceptorManager<UanResponse<T, D>, T, D>;
   };
 
-  constructor(instanceConfig: UanBaseConfig<T, D>) {
+  constructor(instanceConfig: UanConfig<T, D>) {
     this.defaults = instanceConfig;
     this.interceptors = {
       request: new UanInterceptorManager(),
@@ -34,15 +23,15 @@ export class Uan<T = UanData, D = UanData> {
     };
   }
 
-  request(configOrUrl: string | UanBaseConfig<T, D>, config?: UanBaseConfig<T, D>) {
+  request(configOrUrl: string | UanConfig<T, D>, config?: UanConfig<T, D>) {
     const _config =
       typeof configOrUrl === 'string' ? { ...config, url: configOrUrl } : { ...configOrUrl };
 
-    const mergedConfig = mergeDeepRight(this.defaults, _config) as UanBaseConfig<T, D>;
+    const mergedConfig = mergeDeepRight(this.defaults, _config) as UanConfig<T, D>;
 
     // filter out skipped interceptors
     const requestInterceptorChain: (
-      | UanInterceptorManagerHandlerFulfilled<UanBaseConfig<T, D>>
+      | UanInterceptorManagerHandlerFulfilled<UanConfig<T, D>>
       | UanInterceptorManagerHandlerRejected
       | undefined
     )[] = [];
@@ -60,7 +49,7 @@ export class Uan<T = UanData, D = UanData> {
     });
 
     const responseInterceptorChain: (
-      | UanInterceptorManagerHandlerFulfilled<UanBaseResponse<T, D>>
+      | UanInterceptorManagerHandlerFulfilled<UanResponse<T, D>>
       | UanInterceptorManagerHandlerRejected
       | undefined
     )[] = [];
@@ -75,9 +64,9 @@ export class Uan<T = UanData, D = UanData> {
 
     if (!synchronousRequestInterceptors) {
       const chain: (
-        | UanInterceptorManagerHandlerFulfilled<UanBaseConfig<T, D>>
+        | UanInterceptorManagerHandlerFulfilled<UanConfig<T, D>>
         | UanInterceptorManagerHandlerRejected
-        | UanInterceptorManagerHandlerFulfilled<UanBaseResponse<T, D>>
+        | UanInterceptorManagerHandlerFulfilled<UanResponse<T, D>>
         | UanInterceptorManagerHandlerRejected
         | undefined
       )[] = [dispatchRequest.bind(this), undefined];
@@ -102,7 +91,7 @@ export class Uan<T = UanData, D = UanData> {
 
     while (i < len) {
       const onFulfilled = requestInterceptorChain[i++] as UanInterceptorManagerHandlerFulfilled<
-        UanBaseConfig<T, D>
+        UanConfig<T, D>
       >;
       const onRejected = requestInterceptorChain[i++] as UanInterceptorManagerHandlerRejected;
       try {
@@ -114,7 +103,6 @@ export class Uan<T = UanData, D = UanData> {
     }
 
     try {
-      // @ts-expect-error
       promise = dispatchRequest.call(this, newConfig);
     } catch (error) {
       return Promise.reject(error);
@@ -130,11 +118,11 @@ export class Uan<T = UanData, D = UanData> {
     return promise;
   }
 
-  download(configOrUrl: string | UanDownloadConfig<T, D>, config?: UanDownloadConfig<T, D>) {
+  download(configOrUrl: string | UanConfig<T, D>, config?: UanConfig<T, D>) {
     return this.request(configOrUrl, { ...config, adapter: 'download' });
   }
 
-  upload(configOrUrl: string | UanUploadConfig<T, D>, config?: UanUploadConfig<T, D>) {
+  upload(configOrUrl: string | UanConfig<T, D>, config?: UanConfig<T, D>) {
     return this.request(configOrUrl, { ...config, adapter: 'upload' });
   }
 
@@ -151,55 +139,46 @@ export interface Uan<T = UanData, D = UanData> {
   //   config?: UanBaseConfig<TT, DD>,
   // ): Promise<R>;
 
-  request<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    config: UanRequestConfig<TT, DD>,
+  request<TT = T, DD = D, R = UanResponse<TT, DD>>(config: UanConfig<TT, DD>): Promise<R>;
+  download<TT = T, DD = D, R = UanResponse<TT, DD>>(config: UanConfig<TT, DD>): Promise<R>;
+  upload<TT = T, DD = D, R = UanResponse<TT, DD>>(config: UanConfig<TT, DD>): Promise<R>;
+
+  get<TT = T, DD = D, R = UanResponse<TT, DD>>(url: string, config?: UanConfig<TT, DD>): Promise<R>;
+  delete<TT = T, DD = D, R = UanResponse<TT, DD>>(
+    url: string,
+    config?: UanConfig<TT, DD>,
   ): Promise<R>;
-  download<TT = T, DD = D, R = UanDownloadResponse<TT, DD>>(
-    config: UanDownloadConfig<TT, DD>,
+  head<TT = T, DD = D, R = UanResponse<TT, DD>>(
+    url: string,
+    config?: UanConfig<TT, DD>,
   ): Promise<R>;
-  upload<TT = T, DD = D, R = UanUploadResponse<TT, DD>>(
-    config: UanUploadConfig<TT, DD>,
+  options<TT = T, DD = D, R = UanResponse<TT, DD>>(
+    url: string,
+    config?: UanConfig<TT, DD>,
+  ): Promise<R>;
+  trace<TT = T, DD = D, R = UanResponse<TT, DD>>(
+    url: string,
+    config?: UanConfig<TT, DD>,
+  ): Promise<R>;
+  connect<TT = T, DD = D, R = UanResponse<TT, DD>>(
+    url: string,
+    config?: UanConfig<TT, DD>,
   ): Promise<R>;
 
-  get<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    url: string,
-    config?: UanRequestConfig<TT, DD>,
-  ): Promise<R>;
-  delete<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    url: string,
-    config?: UanRequestConfig<TT, DD>,
-  ): Promise<R>;
-  head<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    url: string,
-    config?: UanRequestConfig<TT, DD>,
-  ): Promise<R>;
-  options<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    url: string,
-    config?: UanRequestConfig<TT, DD>,
-  ): Promise<R>;
-  trace<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    url: string,
-    config?: UanRequestConfig<TT, DD>,
-  ): Promise<R>;
-  connect<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
-    url: string,
-    config?: UanRequestConfig<TT, DD>,
-  ): Promise<R>;
-
-  post<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
+  post<TT = T, DD = D, R = UanResponse<TT, DD>>(
     url: string,
     data?: DD,
-    config?: UanRequestConfig<TT, DD>,
+    config?: UanConfig<TT, DD>,
   ): Promise<R>;
-  put<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
+  put<TT = T, DD = D, R = UanResponse<TT, DD>>(
     url: string,
     data?: DD,
-    config?: UanRequestConfig<TT, DD>,
+    config?: UanConfig<TT, DD>,
   ): Promise<R>;
-  patch<TT = T, DD = D, R = UanRequestResponse<TT, DD>>(
+  patch<TT = T, DD = D, R = UanResponse<TT, DD>>(
     url: string,
     data?: DD,
-    config?: UanRequestConfig<TT, DD>,
+    config?: UanConfig<TT, DD>,
   ): Promise<R>;
 }
 

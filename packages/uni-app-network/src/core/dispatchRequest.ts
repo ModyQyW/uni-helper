@@ -1,9 +1,9 @@
 import { adapters, requestAdapter } from '../adapters';
-import { UanBaseAdapter, UanBaseConfig, UanData } from '../types';
+import { UanAdapter, UanConfig, UanData } from '../types';
 import { isUanCancel } from './isUanCancel';
 import { UanCanceledError } from './UanCanceledError';
 
-const throwIfCancellationRequested = <T = UanData, D = UanData>(config: UanBaseConfig<T, D>) => {
+const throwIfCancellationRequested = <T = UanData, D = UanData>(config: UanConfig<T, D>) => {
   if (config.cancelToken) {
     config.cancelToken?.throwIfRequested();
   }
@@ -13,7 +13,7 @@ const throwIfCancellationRequested = <T = UanData, D = UanData>(config: UanBaseC
   }
 };
 
-export const dispatchRequest = <T = UanData, D = UanData>(config: UanBaseConfig<T, D>) => {
+export const dispatchRequest = <T = UanData, D = UanData>(config: UanConfig<T, D>) => {
   throwIfCancellationRequested(config);
 
   const adapter = (
@@ -22,7 +22,7 @@ export const dispatchRequest = <T = UanData, D = UanData>(config: UanBaseConfig<
       : typeof config.adapter === 'function'
       ? config.adapter
       : requestAdapter
-  ) as UanBaseAdapter<T, D>;
+  ) as UanAdapter<T, D>;
 
   return adapter(config).then(
     (response) => {

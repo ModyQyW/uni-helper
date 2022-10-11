@@ -1,4 +1,4 @@
-import { UanBaseConfig, UanData, UanBaseTask } from '../types';
+import { UanConfig, UanData, UanTask } from '../types';
 import { UanCanceledError } from './UanCanceledError';
 
 export interface UanCancel {
@@ -10,7 +10,7 @@ export interface UanCancelStatic {
 }
 
 export interface UanCanceler<T = UanData, D = UanData> {
-  (message?: string, config?: UanBaseConfig<T, D>, request?: UanBaseTask): void;
+  (message?: string, config?: UanConfig<T, D>, request?: UanTask): void;
 }
 
 export interface UanCancelTokenListener {

@@ -1,8 +1,8 @@
-import { UanData, UanDownloadConfig } from '../types';
+import { UanData, UanConfig } from '../types';
 import { buildFullPath } from './buildFullPath';
 import { buildUrl } from './buildUrl';
 
-export const buildDownloadConfig = <T = UanData, D = UanData>(config: UanDownloadConfig<T, D>) =>
+export const buildDownloadConfig = <T = UanData, D = UanData>(config: UanConfig<T, D>) =>
   ({
     url: buildUrl(
       buildFullPath(config.baseUrl ?? '', config.url ?? ''),

@@ -1,4 +1,4 @@
-import { UanBaseConfig, UanData, UanBaseResponse, UanBaseTask } from '../types';
+import { UanConfig, UanData, UanResponse, UanTask } from '../types';
 
 export class UanError<T = UanData, D = UanData> extends Error {
   static ERR_FR_TOO_MANY_REDIRECTS = 'ERR_FR_TOO_MANY_REDIRECTS';
@@ -15,9 +15,9 @@ export class UanError<T = UanData, D = UanData> extends Error {
   static ETIMEDOUT = 'ETIMEDOUT';
 
   code?: string;
-  config?: UanBaseConfig<T, D>;
-  task?: UanBaseTask;
-  response?: UanBaseResponse<T, D>;
+  config?: UanConfig<T, D>;
+  task?: UanTask;
+  response?: UanResponse<T, D>;
   isUanError: boolean;
   status?: number;
   cause?: Error;
@@ -25,9 +25,9 @@ export class UanError<T = UanData, D = UanData> extends Error {
   constructor(
     message?: string,
     code?: string,
-    config?: UanBaseConfig<T, D>,
-    task?: UanBaseTask,
-    response?: UanBaseResponse<T, D>,
+    config?: UanConfig<T, D>,
+    task?: UanTask,
+    response?: UanResponse<T, D>,
   ) {
     super(message);
 
@@ -69,7 +69,7 @@ export class UanError<T = UanData, D = UanData> extends Error {
       name: string;
       message?: string;
       stack?: string;
-      config?: UanBaseConfig<T, D>;
+      config?: UanConfig<T, D>;
       code?: string;
       status?: number;
       [key: string]: any;
@@ -79,9 +79,9 @@ export class UanError<T = UanData, D = UanData> extends Error {
   static from<TT = UanData, DD = UanData>(
     error?: Error,
     code?: string,
-    config?: UanBaseConfig<TT, DD>,
-    task?: UanBaseTask,
-    response?: UanBaseResponse<TT, DD>,
+    config?: UanConfig<TT, DD>,
+    task?: UanTask,
+    response?: UanResponse<TT, DD>,
     customProps?: Record<string, any>,
   ) {
     const urError = new UanError(error?.message, code, config, task, response);

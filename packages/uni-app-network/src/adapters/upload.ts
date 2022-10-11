@@ -3,10 +3,10 @@ import { settle } from '../core/settle';
 import { UanCanceledError } from '../core/UanCanceledError';
 import { buildUploadConfig } from '../utils';
 import { UanCancelTokenListener } from '../core/UanCancelToken';
-import { UanData, UanUploadConfig, UanUploadResponse } from '../types';
+import { UanData, UanConfig, UanResponse } from '../types';
 
-export const uploadAdapter = <T = UanData, D = UanData>(config: UanUploadConfig<T, D>) =>
-  new Promise<UanUploadResponse<T, D>>((resolve, reject) => {
+export const uploadAdapter = <T = UanData, D = UanData>(config: UanConfig<T, D>) =>
+  new Promise<UanResponse<T, D>>((resolve, reject) => {
     const { onHeadersReceived, cancelToken, signal } = config;
 
     const onProgressUpdate =
@@ -24,7 +24,7 @@ export const uploadAdapter = <T = UanData, D = UanData>(config: UanUploadConfig<
       signal?.removeEventListener('abort', onCanceled);
     };
 
-    let response: UanUploadResponse<T, D>;
+    let response: UanResponse<T, D>;
     let task: UniApp.UploadTask | undefined;
 
     task = uni.uploadFile({
@@ -43,7 +43,7 @@ export const uploadAdapter = <T = UanData, D = UanData>(config: UanUploadConfig<
           config,
           // @ts-expect-error
           data: res?.data,
-          request: task,
+          task,
         };
       },
       fail: (err) => {
@@ -62,7 +62,7 @@ export const uploadAdapter = <T = UanData, D = UanData>(config: UanUploadConfig<
         if (onProgressUpdate) {
           task?.offProgressUpdate(onProgressUpdate);
         }
-        settle<T, D, UanUploadResponse<T, D>>(
+        settle<T, D, UanResponse<T, D>>(
           (val) => {
             resolve(val);
             done();

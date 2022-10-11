@@ -329,8 +329,8 @@ const instance = uan.create({
   // `config` 是 `uan` 请求的配置信息
   config: {},
 
-  // `request` 是对应的 task 数据
-  request: {}
+  // `task` 是对应的 task 数据
+  task: {}
 
   // `errMsg` 是可选的错误信息
   errMsg: '',
@@ -698,7 +698,8 @@ module.exports = {
 | 请求 `fileType`            | 支持                                                                                                     | 不支持                                                                          |
 | 请求 `fileName`            | 支持                                                                                                     | 不支持                                                                          |
 | 请求 `onProgressUpdate`    | 支持                                                                                                     | 不支持                                                                          |
-| 响应 `request`             | 对应的 `task`                                                                                            | 请求实例                                                                        |
+| 响应 `request`             | 不支持，请使用 `task`                                                                                    | 支持                                                                            |
+| 响应 `task`                | 对应的 `task`                                                                                            | 不支持                                                                          |
 | 响应 `errMsg`              | 可选的错误信息                                                                                           | 不支持                                                                          |
 | 响应 `errno`               | 可选的错误代码                                                                                           | 不支持                                                                          |
 | 响应 `cookies`             | 可选的服务器提供的 cookies 数据                                                                          | 不支持                                                                          |

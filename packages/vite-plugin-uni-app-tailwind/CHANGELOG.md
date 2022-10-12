@@ -1,5 +1,9 @@
 # 改动日志
 
+## 0.6.1 (2022-10-12)
+
+- perf: 移除多余元素映射，现在生成的样式代码更少
+
 ## 0.6.0 (2022-09-30)
 
 - feat: 支持替换模板 `class`、`classname`、`class-name`、`*-class`、`*-classname`、`*-class-name` 中的类名

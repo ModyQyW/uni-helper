@@ -20,7 +20,7 @@ export default defineConfig({
       { text: '概览', link: '/overview' },
       { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
       { text: '编辑器支持', link: '/editor/vscode-uni-helper' },
-      { text: '构建工具支持', link: '/bundler/vite-plugin-uni-app-tailwind' },
+      { text: '原子化 CSS 支持', link: '/atomic-css/vite-plugin-uni-app-tailwind' },
       { text: '网络请求支持', link: '/network/uni-app-network' },
       { text: '组合式支持', link: '/composition/uni-app-use' },
       { text: '自动化支持', link: '/automation/uni-app-deploy' },
@@ -52,10 +52,13 @@ export default defineConfig({
         ],
       },
       {
-        text: '构建工具支持',
+        text: '原子化 CSS 支持',
         collapsible: true,
         items: [
-          { text: 'vite-plugin-uni-app-tailwind', link: '/bundler/vite-plugin-uni-app-tailwind' },
+          {
+            text: 'vite-plugin-uni-app-tailwind',
+            link: '/atomic-css/vite-plugin-uni-app-tailwind',
+          },
         ],
       },
 

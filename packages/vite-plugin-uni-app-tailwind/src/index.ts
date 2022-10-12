@@ -12,10 +12,10 @@ export default function UniAppTailwindPlugin(options?: UniAppTailwindPluginOptio
   const finalOptions: Options = {
     apply: options?.apply ?? defaultOptions.apply,
     getShouldApply: options?.getShouldApply ?? defaultOptions.getShouldApply,
+    characterMap: options?.characterMap ?? defaultOptions.characterMap,
     spaceBetweenElements: options?.spaceBetweenElements ?? defaultOptions.spaceBetweenElements,
     divideWidthElements: options?.divideWidthElements ?? defaultOptions.divideWidthElements,
     elementMap: options?.elementMap ?? defaultOptions.elementMap,
-    characterMap: options?.characterMap ?? defaultOptions.characterMap,
   };
 
   const shouldApply = finalOptions.getShouldApply(

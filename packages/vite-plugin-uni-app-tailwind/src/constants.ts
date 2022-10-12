@@ -6,54 +6,44 @@ export const Apply = ['MP', 'QUICKAPP'];
 // 默认替换 * 选择器的环境判断方法
 export const GetShouldApply = getShouldApply;
 
+// 默认 uni-app 中特殊符号映射，用于替换特殊符号
+export const CharacterMap: [string, string][] = [
+  ['[', '-'],
+  [']', '-'],
+  ['(', '-'],
+  [')', '-'],
+  ['#', '-h-'], // hash
+  ['!', '-i-'], // important
+  ['/', '-s-'], // slash
+  ['.', '-d-'], // dot
+  [':', '_'], // colon
+  [',\\s', '-c-'], // comma
+  [',', '-c-'], // comma
+  ['%', '-p-'], // percentage
+  ["'", '-q-'], // quote
+  ['+', '-a-'], // add
+  ['\\\\2c\\s', '-c-'], // comma
+  ['\\\\2c', '-c-'], // comma
+];
+
 // 默认 space between 元素映射
 // https://tailwindcss.com/docs/space
-export const SpaceBetweenElements = [
-  'view',
-  'button',
-  'text',
-  'image',
-  'uni-view',
-  'uni-button',
-  'uni-text',
-  'uni-image',
-];
+export const SpaceBetweenElements = ['view', 'button', 'text', 'image'];
 
 // 默认 divide width 元素映射
 // https://tailwindcss.com/docs/divide-width
-export const DivideWidthElements = [
-  'view',
-  'button',
-  'text',
-  'image',
-  'uni-view',
-  'uni-button',
-  'uni-text',
-  'uni-image',
-];
+export const DivideWidthElements = ['view', 'button', 'text', 'image'];
 
 // 默认 uni-app 中元素映射
 export const ElementMap: [string, string[]][] = [
-  ['html', ['html', 'page']],
-  ['body', ['body', 'page']],
-  ['img', ['img', 'image', 'uni-image']],
-  ['span', ['span', 'text', 'uni-text']],
-  ['video', ['video', 'uni-video']],
-  [
-    'a',
-    [
-      'a',
-      'functional-page-navigator',
-      'navigator',
-      'uni-functional-page-navigator',
-      'uni-navigator',
-    ],
-  ],
+  ['html', ['page']],
+  ['body', ['page']],
+  ['img', ['image']],
+  ['span', ['text']],
+  ['a', ['functional-page-navigator', 'navigator']],
   [
     '*',
     [
-      'html',
-      'body',
       'page',
       'cover-image',
       'cover-view',
@@ -101,72 +91,6 @@ export const ElementMap: [string, string[]][] = [
       'web-view',
       'navigation-bar',
       'page-meta',
-      'uni-cover-image',
-      'uni-cover-view',
-      'uni-match-media',
-      'uni-movable-area',
-      'uni-movable-view',
-      'uni-scroll-view',
-      'uni-swiper',
-      'uni-swiper-item',
-      'uni-view',
-      'uni-icon',
-      'uni-progress',
-      'uni-rich-text',
-      'uni-text',
-      'uni-button',
-      'uni-checkbox',
-      'uni-checkbox-group',
-      'uni-editor',
-      'uni-form',
-      'uni-input',
-      'uni-label',
-      'uni-picker',
-      'uni-picker-view',
-      'uni-picker-view-column',
-      'uni-radio',
-      'uni-radio-group',
-      'uni-slider',
-      'uni-switch',
-      'uni-textarea',
-      'uni-functional-page-navigator',
-      'uni-navigator',
-      'uni-audio',
-      'uni-camera',
-      'uni-image',
-      'uni-live-player',
-      'uni-live-pusher',
-      'uni-video',
-      'uni-voip-room',
-      'uni-map',
-      'uni-canvas',
-      'uni-ad',
-      'uni-ad-custom',
-      'uni-official-account',
-      'uni-open-data',
-      'uni-web-view',
-      'uni-navigation-bar',
-      'uni-page-meta',
     ],
   ],
-];
-
-// 默认 uni-app 中特殊符号映射，用于替换特殊符号
-export const CharacterMap: [string, string][] = [
-  ['[', '-'],
-  [']', '-'],
-  ['(', '-'],
-  [')', '-'],
-  ['#', '-h-'], // hash
-  ['!', '-i-'], // important
-  ['/', '-s-'], // slash
-  ['.', '-d-'], // dot
-  [':', '_'], // colon
-  [',\\s', '-c-'], // comma
-  [',', '-c-'], // comma
-  ['%', '-p-'], // percentage
-  ["'", '-q-'], // quote
-  ['+', '-a-'], // add
-  ['\\\\2c\\s', '-c-'], // comma
-  ['\\\\2c', '-c-'], // comma
 ];

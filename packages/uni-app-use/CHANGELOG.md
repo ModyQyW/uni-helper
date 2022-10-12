@@ -1,8 +1,9 @@
 # 改动日志
 
-## Unreleased
+## 0.7.2 (2022-10-12)
 
 - perf: 优化 `useRequest`、`useDownloadFile` 和 `useUploadFile` 类型
+- fix: 修复构建
 
 ## 0.7.1 (2022-09-30)
 

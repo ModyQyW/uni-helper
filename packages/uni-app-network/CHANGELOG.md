@@ -1,6 +1,6 @@
 # 改动日志
 
-## 0.9.0 (2022-10-11)
+## 0.10.0 (2022-10-11)
 
 - feat!: 重命名一些 `request` 为 `task` 避免误导
 - feat!: 调整类型，移除了 `UanBaseXxx`、`UanRequestXxx`、`UanDownloadXxx`、`UanUploadXxx` 等类型，可直接使用 `UanXxx`

@@ -5,35 +5,32 @@ import { defaultOptions, Options } from '../options';
 const postcssReplaceElements = (selector: string, options: Options) => {
   let newSelector = selector;
 
-  const spaceBetweenElements = options.spaceBetweenElements;
-  const divideWidthElements = options.divideWidthElements;
+  const { spaceBetweenElements, divideWidthElements } = options;
   newSelector = newSelector
     .replace(
-      /^(\.-?space-\w)(-.+?)\s?>.*/,
+      /^\.(-?space-\w)(-.+?)\s?>.*/,
       spaceBetweenElements
-        .map(
-          (element) =>
-            `$1$2:not($1-reverse)>${element}:not([hidden]):not(:first-child), $1$2$1-reverse>${element}:not([hidden]):not(:last-child)`,
-        )
+        .map((element) => `.$1$2>${element}:not([hidden]):not(:first-child)`)
         .join(','),
     )
     .replace(
-      /^(\.-?space-\w-reverse).*/,
-      spaceBetweenElements.map((element) => `$1>${element}:not([hidden])`).join(','),
+      /^\.(-?space-\w-reverse).*/,
+      spaceBetweenElements
+        .map((element) => `.$1>${element}:not([hidden]):not(:first-child)`)
+        .join(','),
     )
     // divide * https://tailwindcss.com/docs/divide-width
     .replace(
-      /^(\.-?divide-\w+)(-.+?)?\s?>.*/,
+      /^\.(-?divide-\w+)(-.+?)?\s?>.*/,
       divideWidthElements
-        .map(
-          (element) =>
-            `$1$2:not($1-reverse)>${element}:not([hidden]):not(:first-child), $1$2$1-reverse>${element}:not([hidden]):not(:last-child)`,
-        )
+        .map((element) => `.$1$2>${element}:not([hidden]):not(:first-child)`)
         .join(','),
     )
     .replace(
-      /^(\.-?divide-\w-reverse).*/,
-      divideWidthElements.map((element) => `$1>${element}:not([hidden])`).join(','),
+      /^\.(-?divide-\w-reverse).*/,
+      divideWidthElements
+        .map((element) => `.$1>${element}:not([hidden]):not(:first-child)`)
+        .join(','),
     );
 
   options.elementMap.forEach(([key, value]) => {

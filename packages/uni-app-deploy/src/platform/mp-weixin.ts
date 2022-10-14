@@ -12,7 +12,7 @@ export interface MpWeixinConfig {
   // {
   //   /**
   //    * 小程序 / 小游戏 appid
-  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
   //    * ./src/manifest.json mp-weixin appid
   //    * ./**/manifest.json mp-weixin appid
   //    * ./dist/**\/mp-weixin/project.config.json appid
@@ -20,10 +20,14 @@ export interface MpWeixinConfig {
   //   appid?: string;
   //   /**
   //    * 项目路径
-  //    * 如果没有填写，会尝试按以下顺序寻找 project.config.json 并将其所在目录作为项目路径，如果寻找失败将无法正常运行
+  //    * 如果没有填写，会尝试按以下顺序寻找 project.config.json 并将其所在目录作为项目路径，如果寻找失败将无法运行
   //    * ./dist/**\/mp-weixin/project.config.json
   //    */
   //   path?: string;
+  //   /**
+  //    * 私钥内容
+  //    */
+  //   privateKey?: string;
   //   /**
   //    * 私钥路径
   //    * 如果没有填写，会尝试按以下顺序寻找 .key 文件并将其路径作为私钥路径，寻找失败不影响继续运行
@@ -43,7 +47,7 @@ export interface MpWeixinConfig {
   // {
   //   /**
   //    * 版本号
-  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
   //    * ./package.json version
   //    * ./src/manifest.json versionName
   //    * ./**/manifest.json versionName
@@ -51,7 +55,7 @@ export interface MpWeixinConfig {
   //   version?: string;
   //   /**
   //    * 编译设置
-  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
   //    * ./src/manifest.json mp-weixin setting
   //    * ./**/manifest.json mp-weixin setting
   //    * ./dist/**\/mp-weixin/project.config.json setting
@@ -68,7 +72,7 @@ export interface MpWeixinConfig {
   // {
   //   /**
   //    * 版本号
-  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
   //    * ./package.json version
   //    * ./src/manifest.json versionName
   //    * ./**/manifest.json versionName
@@ -76,7 +80,7 @@ export interface MpWeixinConfig {
   //   version?: string;
   //   /**
   //    * 编译设置
-  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法正常运行
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
   //    * ./src/manifest.json mp-weixin setting
   //    * ./**/manifest.json mp-weixin setting
   //    * ./dist/**\/mp-weixin/project.config.json setting

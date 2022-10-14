@@ -9,7 +9,7 @@ import { UniAppDeployConfig } from '../config';
 export interface WecomConfig {
   /**
    * 企业微信机器人 webhook
-   * 如果不填写，不发送请求
+   * 如果不填写，无法发送请求
    */
   webhook?: string;
 }

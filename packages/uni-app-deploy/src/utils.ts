@@ -3,7 +3,16 @@ import { globbySync } from 'globby';
 import stripJsonComments from 'strip-json-comments';
 import * as fs from 'fs-extra';
 import { get } from 'lodash-es';
+import pino from 'pino';
+import pinoPretty from 'pino-pretty';
 import { UniAppDeployConfig, defaultCwd, defaultIgnore, defaultIgnoreFiles } from './config';
+
+export const pinoPrettyStream = pinoPretty({
+  colorize: true,
+  levelFirst: true,
+});
+
+export const logger = pino(pinoPrettyStream);
 
 export function getCwd(config: UniAppDeployConfig) {
   return config.cwd ?? defaultCwd;

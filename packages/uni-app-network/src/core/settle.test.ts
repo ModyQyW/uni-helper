@@ -45,7 +45,7 @@ describe('core::settle', () => {
   });
 
   it('should reject promise if validateStatus returns false', () => {
-    const req = {
+    const task = {
       path: '/foo',
     };
     const response = {
@@ -53,7 +53,7 @@ describe('core::settle', () => {
       config: {
         validateStatus: () => false,
       },
-      request: req,
+      task,
     };
     settle(resolve, reject, response);
     expect(resolve).not.toHaveBeenCalled();
@@ -63,7 +63,7 @@ describe('core::settle', () => {
     expect(reason instanceof Error).toBe(true);
     expect(reason.message).toBe('Request failed with status code 500');
     expect(reason.config).toBe(response.config);
-    expect(reason.request).toBe(req);
+    expect(reason.task).toBe(task);
     expect(reason.response).toBe(response);
   });
 

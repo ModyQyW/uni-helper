@@ -29,7 +29,7 @@ export function getIgnoreFiles(config: UniAppDeployConfig) {
 export function getFileField(
   config: UniAppDeployConfig,
   filters: { entry: string | string[]; prop: string | string[] }[],
-) {
+): string | number | boolean | Array<any> | Record<string, any> {
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
@@ -37,21 +37,19 @@ export function getFileField(
     ),
     { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
   );
-  if (entries.length === 0) {
-    throw new Error(`Can not get files.`);
-  }
   for (const [index, entry] of entries.entries()) {
     try {
       const content = JSON.parse(stripJsonComments(fs.readFileSync(entry, 'utf-8')));
       const field = get(content, filters[index].prop);
       if (field) return field;
       if (index === entries.length - 1 && !field) {
-        throw new Error('Can not get file Field.');
+        return '';
       }
     } catch (error) {
-      throw new Error(`${error}`);
+      return '';
     }
   }
+  return '';
 }
 
 export function getFilePath(config: UniAppDeployConfig, filters: { entry: string | string[] }[]) {
@@ -63,7 +61,7 @@ export function getFilePath(config: UniAppDeployConfig, filters: { entry: string
     { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
   );
   if (entries.length === 0) {
-    throw new Error(`Can not get files.`);
+    return '';
   }
   return entries[0];
 }
@@ -77,7 +75,7 @@ export function getFileDir(config: UniAppDeployConfig, filters: { entry: string 
     { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
   );
   if (entries.length === 0) {
-    throw new Error(`Can not get files.`);
+    return '';
   }
   return path.resolve(entries[0], '..');
 }

@@ -8,7 +8,7 @@
 
 支持在脚本文件和 CI/CD 中调用以自动部署 `uni-app` 应用。
 
-## 使用
+## 起步
 
 ### 安装依赖
 
@@ -68,17 +68,137 @@ export default defineConfig({
 })
 ```
 
+## 配置
+
 ### 应用平台
+
+如果不想使用某个应用平台，传入 `falsy` 值即可。
 
 #### 微信小程序
 
-TODO
+类型定义如下。
+
+```typescript
+import { ICreateProjectOptions } from 'miniprogram-ci/dist/@types/ci/project';
+import { IInnerUploadOptions } from 'miniprogram-ci/dist/@types/ci/upload';
+
+export interface MpWeixinConfig {
+  /** miniprogram-ci ci.project */
+  // {
+  //   /**
+  //    * 小程序 / 小游戏 appid
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
+  //    * ./src/manifest.json mp-weixin appid
+  //    * ./**/manifest.json mp-weixin appid
+  //    * ./dist/mp-weixin/project.config.json appid
+  //    * ./dist/build/mp-weixin/project.config.json appid
+  //    * ./dist/**\/mp-weixin/project.config.json appid
+  //    */
+  //   appid?: string;
+  //   /**
+  //    * 项目路径
+  //    * 如果没有填写，会尝试按以下顺序寻找 project.config.json 并将其所在目录作为项目路径，如果寻找失败将无法运行
+  //    * ./dist/mp-weixin/project.config.json
+  //    * ./dist/build/mp-weixin/project.config.json
+  //    * ./dist/**\/mp-weixin/project.config.json
+  //    */
+  //   path?: string;
+  //   /**
+  //    * 私钥内容
+  //    */
+  //   privateKey?: string;
+  //   /**
+  //    * 私钥路径
+  //    * 如果没有填写，会尝试按以下顺序寻找 .key 文件并将其路径作为私钥路径，寻找失败不影响继续运行
+  //    * ./**\/private.${appid}.key
+  //    * ./**\/weixin.${appid}.key
+  //    * ./**\/wechat.${appid}.key
+  //    */
+  //   privateKeyPath?: string;
+  //   /**
+  //    * 当前项目类型，默认为 miniprogram
+  //    */
+  //   type?: MiniProgramCI.ProjectType;
+  // };
+  project?: Partial<ICreateProjectOptions>;
+
+  /** miniprogram-ci ci.upload */
+  // {
+  //   /**
+  //    * 版本号
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
+  //    * ./package.json version
+  //    * ./src/manifest.json versionName
+  //    * ./**/manifest.json versionName
+  //    */
+  //   version?: string;
+  //   /**
+  //    * 编译设置
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
+  //    * ./src/manifest.json mp-weixin setting
+  //    * ./**/manifest.json mp-weixin setting
+  //    * ./dist/mp-weixin/project.config.json setting
+  //    * ./dist/build/mp-weixin/project.config.json setting
+  //    * ./dist/**\/mp-weixin/project.config.json setting
+  //    */
+  //   setting?: MiniProgramCI.ICompileSettings;
+  //   /**
+  //    * 备注，默认为 Uploaded by uni-app-deploy
+  //    */
+  //   desc?: string;
+  // };
+  upload?: Partial<Omit<IInnerUploadOptions, 'project'>>;
+
+  /** miniprogram-ci ci.preview */
+  // {
+  //   /**
+  //    * 版本号
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
+  //    * ./package.json version
+  //    * ./src/manifest.json versionName
+  //    * ./**/manifest.json versionName
+  //    */
+  //   version?: string;
+  //   /**
+  //    * 编译设置
+  //    * 如果没有填写，会尝试按以下顺序读取，如果读取失败将无法运行
+  //    * ./src/manifest.json mp-weixin setting
+  //    * ./**/manifest.json mp-weixin setting
+  //    * ./dist/mp-weixin/project.config.json setting
+  //    * ./dist/build/mp-weixin/project.config.json setting
+  //    * ./dist/**\/mp-weixin/project.config.json setting
+  //    */
+  //   setting?: MiniProgramCI.ICompileSettings;
+  //   /**
+  //    * 备注，默认为 Uploaded by uni-app-deploy
+  //    */
+  //   desc?: string;
+  //   /**
+  //    * 二维码格式，默认为 image
+  //    */
+  //   qrcodeFormat?: 'base64' | 'image' | 'terminal';
+  //   /**
+  //    * 二维码输出路径，默认为 qrcode.png
+  //    */
+  //   qrcodeOutputDest?: string;
+  // };
+  preview?: Partial<Omit<IInnerUploadOptions, 'project' | 'test'> & { test?: true }>;
+}
+```
 
 ### 沟通工具
 
 #### 企业微信
 
-TODO
+```typescript
+export interface WecomConfig {
+  /**
+   * 企业微信机器人 webhook
+   * 如果不填写，无法发送请求
+   */
+  webhook?: string;
+}
+```
 
 ### CLI 调用
 

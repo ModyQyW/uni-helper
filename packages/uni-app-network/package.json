@@ -40,7 +40,7 @@
     "@dcloudio/types": "^3.0.16",
     "@types/lodash-es": "^4.17.6",
     "@types/qs": "^6.9.7",
-    "@types/ramda": "^0.28.15",
+    "@types/ramda": "^0.28.16",
     "@types/statuses": "^2.0.0",
     "lodash-es": "^4.17.21",
     "qs": "^6.11.0",

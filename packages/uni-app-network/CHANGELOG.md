@@ -1,5 +1,11 @@
 # 改动日志
 
+## 0.10.2 (2022-10-18)
+
+- perf: 优化 `params` 类型
+- perf: 分离 `mergeConfig` 方法
+- fix: 修复 `UanCanceler` 类型
+
 ## 0.10.1 (2022-10-12)
 
 - fix: 修复构建

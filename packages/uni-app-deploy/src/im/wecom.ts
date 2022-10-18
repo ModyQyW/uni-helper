@@ -46,7 +46,6 @@ export async function WecomNotifyMpWeixinUploadResult(
     buildGotOptions?: (result: Promise<IInnerUploadResult> | IInnerUploadResult) => GotOptions;
   },
 ) {
-  if (!wecomValidate(config)) return;
   const webhook = wecomGetWebhook(config);
   const res = await result;
   return got(webhook, {
@@ -71,7 +70,6 @@ export async function WecomNotifyMpWeixinPreviewResult(
     buildGotOptions?: (result: Promise<IPreviewResult> | IPreviewResult) => GotOptions;
   },
 ) {
-  if (!wecomValidate(config)) return;
   const webhook = wecomGetWebhook(config);
   const res = await result;
   const imagePath = getFilePath(config, [

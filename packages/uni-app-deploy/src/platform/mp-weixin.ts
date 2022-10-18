@@ -166,7 +166,6 @@ export function mpWeixinValidate(config: UniAppDeployConfig) {
 }
 
 export function mpWeixinCreateProject(config: UniAppDeployConfig) {
-  if (!mpWeixinValidate(config)) return;
   const project = new ci.Project({
     ...config?.platform?.['mp-weixin']?.project,
     appid: mpWeixinGetProjectAppid(config),
@@ -205,13 +204,11 @@ export async function mpWeixinUpload(
   config: UniAppDeployConfig,
   { pRetryOptions }: { pRetryOptions?: PRetryOptions },
 ) {
-  const project = mpWeixinCreateProject(config);
-  if (!project) return;
   return pRetry(
     () =>
       ci.upload({
         ...config?.platform?.['mp-weixin']?.upload,
-        project,
+        project: mpWeixinCreateProject(config),
         version: mpWeixinGetUploadVersion(config),
         setting: mpWeixinGetUploadSetting(config),
         desc: mpWeixinGetUploadDesc(config),
@@ -256,13 +253,11 @@ export async function mpWeixinPreview(
   config: UniAppDeployConfig,
   { pRetryOptions }: { pRetryOptions?: PRetryOptions },
 ) {
-  const project = mpWeixinCreateProject(config);
-  if (!project) return;
   return pRetry(
     () =>
       ci.preview({
         ...config?.platform?.['mp-weixin']?.preview,
-        project,
+        project: mpWeixinCreateProject(config),
         version: mpWeixinGetPreviewVersion(config),
         setting: mpWeixinGetPreviewSetting(config),
         desc: mpWeixinGetPreviewDesc(config),

@@ -24,5 +24,14 @@ export default defineConfig([
       js: `if (module.exports.default) module.exports = module.exports.default;`,
     },
   },
+  {
+    entry: ['./src/cli.ts'],
+    clean: true,
+    format: 'esm',
+    minify: true,
+    shims: true,
+    splitting: false,
+    target: 'node14.16',
+  },
 ]);
 /* eslint-enable no-useless-escape */

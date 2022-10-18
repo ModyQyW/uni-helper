@@ -2,7 +2,7 @@ import ci from 'miniprogram-ci';
 import pRetry from 'p-retry';
 import { MiniProgramCI } from 'miniprogram-ci/dist/@types/types';
 import { ICreateProjectOptions } from 'miniprogram-ci/dist/@types/ci/project';
-import { IInnerUploadOptions } from 'miniprogram-ci/dist/@types/ci/upload';
+import { IInnerUploadOptions, IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
 import { UniAppDeployConfig, PRetryOptions } from '../config';
 import { getFileField, getFileDir, getFilePath, logger } from '../utils';
 
@@ -203,7 +203,7 @@ export function mpWeixinGetUploadDesc(config: UniAppDeployConfig) {
 export async function mpWeixinUpload(
   config: UniAppDeployConfig,
   { pRetryOptions }: { pRetryOptions?: PRetryOptions },
-) {
+): Promise<IInnerUploadResult> {
   return pRetry(
     () =>
       ci.upload({

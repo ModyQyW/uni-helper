@@ -72,7 +72,7 @@ export default defineConfig({
 
 ### 应用平台
 
-如果不想使用某个应用平台，传入 `falsy` 值即可。
+如果不需要某个应用平台，传入 `falsy` 值即可。
 
 #### 微信小程序
 
@@ -188,6 +188,8 @@ export interface MpWeixinConfig {
 
 ### 沟通工具
 
+如果不需要某个沟通工具，传入 `falsy` 值即可。
+
 #### 企业微信
 
 ```typescript
@@ -202,8 +204,26 @@ export interface WecomConfig {
 
 ### CLI 调用
 
-TODO
+注册的命令是 `uni-app-deploy` 和 `uad`。你可以通过 `uni-app-deploy -h` 或 `uad -h` 查看命令提示。
+
+目前提供三个命令。
+
+#### `uni-app-deploy validate`
+
+检查配置文件。
+
+#### `uni-app-deploy upload`
+
+上传。
+
+#### `uni-app-deploy preview`
+
+预览。
 
 ### 脚本调用
 
-TODO
+你可以从 `uni-app-deploy` 导入各种方法来组合使用。CLI 只是提供了更便捷的方式操作。
+
+```typescript
+import {...} from 'uni-app-deploy';
+```

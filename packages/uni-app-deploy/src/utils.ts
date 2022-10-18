@@ -6,6 +6,8 @@ import { get } from 'lodash-es';
 import pino from 'pino';
 import pinoPretty from 'pino-pretty';
 import { UniAppDeployConfig, defaultCwd, defaultIgnore, defaultIgnoreFiles } from './config';
+import { Im, imValidate } from './im';
+import { Platform, platformValidate } from './platform';
 
 export const pinoPrettyStream = pinoPretty({
   colorize: true,
@@ -78,4 +80,16 @@ export function getFileDir(config: UniAppDeployConfig, filters: { entry: string 
     return '';
   }
   return path.resolve(entries[0], '..');
+}
+
+export function validatePlatforms(config: UniAppDeployConfig) {
+  const platforms = Object.keys(config.platform ?? {}) as Platform[];
+  const results = platforms.map((platform) => platformValidate(config, { platform }));
+  return results;
+}
+
+export function validateIms(config: UniAppDeployConfig) {
+  const ims = Object.keys(config.im ?? {}) as Im[];
+  const results = ims.map((im) => imValidate(config, { im }));
+  return results;
 }

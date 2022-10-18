@@ -3,7 +3,7 @@ import got, { Options as GotOptions } from 'got';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
 import { IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
 import fs from 'fs-extra';
-import { getFilePath } from '../utils';
+import { getFilePath, logger } from '../utils';
 import { UniAppDeployConfig } from '../config';
 
 export interface WecomConfig {
@@ -14,8 +14,12 @@ export interface WecomConfig {
   webhook?: string;
 }
 
+export function wecomGetConfig(config: UniAppDeployConfig) {
+  return config?.im?.wecom;
+}
+
 export function wecomGetWebhook(config: UniAppDeployConfig) {
-  return config?.im?.wecom?.webhook;
+  return config?.im?.wecom?.webhook ?? '';
 }
 
 export async function WecomNotifyMpWeixinUploadResult(
@@ -28,8 +32,12 @@ export async function WecomNotifyMpWeixinUploadResult(
     buildGotOptions?: (result: Promise<IInnerUploadResult> | IInnerUploadResult) => GotOptions;
   },
 ) {
+  const wecomConfig = wecomGetConfig(config);
   const webhook = wecomGetWebhook(config);
-  if (!webhook) return;
+  if (wecomConfig && !webhook) {
+    logger.error('没有设置企业微信机器人 webhook，跳过企业微信通知上传结果。');
+    return;
+  }
   const res = await result;
   return got(webhook, {
     method: 'POST',
@@ -53,8 +61,12 @@ export async function WecomNotifyMpWeixinPreviewResult(
     buildGotOptions?: (result: Promise<IPreviewResult> | IPreviewResult) => GotOptions;
   },
 ) {
+  const wecomConfig = wecomGetConfig(config);
   const webhook = wecomGetWebhook(config);
-  if (!webhook) return;
+  if (wecomConfig && !webhook) {
+    logger.error('没有设置企业微信机器人 webhook，跳过企业微信通知预览结果。');
+    return;
+  }
   const res = await result;
   const imagePath = getFilePath(config, [
     { entry: config?.platform?.['mp-weixin']?.preview?.qrcodeOutputDest ?? '' },

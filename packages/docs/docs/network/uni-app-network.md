@@ -4,7 +4,7 @@
 
 [![npm](https://img.shields.io/npm/v/uni-app-network)](https://www.npmjs.com/package/uni-app-network)
 
-为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.1.2`。
+为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@0.27.2`。
 
 ## 起步
 
@@ -12,7 +12,7 @@
 
 #### `uni-app-network` 是什么？
 
-`uni-app-network` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@1.1.2`。
+`uni-app-network` 是一个为 `uni-app` 打造的 [基于 Promise](https://javascript.info/promise-basics) 的 HTTP 客户端。灵感和代码绝大部分源于 `axios@0.27.2`。
 
 #### 特性
 
@@ -786,6 +786,7 @@ module.exports = {
 | 配置说明           | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
 | 取消请求说明       | √                                                                                                                                                                    | ×                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
 | 错误处理说明       | √                                                                                                                                                                    | ×                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
+| 测试               | 完善                                                                                                                                                                 | 部分                                                                                                                                                                                             | 无                                                                                                                                                                               | 部分                                                                                                                                                                                                         |
 | 使用示例           | √                                                                                                                                                                    | √                                                                                                                                                                                                | √                                                                                                                                                                                | √                                                                                                                                                                                                            |
 
 ## 资源

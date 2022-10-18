@@ -7,7 +7,7 @@ import { Platform, platformPreview, platformUpload } from './platform';
 import { logger, validatePlatforms, validateIms } from './utils';
 
 (async () => {
-  const program = new Command(pkg.name).version(pkg.version).description(pkg.version);
+  const program = new Command(pkg.name).version(pkg.version).description(pkg.description);
 
   let config: UniAppDeployConfig;
   try {

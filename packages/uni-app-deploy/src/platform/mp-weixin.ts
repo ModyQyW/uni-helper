@@ -4,7 +4,7 @@ import { MiniProgramCI } from 'miniprogram-ci/dist/@types/types';
 import { ICreateProjectOptions } from 'miniprogram-ci/dist/@types/ci/project';
 import { IInnerUploadOptions } from 'miniprogram-ci/dist/@types/ci/upload';
 import { UniAppDeployConfig, PRetryOptions } from '../config';
-import { getFileField, getFileDir, getFilePath } from '../utils';
+import { getFileField, getFileDir, getFilePath, logger } from '../utils';
 
 export interface MpWeixinConfig {
   /** miniprogram-ci ci.project */
@@ -109,6 +109,10 @@ export interface MpWeixinConfig {
   preview?: Partial<Omit<IInnerUploadOptions, 'project' | 'test'> & { test?: true }>;
 }
 
+export function mpWeixinGetConfig(config: UniAppDeployConfig) {
+  return config?.platform?.['mp-weixin'];
+}
+
 export function mpWeixinGetProjectAppid(config: UniAppDeployConfig) {
   return (config?.platform?.['mp-weixin']?.project?.appid ??
     getFileField(config, [
@@ -147,7 +151,22 @@ export function mpWeixinGetProjectType(config: UniAppDeployConfig) {
   return config?.platform?.['mp-weixin']?.project?.type ?? 'miniProgram';
 }
 
+export function mpWeixinValidate(config: UniAppDeployConfig) {
+  const mpWeixinConfig = mpWeixinGetConfig(config);
+  if (!mpWeixinConfig) {
+    logger.error('没有配置微信小程序，跳过微信小程序操作。');
+    return false;
+  }
+  const appid = mpWeixinGetProjectAppid(config);
+  if (!appid) {
+    logger.error('没有配置微信小程序 appid，跳过微信小程序操作。');
+    return false;
+  }
+  return true;
+}
+
 export function mpWeixinCreateProject(config: UniAppDeployConfig) {
+  if (!mpWeixinValidate(config)) return;
   const project = new ci.Project({
     ...config?.platform?.['mp-weixin']?.project,
     appid: mpWeixinGetProjectAppid(config),
@@ -186,11 +205,13 @@ export async function mpWeixinUpload(
   config: UniAppDeployConfig,
   { pRetryOptions }: { pRetryOptions?: PRetryOptions },
 ) {
+  const project = mpWeixinCreateProject(config);
+  if (!project) return;
   return pRetry(
     () =>
       ci.upload({
         ...config?.platform?.['mp-weixin']?.upload,
-        project: mpWeixinCreateProject(config),
+        project,
         version: mpWeixinGetUploadVersion(config),
         setting: mpWeixinGetUploadSetting(config),
         desc: mpWeixinGetUploadDesc(config),
@@ -235,11 +256,13 @@ export async function mpWeixinPreview(
   config: UniAppDeployConfig,
   { pRetryOptions }: { pRetryOptions?: PRetryOptions },
 ) {
+  const project = mpWeixinCreateProject(config);
+  if (!project) return;
   return pRetry(
     () =>
       ci.preview({
         ...config?.platform?.['mp-weixin']?.preview,
-        project: mpWeixinCreateProject(config),
+        project,
         version: mpWeixinGetPreviewVersion(config),
         setting: mpWeixinGetPreviewSetting(config),
         desc: mpWeixinGetPreviewDesc(config),

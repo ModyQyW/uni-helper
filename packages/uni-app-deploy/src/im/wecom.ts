@@ -22,6 +22,20 @@ export function wecomGetWebhook(config: UniAppDeployConfig) {
   return config?.im?.wecom?.webhook ?? '';
 }
 
+export function wecomValidate(config: UniAppDeployConfig) {
+  const wecomConfig = wecomGetConfig(config);
+  if (!wecomConfig) {
+    logger.error('没有配置企业微信，跳过企业微信操作。');
+    return false;
+  }
+  const webhook = wecomGetWebhook(config);
+  if (!webhook) {
+    logger.error('没有配置企业微信机器人 webhook，跳过企业微信操作。');
+    return false;
+  }
+  return true;
+}
+
 export async function WecomNotifyMpWeixinUploadResult(
   config: UniAppDeployConfig,
   {
@@ -32,12 +46,8 @@ export async function WecomNotifyMpWeixinUploadResult(
     buildGotOptions?: (result: Promise<IInnerUploadResult> | IInnerUploadResult) => GotOptions;
   },
 ) {
-  const wecomConfig = wecomGetConfig(config);
+  if (!wecomValidate(config)) return;
   const webhook = wecomGetWebhook(config);
-  if (wecomConfig && !webhook) {
-    logger.error('没有设置企业微信机器人 webhook，跳过企业微信通知上传结果。');
-    return;
-  }
   const res = await result;
   return got(webhook, {
     method: 'POST',
@@ -61,12 +71,8 @@ export async function WecomNotifyMpWeixinPreviewResult(
     buildGotOptions?: (result: Promise<IPreviewResult> | IPreviewResult) => GotOptions;
   },
 ) {
-  const wecomConfig = wecomGetConfig(config);
+  if (!wecomValidate(config)) return;
   const webhook = wecomGetWebhook(config);
-  if (wecomConfig && !webhook) {
-    logger.error('没有设置企业微信机器人 webhook，跳过企业微信通知预览结果。');
-    return;
-  }
   const res = await result;
   const imagePath = getFilePath(config, [
     { entry: config?.platform?.['mp-weixin']?.preview?.qrcodeOutputDest ?? '' },

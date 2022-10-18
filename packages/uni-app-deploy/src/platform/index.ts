@@ -1,4 +1,3 @@
-import pRetry from 'p-retry';
 import { UniAppDeployConfig, PRetryOptions } from '../config';
 import { mpWeixinUpload, mpWeixinPreview } from './mp-weixin';
 
@@ -24,7 +23,7 @@ export function platformUpload(
     pRetryOptions?: PRetryOptions;
   },
 ) {
-  return pRetry(() => platformUploadMap[platform](config, { pRetryOptions }));
+  return platformUploadMap[platform](config, { pRetryOptions });
 }
 
 export function platformPreview(
@@ -37,5 +36,5 @@ export function platformPreview(
     pRetryOptions?: PRetryOptions;
   },
 ) {
-  return pRetry(() => platformPreviewMap[platform](config, { pRetryOptions }));
+  return platformPreviewMap[platform](config, { pRetryOptions });
 }

@@ -81,4 +81,6 @@ import { logger, validatePlatforms, validateIms } from './utils';
       // 结束
       logger.info('预览操作结束。');
     });
+
+  program.parse();
 })();

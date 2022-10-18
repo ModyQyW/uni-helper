@@ -93,6 +93,7 @@ importers:
       globby: ^13.1.2
       got: ^12.5.2
       lodash-es: ^4.17.21
+      lodash-unified: ^1.0.2
       minidev: ^1.6.1
       miniprogram-ci: ^1.8.35
       p-retry: ^5.1.1
@@ -109,6 +110,7 @@ importers:
       globby: 13.1.2
       got: 12.5.2
       lodash-es: 4.17.21
+      lodash-unified: 1.0.2_6vt5du6ay2thm2pqhl32dksnvu
       minidev: 1.6.1
       miniprogram-ci: 1.8.35
       p-retry: 5.1.1
@@ -9565,6 +9567,17 @@ packages:
 
   /lodash-es/4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
+
+  /lodash-unified/1.0.2_6vt5du6ay2thm2pqhl32dksnvu:
+    resolution: {integrity: sha512-OGbEy+1P+UT26CYi4opY4gebD8cWRDxAT6MAObIVQMiqYdxZr1g3QHWCToVsm31x2NkLS4K3+MC2qInaRMa39g==}
+    peerDependencies:
+      '@types/lodash-es': '*'
+      lodash: '*'
+      lodash-es: '*'
+    dependencies:
+      '@types/lodash-es': 4.17.6
+      lodash-es: 4.17.21
     dev: false
 
   /lodash.camelcase/4.3.0:

@@ -28,11 +28,15 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "uad": "./dist/cli.mjs",
+    "uni-app-deploy": "./dist/cli.mjs"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup-node",
+    "build": "tsup",
     "dev": "pnpm run build --watch src",
     "release": "npx release-it"
   },
@@ -44,6 +48,7 @@
     "globby": "^13.1.2",
     "got": "^12.5.2",
     "lodash-es": "^4.17.21",
+    "lodash-unified": "^1.0.2",
     "minidev": "^1.6.1",
     "miniprogram-ci": "^1.8.35",
     "p-retry": "^5.1.1",

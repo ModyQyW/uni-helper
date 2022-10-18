@@ -1,5 +1,4 @@
-import { mergeDeepRight } from 'ramda';
-import { buildFullPath, buildUrl } from '../utils';
+import { buildFullPath, buildUrl, mergeConfig } from '../utils';
 import { UanConfig, UanData, UanResponse } from '../types';
 import {
   UanInterceptorManager,
@@ -27,7 +26,7 @@ export class Uan<T = UanData, D = UanData> {
     const _config =
       typeof configOrUrl === 'string' ? { ...config, url: configOrUrl } : { ...configOrUrl };
 
-    const mergedConfig = mergeDeepRight(this.defaults, _config) as UanConfig<T, D>;
+    const mergedConfig = mergeConfig(this.defaults, _config);
 
     // filter out skipped interceptors
     const requestInterceptorChain: (
@@ -127,7 +126,7 @@ export class Uan<T = UanData, D = UanData> {
   }
 
   getUri(config: UanConfig<T, D>) {
-    const mergedConfig = mergeDeepRight(this.defaults, config ?? {});
+    const mergedConfig = mergeConfig(this.defaults, config);
     const fullPath = buildFullPath(mergedConfig?.baseUrl ?? '', mergedConfig?.url ?? '');
     return buildUrl(fullPath, mergedConfig?.params, mergedConfig?.paramsSerializer);
   }

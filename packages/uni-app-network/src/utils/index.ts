@@ -7,3 +7,4 @@ export * from './combineUrls';
 export * from './extend';
 export * from './forEach';
 export * from './isAbsoluteUrl';
+export * from './mergeConfig';

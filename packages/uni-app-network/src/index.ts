@@ -1,4 +1,3 @@
-import { mergeDeepRight } from 'ramda';
 import { version } from '../package.json';
 import {
   isUanError,
@@ -11,7 +10,7 @@ import {
   isUanCancel,
 } from './core';
 import { defaults } from './defaults';
-import { extend } from './utils';
+import { extend, mergeConfig } from './utils';
 import { UanConfig, UanData, UanResponse } from './types';
 
 export interface UanInstance<T = UanData, D = UanData> extends Uan<T, D> {
@@ -49,8 +48,7 @@ const createInstance = <T = UanData, D = UanData>(defaultConfig: UanConfig<T, D>
   extend(instance, context, null, { allOwnKeys: true });
 
   // Factory for creating new instances
-  instance.create = (instanceConfig) =>
-    createInstance(mergeDeepRight(defaultConfig, instanceConfig ?? {}) as UanConfig<T, D>);
+  instance.create = (instanceConfig) => createInstance(mergeConfig(defaultConfig, instanceConfig));
 
   return instance;
 };

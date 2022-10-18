@@ -36,7 +36,7 @@ export function wecomValidate(config: UniAppDeployConfig) {
   return true;
 }
 
-export async function WecomNotifyMpWeixinUploadResult(
+export async function wecomNotifyMpWeixinUploadResult(
   config: UniAppDeployConfig,
   {
     result,
@@ -60,7 +60,7 @@ export async function WecomNotifyMpWeixinUploadResult(
   });
 }
 
-export async function WecomNotifyMpWeixinPreviewResult(
+export async function wecomNotifyMpWeixinPreviewResult(
   config: UniAppDeployConfig,
   {
     result,

@@ -1,16 +1,28 @@
 import { UniAppDeployConfig, GotOptions } from '../config';
-import { WecomNotifyMpWeixinUploadResult, WecomNotifyMpWeixinPreviewResult } from './wecom';
+import {
+  wecomNotifyMpWeixinUploadResult,
+  wecomNotifyMpWeixinPreviewResult,
+  wecomValidate,
+} from './wecom';
 export * from './wecom';
 
 export type Im = 'wecom';
 
+export const imValidateMap = {
+  wecom: wecomValidate,
+};
+
 export const imNotifyUploadResultMap = {
-  wecom: WecomNotifyMpWeixinUploadResult,
+  wecom: wecomNotifyMpWeixinUploadResult,
 };
 
 export const imNotifyPreviewResultMap = {
-  wecom: WecomNotifyMpWeixinPreviewResult,
+  wecom: wecomNotifyMpWeixinPreviewResult,
 };
+
+export function imValidate(config: UniAppDeployConfig, { im }: { im: Im }) {
+  return imValidateMap[im](config);
+}
 
 export function imNotifyUploadResult(
   config: UniAppDeployConfig,

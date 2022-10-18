@@ -1,9 +1,13 @@
 import { UniAppDeployConfig, PRetryOptions } from '../config';
-import { mpWeixinUpload, mpWeixinPreview } from './mp-weixin';
+import { mpWeixinUpload, mpWeixinPreview, mpWeixinValidate } from './mp-weixin';
 
 export * from './mp-weixin';
 
 export type Platform = 'mp-weixin';
+
+export const platformValidateMap = {
+  'mp-weixin': mpWeixinValidate,
+};
 
 export const platformUploadMap = {
   'mp-weixin': mpWeixinUpload,
@@ -12,6 +16,17 @@ export const platformUploadMap = {
 export const platformPreviewMap = {
   'mp-weixin': mpWeixinPreview,
 };
+
+export function platformValidate(
+  config: UniAppDeployConfig,
+  {
+    platform,
+  }: {
+    platform: Platform;
+  },
+) {
+  return platformValidateMap[platform](config);
+}
 
 export function platformUpload(
   config: UniAppDeployConfig,

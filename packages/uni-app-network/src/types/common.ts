@@ -90,8 +90,10 @@ export type UanMethod =
 
 export type UanHeaders = Record<string, any>;
 
+export type UanParams = Record<string, any>;
+
 export interface UanParamsSerializer {
-  (params?: any): string;
+  (params?: UanParams): string;
 }
 
 export interface UanValidateStatus {

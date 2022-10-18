@@ -11,6 +11,7 @@ import {
   UanParamsSerializer,
   UanValidateStatus,
   UanFile,
+  UanParams,
 } from './common';
 import { UanAdapter } from './adapter';
 
@@ -35,7 +36,7 @@ export interface UanConfig<T = UanData, D = UanData> {
   /**
    * 与请求一起发送的 URL 参数
    */
-  params?: any;
+  params?: UanParams;
   /**
    * 可选方法，主要用于序列化 `params`
    * 默认使用 [qs](https://github.com/ljharb/qs) 序列化

@@ -1,9 +1,10 @@
 import qs from 'qs';
+import { UanParams, UanParamsSerializer } from '../types';
 
 export const buildUrl = (
   url: string,
-  params?: any,
-  paramsSerializer?: (params?: any) => string,
+  params?: UanParams,
+  paramsSerializer?: UanParamsSerializer,
 ) => {
   if (!params) {
     return url;

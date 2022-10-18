@@ -10,7 +10,7 @@ export interface UanCancelStatic {
 }
 
 export interface UanCanceler<T = UanData, D = UanData> {
-  (message?: string, config?: UanConfig<T, D>, request?: UanTask): void;
+  (message?: string, config?: UanConfig<T, D>, task?: UanTask): void;
 }
 
 export interface UanCancelTokenListener {

@@ -3,7 +3,9 @@ import { mpWeixinUpload, mpWeixinPreview, mpWeixinValidate } from './mp-weixin';
 
 export * from './mp-weixin';
 
-export type Platform = 'mp-weixin';
+export const platforms = ['mp-weixin'] as const;
+
+export type Platform = typeof platforms[number];
 
 export const platformValidateMap = {
   'mp-weixin': mpWeixinValidate,

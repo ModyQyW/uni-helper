@@ -6,7 +6,9 @@ import {
 } from './wecom';
 export * from './wecom';
 
-export type Im = 'wecom';
+export const ims = ['wecom'] as const;
+
+export type Im = typeof ims[number];
 
 export const imValidateMap = {
   wecom: wecomValidate,

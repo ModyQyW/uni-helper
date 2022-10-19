@@ -15,9 +15,9 @@ describe('utils', () => {
         { entry: ['**', 'fixtures', 'manifest.json'], prop: ['mp-weixin', 'appid'] },
       ]),
     ).toBe('touristappid');
-    expect(() =>
-      getFileField({}, [{ entry: ['not-exist.file'], prop: ['not', 'exist', 'prop'] }]),
-    ).toThrowError('Can not get files.');
+    expect(getFileField({}, [{ entry: ['not-exist.file'], prop: ['not', 'exist', 'prop'] }])).toBe(
+      '',
+    );
   });
 
   it('getFilePath', () => {
@@ -27,9 +27,7 @@ describe('utils', () => {
         { entry: ['**', 'fixtures', 'manifest.json'] },
       ]),
     ).toBe(path.resolve('src', 'fixtures', 'manifest.json'));
-    expect(() => getFilePath({}, [{ entry: ['not-exist.file'] }])).toThrowError(
-      'Can not get files.',
-    );
+    expect(getFilePath({}, [{ entry: ['not-exist.file'] }])).toBe('');
   });
 
   it('getFileDir', () => {
@@ -39,8 +37,6 @@ describe('utils', () => {
         { entry: ['**', 'fixtures', 'manifest.json'] },
       ]),
     ).toBe(path.resolve('src/fixtures'));
-    expect(() => getFileDir({}, [{ entry: ['not-exist.file'] }])).toThrowError(
-      'Can not get files.',
-    );
+    expect(getFileDir({}, [{ entry: ['not-exist.file'] }])).toBe('');
   });
 });

@@ -1,5 +1,5 @@
 import { merge } from 'lodash-es';
-import { loadConfig as unLoadConfig } from 'unconfig';
+import { loadConfig as unconfigLoadConfig } from 'unconfig';
 import { MpWeixinConfig } from './platform';
 import { WecomConfig } from './im';
 
@@ -44,7 +44,9 @@ export function defineConfig(config: UniAppDeployConfig): UniAppDeployConfig {
 }
 
 export async function loadConfig() {
-  return unLoadConfig<UniAppDeployConfig>({
+  return unconfigLoadConfig<UniAppDeployConfig>({
+    cwd: process.cwd(),
+    stopAt: process.cwd(),
     sources: [
       {
         files: 'uni-app-deploy.config',

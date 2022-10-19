@@ -32,6 +32,9 @@ export default defineConfig([
     shims: true,
     splitting: false,
     target: 'node14.16',
+    banner: {
+      js: `':' // ; cat "$0" | node --input-type=module - $@ ; exit $?`,
+    },
   },
 ]);
 /* eslint-enable no-useless-escape */

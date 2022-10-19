@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { globbySync } from 'globby';
+import * as globby from 'globby';
 import stripJsonComments from 'strip-json-comments';
 import * as fs from 'fs-extra';
 import { get } from 'lodash-es';
@@ -8,6 +8,10 @@ import pinoPretty from 'pino-pretty';
 import { UniAppDeployConfig, defaultCwd, defaultIgnore, defaultIgnoreFiles } from './config';
 import { Im, imValidate } from './im';
 import { Platform, platformValidate } from './platform';
+
+// This is used to support bin
+// DO NOT CHANGE IT
+const { globbySync } = globby;
 
 export const pinoPrettyStream = pinoPretty({
   colorize: true,

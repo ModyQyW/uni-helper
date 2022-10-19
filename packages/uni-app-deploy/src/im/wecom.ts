@@ -25,12 +25,12 @@ export function wecomGetWebhook(config: UniAppDeployConfig) {
 export function wecomValidate(config: UniAppDeployConfig) {
   const wecomConfig = wecomGetConfig(config);
   if (!wecomConfig) {
-    logger.error('没有配置企业微信，跳过企业微信操作。');
+    logger.info('没有配置企业微信，跳过企业微信操作。');
     return false;
   }
   const webhook = wecomGetWebhook(config);
   if (!webhook) {
-    logger.error('没有配置企业微信机器人 webhook，跳过企业微信操作。');
+    logger.info('没有配置企业微信机器人 webhook，跳过企业微信操作。');
     return false;
   }
   return true;

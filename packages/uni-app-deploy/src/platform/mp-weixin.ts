@@ -154,12 +154,12 @@ export function mpWeixinGetProjectType(config: UniAppDeployConfig) {
 export function mpWeixinValidate(config: UniAppDeployConfig) {
   const mpWeixinConfig = mpWeixinGetConfig(config);
   if (!mpWeixinConfig) {
-    logger.error('没有配置微信小程序，跳过微信小程序操作。');
+    logger.info('没有配置微信小程序，跳过微信小程序操作。');
     return false;
   }
   const appid = mpWeixinGetProjectAppid(config);
   if (!appid) {
-    logger.error('没有配置微信小程序 appid，跳过微信小程序操作。');
+    logger.info('没有配置微信小程序 appid，跳过微信小程序操作。');
     return false;
   }
   return true;

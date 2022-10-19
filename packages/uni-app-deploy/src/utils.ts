@@ -47,7 +47,7 @@ export function getFileField(
     try {
       const content = JSON.parse(stripJsonComments(fs.readFileSync(entry, 'utf-8')));
       const field = get(content, filters[index].prop);
-      if (field) return field;
+      if (field != null) return field;
       if (index === entries.length - 1 && !field) {
         return '';
       }

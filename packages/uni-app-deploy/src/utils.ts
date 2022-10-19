@@ -16,6 +16,8 @@ const { globbySync } = globby;
 export const pinoPrettyStream = pinoPretty({
   colorize: true,
   levelFirst: true,
+  ignore: 'pid,hostname',
+  translateTime: 'SYS:standard',
 });
 
 export const logger = pino(pinoPrettyStream);

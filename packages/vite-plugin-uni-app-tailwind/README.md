@@ -163,13 +163,15 @@ targets.some((item) => {
   ['/', '-s-'], // slash
   ['.', '-d-'], // dot
   [':', '_'], // colon
-  [',\\s', '-c-'], // comma
-  [',', '-c-'], // comma
   ['%', '-p-'], // percentage
   ["'", '-q-'], // quote
   ['+', '-a-'], // add
-  ['\\\\2c\\s', '-c-'], // comma
+  ['=', '-e-'], // equal
+  ['&', '-n-'], // and
+  [',', '-c-'], // comma
+  [',\\s', '-c-'], // comma
   ['\\\\2c', '-c-'], // comma
+  ['\\\\2c\\s', '-c-'], // comma
 ];
 ```
 

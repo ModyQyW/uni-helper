@@ -1,7 +1,7 @@
 #!/bin/sh
 import { Command } from 'commander';
 import pkg from '../package.json';
-import { defineConfig, loadConfig, UniAppDeployConfig } from './config';
+import { loadConfig, mergeConfig, UniAppDeployConfig } from './config';
 import { Im, imNotifyPreviewResult, imNotifyUploadResult } from './im';
 import { Platform, platformPreview, platformUpload } from './platform';
 import { logger, validatePlatforms, validateIms } from './utils';
@@ -11,9 +11,9 @@ import { logger, validatePlatforms, validateIms } from './utils';
 
   let config: UniAppDeployConfig;
   try {
-    config = defineConfig((await loadConfig()).config);
+    config = mergeConfig((await loadConfig()).config);
   } catch (error) {
-    throw new Error(`loadConfig failed. ${error}`);
+    throw new Error(`读取配置失败。${error}`);
   }
 
   program

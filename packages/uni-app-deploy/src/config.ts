@@ -1,5 +1,6 @@
 import { merge } from 'lodash-es';
 import { loadConfig as unconfigLoadConfig } from 'unconfig';
+import { sourcePackageJsonFields } from 'unconfig/presets';
 import { MpWeixinConfig } from './platform';
 import { WecomConfig } from './im';
 
@@ -39,26 +40,23 @@ export const defaultConfig: UniAppDeployConfig = {
   ignoreFiles: defaultIgnoreFiles,
 };
 
-export function defineConfig(config: UniAppDeployConfig): UniAppDeployConfig {
+export function mergeConfig(config: UniAppDeployConfig): UniAppDeployConfig {
   return merge({}, defaultConfig, config);
+}
+
+export function defineConfig(config: UniAppDeployConfig): UniAppDeployConfig {
+  return config;
 }
 
 export async function loadConfig() {
   return unconfigLoadConfig<UniAppDeployConfig>({
-    cwd: process.cwd(),
-    stopAt: process.cwd(),
     sources: [
       {
         files: 'uni-app-deploy.config',
       },
-      {
-        files: 'package.json',
-        extensions: [],
-        rewrite(config) {
-          // @ts-ignore
-          return config?.['uni-app-deploy'];
-        },
-      },
+      sourcePackageJsonFields({
+        fields: 'uni-app-deploy',
+      }),
     ],
   });
 }

@@ -289,6 +289,23 @@ const {
 } = useImage();
 ```
 
+### useImmer
+
+<https://cn.vuejs.org/guide/extras/reactivity-in-depth.html#immutable-data> 的实现。另外暴露了 `produce` 方法。
+
+```typescript
+import { useImmer } from 'uni-app-use';
+const { state, update, produce } = useImmer(baseState);
+```
+
+`update` 是 `produce` 的封装。
+
+```typescript
+const update = (updater: (draft: D) => D) => (state.value = produce(state.value, updater));
+```
+
+你也可以直接使用 `produce` 来操作数据，见 [immer 文档](https://immerjs.github.io/immer/)。
+
 ### useInterceptor
 
 设置拦截器。

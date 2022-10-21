@@ -1,5 +1,9 @@
 # 改动日志
 
+## Unreleased
+
+- feat: 增加 `useImmer`
+
 ## 0.7.2 (2022-10-12)
 
 - perf: 优化 `useRequest`、`useDownloadFile` 和 `useUploadFile` 类型

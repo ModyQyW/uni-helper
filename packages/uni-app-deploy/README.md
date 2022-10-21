@@ -204,7 +204,7 @@ export interface WecomConfig {
 
 ### CLI 调用
 
-提供基于 ESM 的 CLI 调用。参考了 <https://www.stefanjudis.com/snippets/how-to-create-a-module-based-node-js-executable/> 的操作。
+提供基于 ESM 的 CLI 调用。参考了 <https://www.stefanjudis.com/snippets/how-to-create-a-module-based-node-js-executable/> 和 <https://2ality.com/2022/07/nodejs-esm-shell-scripts.html>。
 
 注册的命令是 `uni-app-deploy` 和 `uad`。你可以通过 `uni-app-deploy -h` 或 `uad -h` 查看命令提示。
 

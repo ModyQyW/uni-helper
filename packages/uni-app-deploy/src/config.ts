@@ -1,5 +1,8 @@
 import { merge } from 'lodash-unified';
-import { loadConfig as unconfigLoadConfig } from 'unconfig';
+import {
+  loadConfig as unconfigLoadConfig,
+  type LoadConfigOptions as UnconfigLoadConfigOptions,
+} from 'unconfig';
 import { sourcePackageJsonFields } from 'unconfig/presets';
 import { MpWeixinConfig } from './platform';
 import { WecomConfig } from './im';
@@ -9,46 +12,30 @@ export type { Options as GotOptions } from 'got';
 
 export interface UniAppDeployConfig {
   cwd?: string;
-  /**
-   * used in globby
-   * An array of glob patterns to exclude matches. This is an alternative way to use negative patterns.
-   */
-  ignore?: string[];
-  /**
-   * used in globby
-   * Glob patterns to look for ignore files, which are then used to ignore globbed files.
-   * This is a more generic form of the gitignore option, allowing you to find ignore files with a compatible syntax. For instance, this works with Babel's .babelignore, Prettier's .prettierignore, or ESLint's .eslintignore files.
-   */
-  ignoreFiles?: string[];
   platform?: {
     'mp-weixin'?: MpWeixinConfig;
   };
   im?: {
     wecom?: WecomConfig;
   };
+  [key: string]: any;
 }
 
 export const defaultCwd = process.cwd();
 
-export const defaultIgnore = ['**/node_modules', '**/dist', '**/.hbuilder', '**/.hbuilderx'];
-
-export const defaultIgnoreFiles = ['**/.gitignore'];
-
 export const defaultConfig: UniAppDeployConfig = {
   cwd: defaultCwd,
-  ignore: defaultIgnore,
-  ignoreFiles: defaultIgnoreFiles,
 };
 
-export function mergeConfig(config: UniAppDeployConfig): UniAppDeployConfig {
-  return merge({}, defaultConfig, config);
-}
-
-export function defineConfig(config: UniAppDeployConfig): UniAppDeployConfig {
+export function defineConfig(config: UniAppDeployConfig) {
   return config;
 }
 
-export async function loadConfig() {
+export function mergeConfig(config: UniAppDeployConfig) {
+  return merge({}, defaultConfig, config);
+}
+
+export async function loadConfig(options?: Partial<UnconfigLoadConfigOptions>) {
   return unconfigLoadConfig<UniAppDeployConfig>({
     sources: [
       {
@@ -58,5 +45,6 @@ export async function loadConfig() {
         fields: 'uni-app-deploy',
       }),
     ],
+    ...options,
   });
 }

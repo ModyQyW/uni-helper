@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { globbySync } from 'globby';
+import globby from 'globby';
 import stripJsonComments from 'strip-json-comments';
 import { get } from 'lodash-unified';
 import pino from 'pino';
@@ -35,7 +35,7 @@ export function getFileField(
   filters: { entry: string | string[]; prop: string | string[] }[],
 ): string | number | boolean | Array<any> | Record<string, any> {
   const cwd = getCwd(config);
-  const entries = globbySync(
+  const entries = globby.globbySync(
     filters.map((f) =>
       typeof f.entry === 'string' ? resolve(cwd, f.entry) : resolve(cwd, ...f.entry),
     ),
@@ -58,7 +58,7 @@ export function getFileField(
 
 export function getFilePath(config: UniAppDeployConfig, filters: { entry: string | string[] }[]) {
   const cwd = getCwd(config);
-  const entries = globbySync(
+  const entries = globby.globbySync(
     filters.map((f) =>
       typeof f.entry === 'string' ? resolve(cwd, f.entry) : resolve(cwd, ...f.entry),
     ),
@@ -72,7 +72,7 @@ export function getFilePath(config: UniAppDeployConfig, filters: { entry: string
 
 export function getFileDir(config: UniAppDeployConfig, filters: { entry: string | string[] }[]) {
   const cwd = getCwd(config);
-  const entries = globbySync(
+  const entries = globby.globbySync(
     filters.map((f) =>
       typeof f.entry === 'string' ? resolve(cwd, f.entry) : resolve(cwd, ...f.entry),
     ),

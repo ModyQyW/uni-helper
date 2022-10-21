@@ -5,7 +5,7 @@ export default defineConfig([
   {
     entry: ['src/index.ts'],
     clean: true,
-    format: 'esm',
+    format: ['esm', 'cjs'],
     dts: true,
     minify: true,
     shims: true,
@@ -14,20 +14,12 @@ export default defineConfig([
     define: {
       'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
     },
-  },
-  {
-    entry: ['src/index.ts'],
-    clean: true,
-    format: 'cjs',
-    minify: true,
-    shims: true,
-    splitting: false,
-    target: 'node12.2',
-    define: {
-      'process.env.UNI_PLATFORM': 'process.env.UNI_PLATFORM',
-    },
-    footer: {
-      js: `if (module.exports.default) module.exports = module.exports.default;`,
+    footer: ({ format }) => {
+      if (format === 'cjs') {
+        return {
+          js: `if (module.exports.default) module.exports = module.exports.default;`,
+        };
+      }
     },
   },
 ]);

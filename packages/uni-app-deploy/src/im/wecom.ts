@@ -1,8 +1,8 @@
-import path from 'path';
+import { extname } from 'node:path';
+import { readFileSync } from 'node:fs';
 import got, { Options as GotOptions } from 'got';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
 import { IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
-import fs from 'fs-extra';
 import { getFilePath, logger } from '../utils';
 import { UniAppDeployConfig } from '../config';
 
@@ -75,8 +75,8 @@ export async function wecomNotifyMpWeixinPreviewResult(
   const imagePath = getFilePath(config, [
     { entry: config?.platform?.['mp-weixin']?.preview?.qrcodeOutputDest ?? '' },
   ]);
-  const imageExtension = path.extname(imagePath);
-  const image = fs.readFileSync(imagePath, { encoding: 'base64' });
+  const imageExtension = extname(imagePath);
+  const image = readFileSync(imagePath, { encoding: 'base64' });
   const base64 = `data:image/${imageExtension.split('.').pop()};base64,${image}`;
   return got(webhook, {
     method: 'POST',

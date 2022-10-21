@@ -1,4 +1,4 @@
-import { merge } from 'lodash-es';
+import { merge } from 'lodash-unified';
 import { loadConfig as unconfigLoadConfig } from 'unconfig';
 import { sourcePackageJsonFields } from 'unconfig/presets';
 import { MpWeixinConfig } from './platform';

@@ -1,17 +1,13 @@
-import * as path from 'node:path';
-import * as globby from 'globby';
+import { resolve } from 'node:path';
+import { readFileSync } from 'node:fs';
+import { globbySync } from 'globby';
 import stripJsonComments from 'strip-json-comments';
-import * as fs from 'fs-extra';
-import { get } from 'lodash-es';
+import { get } from 'lodash-unified';
 import pino from 'pino';
 import pinoPretty from 'pino-pretty';
 import { UniAppDeployConfig, defaultCwd, defaultIgnore, defaultIgnoreFiles } from './config';
 import { ims, imValidate } from './im';
 import { platforms, platformValidate } from './platform';
-
-// This is used to support bin
-// DO NOT CHANGE IT
-const { globbySync } = globby;
 
 export const pinoPrettyStream = pinoPretty({
   colorize: true,
@@ -41,13 +37,13 @@ export function getFileField(
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
-      typeof f.entry === 'string' ? path.resolve(cwd, f.entry) : path.resolve(cwd, ...f.entry),
+      typeof f.entry === 'string' ? resolve(cwd, f.entry) : resolve(cwd, ...f.entry),
     ),
-    { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
+    { ignore: getIgnore(config), gitignore: true },
   );
   for (const [index, entry] of entries.entries()) {
     try {
-      const content = JSON.parse(stripJsonComments(fs.readFileSync(entry, 'utf-8')));
+      const content = JSON.parse(stripJsonComments(readFileSync(entry, 'utf-8')));
       const field = get(content, filters[index].prop);
       if (field != null) return field;
       if (index === entries.length - 1 && !field) {
@@ -64,9 +60,9 @@ export function getFilePath(config: UniAppDeployConfig, filters: { entry: string
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
-      typeof f.entry === 'string' ? path.resolve(cwd, f.entry) : path.resolve(cwd, ...f.entry),
+      typeof f.entry === 'string' ? resolve(cwd, f.entry) : resolve(cwd, ...f.entry),
     ),
-    { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
+    { ignore: getIgnore(config), gitignore: true },
   );
   if (entries.length === 0) {
     return '';
@@ -78,14 +74,14 @@ export function getFileDir(config: UniAppDeployConfig, filters: { entry: string 
   const cwd = getCwd(config);
   const entries = globbySync(
     filters.map((f) =>
-      typeof f.entry === 'string' ? path.resolve(cwd, f.entry) : path.resolve(cwd, ...f.entry),
+      typeof f.entry === 'string' ? resolve(cwd, f.entry) : resolve(cwd, ...f.entry),
     ),
-    { ignore: getIgnore(config), ignoreFiles: getIgnoreFiles(config) },
+    { ignore: getIgnore(config), gitignore: true },
   );
   if (entries.length === 0) {
     return '';
   }
-  return path.resolve(entries[0], '..');
+  return resolve(entries[0], '..');
 }
 
 export function validatePlatforms(config: UniAppDeployConfig) {

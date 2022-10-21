@@ -11,6 +11,7 @@ import { logger, validatePlatforms, validateIms } from './utils';
 
   let config: UniAppDeployConfig;
   try {
+    // FIX: stuck here
     config = mergeConfig((await loadConfig()).config);
   } catch (error) {
     throw new Error(`读取配置失败。${error}`);

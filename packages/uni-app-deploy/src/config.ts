@@ -1,4 +1,3 @@
-import { merge } from 'lodash-unified';
 import {
   loadConfig as unconfigLoadConfig,
   type LoadConfigOptions as UnconfigLoadConfigOptions,
@@ -32,7 +31,10 @@ export function defineConfig(config: UniAppDeployConfig) {
 }
 
 export function mergeConfig(config: UniAppDeployConfig) {
-  return merge({}, defaultConfig, config);
+  return {
+    ...defaultConfig,
+    ...config,
+  };
 }
 
 export async function loadConfig(options?: Partial<UnconfigLoadConfigOptions>) {

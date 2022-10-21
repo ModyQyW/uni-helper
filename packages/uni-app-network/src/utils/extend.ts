@@ -1,4 +1,3 @@
-import { isFunction } from 'lodash-es';
 import { forEach } from './forEach';
 
 /**
@@ -13,7 +12,7 @@ export const extend = (
   forEach(
     b,
     (val, key) => {
-      if (thisArg && isFunction(val)) {
+      if (thisArg && typeof val === 'function') {
         a[key] = val.bind(thisArg);
       } else {
         a[key] = val;

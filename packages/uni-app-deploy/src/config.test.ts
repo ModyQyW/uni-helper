@@ -37,6 +37,7 @@ describe('config', () => {
   });
 
   it('loadConfig', async () => {
+    // FIXME: stuck
     const loaded1 = await loadConfig({
       cwd: 'src/fixtures',
     });

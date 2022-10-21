@@ -1,5 +1,9 @@
 # 改动日志
 
+## Unreleased
+
+- perf: 移除 `lodash-es`
+
 ## 0.10.2 (2022-10-18)
 
 - perf: 优化 `params` 类型

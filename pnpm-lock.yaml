@@ -160,11 +160,13 @@ importers:
       '@dcloudio/types': ^3.0.16
       '@dcloudio/uni-app': ^3.0.0-alpha-3060420220922006
       '@vueuse/core': ^9.3.1
+      immer: ^9.0.15
       vue: ^3.2.41
     dependencies:
       '@dcloudio/types': 3.0.16
       '@dcloudio/uni-app': 3.0.0-alpha-3060720221018006_vue@3.2.41
       '@vueuse/core': 9.3.1_vue@3.2.41
+      immer: 9.0.15
     devDependencies:
       vue: 3.2.41
 
@@ -8492,6 +8494,10 @@ packages:
 
   /immediate/3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
+    dev: false
+
+  /immer/9.0.15:
+    resolution: {integrity: sha512-2eB/sswms9AEUSkOm4SbV5Y7Vmt/bKRwByd52jfLkW4OLYeaTP3EEiJ9agqU0O/tq6Dk62Zfj+TJSqfm1rLVGQ==}
     dev: false
 
   /immutable/4.1.0:

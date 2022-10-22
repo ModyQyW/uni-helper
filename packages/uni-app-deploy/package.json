@@ -1,6 +1,6 @@
 {
   "name": "uni-app-deploy",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Deploy uni-app applications automatically.",
   "keywords": [
     "uniapp",

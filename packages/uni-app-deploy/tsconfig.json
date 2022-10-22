@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "lib": ["DOM"],
     "resolveJsonModule": true,
-    "types": ["node"]
+    "types": ["node"],
+    "module": "es2022"
   },
   "include": [
     "**/.*.js",

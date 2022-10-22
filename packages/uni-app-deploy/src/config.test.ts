@@ -1,5 +1,9 @@
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { describe, it, expect } from 'vitest';
 import { defineConfig, mergeConfig, loadConfig } from './config';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 describe('config', () => {
   const config1 = {
@@ -37,12 +41,11 @@ describe('config', () => {
   });
 
   it('loadConfig', async () => {
-    // FIXME: stuck
     const loaded1 = await loadConfig({
-      cwd: 'src/fixtures',
+      cwd: resolve(__dirname, 'fixtures'),
     });
     const loaded2 = await loadConfig({
-      cwd: 'src/fixtures',
+      cwd: resolve(__dirname, 'fixtures'),
       merge: true,
     });
     expect(loaded1.config).toStrictEqual({

@@ -1,5 +1,6 @@
 import { tryOnMounted, MaybeComputedRef, resolveUnref } from '@vueuse/core';
 import { reactive } from 'vue';
+import { ChooseMediaOptions } from '../useImage';
 
 export interface UniChooseVideoOptions extends UniApp.ChooseVideoOptions {}
 export type ChooseVideoOptions = MaybeComputedRef<UniChooseVideoOptions>;
@@ -30,6 +31,9 @@ export function useVideo() {
     uni.chooseVideo(reactive({ ...resolveUnref(options) }));
   const choose = chooseVideo;
 
+  const chooseMedia = (options?: ChooseMediaOptions) =>
+    uni.chooseMedia(reactive({ ...resolveUnref(options) }));
+
   const saveVideoToPhotosAlbum = (options?: SaveVideoToPhotosAlbumOptions) =>
     uni.saveVideoToPhotosAlbum(reactive({ filePath: '', ...resolveUnref(options) }));
   const saveToPhotosAlbum = saveVideoToPhotosAlbum;
@@ -51,6 +55,7 @@ export function useVideo() {
     createContext,
     chooseVideo,
     choose,
+    chooseMedia,
     saveVideoToPhotosAlbum,
     saveToPhotosAlbum,
     getVideoInfo,

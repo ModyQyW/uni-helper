@@ -1,17 +1,63 @@
-import { tryOnMounted } from '@vueuse/core';
+import { tryOnMounted, MaybeComputedRef, resolveUnref } from '@vueuse/core';
+import { reactive } from 'vue';
+
+export interface UniChooseVideoOptions extends UniApp.ChooseVideoOptions {}
+export type ChooseVideoOptions = MaybeComputedRef<UniChooseVideoOptions>;
+
+export interface UniSaveVideoToPhotosAlbum extends UniApp.SaveVideoToPhotosAlbumOptions {}
+export type SaveVideoToPhotosAlbumOptions = MaybeComputedRef<UniSaveVideoToPhotosAlbum>;
+
+export interface UniGetVideoInfoOptions extends UniApp.GetVideoInfoOptions {}
+export type GetVideoInfoOptions = MaybeComputedRef<UniGetVideoInfoOptions>;
+
+export interface UniCompressVideoOptions extends UniApp.CompressVideoOptions {}
+export type CompressVideoOptions = MaybeComputedRef<UniCompressVideoOptions>;
+
+export interface UniOpenVideoEditorOptions extends UniApp.OpenVideoEditorOptions {}
+export type OpenVideoEditorOptions = MaybeComputedRef<UniOpenVideoEditorOptions>;
 
 export function useVideo() {
-  const createContext = (videoId: string, currentComponent?: any) => {
+  const createVideoContext = (videoId: string, currentComponent?: any) => {
     let context: UniApp.VideoContext | undefined;
     tryOnMounted(() => {
       context = uni.createVideoContext(videoId, currentComponent);
     });
     return context;
   };
-  const createVideoContext = createContext;
+  const createContext = createVideoContext;
+
+  const chooseVideo = (options?: ChooseVideoOptions) =>
+    uni.chooseVideo(reactive({ ...resolveUnref(options) }));
+  const choose = chooseVideo;
+
+  const saveVideoToPhotosAlbum = (options?: SaveVideoToPhotosAlbumOptions) =>
+    uni.saveVideoToPhotosAlbum(reactive({ filePath: '', ...resolveUnref(options) }));
+  const saveToPhotosAlbum = saveVideoToPhotosAlbum;
+
+  const getVideoInfo = (options?: GetVideoInfoOptions) =>
+    uni.getVideoInfo(reactive({ src: '', ...resolveUnref(options) }));
+  const getInfo = getVideoInfo;
+
+  const compressVideo = (options?: CompressVideoOptions) =>
+    uni.compressVideo(reactive({ src: '', ...resolveUnref(options) }));
+  const compress = compressVideo;
+
+  const openVideoEditor = (options?: OpenVideoEditorOptions) =>
+    uni.openVideoEditor(reactive({ filePath: '', ...resolveUnref(options) }));
+  const openEditor = openVideoEditor;
 
   return {
-    createContext,
     createVideoContext,
+    createContext,
+    chooseVideo,
+    choose,
+    saveVideoToPhotosAlbum,
+    saveToPhotosAlbum,
+    getVideoInfo,
+    getInfo,
+    compressVideo,
+    compress,
+    openVideoEditor,
+    openEditor,
   };
 }

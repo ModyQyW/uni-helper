@@ -31,6 +31,7 @@ export * from './usePreferredLanguage';
 export * from './usePrevPage';
 export * from './usePrevRoute';
 export * from './usePullDownRefresh';
+export * from './useRecorderManager';
 export * from './useRequest';
 export * from './useRoute';
 export * from './useRouter';

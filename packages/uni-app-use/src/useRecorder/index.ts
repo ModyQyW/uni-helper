@@ -7,5 +7,6 @@ export function useRecorder() {
     recorderManager,
     manager: recorderManager,
     useRecorderManager,
+    useManager: useRecorderManager,
   };
 }

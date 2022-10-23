@@ -4,6 +4,9 @@ import { MaybeComputedRef, resolveUnref } from '@vueuse/core';
 export interface UniChooseImageOptions extends UniApp.ChooseImageOptions {}
 export type ChooseImageOptions = MaybeComputedRef<UniChooseImageOptions>;
 
+export interface UniChooseMediaOptions extends UniApp.ChooseMediaOption {}
+export type ChooseMediaOptions = MaybeComputedRef<UniChooseMediaOptions>;
+
 export interface UniPreviewImageOptions extends UniApp.PreviewImageOptions {}
 export type PreviewImageOptions = MaybeComputedRef<UniPreviewImageOptions>;
 
@@ -23,6 +26,9 @@ export function useImage() {
   const chooseImage = (options?: ChooseImageOptions) =>
     uni.chooseImage(reactive({ ...resolveUnref(options) }));
   const choose = chooseImage;
+
+  const chooseMedia = (options?: ChooseMediaOptions) =>
+    uni.chooseMedia(reactive({ ...resolveUnref(options) }));
 
   const previewImage = (options?: PreviewImageOptions) =>
     uni.previewImage(reactive({ urls: [], ...resolveUnref(options) }));
@@ -47,6 +53,7 @@ export function useImage() {
   return {
     chooseImage,
     choose,
+    chooseMedia,
     previewImage,
     preview,
     closePreviewImage,

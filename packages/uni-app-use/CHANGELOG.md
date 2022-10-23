@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-- feat: 增加 `useImmer`
+- feat: 新增 `useFile`
+- feat: 新增 `useImmer`
+- feat: 新增 `useRecorder`
+- feat: 新增 `useVideo`
+- feat: `useImage` 新增 `chooseMedia` 导出
 
 ## 0.7.2 (2022-10-12)
 

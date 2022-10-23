@@ -223,9 +223,19 @@ import { UseClipboardData } from 'uni-app-use';
 获取启动时的参数。
 
 ```typescript
-const { useEnterOptions } from 'uni-app-use';
+import { useEnterOptions } from 'uni-app-use';
 
 const options = useEnterOptions();
+```
+
+### useFile
+
+获取文件相关操作。
+
+```typescript
+import { useFile } from 'uni-app-use';
+
+const { chooseFile, choose, chooseMessageFile, chooseMessage } = useFile();
 ```
 
 ### useGlobalData
@@ -276,6 +286,7 @@ import { useImage } from 'uni-app-use';
 const {
   chooseImage,
   choose,
+  chooseMedia,
   previewImage,
   preview,
   closePreviewImage,
@@ -288,6 +299,23 @@ const {
   compress,
 } = useImage();
 ```
+
+### useImmer
+
+<https://cn.vuejs.org/guide/extras/reactivity-in-depth.html#immutable-data> 的实现。另外暴露了 `produce` 方法。
+
+```typescript
+import { useImmer } from 'uni-app-use';
+const { state, update, produce } = useImmer(baseState);
+```
+
+`update` 是 `produce` 的封装。
+
+```typescript
+const update = (updater: (draft: D) => D) => (state.value = produce(state.value, updater));
+```
+
+你也可以直接使用 `produce` 来操作数据，见 [immer 文档](https://immerjs.github.io/immer/)。
 
 ### useInterceptor
 
@@ -553,6 +581,16 @@ const prevRoute = usePrevRoute();
 import { usePullDownRefresh } from 'uni-app-use';
 
 const { startPullDownRefresh, start, stopPullDownRefresh, stop } = usePullDownRefresh();
+```
+
+### useRecorder
+
+获取录音相关操作。
+
+```typescript
+import { useRecorder } from 'uni-app-use';
+
+const { recorderManager, manager, useRecorderManager } = useRecorder();
 ```
 
 ### useRequest
@@ -843,6 +881,30 @@ import { UseUniPlatform } from 'uni-app-use';
 import { useVibrate } from 'uni-app-use';
 
 const { vibrate, vibrateLong, vibrateShort } = useVibrate();
+```
+
+### useVideo
+
+获取视频相关操作。
+
+```typescript
+import { useVideo } from 'uni-app-use';
+
+const {
+  createVideoContext,
+  createContext,
+  chooseVideo,
+  choose,
+  chooseMedia,
+  saveVideoToPhotosAlbum,
+  saveToPhotosAlbum,
+  getVideoInfo,
+  getInfo,
+  compressVideo,
+  compress,
+  openVideoEditor,
+  openEditor,
+} = useVideo();
 ```
 
 ### useVisible

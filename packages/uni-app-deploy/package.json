@@ -29,8 +29,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "uad": "./dist/cli.mjs",
-    "uni-app-deploy": "./dist/cli.mjs"
+    "uad": "./dist/cli.js",
+    "uni-app-deploy": "./dist/cli.js"
   },
   "files": [
     "dist"
@@ -44,18 +44,18 @@
     "@types/lodash": "^4.14.186",
     "@types/lodash-es": "^4.17.6",
     "commander": "^9.4.1",
-    "globby": "^13.1.2",
-    "got": "^12.5.2",
+    "globby": "^11.1.0",
+    "got": "^11.8.5",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "lodash-unified": "^1.0.2",
     "minidev": "^1.6.1",
     "miniprogram-ci": "^1.8.35",
-    "p-retry": "^5.1.1",
+    "p-retry": "^4.6.2",
     "picocolors": "^1.0.0",
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
-    "strip-json-comments": "^5.0.0",
+    "strip-json-comments": "^3.1.1",
     "unconfig": "^0.3.7"
   },
   "engines": {

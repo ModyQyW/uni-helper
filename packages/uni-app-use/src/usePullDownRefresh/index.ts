@@ -1,9 +1,13 @@
 export function usePullDownRefresh() {
-  const start = (options: UniApp.StartPullDownRefreshOptions) => uni.startPullDownRefresh(options);
-  const startPullDownRefresh = start;
+  const startPullDownRefresh = (options: UniApp.StartPullDownRefreshOptions) =>
+    uni.startPullDownRefresh(options);
 
-  const stop = () => uni.stopPullDownRefresh();
-  const stopPullDownRefresh = stop;
+  const stopPullDownRefresh = () => uni.stopPullDownRefresh();
 
-  return { startPullDownRefresh, start, stopPullDownRefresh, stop };
+  return {
+    startPullDownRefresh,
+    start: startPullDownRefresh,
+    stopPullDownRefresh,
+    stop: stopPullDownRefresh,
+  };
 }

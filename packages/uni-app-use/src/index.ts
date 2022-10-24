@@ -29,6 +29,7 @@ export * from './useLaunchOptions';
 export * from './useLoading';
 export * from './useLocation';
 export * from './useMap';
+export * from './useMenuButtonBoundingClientRect';
 export * from './useModal';
 export * from './useNavigationBar';
 export * from './useNetwork';

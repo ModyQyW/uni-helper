@@ -10,11 +10,9 @@ export type ChooseMessageFileOptions = MaybeComputedRef<UniChooseMessageFileOpti
 export function useFile() {
   const chooseFile = (options?: ChooseFileOptions) =>
     uni.chooseFile(reactive({ ...resolveUnref(options) }));
-  const choose = chooseFile;
 
   const chooseMessageFile = (options?: ChooseMessageFileOptions) =>
     uni.chooseMessageFile(reactive({ count: 9, ...resolveUnref(options) }));
-  const chooseMessage = chooseMessageFile;
 
-  return { chooseFile, choose, chooseMessageFile, chooseMessage };
+  return { chooseFile, choose: chooseFile, chooseMessageFile, chooseMessage: chooseMessageFile };
 }

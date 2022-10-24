@@ -1,9 +1,15 @@
 import { UniAppDeployConfig, GotOptions } from '../config';
 import {
+  dingtalkNotifyMpWeixinUploadResult,
+  dingtalkNotifyMpWeixinPreviewResult,
+  dingtalkValidate,
+} from './dingtalk';
+import {
   wecomNotifyMpWeixinUploadResult,
   wecomNotifyMpWeixinPreviewResult,
   wecomValidate,
 } from './wecom';
+export * from './dingtalk';
 export * from './wecom';
 
 export const ims = ['wecom'] as const;
@@ -12,14 +18,17 @@ export type Im = typeof ims[number];
 
 export const imValidateMap = {
   wecom: wecomValidate,
+  dingtalk: dingtalkValidate,
 };
 
 export const imNotifyUploadResultMap = {
   wecom: wecomNotifyMpWeixinUploadResult,
+  dingtalk: dingtalkNotifyMpWeixinUploadResult,
 };
 
 export const imNotifyPreviewResultMap = {
   wecom: wecomNotifyMpWeixinPreviewResult,
+  dingtalk: dingtalkNotifyMpWeixinPreviewResult,
 };
 
 export function imValidate(config: UniAppDeployConfig, { im }: { im: Im }) {

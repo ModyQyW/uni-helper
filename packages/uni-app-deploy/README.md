@@ -190,6 +190,18 @@ export interface MpWeixinConfig {
 
 如果不需要某个沟通工具，传入 `falsy` 值即可。
 
+#### 钉钉
+
+```typescript
+export interface DingtalkConfig {
+  /**
+   * 钉钉机器人 webhook
+   * 如果不填写，无法发送请求
+   */
+  webhook?: string | string[];
+}
+```
+
 #### 企业微信
 
 ```typescript
@@ -198,7 +210,7 @@ export interface WecomConfig {
    * 企业微信机器人 webhook
    * 如果不填写，无法发送请求
    */
-  webhook?: string;
+  webhook?: string | string[];
 }
 ```
 

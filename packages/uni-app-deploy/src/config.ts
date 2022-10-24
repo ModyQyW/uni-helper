@@ -4,7 +4,7 @@ import {
 } from 'unconfig';
 import { sourcePackageJsonFields } from 'unconfig/presets';
 import { MpWeixinConfig } from './platform';
-import { WecomConfig } from './im';
+import { WecomConfig, DingtalkConfig } from './im';
 
 export type { Options as PRetryOptions } from 'p-retry';
 export type { Options as GotOptions } from 'got';
@@ -16,6 +16,7 @@ export interface UniAppDeployConfig {
   };
   im?: {
     wecom?: WecomConfig;
+    dingtalk?: DingtalkConfig;
   };
   [key: string]: any;
 }

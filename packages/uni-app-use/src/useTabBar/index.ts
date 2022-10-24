@@ -28,52 +28,44 @@ export type HideTabBarRedDotOptions = MaybeComputedRef<UniHideTabBarRedDotOption
 export function useTabBar() {
   const setTabBarItem = (options?: SetTabBarItemOptions) =>
     uni.setTabBarItem(reactive({ index: 0, ...resolveUnref(options) }));
-  const setItem = setTabBarItem;
 
   const setTabBarStyle = (options?: SetTabBarStyleOptions) =>
     uni.setTabBarStyle(reactive({ ...resolveUnref(options) }));
-  const setStyle = setTabBarStyle;
 
   const showTabBar = (options?: ShowTabBarOptions) =>
     uni.showTabBar(reactive({ ...resolveUnref(options) }));
-  const show = showTabBar;
 
   const hideTabBar = (options?: HideTabBarOptions) =>
     uni.hideTabBar(reactive({ ...resolveUnref(options) }));
-  const hide = hideTabBar;
 
   const setTabBarBadge = (options?: SetTabBarBadgeOptions) =>
     uni.setTabBarBadge(reactive({ index: 0, text: '', ...resolveUnref(options) }));
-  const setBadge = setTabBarBadge;
 
   const removeTabBarBadge = (options?: RemoveTabBarBadgeOptions) =>
     uni.removeTabBarBadge(reactive({ index: 0, ...resolveUnref(options) }));
-  const removeBadge = removeTabBarBadge;
 
   const showTabBarRedDot = (options?: ShowTabBarRedDotOptions) =>
     uni.showTabBarRedDot(reactive({ index: 0, ...resolveUnref(options) }));
-  const showRedDot = showTabBarRedDot;
 
   const hideTabBarRedDot = (options?: HideTabBarRedDotOptions) =>
     uni.hideTabBarRedDot(reactive({ index: 0, ...resolveUnref(options) }));
-  const hideRedDot = hideTabBarRedDot;
 
   return {
     setTabBarItem,
-    setItem,
+    setItem: setTabBarItem,
     setTabBarStyle,
-    setStyle,
+    setStyle: setTabBarStyle,
     showTabBar,
-    show,
+    show: showTabBar,
     hideTabBar,
-    hide,
+    hide: hideTabBar,
     setTabBarBadge,
-    setBadge,
+    setBadge: setTabBarBadge,
     removeTabBarBadge,
-    removeBadge,
+    removeBadge: removeTabBarBadge,
     showTabBarRedDot,
-    showRedDot,
+    showRedDot: showTabBarRedDot,
     hideTabBarRedDot,
-    hideRedDot,
+    hideRedDot: hideTabBarRedDot,
   };
 }

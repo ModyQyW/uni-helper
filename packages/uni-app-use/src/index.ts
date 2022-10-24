@@ -49,6 +49,7 @@ export * from './useScreenBrightness';
 export * from './useSelectorQuery';
 export * from './useSocket';
 export * from './useStorage';
+export * from './useSubscription';
 export * from './useSupported';
 export * from './useSystemInfo';
 export * from './useTabBar';

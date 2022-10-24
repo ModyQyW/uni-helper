@@ -59,6 +59,7 @@ export * from './useToast';
 export * from './useUniPlatform';
 export * from './useUpdate';
 export * from './useUploadFile';
+export * from './useUser';
 export * from './useVibrate';
 export * from './useVideo';
 export * from './useVisible';

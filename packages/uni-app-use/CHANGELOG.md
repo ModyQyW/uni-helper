@@ -2,11 +2,29 @@
 
 ## Unreleased
 
+- feat: 新增 `UseAccountInfo`
+- feat: 新增 `useAddress`
+- feat: 新增 `useAppBaseInfo` 和 `UseAppBaseInfo`
+- feat: 新增 `useAudio`
+- feat: 新增 `useAuthorize`
+- feat: 新增 `useBackground` 导出
+- feat: 新增 `useCamera`
+- feat: 新增 `useDeviceInfo` 和 `UseDeviceInfo`
 - feat: 新增 `useFile`
+- feat: 新增 `useImage` 导出
 - feat: 新增 `useImmer`
+- feat: 新增 `useInvoice`
+- feat: 新增 `useLocation` 导出
+- feat: 新增 `useMap`
+- feat: 新增 `useMenuButtonBoundingClientRect`
 - feat: 新增 `useRecorder`
+- feat: 新增 `useSubscription`
+- feat: 新增 `useSystemSetting`
+- feat: 新增 `useUpdate`
+- feat: 新增 `useUser`
 - feat: 新增 `useVideo`
-- feat: `useImage` 新增 `chooseMedia` 导出
+- feat: 增加 `useWindowInfo` 和 `UseWindowInfo`
+- fix: 修复组件没有正确导出的问题
 
 ## 0.7.2 (2022-10-12)
 

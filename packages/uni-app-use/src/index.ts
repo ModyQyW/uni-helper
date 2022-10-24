@@ -14,6 +14,7 @@ export * from './useBackground';
 export * from './useBase64ToArrayBuffer';
 export * from './useCamera';
 export * from './useClipboardData';
+export * from './useDeviceInfo';
 export * from './useDownloadFile';
 export * from './useEnterOptions';
 export * from './useFile';

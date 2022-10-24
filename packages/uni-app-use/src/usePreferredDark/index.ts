@@ -1,4 +1,4 @@
-import { ref, readonly } from 'vue';
+import { ref, readonly, defineComponent, reactive } from 'vue';
 import { tryOnScopeDispose } from '@vueuse/core';
 
 /**
@@ -26,3 +26,18 @@ export function usePreferredDark() {
 
   return readonly(prefersDark);
 }
+
+export const UsePreferredDark = defineComponent({
+  name: 'UsePreferredDark',
+  setup(props, { slots }) {
+    const data = reactive({
+      prefersDark: usePreferredDark(),
+    });
+
+    return () => {
+      if (slots.default) {
+        return slots.default(data);
+      }
+    };
+  },
+});

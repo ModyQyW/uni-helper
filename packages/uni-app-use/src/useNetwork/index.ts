@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref, computed, defineComponent, reactive } from 'vue';
 import { tryOnScopeDispose } from '@vueuse/core';
 
 export type NetworkType = 'ethernet' | 'none' | 'wifi' | 'unknown' | '2g' | '3g' | '4g' | '5g';
@@ -62,4 +62,15 @@ export function useNetwork(onError = (e: unknown) => console.error(e)) {
   };
 }
 
-export type UseNetworkReturn = ReturnType<typeof useNetwork>;
+export const UseNetwork = defineComponent({
+  name: 'UseNetwork',
+  setup(props, { slots }) {
+    const data = reactive(useNetwork());
+
+    return () => {
+      if (slots.default) {
+        return slots.default(data);
+      }
+    };
+  },
+});

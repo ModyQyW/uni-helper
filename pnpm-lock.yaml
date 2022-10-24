@@ -100,7 +100,7 @@ importers:
       picocolors: ^1.0.0
       pino: ^8.7.0
       pino-pretty: ^9.1.1
-      strip-json-comments: ^3.1.1
+      strip-json-comments: ^5.0.0
       unconfig: ^0.3.7
     dependencies:
       '@types/lodash': 4.14.186
@@ -117,7 +117,7 @@ importers:
       picocolors: 1.0.0
       pino: 8.7.0
       pino-pretty: 9.1.1
-      strip-json-comments: 3.1.1
+      strip-json-comments: 5.0.0
       unconfig: 0.3.7
 
   packages/uni-app-network:
@@ -357,7 +357,7 @@ packages:
       '@babel/generator': 7.17.10
       '@babel/helper-module-transforms': 7.19.6
       '@babel/helpers': 7.12.1
-      '@babel/parser': 7.17.10
+      '@babel/parser': 7.19.6
       '@babel/template': 7.16.7
       '@babel/traverse': 7.17.10
       '@babel/types': 7.19.4
@@ -1598,7 +1598,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/parser': 7.17.10
+      '@babel/parser': 7.19.6
       '@babel/types': 7.19.4
     dev: false
 
@@ -1620,7 +1620,7 @@ packages:
       '@babel/helper-function-name': 7.19.0
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.17.10
+      '@babel/parser': 7.19.6
       '@babel/types': 7.19.4
       debug: 4.3.4
       globals: 11.12.0
@@ -13128,6 +13128,11 @@ packages:
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+
+  /strip-json-comments/5.0.0:
+    resolution: {integrity: sha512-V1LGY4UUo0jgwC+ELQ2BNWfPa17TIuwBLg+j1AA/9RPzKINl1lhxVEu2r+ZTTO8aetIsUzE5Qj6LMSBkoGYKKw==}
+    engines: {node: '>=14.16'}
+    dev: false
 
   /strip-literal/0.4.2:
     resolution: {integrity: sha512-pv48ybn4iE1O9RLgCAN0iU4Xv7RlBTiit6DKmMiErbs9x1wH6vXBs45tWc0H5wUIF6TLTrKweqkmYF/iraQKNw==}

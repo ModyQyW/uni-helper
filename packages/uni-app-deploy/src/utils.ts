@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { globbySync } from 'globby';
+import globby from 'globby';
 import stripJsonComments from 'strip-json-comments';
 import { get } from 'lodash-unified';
 import pino from 'pino';
@@ -8,6 +8,8 @@ import pinoPretty from 'pino-pretty';
 import { UniAppDeployConfig, defaultCwd } from './config';
 import { ims, imValidate } from './im';
 import { platforms, platformValidate } from './platform';
+
+const globbySync = globby.sync;
 
 export const pinoPrettyStream = pinoPretty({
   colorize: true,

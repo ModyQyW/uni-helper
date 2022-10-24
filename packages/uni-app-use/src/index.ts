@@ -8,6 +8,7 @@ export * from './useAccountInfo';
 export * from './useActionSheet';
 export * from './useAddress';
 export * from './useApp';
+export * from './useAppBaseInfo';
 export * from './useArrayBufferToBase64';
 export * from './useAudio';
 export * from './useBackground';

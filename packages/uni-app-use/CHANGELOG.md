@@ -1,6 +1,6 @@
 # 改动日志
 
-## Unreleased
+## 0.8.0 (2022-10-24)
 
 - feat: 新增 `UseAccountInfo`
 - feat: 新增 `useAddress`

@@ -52,6 +52,7 @@ export * from './useStorage';
 export * from './useSubscription';
 export * from './useSupported';
 export * from './useSystemInfo';
+export * from './useSystemSetting';
 export * from './useTabBar';
 export * from './useToast';
 export * from './useUniPlatform';

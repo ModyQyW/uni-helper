@@ -1,7 +1,7 @@
 export function useAudio() {
   const backgroundAudioManager = uni.getBackgroundAudioManager();
 
-  const useBackgroundAudioManager = () => uni.getBackgroundAudioManager();
+  const useBackgroundAudioManager = () => backgroundAudioManager;
 
   const createInnerAudioContext = () => uni.createInnerAudioContext();
 

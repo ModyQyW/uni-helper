@@ -1,7 +1,7 @@
 export function useRecorder() {
   const recorderManager = uni.getRecorderManager();
 
-  const useRecorderManager = () => uni.getRecorderManager();
+  const useRecorderManager = () => recorderManager;
 
   return {
     recorderManager,

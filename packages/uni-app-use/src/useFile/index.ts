@@ -52,7 +52,7 @@ export function useFile() {
 
   const fileSystemManager = uni.getFileSystemManager();
 
-  const useFileSystemManager = () => uni.getFileSystemManager();
+  const useFileSystemManager = () => fileSystemManager;
 
   return {
     chooseFile,

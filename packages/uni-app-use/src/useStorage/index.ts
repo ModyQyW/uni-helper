@@ -20,52 +20,42 @@ export function useStorage() {
   const getStorage = (options?: GetStorageOptions) =>
     uni.getStorage(reactive({ key: '', ...resolveUnref(options) }));
   const getStorageSync = (key: string) => uni.getStorageSync(key);
-  const get = getStorage;
-  const getSync = getStorageSync;
 
   const setStorage = (options?: SetStorageOptions) =>
     uni.setStorage(reactive({ key: '', data: undefined, ...resolveUnref(options) }));
   const setStorageSync = (key: string, value: any) => uni.setStorageSync(key, value);
-  const set = setStorage;
-  const setSync = setStorageSync;
 
   const removeStorage = (options?: RemoveStorageOptions) =>
     uni.removeStorage(reactive({ key: '', ...resolveUnref(options) }));
   const removeStorageSync = (key: string) => uni.removeStorageSync(key);
-  const remove = removeStorage;
-  const removeSync = removeStorageSync;
 
   const clearStorage = () => uni.clearStorage();
   const clearStorageSync = () => uni.clearStorageSync();
-  const clear = clearStorage;
-  const clearSync = clearStorageSync;
 
   const getStorageInfo = (options?: GetStorageInfoOptions) =>
     uni.getStorageInfo(reactive({ ...options }));
   const getStorageInfoSync = () => uni.getStorageInfoSync();
-  const getInfo = getStorageInfo;
-  const getInfoSync = getStorageInfoSync;
 
   return {
     getStorage,
     getStorageSync,
-    get,
-    getSync,
+    get: getStorage,
+    getSync: getStorageSync,
     setStorage,
     setStorageSync,
-    set,
-    setSync,
+    set: setStorage,
+    setSync: setStorageSync,
     removeStorage,
     removeStorageSync,
-    remove,
-    removeSync,
+    remove: removeStorage,
+    removeSync: removeStorageSync,
     clearStorage,
     clearStorageSync,
-    clear,
-    clearSync,
+    clear: clearStorage,
+    clearSync: clearStorageSync,
     getStorageInfo,
     getStorageInfoSync,
-    getInfo,
-    getInfoSync,
+    getInfo: getStorageInfo,
+    getInfoSync: getStorageInfoSync,
   };
 }

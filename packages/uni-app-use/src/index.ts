@@ -53,6 +53,7 @@ export * from './useSystemInfo';
 export * from './useTabBar';
 export * from './useToast';
 export * from './useUniPlatform';
+export * from './useUpdate';
 export * from './useUploadFile';
 export * from './useVibrate';
 export * from './useVideo';

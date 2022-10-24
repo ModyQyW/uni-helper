@@ -51,7 +51,7 @@
     "lodash-unified": "^1.0.2",
     "minidev": "^1.6.1",
     "miniprogram-ci": "^1.8.35",
-    "p-retry": "^4.6.2",
+    "p-retry": "^5.0.0",
     "picocolors": "^1.0.0",
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",

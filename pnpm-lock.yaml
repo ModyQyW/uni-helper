@@ -96,7 +96,7 @@ importers:
       lodash-unified: ^1.0.2
       minidev: ^1.6.1
       miniprogram-ci: ^1.8.35
-      p-retry: ^4.6.2
+      p-retry: ^5.0.0
       picocolors: ^1.0.0
       pino: ^8.7.0
       pino-pretty: ^9.1.1
@@ -113,7 +113,7 @@ importers:
       lodash-unified: 1.0.2_3ib2ivapxullxkx3xftsimdk7u
       minidev: 1.6.1
       miniprogram-ci: 1.8.35
-      p-retry: 4.6.2
+      p-retry: 5.1.1
       picocolors: 1.0.0
       pino: 8.7.0
       pino-pretty: 9.1.1
@@ -357,7 +357,7 @@ packages:
       '@babel/generator': 7.17.10
       '@babel/helper-module-transforms': 7.19.6
       '@babel/helpers': 7.12.1
-      '@babel/parser': 7.17.10
+      '@babel/parser': 7.19.6
       '@babel/template': 7.16.7
       '@babel/traverse': 7.17.10
       '@babel/types': 7.19.4
@@ -1598,7 +1598,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      '@babel/parser': 7.17.10
+      '@babel/parser': 7.19.6
       '@babel/types': 7.19.4
     dev: false
 
@@ -1620,7 +1620,7 @@ packages:
       '@babel/helper-function-name': 7.19.0
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.17.10
+      '@babel/parser': 7.19.6
       '@babel/types': 7.19.4
       debug: 4.3.4
       globals: 11.12.0
@@ -3324,8 +3324,8 @@ packages:
       '@types/node': 18.11.4
     dev: false
 
-  /@types/retry/0.12.0:
-    resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
+  /@types/retry/0.12.1:
+    resolution: {integrity: sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==}
     dev: false
 
   /@types/semver/7.3.12:
@@ -10855,11 +10855,11 @@ packages:
       aggregate-error: 3.1.0
     dev: true
 
-  /p-retry/4.6.2:
-    resolution: {integrity: sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ==}
-    engines: {node: '>=8'}
+  /p-retry/5.1.1:
+    resolution: {integrity: sha512-i69WkEU5ZAL8mrmdmVviWwU+DN+IUF8f4sSJThoJ3z5A7Nn5iuO5ROX3Boye0u+uYQLOSfgFl7SuFZCjlAVbQA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
-      '@types/retry': 0.12.0
+      '@types/retry': 0.12.1
       retry: 0.13.1
     dev: false
 

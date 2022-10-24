@@ -18,10 +18,10 @@ export interface UniOpenVideoEditorOptions extends UniApp.OpenVideoEditorOptions
 export type OpenVideoEditorOptions = MaybeComputedRef<UniOpenVideoEditorOptions>;
 
 export function useVideo() {
-  const createVideoContext = (videoId: string, currentComponent?: any) => {
+  const createVideoContext = (...params: Parameters<UniApp.Uni['createVideoContext']>) => {
     let context: UniApp.VideoContext | undefined;
     tryOnMounted(() => {
-      context = uni.createVideoContext(videoId, currentComponent);
+      context = uni.createVideoContext(...params);
     });
     return context;
   };

@@ -11,6 +11,7 @@ export * from './useApp';
 export * from './useAppBaseInfo';
 export * from './useArrayBufferToBase64';
 export * from './useAudio';
+export * from './useAuthorize';
 export * from './useBackground';
 export * from './useBase64ToArrayBuffer';
 export * from './useCamera';

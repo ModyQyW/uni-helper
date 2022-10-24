@@ -8,28 +8,24 @@ export interface UniSetNavigationBarColorOptions extends UniApp.SetNavigationbar
 export type SetNavigationBarColorOptions = MaybeComputedRef<UniSetNavigationBarColorOptions>;
 
 export function useNavigationBar() {
-  const setTitle = (options?: SetNavigationBarTitleOptions) =>
+  const setNavigationBarTitle = (options?: SetNavigationBarTitleOptions) =>
     uni.setNavigationBarTitle(reactive({ title: '', ...resolveUnref(options) }));
-  const setNavigationBarTitle = setTitle;
 
-  const setColor = (options?: SetNavigationBarColorOptions) =>
+  const setNavigationBarColor = (options?: SetNavigationBarColorOptions) =>
     uni.setNavigationBarColor(reactive({ ...resolveUnref(options) }));
-  const setNavigationBarColor = setColor;
 
-  const showLoading = () => uni.showNavigationBarLoading();
-  const showNavigationBarLoading = showLoading;
+  const showNavigationBarLoading = () => uni.showNavigationBarLoading();
 
-  const hideLoading = () => uni.hideNavigationBarLoading();
-  const hideNavigationBarLoading = hideLoading;
+  const hideNavigationBarLoading = () => uni.hideNavigationBarLoading();
 
   return {
     setNavigationBarTitle,
-    setTitle,
+    setTitle: setNavigationBarTitle,
     setNavigationBarColor,
-    setColor,
+    setColor: setNavigationBarColor,
     showNavigationBarLoading,
-    showLoading,
+    showLoading: showNavigationBarLoading,
     hideNavigationBarLoading,
-    hideLoading,
+    hideLoading: hideNavigationBarLoading,
   };
 }

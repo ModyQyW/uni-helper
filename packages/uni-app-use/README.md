@@ -210,6 +210,17 @@ const {
 } = useAudio();
 ```
 
+### useAuthorize
+
+获取授权相关。
+
+```typescript
+import { useAuthorize } from 'uni-app-use';
+
+const { authorize, openSetting, getSetting, openAppAuthorizeSetting, getAppAuthorizeSetting } =
+  useAuthorize();
+```
+
 ### useBackground
 
 获取背景设置方法。
@@ -423,41 +434,6 @@ const update = (updater: (draft: D) => D) => (state.value = produce(state.value,
 
 你也可以直接使用 `produce` 来操作数据，见 [immer 文档](https://immerjs.github.io/immer/)。
 
-### useInfo
-
-获取窗口信息。
-
-```typescript
-import { useInfo } from 'uni-app-use';
-
-const {
-  accountInfo,
-  account,
-  appBaseInfo,
-  appBase,
-  deviceInfo,
-  device,
-  systemInfo,
-  system,
-  windowInfo,
-  // window 是保留字，此处不提供别名
-} = useInfo();
-```
-
-### UseInfo
-
-`useInfo` 的组件版本。
-
-```vue
-<script setup lang="ts">
-import { UseInfo } from 'uni-app-use';
-</script>
-
-<template>
-  <UseInfo v-slot="{ ... }"> ... </UseInfo>
-</template>
-```
-
 ### useInterceptor
 
 设置拦截器。
@@ -567,6 +543,16 @@ const {
 import { useMap } from 'uni-app-use';
 
 const { createMapContext, createContext } = useMap();
+```
+
+### useMenuButtonBoundingClientRect
+
+获取胶囊按钮布局。
+
+```typescript
+import { useMenuButtonBoundingClientRect } from 'uni-app-use';
+
+const { menuButtonBoundingClientRect, rect } = useMenuButtonBoundingClientRect();
 ```
 
 ### useModal
@@ -754,6 +740,27 @@ import { usePrevRoute } from 'uni-app-use';
 const prevRoute = usePrevRoute();
 ```
 
+### useProvider
+
+设置服务供应商参数，调用返回方法获取服务供应商。
+
+```typescript
+import { useProvider } from 'uni-app-use';
+
+const getProvider = getProvider({
+  /* 传入配置 */
+});
+getProvider(); // 实际请求服务供应商
+```
+
+可以传入一个对象来更新已有配置，这样会使用 [扩展运算符](https://es6.ruanyifeng.com/#docs/object#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6) 来确认最终配置。
+
+```typescript
+getProvider({
+  /* 新传入配置 */
+});
+```
+
 ### usePullDownRefresh
 
 获取下拉刷新方法。
@@ -939,6 +946,16 @@ const {
 } = useStorage();
 ```
 
+### useSubscription
+
+获取订阅相关。
+
+```typescript
+import { useSubscription } from 'uni-app-use';
+
+const { requestSubscribeMessage } = useSubscription();
+```
+
 ### useSupported
 
 获取 API 是否被支持。
@@ -971,6 +988,16 @@ import { UseSystemInfo } from 'uni-app-use';
 <template>
   <UseSystemInfo v-slot="{ ... }"> ... </UseSystemInfo>
 </template>
+```
+
+### useSystemSetting
+
+获取系统设置。
+
+```typescript
+import { useSystemSetting } from 'uni-app-use';
+
+const systemSetting = useSystemSetting();
 ```
 
 ### useTabBar
@@ -1064,6 +1091,30 @@ const { updateManager, manager, useUpdateManager, useManager } = useUpdate();
 
 **返回值中含有 task，可自行操作。**
 
+### useUser
+
+获取用户相关。
+
+```typescript
+import { useUser } from 'uni-app-use';
+
+const {
+  login,
+  checkSession,
+  getUserInfo,
+  getInfo,
+  getUserProfile,
+  getProfile,
+  preLogin,
+  closeAuthView,
+  getCheckBoxState,
+  univerifyManager,
+  manager,
+  useUniverifyManager,
+  useManager,
+} = useUser();
+```
+
 ### useVibrate
 
 获取震动方法。
@@ -1142,7 +1193,7 @@ import { UseWindowInfo } from 'uni-app-use';
 - 必须使用 `uni-app` 提供的 API 实现功能（如拦截器、存储等），API 不支持的也就无法支持（比如拦截同步 API）
 - 无法使用顶层 `await`
 
-如果要开发 H5，不妨直接使用 `vue` 和 `vueuse`。
+在开发网页时，建议直接使用 `vue`，避免过多的环境判断代码，同时也能享受更好的生态，如 `vueuse` 的完整支持。
 
 ### 构建
 
@@ -1155,6 +1206,10 @@ module.exports = {
 ```
 
 对于 `vite`，你无需手动额外调整。
+
+### EventBus
+
+如果你想使用 `EventBus`，请考虑使用 [VueUse - useEventBus](https://vueuse.org/core/useeventbus/#useeventbus)、[mitt](https://github.com/developit/mitt) 或 [tiny-emitter](https://github.com/scottcorgan/tiny-emitter)。这个库不再重复提供类似功能。
 
 ### TypeScript
 

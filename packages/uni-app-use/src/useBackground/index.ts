@@ -16,6 +16,8 @@ export function useBackground() {
 
   return {
     setBackgroundColor,
+    setColor: setBackgroundColor,
     setBackgroundTextStyle,
+    setTextStyle: setBackgroundTextStyle,
   };
 }

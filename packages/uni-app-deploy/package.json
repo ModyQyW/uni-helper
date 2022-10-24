@@ -44,7 +44,7 @@
     "@types/lodash": "^4.14.186",
     "@types/lodash-es": "^4.17.6",
     "commander": "^9.4.1",
-    "globby": "^11.1.0",
+    "globby": "^13.0.0",
     "got": "^11.8.5",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

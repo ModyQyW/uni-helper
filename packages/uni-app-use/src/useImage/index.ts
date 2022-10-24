@@ -25,44 +25,38 @@ export type CompressImageOptions = MaybeComputedRef<UniCompressImageOptions>;
 export function useImage() {
   const chooseImage = (options?: ChooseImageOptions) =>
     uni.chooseImage(reactive({ ...resolveUnref(options) }));
-  const choose = chooseImage;
 
   const chooseMedia = (options?: ChooseMediaOptions) =>
     uni.chooseMedia(reactive({ ...resolveUnref(options) }));
 
   const previewImage = (options?: PreviewImageOptions) =>
     uni.previewImage(reactive({ urls: [], ...resolveUnref(options) }));
-  const preview = previewImage;
 
   const closePreviewImage = (options?: ClosePreviewImageOptions) =>
     uni.closePreviewImage(reactive({ ...resolveUnref(options) }));
-  const closePreview = closePreviewImage;
 
   const getImageInfo = (options?: GetImageInfoOptions) =>
     uni.getImageInfo(reactive({ src: '', ...resolveUnref(options) }));
-  const getInfo = getImageInfo;
 
   const saveImageToPhotosAlbum = (options?: SaveImageToPhotosAlbumOptions) =>
     uni.saveImageToPhotosAlbum(reactive({ filePath: '', ...resolveUnref(options) }));
-  const saveToPhotosAlbum = saveImageToPhotosAlbum;
 
   const compressImage = (options?: CompressImageOptions) =>
     uni.compressImage(reactive({ src: '', ...resolveUnref(options) }));
-  const compress = compressImage;
 
   return {
     chooseImage,
-    choose,
+    choose: chooseImage,
     chooseMedia,
     previewImage,
-    preview,
+    preview: previewImage,
     closePreviewImage,
-    closePreview,
+    closePreview: closePreviewImage,
     getImageInfo,
-    getInfo,
+    getInfo: getImageInfo,
     saveImageToPhotosAlbum,
-    saveToPhotosAlbum,
+    saveToPhotosAlbum: saveImageToPhotosAlbum,
     compressImage,
-    compress,
+    compress: compressImage,
   };
 }

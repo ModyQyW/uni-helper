@@ -139,6 +139,16 @@ showActionSheet({
 });
 ```
 
+### useAddress
+
+获取地址相关。
+
+```typescript
+import { useAddress } from 'uni-app-use';
+
+const { chooseAddress, choose } = useAddress();
+```
+
 ### useApp
 
 获取当前应用实例。如果想要获取 `globalData`，可以直接使用 `useGlobalData`。
@@ -147,6 +157,30 @@ showActionSheet({
 import { useApp } from 'uni-app-use';
 
 const app = useApp();
+```
+
+### useAppBaseInfo
+
+获取应用基础信息。
+
+```typescript
+import { useAppBaseInfo } from 'uni-app-use';
+
+const appBaseInfo = useAppBaseInfo();
+```
+
+### UseAppBaseInfo
+
+`useAppBaseInfo` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseAppBaseInfo } from 'uni-app-use';
+</script>
+
+<template>
+  <UseAppBaseInfo v-slot="{ ... }"> ... </UseAppBaseInfo>
+</template>
 ```
 
 ### useArrayBufferToBase64
@@ -159,6 +193,23 @@ import { useArrayBufferToBase64 } from 'uni-app-use';
 const base64 = useArrayBufferToBase64(arrayBuffer);
 ```
 
+### useAudio
+
+获取音频相关。
+
+```typescript
+import { useAudio } from 'uni-app-use';
+
+const {
+  backgroundAudioManager,
+  backgroundManager,
+  useBackgroundAudioManager,
+  useBackgroundManager,
+  createInnerAudioContext,
+  createInnerContext,
+} = useAudio();
+```
+
 ### useBackground
 
 获取背景设置方法。
@@ -166,7 +217,7 @@ const base64 = useArrayBufferToBase64(arrayBuffer);
 ```typescript
 import { useBackground } from 'uni-app-use';
 
-const { setBackgroundColor, setBackgroundTextStyle } = useBackground();
+const { setBackgroundColor, setColor, setBackgroundTextStyle, setTextStyle } = useBackground();
 ```
 
 ### useBase64ToArrayBuffer
@@ -177,6 +228,16 @@ const { setBackgroundColor, setBackgroundTextStyle } = useBackground();
 import { useBase64ToArrayBuffer } from 'uni-app-use';
 
 const arrayBuffer = useBase64ToArrayBuffer(base64);
+```
+
+### useCamera
+
+获取相机相关。
+
+```typescript
+import { useCamera } from 'uni-app-use';
+
+const { createCameraContext, createContext } = useCamera();
 ```
 
 ### useClipboardData
@@ -212,6 +273,30 @@ import { UseClipboardData } from 'uni-app-use';
 </template>
 ```
 
+### useDeviceInfo
+
+获取设备信息。
+
+```typescript
+import { useDeviceInfo } from 'uni-app-use';
+
+const deviceInfo = useDeviceInfo();
+```
+
+### UseDeviceInfo
+
+`useDeviceInfo` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseDeviceInfo } from 'uni-app-use';
+</script>
+
+<template>
+  <UseDeviceInfo v-slot="{ ... }"> ... </UseDeviceInfo>
+</template>
+```
+
 ### useDownloadFile
 
 `uni.downloadFile` 的封装。使用方法参见 <https://vueuse.org/integrations/useAxios/>。
@@ -230,12 +315,33 @@ const options = useEnterOptions();
 
 ### useFile
 
-获取文件相关操作。
+获取文件相关。
 
 ```typescript
 import { useFile } from 'uni-app-use';
 
-const { chooseFile, choose, chooseMessageFile, chooseMessage } = useFile();
+const {
+  chooseFile,
+  choose,
+  chooseMessageFile,
+  chooseMessage,
+  saveFile,
+  save,
+  getSavedFileList,
+  getSavedList,
+  getSavedFileInfo,
+  getSavedInfo,
+  removeSavedFile,
+  removeSaved,
+  getFileInfo,
+  getInfo,
+  openDocument,
+  open,
+  fileSystemManager,
+  manager,
+  useFileSystemManager,
+  useManager,
+} = useFile();
 ```
 
 ### useGlobalData
@@ -278,7 +384,7 @@ import { UseGlobalData } from 'uni-app-use';
 
 ### useImage
 
-获取图片相关操作。
+获取图片相关。
 
 ```typescript
 import { useImage } from 'uni-app-use';
@@ -317,6 +423,41 @@ const update = (updater: (draft: D) => D) => (state.value = produce(state.value,
 
 你也可以直接使用 `produce` 来操作数据，见 [immer 文档](https://immerjs.github.io/immer/)。
 
+### useInfo
+
+获取窗口信息。
+
+```typescript
+import { useInfo } from 'uni-app-use';
+
+const {
+  accountInfo,
+  account,
+  appBaseInfo,
+  appBase,
+  deviceInfo,
+  device,
+  systemInfo,
+  system,
+  windowInfo,
+  // window 是保留字，此处不提供别名
+} = useInfo();
+```
+
+### UseInfo
+
+`useInfo` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseInfo } from 'uni-app-use';
+</script>
+
+<template>
+  <UseInfo v-slot="{ ... }"> ... </UseInfo>
+</template>
+```
+
 ### useInterceptor
 
 设置拦截器。
@@ -332,6 +473,7 @@ const stop = useInterceptor(event, {
     args.url = 'https://www.example.com/' + args.url;
   },
   success: (response) => {
+    console.log('interceptor-success', response);
     response.data.code = 1;
   },
   fail: (error) => {
@@ -344,6 +486,16 @@ const stop = useInterceptor(event, {
 
 // 删除拦截器
 stop(event);
+```
+
+### useInvoice
+
+获取发票相关。
+
+```typescript
+import { useInvoice } from 'uni-app-use';
+
+const { chooseInvoice, choose, chooseInvoiceTitle, chooseTitle } = useInvoice();
 ```
 
 ### useLaunchOptions
@@ -380,12 +532,41 @@ showLoading({
 
 ### useLocation
 
-获取位置相关方法。
+获取位置相关。
 
 ```typescript
 import { useLocation } from 'uni-app-use';
 
-const { getLocation, get, chooseLocation, choose, openLocation, open } = useLocation();
+const {
+  getLocation,
+  get,
+  chooseLocation,
+  choose,
+  openLocation,
+  open,
+  onLocationChange,
+  onChange,
+  onLocationChangeError,
+  onChangeError,
+  offLocationChange,
+  offChange,
+  startLocationUpdate,
+  startUpdate,
+  startLocationBackgroundUpdate,
+  startUpdateBackground,
+  stopLocationUpdate,
+  stopUpdate,
+} = useLocation();
+```
+
+### useMap
+
+获取地图相关。
+
+```typescript
+import { useMap } from 'uni-app-use';
+
+const { createMapContext, createContext } = useMap();
 ```
 
 ### useModal
@@ -411,7 +592,7 @@ showModal({
 
 ### useNavigationBar
 
-获取导航条相关信息。
+获取导航条相关。
 
 ```typescript
 import { useNavigationBar } from 'uni-app-use';
@@ -585,12 +766,12 @@ const { startPullDownRefresh, start, stopPullDownRefresh, stop } = usePullDownRe
 
 ### useRecorder
 
-获取录音相关操作。
+获取录音相关。
 
 ```typescript
 import { useRecorder } from 'uni-app-use';
 
-const { recorderManager, manager, useRecorderManager } = useRecorder();
+const { recorderManager, manager, useRecorderManager, useManager } = useRecorder();
 ```
 
 ### useRequest
@@ -611,7 +792,7 @@ const route = useRoute();
 
 ### useRouter
 
-获取路由相关信息。
+获取路由相关。
 
 ```typescript
 import { useRouter } from 'uni-app-use';
@@ -770,7 +951,7 @@ const isSupported = useSupported();
 
 ### useSystemInfo
 
-获取系统和设备信息。
+获取系统信息。
 
 ```typescript
 import { useSystemInfo } from 'uni-app-use';
@@ -862,9 +1043,19 @@ import { UseUniPlatform } from 'uni-app-use';
 
 <template>
   <UseUniPlatform v-slot="{ uniPlatform }">
-    <p>uniPlatform</p>
+    <p>{{ uniPlatform }}</p>
   </UseUniPlatform>
 </template>
+```
+
+### useUpdate
+
+获取更新相关。
+
+```typescript
+import { useUpdate } from 'uni-app-use';
+
+const { updateManager, manager, useUpdateManager, useManager } = useUpdate();
 ```
 
 ### useUploadFile
@@ -885,7 +1076,7 @@ const { vibrate, vibrateLong, vibrateShort } = useVibrate();
 
 ### useVideo
 
-获取视频相关操作。
+获取视频相关。
 
 ```typescript
 import { useVideo } from 'uni-app-use';
@@ -915,6 +1106,30 @@ const {
 import { useVisible } from 'uni-app-use';
 
 const isVisible = useVisible();
+```
+
+### useWindowInfo
+
+获取窗口信息。
+
+```typescript
+import { useWindowInfo } from 'uni-app-use';
+
+const windowInfo = useWindowInfo();
+```
+
+### UseWindowInfo
+
+`useWindowInfo` 的组件版本。
+
+```vue
+<script setup lang="ts">
+import { UseWindowInfo } from 'uni-app-use';
+</script>
+
+<template>
+  <UseWindowInfo v-slot="{ ... }"> ... </UseWindowInfo>
+</template>
 ```
 
 ## 其它

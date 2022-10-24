@@ -39,6 +39,7 @@ export * from './usePreferredDark';
 export * from './usePreferredLanguage';
 export * from './usePrevPage';
 export * from './usePrevRoute';
+export * from './useProvider';
 export * from './usePullDownRefresh';
 export * from './useRecorder';
 export * from './useRequest';

@@ -82,13 +82,19 @@
 
 `uni-ui` 组件类型。
 
-## 网络请求支持
+## API 支持
 
-### [uni-app-network](./network/uni-app-network.md)
+### [uni-app-network](./api/uni-app-network.md)
 
 [![npm](https://img.shields.io/npm/v/uni-app-network)](https://www.npmjs.com/package/uni-app-network)
 
 为 `uni-app` 打造的基于 `Promise` 的 HTTP 客户端。
+
+### [uni-app-promises](./api/uni-app-promises.md)
+
+[![npm](https://img.shields.io/npm/v/uni-app-promises)](https://www.npmjs.com/package/uni-app-promises)
+
+`uni-app` promise 化的 API。
 
 ## 组合式支持
 

@@ -21,7 +21,7 @@ export default defineConfig({
       { text: 'TypeScript 支持', link: '/typescript/uni-app-types' },
       { text: '编辑器支持', link: '/editor/vscode-uni-helper' },
       { text: '原子化 CSS 支持', link: '/atomic-css/vite-plugin-uni-app-tailwind' },
-      { text: '网络请求支持', link: '/network/uni-app-network' },
+      { text: 'API 支持', link: '/api/uni-app-network' },
       { text: '组合式支持', link: '/composition/uni-app-use' },
       { text: '自动化支持', link: '/automation/uni-app-deploy' },
     ],
@@ -63,9 +63,12 @@ export default defineConfig({
       },
 
       {
-        text: '网络请求支持',
+        text: 'API 支持',
         collapsible: true,
-        items: [{ text: 'uni-app-network', link: '/network/uni-app-network' }],
+        items: [
+          { text: 'uni-app-network', link: '/api/uni-app-network' },
+          { text: 'uni-app-promises', link: '/api/uni-app-promises' },
+        ],
       },
       {
         text: '组合式支持',

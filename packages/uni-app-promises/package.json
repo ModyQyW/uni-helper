@@ -1,0 +1,71 @@
+{
+  "name": "uni-app-promises",
+  "version": "0.0.0",
+  "description": "uni-app promisified APIs.",
+  "keywords": [
+    "uni-app",
+    "uniapp",
+    "uni",
+    "promise",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-promises"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup-node",
+    "dev": "pnpm run build --watch src",
+    "release": "npx release-it"
+  },
+  "dependencies": {
+    "@dcloudio/types": "3.0.15"
+  },
+  "devDependencies": {
+    "vue": "^3.2.41"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore(release): uni-app-promises@v${version}",
+      "tagName": "uni-app-promises@v${version}"
+    },
+    "hooks": {
+      "before:init": "pnpm install",
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/api/uni-app-promises.md && pnpm publish --no-git-checks"
+    },
+    "npm": {
+      "publish": false,
+      "timeout": 30
+    }
+  }
+}

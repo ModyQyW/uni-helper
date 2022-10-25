@@ -27,7 +27,7 @@
     "release": "npx release-it"
   },
   "dependencies": {
-    "@dcloudio/types": "^3.0.16",
+    "@dcloudio/types": "3.0.15",
     "vue3": "npm:vue@^3.2.41"
   },
   "engines": {

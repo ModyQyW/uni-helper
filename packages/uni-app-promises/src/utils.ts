@@ -21,5 +21,3 @@ export function simplePromisify<Options extends SimpleOptions = SimpleOptions>(
       });
     });
 }
-
-export const navigateTo = simplePromisify(uni.navigateTo);

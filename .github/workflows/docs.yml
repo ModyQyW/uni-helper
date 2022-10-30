@@ -16,8 +16,8 @@ jobs:
           version: 7
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: 'pnpm'
+          node-version: 18
+          cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build:docs
       - uses: peaceiris/actions-gh-pages@v3

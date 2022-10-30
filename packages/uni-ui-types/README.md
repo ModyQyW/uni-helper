@@ -474,8 +474,6 @@ export type UniCollapseItem = Component<Partial<UniCollapseItemProps>>;
 ### UniCombox (uni-combox)
 
 ```typescript
-import { Component } from '../Component';
-
 export interface UniComboxProps {
   /**
    * @desc 标签文字

@@ -1,4 +1,4 @@
-import { Component } from '../Component';
+import { Component } from './Component';
 import { UniIconsType } from './UniIcons';
 
 export interface UniNavBarProps {

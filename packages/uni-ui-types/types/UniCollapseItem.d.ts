@@ -1,4 +1,4 @@
-import { Component } from '../Component';
+import { Component } from './Component';
 
 /**
  * @desc 折叠面板标题分隔线

@@ -1,4 +1,4 @@
-import { Component } from '../Component';
+import { Component } from './Component';
 
 /**
  * @desc 分段器样式类型

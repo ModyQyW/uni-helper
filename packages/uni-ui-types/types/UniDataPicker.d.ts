@@ -1,5 +1,5 @@
 import { BaseEvent, CustomEvent } from 'uni-app-types';
-import { Component } from '../Component';
+import { Component } from './Component';
 
 /**
  * @desc 服务空间信息

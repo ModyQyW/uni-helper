@@ -1,4 +1,4 @@
-import { Component } from '../Component';
+import { Component } from './Component';
 
 /**
  * @desc 清除按钮的显示方式

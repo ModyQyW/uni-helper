@@ -1,5 +1,5 @@
 import { BaseEvent } from 'uni-app-types';
-import { Component } from '../Component';
+import { Component } from './Component';
 
 /**
  * @desc 内置过渡动画类型

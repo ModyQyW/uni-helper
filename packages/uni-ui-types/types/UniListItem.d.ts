@@ -1,4 +1,4 @@
-import { Component } from '../Component';
+import { Component } from './Component';
 import { UniBadgeProps } from './UniBadge';
 import { UniIconsProps, UniIconsType } from './UniIcons';
 

@@ -7,7 +7,7 @@ export function simplePromisify<Options extends SimpleOptions = SimpleOptions>(
   callback: (options: Options) => void,
 ) {
   return (options: Options) =>
-    new Promise<Parameters<Required<Options>['success']>[0]>((resolve, reject) => {
+    new Promise<Parameters<NonNullable<Options['success']>>[0]>((resolve, reject) => {
       callback({
         ...options,
         success: (result) => {

@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@dcloudio/types": "3.0.15",
-    "@dcloudio/uni-app": "3.0.0-alpha-3060720221018007",
+    "@dcloudio/uni-app": "3.0.0-alpha-3060820221027002",
     "@vueuse/core": "^9.4.0",
     "immer": "^9.0.16"
   },

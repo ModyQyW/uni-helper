@@ -41,7 +41,7 @@
     "release": "npx release-it"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.186",
+    "@types/lodash": "^4.14.187",
     "@types/lodash-es": "^4.17.6",
     "commander": "^9.4.1",
     "globby": "^13.1.2",

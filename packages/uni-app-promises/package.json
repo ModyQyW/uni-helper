@@ -1,6 +1,6 @@
 {
   "name": "uni-app-promises",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "uni-app promisified APIs.",
   "keywords": [
     "uni-app",

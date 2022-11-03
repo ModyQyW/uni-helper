@@ -22,14 +22,11 @@ export default defineConfig([
   {
     entry: ['./src/cli.ts'],
     clean: true,
-    format: 'cjs',
+    format: 'esm',
     minify: true,
     shims: true,
     splitting: false,
     target: 'node14.16',
-    // banner: {
-    //   js: `':' // ; cat "$0" | node --input-type=module - $@ ; exit $?`,
-    // },
   },
 ]);
 /* eslint-enable no-useless-escape */

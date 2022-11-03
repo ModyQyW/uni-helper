@@ -1,6 +1,6 @@
 import { extname } from 'node:path';
 import { readFileSync } from 'node:fs';
-import got, { Options as GotOptions } from 'got';
+import got, { ExtendOptions as GotOptions } from 'got';
 import { IPreviewResult } from 'miniprogram-ci/dist/@types/ci/preview';
 import { IInnerUploadResult } from 'miniprogram-ci/dist/@types/ci/upload';
 import { getFilePath, logger } from '../utils';

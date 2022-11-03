@@ -51,67 +51,7 @@ export default defineConfig({
 });
 ```
 
-<details>
-
-<summary>更具参考性的 <code>vite.config.ts</code></summary>
-
-```typescript
-import { defineConfig } from 'vite';
-import autoImport from 'unplugin-auto-import/vite';
-import vueComponents from 'unplugin-vue-components/vite';
-import vueMarcos from 'unplugin-vue-macros/vite';
-import uni from '@dcloudio/vite-plugin-uni';
-import tailwindcss from 'tailwindcss';
-// @ts-ignore
-import nested from 'tailwindcss/nesting';
-// @ts-ignore
-import postcssPresetEnv from 'postcss-preset-env';
-import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  build: {
-    lib: 'es6', // syntax 支持
-  },
-  css: {
-    postcss: {
-      plugins: [
-        nested(),
-        tailwindcss(),
-        postcssPresetEnv({
-          stage: 3,
-          features: { 'nesting-rules': false },
-        }),
-      ],
-    },
-  },
-  envPrefix: ['VITE_', 'UNI_'],
-  plugins: [
-    autoImport({
-      dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
-      imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
-    }),
-    vueComponents({
-      dirs: ['src/components'],
-      types: [],
-    }),
-    vueMarcos(),
-    uni({
-      vueOptions: {
-        reactivityTransform: true, // 响应式语法糖
-      },
-      viteLegacyOptions: {
-        targets: ['ios >= 10', 'chrome >= 53'], // 微信小程序基础库 2.11.2 开始支持 proxy，对应 ios >= 10, chrome >= 53
-      },
-    }),
-    uniAppTailwind({
-      /* options */
-    }),
-  ],
-});
-```
-
-</details>
+你可以查看这个 [uni-app 模板项目](https://github.com/MillCloud/presets/tree/main/uni-app) 了解更多。
 
 ## 配置项 `Options`
 
@@ -128,21 +68,10 @@ export default defineConfig({
 - 默认值如下
 
 ```typescript
-targets.some((item) => {
-  if (
-    (item === 'QUICKAPP' || item.startsWith('QUICKAPP-')) &&
-    (current === 'APP' || current.startsWith('APP-'))
-  ) {
-    return false;
-  }
-  if (
-    (current === 'QUICKAPP' || current.startsWith('QUICKAPP-')) &&
-    (item === 'APP' || item.startsWith('APP-'))
-  ) {
-    return false;
-  }
-  return item === current || item.includes(current) || current.includes(item);
-});
+const getShouldApply = (targets: string[], current: string) =>
+  targets.some(
+    (item) => item === current || item.startsWith(`${current}-`) || current.startsWith(`${item}-`),
+  );
 ```
 
 `options.apply` 会作为 `targets` 传入，`current` 会取值为 `(process.env.UNI_PLATFORM || 'H5').toUpperCase()`。用户可手动调整逻辑，判断当前平台是否需要应用该插件。
@@ -279,7 +208,6 @@ targets.some((item) => {
 
 - 使用 `postcss` 改写样式文件里面的 `selector`，包括字符和元素；
 - 使用 `babel` 改写模板文件里面的 `class`，只包括字符，这是为了和样式文件里面的 `selector` 相匹配。
--
 
 ## FAQ
 

@@ -24,7 +24,7 @@
   },
   "scripts": {
     "check": "ncu",
-    "clean": "rimraf ./**/*.vsix",
+    "clean": "rimraf ./packages/**/*.vsix",
     "commit": "git-cz",
     "lint": "run-p lint:eslint lint:stylelint lint:markdownlint",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore --cache",

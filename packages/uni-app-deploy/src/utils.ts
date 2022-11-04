@@ -1,4 +1,4 @@
-import { resolve } from 'node:path';
+import { resolve, relative } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { globbySync } from 'globby';
 import stripJsonComments from 'strip-json-comments';
@@ -19,6 +19,26 @@ export const pinoPrettyStream = pinoPretty({
 export const logger = pino(pinoPrettyStream);
 
 export const globbyIgnore = ['**/node_modules', '**/dist', '**/.hbuilder', '**/.hbuilderx'];
+
+export function jsoncParse(data: string) {
+  try {
+    return new Function('return ' + stripJsonComments(data).trim())();
+  } catch {
+    return {};
+  }
+}
+
+export async function loadJson(filePath: string) {
+  try {
+    return jsoncParse(readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Failed to parse ${relative(process.cwd(), filePath)}: ${error.message}`);
+    } else {
+      throw error;
+    }
+  }
+}
 
 export function getCwd(config: UniAppDeployConfig) {
   return config.cwd ?? defaultCwd;

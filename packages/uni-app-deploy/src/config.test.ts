@@ -1,4 +1,4 @@
-import { resolve, dirname } from 'node:path';
+import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, it, expect } from 'vitest';
 import { defineConfig, mergeConfig, loadConfig } from './config';
@@ -40,22 +40,17 @@ describe('config', () => {
     expect(merged2).toStrictEqual(config2);
   });
 
-  // TODO: update test
-  // it('loadConfig', async () => {
-  //   const loaded1 = await loadConfig({
-  //     cwd: resolve(__dirname, 'fixtures'),
-  //   });
-  //   const loaded2 = await loadConfig({
-  //     cwd: resolve(__dirname, 'fixtures'),
-  //     merge: true,
-  //   });
-  //   expect(loaded1.config).toStrictEqual({
-  //     from: 'uni-app-deploy.config.ts',
-  //     hello: { unconfig: 'uni-app-deploy.config.ts' },
-  //   });
-  //   expect(loaded2.config).toStrictEqual({
-  //     from: 'uni-app-deploy.config.ts',
-  //     hello: { unconfig: 'uni-app-deploy.config.ts' },
-  //   });
-  // });
+  it('loadConfig', async () => {
+    const loaded = await loadConfig({
+      cwd: resolve(__dirname, 'fixtures'),
+    });
+    console.log('loaded', loaded.path);
+    expect(loaded.path).toSatisfy(
+      (v) => typeof v === 'string' && v.endsWith(join('fixtures', 'uni-app-deploy.config.ts')),
+    );
+    expect(loaded.data).toStrictEqual({
+      from: 'uni-app-deploy.config.ts',
+      hello: { config: 'uni-app-deploy.config.ts' },
+    });
+  });
 });

@@ -1,10 +1,6 @@
-// import {
-//   loadConfig as unconfigLoadConfig,
-//   type LoadConfigOptions as UnconfigLoadConfigOptions,
-// } from 'unconfig';
-// import { sourcePackageJsonFields } from 'unconfig/presets';
 import JoyCon, { Options as JoyConOptions } from 'joycon';
 import { bundleRequire } from 'bundle-require';
+import stripJsonComments from 'strip-json-comments';
 import { MpWeixinConfig } from './platform';
 import { WecomConfig, DingtalkConfig } from './im';
 import { loadJson } from './utils';
@@ -41,11 +37,16 @@ export function mergeConfig(config: UniAppDeployConfig) {
   };
 }
 
-export async function loadConfig(options?: Partial<JoyConOptions>) {
+export async function loadConfig(options?: Partial<JoyConOptions>): Promise<{
+  path?: string;
+  data?: UniAppDeployConfig;
+}> {
   const joycon = new JoyCon();
   const configPath = await joycon.resolve({
     files: [
       'uni-app-deploy.config.ts',
+      'uni-app-deploy.config.cts',
+      'uni-app-deploy.config.mts',
       'uni-app-deploy.config.js',
       'uni-app-deploy.config.cjs',
       'uni-app-deploy.config.mjs',
@@ -53,43 +54,25 @@ export async function loadConfig(options?: Partial<JoyConOptions>) {
       'package.json',
     ],
     packageKey: 'uni-app-deploy',
+    parseJSON: (json) => stripJsonComments(json),
     ...options,
   });
 
-  if (configPath) {
-    if (configPath.endsWith('.json')) {
-      let data = await loadJson(configPath);
-      if (configPath.endsWith('package.json')) {
-        data = data['uni-app-deploy'];
-      }
-      if (data) {
-        return { path: configPath, data };
-      }
-      return {};
-    }
+  if (!configPath) return {};
 
-    const config = await bundleRequire({
-      filepath: configPath,
-    });
-    return {
-      path: configPath,
-      data: config.mod['uni-app-deploy'] || config.mod.default || config.mod,
-    };
+  if (configPath.endsWith('.json')) {
+    let data = await loadJson(configPath);
+    if (configPath.endsWith('package.json')) {
+      data = data?.['uni-app-deploy'];
+    }
+    return data ? { path: configPath, data } : {};
   }
 
-  return {};
+  const config = await bundleRequire({
+    filepath: configPath,
+  });
+  return {
+    path: configPath,
+    data: config.mod['uni-app-deploy'] || config.mod.default || config.mod,
+  };
 }
-
-// export async function loadConfig(options?: Partial<UnconfigLoadConfigOptions>) {
-// return unconfigLoadConfig<UniAppDeployConfig>({
-//   sources: [
-//     {
-//       files: 'uni-app-deploy.config',
-//     },
-//     sourcePackageJsonFields({
-//       fields: 'uni-app-deploy',
-//     }),
-//   ],
-//   ...options,
-// });
-// }

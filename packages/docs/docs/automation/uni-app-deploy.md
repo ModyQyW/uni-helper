@@ -40,7 +40,20 @@ cnpm install uni-app-deploy -D
 
 ### 配置文件
 
-新建配置文件 `uni-app-deploy.config.ts`。配置文件内容会被 [unconfig](https://github.com/antfu/unconfig) 读取。
+支持以下配置：
+
+- `uni-app-deploy.config.ts`
+- `uni-app-deploy.config.cts`
+- `uni-app-deploy.config.mts`
+- `uni-app-deploy.config.js`
+- `uni-app-deploy.config.cjs`
+- `uni-app-deploy.config.mjs`
+- `uni-app-deploy.config.json`
+- `package.json` 中的 `uni-app-deploy` 字段内容
+
+借助 [joycon](https://github.com/egoist/joycon)、[bundle-require](https://github.com/egoist/bundle-require)、[strip-json-comments](https://github.com/sindresorhus/strip-json-comments) 的帮助，只要读取到以上任何配置文件，就会将其内容作为你提供的 `uni-app-deploy` 的配置。
+
+以下是一个 `uni-app-deploy.config.ts` 的示例。
 
 ```typescript
 import { defineConfig } from 'uni-app-deploy';
@@ -49,10 +62,6 @@ export default defineConfig({
   /* 通用配置 */
   // 当前进程的工作目录，默认为执行目录
   cwd: process.cwd(),
-  // globby 匹配文件时需要过滤的模式，默认过滤 node_modules, dist, .hbuilder, .hbuilderx
-  ignore: ['**/node_modules', '**/dist', '**/.hbuilder', '**/.hbuilderx'],
-  // globby 使用的忽略文件，默认为 .gitignore
-  ignoreFiles: ['**/.gitignore'],
 
   /* 应用平台 */
   platform: {

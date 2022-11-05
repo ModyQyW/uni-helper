@@ -2,7 +2,7 @@
   "uni-app-deploy": {
     "from": "package.json",
     "hello": {
-      "unconfig": "package.json"
+      "config": "package.json"
     }
   }
 }

@@ -47,12 +47,12 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@babel/core": "^7.19.6",
+    "@babel/core": "^7.20.2",
     "@vivaxy/wxml": "^2.1.0",
     "postcss": "^8.4.18"
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.1",
+    "tailwindcss": "^3.2.2",
     "vite": "^3.2.2"
   },
   "peerDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-cloud-snippets",
-  "displayName": "uni-cloud-snippets",
+  "displayName": "[DEPRECATED] uni-cloud-snippets",
   "version": "0.2.7",
   "description": "uni-cloud 基本能力代码片段。",
   "categories": [

@@ -5,7 +5,9 @@ const javascriptObject = JSON.parse(
   fs.readFileSync('./snippets/javascript.json', { encoding: 'utf8' }),
 );
 
-let readme = `# vscode-uni-cloud-snippets
+let readme = `# [DEPRECATED] vscode-uni-cloud-snippets
+
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-cloud-snippets-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-cloud-snippets-vscode)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

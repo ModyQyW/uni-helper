@@ -1,5 +1,7 @@
 # 改动日志
 
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-cloud-snippets-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-cloud-snippets-vscode)。**
+
 ## 0.2.7
 
 - 发布流程改进

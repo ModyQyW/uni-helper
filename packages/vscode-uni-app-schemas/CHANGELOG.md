@@ -1,5 +1,7 @@
 # 改动日志
 
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-app-schemas-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-app-schemas-vscode)。**
+
 ## 0.8.4
 
 - 修复 `subNVues` 类型

@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 
-const readme = `# vscode-uni-app-schemas
+const readme = `# [DEPRECATED] vscode-uni-app-schemas
+
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-app-schemas-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-app-schemas-vscode)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

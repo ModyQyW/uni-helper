@@ -1,5 +1,7 @@
 # 改动日志
 
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-app-snippets-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-app-snippets-vscode)。**
+
 ## 0.9.3
 
 - 修复 `javascript` 条件编译语句

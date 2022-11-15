@@ -1,4 +1,6 @@
-# vscode-uni-ui-snippets
+# [DEPRECATED] vscode-uni-ui-snippets
+
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-ui-snippets-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-ui-snippets-vscode)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

@@ -1,6 +1,6 @@
 {
   "name": "vscode-uni-ui-snippets",
-  "displayName": "uni-ui-snippets",
+  "displayName": "[DEPRECATED] uni-ui-snippets",
   "version": "0.6.4",
   "description": "uni-ui 组件代码片段。",
   "categories": [

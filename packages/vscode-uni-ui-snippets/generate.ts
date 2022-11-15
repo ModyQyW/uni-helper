@@ -2,7 +2,9 @@ import fs from 'node:fs';
 
 const htmlObject = JSON.parse(fs.readFileSync('./snippets/vue-html.json', { encoding: 'utf8' }));
 
-let readme = `# vscode-uni-ui-snippets
+let readme = `# [DEPRECATED] vscode-uni-ui-snippets
+
+**该插件已废弃，请迁移到功能一致的 [uni-helper.uni-ui-snippets-vscode](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-ui-snippets-vscode)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

@@ -1,7 +1,7 @@
 {
   "name": "vscode-uni-app-snippets",
   "displayName": "[DEPRECATED] uni-app-snippets",
-  "version": "0.9.5",
+  "version": "0.9.4",
   "description": "uni-app 基本能力代码片段。",
   "categories": [
     "Snippets"

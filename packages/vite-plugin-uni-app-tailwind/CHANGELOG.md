@@ -1,5 +1,7 @@
 # 改动日志
 
+**该依赖已废弃，请迁移到功能一致的 [@uni-helper/vite-plugin-uni-tailwind](https://www.npmjs.com/package/@uni-helper/vite-plugin-uni-tailwind)。**
+
 ## 0.7.1 (2022-11-03)
 
 - perf: 优化默认的 `getShouldApply` 方法

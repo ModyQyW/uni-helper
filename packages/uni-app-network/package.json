@@ -63,7 +63,7 @@
     },
     "hooks": {
       "before:init": "pnpm install",
-      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/network/uni-app-network.md && pnpm publish --no-git-checks"
+      "after:bump": "pnpm run build && cp -af README.md ../docs/docs/api/uni-app-network.md && pnpm publish --no-git-checks"
     },
     "npm": {
       "publish": false,

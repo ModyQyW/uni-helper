@@ -1,4 +1,6 @@
-# uni-ui-types
+# [DEPRECATED] uni-ui-types
+
+**该依赖已废弃，请迁移到功能一致的 [@uni-helper/uni-ui-types](https://www.npmjs.com/package/@uni-helper/uni-ui-types)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

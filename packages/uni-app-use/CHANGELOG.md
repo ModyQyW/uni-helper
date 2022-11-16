@@ -1,5 +1,7 @@
 # 改动日志
 
+**该依赖已废弃，请迁移到功能一致的 [@uni-helper/uni-use](https://www.npmjs.com/package/@uni-helper/uni-use)。**
+
 ## 0.8.0 (2022-10-24)
 
 - feat: 新增 `UseAccountInfo`

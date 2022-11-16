@@ -1,4 +1,6 @@
-# uni-app-use
+# [DEPRECATED] uni-app-use
+
+**该依赖已废弃，请迁移到功能一致的 [@uni-helper/uni-use](https://www.npmjs.com/package/@uni-helper/uni-use)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

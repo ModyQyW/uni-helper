@@ -1,5 +1,7 @@
 # uni-helper
 
+uni-helper 已经成长为一个组织，请前往 [组织页面](https://github.com/uni-helper) 查看。
+
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 
 `uni-helper` 旨在增强 `uni-app` 系列产品的体验。

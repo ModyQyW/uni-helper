@@ -1,8 +1,6 @@
 # 改动日志
 
-## Unreleased
-
-- perf: 移除 `lodash-es`
+**该依赖已废弃，请迁移到功能一致的 [@uni-helper/uni-network](https://www.npmjs.com/package/@uni-helper/uni-network)。**
 
 ## 0.10.2 (2022-10-18)
 

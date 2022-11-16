@@ -1,4 +1,6 @@
-# uni-app-network
+# [DEPRECATED] uni-app-network
+
+**该依赖已废弃，请迁移到功能一致的 [@uni-helper/uni-network](https://www.npmjs.com/package/@uni-helper/uni-network)。**
 
 [![License](https://img.shields.io/github/license/ModyQyW/uni-helper)](https://github.com/ModyQyW/uni-helper/blob/main/LICENSE)
 

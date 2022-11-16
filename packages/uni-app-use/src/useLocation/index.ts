@@ -36,6 +36,7 @@ export function useLocation() {
     uni.onLocationChange(callback);
 
   const onLocationChangeError = (callback: Parameter<UniApp.Uni['onLocationChangeError']>) =>
+    // @ts-ignore
     uni.onLocationChangeError(callback);
 
   const offLocationChange = (callback: Parameter<UniApp.Uni['offLocationChange']>) =>
